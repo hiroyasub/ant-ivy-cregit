@@ -698,7 +698,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author x.hanin  *  */
+comment|/**  * Ivy is a free java based dependency manager.  *   * This class is the main class of Ivy, which offers mainly dependency resolution.  *   * Here is one typical usage:  * Ivy ivy = new Ivy();  * ivy.configure(new URL("ivyconf.xml"));  * ivy.resolve(new URL("ivy.xml"), null, new String[] {"*"}, null, null, true);  *    * @author x.hanin  *  */
 end_comment
 
 begin_class
