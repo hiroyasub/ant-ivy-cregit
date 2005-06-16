@@ -7154,7 +7154,7 @@ literal|"ms)"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *       * @param pubrevision       * @param resolverName the name of a resolver to use for publication      * @param artifactsPattern a pattern to find artifacts to publish with the given resolver      * @return a collection of missing artifacts (those that are not published)      * @throws ParseException      */
+comment|/**      *       * @param pubrevision       * @param resolverName the name of a resolver to use for publication      * @param srcArtifactPattern a pattern to find artifacts to publish with the given resolver      * @param srcIvyPattern a pattern to find ivy file to publish, null if ivy file should not be published      * @return a collection of missing artifacts (those that are not published)      * @throws ParseException      */
 specifier|public
 name|Collection
 name|publish
@@ -7174,8 +7174,8 @@ parameter_list|,
 name|String
 name|resolverName
 parameter_list|,
-name|boolean
-name|publishivy
+name|String
+name|srcIvyPattern
 parameter_list|,
 name|boolean
 name|validate
@@ -7214,6 +7214,13 @@ operator|=
 name|substitute
 argument_list|(
 name|srcArtifactPattern
+argument_list|)
+expr_stmt|;
+name|srcIvyPattern
+operator|=
+name|substitute
+argument_list|(
+name|srcIvyPattern
 argument_list|)
 expr_stmt|;
 comment|// 1) find the resolved module descriptor in cache
@@ -7498,7 +7505,9 @@ block|}
 block|}
 if|if
 condition|(
-name|publishivy
+name|srcIvyPattern
+operator|!=
+literal|null
 condition|)
 block|{
 name|Artifact
@@ -7523,7 +7532,7 @@ name|publish
 argument_list|(
 name|artifact
 argument_list|,
-name|srcArtifactPattern
+name|srcIvyPattern
 argument_list|,
 name|resolver
 argument_list|)
