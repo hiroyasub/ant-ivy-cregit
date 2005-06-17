@@ -235,7 +235,7 @@ name|Map
 name|_dependencies
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 specifier|private

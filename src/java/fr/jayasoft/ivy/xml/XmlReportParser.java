@@ -61,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|Date
 import|;
 end_import
 
@@ -71,7 +71,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Date
+name|List
 import|;
 end_import
 
@@ -281,7 +281,7 @@ argument_list|)
 throw|;
 block|}
 specifier|final
-name|Collection
+name|List
 name|artifacts
 init|=
 operator|new

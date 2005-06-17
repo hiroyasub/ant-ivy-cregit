@@ -51,7 +51,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
+name|Iterator
 import|;
 end_import
 
@@ -61,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|LinkedHashSet
 import|;
 end_import
 
@@ -145,6 +145,10 @@ name|XmlReportParser
 import|;
 end_import
 
+begin_comment
+comment|// TODO: refactor this class and IvyCacheFileset to extract common behaviour
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -177,6 +181,10 @@ decl_stmt|;
 specifier|private
 name|File
 name|_cache
+decl_stmt|;
+specifier|private
+name|String
+name|_type
 decl_stmt|;
 specifier|public
 name|String
@@ -308,6 +316,28 @@ block|{
 name|_pathid
 operator|=
 name|id
+expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getType
+parameter_list|()
+block|{
+return|return
+name|_type
+return|;
+block|}
+specifier|public
+name|void
+name|setType
+parameter_list|(
+name|String
+name|type
+parameter_list|)
+block|{
+name|_type
+operator|=
+name|type
 expr_stmt|;
 block|}
 comment|/**      * @deprecated use setPathid instead      * @param id      */
@@ -487,7 +517,7 @@ name|Collection
 name|all
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
@@ -572,6 +602,14 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|accept
+argument_list|(
+name|artifact
+argument_list|)
+condition|)
+block|{
 name|path
 operator|.
 name|createPathElement
@@ -589,6 +627,7 @@ name|artifact
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 catch|catch
@@ -612,6 +651,30 @@ name|ex
 argument_list|)
 throw|;
 block|}
+block|}
+specifier|private
+name|boolean
+name|accept
+parameter_list|(
+name|Artifact
+name|artifact
+parameter_list|)
+block|{
+return|return
+name|_type
+operator|==
+literal|null
+operator|||
+name|_type
+operator|.
+name|equals
+argument_list|(
+name|artifact
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+return|;
 block|}
 block|}
 end_class
