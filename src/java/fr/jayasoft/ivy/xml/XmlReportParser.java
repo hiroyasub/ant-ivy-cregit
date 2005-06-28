@@ -277,6 +277,10 @@ operator|+
 literal|" in "
 operator|+
 name|cache
+operator|+
+literal|": ivy was looking for "
+operator|+
+name|report
 argument_list|)
 throw|;
 block|}
