@@ -31,6 +31,11 @@ name|boolean
 name|isForce
 parameter_list|()
 function_decl|;
+comment|/**      * Used to indicate that this dependency is a changing one.      * A changing dependency in ivy means that the revision may have its artifacts modified      * without revision change. When new artifacts are published a new ivy file should also      * be published with a new publication date to indicate to ivy that artifacts have changed and that they       * should be downloaded again.       * @return true if this dependency is a changing one      */
+name|boolean
+name|isChanging
+parameter_list|()
+function_decl|;
 name|ModuleRevisionId
 name|getParentRevisionId
 parameter_list|()
