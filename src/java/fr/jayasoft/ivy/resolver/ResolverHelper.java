@@ -682,6 +682,13 @@ literal|": "
 operator|+
 name|e
 operator|.
+name|getClass
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|e
+operator|.
 name|getMessage
 argument_list|()
 argument_list|)
@@ -883,6 +890,13 @@ operator|+
 name|rep
 operator|+
 literal|": "
+operator|+
+name|e
+operator|.
+name|getClass
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|e
 operator|.
@@ -1702,6 +1716,13 @@ literal|": "
 operator|+
 name|e
 operator|.
+name|getClass
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|e
+operator|.
 name|getMessage
 argument_list|()
 argument_list|)
@@ -2244,6 +2265,13 @@ operator|+
 name|root
 operator|+
 literal|": "
+operator|+
+name|e
+operator|.
+name|getClass
+argument_list|()
+operator|+
+literal|" "
 operator|+
 name|e
 operator|.
