@@ -497,7 +497,7 @@ name|Resource
 name|resource
 parameter_list|,
 name|File
-name|ivyTempFile
+name|dest
 parameter_list|)
 throws|throws
 name|IOException
