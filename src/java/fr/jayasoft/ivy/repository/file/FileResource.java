@@ -122,6 +122,15 @@ name|getName
 argument_list|()
 return|;
 block|}
+specifier|public
+name|File
+name|getFile
+parameter_list|()
+block|{
+return|return
+name|_file
+return|;
+block|}
 block|}
 end_class
 
