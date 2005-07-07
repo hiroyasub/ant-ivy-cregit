@@ -36,6 +36,10 @@ name|boolean
 name|isChanging
 parameter_list|()
 function_decl|;
+name|boolean
+name|isTransitive
+parameter_list|()
+function_decl|;
 name|ModuleRevisionId
 name|getParentRevisionId
 parameter_list|()
