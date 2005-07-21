@@ -2293,6 +2293,53 @@ name|isExactRevision
 argument_list|()
 condition|)
 block|{
+comment|// IVY-56: check if revision has actually been resolved
+if|if
+condition|(
+operator|!
+name|_module
+operator|.
+name|getId
+argument_list|()
+operator|.
+name|isExactRevision
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|error
+argument_list|(
+literal|"impossible to resolve latest revision for "
+operator|+
+name|getId
+argument_list|()
+operator|+
+literal|": check your configuration and make sure revision is part of your pattern"
+argument_list|)
+expr_stmt|;
+name|_problem
+operator|=
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"impossible to resolve latest revision"
+argument_list|)
+expr_stmt|;
+name|_data
+operator|.
+name|getReport
+argument_list|()
+operator|.
+name|addDependency
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
 name|IvyNode
 name|resolved
 init|=
