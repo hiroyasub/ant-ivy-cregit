@@ -1408,6 +1408,15 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|rmr
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+operator|&&
 name|repLastModified
 operator|<=
 name|cacheLastModified
