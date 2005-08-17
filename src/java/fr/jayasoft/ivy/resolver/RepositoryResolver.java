@@ -595,6 +595,39 @@ name|pattern
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+operator|!
+name|found
+operator|.
+name|getResource
+argument_list|()
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\t"
+operator|+
+name|name
+operator|+
+literal|": resource not reachable for "
+operator|+
+name|mrid
+operator|+
+literal|": res="
+operator|+
+name|res
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 return|return
 name|found
 return|;
