@@ -292,6 +292,10 @@ decl_stmt|;
 specifier|private
 name|String
 name|_status
+init|=
+name|Status
+operator|.
+name|DEFAULT_STATUS
 decl_stmt|;
 specifier|private
 name|Date
@@ -417,7 +421,22 @@ throw|throw
 operator|new
 name|NullPointerException
 argument_list|(
-literal|"null module reivsion id not allowed"
+literal|"null module revision id not allowed"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"null status not allowed"
 argument_list|)
 throw|;
 block|}
