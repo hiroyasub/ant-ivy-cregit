@@ -189,7 +189,13 @@ literal|true
 decl_stmt|;
 static|static
 block|{
-comment|// _factory.setNamespaceAware(true);
+name|_validatingFactory
+operator|.
+name|setNamespaceAware
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|_validatingFactory
 operator|.
 name|setValidating
