@@ -1139,14 +1139,36 @@ block|}
 block|}
 if|if
 condition|(
-name|_module
-operator|==
-literal|null
-operator|||
 name|_organisation
 operator|==
 literal|null
-operator|||
+condition|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"no organisation provided for ivy deliver task: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|_module
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"no module name provided for ivy deliver task: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
 name|_revision
 operator|==
 literal|null
@@ -1156,7 +1178,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"empty or incomplete module revision id provided for deliver: either call resolve, give paramaters to deliver, or provide ivy.module, ivy.organisation and ivy.revision properties"
+literal|"no module revision provided for ivy deliver task: It can either be set explicitely via the attribute 'revision' or via 'ivy.revision' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}

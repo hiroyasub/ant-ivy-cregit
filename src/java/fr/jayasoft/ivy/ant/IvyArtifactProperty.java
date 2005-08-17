@@ -426,7 +426,18 @@ condition|(
 name|_organisation
 operator|==
 literal|null
-operator|||
+condition|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"no organisation provided for ivy artifactproperty: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
 name|_module
 operator|==
 literal|null
@@ -436,7 +447,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module id provided for ivy artifact property: either call resolve, give paramaters to ivy:retrieve, or provide ivy.module and ivy.organisation properties"
+literal|"no module name provided for ivy artifactproperty: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
