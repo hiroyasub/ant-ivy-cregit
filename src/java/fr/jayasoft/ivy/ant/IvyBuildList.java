@@ -240,6 +240,12 @@ init|=
 literal|true
 decl_stmt|;
 specifier|private
+name|boolean
+name|_skipBuildWithoutIvy
+init|=
+literal|false
+decl_stmt|;
+specifier|private
 name|String
 name|_ivyFilePath
 decl_stmt|;
@@ -453,6 +459,71 @@ argument_list|(
 name|buildFile
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|ivyFile
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|_skipBuildWithoutIvy
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"skipping "
+operator|+
+name|buildFile
+operator|+
+literal|": ivy file "
+operator|+
+name|ivyFile
+operator|+
+literal|" doesn't exist"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"no ivy file for "
+operator|+
+name|buildFile
+operator|+
+literal|": ivyfile="
+operator|+
+name|ivyFile
+operator|+
+literal|": adding it at the beginning of the path"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\t(set skipbuildwithoutivy to true if you don't want this file to be added to the path)"
+argument_list|)
+expr_stmt|;
+name|independent
+operator|.
+name|add
+argument_list|(
+name|buildFile
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
 try|try
 block|{
 name|ModuleDescriptor
@@ -547,6 +618,13 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"\t=> adding it at the beginning of the path"
+argument_list|)
+expr_stmt|;
 name|independent
 operator|.
 name|add
@@ -554,6 +632,7 @@ argument_list|(
 name|buildFile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -792,6 +871,28 @@ block|{
 name|_ivyFilePath
 operator|=
 name|ivyFilePath
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isSkipbuildwithoutivy
+parameter_list|()
+block|{
+return|return
+name|_skipBuildWithoutIvy
+return|;
+block|}
+specifier|public
+name|void
+name|setSkipbuildwithoutivy
+parameter_list|(
+name|boolean
+name|skipBuildFilesWithoutIvy
+parameter_list|)
+block|{
+name|_skipBuildWithoutIvy
+operator|=
+name|skipBuildFilesWithoutIvy
 expr_stmt|;
 block|}
 block|}
