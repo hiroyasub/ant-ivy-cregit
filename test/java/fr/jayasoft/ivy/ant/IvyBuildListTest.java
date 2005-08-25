@@ -251,7 +251,7 @@ name|File
 argument_list|(
 name|files
 index|[
-literal|0
+literal|1
 index|]
 argument_list|)
 operator|.
@@ -275,7 +275,7 @@ name|File
 argument_list|(
 name|files
 index|[
-literal|0
+literal|2
 index|]
 argument_list|)
 operator|.
