@@ -931,7 +931,7 @@ specifier|private
 name|boolean
 name|_useRemoteConfig
 init|=
-literal|true
+literal|false
 decl_stmt|;
 specifier|public
 name|Ivy
@@ -1294,7 +1294,7 @@ init|=
 operator|new
 name|URL
 argument_list|(
-literal|"http://ivy.jayasoft.org/repository.properties"
+literal|"http://www.jayasoft.org/ivy/repository.properties"
 argument_list|)
 decl_stmt|;
 name|Message
