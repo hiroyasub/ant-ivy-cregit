@@ -4798,6 +4798,8 @@ name|i
 index|]
 argument_list|,
 name|reportDate
+argument_list|,
+name|cache
 argument_list|)
 expr_stmt|;
 name|report
