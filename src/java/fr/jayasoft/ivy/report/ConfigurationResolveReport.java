@@ -450,7 +450,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-specifier|private
+comment|/**      * Returns all non evicted and non error dependency mrids      * @return all non evicted and non error dependency mrids      */
+specifier|public
 name|Set
 name|getModuleRevisionIds
 parameter_list|()
@@ -493,6 +494,24 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|node
+operator|.
+name|isEvicted
+argument_list|(
+name|getConfiguration
+argument_list|()
+argument_list|)
+operator|&&
+operator|!
+name|node
+operator|.
+name|hasProblem
+argument_list|()
+condition|)
+block|{
 name|mrids
 operator|.
 name|add
@@ -503,6 +522,7 @@ name|getResolvedId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|mrids
