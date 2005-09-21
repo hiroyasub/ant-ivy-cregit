@@ -321,7 +321,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent.      * This sort ensures that a ModuleDescriptor is always found in the list before all       * ModuleDescriptors depending directly on it.      * @param moduleDescriptors a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent.      * This sort ensures that a ModuleDescriptor is always found in the list before all       * ModuleDescriptors depending directly on it.      * @param moduleDescriptors a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException if a circular dependency exists      */
 specifier|public
 specifier|static
 name|List
@@ -330,6 +330,8 @@ parameter_list|(
 name|Collection
 name|moduleDescriptors
 parameter_list|)
+throws|throws
+name|CircularDependencyException
 block|{
 return|return
 operator|new
@@ -386,11 +388,13 @@ name|iterator
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Iterates over all modules calling sortModuleDescriptorsHelp.      * @return sorted module      */
+comment|/**      * Iterates over all modules calling sortModuleDescriptorsHelp.      * @return sorted module      * @throws CircularDependencyException      */
 specifier|public
 name|List
 name|sortModuleDescriptors
 parameter_list|()
+throws|throws
+name|CircularDependencyException
 block|{
 while|while
 condition|(
@@ -420,7 +424,7 @@ return|return
 name|sorted
 return|;
 block|}
-comment|/**      * If current module has already been added to list, returns,      * Otherwise invokes sortModuleDescriptorsHelp for all dependencies      * contained within set of moduleDescriptors.  Then finally adds self      * to list of sorted.      * @param current Current module to add to sorted list.      */
+comment|/**      * If current module has already been added to list, returns,      * Otherwise invokes sortModuleDescriptorsHelp for all dependencies      * contained within set of moduleDescriptors.  Then finally adds self      * to list of sorted.      * @param current Current module to add to sorted list.      * @throws CircularDependencyException      */
 specifier|private
 name|void
 name|sortModuleDescriptorsHelp
@@ -431,6 +435,8 @@ parameter_list|,
 name|Stack
 name|callStack
 parameter_list|)
+throws|throws
+name|CircularDependencyException
 block|{
 comment|//if already sorted return
 if|if
@@ -444,6 +450,44 @@ argument_list|)
 condition|)
 block|{
 return|return;
+block|}
+if|if
+condition|(
+name|callStack
+operator|.
+name|contains
+argument_list|(
+name|current
+argument_list|)
+condition|)
+block|{
+name|callStack
+operator|.
+name|add
+argument_list|(
+name|current
+argument_list|)
+expr_stmt|;
+throw|throw
+operator|new
+name|CircularDependencyException
+argument_list|(
+operator|(
+name|ModuleDescriptor
+index|[]
+operator|)
+name|callStack
+operator|.
+name|toArray
+argument_list|(
+operator|new
+name|ModuleDescriptor
+index|[
+literal|0
+index|]
+argument_list|)
+argument_list|)
+throw|;
 block|}
 name|DependencyDescriptor
 index|[]
@@ -495,14 +539,6 @@ condition|(
 name|moduleDescriptorDependency
 operator|!=
 literal|null
-operator|&&
-operator|!
-name|callStack
-operator|.
-name|contains
-argument_list|(
-name|current
-argument_list|)
 condition|)
 block|{
 name|callStack
