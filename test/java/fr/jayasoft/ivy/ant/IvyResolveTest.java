@@ -257,7 +257,7 @@ argument_list|(
 name|getIvy
 argument_list|()
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,

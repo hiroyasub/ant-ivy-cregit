@@ -388,7 +388,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -568,25 +568,11 @@ name|assertTrue
 argument_list|(
 name|ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
 name|mrid
-argument_list|)
-operator|.
-name|exists
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-operator|new
-name|File
-argument_list|(
-name|_cache
-argument_list|,
-literal|"mod1.1/ivy.xml"
 argument_list|)
 operator|.
 name|exists
@@ -758,7 +744,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -906,7 +892,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -1105,7 +1091,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -1252,7 +1238,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -1451,7 +1437,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -1650,7 +1636,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -1849,7 +1835,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -2047,7 +2033,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -2246,7 +2232,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -2445,7 +2431,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -2644,7 +2630,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -2892,7 +2878,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -3356,7 +3342,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -3607,7 +3593,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -3858,7 +3844,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -4211,7 +4197,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -4488,7 +4474,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -4845,7 +4831,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -5268,7 +5254,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -5517,7 +5503,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -5694,7 +5680,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -6030,7 +6016,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -7090,7 +7076,7 @@ name|assertTrue
 argument_list|(
 name|_ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
@@ -7349,7 +7335,7 @@ name|assertTrue
 argument_list|(
 name|ivy
 operator|.
-name|getIvyFileInCache
+name|getResolvedIvyFileInCache
 argument_list|(
 name|_cache
 argument_list|,
