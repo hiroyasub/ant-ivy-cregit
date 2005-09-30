@@ -106,6 +106,11 @@ index|[]
 name|getConfigurationsNames
 parameter_list|()
 function_decl|;
+name|String
+index|[]
+name|getPublicConfigurationsNames
+parameter_list|()
+function_decl|;
 name|Artifact
 index|[]
 name|getArtifacts

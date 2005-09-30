@@ -4853,6 +4853,8 @@ name|confs
 index|[
 name|i
 index|]
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|node
@@ -4873,8 +4875,6 @@ name|confs
 index|[
 name|i
 index|]
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -5194,9 +5194,6 @@ name|node
 parameter_list|,
 name|String
 name|conf
-parameter_list|,
-name|boolean
-name|shouldBePublic
 parameter_list|)
 block|{
 name|resolveConflict
@@ -5306,8 +5303,6 @@ name|confs
 index|[
 name|i
 index|]
-argument_list|,
-name|shouldBePublic
 argument_list|)
 expr_stmt|;
 block|}
@@ -5319,8 +5314,6 @@ argument_list|(
 name|node
 argument_list|,
 name|conf
-argument_list|,
-name|shouldBePublic
 argument_list|)
 expr_stmt|;
 block|}
@@ -5391,8 +5384,6 @@ argument_list|(
 name|selected
 argument_list|,
 name|conf
-argument_list|,
-name|shouldBePublic
 argument_list|)
 expr_stmt|;
 block|}
@@ -5407,9 +5398,6 @@ name|node
 parameter_list|,
 name|String
 name|conf
-parameter_list|,
-name|boolean
-name|shouldBePublic
 parameter_list|)
 block|{
 name|Configuration
@@ -5422,87 +5410,6 @@ argument_list|(
 name|conf
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|c
-operator|==
-literal|null
-condition|)
-block|{
-name|Message
-operator|.
-name|error
-argument_list|(
-literal|"configuration not found in "
-operator|+
-name|node
-operator|+
-literal|": "
-operator|+
-name|conf
-operator|+
-literal|". It was required from "
-operator|+
-name|node
-operator|.
-name|getParent
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|node
-operator|.
-name|getParentConf
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|c
-operator|.
-name|getVisibility
-argument_list|()
-operator|!=
-name|Configuration
-operator|.
-name|Visibility
-operator|.
-name|PUBLIC
-operator|&&
-name|shouldBePublic
-condition|)
-block|{
-name|Message
-operator|.
-name|error
-argument_list|(
-literal|"configuration not public in "
-operator|+
-name|node
-operator|+
-literal|": "
-operator|+
-name|c
-operator|+
-literal|". It was required from "
-operator|+
-name|node
-operator|.
-name|getParent
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|node
-operator|.
-name|getParentConf
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 comment|// we handle the case where the asked configuration extends others:
 comment|// we have to first fetch the extended configurations
 name|String
@@ -5561,8 +5468,6 @@ name|extendedConfs
 index|[
 name|i
 index|]
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -5693,8 +5598,6 @@ name|confs
 index|[
 name|i
 index|]
-argument_list|,
-name|shouldBePublic
 argument_list|)
 expr_stmt|;
 block|}
@@ -5732,11 +5635,8 @@ name|confs
 index|[
 name|i
 index|]
-argument_list|,
-name|shouldBePublic
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
