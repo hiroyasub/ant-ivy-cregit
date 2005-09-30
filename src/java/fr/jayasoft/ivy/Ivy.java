@@ -5760,6 +5760,10 @@ condition|(
 name|parent
 operator|==
 literal|null
+operator|||
+name|node
+operator|==
+name|parent
 condition|)
 block|{
 return|return;
