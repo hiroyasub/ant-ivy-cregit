@@ -6172,6 +6172,35 @@ decl_stmt|;
 if|if
 condition|(
 name|resolver
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\tresolver not found: "
+operator|+
+name|depMD
+operator|.
+name|getResolverName
+argument_list|()
+operator|+
+literal|" => trying to use default one for "
+operator|+
+name|mrid
+argument_list|)
+expr_stmt|;
+name|resolver
+operator|=
+name|getDefaultResolver
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|resolver
 operator|!=
 literal|null
 condition|)
