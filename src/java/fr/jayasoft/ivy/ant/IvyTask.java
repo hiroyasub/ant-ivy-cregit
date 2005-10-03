@@ -307,15 +307,6 @@ name|void
 name|ensureMessageInitialised
 parameter_list|()
 block|{
-if|if
-condition|(
-operator|!
-name|Message
-operator|.
-name|isInitialised
-argument_list|()
-condition|)
-block|{
 name|Message
 operator|.
 name|init
@@ -328,7 +319,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|protected
 name|void
