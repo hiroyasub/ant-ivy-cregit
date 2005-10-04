@@ -293,6 +293,8 @@ name|source
 argument_list|)
 argument_list|,
 name|destination
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -305,6 +307,9 @@ name|source
 parameter_list|,
 name|String
 name|destination
+parameter_list|,
+name|boolean
+name|overwrite
 parameter_list|)
 throws|throws
 name|IOException
@@ -329,6 +334,8 @@ name|getFile
 argument_list|(
 name|destination
 argument_list|)
+argument_list|,
+name|overwrite
 argument_list|)
 expr_stmt|;
 block|}
@@ -341,6 +348,9 @@ name|src
 parameter_list|,
 name|File
 name|destination
+parameter_list|,
+name|boolean
+name|overwrite
 parameter_list|)
 throws|throws
 name|IOException
@@ -356,6 +366,8 @@ argument_list|,
 name|destination
 argument_list|,
 name|_progress
+argument_list|,
+name|overwrite
 argument_list|)
 expr_stmt|;
 block|}

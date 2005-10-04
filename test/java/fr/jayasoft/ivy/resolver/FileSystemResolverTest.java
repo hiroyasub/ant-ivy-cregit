@@ -2646,6 +2646,8 @@ argument_list|(
 name|ivyArtifact
 argument_list|,
 name|src
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -2655,6 +2657,8 @@ argument_list|(
 name|artifact
 argument_list|,
 name|src
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertTrue
