@@ -123,6 +123,13 @@ name|_showProgress
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+specifier|static
+name|boolean
+name|_showedInfo
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 specifier|static
 name|void
@@ -157,6 +164,12 @@ specifier|static
 name|void
 name|showInfo
 parameter_list|()
+block|{
+if|if
+condition|(
+operator|!
+name|_showedInfo
+condition|)
 block|{
 name|Properties
 name|props
@@ -236,6 +249,11 @@ name|info
 argument_list|(
 literal|":: Ivy non official version :: http://ivy.jayasoft.org/ ::"
 argument_list|)
+expr_stmt|;
+block|}
+name|_showedInfo
+operator|=
+literal|true
 expr_stmt|;
 block|}
 block|}
