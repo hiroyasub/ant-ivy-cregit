@@ -398,7 +398,7 @@ literal|"WARN: "
 operator|+
 name|msg
 argument_list|,
-name|MSG_WARN
+name|MSG_VERBOSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -185,18 +185,46 @@ name|toString
 parameter_list|()
 block|{
 return|return
+literal|"[ "
+operator|+
 name|getModuleRevisionId
 argument_list|()
+operator|.
+name|getOrganisation
+argument_list|()
 operator|+
-literal|" "
+literal|" | "
+operator|+
+name|getModuleRevisionId
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" | "
+operator|+
+name|getModuleRevisionId
+argument_list|()
+operator|.
+name|getRevision
+argument_list|()
+operator|+
+literal|" :: "
 operator|+
 name|getName
 argument_list|()
 operator|+
-literal|"."
+literal|" . "
+operator|+
+name|getExt
+argument_list|()
+operator|+
+literal|" ( "
 operator|+
 name|getType
 argument_list|()
+operator|+
+literal|" ) ]"
 return|;
 block|}
 comment|/**      * @return Returns the artifactId.      */

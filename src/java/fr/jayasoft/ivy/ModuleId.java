@@ -174,11 +174,15 @@ name|toString
 parameter_list|()
 block|{
 return|return
+literal|"[ "
+operator|+
 name|_organisation
 operator|+
-literal|"/"
+literal|" | "
 operator|+
 name|_name
+operator|+
+literal|" ]"
 return|;
 block|}
 block|}

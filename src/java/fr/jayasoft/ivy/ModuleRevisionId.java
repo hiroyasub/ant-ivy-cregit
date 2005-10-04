@@ -245,11 +245,25 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_moduleId
+literal|"[ "
 operator|+
-literal|"-"
+name|_moduleId
+operator|.
+name|getOrganisation
+argument_list|()
+operator|+
+literal|" | "
+operator|+
+name|_moduleId
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" | "
 operator|+
 name|_revision
+operator|+
+literal|" ]"
 return|;
 block|}
 comment|/**      * Returns true if the given revision can be considered as a revision of this module revision id.      * This is the case if the revision is equal to the current revision, or if the      * current revision is a 'latest.' one, or if it is a xx+ one matching the given one.      * @param revision      * @return true if the given revision can be considered as a revision of this module revision id.      */
