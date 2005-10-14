@@ -745,7 +745,7 @@ name|assertEquals
 argument_list|(
 literal|"Wrong dependency graph message"
 argument_list|,
-literal|"org/md1-rev1->org/md4-rev4->org/md3-rev3->org/md2-rev2->org/md1-rev1"
+literal|"[ org | md1 | rev1 ]->[ org | md4 | rev4 ]->[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md1 | rev1 ]"
 argument_list|,
 name|e
 operator|.
@@ -841,7 +841,7 @@ name|assertEquals
 argument_list|(
 literal|"Wrong dependency graph message"
 argument_list|,
-literal|"org/md3-rev3->org/md2-rev2->org/md3-rev3"
+literal|"[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md3 | rev3 ]"
 argument_list|,
 name|e
 operator|.
