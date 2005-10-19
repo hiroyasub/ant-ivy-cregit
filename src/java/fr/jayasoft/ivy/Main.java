@@ -903,6 +903,16 @@ operator|new
 name|Ivy
 argument_list|()
 decl_stmt|;
+name|ivy
+operator|.
+name|addAllVariables
+argument_list|(
+name|System
+operator|.
+name|getProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|configureURLHandler
 argument_list|(
 name|line
