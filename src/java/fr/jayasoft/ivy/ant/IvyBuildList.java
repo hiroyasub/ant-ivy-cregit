@@ -257,6 +257,26 @@ name|Iterator
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -986,11 +1006,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// recursively process the nodes
-name|Collection
+name|Set
 name|toKeep
 init|=
 operator|new
-name|ArrayList
+name|HashSet
 argument_list|()
 decl_stmt|;
 name|processFilterNode
@@ -1056,7 +1076,7 @@ return|return
 name|toKeep
 return|;
 block|}
-comment|/**      * Adds the current node to the toKeep collection and then processes the each of the direct dependencies      * of this node that appear in the moduleIdMap (indicating that the dependency is part of this BuildList)      *      * @param node the node to be processed      * @param toKeep the collection of ModuleDescriptors that should be kept      * @param moduleIdMap reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
+comment|/**      * Adds the current node to the toKeep collection and then processes the each of the direct dependencies      * of this node that appear in the moduleIdMap (indicating that the dependency is part of this BuildList)      *      * @param node the node to be processed      * @param toKeep the set of ModuleDescriptors that should be kept      * @param moduleIdMap reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
 specifier|private
 name|void
 name|processFilterNode
@@ -1064,7 +1084,7 @@ parameter_list|(
 name|ModuleDescriptor
 name|node
 parameter_list|,
-name|Collection
+name|Set
 name|toKeep
 parameter_list|,
 name|Map
