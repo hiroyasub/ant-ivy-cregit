@@ -690,6 +690,11 @@ name|cachedPublicationDate
 init|=
 literal|null
 decl_stmt|;
+name|String
+name|cachedRevision
+init|=
+literal|null
+decl_stmt|;
 name|ModuleRevisionId
 name|mrid
 init|=
@@ -1312,6 +1317,19 @@ operator|+
 name|resolvedMrid
 argument_list|)
 expr_stmt|;
+name|cachedRevision
+operator|=
+name|rmr
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|getResolvedModuleRevisionId
+argument_list|()
+operator|.
+name|getRevision
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|dd
@@ -1713,7 +1731,12 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// check if publication date has changed
+comment|// check if we should delete old artifacts
+name|boolean
+name|deleteOldArtifacts
+init|=
+literal|false
+decl_stmt|;
 if|if
 condition|(
 name|cachedPublicationDate
@@ -1744,6 +1767,72 @@ operator|+
 literal|" has changed: deleting old artifacts"
 argument_list|)
 expr_stmt|;
+name|deleteOldArtifacts
+operator|=
+literal|true
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|cachedRevision
+operator|!=
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|cachedRevision
+operator|.
+name|equals
+argument_list|(
+name|md
+operator|.
+name|getResolvedModuleRevisionId
+argument_list|()
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
+condition|)
+block|{
+comment|// revision has changed, artifacts should be downloaded again
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"revision "
+operator|+
+name|dd
+operator|+
+literal|" has changed: deleting old artifacts"
+argument_list|)
+expr_stmt|;
+name|deleteOldArtifacts
+operator|=
+literal|true
+expr_stmt|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"revision "
+operator|+
+name|dd
+operator|+
+literal|" has not changed: keeping old artifacts"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|deleteOldArtifacts
+condition|)
+block|{
 name|String
 index|[]
 name|confs
