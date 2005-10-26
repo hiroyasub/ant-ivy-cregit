@@ -2028,7 +2028,7 @@ argument_list|,
 name|artifact
 argument_list|)
 operator|.
-name|getPath
+name|getCanonicalPath
 argument_list|()
 argument_list|)
 expr_stmt|;
