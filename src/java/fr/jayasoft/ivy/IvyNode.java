@@ -5561,6 +5561,14 @@ condition|(
 name|_rootModuleConf
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|_rootModuleConf
+operator|.
+name|equals
+argument_list|(
+name|rootModuleConf
+argument_list|)
 condition|)
 block|{
 name|_confsToFetch
