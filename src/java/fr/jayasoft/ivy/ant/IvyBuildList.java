@@ -322,6 +322,8 @@ decl_stmt|;
 specifier|private
 name|String
 name|_root
+init|=
+literal|"*"
 decl_stmt|;
 specifier|public
 name|void
@@ -665,10 +667,6 @@ expr_stmt|;
 if|if
 condition|(
 name|_root
-operator|!=
-literal|null
-operator|&&
-name|_root
 operator|.
 name|equals
 argument_list|(
@@ -765,9 +763,13 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
+literal|"*"
+operator|.
+name|equals
+argument_list|(
 name|_root
-operator|!=
-literal|null
+argument_list|)
 operator|&&
 name|rootModuleDescriptor
 operator|==
