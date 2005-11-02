@@ -1126,6 +1126,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+comment|// the token wasn't set, it's kept as is
+name|value
+operator|=
+literal|"["
+operator|+
+name|token
+operator|+
+literal|"]"
+expr_stmt|;
+block|}
 name|buffer
 operator|.
 name|append
