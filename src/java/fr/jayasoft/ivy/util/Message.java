@@ -445,6 +445,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// log in verbose mode because message is appended as a problem, and will be
+comment|// logged at the end at error level
 name|_impl
 operator|.
 name|log
