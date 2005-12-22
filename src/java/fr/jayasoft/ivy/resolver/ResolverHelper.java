@@ -759,6 +759,13 @@ argument_list|(
 name|parent
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|all
+operator|!=
+literal|null
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -884,6 +891,20 @@ argument_list|()
 index|]
 argument_list|)
 return|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\t\tno resources found"
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 block|}
 catch|catch
 parameter_list|(
