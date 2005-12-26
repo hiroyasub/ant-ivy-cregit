@@ -789,8 +789,6 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|_cache
-argument_list|,
 name|IvyPatternHelper
 operator|.
 name|substitute
