@@ -345,6 +345,20 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
+name|conflict
+operator|.
+name|StrictConflictManager
+import|;
+end_import
+
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
 name|filter
 operator|.
 name|Filter
@@ -1167,6 +1181,15 @@ literal|"all"
 argument_list|,
 operator|new
 name|NoConflictManager
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|addConflictManager
+argument_list|(
+literal|"strict"
+argument_list|,
+operator|new
+name|StrictConflictManager
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -7233,7 +7256,7 @@ block|}
 comment|/////////////////////////////////////////////////////////////////////////
 comment|//                         PUBLISH
 comment|/////////////////////////////////////////////////////////////////////////
-comment|/** 	 * delivers a resolved ivy file based upon last resolve call status and 	 * the given PublishingDependencyRevisionResolver. 	 * If resolve report file cannot be found in cache, then it throws  	 * an IllegalStateException (maybe resolve has not been called before ?) 	 * Moreover, the given PublishingDependencyRevisionResolver is used for each  	 * dependency to get its published information. This can particularly useful 	 * when the publish is made for a delivery, and when we wish to deliver each 	 * dependency which is still in integration. The PublishingDependencyRevisionResolver 	 * can then do the delivering work for the dependency and return the new (delivered) 	 * dependency info (with the delivered revision). Note that  	 * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency. 	 *       * @param status the new status, null to keep the old one 	 * @throws ParseException 	 */
+comment|/**      * delivers a resolved ivy file based upon last resolve call status and      * the given PublishingDependencyRevisionResolver.      * If resolve report file cannot be found in cache, then it throws       * an IllegalStateException (maybe resolve has not been called before ?)      * Moreover, the given PublishingDependencyRevisionResolver is used for each       * dependency to get its published information. This can particularly useful      * when the publish is made for a delivery, and when we wish to deliver each      * dependency which is still in integration. The PublishingDependencyRevisionResolver      * can then do the delivering work for the dependency and return the new (delivered)      * dependency info (with the delivered revision). Note that       * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *       * @param status the new status, null to keep the old one      * @throws ParseException      */
 specifier|public
 name|void
 name|deliver
