@@ -6482,8 +6482,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-try|try
-block|{
 comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3 !
 name|ResolveReport
 name|report
@@ -6517,20 +6515,14 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-name|fail
+name|assertTrue
 argument_list|(
-literal|"should have thrown a circular dependency exception"
+name|report
+operator|.
+name|hasError
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|e
-parameter_list|)
-block|{
-comment|//successfull
-block|}
 block|}
 specifier|public
 name|void
