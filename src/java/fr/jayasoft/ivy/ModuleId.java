@@ -30,6 +30,10 @@ specifier|private
 name|String
 name|_name
 decl_stmt|;
+specifier|private
+name|int
+name|_hash
+decl_stmt|;
 specifier|public
 name|ModuleId
 parameter_list|(
@@ -63,6 +67,12 @@ name|_name
 operator|=
 name|name
 expr_stmt|;
+name|_hash
+operator|=
+name|_hashCode
+argument_list|()
+expr_stmt|;
+comment|//stored for performance reasons, has code is very used in many maps
 block|}
 specifier|public
 name|String
@@ -135,6 +145,15 @@ block|}
 specifier|public
 name|int
 name|hashCode
+parameter_list|()
+block|{
+return|return
+name|_hash
+return|;
+block|}
+specifier|public
+name|int
+name|_hashCode
 parameter_list|()
 block|{
 name|int

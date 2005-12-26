@@ -61,6 +61,10 @@ specifier|private
 name|String
 name|_revision
 decl_stmt|;
+specifier|private
+name|int
+name|_hash
+decl_stmt|;
 specifier|public
 name|ModuleRevisionId
 parameter_list|(
@@ -79,6 +83,12 @@ name|_revision
 operator|=
 name|revision
 expr_stmt|;
+name|_hash
+operator|=
+name|_hashCode
+argument_list|()
+expr_stmt|;
+comment|//stored for performance reasons, has code is very used in many maps
 block|}
 specifier|public
 name|ModuleId
@@ -195,6 +205,15 @@ block|}
 specifier|public
 name|int
 name|hashCode
+parameter_list|()
+block|{
+return|return
+name|_hash
+return|;
+block|}
+specifier|public
+name|int
+name|_hashCode
 parameter_list|()
 block|{
 name|int

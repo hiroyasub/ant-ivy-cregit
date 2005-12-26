@@ -660,7 +660,7 @@ name|Exception
 block|{
 name|generateModules
 argument_list|(
-literal|40
+literal|70
 argument_list|,
 literal|2
 argument_list|,

@@ -6482,6 +6482,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+try|try
+block|{
 comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3 !
 name|ResolveReport
 name|report
@@ -6523,6 +6525,15 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|CircularDependencyException
+name|ex
+parameter_list|)
+block|{
+comment|// ok
+block|}
 block|}
 specifier|public
 name|void
