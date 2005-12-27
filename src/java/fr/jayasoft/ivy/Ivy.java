@@ -6034,6 +6034,73 @@ block|}
 else|else
 block|{
 comment|// node has been evicted for the current parent
+comment|// first we mark the selected nodes as selected if it isn't already the case
+for|for
+control|(
+name|Iterator
+name|iter
+init|=
+name|resolved
+operator|.
+name|iterator
+argument_list|()
+init|;
+name|iter
+operator|.
+name|hasNext
+argument_list|()
+condition|;
+control|)
+block|{
+name|IvyNode
+name|selected
+init|=
+operator|(
+name|IvyNode
+operator|)
+name|iter
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|selected
+operator|.
+name|isEvicted
+argument_list|(
+name|node
+operator|.
+name|getRootModuleConf
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|selected
+operator|.
+name|markSelected
+argument_list|(
+name|node
+operator|.
+name|getRootModuleConf
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"selecting "
+operator|+
+name|selected
+operator|+
+literal|" in "
+operator|+
+name|parent
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|// it's time to update parent resolved with found resolved...
 comment|// if they have not been recomputed, it does not change anything
 name|parent
