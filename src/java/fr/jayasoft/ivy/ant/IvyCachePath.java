@@ -119,6 +119,9 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
+name|prepareAndCheck
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|_pathid
