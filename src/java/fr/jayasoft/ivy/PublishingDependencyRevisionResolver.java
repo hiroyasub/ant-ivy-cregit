@@ -32,8 +32,11 @@ parameter_list|,
 name|String
 name|publishedStatus
 parameter_list|,
-name|ModuleDescriptor
-name|dependency
+name|ModuleRevisionId
+name|depMrid
+parameter_list|,
+name|String
+name|status
 parameter_list|)
 function_decl|;
 block|}

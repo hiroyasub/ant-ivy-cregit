@@ -15,7 +15,6 @@ end_package
 
 begin_class
 specifier|public
-specifier|final
 class|class
 name|DefaultPublishingDRResolver
 implements|implements
@@ -31,15 +30,15 @@ parameter_list|,
 name|String
 name|publishedStatus
 parameter_list|,
-name|ModuleDescriptor
-name|dependency
+name|ModuleRevisionId
+name|depMrid
+parameter_list|,
+name|String
+name|status
 parameter_list|)
 block|{
 return|return
-name|dependency
-operator|.
-name|getResolvedModuleRevisionId
-argument_list|()
+name|depMrid
 operator|.
 name|getRevision
 argument_list|()
