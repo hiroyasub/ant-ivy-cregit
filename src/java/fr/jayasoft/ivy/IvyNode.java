@@ -2764,9 +2764,17 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Message
+name|_confsToFetch
 operator|.
-name|error
+name|remove
+argument_list|(
+name|conf
+argument_list|)
+expr_stmt|;
+name|_problem
+operator|=
+operator|new
+name|RuntimeException
 argument_list|(
 literal|"configuration not found in "
 operator|+
@@ -2785,13 +2793,6 @@ literal|" "
 operator|+
 name|getParentConf
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|_confsToFetch
-operator|.
-name|remove
-argument_list|(
-name|conf
 argument_list|)
 expr_stmt|;
 return|return
@@ -2816,9 +2817,17 @@ operator|.
 name|PUBLIC
 condition|)
 block|{
-name|Message
+name|_confsToFetch
 operator|.
-name|error
+name|remove
+argument_list|(
+name|conf
+argument_list|)
+expr_stmt|;
+name|_problem
+operator|=
+operator|new
+name|RuntimeException
 argument_list|(
 literal|"configuration not public in "
 operator|+
@@ -2837,13 +2846,6 @@ literal|" "
 operator|+
 name|getParentConf
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|_confsToFetch
-operator|.
-name|remove
-argument_list|(
-name|conf
 argument_list|)
 expr_stmt|;
 return|return

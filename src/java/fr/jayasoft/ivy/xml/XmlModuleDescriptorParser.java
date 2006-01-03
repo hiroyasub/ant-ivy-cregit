@@ -425,6 +425,8 @@ block|,
 literal|"1.1"
 block|,
 literal|"1.2"
+block|,
+literal|"1.3"
 block|}
 argument_list|)
 decl_stmt|;
@@ -3235,9 +3237,7 @@ name|SAXParseException
 name|ex
 parameter_list|)
 block|{
-name|Message
-operator|.
-name|error
+name|addError
 argument_list|(
 literal|"xml parsing: "
 operator|+
