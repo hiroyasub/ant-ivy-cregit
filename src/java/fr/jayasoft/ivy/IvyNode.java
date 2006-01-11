@@ -3365,7 +3365,7 @@ operator|.
 name|getDescriptor
 argument_list|()
 operator|.
-name|getConfigurationsNames
+name|getPublicConfigurationsNames
 argument_list|()
 return|;
 block|}
