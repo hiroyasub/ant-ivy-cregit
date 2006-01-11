@@ -25,6 +25,20 @@ name|File
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|event
+operator|.
+name|IvyEvent
+import|;
+end_import
+
 begin_comment
 comment|/**  * TransferEvent is used to notify TransferListeners about progress in transfer  * of resources form/to the respository  *   * This class is LARGELY inspired by org.apache.maven.wagon.events.TransferEvent  * released under the following copyright license:  *   *<pre>  *   *  Copyright 2001-2005 The Apache Software Foundation.  *   *  Licensed under the Apache License, Version 2.0 (the&quot;License&quot;);  *  you may not use this file except in compliance with the License.  *  You may obtain a copy of the License at  *   *       http://www.apache.org/licenses/LICENSE-2.0  *   *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an&quot;AS IS&quot; BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *    *</pre>  *   * Orginal class written by Michal Maczka.  *   */
 end_comment
@@ -33,6 +47,8 @@ begin_class
 specifier|public
 class|class
 name|TransferEvent
+extends|extends
+name|IvyEvent
 block|{
 comment|/**      * A transfer was attempted, but has not yet commenced.      */
 specifier|public
@@ -133,6 +149,12 @@ decl_stmt|;
 specifier|private
 name|long
 name|_totalLength
+decl_stmt|;
+specifier|private
+name|boolean
+name|_isTotalLengthSet
+init|=
+literal|false
 decl_stmt|;
 specifier|public
 name|TransferEvent
@@ -506,6 +528,28 @@ block|{
 name|_exception
 operator|=
 name|exception
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isTotalLengthSet
+parameter_list|()
+block|{
+return|return
+name|_isTotalLengthSet
+return|;
+block|}
+specifier|public
+name|void
+name|setTotalLengthSet
+parameter_list|(
+name|boolean
+name|isTotalLengthSet
+parameter_list|)
+block|{
+name|_isTotalLengthSet
+operator|=
+name|isTotalLengthSet
 expr_stmt|;
 block|}
 block|}
