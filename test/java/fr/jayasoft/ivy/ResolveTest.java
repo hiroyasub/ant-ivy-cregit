@@ -5592,7 +5592,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod9.1 v 1.0 depends on
+comment|// mod10.1 v 1.0 depends on
 comment|//   - mod1.2 v 2.0 and forces it
 comment|//   - mod4.1 v 4.1 (which selects mod1.2 v 2.1 and evicts mod1.2 v 2.0)
 comment|// mod4.1 v 4.1 depends on
@@ -5687,6 +5687,152 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// conflicting dependencies
+name|assertTrue
+argument_list|(
+name|_ivy
+operator|.
+name|getIvyFileInCache
+argument_list|(
+name|_cache
+argument_list|,
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+literal|"org1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"2.0"
+argument_list|)
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|_ivy
+operator|.
+name|getArchiveFileInCache
+argument_list|(
+name|_cache
+argument_list|,
+literal|"org1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"2.0"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"jar"
+argument_list|,
+literal|"jar"
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+name|_ivy
+operator|.
+name|getIvyFileInCache
+argument_list|(
+name|_cache
+argument_list|,
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+literal|"org1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"2.1"
+argument_list|)
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+name|_ivy
+operator|.
+name|getArchiveFileInCache
+argument_list|(
+name|_cache
+argument_list|,
+literal|"org1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"2.1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"jar"
+argument_list|,
+literal|"jar"
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testResolveContradictoryConflictResolution2
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// BUG IVY-130 : only mod1.2 v2.0 should resolved and not v2.1 (because of force)
+comment|// mod10.1 v 1.1 depends on
+comment|//   - mod1.2 v 2.0 and forces it
+comment|//   - mod4.1 v 4.3
+comment|// mod4.1 v 4.3 depends on
+comment|//   - mod1.2 v 2.1
+comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+name|ResolveReport
+name|report
+init|=
+name|_ivy
+operator|.
+name|resolve
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/repositories/2/mod10.1/ivy-1.1.xml"
+argument_list|)
+operator|.
+name|toURL
+argument_list|()
+argument_list|,
+literal|null
+argument_list|,
+operator|new
+name|String
+index|[]
+block|{
+literal|"*"
+block|}
+argument_list|,
+name|_cache
+argument_list|,
+literal|null
+argument_list|,
+literal|true
+argument_list|)
+decl_stmt|;
 comment|// conflicting dependencies
 name|assertTrue
 argument_list|(
