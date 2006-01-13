@@ -558,12 +558,8 @@ name|_url
 operator|=
 name|Ivy
 operator|.
-name|class
-operator|.
-name|getResource
-argument_list|(
-literal|"ivyconf.xml"
-argument_list|)
+name|getDefaultConfigurationURL
+argument_list|()
 expr_stmt|;
 block|}
 block|}
