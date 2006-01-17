@@ -8622,6 +8622,8 @@ name|XmlModuleDescriptorUpdater
 operator|.
 name|update
 argument_list|(
+name|this
+argument_list|,
 name|ivyFileURL
 argument_list|,
 operator|new
@@ -8637,6 +8639,10 @@ argument_list|,
 name|revision
 argument_list|,
 name|pubdate
+argument_list|,
+literal|null
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}

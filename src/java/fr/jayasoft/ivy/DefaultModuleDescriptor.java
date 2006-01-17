@@ -318,7 +318,7 @@ name|Map
 name|_configurations
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 comment|// Map(String conf -> Configuration)
