@@ -9215,6 +9215,21 @@ return|;
 block|}
 else|else
 block|{
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"missing artifact "
+operator|+
+name|artifact
+operator|+
+literal|": "
+operator|+
+name|src
+operator|+
+literal|" file does not exist"
+argument_list|)
+expr_stmt|;
 return|return
 literal|false
 return|;
