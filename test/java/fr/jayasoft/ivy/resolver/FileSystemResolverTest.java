@@ -49,16 +49,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|Reader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Date
@@ -823,6 +813,21 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|//    public void testMaven2() throws Exception {
+comment|//        FileSystemResolver resolver = new FileSystemResolver();
+comment|//        resolver.setName("test");
+comment|//        resolver.setIvy(_ivy);
+comment|//        resolver.setM2compatible(true);
+comment|//        assertEquals("test", resolver.getName());
+comment|//
+comment|//        resolver.addIvyPattern("test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]");
+comment|//        resolver.addArtifactPattern("test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]");
+comment|//
+comment|//        ModuleRevisionId mrid = ModuleRevisionId.newInstance("fr.jayasoft", "test", "1.0");
+comment|//        ResolvedModuleRevision rmr = resolver.getDependency(new DefaultDependencyDescriptor(mrid, false), _data);
+comment|//        assertNotNull(rmr);
+comment|//    }
+comment|//
 specifier|public
 name|void
 name|testCheckModified

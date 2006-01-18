@@ -273,8 +273,6 @@ operator|.
 name|getTime
 argument_list|()
 argument_list|,
-literal|"myresolver"
-argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;

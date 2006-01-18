@@ -71,17 +71,6 @@ name|publicationDate
 parameter_list|)
 function_decl|;
 name|String
-name|getResolverName
-parameter_list|()
-function_decl|;
-name|void
-name|setResolverName
-parameter_list|(
-name|String
-name|resolverName
-parameter_list|)
-function_decl|;
-name|String
 name|getStatus
 parameter_list|()
 function_decl|;

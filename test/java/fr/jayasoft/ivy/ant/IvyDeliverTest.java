@@ -464,6 +464,9 @@ name|md
 init|=
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
@@ -875,6 +878,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(

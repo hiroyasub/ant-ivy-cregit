@@ -266,6 +266,9 @@ name|md
 init|=
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 name|_ivy
@@ -464,6 +467,9 @@ try|try
 block|{
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 name|_ivy
@@ -505,6 +511,9 @@ name|ParseException
 block|{
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 name|_ivy
@@ -531,6 +540,9 @@ block|{
 try|try
 block|{
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -573,6 +585,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -3326,6 +3341,9 @@ name|md
 init|=
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 name|_ivy
@@ -3487,6 +3505,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -3650,6 +3671,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -3845,6 +3869,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -4088,6 +4115,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -4360,6 +4390,9 @@ name|md
 init|=
 name|XmlModuleDescriptorParser
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|parseDescriptor
 argument_list|(
 name|_ivy
@@ -4609,6 +4642,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -4914,6 +4950,9 @@ name|ModuleDescriptor
 name|md
 init|=
 name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
