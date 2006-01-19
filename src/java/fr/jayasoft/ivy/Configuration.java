@@ -115,6 +115,15 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|_name
+return|;
+block|}
 block|}
 specifier|private
 name|String

@@ -813,21 +813,103 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|//    public void testMaven2() throws Exception {
-comment|//        FileSystemResolver resolver = new FileSystemResolver();
-comment|//        resolver.setName("test");
-comment|//        resolver.setIvy(_ivy);
-comment|//        resolver.setM2compatible(true);
-comment|//        assertEquals("test", resolver.getName());
-comment|//
-comment|//        resolver.addIvyPattern("test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]");
-comment|//        resolver.addArtifactPattern("test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]");
-comment|//
-comment|//        ModuleRevisionId mrid = ModuleRevisionId.newInstance("fr.jayasoft", "test", "1.0");
-comment|//        ResolvedModuleRevision rmr = resolver.getDependency(new DefaultDependencyDescriptor(mrid, false), _data);
-comment|//        assertNotNull(rmr);
-comment|//    }
-comment|//
+specifier|public
+name|void
+name|testMaven2
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|FileSystemResolver
+name|resolver
+init|=
+operator|new
+name|FileSystemResolver
+argument_list|()
+decl_stmt|;
+name|resolver
+operator|.
+name|setName
+argument_list|(
+literal|"test"
+argument_list|)
+expr_stmt|;
+name|resolver
+operator|.
+name|setIvy
+argument_list|(
+name|_ivy
+argument_list|)
+expr_stmt|;
+name|resolver
+operator|.
+name|setM2compatible
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"test"
+argument_list|,
+name|resolver
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|resolver
+operator|.
+name|addIvyPattern
+argument_list|(
+literal|"test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
+argument_list|)
+expr_stmt|;
+name|resolver
+operator|.
+name|addArtifactPattern
+argument_list|(
+literal|"test/repositories/m2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
+argument_list|)
+expr_stmt|;
+name|ModuleRevisionId
+name|mrid
+init|=
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+literal|"fr.jayasoft"
+argument_list|,
+literal|"test"
+argument_list|,
+literal|"1.0"
+argument_list|)
+decl_stmt|;
+name|ResolvedModuleRevision
+name|rmr
+init|=
+name|resolver
+operator|.
+name|getDependency
+argument_list|(
+operator|new
+name|DefaultDependencyDescriptor
+argument_list|(
+name|mrid
+argument_list|,
+literal|false
+argument_list|)
+argument_list|,
+name|_data
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|rmr
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|testCheckModified

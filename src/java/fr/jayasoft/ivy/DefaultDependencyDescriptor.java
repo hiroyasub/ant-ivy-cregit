@@ -79,6 +79,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -455,9 +465,6 @@ index|[]
 name|getModuleConfigurations
 parameter_list|()
 block|{
-comment|//        if (_confs.isEmpty()) { // if no conf has been defined then all confs are required in all confs
-comment|//            return new String[] {"*"};
-comment|//        }
 return|return
 operator|(
 name|String
@@ -493,9 +500,6 @@ name|String
 name|moduleConfiguration
 parameter_list|)
 block|{
-comment|//	    if (_confs.isEmpty()) { // if no conf has been defined then all confs are required in all confs
-comment|//	        return new String[] {"*"};
-comment|//	    }
 name|List
 name|confs
 init|=
@@ -522,11 +526,11 @@ argument_list|(
 literal|"*"
 argument_list|)
 decl_stmt|;
-name|List
+name|Collection
 name|ret
 init|=
 operator|new
-name|ArrayList
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 if|if
@@ -577,6 +581,25 @@ name|moduleConfiguration
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|ret
+operator|.
+name|contains
+argument_list|(
+literal|"*"
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|String
+index|[]
+block|{
+literal|"*"
+block|}
+return|;
+block|}
 return|return
 operator|(
 name|String
@@ -611,7 +634,7 @@ name|Set
 name|confs
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
@@ -1130,6 +1153,17 @@ name|confs
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|confs
+operator|.
+name|contains
+argument_list|(
+name|depConf
+argument_list|)
+condition|)
+block|{
 name|confs
 operator|.
 name|add
@@ -1137,6 +1171,7 @@ argument_list|(
 name|depConf
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
