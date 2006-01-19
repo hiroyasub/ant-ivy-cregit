@@ -6115,7 +6115,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"unknown configuration '"
+literal|"configuration not found '"
 operator|+
 name|conf
 operator|+
@@ -6143,7 +6143,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"it was asked from "
+literal|"it was required from "
 operator|+
 name|node
 operator|.
@@ -11215,6 +11215,35 @@ parameter_list|()
 block|{
 return|return
 name|_cacheDataFilePattern
+return|;
+block|}
+specifier|public
+name|boolean
+name|logModuleWhenFound
+parameter_list|()
+block|{
+name|String
+name|var
+init|=
+name|getVariable
+argument_list|(
+literal|"ivy.log.module.when.found"
+argument_list|)
+decl_stmt|;
+return|return
+name|var
+operator|==
+literal|null
+operator|||
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|var
+argument_list|)
+operator|.
+name|booleanValue
+argument_list|()
 return|;
 block|}
 block|}
