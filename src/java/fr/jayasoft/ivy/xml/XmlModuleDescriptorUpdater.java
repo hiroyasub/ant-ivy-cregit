@@ -1199,7 +1199,7 @@ literal|"\""
 argument_list|)
 expr_stmt|;
 block|}
-comment|// add defaultconf mapping if needed
+comment|// add default conf mapping if needed
 if|if
 condition|(
 name|_defaultConfMapping
@@ -1210,7 +1210,7 @@ name|attributes
 operator|.
 name|getValue
 argument_list|(
-literal|"defaultconf"
+literal|"defaultconfmapping"
 argument_list|)
 operator|==
 literal|null
@@ -1220,7 +1220,7 @@ name|out
 operator|.
 name|print
 argument_list|(
-literal|" defaultconf=\""
+literal|" defaultconfmapping=\""
 operator|+
 name|_defaultConfMapping
 operator|+
