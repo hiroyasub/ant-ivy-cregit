@@ -99,6 +99,36 @@ name|DependencyResolver
 name|resolver
 parameter_list|)
 block|{
+if|if
+condition|(
+name|mr
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"null module revision not allowed"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|resolver
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"null resolver not allowed"
+argument_list|)
+throw|;
+block|}
 name|_mr
 operator|=
 name|mr

@@ -558,6 +558,10 @@ if|if
 condition|(
 name|isDual
 argument_list|()
+operator|&&
+name|mr
+operator|!=
+literal|null
 condition|)
 block|{
 return|return

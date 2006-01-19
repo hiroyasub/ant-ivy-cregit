@@ -376,6 +376,27 @@ block|{
 operator|new
 name|Configuration
 argument_list|(
+literal|"default"
+argument_list|,
+name|Visibility
+operator|.
+name|PUBLIC
+argument_list|,
+literal|"runtime dependencies and master artifact can be used with this conf"
+argument_list|,
+operator|new
+name|String
+index|[]
+block|{
+literal|"runtime"
+block|,
+literal|"master"
+block|}
+argument_list|)
+block|,
+operator|new
+name|Configuration
+argument_list|(
 literal|"master"
 argument_list|,
 name|Visibility

@@ -1226,6 +1226,16 @@ name|Message
 operator|.
 name|debug
 argument_list|(
+literal|"\t\tm2compatible: "
+operator|+
+name|isM2compatible
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
 literal|"\t\tivy patterns:"
 argument_list|)
 expr_stmt|;
@@ -1234,7 +1244,8 @@ control|(
 name|ListIterator
 name|iter
 init|=
-name|_ivyPatterns
+name|getIvyPatterns
+argument_list|()
 operator|.
 name|listIterator
 argument_list|()
@@ -1279,7 +1290,8 @@ control|(
 name|ListIterator
 name|iter
 init|=
-name|_artifactPatterns
+name|getArtifactPatterns
+argument_list|()
 operator|.
 name|listIterator
 argument_list|()

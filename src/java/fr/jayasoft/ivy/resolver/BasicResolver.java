@@ -1853,8 +1853,6 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"dependency "
-operator|+
 name|dd
 operator|+
 literal|" has changed: deleting old artifacts"
@@ -1992,8 +1990,6 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"dependency "
-operator|+
 name|dd
 operator|+
 literal|" is changing, but has not changed: will trust cached artifacts if any"
@@ -2556,6 +2552,9 @@ block|{
 name|_ivyattempts
 operator|.
 name|clear
+argument_list|()
+expr_stmt|;
+name|clearArtifactAttempts
 argument_list|()
 expr_stmt|;
 block|}
