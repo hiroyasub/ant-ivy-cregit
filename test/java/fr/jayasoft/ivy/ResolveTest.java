@@ -5794,7 +5794,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// BUG IVY-130 : only mod1.2 v2.0 should resolved and not v2.1 (because of force)
+comment|// BUG IVY-130 : only mod1.2 v2.0 should be resolved and not v2.1 (because of force)
 comment|// mod10.1 v 1.1 depends on
 comment|//   - mod1.2 v 2.0 and forces it
 comment|//   - mod4.1 v 4.3
@@ -5929,6 +5929,98 @@ literal|"jar"
 argument_list|)
 operator|.
 name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testResolveContradictoryConflictResolution3
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// mod 1.2 v2.0 should be selected (despite conflict manager in 4.1, because of force in 10.1)
+comment|// mod10.1 v 1.3 depends on
+comment|//   - mod1.2 v 2.0 and forces it
+comment|//   - mod4.1 v 4.4
+comment|// mod4.1 v 4.4 depends on
+comment|//   - mod1.2 v 2.0 but selects mod1.2 v 2.1
+comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+name|ResolveReport
+name|report
+init|=
+name|_ivy
+operator|.
+name|resolve
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/repositories/2/mod10.1/ivy-1.3.xml"
+argument_list|)
+operator|.
+name|toURL
+argument_list|()
+argument_list|,
+literal|null
+argument_list|,
+operator|new
+name|String
+index|[]
+block|{
+literal|"*"
+block|}
+argument_list|,
+name|_cache
+argument_list|,
+literal|null
+argument_list|,
+literal|true
+argument_list|)
+decl_stmt|;
+name|IvyNode
+index|[]
+name|evicted
+init|=
+name|report
+operator|.
+name|getConfigurationReport
+argument_list|(
+literal|"default"
+argument_list|)
+operator|.
+name|getEvictedNodes
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|evicted
+operator|.
+name|length
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+literal|"org1"
+argument_list|,
+literal|"mod1.2"
+argument_list|,
+literal|"2.1"
+argument_list|)
+argument_list|,
+name|evicted
+index|[
+literal|0
+index|]
+operator|.
+name|getResolvedId
 argument_list|()
 argument_list|)
 expr_stmt|;
