@@ -546,7 +546,7 @@ name|put
 argument_list|(
 literal|"compile"
 argument_list|,
-literal|"compile->@,master;runtime->@"
+literal|"compile->@(*),master(*);runtime->@(*)"
 argument_list|)
 expr_stmt|;
 name|MAVEN2_CONF_MAPPING
@@ -555,7 +555,7 @@ name|put
 argument_list|(
 literal|"provided"
 argument_list|,
-literal|"provided->compile,provided,runtime,master"
+literal|"provided->compile(*),provided(*),runtime(*),master(*)"
 argument_list|)
 expr_stmt|;
 name|MAVEN2_CONF_MAPPING
@@ -564,7 +564,7 @@ name|put
 argument_list|(
 literal|"runtime"
 argument_list|,
-literal|"runtime->compile,runtime,master"
+literal|"runtime->compile(*),runtime(*),master(*)"
 argument_list|)
 expr_stmt|;
 name|MAVEN2_CONF_MAPPING
@@ -573,7 +573,7 @@ name|put
 argument_list|(
 literal|"test"
 argument_list|,
-literal|"test->compile,runtime,master"
+literal|"test->compile(*),runtime(*),master(*)"
 argument_list|)
 expr_stmt|;
 name|MAVEN2_CONF_MAPPING
@@ -582,7 +582,7 @@ name|put
 argument_list|(
 literal|"system"
 argument_list|,
-literal|"system->master"
+literal|"system->master(*)"
 argument_list|)
 expr_stmt|;
 block|}
