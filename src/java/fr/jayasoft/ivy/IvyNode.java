@@ -2582,6 +2582,52 @@ name|getModuleId
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|resolver
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|error
+argument_list|(
+literal|"no resolver found for "
+operator|+
+name|getModuleId
+argument_list|()
+operator|+
+literal|": check your configuration"
+argument_list|)
+expr_stmt|;
+name|_problem
+operator|=
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"no resolver found for "
+operator|+
+name|getModuleId
+argument_list|()
+operator|+
+literal|": check your configuration"
+argument_list|)
+expr_stmt|;
+name|_data
+operator|.
+name|getReport
+argument_list|()
+operator|.
+name|addDependency
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
 try|try
 block|{
 name|Message
@@ -2920,6 +2966,14 @@ name|getId
 argument_list|()
 operator|.
 name|isExactRevision
+argument_list|()
+operator|&&
+name|_data
+operator|.
+name|getIvy
+argument_list|()
+operator|.
+name|logResolvedRevision
 argument_list|()
 condition|)
 block|{
