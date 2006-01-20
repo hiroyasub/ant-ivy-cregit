@@ -51,16 +51,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashSet
 import|;
 end_import
@@ -72,6 +62,16 @@ operator|.
 name|util
 operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedHashMap
 import|;
 end_import
 
@@ -127,7 +127,7 @@ name|Map
 name|_confReports
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 specifier|public
