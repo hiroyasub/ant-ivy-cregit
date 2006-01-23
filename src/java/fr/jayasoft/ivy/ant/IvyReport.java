@@ -1349,7 +1349,7 @@ name|getAbsolutePath
 argument_list|()
 return|;
 block|}
-specifier|protected
+specifier|public
 name|boolean
 name|isXml
 parameter_list|()
@@ -1358,7 +1358,7 @@ return|return
 name|_xml
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setXml
 parameter_list|(
@@ -1371,7 +1371,7 @@ operator|=
 name|xml
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|boolean
 name|isXsl
 parameter_list|()
@@ -1380,7 +1380,7 @@ return|return
 name|_xsl
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setXsl
 parameter_list|(

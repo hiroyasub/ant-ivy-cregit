@@ -416,7 +416,7 @@ operator|=
 name|overwrite
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getFrom
 parameter_list|()
@@ -425,7 +425,7 @@ return|return
 name|_from
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setFrom
 parameter_list|(
@@ -438,7 +438,7 @@ operator|=
 name|from
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getTo
 parameter_list|()
@@ -447,7 +447,7 @@ return|return
 name|_to
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setTo
 parameter_list|(
@@ -460,7 +460,7 @@ operator|=
 name|to
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|boolean
 name|isTransitive
 parameter_list|()
@@ -469,7 +469,7 @@ return|return
 name|_transitive
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setTransitive
 parameter_list|(
@@ -482,7 +482,7 @@ operator|=
 name|transitive
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getType
 parameter_list|()
@@ -491,7 +491,7 @@ return|return
 name|_type
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setType
 parameter_list|(
