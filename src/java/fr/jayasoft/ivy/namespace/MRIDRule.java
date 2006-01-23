@@ -33,6 +33,37 @@ name|String
 name|_rev
 decl_stmt|;
 specifier|public
+name|MRIDRule
+parameter_list|(
+name|String
+name|org
+parameter_list|,
+name|String
+name|mod
+parameter_list|,
+name|String
+name|rev
+parameter_list|)
+block|{
+name|_org
+operator|=
+name|org
+expr_stmt|;
+name|_module
+operator|=
+name|mod
+expr_stmt|;
+name|_rev
+operator|=
+name|rev
+expr_stmt|;
+block|}
+specifier|public
+name|MRIDRule
+parameter_list|()
+block|{
+block|}
+specifier|public
 name|String
 name|getModule
 parameter_list|()
@@ -104,6 +135,8 @@ name|toString
 parameter_list|()
 block|{
 return|return
+literal|"[ "
+operator|+
 name|_org
 operator|+
 literal|" "
@@ -111,6 +144,10 @@ operator|+
 name|_module
 operator|+
 literal|" "
+operator|+
+name|_rev
+operator|+
+literal|" ]"
 return|;
 block|}
 block|}

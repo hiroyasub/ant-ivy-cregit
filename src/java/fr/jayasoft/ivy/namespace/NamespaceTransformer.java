@@ -40,6 +40,11 @@ name|ModuleRevisionId
 name|mrid
 parameter_list|)
 function_decl|;
+specifier|public
+name|boolean
+name|isIdentity
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
