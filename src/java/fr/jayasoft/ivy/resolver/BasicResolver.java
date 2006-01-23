@@ -1764,6 +1764,17 @@ argument_list|()
 operator|!=
 literal|null
 operator|&&
+operator|!
+name|ivyRef
+operator|.
+name|getRevision
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"working@"
+argument_list|)
+operator|&&
 name|md
 operator|.
 name|getModuleRevisionId
