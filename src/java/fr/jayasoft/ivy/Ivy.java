@@ -8245,6 +8245,24 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|":: install resolution report ::"
+argument_list|)
+expr_stmt|;
+comment|// output report
+name|report
+operator|.
+name|output
+argument_list|(
+name|getReportOutputters
+argument_list|()
+argument_list|,
+name|cache
+argument_list|)
+expr_stmt|;
 return|return
 name|report
 return|;
