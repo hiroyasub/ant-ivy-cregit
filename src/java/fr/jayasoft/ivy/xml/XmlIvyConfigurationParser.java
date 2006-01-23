@@ -260,6 +260,8 @@ index|[]
 block|{
 literal|"resolvers"
 block|,
+literal|"namespaces"
+block|,
 literal|"latest-strategies"
 block|,
 literal|"conflict-managers"
