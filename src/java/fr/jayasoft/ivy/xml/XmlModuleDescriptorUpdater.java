@@ -117,6 +117,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Stack
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|xml
@@ -336,7 +346,7 @@ name|pubdate
 parameter_list|,
 specifier|final
 name|boolean
-name|replaceImport
+name|replaceInclude
 parameter_list|)
 throws|throws
 name|IOException
@@ -428,6 +438,14 @@ init|=
 literal|null
 decl_stmt|;
 comment|// used to know if the last open tag was empty, to adjust termination with /> instead of></qName>
+specifier|private
+name|Stack
+name|_context
+init|=
+operator|new
+name|Stack
+argument_list|()
+decl_stmt|;
 specifier|public
 name|void
 name|startElement
@@ -462,6 +480,13 @@ literal|">"
 argument_list|)
 expr_stmt|;
 block|}
+name|_context
+operator|.
+name|push
+argument_list|(
+name|qName
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 literal|"info"
@@ -670,13 +695,20 @@ block|}
 block|}
 if|else if
 condition|(
-name|replaceImport
+name|replaceInclude
 operator|&&
-literal|"import"
+literal|"include"
 operator|.
 name|equals
 argument_list|(
 name|qName
+argument_list|)
+operator|&&
+name|_context
+operator|.
+name|contains
+argument_list|(
+literal|"configurations"
 argument_list|)
 condition|)
 block|{
@@ -1439,6 +1471,11 @@ block|}
 name|_justOpen
 operator|=
 literal|null
+expr_stmt|;
+name|_context
+operator|.
+name|pop
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public

@@ -1055,7 +1055,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|String
-name|overwrite
+name|override
 init|=
 name|_ivy
 operator|.
@@ -1068,7 +1068,7 @@ name|attributes
 operator|.
 name|get
 argument_list|(
-literal|"overwrite"
+literal|"override"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1110,7 +1110,7 @@ name|name
 argument_list|,
 name|value
 argument_list|,
-name|overwrite
+name|override
 operator|==
 literal|null
 condition|?
@@ -1120,7 +1120,7 @@ name|Boolean
 operator|.
 name|valueOf
 argument_list|(
-name|overwrite
+name|override
 argument_list|)
 operator|.
 name|booleanValue
@@ -1157,7 +1157,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|String
-name|overwrite
+name|override
 init|=
 name|_ivy
 operator|.
@@ -1170,7 +1170,7 @@ name|attributes
 operator|.
 name|get
 argument_list|(
-literal|"overwrite"
+literal|"override"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1195,7 +1195,7 @@ argument_list|(
 name|propFilePath
 argument_list|)
 argument_list|,
-name|overwrite
+name|override
 operator|==
 literal|null
 condition|?
@@ -1205,7 +1205,7 @@ name|Boolean
 operator|.
 name|valueOf
 argument_list|(
-name|overwrite
+name|override
 argument_list|)
 operator|.
 name|booleanValue
@@ -1238,7 +1238,7 @@ argument_list|(
 name|propFilePath
 argument_list|)
 argument_list|,
-name|overwrite
+name|override
 operator|==
 literal|null
 condition|?
@@ -1248,7 +1248,7 @@ name|Boolean
 operator|.
 name|valueOf
 argument_list|(
-name|overwrite
+name|override
 argument_list|)
 operator|.
 name|booleanValue
