@@ -4462,6 +4462,19 @@ argument_list|(
 name|res
 argument_list|)
 decl_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"using "
+operator|+
+name|parser
+operator|+
+literal|" to parse "
+operator|+
+name|ivySource
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|ModuleDescriptor
