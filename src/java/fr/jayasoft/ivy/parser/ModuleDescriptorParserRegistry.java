@@ -61,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
+name|Iterator
 import|;
 end_import
 
@@ -71,7 +71,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|LinkedList
 import|;
 end_import
 
@@ -198,7 +198,7 @@ name|List
 name|_parsers
 init|=
 operator|new
-name|ArrayList
+name|LinkedList
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -223,6 +223,26 @@ name|XmlModuleDescriptorParser
 operator|.
 name|getInstance
 argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Adds a the given parser to this registry.      *       * @param parser the parser to add      */
+specifier|public
+name|void
+name|addParser
+parameter_list|(
+name|ModuleDescriptorParser
+name|parser
+parameter_list|)
+block|{
+comment|/*     	 * The parser is added in the front of the list of parsers. This is necessary because     	 * the XmlModuleDescriptorParser accepts all resources!     	 */
+name|_parsers
+operator|.
+name|add
+argument_list|(
+literal|0
+argument_list|,
+name|parser
 argument_list|)
 expr_stmt|;
 block|}
