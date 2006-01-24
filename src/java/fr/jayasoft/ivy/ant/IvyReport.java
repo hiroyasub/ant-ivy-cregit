@@ -551,6 +551,11 @@ name|_todir
 operator|!=
 literal|null
 operator|&&
+name|_todir
+operator|.
+name|exists
+argument_list|()
+operator|&&
 operator|!
 name|_todir
 operator|.
