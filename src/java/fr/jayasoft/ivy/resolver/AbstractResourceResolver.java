@@ -346,40 +346,9 @@ name|getDate
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|rres
-operator|==
-literal|null
-operator|&&
-name|isM2compatible
-argument_list|()
-condition|)
-block|{
-name|rres
-operator|=
-name|findResourceUsingPatterns
-argument_list|(
-name|mrid
-argument_list|,
-name|_ivyPatterns
-argument_list|,
-name|mrid
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-literal|"pom"
-argument_list|,
-literal|"pom"
-argument_list|,
-name|data
-operator|.
-name|getDate
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
+comment|//        if (rres == null&& isM2compatible()) {
+comment|//            rres = findResourceUsingPatterns(mrid, _ivyPatterns, mrid.getName(), "pom", "pom", data.getDate());
+comment|//        }
 return|return
 name|rres
 return|;
@@ -1347,7 +1316,7 @@ operator|=
 name|m2compatible
 expr_stmt|;
 block|}
-specifier|private
+specifier|protected
 name|ModuleRevisionId
 name|convertM2IdForResourceSearch
 parameter_list|(
