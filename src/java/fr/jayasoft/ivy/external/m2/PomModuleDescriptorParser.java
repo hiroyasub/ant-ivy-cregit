@@ -1154,10 +1154,7 @@ name|ArtifactId
 argument_list|(
 name|mid
 argument_list|,
-name|mid
-operator|.
-name|getName
-argument_list|()
+literal|".*"
 argument_list|,
 literal|".*"
 argument_list|,
