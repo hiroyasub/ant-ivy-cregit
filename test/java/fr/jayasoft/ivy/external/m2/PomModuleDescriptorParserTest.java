@@ -1708,7 +1708,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertDependencyArtifactsExcludes
+name|assertDependencyModulesExcludes
 argument_list|(
 name|dds
 index|[
@@ -1732,7 +1732,7 @@ literal|"jaxen"
 block|}
 argument_list|)
 expr_stmt|;
-name|assertDependencyArtifactsExcludes
+name|assertDependencyModulesExcludes
 argument_list|(
 name|dds
 index|[
