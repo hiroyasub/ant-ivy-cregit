@@ -5816,6 +5816,8 @@ name|confs
 index|[
 name|i
 index|]
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -6135,6 +6137,9 @@ name|node
 parameter_list|,
 name|String
 name|conf
+parameter_list|,
+name|boolean
+name|shouldBePublic
 parameter_list|)
 block|{
 name|long
@@ -6176,6 +6181,8 @@ operator|.
 name|loadData
 argument_list|(
 name|conf
+argument_list|,
+name|shouldBePublic
 argument_list|)
 condition|)
 block|{
@@ -6317,6 +6324,8 @@ argument_list|(
 name|selected
 argument_list|,
 name|conf
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -6481,6 +6490,8 @@ name|extendedConfs
 index|[
 name|i
 index|]
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -6611,6 +6622,8 @@ name|confs
 index|[
 name|i
 index|]
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -6648,6 +6661,8 @@ name|confs
 index|[
 name|i
 index|]
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}

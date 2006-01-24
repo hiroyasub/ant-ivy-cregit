@@ -2574,6 +2574,9 @@ name|loadData
 parameter_list|(
 name|String
 name|conf
+parameter_list|,
+name|boolean
+name|shouldBePublic
 parameter_list|)
 block|{
 name|boolean
@@ -2907,6 +2910,8 @@ operator|.
 name|loadData
 argument_list|(
 name|conf
+argument_list|,
+name|shouldBePublic
 argument_list|)
 expr_stmt|;
 if|if
@@ -3188,6 +3193,8 @@ argument_list|(
 name|loaded
 argument_list|,
 name|conf
+argument_list|,
+name|shouldBePublic
 argument_list|)
 operator|&&
 name|loaded
@@ -3201,6 +3208,8 @@ argument_list|(
 name|loaded
 argument_list|,
 name|conf
+argument_list|,
+name|shouldBePublic
 argument_list|)
 condition|)
 block|{
@@ -3270,6 +3279,9 @@ name|loaded
 parameter_list|,
 name|String
 name|conf
+parameter_list|,
+name|boolean
+name|shouldBePublic
 parameter_list|)
 block|{
 name|String
@@ -3375,6 +3387,8 @@ return|;
 block|}
 if|else if
 condition|(
+name|shouldBePublic
+operator|&&
 operator|!
 name|isRoot
 argument_list|()
