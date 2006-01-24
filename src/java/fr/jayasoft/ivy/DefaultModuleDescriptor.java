@@ -1898,7 +1898,7 @@ return|return
 name|_namespace
 return|;
 block|}
-specifier|private
+specifier|public
 name|boolean
 name|isNamespaceUseful
 parameter_list|()
