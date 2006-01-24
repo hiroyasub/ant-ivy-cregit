@@ -262,6 +262,8 @@ literal|"resolvers"
 block|,
 literal|"namespaces"
 block|,
+literal|"parsers"
+block|,
 literal|"latest-strategies"
 block|,
 literal|"conflict-managers"

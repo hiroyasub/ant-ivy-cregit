@@ -217,7 +217,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testTypeDef
+name|testAddConfigured
 parameter_list|()
 throws|throws
 name|Exception
@@ -231,16 +231,13 @@ argument_list|()
 decl_stmt|;
 name|ivy
 operator|.
-name|typeDef
+name|addConfigured
 argument_list|(
-literal|"myparser"
-argument_list|,
+operator|new
 name|MyParser
-operator|.
-name|class
+argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// should register an instance of the parser in the ModuleDescriptorParserRegistry
 name|ModuleDescriptor
 name|md
 init|=
