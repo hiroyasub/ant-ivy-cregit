@@ -13,6 +13,20 @@ name|ivy
 package|;
 end_package
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|namespace
+operator|.
+name|Namespace
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author x.hanin  *  */
 end_comment
@@ -70,6 +84,10 @@ index|[]
 name|moduleConfigurations
 parameter_list|)
 function_decl|;
+name|Namespace
+name|getNamespace
+parameter_list|()
+function_decl|;
 name|DependencyArtifactDescriptor
 index|[]
 name|getAllDependencyArtifactsIncludes
@@ -112,6 +130,17 @@ parameter_list|(
 name|String
 index|[]
 name|moduleConfigurations
+parameter_list|)
+function_decl|;
+name|boolean
+name|doesExclude
+parameter_list|(
+name|String
+index|[]
+name|moduleConfigurations
+parameter_list|,
+name|ArtifactId
+name|artifactId
 parameter_list|)
 function_decl|;
 block|}
