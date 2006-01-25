@@ -879,21 +879,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"trace found MD : "
-operator|+
-name|rmr
-operator|.
-name|getDescriptor
-argument_list|()
-operator|.
-name|isDefault
-argument_list|()
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|rmr
@@ -1309,6 +1294,43 @@ literal|null
 condition|)
 block|{
 comment|// this revision has already be resolved : return it
+if|if
+condition|(
+name|node
+operator|.
+name|getDescriptor
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|node
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\t"
+operator|+
+name|getName
+argument_list|()
+operator|+
+literal|": found already resolved revision: "
+operator|+
+name|resolvedMrid
+operator|+
+literal|": but it's a default one, maybe we can find a better one"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|Message
 operator|.
 name|verbose
@@ -1335,6 +1357,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 return|;
+block|}
 block|}
 block|}
 comment|// now let's see if we can find it in cache and if it is up to date
