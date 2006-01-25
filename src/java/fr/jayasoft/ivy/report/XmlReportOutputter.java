@@ -705,6 +705,30 @@ operator|+
 literal|"\""
 expr_stmt|;
 block|}
+name|String
+name|defaultValue
+init|=
+name|dep
+operator|.
+name|getDescriptor
+argument_list|()
+operator|!=
+literal|null
+condition|?
+literal|" default=\""
+operator|+
+name|dep
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+operator|+
+literal|"\""
+else|:
+literal|""
+decl_stmt|;
 name|out
 operator|.
 name|println
@@ -741,17 +765,7 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
-literal|" default=\""
-operator|+
-name|dep
-operator|.
-name|getDescriptor
-argument_list|()
-operator|.
-name|isDefault
-argument_list|()
-operator|+
-literal|"\""
+name|defaultValue
 operator|+
 literal|" conf=\""
 operator|+
