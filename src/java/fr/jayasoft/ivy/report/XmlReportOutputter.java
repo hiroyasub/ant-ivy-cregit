@@ -727,6 +727,18 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
+literal|" default=\""
+operator|+
+name|dep
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+operator|+
+literal|"\""
+operator|+
 literal|" conf=\""
 operator|+
 name|toString
