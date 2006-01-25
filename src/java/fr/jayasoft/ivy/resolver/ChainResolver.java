@@ -460,7 +460,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// check if latest is asked and compare to return the most recent
 if|if
 condition|(
 operator|!
@@ -478,9 +477,9 @@ argument_list|()
 operator|||
 operator|(
 name|ret
-operator|!=
+operator|==
 literal|null
-operator|&&
+operator|||
 name|ret
 operator|.
 name|getDescriptor
@@ -492,6 +491,7 @@ operator|)
 operator|)
 condition|)
 block|{
+comment|// check if latest is asked and compare to return the most recent
 if|if
 condition|(
 name|ret
@@ -583,6 +583,45 @@ name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|dd
+operator|.
+name|getDependencyRevisionId
+argument_list|()
+operator|.
+name|isExactRevision
+argument_list|()
+operator|&&
+operator|!
+name|ret
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\tmodule revision found and is not default: returning "
+operator|+
+name|mr
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|resolvedRevision
+argument_list|(
+name|mr
+argument_list|)
+return|;
 block|}
 block|}
 else|else
