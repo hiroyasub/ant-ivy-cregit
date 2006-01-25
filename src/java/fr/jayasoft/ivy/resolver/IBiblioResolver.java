@@ -291,6 +291,9 @@ name|_pattern
 operator|=
 literal|"[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
 expr_stmt|;
+name|updateWholePattern
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 specifier|public
