@@ -783,10 +783,10 @@ name|ais
 argument_list|,
 name|date
 argument_list|)
-operator|==
+operator|!=
 name|ais
 index|[
-literal|0
+literal|1
 index|]
 return|;
 block|}

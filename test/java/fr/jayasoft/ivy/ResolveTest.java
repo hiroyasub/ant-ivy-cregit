@@ -11348,6 +11348,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// the dependency is in another namespace
 name|Ivy
 name|ivy
 init|=
@@ -11506,6 +11507,27 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|//    public void testNamespaceMapping2() throws Exception {
+comment|//        // the dependency is in another namespace and has itself a dependency on a module available in the same namespace
+comment|//        Ivy ivy = new Ivy();
+comment|//        ivy.configure(new File("test/repositories/namespace/ivyconf.xml"));
+comment|//        ResolveReport report = ivy.resolve(ResolveTest.class.getResource("ivy-namespace.xml"),
+comment|//                null, new String[] {"*"}, _cache, null, true);
+comment|//        assertNotNull(report);
+comment|//        ModuleDescriptor md = report.getModuleDescriptor();
+comment|//        assertNotNull(md);
+comment|//        ModuleRevisionId mrid = ModuleRevisionId.newInstance("jayasoft", "namespace", "2.0");
+comment|//        assertEquals(mrid, md.getModuleRevisionId());
+comment|//
+comment|//        assertTrue(ivy.getResolvedIvyFileInCache(_cache, mrid).exists());
+comment|//
+comment|//        // dependencies
+comment|//        assertTrue(ivy.getIvyFileInCache(_cache, ModuleRevisionId.newInstance("systemorg", "systemmod2", "1.0")).exists());
+comment|//        assertTrue(ivy.getArchiveFileInCache(_cache, "systemorg", "systemmod2", "1.0", "B", "jar", "jar").exists());
+comment|//
+comment|//        assertTrue(ivy.getIvyFileInCache(_cache, ModuleRevisionId.newInstance("systemorg", "systemmod", "1.0")).exists());
+comment|//        assertTrue(ivy.getArchiveFileInCache(_cache, "systemorg", "systemmod", "1.0", "A", "jar", "jar").exists());
+comment|//    }
 comment|////////////////////////////////////////////////////////////
 comment|// helper methods to ease the tests
 comment|////////////////////////////////////////////////////////////
