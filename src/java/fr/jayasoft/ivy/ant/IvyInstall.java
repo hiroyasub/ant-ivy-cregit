@@ -77,6 +77,20 @@ name|FilterHelper
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|matcher
+operator|.
+name|Matcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Hanin  *  */
 end_comment
@@ -126,6 +140,20 @@ specifier|private
 name|String
 name|_type
 decl_stmt|;
+specifier|private
+name|String
+name|_matcher
+init|=
+name|Matcher
+operator|.
+name|EXACT
+decl_stmt|;
+specifier|private
+name|boolean
+name|_regexpUsed
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -174,6 +202,9 @@ condition|(
 name|_module
 operator|==
 literal|null
+operator|&&
+operator|!
+name|_regexpUsed
 condition|)
 block|{
 throw|throw
@@ -184,11 +215,28 @@ literal|"no module name provided for ivy publish task: It can either be set expl
 argument_list|)
 throw|;
 block|}
+if|else if
+condition|(
+name|_module
+operator|==
+literal|null
+operator|&&
+name|_regexpUsed
+condition|)
+block|{
+name|_module
+operator|=
+literal|".*"
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|_revision
 operator|==
 literal|null
+operator|&&
+operator|!
+name|_regexpUsed
 condition|)
 block|{
 throw|throw
@@ -198,6 +246,20 @@ argument_list|(
 literal|"no module revision provided for ivy publish task: It can either be set explicitely via the attribute 'revision' or via 'ivy.revision' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
+block|}
+if|else if
+condition|(
+name|_revision
+operator|==
+literal|null
+operator|&&
+name|_regexpUsed
+condition|)
+block|{
+name|_revision
+operator|=
+literal|".*"
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -229,6 +291,8 @@ literal|"no to resolver name: please provide it through parameter 'to'"
 argument_list|)
 throw|;
 block|}
+try|try
+block|{
 name|ModuleRevisionId
 name|mrid
 init|=
@@ -243,8 +307,6 @@ argument_list|,
 name|_revision
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|install
@@ -272,6 +334,8 @@ name|_type
 argument_list|)
 argument_list|,
 name|_cache
+argument_list|,
+name|_matcher
 argument_list|)
 expr_stmt|;
 block|}
@@ -292,7 +356,16 @@ name|BuildException
 argument_list|(
 literal|"impossible to install "
 operator|+
-name|mrid
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+name|_organisation
+argument_list|,
+name|_module
+argument_list|,
+name|_revision
+argument_list|)
 operator|+
 literal|": "
 operator|+
@@ -502,6 +575,28 @@ block|{
 name|_type
 operator|=
 name|type
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isRegexpUsed
+parameter_list|()
+block|{
+return|return
+name|_regexpUsed
+return|;
+block|}
+specifier|public
+name|void
+name|setRegexpUsed
+parameter_list|(
+name|boolean
+name|use
+parameter_list|)
+block|{
+name|_regexpUsed
+operator|=
+name|use
 expr_stmt|;
 block|}
 block|}
