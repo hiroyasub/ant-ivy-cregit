@@ -22,6 +22,16 @@ specifier|public
 class|class
 name|ModuleRevisionId
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|ENCODE_SEPARATOR
+init|=
+name|ModuleId
+operator|.
+name|ENCODE_SEPARATOR
+decl_stmt|;
 specifier|public
 specifier|static
 name|ModuleRevisionId
@@ -430,12 +440,12 @@ return|return
 name|getOrganisation
 argument_list|()
 operator|+
-literal|" "
+name|ENCODE_SEPARATOR
 operator|+
 name|getName
 argument_list|()
 operator|+
-literal|" "
+name|ENCODE_SEPARATOR
 operator|+
 name|getRevision
 argument_list|()
@@ -458,7 +468,7 @@ name|encoded
 operator|.
 name|split
 argument_list|(
-literal|" "
+name|ENCODE_SEPARATOR
 argument_list|)
 decl_stmt|;
 if|if

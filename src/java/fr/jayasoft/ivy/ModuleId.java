@@ -22,6 +22,13 @@ specifier|public
 class|class
 name|ModuleId
 block|{
+specifier|static
+specifier|final
+name|String
+name|ENCODE_SEPARATOR
+init|=
+literal|":#@#:"
+decl_stmt|;
 specifier|private
 name|String
 name|_organisation
@@ -213,7 +220,7 @@ return|return
 name|getOrganisation
 argument_list|()
 operator|+
-literal|" "
+name|ENCODE_SEPARATOR
 operator|+
 name|getName
 argument_list|()
@@ -236,7 +243,7 @@ name|encoded
 operator|.
 name|split
 argument_list|(
-literal|" "
+name|ENCODE_SEPARATOR
 argument_list|)
 decl_stmt|;
 if|if
@@ -252,7 +259,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"badly encoded module revision id: '"
+literal|"badly encoded module id: '"
 operator|+
 name|encoded
 operator|+
