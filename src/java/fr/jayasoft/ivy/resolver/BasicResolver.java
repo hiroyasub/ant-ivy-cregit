@@ -900,6 +900,13 @@ name|getResolver
 argument_list|()
 operator|!=
 name|this
+operator|&&
+name|isResolved
+argument_list|(
+name|data
+argument_list|,
+name|mrid
+argument_list|)
 condition|)
 block|{
 name|Message
@@ -915,7 +922,17 @@ literal|": found revision in cache: "
 operator|+
 name|mrid
 operator|+
-literal|": but it's a default one, maybe we can find a better one"
+literal|" (resolved by "
+operator|+
+name|rmr
+operator|.
+name|getResolver
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"): but it's a default one, maybe we can find a better one"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1404,6 +1421,13 @@ name|getResolver
 argument_list|()
 operator|!=
 name|this
+operator|&&
+name|isResolved
+argument_list|(
+name|data
+argument_list|,
+name|resolvedMrid
+argument_list|)
 condition|)
 block|{
 name|Message
@@ -1419,7 +1443,17 @@ literal|": found revision in cache: "
 operator|+
 name|mrid
 operator|+
-literal|": but it's a default one, maybe we can find a better one"
+literal|" (resolved by "
+operator|+
+name|rmr
+operator|.
+name|getResolver
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"): but it's a default one, maybe we can find a better one"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2633,6 +2667,40 @@ name|searched
 argument_list|,
 name|downloaded
 argument_list|)
+return|;
+block|}
+specifier|private
+name|boolean
+name|isResolved
+parameter_list|(
+name|ResolveData
+name|data
+parameter_list|,
+name|ModuleRevisionId
+name|mrid
+parameter_list|)
+block|{
+name|IvyNode
+name|node
+init|=
+name|getSystemNode
+argument_list|(
+name|data
+argument_list|,
+name|mrid
+argument_list|)
+decl_stmt|;
+return|return
+name|node
+operator|!=
+literal|null
+operator|&&
+name|node
+operator|.
+name|getModuleRevision
+argument_list|()
+operator|!=
+literal|null
 return|;
 block|}
 specifier|private

@@ -497,7 +497,27 @@ condition|(
 name|ret
 operator|==
 literal|null
-operator|||
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\tmodule revision kept as first found: "
+operator|+
+name|mr
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ret
+operator|=
+name|mr
+expr_stmt|;
+block|}
+if|else if
+condition|(
 name|isAfter
 argument_list|(
 name|mr
@@ -763,13 +783,13 @@ block|{
 operator|new
 name|ResolvedModuleRevisionArtifactInfo
 argument_list|(
-name|rmr1
+name|rmr2
 argument_list|)
 block|,
 operator|new
 name|ResolvedModuleRevisionArtifactInfo
 argument_list|(
-name|rmr2
+name|rmr1
 argument_list|)
 block|}
 decl_stmt|;
@@ -786,7 +806,7 @@ argument_list|)
 operator|!=
 name|ais
 index|[
-literal|1
+literal|0
 index|]
 return|;
 block|}

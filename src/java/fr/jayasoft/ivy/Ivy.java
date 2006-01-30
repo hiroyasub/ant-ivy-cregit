@@ -8108,7 +8108,14 @@ literal|"\tfound ivy file in cache for "
 operator|+
 name|mrid
 operator|+
-literal|": "
+literal|" (resolved by "
+operator|+
+name|resolver
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"): "
 operator|+
 name|ivyFile
 argument_list|)
