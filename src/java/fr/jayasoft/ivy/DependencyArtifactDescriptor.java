@@ -13,6 +13,20 @@ name|ivy
 package|;
 end_package
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|matcher
+operator|.
+name|PatternMatcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to resctrict the artifacts asked for a dependency, or describe them  * when there is no ivy file.  */
 end_comment
@@ -57,6 +71,12 @@ specifier|public
 name|String
 index|[]
 name|getConfigurations
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      * @return      */
+specifier|public
+name|PatternMatcher
+name|getMatcher
 parameter_list|()
 function_decl|;
 block|}

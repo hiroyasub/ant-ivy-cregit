@@ -33,6 +33,20 @@ name|Collection
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|matcher
+operator|.
+name|PatternMatcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * TODO write javadoc  */
 end_comment
@@ -64,6 +78,10 @@ specifier|private
 name|boolean
 name|_includes
 decl_stmt|;
+specifier|private
+name|PatternMatcher
+name|_patternMatcher
+decl_stmt|;
 comment|/**      * @param dd      * @param name      * @param type      */
 specifier|public
 name|DefaultDependencyArtifactDescriptor
@@ -82,6 +100,9 @@ name|ext
 parameter_list|,
 name|boolean
 name|includes
+parameter_list|,
+name|PatternMatcher
+name|matcher
 parameter_list|)
 block|{
 if|if
@@ -154,6 +175,10 @@ name|_includes
 operator|=
 name|includes
 expr_stmt|;
+name|_patternMatcher
+operator|=
+name|matcher
+expr_stmt|;
 block|}
 specifier|public
 name|DefaultDependencyArtifactDescriptor
@@ -166,6 +191,9 @@ name|aid
 parameter_list|,
 name|boolean
 name|includes
+parameter_list|,
+name|PatternMatcher
+name|matcher
 parameter_list|)
 block|{
 if|if
@@ -194,6 +222,10 @@ expr_stmt|;
 name|_includes
 operator|=
 name|includes
+expr_stmt|;
+name|_patternMatcher
+operator|=
+name|matcher
 expr_stmt|;
 block|}
 specifier|public
@@ -374,6 +406,15 @@ name|size
 argument_list|()
 index|]
 argument_list|)
+return|;
+block|}
+specifier|public
+name|PatternMatcher
+name|getMatcher
+parameter_list|()
+block|{
+return|return
+name|_patternMatcher
 return|;
 block|}
 block|}

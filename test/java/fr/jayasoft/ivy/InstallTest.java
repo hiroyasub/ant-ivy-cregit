@@ -63,7 +63,7 @@ name|ivy
 operator|.
 name|matcher
 operator|.
-name|Matcher
+name|PatternMatcher
 import|;
 end_import
 
@@ -144,7 +144,7 @@ literal|null
 argument_list|,
 name|_cache
 argument_list|,
-name|Matcher
+name|PatternMatcher
 operator|.
 name|EXACT
 argument_list|)
@@ -234,7 +234,7 @@ literal|null
 argument_list|,
 name|_cache
 argument_list|,
-name|Matcher
+name|PatternMatcher
 operator|.
 name|EXACT
 argument_list|)
@@ -348,7 +348,7 @@ literal|null
 argument_list|,
 name|_cache
 argument_list|,
-name|Matcher
+name|PatternMatcher
 operator|.
 name|EXACT
 argument_list|)
@@ -456,7 +456,7 @@ literal|null
 argument_list|,
 name|_cache
 argument_list|,
-name|Matcher
+name|PatternMatcher
 operator|.
 name|REGEXP
 argument_list|)
