@@ -1816,9 +1816,6 @@ argument_list|(
 name|md
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
 name|checkDescriptorConsistency
 argument_list|(
 name|mrid
@@ -1827,15 +1824,7 @@ name|md
 argument_list|,
 name|ivyRef
 argument_list|)
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
-if|if
-condition|(
-operator|!
+expr_stmt|;
 name|checkDescriptorConsistency
 argument_list|(
 name|systemDd
@@ -1847,12 +1836,7 @@ name|systemMd
 argument_list|,
 name|ivyRef
 argument_list|)
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
+expr_stmt|;
 comment|// check if we should delete old artifacts
 name|boolean
 name|deleteOldArtifacts
@@ -2704,7 +2688,7 @@ literal|null
 return|;
 block|}
 specifier|private
-name|boolean
+name|void
 name|checkDescriptorConsistency
 parameter_list|(
 name|ModuleRevisionId
@@ -2716,6 +2700,8 @@ parameter_list|,
 name|ResolvedResource
 name|ivyRef
 parameter_list|)
+throws|throws
+name|ParseException
 block|{
 name|boolean
 name|ok
@@ -2860,16 +2846,6 @@ argument_list|(
 literal|"working@"
 argument_list|)
 operator|&&
-name|md
-operator|.
-name|getModuleRevisionId
-argument_list|()
-operator|.
-name|getRevision
-argument_list|()
-operator|!=
-literal|null
-operator|&&
 operator|!
 name|ModuleRevisionId
 operator|.
@@ -2935,26 +2911,18 @@ operator|!
 name|ok
 condition|)
 block|{
-name|Message
-operator|.
-name|verbose
+throw|throw
+operator|new
+name|ParseException
 argument_list|(
-literal|"\t"
-operator|+
-name|getName
-argument_list|()
-operator|+
-literal|": inconsistent module descriptor file found for "
+literal|"inconsistent module descriptor file found for "
 operator|+
 name|mrid
-operator|+
-literal|" rejecting"
+argument_list|,
+literal|0
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
-return|return
-name|ok
-return|;
 block|}
 specifier|protected
 name|void
