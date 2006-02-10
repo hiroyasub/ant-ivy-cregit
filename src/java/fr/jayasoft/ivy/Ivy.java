@@ -6290,9 +6290,35 @@ decl_stmt|;
 if|if
 condition|(
 name|callerNode
-operator|!=
+operator|==
 literal|null
-operator|&&
+condition|)
+block|{
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"ivy internal error: no node found for "
+operator|+
+name|callers
+index|[
+name|j
+index|]
+operator|.
+name|getModuleRevisionId
+argument_list|()
+operator|+
+literal|": looked in "
+operator|+
+name|dependenciesMap
+operator|.
+name|keySet
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 operator|!
 name|callerNode
 operator|.
