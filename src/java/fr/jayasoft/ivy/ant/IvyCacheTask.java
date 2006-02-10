@@ -384,9 +384,37 @@ init|=
 name|getIvyInstance
 argument_list|()
 decl_stmt|;
+name|_organisation
+operator|=
+name|getProperty
+argument_list|(
+name|_organisation
+argument_list|,
+name|ivy
+argument_list|,
+literal|"ivy.organisation"
+argument_list|)
+expr_stmt|;
+name|_module
+operator|=
+name|getProperty
+argument_list|(
+name|_module
+argument_list|,
+name|ivy
+argument_list|,
+literal|"ivy.module"
+argument_list|)
+expr_stmt|;
 name|ensureResolved
 argument_list|(
 name|isHaltonfailure
+argument_list|()
+argument_list|,
+name|getOrganisation
+argument_list|()
+argument_list|,
+name|getModule
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -403,11 +431,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_conf
+literal|"*"
 operator|.
 name|equals
 argument_list|(
-literal|"*"
+name|_conf
 argument_list|)
 condition|)
 block|{
@@ -420,6 +448,21 @@ argument_list|,
 literal|"ivy.resolved.configurations"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|_conf
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"bad provided for ivy cache task: * can only be used with a prior call to<resolve/>"
+argument_list|)
+throw|;
+block|}
 block|}
 name|_organisation
 operator|=
@@ -469,7 +512,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy cachefileset: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
+literal|"no organisation provided for ivy cache task: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
@@ -484,7 +527,22 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy cachefileset: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
+literal|"no module name provided for ivy cache task: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|_conf
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"no conf provided for ivy cache task: It can either be set explicitely via the attribute 'conf' or via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}

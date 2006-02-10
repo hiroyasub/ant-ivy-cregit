@@ -14466,6 +14466,91 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testTransitiveConfMapping
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// IVY-168
+comment|// mod13.3 depends on mod13.2 which depends on mod13.1
+comment|// each module has two confs: j2ee and compile
+comment|// each module only publishes one artifact in conf compile
+comment|// each module has the following conf mapping on its dependencies: *->@
+comment|// moreover, mod13.1 depends on mod1.2 in with the following conf mapping: compile->default
+comment|// thus conf j2ee should be empty for each modules
+name|ResolveReport
+name|report
+init|=
+name|_ivy
+operator|.
+name|resolve
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/repositories/2/mod13.3/ivy-1.0.xml"
+argument_list|)
+operator|.
+name|toURL
+argument_list|()
+argument_list|,
+literal|null
+argument_list|,
+operator|new
+name|String
+index|[]
+block|{
+literal|"*"
+block|}
+argument_list|,
+name|_cache
+argument_list|,
+literal|null
+argument_list|,
+literal|true
+argument_list|)
+decl_stmt|;
+name|assertFalse
+argument_list|(
+name|report
+operator|.
+name|hasError
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|3
+argument_list|,
+name|report
+operator|.
+name|getConfigurationReport
+argument_list|(
+literal|"compile"
+argument_list|)
+operator|.
+name|getArtifactsNumber
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|0
+argument_list|,
+name|report
+operator|.
+name|getConfigurationReport
+argument_list|(
+literal|"j2ee"
+argument_list|)
+operator|.
+name|getArtifactsNumber
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 comment|////////////////////////////////////////////////////////////
 comment|// helper methods to ease the tests
 comment|////////////////////////////////////////////////////////////
