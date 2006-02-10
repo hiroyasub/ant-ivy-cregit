@@ -6314,6 +6314,13 @@ name|dependenciesMap
 operator|.
 name|keySet
 argument_list|()
+operator|+
+literal|" and root module id was "
+operator|+
+name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
