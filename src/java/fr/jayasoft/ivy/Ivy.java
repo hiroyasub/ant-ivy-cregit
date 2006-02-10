@@ -6214,6 +6214,25 @@ name|i
 index|]
 argument_list|)
 decl_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"checking if "
+operator|+
+name|node
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" is transitively evicted in "
+operator|+
+name|confs
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
 name|boolean
 name|allEvicted
 init|=
@@ -6344,6 +6363,30 @@ literal|false
 expr_stmt|;
 break|break;
 block|}
+else|else
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"caller "
+operator|+
+name|callerNode
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" of "
+operator|+
+name|node
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" is evicted"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 if|if
@@ -6376,6 +6419,21 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|node
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" isn't transitively evicted, at least one caller was not evicted"
 argument_list|)
 expr_stmt|;
 block|}
