@@ -7167,6 +7167,23 @@ argument_list|,
 name|resolvedNodes
 argument_list|)
 decl_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"found conflicting revisions for "
+operator|+
+name|node
+operator|+
+literal|" in "
+operator|+
+name|parent
+operator|+
+literal|": "
+operator|+
+name|conflicts
+argument_list|)
+expr_stmt|;
 name|Collection
 name|resolved
 init|=
@@ -7187,6 +7204,23 @@ argument_list|,
 name|conflicts
 argument_list|)
 decl_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"selected revisions for "
+operator|+
+name|node
+operator|+
+literal|" in "
+operator|+
+name|parent
+operator|+
+literal|": "
+operator|+
+name|resolved
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|resolved
@@ -7397,6 +7431,36 @@ block|}
 else|else
 block|{
 comment|// node has been evicted for the current parent
+if|if
+condition|(
+name|resolved
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"conflict manager '"
+operator|+
+name|parent
+operator|.
+name|getConflictManager
+argument_list|(
+name|node
+operator|.
+name|getModuleId
+argument_list|()
+argument_list|)
+operator|+
+literal|"' evicted all revisions among "
+operator|+
+name|conflicts
+argument_list|)
+expr_stmt|;
+block|}
 comment|// first we mark the selected nodes as selected if it isn't already the case
 for|for
 control|(
