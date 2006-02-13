@@ -149,6 +149,41 @@ decl_stmt|;
 if|if
 condition|(
 name|allEvictingNodes
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"\t"
+operator|+
+name|evicted
+index|[
+name|i
+index|]
+operator|+
+literal|" transitively in "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|evicted
+index|[
+name|i
+index|]
+operator|.
+name|getEvictedConfs
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|allEvictingNodes
 operator|.
 name|isEmpty
 argument_list|()
@@ -165,7 +200,17 @@ index|[
 name|i
 index|]
 operator|+
-literal|" transitively in "
+literal|" by [] ("
+operator|+
+name|evicted
+index|[
+name|i
+index|]
+operator|.
+name|getAllEvictingConflictManagers
+argument_list|()
+operator|+
+literal|") in "
 operator|+
 name|Arrays
 operator|.
