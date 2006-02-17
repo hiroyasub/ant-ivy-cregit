@@ -9787,7 +9787,7 @@ name|mrids
 init|=
 name|parser
 operator|.
-name|getDependencyRevisionIds
+name|getRealDependencyRevisionIds
 argument_list|(
 name|moduleId
 argument_list|,
@@ -10352,13 +10352,6 @@ name|getType
 argument_list|()
 argument_list|)
 condition|?
-name|getArchiveFileInCache
-argument_list|(
-name|cache
-argument_list|,
-name|artifact
-argument_list|)
-else|:
 name|getIvyFileInCache
 argument_list|(
 name|cache
@@ -10367,6 +10360,13 @@ name|artifact
 operator|.
 name|getModuleRevisionId
 argument_list|()
+argument_list|)
+else|:
+name|getArchiveFileInCache
+argument_list|(
+name|cache
+argument_list|,
+name|artifact
 argument_list|)
 decl_stmt|;
 name|Set

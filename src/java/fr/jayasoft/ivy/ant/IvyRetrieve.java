@@ -333,6 +333,17 @@ argument_list|,
 literal|"ivy.retrieve.pattern"
 argument_list|)
 expr_stmt|;
+name|_ivypattern
+operator|=
+name|getProperty
+argument_list|(
+name|_ivypattern
+argument_list|,
+name|ivy
+argument_list|,
+literal|"ivy.retrieve.ivy.pattern"
+argument_list|)
+expr_stmt|;
 name|_conf
 operator|=
 name|getProperty
