@@ -1118,7 +1118,7 @@ index|[]
 operator|)
 name|parser
 operator|.
-name|getModuleRevisionIds
+name|getRealModuleRevisionIds
 argument_list|()
 operator|.
 name|toArray
