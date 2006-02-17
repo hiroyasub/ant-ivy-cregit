@@ -446,6 +446,8 @@ argument_list|,
 name|_cache
 argument_list|,
 name|_pattern
+argument_list|,
+name|_ivypattern
 argument_list|)
 expr_stmt|;
 block|}
