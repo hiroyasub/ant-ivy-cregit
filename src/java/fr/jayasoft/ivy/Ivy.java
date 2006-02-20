@@ -7925,6 +7925,19 @@ condition|)
 block|{
 comment|// resolve conflict has already be done with node with the same id
 comment|// => job already done, we just have to check if the node wasn't previously evicted in root ancestor
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"conflict resolution already done for "
+operator|+
+name|node
+operator|+
+literal|" in "
+operator|+
+name|parent
+argument_list|)
+expr_stmt|;
 name|EvictionData
 name|evictionData
 init|=
@@ -7948,6 +7961,20 @@ literal|null
 condition|)
 block|{
 comment|// node has been previously evicted in an ancestor: we mark it as evicted and ensure selected are selected
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|node
+operator|+
+literal|" was previously evicted in root module conf "
+operator|+
+name|node
+operator|.
+name|getRootModuleConf
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|evictionData
@@ -8085,6 +8112,19 @@ condition|)
 block|{
 comment|// resolve conflict has already be done with node with the same id
 comment|// => job already done, we just have to check if the node wasn't previously selected in root ancestor
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"conflict resolution already done for "
+operator|+
+name|node
+operator|+
+literal|" in "
+operator|+
+name|parent
+argument_list|)
+expr_stmt|;
 name|EvictionData
 name|evictionData
 init|=
@@ -8108,6 +8148,20 @@ literal|null
 condition|)
 block|{
 comment|// node was selected in the root, we have to select it
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|node
+operator|+
+literal|" was previously selected in root module conf "
+operator|+
+name|node
+operator|.
+name|getRootModuleConf
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|node
 operator|.
 name|markSelected
