@@ -3542,6 +3542,10 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"1.0"
+block|,
+literal|"1.1"
+block|,
 literal|"2.0"
 block|,
 literal|"2.1"
