@@ -1457,10 +1457,7 @@ name|add
 argument_list|(
 name|node
 operator|.
-name|getRealNode
-argument_list|()
-operator|.
-name|getResolvedId
+name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
