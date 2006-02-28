@@ -497,7 +497,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testBad2
+name|testBadOrg
 parameter_list|()
 throws|throws
 name|IOException
@@ -536,7 +536,22 @@ name|ParseException
 name|ex
 parameter_list|)
 block|{
-comment|// ok
+name|assertTrue
+argument_list|(
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|indexOf
+argument_list|(
+literal|"organization"
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 specifier|public

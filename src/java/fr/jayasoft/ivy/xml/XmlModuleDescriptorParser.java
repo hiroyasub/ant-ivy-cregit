@@ -911,6 +911,9 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
+name|checkErrors
+argument_list|()
+expr_stmt|;
 name|ParseException
 name|pe
 init|=
@@ -2789,21 +2792,25 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|addError
-argument_list|(
-literal|"exception while parsing: "
-operator|+
+if|if
+condition|(
 name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
+operator|instanceof
+name|SAXException
+condition|)
+block|{
+throw|throw
+operator|(
+name|SAXException
+operator|)
+name|ex
+throw|;
+block|}
 throw|throw
 operator|new
 name|SAXException
 argument_list|(
-literal|"exception while parsing: "
+literal|"problem occured while parsing ivy file. message: "
 operator|+
 name|ex
 operator|.
