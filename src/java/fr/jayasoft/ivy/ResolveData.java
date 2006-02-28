@@ -333,6 +333,19 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setReport
+parameter_list|(
+name|ConfigurationResolveReport
+name|report
+parameter_list|)
+block|{
+name|_report
+operator|=
+name|report
+expr_stmt|;
+block|}
 block|}
 end_class
 
