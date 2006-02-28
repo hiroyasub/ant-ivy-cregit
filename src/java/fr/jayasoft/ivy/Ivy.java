@@ -9867,14 +9867,6 @@ name|j
 operator|++
 control|)
 block|{
-name|ModuleRevisionId
-name|mrid
-init|=
-name|mrids
-index|[
-name|i
-index|]
-decl_stmt|;
 name|artifacts
 operator|.
 name|add
@@ -9882,7 +9874,10 @@ argument_list|(
 operator|new
 name|DefaultArtifact
 argument_list|(
-name|mrid
+name|mrids
+index|[
+name|j
+index|]
 argument_list|,
 operator|new
 name|Date
