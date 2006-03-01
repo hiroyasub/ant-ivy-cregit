@@ -79,7 +79,7 @@ operator|=
 name|_hashCode
 argument_list|()
 expr_stmt|;
-comment|//stored for performance reasons, has code is very used in many maps
+comment|//stored for performance reasons, hashCode is very used in many maps
 block|}
 specifier|public
 name|String

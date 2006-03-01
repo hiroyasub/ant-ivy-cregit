@@ -1894,6 +1894,20 @@ return|return
 literal|false
 return|;
 block|}
+comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return      */
+specifier|public
+name|boolean
+name|canExclude
+parameter_list|()
+block|{
+return|return
+operator|!
+name|_artifactsExcludes
+operator|.
+name|isEmpty
+argument_list|()
+return|;
+block|}
 specifier|public
 name|void
 name|addExtends

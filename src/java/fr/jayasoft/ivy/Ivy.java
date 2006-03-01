@@ -6232,6 +6232,12 @@ name|i
 index|]
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -6251,6 +6257,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 name|boolean
 name|allEvicted
 init|=
@@ -6383,6 +6390,12 @@ break|break;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -6404,6 +6417,7 @@ operator|+
 literal|" is evicted"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -6442,6 +6456,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -6454,6 +6474,7 @@ operator|+
 literal|" isn't transitively evicted, at least one caller was not evicted"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -6500,6 +6521,12 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -6514,6 +6541,7 @@ operator|+
 name|conf
 argument_list|)
 expr_stmt|;
+block|}
 name|resolveConflict
 argument_list|(
 name|node
@@ -6746,6 +6774,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -6773,6 +6807,7 @@ operator|+
 literal|"ms)"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|void
@@ -7185,6 +7220,12 @@ argument_list|,
 name|resolvedNodes
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7202,6 +7243,7 @@ operator|+
 name|conflicts
 argument_list|)
 expr_stmt|;
+block|}
 name|Collection
 name|resolved
 init|=
@@ -7222,6 +7264,12 @@ argument_list|,
 name|conflicts
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7239,6 +7287,7 @@ operator|+
 name|resolved
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|resolved
@@ -7261,6 +7310,12 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7274,6 +7329,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
+block|}
 comment|// handle previously selected nodes that are now evicted by this new node
 name|toevict
 operator|=
@@ -7338,6 +7394,12 @@ argument_list|,
 name|resolved
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7359,6 +7421,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// it's very important to update resolved and evicted nodes BEFORE recompute parent call
 comment|// to allow it to recompute its resolved collection with correct data
@@ -7457,6 +7520,12 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -7478,6 +7547,7 @@ operator|+
 name|conflicts
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// first we mark the selected nodes as selected if it isn't already the case
 for|for
@@ -7531,6 +7601,12 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7544,6 +7620,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|// it's time to update parent resolved and evicted with what was found...
@@ -7649,6 +7726,12 @@ argument_list|,
 name|resolved
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7670,6 +7753,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|private
@@ -7943,6 +8027,12 @@ condition|)
 block|{
 comment|// resolve conflict has already be done with node with the same id
 comment|// => job already done, we just have to check if the node wasn't previously evicted in root ancestor
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7956,6 +8046,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
+block|}
 name|EvictionData
 name|evictionData
 init|=
@@ -7979,6 +8070,12 @@ literal|null
 condition|)
 block|{
 comment|// node has been previously evicted in an ancestor: we mark it as evicted and ensure selected are selected
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -7993,6 +8090,7 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|evictionData
@@ -8057,6 +8155,12 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -8077,6 +8181,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 name|node
 operator|.
 name|markEvicted
@@ -8084,6 +8189,12 @@ argument_list|(
 name|evictionData
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -8097,6 +8208,7 @@ operator|+
 name|evictionData
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 literal|true
@@ -8130,6 +8242,12 @@ condition|)
 block|{
 comment|// resolve conflict has already be done with node with the same id
 comment|// => job already done, we just have to check if the node wasn't previously selected in root ancestor
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -8143,6 +8261,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
+block|}
 name|EvictionData
 name|evictionData
 init|=
@@ -8166,6 +8285,12 @@ literal|null
 condition|)
 block|{
 comment|// node was selected in the root, we have to select it
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -8180,6 +8305,7 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|node
 operator|.
 name|markSelected
@@ -8190,6 +8316,12 @@ name|getRootModuleConf
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -8203,6 +8335,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 literal|true
@@ -13279,6 +13412,10 @@ specifier|private
 name|boolean
 name|_logNotConvertedExclusionRule
 decl_stmt|;
+specifier|private
+name|Boolean
+name|_debugConflictResolution
+decl_stmt|;
 specifier|public
 name|void
 name|addTransferListener
@@ -13839,6 +13976,55 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
+operator|.
+name|booleanValue
+argument_list|()
+return|;
+block|}
+specifier|public
+name|boolean
+name|debugConflictResolution
+parameter_list|()
+block|{
+if|if
+condition|(
+name|_debugConflictResolution
+operator|==
+literal|null
+condition|)
+block|{
+name|String
+name|var
+init|=
+name|getVariable
+argument_list|(
+literal|"ivy.log.conflict.resolution"
+argument_list|)
+decl_stmt|;
+name|_debugConflictResolution
+operator|=
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|var
+operator|!=
+literal|null
+operator|&&
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|var
+argument_list|)
+operator|.
+name|booleanValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|_debugConflictResolution
 operator|.
 name|booleanValue
 argument_list|()

@@ -143,6 +143,11 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
+specifier|public
+name|boolean
+name|canExclude
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
