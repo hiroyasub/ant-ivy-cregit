@@ -8777,9 +8777,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod4.1 v 4.8 (conf compile, test extends compile) depends on
-comment|//   - mod1.2 v 1+ and forces it in conf compile
-comment|//   - mod3.1 v 1+ in conf test->runtime excluding mod4.1 (to avoid cyclic dep failure)
+comment|// IVY-182
+comment|//   * has no revision
+comment|//   * declares conf compile, test extends compile,
+comment|//   * depends on
+comment|//     - mod1.2 v 1+ and forces it in conf compile
+comment|//     - mod3.1 v 1+ in conf test->runtime excluding mod4.1 (to avoid cyclic dep failure)
 comment|//           which defines confs compile, runtime extends compile
 comment|//           which depends on mod1.2 v 2+ in conf compile->default
 comment|//           which depends on mod4.1 v 4+ in conf compile->compile
@@ -8790,14 +8793,14 @@ name|_ivy
 operator|.
 name|resolve
 argument_list|(
-operator|new
-name|File
-argument_list|(
-literal|"test/repositories/2/mod4.1/ivy-4.8.xml"
-argument_list|)
+name|ResolveTest
 operator|.
-name|toURL
-argument_list|()
+name|class
+operator|.
+name|getResource
+argument_list|(
+literal|"ivy-182.xml"
+argument_list|)
 argument_list|,
 literal|null
 argument_list|,
@@ -8833,42 +8836,27 @@ argument_list|(
 name|md
 argument_list|)
 expr_stmt|;
-name|ModuleRevisionId
-name|mrid
+name|ModuleId
+name|mid
 init|=
-name|ModuleRevisionId
-operator|.
-name|newInstance
+operator|new
+name|ModuleId
 argument_list|(
-literal|"org4"
+literal|"test"
 argument_list|,
-literal|"mod4.1"
-argument_list|,
-literal|"4.8"
+literal|"IVY-182"
 argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|mrid
+name|mid
 argument_list|,
 name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|_ivy
 operator|.
-name|getResolvedIvyFileInCache
-argument_list|(
-name|_cache
-argument_list|,
-name|mrid
-argument_list|)
-operator|.
-name|exists
+name|getModuleId
 argument_list|()
 argument_list|)
 expr_stmt|;
