@@ -229,6 +229,20 @@ name|AbstractModuleDescriptorParserTester
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|XMLHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  *   */
 end_comment
@@ -536,6 +550,14 @@ name|ParseException
 name|ex
 parameter_list|)
 block|{
+if|if
+condition|(
+name|XMLHelper
+operator|.
+name|canUseSchemaValidation
+argument_list|()
+condition|)
+block|{
 name|assertTrue
 argument_list|(
 literal|"invalid exception: "
@@ -559,6 +581,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public

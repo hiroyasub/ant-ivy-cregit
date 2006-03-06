@@ -437,6 +437,16 @@ block|}
 block|}
 block|}
 block|}
+specifier|public
+specifier|static
+name|boolean
+name|canUseSchemaValidation
+parameter_list|()
+block|{
+return|return
+name|_canUseSchemaValidation
+return|;
+block|}
 block|}
 end_class
 
