@@ -538,6 +538,13 @@ parameter_list|)
 block|{
 name|assertTrue
 argument_list|(
+literal|"invalid exception: "
+operator|+
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
 name|ex
 operator|.
 name|getMessage
@@ -597,6 +604,13 @@ parameter_list|)
 block|{
 name|assertTrue
 argument_list|(
+literal|"invalid exception: "
+operator|+
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
 name|ex
 operator|.
 name|getMessage
