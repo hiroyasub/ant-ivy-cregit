@@ -641,7 +641,23 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to configure ivy with given file: "
+literal|"impossible to configure ivy with given "
+operator|+
+operator|(
+name|_file
+operator|!=
+literal|null
+condition|?
+literal|"file: "
+operator|+
+name|_file
+else|:
+literal|"url :"
+operator|+
+name|_url
+operator|)
+operator|+
+literal|" :"
 operator|+
 name|ex
 operator|.
