@@ -299,7 +299,9 @@ init|=
 name|node
 operator|.
 name|getDependencyDescriptor
-argument_list|()
+argument_list|(
+name|parent
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
