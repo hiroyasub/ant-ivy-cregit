@@ -1501,6 +1501,14 @@ name|endsWith
 argument_list|(
 literal|"artifactId"
 argument_list|)
+operator|&&
+operator|!
+name|context
+operator|.
+name|equals
+argument_list|(
+literal|"project/parent/artifactId"
+argument_list|)
 condition|)
 block|{
 name|_module
