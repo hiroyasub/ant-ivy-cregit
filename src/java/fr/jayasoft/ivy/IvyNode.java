@@ -5469,7 +5469,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|public
 name|void
 name|discardConf
 parameter_list|(
