@@ -1619,6 +1619,13 @@ name|SAXException
 block|{
 name|out
 operator|.
+name|print
+argument_list|(
+name|LINE_SEPARATOR
+argument_list|)
+expr_stmt|;
+name|out
+operator|.
 name|flush
 argument_list|()
 expr_stmt|;
