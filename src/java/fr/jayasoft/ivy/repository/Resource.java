@@ -48,6 +48,12 @@ name|boolean
 name|exists
 parameter_list|()
 function_decl|;
+comment|/**      * Is this resource local to this host, i.e. is it on the file system?      *      * @return<code>boolean</code> value indicating if the resource is local.      */
+specifier|public
+name|boolean
+name|isLocal
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

@@ -131,6 +131,15 @@ return|return
 name|_file
 return|;
 block|}
+specifier|public
+name|boolean
+name|isLocal
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
