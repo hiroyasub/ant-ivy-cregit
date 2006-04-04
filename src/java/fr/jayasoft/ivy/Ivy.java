@@ -1052,7 +1052,7 @@ specifier|final
 name|String
 name|DEFAULT_CACHE_ARTIFACT_PATTERN
 init|=
-literal|"[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"
+literal|"[organisation]/[module]/[type]s/[artifact]-[revision](.[ext])"
 decl_stmt|;
 specifier|private
 specifier|static
