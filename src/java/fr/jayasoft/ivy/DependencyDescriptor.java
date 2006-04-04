@@ -73,6 +73,17 @@ name|getDependencyConfigurations
 parameter_list|(
 name|String
 name|moduleConfiguration
+parameter_list|,
+name|String
+name|requestedConfiguration
+parameter_list|)
+function_decl|;
+name|String
+index|[]
+name|getDependencyConfigurations
+parameter_list|(
+name|String
+name|moduleConfiguration
 parameter_list|)
 function_decl|;
 name|String
