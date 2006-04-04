@@ -157,7 +157,7 @@ name|ivy
 operator|.
 name|matcher
 operator|.
-name|AnyMatcher
+name|Matcher
 import|;
 end_import
 
@@ -171,7 +171,7 @@ name|ivy
 operator|.
 name|matcher
 operator|.
-name|Matcher
+name|NoMatcher
 import|;
 end_import
 
@@ -1171,7 +1171,7 @@ literal|null
 condition|)
 block|{
 return|return
-name|AnyMatcher
+name|NoMatcher
 operator|.
 name|getInstance
 argument_list|()
