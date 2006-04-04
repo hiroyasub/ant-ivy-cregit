@@ -9976,7 +9976,7 @@ comment|//                         RETRIEVE
 comment|/////////////////////////////////////////////////////////////////////////
 comment|/**      * example of destFilePattern :      * - lib/[organisation]/[module]/[artifact]-[revision].[type]      * - lib/[artifact].[type] : flatten with no revision      * moduleId is used with confs and localCacheDirectory to determine      * an ivy report file, used as input for the copy      * If such a file does not exist for any conf (resolve has not been called before ?)      * then an IllegalStateException is thrown and nothing is copied.      */
 specifier|public
-name|void
+name|int
 name|retrieve
 parameter_list|(
 name|ModuleId
@@ -9994,6 +9994,7 @@ name|String
 name|destFilePattern
 parameter_list|)
 block|{
+return|return
 name|retrieve
 argument_list|(
 name|moduleId
@@ -10006,11 +10007,11 @@ name|destFilePattern
 argument_list|,
 literal|null
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 comment|/**      * If destIvyPattern is null no ivy files will be copied.      */
 specifier|public
-name|void
+name|int
 name|retrieve
 parameter_list|(
 name|ModuleId
@@ -10321,6 +10322,9 @@ operator|+
 literal|"ms)"
 argument_list|)
 expr_stmt|;
+return|return
+name|targetsCopied
+return|;
 block|}
 catch|catch
 parameter_list|(

@@ -873,6 +873,30 @@ return|return
 literal|null
 return|;
 block|}
+name|boolean
+name|isChangingRevision
+init|=
+name|getChangingMatcher
+argument_list|()
+operator|.
+name|matches
+argument_list|(
+name|mrid
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|boolean
+name|isChangingDependency
+init|=
+name|isChangingRevision
+operator|||
+name|dd
+operator|.
+name|isChanging
+argument_list|()
+decl_stmt|;
 comment|// if we do not have to check modified and if the revision is exact and not changing,
 comment|// we first search for it in cache
 if|if
@@ -887,10 +911,7 @@ name|isCheckmodified
 argument_list|()
 operator|&&
 operator|!
-name|dd
-operator|.
-name|isChanging
-argument_list|()
+name|isChangingDependency
 condition|)
 block|{
 name|ResolvedModuleRevision
@@ -1492,10 +1513,7 @@ name|isCheckmodified
 argument_list|()
 operator|&&
 operator|!
-name|dd
-operator|.
-name|isChanging
-argument_list|()
+name|isChangingDependency
 condition|)
 block|{
 name|Message
@@ -1599,10 +1617,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dd
-operator|.
-name|isChanging
-argument_list|()
+name|isChangingDependency
 condition|)
 block|{
 comment|// ivy file has been updated, we should see if it has a new publication date
@@ -2147,10 +2162,7 @@ block|}
 block|}
 if|else if
 condition|(
-name|dd
-operator|.
-name|isChanging
-argument_list|()
+name|isChangingDependency
 condition|)
 block|{
 name|Message
