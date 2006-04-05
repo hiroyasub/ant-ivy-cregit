@@ -1024,7 +1024,15 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+operator|!
+name|getArtifactPatterns
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
 block|{
 name|destPattern
 operator|=
@@ -1039,6 +1047,24 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"impossible to publish "
+operator|+
+name|artifact
+operator|+
+literal|" using "
+operator|+
+name|this
+operator|+
+literal|": no artifact pattern defined"
+argument_list|)
+throw|;
 block|}
 comment|// Check for m2 compatibility
 name|ModuleRevisionId
