@@ -492,6 +492,51 @@ operator|)
 condition|)
 block|{
 comment|// check if latest is asked and compare to return the most recent
+name|String
+name|mrDesc
+init|=
+name|mr
+operator|.
+name|getId
+argument_list|()
+operator|+
+operator|(
+name|mr
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|isDefault
+argument_list|()
+condition|?
+literal|"[default]"
+else|:
+literal|""
+operator|)
+operator|+
+literal|" from "
+operator|+
+name|mr
+operator|.
+name|getResolver
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+decl_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"\tchecking "
+operator|+
+name|mrDesc
+operator|+
+literal|" against "
+operator|+
+name|ret
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ret
@@ -505,10 +550,7 @@ name|debug
 argument_list|(
 literal|"\tmodule revision kept as first found: "
 operator|+
-name|mr
-operator|.
-name|getId
-argument_list|()
+name|mrDesc
 argument_list|)
 expr_stmt|;
 name|ret
@@ -537,10 +579,7 @@ name|debug
 argument_list|(
 literal|"\tmodule revision kept as younger: "
 operator|+
-name|mr
-operator|.
-name|getId
-argument_list|()
+name|mrDesc
 argument_list|)
 expr_stmt|;
 name|ret
@@ -550,10 +589,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|ret
-operator|!=
-literal|null
-operator|&&
 operator|!
 name|mr
 operator|.
@@ -578,10 +613,7 @@ name|debug
 argument_list|(
 literal|"\tmodule revision kept as better (not default): "
 operator|+
-name|mr
-operator|.
-name|getId
-argument_list|()
+name|mrDesc
 argument_list|)
 expr_stmt|;
 name|ret
@@ -597,10 +629,7 @@ name|debug
 argument_list|(
 literal|"\tmodule revision discarded as older: "
 operator|+
-name|mr
-operator|.
-name|getId
-argument_list|()
+name|mrDesc
 argument_list|)
 expr_stmt|;
 block|}
@@ -630,10 +659,7 @@ name|debug
 argument_list|(
 literal|"\tmodule revision found and is not default: returning "
 operator|+
-name|mr
-operator|.
-name|getId
-argument_list|()
+name|mrDesc
 argument_list|)
 expr_stmt|;
 return|return
