@@ -287,6 +287,11 @@ operator|.
 name|getResolver
 argument_list|()
 argument_list|,
+name|rmr
+operator|.
+name|getArtifactResolver
+argument_list|()
+argument_list|,
 name|md
 argument_list|,
 name|rmr

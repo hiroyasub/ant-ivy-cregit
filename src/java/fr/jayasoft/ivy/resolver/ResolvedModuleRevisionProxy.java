@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * the same ResolvedModuleRevision except that we say that it is another resolver  * which resolved the dependency, so that it's it that is used for artifact download  * ==> forward all except getResolver method  */
+comment|/**   * the same ResolvedModuleRevision except that we say that it is another resolver  * the artifact resolver, so that it's it that is used for artifact download  * ==> forward all except getArtifactResolver method  */
 end_comment
 
 begin_class
@@ -96,7 +96,7 @@ name|ResolvedModuleRevision
 name|mr
 parameter_list|,
 name|DependencyResolver
-name|resolver
+name|artresolver
 parameter_list|)
 block|{
 if|if
@@ -116,7 +116,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|resolver
+name|artresolver
 operator|==
 literal|null
 condition|)
@@ -135,12 +135,24 @@ name|mr
 expr_stmt|;
 name|_resolver
 operator|=
-name|resolver
+name|artresolver
 expr_stmt|;
 block|}
 specifier|public
 name|DependencyResolver
 name|getResolver
+parameter_list|()
+block|{
+return|return
+name|_mr
+operator|.
+name|getResolver
+argument_list|()
+return|;
+block|}
+specifier|public
+name|DependencyResolver
+name|getArtifactResolver
 parameter_list|()
 block|{
 return|return

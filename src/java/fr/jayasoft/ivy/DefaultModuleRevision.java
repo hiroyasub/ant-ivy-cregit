@@ -39,6 +39,10 @@ name|DependencyResolver
 name|_resolver
 decl_stmt|;
 specifier|private
+name|DependencyResolver
+name|_artifactResolver
+decl_stmt|;
+specifier|private
 name|ModuleDescriptor
 name|_descriptor
 decl_stmt|;
@@ -56,6 +60,9 @@ parameter_list|(
 name|DependencyResolver
 name|resolver
 parameter_list|,
+name|DependencyResolver
+name|artifactResolver
+parameter_list|,
 name|ModuleDescriptor
 name|descriptor
 parameter_list|,
@@ -69,6 +76,10 @@ block|{
 name|_resolver
 operator|=
 name|resolver
+expr_stmt|;
+name|_artifactResolver
+operator|=
+name|artifactResolver
 expr_stmt|;
 name|_descriptor
 operator|=
@@ -90,6 +101,15 @@ parameter_list|()
 block|{
 return|return
 name|_resolver
+return|;
+block|}
+specifier|public
+name|DependencyResolver
+name|getArtifactResolver
+parameter_list|()
+block|{
+return|return
+name|_artifactResolver
 return|;
 block|}
 specifier|public

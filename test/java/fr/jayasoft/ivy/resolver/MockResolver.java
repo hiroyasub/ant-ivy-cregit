@@ -392,6 +392,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|DependencyResolver
+name|getArtifactResolver
+parameter_list|()
+block|{
+return|return
+name|r
+return|;
+block|}
 block|}
 expr_stmt|;
 block|}

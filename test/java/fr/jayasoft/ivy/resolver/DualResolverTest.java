@@ -562,7 +562,7 @@ name|dual
 argument_list|,
 name|rmr
 operator|.
-name|getResolver
+name|getArtifactResolver
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -1862,6 +1862,8 @@ name|DefaultModuleRevision
 argument_list|(
 name|this
 argument_list|,
+name|this
+argument_list|,
 name|md
 argument_list|,
 literal|true

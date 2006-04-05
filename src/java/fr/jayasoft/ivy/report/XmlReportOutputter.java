@@ -596,6 +596,21 @@ name|getName
 argument_list|()
 operator|+
 literal|"\""
+operator|+
+literal|" artresolver=\""
+operator|+
+name|dep
+operator|.
+name|getModuleRevision
+argument_list|()
+operator|.
+name|getArtifactResolver
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"\""
 expr_stmt|;
 block|}
 if|if
