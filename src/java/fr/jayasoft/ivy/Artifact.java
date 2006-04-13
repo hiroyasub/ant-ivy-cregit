@@ -31,6 +31,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Artifact
+extends|extends
+name|ExtendableItem
 block|{
 comment|/**      * Returns the resolved module revision id for this artifact      * @return      */
 name|ModuleRevisionId

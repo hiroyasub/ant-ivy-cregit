@@ -21,6 +21,8 @@ begin_class
 specifier|public
 class|class
 name|Configuration
+extends|extends
+name|DefaultExtendableItem
 block|{
 specifier|public
 specifier|static

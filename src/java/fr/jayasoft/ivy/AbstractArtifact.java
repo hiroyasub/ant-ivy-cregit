@@ -22,6 +22,8 @@ specifier|public
 specifier|abstract
 class|class
 name|AbstractArtifact
+extends|extends
+name|DefaultExtendableItem
 implements|implements
 name|Artifact
 block|{

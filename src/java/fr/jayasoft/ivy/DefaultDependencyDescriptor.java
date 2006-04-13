@@ -201,6 +201,8 @@ begin_class
 specifier|public
 class|class
 name|DefaultDependencyDescriptor
+extends|extends
+name|DefaultExtendableItem
 implements|implements
 name|DependencyDescriptor
 block|{

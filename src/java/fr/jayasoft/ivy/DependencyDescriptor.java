@@ -35,6 +35,8 @@ begin_interface
 specifier|public
 interface|interface
 name|DependencyDescriptor
+extends|extends
+name|ExtendableItem
 block|{
 name|ModuleId
 name|getDependencyId
