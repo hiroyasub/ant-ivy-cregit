@@ -144,6 +144,12 @@ specifier|private
 name|Visibility
 name|_visibility
 decl_stmt|;
+specifier|private
+name|boolean
+name|_transitive
+init|=
+literal|true
+decl_stmt|;
 comment|/**      * @param name      * @param visibility      * @param description      * @param ext      */
 specifier|public
 name|Configuration
@@ -160,6 +166,41 @@ parameter_list|,
 name|String
 index|[]
 name|ext
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|name
+argument_list|,
+name|visibility
+argument_list|,
+name|description
+argument_list|,
+name|ext
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @param name      * @param visibility      * @param description      * @param ext      * @param transitive      */
+specifier|public
+name|Configuration
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|Visibility
+name|visibility
+parameter_list|,
+name|String
+name|description
+parameter_list|,
+name|String
+index|[]
+name|ext
+parameter_list|,
+name|boolean
+name|transitive
 parameter_list|)
 block|{
 if|if
@@ -264,6 +305,10 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+name|_transitive
+operator|=
+name|transitive
+expr_stmt|;
 block|}
 comment|/**      * @param name      */
 specifier|public
@@ -326,6 +371,17 @@ parameter_list|()
 block|{
 return|return
 name|_visibility
+return|;
+block|}
+comment|/**      * @return Returns the transitive.      */
+specifier|public
+specifier|final
+name|boolean
+name|isTransitive
+parameter_list|()
+block|{
+return|return
+name|_transitive
 return|;
 block|}
 specifier|public
