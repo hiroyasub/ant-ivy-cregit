@@ -225,11 +225,11 @@ argument_list|()
 condition|;
 control|)
 block|{
-name|String
+name|PathEntry
 name|p
 init|=
 operator|(
-name|String
+name|PathEntry
 operator|)
 name|iter
 operator|.
@@ -249,6 +249,9 @@ operator|.
 name|setName
 argument_list|(
 name|p
+operator|.
+name|getLocation
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
