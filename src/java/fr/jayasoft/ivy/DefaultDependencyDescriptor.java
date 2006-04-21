@@ -1002,6 +1002,27 @@ argument_list|(
 name|moduleConfiguration
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|confs
+operator|==
+literal|null
+condition|)
+block|{
+comment|// there is no mapping defined for this configuration, add the 'other' mappings.
+name|confs
+operator|=
+operator|(
+name|List
+operator|)
+name|_confs
+operator|.
+name|get
+argument_list|(
+literal|"%"
+argument_list|)
+expr_stmt|;
+block|}
 name|List
 name|defConfs
 init|=
@@ -1227,7 +1248,7 @@ name|requestedConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**  * Replaces fallback patterns with correct values if fallback pattern exists.  * @param pattern pattern to look for  * @param conf configuration mapping from dependency element  * @param moduleConfiguration module's configuration to use for replacement  * @return Replaced string if pattern matched. Otherwise null.  */
+comment|/**      * Replaces fallback patterns with correct values if fallback pattern exists.      * @param pattern pattern to look for      * @param conf configuration mapping from dependency element      * @param moduleConfiguration module's configuration to use for replacement      * @return Replaced string if pattern matched. Otherwise null.      */
 specifier|protected
 specifier|static
 name|String
