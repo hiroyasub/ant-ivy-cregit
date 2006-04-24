@@ -121,6 +121,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -460,7 +470,7 @@ name|Set
 name|mrids
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
@@ -807,7 +817,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|(
 name|_dependencies
 operator|.

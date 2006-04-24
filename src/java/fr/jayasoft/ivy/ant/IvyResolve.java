@@ -548,6 +548,16 @@ literal|"resolve failed - see output for details"
 argument_list|)
 throw|;
 block|}
+name|getProject
+argument_list|()
+operator|.
+name|addReference
+argument_list|(
+literal|"ivy.resolved.report"
+argument_list|,
+name|report
+argument_list|)
+expr_stmt|;
 name|ModuleDescriptor
 name|md
 init|=
