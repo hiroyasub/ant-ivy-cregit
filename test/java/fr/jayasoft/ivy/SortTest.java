@@ -667,198 +667,34 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
-name|void
-name|testCircularDependency
-parameter_list|()
-block|{
-name|md
-index|[
-literal|0
-index|]
-operator|.
-name|addDependency
-argument_list|(
-operator|new
-name|DefaultDependencyDescriptor
-argument_list|(
-name|mrid4
-argument_list|,
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|toSort
-operator|=
-operator|new
-name|ArrayList
-argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-name|md
-index|[
-literal|0
-index|]
-block|,
-name|md
-index|[
-literal|2
-index|]
-block|,
-name|md
-index|[
-literal|1
-index|]
-block|,
-name|md
-index|[
-literal|3
-index|]
-block|}
-argument_list|)
-argument_list|)
-expr_stmt|;
-try|try
-block|{
-name|Ivy
-operator|.
-name|sortModuleDescriptors
-argument_list|(
-name|toSort
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|e
-parameter_list|)
-block|{
-comment|//successfull
-name|assertEquals
-argument_list|(
-literal|"Wrong dependency graph message"
-argument_list|,
-literal|"[ org | md1 | rev1 ]->[ org | md4 | rev4 ]->[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md1 | rev1 ]"
-argument_list|,
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-name|assertTrue
-argument_list|(
-literal|"Should have thrown circular dependency exception"
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|testCircularDependency2
-parameter_list|()
-block|{
-name|md
-index|[
-literal|1
-index|]
-operator|.
-name|addDependency
-argument_list|(
-operator|new
-name|DefaultDependencyDescriptor
-argument_list|(
-name|mrid3
-argument_list|,
-literal|false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|toSort
-operator|=
-operator|new
-name|ArrayList
-argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-name|md
-index|[
-literal|0
-index|]
-block|,
-name|md
-index|[
-literal|2
-index|]
-block|,
-name|md
-index|[
-literal|1
-index|]
-block|,
-name|md
-index|[
-literal|3
-index|]
-block|}
-argument_list|)
-argument_list|)
-expr_stmt|;
-try|try
-block|{
-name|Ivy
-operator|.
-name|sortModuleDescriptors
-argument_list|(
-name|toSort
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|e
-parameter_list|)
-block|{
-comment|//successfull
-name|assertEquals
-argument_list|(
-literal|"Wrong dependency graph message"
-argument_list|,
-literal|"[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md3 | rev3 ]"
-argument_list|,
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-name|assertTrue
-argument_list|(
-literal|"Should have thrown circular dependency exception"
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
+comment|// sorter does not throw circular dependency anymore for the moment,
+comment|// because circular dependencies are more complicated to evaluate than just a callstack comparison
+comment|// (could be ok with appropriate configurations) - see http://jira.jayasoft.org/browse/IVY-230
+comment|//    public void testCircularDependency() {
+comment|//        md[0].addDependency(new DefaultDependencyDescriptor(mrid4, false));
+comment|//        toSort = new ArrayList(Arrays.asList(new Object[] {md[0], md[2], md[1], md[3]}));
+comment|//        try {
+comment|//            Ivy.sortModuleDescriptors(toSort);
+comment|//        } catch (CircularDependencyException e) {
+comment|//            //successfull
+comment|//            assertEquals("Wrong dependency graph message", "[ org | md1 | rev1 ]->[ org | md4 | rev4 ]->[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md1 | rev1 ]", e.getMessage());
+comment|//            return;
+comment|//        }
+comment|//        assertTrue("Should have thrown circular dependency exception", false);
+comment|//    }
+comment|//
+comment|//    public void testCircularDependency2() {
+comment|//        md[1].addDependency(new DefaultDependencyDescriptor(mrid3, false));
+comment|//        toSort = new ArrayList(Arrays.asList(new Object[] {md[0], md[2], md[1], md[3]}));
+comment|//        try {
+comment|//            Ivy.sortModuleDescriptors(toSort);
+comment|//        } catch (CircularDependencyException e) {
+comment|//            //successfull
+comment|//            assertEquals("Wrong dependency graph message", "[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md3 | rev3 ]", e.getMessage());
+comment|//            return;
+comment|//        }
+comment|//        assertTrue("Should have thrown circular dependency exception", false);
+comment|//    }
 block|}
 end_class
 

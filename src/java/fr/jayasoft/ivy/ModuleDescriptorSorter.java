@@ -89,6 +89,20 @@ name|Stack
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|Message
+import|;
+end_import
+
 begin_comment
 comment|/**  * Inner helper class for sorting ModuleDescriptors.  * @author baumkar (for most of the code)  * @author xavier hanin (for the sorting of nodes based upon sort of modules)  *  */
 end_comment
@@ -468,7 +482,12 @@ argument_list|(
 name|current
 argument_list|)
 expr_stmt|;
-throw|throw
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"circular dependency found: "
+operator|+
 operator|new
 name|CircularDependencyException
 argument_list|(
@@ -487,7 +506,9 @@ literal|0
 index|]
 argument_list|)
 argument_list|)
-throw|;
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 name|DependencyDescriptor
 index|[]
