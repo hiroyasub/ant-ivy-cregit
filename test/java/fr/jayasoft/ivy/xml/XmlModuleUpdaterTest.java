@@ -115,7 +115,7 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|ModuleId
+name|ModuleRevisionId
 import|;
 end_import
 
@@ -179,12 +179,15 @@ name|resolvedRevisions
 operator|.
 name|put
 argument_list|(
-operator|new
-name|ModuleId
+name|ModuleRevisionId
+operator|.
+name|newInstance
 argument_list|(
 literal|"yourorg"
 argument_list|,
 literal|"yourmodule2"
+argument_list|,
+literal|"2+"
 argument_list|)
 argument_list|,
 literal|"2.5"
@@ -194,12 +197,15 @@ name|resolvedRevisions
 operator|.
 name|put
 argument_list|(
-operator|new
-name|ModuleId
+name|ModuleRevisionId
+operator|.
+name|newInstance
 argument_list|(
 literal|"yourorg"
 argument_list|,
 literal|"yourmodule6"
+argument_list|,
+literal|"latest.integration"
 argument_list|)
 argument_list|,
 literal|"6.3"
