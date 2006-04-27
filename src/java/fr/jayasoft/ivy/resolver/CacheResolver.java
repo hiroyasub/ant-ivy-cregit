@@ -405,6 +405,11 @@ name|ivyRef
 operator|.
 name|getRevision
 argument_list|()
+argument_list|,
+name|mrid
+operator|.
+name|getExtraAttributes
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|IvyNode

@@ -23,6 +23,20 @@ name|Date
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|extendable
+operator|.
+name|ExtendableItem
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author x.hanin  *  */
 end_comment

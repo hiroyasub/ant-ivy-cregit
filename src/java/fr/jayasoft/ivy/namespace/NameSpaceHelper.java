@@ -385,6 +385,11 @@ name|artifact
 operator|.
 name|getExt
 argument_list|()
+argument_list|,
+name|artifact
+operator|.
+name|getExtraAttributes
+argument_list|()
 argument_list|)
 return|;
 block|}

@@ -13,6 +13,20 @@ name|ivy
 package|;
 end_package
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|extendable
+operator|.
+name|DefaultExtendableItem
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a module configuration  */
 end_comment

@@ -337,6 +337,11 @@ argument_list|,
 name|mod
 argument_list|,
 name|rev
+argument_list|,
+name|mrid
+operator|.
+name|getExtraAttributes
+argument_list|()
 argument_list|)
 return|;
 block|}
