@@ -61,6 +61,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collection
 import|;
 end_import
@@ -82,6 +92,16 @@ operator|.
 name|util
 operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -408,6 +428,19 @@ argument_list|(
 literal|"\t<dependencies>"
 argument_list|)
 expr_stmt|;
+comment|// create a list of ModuleRevisionIds indicating the position for each dependency
+name|List
+name|dependencies
+init|=
+operator|new
+name|ArrayList
+argument_list|(
+name|report
+operator|.
+name|getModuleRevisionIds
+argument_list|()
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|Iterator
@@ -744,6 +777,19 @@ literal|"\""
 else|:
 literal|""
 decl_stmt|;
+name|int
+name|position
+init|=
+name|dependencies
+operator|.
+name|indexOf
+argument_list|(
+name|dep
+operator|.
+name|getResolvedId
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|out
 operator|.
 name|println
@@ -796,6 +842,12 @@ name|getConfiguration
 argument_list|()
 argument_list|)
 argument_list|)
+operator|+
+literal|"\""
+operator|+
+literal|" position=\""
+operator|+
+name|position
 operator|+
 literal|"\">"
 argument_list|)
