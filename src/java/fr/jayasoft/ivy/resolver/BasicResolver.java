@@ -2824,6 +2824,25 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+if|if
+condition|(
+name|ivyRef
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"impossible to create ivy file in cache for module : "
+operator|+
+name|resolvedMrid
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|Message
 operator|.
 name|warn
@@ -2836,6 +2855,7 @@ name|getResource
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|data
 operator|.
