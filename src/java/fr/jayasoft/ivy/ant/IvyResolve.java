@@ -666,6 +666,14 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|boolean
+name|hasChanged
+init|=
+name|report
+operator|.
+name|hasChanged
+argument_list|()
+decl_stmt|;
 name|getProject
 argument_list|()
 operator|.
@@ -677,10 +685,7 @@ name|String
 operator|.
 name|valueOf
 argument_list|(
-name|report
-operator|.
 name|hasChanged
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -694,10 +699,7 @@ name|String
 operator|.
 name|valueOf
 argument_list|(
-name|report
-operator|.
 name|hasChanged
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
