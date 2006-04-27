@@ -208,7 +208,39 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
-literal|"[ org1 | mod1.2 | 2.0.0 ]:2.0 (needed by [ jayasoft | resolve-noconflict | 1.0 ]) conflicts with [ org1 | mod1.2 | 2.1.0 ]:2.1 (needed by [ jayasoft | resolve-noconflict | 1.0 ])"
+literal|"[ org1 | mod1.2 | 2.0.0 ]:2.0 (needed by [ jayasoft | resolve-noconflict | 1.0 ])"
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|e
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|indexOf
+argument_list|(
+literal|"conflicts with"
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|e
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|indexOf
+argument_list|(
+literal|"[ org1 | mod1.2 | 2.1.0 ]:2.1 (needed by [ jayasoft | resolve-noconflict | 1.0 ])"
 argument_list|)
 operator|!=
 operator|-
