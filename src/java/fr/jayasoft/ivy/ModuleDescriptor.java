@@ -31,6 +31,8 @@ begin_interface
 specifier|public
 interface|interface
 name|ModuleDescriptor
+extends|extends
+name|ExtendableItem
 block|{
 specifier|public
 specifier|static

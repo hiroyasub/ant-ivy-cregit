@@ -1374,6 +1374,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|fillAttributes
+argument_list|(
+name|_md
+argument_list|,
+name|attributes
+argument_list|)
+expr_stmt|;
 block|}
 if|else if
 condition|(

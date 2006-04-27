@@ -195,6 +195,8 @@ begin_class
 specifier|public
 class|class
 name|DefaultModuleDescriptor
+extends|extends
+name|DefaultExtendableItem
 implements|implements
 name|ModuleDescriptor
 block|{
