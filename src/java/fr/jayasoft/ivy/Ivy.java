@@ -7140,7 +7140,10 @@ name|conf
 init|=
 name|node
 operator|.
-name|getParentConf
+name|getParent
+argument_list|()
+operator|.
+name|getRequestedConf
 argument_list|()
 decl_stmt|;
 if|if
