@@ -886,7 +886,7 @@ name|details
 operator|.
 name|append
 argument_list|(
-literal|" "
+literal|" extra-"
 argument_list|)
 operator|.
 name|append
@@ -1421,7 +1421,7 @@ name|out
 operator|.
 name|print
 argument_list|(
-literal|" "
+literal|" extra-"
 operator|+
 name|attName
 operator|+
