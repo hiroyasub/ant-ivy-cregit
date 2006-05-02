@@ -818,6 +818,9 @@ expr_stmt|;
 name|checkConfigurations
 argument_list|()
 expr_stmt|;
+name|replaceConfigurationWildcards
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3729,12 +3732,6 @@ argument_list|(
 literal|"default"
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|replaceConfigurationWildcards
-argument_list|()
 expr_stmt|;
 block|}
 block|}
