@@ -3034,6 +3034,31 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|parser
+operator|.
+name|_md
+operator|.
+name|isMappingOverride
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"enabling mapping-override from imported configurations file"
+argument_list|)
+expr_stmt|;
+name|_md
+operator|.
+name|setMappingOverride
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(
