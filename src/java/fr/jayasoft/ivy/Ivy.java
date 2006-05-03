@@ -6514,7 +6514,9 @@ operator|=
 name|node
 operator|.
 name|getRealNode
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 comment|// if data loading discarded the node, get the real one
 name|resolveConflict
