@@ -271,7 +271,21 @@ specifier|public
 name|void
 name|testSort
 parameter_list|()
+throws|throws
+name|Exception
 block|{
+name|Ivy
+name|ivy
+init|=
+operator|new
+name|Ivy
+argument_list|()
+decl_stmt|;
+name|ivy
+operator|.
+name|configureDefault
+argument_list|()
+expr_stmt|;
 name|toSort
 operator|=
 operator|new
@@ -312,7 +326,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -360,7 +374,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -408,7 +422,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -456,7 +470,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -504,7 +518,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -552,7 +566,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -600,7 +614,7 @@ name|assertSorted
 argument_list|(
 name|md
 argument_list|,
-name|Ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(

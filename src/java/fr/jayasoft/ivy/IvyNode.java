@@ -3152,32 +3152,46 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|!
-name|getId
+name|_data
+operator|.
+name|getIvy
 argument_list|()
 operator|.
-name|isExactRevision
+name|getVersionMatcher
 argument_list|()
+operator|.
+name|isDynamic
+argument_list|(
+name|getId
+argument_list|()
+argument_list|)
 condition|)
 block|{
 comment|// IVY-56: check if revision has actually been resolved
 if|if
 condition|(
-operator|!
+name|_data
+operator|.
+name|getIvy
+argument_list|()
+operator|.
+name|getVersionMatcher
+argument_list|()
+operator|.
+name|isDynamic
+argument_list|(
 name|_module
 operator|.
 name|getId
 argument_list|()
-operator|.
-name|isExactRevision
-argument_list|()
+argument_list|)
 condition|)
 block|{
 name|Message
 operator|.
 name|error
 argument_list|(
-literal|"impossible to resolve latest revision for "
+literal|"impossible to resolve dynamic revision for "
 operator|+
 name|getId
 argument_list|()
@@ -3190,7 +3204,7 @@ operator|=
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"impossible to resolve latest revision"
+literal|"impossible to resolve dynamic revision"
 argument_list|)
 expr_stmt|;
 name|_data
@@ -3483,12 +3497,19 @@ literal|true
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|getId
+name|_data
+operator|.
+name|getIvy
 argument_list|()
 operator|.
-name|isExactRevision
+name|getVersionMatcher
 argument_list|()
+operator|.
+name|isDynamic
+argument_list|(
+name|getId
+argument_list|()
+argument_list|)
 condition|)
 block|{
 if|if
@@ -3554,16 +3575,23 @@ operator|.
 name|getDescriptor
 argument_list|()
 expr_stmt|;
-comment|// if the revision was a latest one (which has now be resolved)
+comment|// if the revision was a dynamic one (which has now be resolved)
 comment|// store also it to cache the result
 if|if
 condition|(
-operator|!
-name|getId
+name|_data
+operator|.
+name|getIvy
 argument_list|()
 operator|.
-name|isExactRevision
+name|getVersionMatcher
 argument_list|()
+operator|.
+name|isDynamic
+argument_list|(
+name|getId
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|_data

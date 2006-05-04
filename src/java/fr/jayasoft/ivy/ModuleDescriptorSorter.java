@@ -103,6 +103,20 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|version
+operator|.
+name|VersionMatcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * Inner helper class for sorting ModuleDescriptors.  * @author baumkar (for most of the code)  * @author xavier hanin (for the sorting of nodes based upon sort of modules)  *  */
 end_comment
@@ -116,6 +130,9 @@ specifier|static
 name|List
 name|sortNodes
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|Collection
 name|nodes
 parameter_list|)
@@ -239,6 +256,8 @@ name|list
 init|=
 name|sortModuleDescriptors
 argument_list|(
+name|matcher
+argument_list|,
 name|dependenciesMap
 operator|.
 name|keySet
@@ -341,6 +360,9 @@ specifier|static
 name|List
 name|sortModuleDescriptors
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|Collection
 name|moduleDescriptors
 parameter_list|)
@@ -355,7 +377,9 @@ name|moduleDescriptors
 argument_list|)
 operator|.
 name|sortModuleDescriptors
-argument_list|()
+argument_list|(
+name|matcher
+argument_list|)
 return|;
 block|}
 specifier|private
@@ -406,7 +430,10 @@ comment|/**      * Iterates over all modules calling sortModuleDescriptorsHelp. 
 specifier|public
 name|List
 name|sortModuleDescriptors
-parameter_list|()
+parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|)
 throws|throws
 name|CircularDependencyException
 block|{
@@ -420,6 +447,8 @@ condition|)
 block|{
 name|sortModuleDescriptorsHelp
 argument_list|(
+name|matcher
+argument_list|,
 operator|(
 name|ModuleDescriptor
 operator|)
@@ -443,6 +472,9 @@ specifier|private
 name|void
 name|sortModuleDescriptorsHelp
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|ModuleDescriptor
 name|current
 parameter_list|,
@@ -549,6 +581,8 @@ name|moduleDescriptorDependency
 operator|=
 name|getModuleDescriptorDependency
 argument_list|(
+name|matcher
+argument_list|,
 name|descriptors
 index|[
 name|i
@@ -571,6 +605,8 @@ argument_list|)
 expr_stmt|;
 name|sortModuleDescriptorsHelp
 argument_list|(
+name|matcher
+argument_list|,
 name|moduleDescriptorDependency
 argument_list|,
 name|callStack
@@ -596,6 +632,9 @@ specifier|private
 name|ModuleDescriptor
 name|getModuleDescriptorDependency
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|DependencyDescriptor
 name|descriptor
 parameter_list|)
@@ -669,20 +708,16 @@ return|;
 block|}
 if|else if
 condition|(
+name|matcher
+operator|.
+name|accept
+argument_list|(
 name|descriptor
 operator|.
 name|getDependencyRevisionId
 argument_list|()
-operator|.
-name|acceptRevision
-argument_list|(
+argument_list|,
 name|md
-operator|.
-name|getResolvedModuleRevisionId
-argument_list|()
-operator|.
-name|getRevision
-argument_list|()
 argument_list|)
 condition|)
 block|{

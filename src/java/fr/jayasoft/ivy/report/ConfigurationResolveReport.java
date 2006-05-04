@@ -1175,7 +1175,7 @@ block|{
 name|List
 name|sortedDependencies
 init|=
-name|Ivy
+name|_ivy
 operator|.
 name|sortNodes
 argument_list|(

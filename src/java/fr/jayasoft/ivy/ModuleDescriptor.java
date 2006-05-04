@@ -37,6 +37,20 @@ name|ExtendableItem
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|version
+operator|.
+name|VersionMatcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author x.hanin  *  */
 end_comment
@@ -133,6 +147,9 @@ comment|/**      * Returns true if the module described by this descriptor depen
 name|boolean
 name|dependsOn
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|ModuleDescriptor
 name|md
 parameter_list|)

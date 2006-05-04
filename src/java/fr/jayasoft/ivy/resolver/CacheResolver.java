@@ -260,10 +260,17 @@ comment|// if we do not have to check modified and if the revision is exact and 
 comment|// we first search for it in cache
 if|if
 condition|(
-name|mrid
-operator|.
-name|isExactRevision
+operator|!
+name|getIvy
 argument_list|()
+operator|.
+name|getVersionMatcher
+argument_list|()
+operator|.
+name|isDynamic
+argument_list|(
+name|mrid
+argument_list|)
 condition|)
 block|{
 name|ResolvedModuleRevision

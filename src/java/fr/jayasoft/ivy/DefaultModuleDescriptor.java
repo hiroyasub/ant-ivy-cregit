@@ -187,6 +187,20 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|version
+operator|.
+name|VersionMatcher
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author X.Hanin  *  */
 end_comment
@@ -1520,6 +1534,9 @@ specifier|public
 name|boolean
 name|dependsOn
 parameter_list|(
+name|VersionMatcher
+name|matcher
+parameter_list|,
 name|ModuleDescriptor
 name|md
 parameter_list|)
@@ -1590,20 +1607,16 @@ return|;
 block|}
 if|else if
 condition|(
+name|matcher
+operator|.
+name|accept
+argument_list|(
 name|dd
 operator|.
 name|getDependencyRevisionId
 argument_list|()
-operator|.
-name|acceptRevision
-argument_list|(
+argument_list|,
 name|md
-operator|.
-name|getResolvedModuleRevisionId
-argument_list|()
-operator|.
-name|getRevision
-argument_list|()
 argument_list|)
 condition|)
 block|{
