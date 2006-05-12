@@ -305,6 +305,8 @@ block|,
 literal|"latest-strategies"
 block|,
 literal|"conflict-managers"
+block|,
+literal|"outputters"
 block|}
 argument_list|)
 decl_stmt|;

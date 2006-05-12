@@ -83,6 +83,15 @@ implements|implements
 name|ReportOutputter
 block|{
 specifier|public
+name|String
+name|getName
+parameter_list|()
+block|{
+return|return
+name|CONSOLE
+return|;
+block|}
+specifier|public
 name|void
 name|output
 parameter_list|(
