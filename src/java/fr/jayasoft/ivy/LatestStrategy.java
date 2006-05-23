@@ -23,6 +23,16 @@ name|Date
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
@@ -38,6 +48,15 @@ name|infos
 parameter_list|,
 name|Date
 name|date
+parameter_list|)
+function_decl|;
+comment|/**      * Sorts the given artifacts info from the latest one to the oldest one.      * The definition of 'latest' depends on the strategy itself.      * Given artifacts info are all good candidate.       * @param infos      * @return      */
+name|List
+name|sort
+parameter_list|(
+name|ArtifactInfo
+index|[]
+name|infos
 parameter_list|)
 function_decl|;
 name|String

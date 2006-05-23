@@ -93,6 +93,12 @@ name|ModuleDescriptor
 name|foundMD
 parameter_list|)
 function_decl|;
+comment|/**      * Returns the version matcher name identifying this version matcher      * @return the version matcher name identifying this version matcher      */
+specifier|public
+name|String
+name|getName
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

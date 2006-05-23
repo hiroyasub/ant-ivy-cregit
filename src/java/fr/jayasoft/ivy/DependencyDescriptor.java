@@ -175,6 +175,10 @@ name|boolean
 name|canExclude
 parameter_list|()
 function_decl|;
+name|DependencyDescriptor
+name|asSystem
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

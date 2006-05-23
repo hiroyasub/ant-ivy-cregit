@@ -189,20 +189,6 @@ name|Message
 import|;
 end_import
 
-begin_import
-import|import
-name|fr
-operator|.
-name|jayasoft
-operator|.
-name|ivy
-operator|.
-name|version
-operator|.
-name|VersionMatcher
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -975,9 +961,6 @@ name|pattern
 parameter_list|,
 name|Artifact
 name|artifact
-parameter_list|,
-name|VersionMatcher
-name|versionMatcher
 parameter_list|)
 block|{
 comment|// substitute all but revision
@@ -1072,11 +1055,6 @@ operator|.
 name|length
 argument_list|)
 decl_stmt|;
-name|String
-name|rres
-init|=
-literal|null
-decl_stmt|;
 for|for
 control|(
 name|int
@@ -1094,42 +1072,9 @@ name|i
 operator|++
 control|)
 block|{
-name|ModuleRevisionId
-name|foundMrid
-init|=
-operator|new
-name|ModuleRevisionId
-argument_list|(
-name|mrid
-operator|.
-name|getModuleId
-argument_list|()
-argument_list|,
-name|revs
-index|[
-name|i
-index|]
-argument_list|,
-name|mrid
-operator|.
-name|getExtraAttributes
-argument_list|()
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|versionMatcher
-operator|.
-name|accept
-argument_list|(
-name|mrid
-argument_list|,
-name|foundMrid
-argument_list|)
-condition|)
-block|{
+name|String
 name|rres
-operator|=
+init|=
 name|IvyPatternHelper
 operator|.
 name|substituteToken
@@ -1145,7 +1090,7 @@ index|[
 name|i
 index|]
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 try|try
 block|{
 name|ret
@@ -1192,7 +1137,6 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 if|if
@@ -1335,6 +1279,55 @@ return|return
 literal|null
 return|;
 block|}
+comment|//    public static ResolvedResource[] findAll(Repository rep, ModuleRevisionId mrid, String pattern, Artifact artifact, VersionMatcher versionMatcher, ResourceMDParser mdParser) {
+comment|//        // substitute all but revision
+comment|//        String partiallyResolvedPattern = IvyPatternHelper.substitute(pattern, new ModuleRevisionId(mrid.getModuleId(), IvyPatternHelper.getTokenString(IvyPatternHelper.REVISION_KEY), mrid.getExtraAttributes()), artifact);
+comment|//        Message.debug("\tlisting all in "+partiallyResolvedPattern);
+comment|//
+comment|//        String[] revs = listTokenValues(rep, partiallyResolvedPattern, IvyPatternHelper.REVISION_KEY);
+comment|//        if (revs != null) {
+comment|//            Message.debug("\tfound revs: "+Arrays.asList(revs));
+comment|//            List ret = new ArrayList(revs.length);
+comment|//            String rres = null;
+comment|//            for (int i = 0; i< revs.length; i++) {
+comment|//                ModuleRevisionId foundMrid = new ModuleRevisionId(mrid.getModuleId(), revs[i], mrid.getExtraAttributes());
+comment|//                if (versionMatcher.accept(mrid, foundMrid)) {
+comment|//                    rres = IvyPatternHelper.substituteToken(partiallyResolvedPattern, IvyPatternHelper.REVISION_KEY, revs[i]);
+comment|//                    try {
+comment|//                    	ResolvedResource resolvedResource;
+comment|//                    	if (versionMatcher.needModuleDescriptor(mrid, foundMrid)) {
+comment|//                    		resolvedResource = mdParser.parse(rep.getResource(rres), revs[i]);
+comment|//                    		if (!versionMatcher.accept(mrid, ((MDResolvedResource)resolvedResource).getResolvedModuleRevision().getDescriptor())) {
+comment|//                    			continue;
+comment|//                    		}
+comment|//                    	} else {
+comment|//                    		resolvedResource = new ResolvedResource(rep.getResource(rres), revs[i]);
+comment|//                    	}
+comment|//                    	ret.add(resolvedResource);
+comment|//                    } catch (IOException e) {
+comment|//                        Message.warn("impossible to get resource from name listed by repository: "+rres+": "+e.getMessage());
+comment|//                    }
+comment|//                }
+comment|//            }
+comment|//            if (revs.length != ret.size()) {
+comment|//                Message.debug("\tfound resolved res: "+ret);
+comment|//            }
+comment|//            return (ResolvedResource[])ret.toArray(new ResolvedResource[ret.size()]);
+comment|//        } else {
+comment|//            // maybe the partially resolved pattern is completely resolved ?
+comment|//            try {
+comment|//                Resource res = rep.getResource(partiallyResolvedPattern);
+comment|//                if (res.exists()) {
+comment|//                    Message.debug("\tonly one resource found without real listing: using and defining it as working@"+rep.getName()+" revision: "+res.getName());
+comment|//                    return new ResolvedResource[] {new ResolvedResource(res, "working@"+rep.getName())};
+comment|//                }
+comment|//            } catch (IOException e) {
+comment|//                Message.debug("\timpossible to get resource from name listed by repository: "+partiallyResolvedPattern+": "+e.getMessage());
+comment|//            }
+comment|//            Message.debug("\tno revision found");
+comment|//        }
+comment|//        return null;
+comment|//    }
 comment|// lists all the values a token can take in a pattern, as listed by a given url lister
 specifier|public
 specifier|static

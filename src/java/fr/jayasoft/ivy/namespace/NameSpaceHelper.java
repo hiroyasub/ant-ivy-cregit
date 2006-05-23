@@ -185,6 +185,9 @@ name|dd
 parameter_list|,
 name|NamespaceTransformer
 name|t
+parameter_list|,
+name|boolean
+name|fromSystem
 parameter_list|)
 block|{
 return|return
@@ -195,6 +198,8 @@ argument_list|(
 name|dd
 argument_list|,
 name|t
+argument_list|,
+name|fromSystem
 argument_list|)
 return|;
 block|}
@@ -302,6 +307,11 @@ argument_list|,
 name|rmr
 operator|.
 name|isDownloaded
+argument_list|()
+argument_list|,
+name|rmr
+operator|.
+name|getLocalMDUrl
 argument_list|()
 argument_list|)
 return|;

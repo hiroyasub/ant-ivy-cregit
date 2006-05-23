@@ -261,6 +261,13 @@ name|getDate
 argument_list|()
 argument_list|)
 argument_list|,
+name|getRMDParser
+argument_list|(
+name|dd
+argument_list|,
+name|data
+argument_list|)
+argument_list|,
 name|data
 operator|.
 name|getDate
