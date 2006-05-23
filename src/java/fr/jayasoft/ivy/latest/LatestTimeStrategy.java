@@ -84,7 +84,7 @@ operator|(
 operator|(
 name|ArtifactInfo
 operator|)
-name|o1
+name|o2
 operator|)
 operator|.
 name|getLastModified
