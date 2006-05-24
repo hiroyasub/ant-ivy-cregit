@@ -61,16 +61,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Date
 import|;
 end_import
@@ -224,20 +214,6 @@ operator|.
 name|ivy
 operator|.
 name|ModuleRevisionId
-import|;
-end_import
-
-begin_import
-import|import
-name|fr
-operator|.
-name|jayasoft
-operator|.
-name|ivy
-operator|.
-name|Configuration
-operator|.
-name|Visibility
 import|;
 end_import
 
