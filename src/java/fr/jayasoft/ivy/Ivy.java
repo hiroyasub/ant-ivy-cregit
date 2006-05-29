@@ -10239,7 +10239,6 @@ name|systemOrg
 init|=
 name|org
 decl_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|fromNamespace
