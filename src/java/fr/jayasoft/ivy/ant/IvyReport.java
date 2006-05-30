@@ -934,6 +934,11 @@ argument_list|)
 expr_stmt|;
 name|xslt
 operator|.
+name|init
+argument_list|()
+expr_stmt|;
+name|xslt
+operator|.
 name|setIn
 argument_list|(
 operator|new
@@ -1424,6 +1429,11 @@ argument_list|(
 name|getProject
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|xslt
+operator|.
+name|init
+argument_list|()
 expr_stmt|;
 name|xslt
 operator|.
