@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * This file is subject to the license found in LICENCE.TXT in the root directory of the project.  *   * #SNAPSHOT#  */
+comment|/*  * This file is subject to the license found in LICENCE.TXT in the root directory of the project.  *   * version 1.3.1  */
 end_comment
 
 begin_package
@@ -130,13 +130,21 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"jakarta commons httpclient not found: no authentication will be done"
+literal|"jakarta commons httpclient not found: using jdk url handling"
 argument_list|)
 expr_stmt|;
 return|return
 operator|new
 name|BasicURLHandler
-argument_list|()
+argument_list|(
+name|realm
+argument_list|,
+name|host
+argument_list|,
+name|userName
+argument_list|,
+name|passwd
+argument_list|)
 return|;
 block|}
 block|}

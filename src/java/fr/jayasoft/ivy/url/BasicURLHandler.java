@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * This file is subject to the license found in LICENCE.TXT in the root directory of the project.  *   * #SNAPSHOT#  */
+comment|/*  * This file is subject to the license found in LICENCE.TXT in the root directory of the project.  *   * version 1.3.1  */
 end_comment
 
 begin_package
@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Xavier Hanin  *  */
+comment|/**  * @author Xavier Hanin  * @author Christian Riege  *  */
 end_comment
 
 begin_class
@@ -158,6 +158,16 @@ name|BasicURLHandler
 extends|extends
 name|AbstractURLHandler
 block|{
+specifier|private
+specifier|final
+specifier|static
+name|IvyAuthenticator
+name|AUTH
+init|=
+name|IvyAuthenticator
+operator|.
+name|INSTANCE
+decl_stmt|;
 specifier|private
 specifier|static
 interface|interface
@@ -177,6 +187,60 @@ name|SC_PROXY_AUTHENTICATION_REQUIRED
 init|=
 literal|407
 decl_stmt|;
+block|}
+specifier|public
+name|BasicURLHandler
+parameter_list|()
+block|{
+name|this
+argument_list|(
+literal|null
+argument_list|,
+literal|null
+argument_list|,
+literal|null
+argument_list|,
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|BasicURLHandler
+parameter_list|(
+name|String
+name|realm
+parameter_list|,
+name|String
+name|host
+parameter_list|,
+name|String
+name|userName
+parameter_list|,
+name|String
+name|passwd
+parameter_list|)
+block|{
+if|if
+condition|(
+name|host
+operator|!=
+literal|null
+condition|)
+block|{
+name|AUTH
+operator|.
+name|addCredentials
+argument_list|(
+name|realm
+argument_list|,
+name|host
+argument_list|,
+name|userName
+argument_list|,
+name|passwd
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|URLInfo
