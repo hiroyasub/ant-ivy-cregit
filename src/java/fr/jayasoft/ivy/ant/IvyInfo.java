@@ -151,9 +151,9 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|xml
+name|parser
 operator|.
-name|XmlModuleDescriptorParser
+name|ModuleDescriptorParserRegistry
 import|;
 end_import
 
@@ -237,7 +237,7 @@ block|{
 name|ModuleDescriptor
 name|md
 init|=
-name|XmlModuleDescriptorParser
+name|ModuleDescriptorParserRegistry
 operator|.
 name|getInstance
 argument_list|()
