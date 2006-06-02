@@ -938,6 +938,9 @@ name|getDependencyRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 name|String
 name|condition
@@ -1001,6 +1004,9 @@ name|getDependencyRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 name|String
 name|leftOp
