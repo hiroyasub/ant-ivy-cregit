@@ -47,7 +47,9 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|Status
+name|status
+operator|.
+name|StatusManager
 import|;
 end_import
 
@@ -155,14 +157,20 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 return|return
-name|Status
+name|StatusManager
+operator|.
+name|getCurrent
+argument_list|()
 operator|.
 name|getPriority
 argument_list|(
 name|askedStatus
 argument_list|)
 operator|>=
-name|Status
+name|StatusManager
+operator|.
+name|getCurrent
+argument_list|()
 operator|.
 name|getPriority
 argument_list|(

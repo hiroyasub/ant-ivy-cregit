@@ -181,7 +181,9 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|Status
+name|status
+operator|.
+name|StatusManager
 import|;
 end_import
 
@@ -222,7 +224,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|Status
+name|StatusManager
+operator|.
+name|getCurrent
+argument_list|()
 operator|.
 name|isIntegration
 argument_list|(
@@ -250,7 +255,10 @@ comment|// we are publishing a delivery (a non integration module)
 if|if
 condition|(
 operator|!
-name|Status
+name|StatusManager
+operator|.
+name|getCurrent
+argument_list|()
 operator|.
 name|isIntegration
 argument_list|(
@@ -566,7 +574,10 @@ name|input
 operator|.
 name|setValidargs
 argument_list|(
-name|Status
+name|StatusManager
+operator|.
+name|getCurrent
+argument_list|()
 operator|.
 name|getDeliveryStatusListString
 argument_list|()
