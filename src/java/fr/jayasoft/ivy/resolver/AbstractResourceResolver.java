@@ -900,6 +900,12 @@ name|token
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|isAllownomd
+argument_list|()
+condition|)
+block|{
 name|names
 operator|.
 name|addAll
@@ -912,6 +918,7 @@ name|token
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|names
 return|;
