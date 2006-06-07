@@ -2526,6 +2526,11 @@ name|cachedIvyURL
 init|=
 literal|null
 decl_stmt|;
+name|File
+name|ivyTempFile
+init|=
+literal|null
+decl_stmt|;
 try|try
 block|{
 comment|// first check if source file is not cache file itself
@@ -2577,9 +2582,8 @@ literal|null
 return|;
 block|}
 comment|// temp file is used to prevent downloading twice
-name|File
 name|ivyTempFile
-init|=
+operator|=
 name|File
 operator|.
 name|createTempFile
@@ -2588,7 +2592,7 @@ literal|"ivy"
 argument_list|,
 literal|"xml"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|ivyTempFile
 operator|.
 name|deleteOnExit
@@ -2609,6 +2613,10 @@ name|ivyRef
 operator|.
 name|getResource
 argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|ivyTempFile
 argument_list|)
 expr_stmt|;
 name|get
@@ -2674,6 +2682,10 @@ name|ivyRef
 operator|.
 name|getResource
 argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|ivyTempFile
 operator|+
 literal|": "
 operator|+
