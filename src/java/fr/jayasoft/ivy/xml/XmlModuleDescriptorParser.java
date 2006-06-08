@@ -1186,6 +1186,8 @@ block|,
 literal|"namespace"
 block|,
 literal|"default"
+block|,
+literal|"resolver"
 block|}
 argument_list|)
 argument_list|)
