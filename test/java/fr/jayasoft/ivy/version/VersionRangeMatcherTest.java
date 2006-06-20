@@ -142,14 +142,14 @@ argument_list|)
 expr_stmt|;
 name|assertDynamic
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
 name|assertDynamic
 argument_list|(
-literal|"(1.0]"
+literal|"(,1.0]"
 argument_list|,
 literal|true
 argument_list|)
@@ -300,7 +300,7 @@ parameter_list|()
 block|{
 name|assertAccept
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|"1.1"
 argument_list|,
@@ -309,7 +309,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|"2.0"
 argument_list|,
@@ -318,7 +318,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|"3.5.6"
 argument_list|,
@@ -327,7 +327,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|"1.0"
 argument_list|,
@@ -336,7 +336,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"[1.0)"
+literal|"[1.0,)"
 argument_list|,
 literal|"0.9"
 argument_list|,
@@ -345,7 +345,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0]"
+literal|"(,2.0]"
 argument_list|,
 literal|"1.1"
 argument_list|,
@@ -354,7 +354,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0]"
+literal|"(,2.0]"
 argument_list|,
 literal|"0.1"
 argument_list|,
@@ -363,7 +363,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0]"
+literal|"(,2.0]"
 argument_list|,
 literal|"0.2.4"
 argument_list|,
@@ -372,7 +372,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0]"
+literal|"(,2.0]"
 argument_list|,
 literal|"2.0"
 argument_list|,
@@ -381,7 +381,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0]"
+literal|"(,2.0]"
 argument_list|,
 literal|"2.3"
 argument_list|,
@@ -396,7 +396,7 @@ parameter_list|()
 block|{
 name|assertAccept
 argument_list|(
-literal|"]1.0)"
+literal|"]1.0,)"
 argument_list|,
 literal|"1.1"
 argument_list|,
@@ -405,7 +405,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"]1.0)"
+literal|"]1.0,)"
 argument_list|,
 literal|"2.0"
 argument_list|,
@@ -414,7 +414,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"]1.0)"
+literal|"]1.0,)"
 argument_list|,
 literal|"3.5.6"
 argument_list|,
@@ -423,7 +423,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"]1.0)"
+literal|"]1.0,)"
 argument_list|,
 literal|"1.0"
 argument_list|,
@@ -432,7 +432,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"]1.0)"
+literal|"]1.0,)"
 argument_list|,
 literal|"0.9"
 argument_list|,
@@ -441,7 +441,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0["
+literal|"(,2.0["
 argument_list|,
 literal|"1.1"
 argument_list|,
@@ -450,7 +450,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0["
+literal|"(,2.0["
 argument_list|,
 literal|"0.1"
 argument_list|,
@@ -459,7 +459,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0["
+literal|"(,2.0["
 argument_list|,
 literal|"0.2.4"
 argument_list|,
@@ -468,7 +468,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0["
+literal|"(,2.0["
 argument_list|,
 literal|"2.0"
 argument_list|,
@@ -477,7 +477,7 @@ argument_list|)
 expr_stmt|;
 name|assertAccept
 argument_list|(
-literal|"(2.0["
+literal|"(,2.0["
 argument_list|,
 literal|"2.3"
 argument_list|,
