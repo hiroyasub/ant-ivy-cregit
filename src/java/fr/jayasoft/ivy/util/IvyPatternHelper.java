@@ -2364,6 +2364,7 @@ operator|=
 name|origin
 expr_stmt|;
 block|}
+comment|// Called by substituteTokens only if the original artifact name is needed
 specifier|public
 name|String
 name|toString
@@ -2440,7 +2441,6 @@ argument_list|,
 name|artifact
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|origin
@@ -2448,9 +2448,23 @@ operator|==
 literal|null
 condition|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"no artifact origin found for "
+operator|+
+name|artifact
+operator|+
+literal|" in "
+operator|+
+name|cache
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;
+block|}
 block|}
 comment|// we assume that the original filename is the last part of the original file location
 name|String
