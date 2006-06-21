@@ -97,6 +97,20 @@ name|Ivy
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|Message
+import|;
+end_import
+
 begin_comment
 comment|/**  * Note: update methods (such as addStatus) should only be called BEFORE any call to accessor methods  * @author x.hanin  *  */
 end_comment
@@ -396,6 +410,34 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|boolean
+name|isStatus
+parameter_list|(
+name|String
+name|status
+parameter_list|)
+block|{
+if|if
+condition|(
+name|_statusPriorityMap
+operator|==
+literal|null
+condition|)
+block|{
+name|computeMaps
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|_statusPriorityMap
+operator|.
+name|containsKey
+argument_list|(
+name|status
+argument_list|)
+return|;
+block|}
+specifier|public
 name|int
 name|getPriority
 parameter_list|(
@@ -434,15 +476,22 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
+name|Message
+operator|.
+name|debug
 argument_list|(
 literal|"unknown status "
 operator|+
 name|status
+operator|+
+literal|": assuming lowest priority"
 argument_list|)
-throw|;
+expr_stmt|;
+return|return
+name|Integer
+operator|.
+name|MAX_VALUE
+return|;
 block|}
 return|return
 name|priority
@@ -490,15 +539,20 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
+name|Message
+operator|.
+name|debug
 argument_list|(
 literal|"unknown status "
 operator|+
 name|status
+operator|+
+literal|": assuming integration"
 argument_list|)
-throw|;
+expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
 return|return
 name|isIntegration

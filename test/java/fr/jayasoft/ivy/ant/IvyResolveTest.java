@@ -700,7 +700,7 @@ name|BuildException
 name|ex
 parameter_list|)
 block|{
-comment|// ok => should raised an exception
+comment|// ok => should raise an exception
 block|}
 block|}
 specifier|public
@@ -740,7 +740,47 @@ name|BuildException
 name|ex
 parameter_list|)
 block|{
-comment|// ok => should raised an exception
+comment|// ok => should raise an exception
+block|}
+block|}
+specifier|public
+name|void
+name|testFailureOnBadStatusInDependencyIvyFile
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+try|try
+block|{
+name|_resolve
+operator|.
+name|setFile
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/java/fr/jayasoft/ivy/ant/ivy-failure3.xml"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|_resolve
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"failure didn't raised an exception with default haltonfailure setting"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|BuildException
+name|ex
+parameter_list|)
+block|{
+comment|// ok => should raise an exception
 block|}
 block|}
 specifier|public
