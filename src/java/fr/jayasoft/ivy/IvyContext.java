@@ -23,8 +23,20 @@ name|File
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|lang
+operator|.
+name|ref
+operator|.
+name|WeakReference
+import|;
+end_import
+
 begin_comment
-comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @author x.hanin  * @author Maarten Coene  */
+comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @author Xavier Hanin  * @author Maarten Coene  */
 end_comment
 
 begin_class
@@ -42,7 +54,7 @@ name|ThreadLocal
 argument_list|()
 decl_stmt|;
 specifier|private
-name|Ivy
+name|WeakReference
 name|_ivy
 decl_stmt|;
 specifier|private
@@ -97,7 +109,13 @@ name|getIvy
 parameter_list|()
 block|{
 return|return
+operator|(
+name|Ivy
+operator|)
 name|_ivy
+operator|.
+name|get
+argument_list|()
 return|;
 block|}
 name|void
@@ -109,7 +127,11 @@ parameter_list|)
 block|{
 name|_ivy
 operator|=
+operator|new
+name|WeakReference
+argument_list|(
 name|ivy
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
