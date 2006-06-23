@@ -3462,6 +3462,8 @@ block|,
 literal|"mod1.4"
 block|,
 literal|"mod1.5"
+block|,
+literal|"mod1.6"
 block|}
 argument_list|,
 name|mods
@@ -3505,8 +3507,6 @@ block|{
 literal|"1.0"
 block|,
 literal|"1.0.1"
-block|,
-literal|"1.0.2"
 block|,
 literal|"1.1"
 block|,

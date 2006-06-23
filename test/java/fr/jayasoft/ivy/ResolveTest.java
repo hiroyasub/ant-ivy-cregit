@@ -1264,7 +1264,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod1.4 depends on mod1.1, in which the ivy file has no revision
+comment|// mod1.4 depends on mod1.6, in which the ivy file has no revision
 name|ResolveReport
 name|report
 init|=
