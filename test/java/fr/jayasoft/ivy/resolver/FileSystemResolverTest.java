@@ -3506,6 +3506,8 @@ literal|"1.0"
 block|,
 literal|"1.0.1"
 block|,
+literal|"1.0.2"
+block|,
 literal|"1.1"
 block|,
 literal|"2.0"
