@@ -14507,7 +14507,7 @@ block|{
 comment|// ok
 name|assertEquals
 argument_list|(
-literal|"[ org9 | mod9.1 | NONE ]->[ org9 | mod9.2 | 2.+ ]->[ org9 | mod9.1 | 2.+ ]"
+literal|"[ org8 | mod8.5 | NONE ]->[ org8 | mod8.6 | 2.+ ]->[ org8 | mod8.5 | 2.+ ]"
 argument_list|,
 name|ex
 operator|.
