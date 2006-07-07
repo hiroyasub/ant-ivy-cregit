@@ -510,7 +510,15 @@ argument_list|()
 operator|+
 literal|" | "
 operator|+
+operator|(
 name|_revision
+operator|==
+literal|null
+condition|?
+literal|"NONE"
+else|:
+name|_revision
+operator|)
 operator|+
 literal|" ]"
 return|;

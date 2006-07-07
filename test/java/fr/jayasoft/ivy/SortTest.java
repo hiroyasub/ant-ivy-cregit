@@ -681,34 +681,207 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// sorter does not throw circular dependency anymore for the moment,
+comment|// sorter does not throw circular dependency, circular dependencies are handled at resolve time only
 comment|// because circular dependencies are more complicated to evaluate than just a callstack comparison
-comment|// (could be ok with appropriate configurations) - see http://jira.jayasoft.org/browse/IVY-230
-comment|//    public void testCircularDependency() {
-comment|//        md[0].addDependency(new DefaultDependencyDescriptor(mrid4, false));
-comment|//        toSort = new ArrayList(Arrays.asList(new Object[] {md[0], md[2], md[1], md[3]}));
-comment|//        try {
-comment|//            Ivy.sortModuleDescriptors(toSort);
-comment|//        } catch (CircularDependencyException e) {
-comment|//            //successfull
-comment|//            assertEquals("Wrong dependency graph message", "[ org | md1 | rev1 ]->[ org | md4 | rev4 ]->[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md1 | rev1 ]", e.getMessage());
-comment|//            return;
-comment|//        }
-comment|//        assertTrue("Should have thrown circular dependency exception", false);
-comment|//    }
-comment|//
-comment|//    public void testCircularDependency2() {
-comment|//        md[1].addDependency(new DefaultDependencyDescriptor(mrid3, false));
-comment|//        toSort = new ArrayList(Arrays.asList(new Object[] {md[0], md[2], md[1], md[3]}));
-comment|//        try {
-comment|//            Ivy.sortModuleDescriptors(toSort);
-comment|//        } catch (CircularDependencyException e) {
-comment|//            //successfull
-comment|//            assertEquals("Wrong dependency graph message", "[ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md3 | rev3 ]", e.getMessage());
-comment|//            return;
-comment|//        }
-comment|//        assertTrue("Should have thrown circular dependency exception", false);
-comment|//    }
+specifier|public
+name|void
+name|testCircularDependency
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|Ivy
+name|ivy
+init|=
+operator|new
+name|Ivy
+argument_list|()
+decl_stmt|;
+name|ivy
+operator|.
+name|configureDefault
+argument_list|()
+expr_stmt|;
+name|md
+index|[
+literal|0
+index|]
+operator|.
+name|addDependency
+argument_list|(
+operator|new
+name|DefaultDependencyDescriptor
+argument_list|(
+name|mrid4
+argument_list|,
+literal|false
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|toSort
+operator|=
+operator|new
+name|ArrayList
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+operator|new
+name|Object
+index|[]
+block|{
+name|md
+index|[
+literal|0
+index|]
+block|,
+name|md
+index|[
+literal|2
+index|]
+block|,
+name|md
+index|[
+literal|1
+index|]
+block|,
+name|md
+index|[
+literal|3
+index|]
+block|}
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// the sorted array may begin by any of the modules since there is a circular dependency
+comment|// in this case, the result is the following
+name|DefaultModuleDescriptor
+index|[]
+name|sorted
+init|=
+operator|new
+name|DefaultModuleDescriptor
+index|[]
+block|{
+name|md
+index|[
+literal|1
+index|]
+block|,
+name|md
+index|[
+literal|2
+index|]
+block|,
+name|md
+index|[
+literal|3
+index|]
+block|,
+name|md
+index|[
+literal|0
+index|]
+block|}
+decl_stmt|;
+name|assertSorted
+argument_list|(
+name|sorted
+argument_list|,
+name|ivy
+operator|.
+name|sortModuleDescriptors
+argument_list|(
+name|toSort
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testCircularDependency2
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|Ivy
+name|ivy
+init|=
+operator|new
+name|Ivy
+argument_list|()
+decl_stmt|;
+name|ivy
+operator|.
+name|configureDefault
+argument_list|()
+expr_stmt|;
+name|md
+index|[
+literal|1
+index|]
+operator|.
+name|addDependency
+argument_list|(
+operator|new
+name|DefaultDependencyDescriptor
+argument_list|(
+name|mrid3
+argument_list|,
+literal|false
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|toSort
+operator|=
+operator|new
+name|ArrayList
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+operator|new
+name|Object
+index|[]
+block|{
+name|md
+index|[
+literal|0
+index|]
+block|,
+name|md
+index|[
+literal|2
+index|]
+block|,
+name|md
+index|[
+literal|1
+index|]
+block|,
+name|md
+index|[
+literal|3
+index|]
+block|}
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertSorted
+argument_list|(
+name|md
+argument_list|,
+name|ivy
+operator|.
+name|sortModuleDescriptors
+argument_list|(
+name|toSort
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

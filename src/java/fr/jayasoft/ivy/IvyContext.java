@@ -35,6 +35,20 @@ name|WeakReference
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|circular
+operator|.
+name|CircularDependencyStrategy
+import|;
+end_import
+
 begin_comment
 comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @author Xavier Hanin  * @author Maarten Coene  */
 end_comment
@@ -216,6 +230,19 @@ name|_cache
 operator|=
 name|cache
 expr_stmt|;
+block|}
+specifier|public
+name|CircularDependencyStrategy
+name|getCircularDependencyStrategy
+parameter_list|()
+block|{
+return|return
+name|getIvy
+argument_list|()
+operator|.
+name|getCircularDependencyStrategy
+argument_list|()
+return|;
 block|}
 block|}
 end_class
