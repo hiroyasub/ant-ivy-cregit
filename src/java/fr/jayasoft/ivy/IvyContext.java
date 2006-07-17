@@ -244,6 +244,24 @@ name|getCircularDependencyStrategy
 argument_list|()
 return|;
 block|}
+comment|// should be better to use context to store this kind of information, but not yet ready to do so...
+comment|//    private WeakReference _root = new WeakReference(null);
+comment|//    private String _rootModuleConf = null;
+comment|//	public IvyNode getRoot() {
+comment|//		return (IvyNode) _root.get();
+comment|//	}
+comment|//
+comment|//	public void setRoot(IvyNode root) {
+comment|//		_root = new WeakReference(root);
+comment|//	}
+comment|//
+comment|//	public String getRootModuleConf() {
+comment|//		return _rootModuleConf;
+comment|//	}
+comment|//
+comment|//	public void setRootModuleConf(String rootModuleConf) {
+comment|//		_rootModuleConf = rootModuleConf;
+comment|//	}
 block|}
 end_class
 
