@@ -2407,15 +2407,7 @@ init|=
 name|URLHandlerRegistry
 operator|.
 name|getHttp
-argument_list|(
-literal|null
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|dispatcher
 operator|.
