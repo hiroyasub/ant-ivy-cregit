@@ -217,6 +217,16 @@ parameter_list|()
 block|{
 return|return
 name|_cache
+operator|==
+literal|null
+condition|?
+name|getIvy
+argument_list|()
+operator|.
+name|getDefaultCache
+argument_list|()
+else|:
+name|_cache
 return|;
 block|}
 name|void
