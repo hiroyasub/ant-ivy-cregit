@@ -956,7 +956,7 @@ name|resolver
 operator|.
 name|setChecksums
 argument_list|(
-literal|"md5"
+literal|"sha1, md5"
 argument_list|)
 expr_stmt|;
 name|ModuleRevisionId
@@ -1095,7 +1095,7 @@ name|resolver
 operator|.
 name|setChecksums
 argument_list|(
-literal|""
+literal|"none"
 argument_list|)
 expr_stmt|;
 name|rmr
