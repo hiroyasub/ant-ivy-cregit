@@ -714,6 +714,11 @@ name|length
 argument_list|()
 operator|!=
 name|contentLength
+operator|&&
+name|contentLength
+operator|!=
+operator|-
+literal|1
 condition|)
 block|{
 name|dest
