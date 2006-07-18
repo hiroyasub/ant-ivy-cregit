@@ -54,6 +54,15 @@ name|boolean
 name|isLocal
 parameter_list|()
 function_decl|;
+comment|/**      * Clones this resource with a new resource with a different name      * @param cloneName the name of the clone      * @return the cloned resource      */
+specifier|public
+name|Resource
+name|clone
+parameter_list|(
+name|String
+name|cloneName
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

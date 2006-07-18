@@ -559,20 +559,6 @@ name|Date
 name|date
 parameter_list|)
 function_decl|;
-specifier|protected
-specifier|abstract
-name|long
-name|get
-parameter_list|(
-name|Resource
-name|resource
-parameter_list|,
-name|File
-name|dest
-parameter_list|)
-throws|throws
-name|IOException
-function_decl|;
 comment|/**      * Output message to log indicating what have been done to look for an artifact which      * has finally not been found      *       * @param artifact the artifact which has not been found      */
 specifier|protected
 name|void
