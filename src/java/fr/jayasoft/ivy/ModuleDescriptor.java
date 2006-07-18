@@ -138,6 +138,11 @@ name|String
 name|conf
 parameter_list|)
 function_decl|;
+name|Artifact
+index|[]
+name|getAllArtifacts
+parameter_list|()
+function_decl|;
 name|DependencyDescriptor
 index|[]
 name|getDependencies
