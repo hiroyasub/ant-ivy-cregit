@@ -861,7 +861,7 @@ block|{
 name|URL
 name|url
 init|=
-name|IvyConfigure
+name|Ivy
 operator|.
 name|class
 operator|.

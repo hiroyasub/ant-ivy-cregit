@@ -433,17 +433,17 @@ literal|'8'
 block|,
 literal|'9'
 block|,
-literal|'A'
+literal|'a'
 block|,
-literal|'B'
+literal|'b'
 block|,
-literal|'C'
+literal|'c'
 block|,
-literal|'D'
+literal|'d'
 block|,
-literal|'E'
+literal|'e'
 block|,
-literal|'F'
+literal|'f'
 block|}
 decl_stmt|;
 comment|/** 	 * Convert a byte[] array to readable string format. This makes the "hex" readable! 	 * @return result String buffer in String format  	 * @param in byte[] buffer to convert to string format 	 */
