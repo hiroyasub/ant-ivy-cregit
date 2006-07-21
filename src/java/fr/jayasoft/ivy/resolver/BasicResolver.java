@@ -5559,6 +5559,11 @@ name|algorithm
 argument_list|)
 condition|)
 block|{
+name|dest
+operator|.
+name|delete
+argument_list|()
+expr_stmt|;
 throw|throw
 operator|new
 name|IOException
