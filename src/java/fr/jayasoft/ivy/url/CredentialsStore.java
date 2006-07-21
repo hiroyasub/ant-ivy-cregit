@@ -31,6 +31,20 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|Message
+import|;
+end_import
+
 begin_comment
 comment|/**  *   * @author Christian Riege  * @author Xavier Hanin  */
 end_comment
@@ -107,6 +121,15 @@ argument_list|,
 name|passwd
 argument_list|)
 decl_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"credentials added: "
+operator|+
+name|c
+argument_list|)
+expr_stmt|;
 name|keyring
 operator|.
 name|put
@@ -114,6 +137,20 @@ argument_list|(
 name|c
 operator|.
 name|getKey
+argument_list|()
+argument_list|,
+name|c
+argument_list|)
+expr_stmt|;
+comment|// add also with host only, to be able to find credential with host only
+comment|// (useful for httpclient especially)
+name|keyring
+operator|.
+name|put
+argument_list|(
+name|c
+operator|.
+name|getHost
 argument_list|()
 argument_list|,
 name|c

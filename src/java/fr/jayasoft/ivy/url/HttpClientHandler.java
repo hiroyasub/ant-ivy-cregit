@@ -1291,6 +1291,19 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"found credentials for "
+operator|+
+name|url
+operator|+
+literal|": "
+operator|+
+name|c
+argument_list|)
+expr_stmt|;
 name|client
 operator|.
 name|getState
