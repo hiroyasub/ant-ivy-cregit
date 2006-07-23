@@ -12070,7 +12070,7 @@ name|source
 operator|.
 name|lastModified
 argument_list|()
-operator|==
+operator|<=
 name|target
 operator|.
 name|lastModified
