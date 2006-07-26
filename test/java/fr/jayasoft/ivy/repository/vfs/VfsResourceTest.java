@@ -27,16 +27,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
-operator|.
-name|URISyntaxException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -547,6 +537,8 @@ specifier|public
 name|void
 name|testBadURI
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|String
 name|vfsURI
@@ -928,6 +920,8 @@ specifier|public
 name|void
 name|testListFileChildren
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Iterator
 name|testSet
@@ -1011,7 +1005,7 @@ name|void
 name|testListImaginary
 parameter_list|()
 throws|throws
-name|URISyntaxException
+name|Exception
 block|{
 name|Iterator
 name|testSet
