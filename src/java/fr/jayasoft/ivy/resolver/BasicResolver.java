@@ -363,6 +363,8 @@ name|ivy
 operator|.
 name|event
 operator|.
+name|download
+operator|.
 name|EndDownloadEvent
 import|;
 end_import
@@ -376,6 +378,8 @@ operator|.
 name|ivy
 operator|.
 name|event
+operator|.
+name|download
 operator|.
 name|StartDownloadEvent
 import|;
@@ -4297,6 +4301,8 @@ argument_list|(
 operator|new
 name|StartDownloadEvent
 argument_list|(
+name|ivy
+argument_list|,
 name|this
 argument_list|,
 name|artifacts
@@ -4806,6 +4812,8 @@ argument_list|(
 operator|new
 name|EndDownloadEvent
 argument_list|(
+name|ivy
+argument_list|,
 name|this
 argument_list|,
 name|artifacts

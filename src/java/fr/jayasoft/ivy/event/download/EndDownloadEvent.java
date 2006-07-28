@@ -12,6 +12,8 @@ operator|.
 name|ivy
 operator|.
 name|event
+operator|.
+name|download
 package|;
 end_package
 
@@ -47,6 +49,18 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
+name|Ivy
+import|;
+end_import
+
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
 name|report
 operator|.
 name|ArtifactDownloadReport
@@ -71,6 +85,9 @@ decl_stmt|;
 specifier|public
 name|EndDownloadEvent
 parameter_list|(
+name|Ivy
+name|source
+parameter_list|,
 name|DependencyResolver
 name|resolver
 parameter_list|,
@@ -83,6 +100,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|source
+argument_list|,
 name|artifact
 argument_list|)
 expr_stmt|;

@@ -37,6 +37,18 @@ name|EventListenerList
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|IvyContext
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -146,6 +158,14 @@ operator|=
 operator|new
 name|TransferEvent
 argument_list|(
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|getIvy
+argument_list|()
+argument_list|,
 name|this
 argument_list|,
 name|res
@@ -361,7 +381,7 @@ specifier|protected
 name|void
 name|fireTransferCompleted
 parameter_list|(
-name|int
+name|long
 name|totalLength
 parameter_list|)
 block|{
