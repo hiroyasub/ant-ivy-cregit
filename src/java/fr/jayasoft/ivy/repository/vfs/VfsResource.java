@@ -369,13 +369,9 @@ name|IOException
 block|{
 if|if
 condition|(
-operator|(
 name|_content
 operator|==
 literal|null
-operator|)
-operator|&&
-name|_isAvailable
 condition|)
 block|{
 try|try
