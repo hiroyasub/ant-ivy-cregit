@@ -58,6 +58,14 @@ name|EndResolveEvent
 extends|extends
 name|ResolveEvent
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|NAME
+init|=
+literal|"post-resolve"
+decl_stmt|;
 specifier|private
 name|ResolveReport
 name|_report
@@ -82,6 +90,8 @@ block|{
 name|super
 argument_list|(
 name|source
+argument_list|,
+name|NAME
 argument_list|,
 name|md
 argument_list|,

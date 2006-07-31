@@ -1267,10 +1267,6 @@ condition|(
 name|_channel
 operator|!=
 literal|null
-operator|&&
-name|event
-operator|instanceof
-name|EndResolveEvent
 condition|)
 block|{
 name|Message
@@ -1326,6 +1322,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
+argument_list|,
+name|EndResolveEvent
+operator|.
+name|NAME
 argument_list|)
 expr_stmt|;
 name|Message

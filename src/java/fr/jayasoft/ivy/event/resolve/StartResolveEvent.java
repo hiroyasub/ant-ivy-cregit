@@ -45,6 +45,14 @@ extends|extends
 name|ResolveEvent
 block|{
 specifier|public
+specifier|static
+specifier|final
+name|String
+name|NAME
+init|=
+literal|"pre-resolve"
+decl_stmt|;
+specifier|public
 name|StartResolveEvent
 parameter_list|(
 name|Ivy
@@ -61,6 +69,8 @@ block|{
 name|super
 argument_list|(
 name|source
+argument_list|,
+name|NAME
 argument_list|,
 name|md
 argument_list|,

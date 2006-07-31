@@ -65,9 +65,9 @@ specifier|static
 name|Filter
 name|NO_FILTER
 init|=
-operator|new
 name|NoFilter
-argument_list|()
+operator|.
+name|INSTANCE
 decl_stmt|;
 specifier|public
 specifier|static

@@ -62,6 +62,14 @@ name|PrepareDownloadEvent
 extends|extends
 name|IvyEvent
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|NAME
+init|=
+literal|"prepare-download"
+decl_stmt|;
 specifier|private
 name|Artifact
 index|[]
@@ -81,6 +89,8 @@ block|{
 name|super
 argument_list|(
 name|source
+argument_list|,
+name|NAME
 argument_list|)
 expr_stmt|;
 name|_artifacts
