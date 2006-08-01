@@ -326,6 +326,21 @@ name|_attributes
 argument_list|)
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|getAttributes
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

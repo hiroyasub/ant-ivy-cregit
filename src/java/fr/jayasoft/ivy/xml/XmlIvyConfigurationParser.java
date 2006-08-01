@@ -341,6 +341,8 @@ block|,
 literal|"statuses"
 block|,
 literal|"circular-dependency-strategies"
+block|,
+literal|"triggers"
 block|}
 argument_list|)
 decl_stmt|;

@@ -3438,7 +3438,7 @@ operator|.
 name|getOrganisation
 argument_list|()
 operator|+
-literal|"' found="
+literal|"' found='"
 operator|+
 name|md
 operator|.
@@ -3448,7 +3448,7 @@ operator|.
 name|getOrganisation
 argument_list|()
 operator|+
-literal|"; "
+literal|"'; "
 argument_list|)
 expr_stmt|;
 name|ok
@@ -3523,7 +3523,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"' found="
+literal|"' found='"
 operator|+
 name|md
 operator|.
@@ -3533,7 +3533,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"; "
+literal|"'; "
 argument_list|)
 expr_stmt|;
 name|ok
