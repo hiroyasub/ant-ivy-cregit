@@ -7,7 +7,7 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|url
+name|util
 package|;
 end_package
 
@@ -105,6 +105,7 @@ return|return
 name|_userName
 return|;
 block|}
+specifier|public
 specifier|static
 name|String
 name|buildKey
@@ -232,6 +233,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
+specifier|public
 name|String
 name|getKey
 parameter_list|()
