@@ -410,10 +410,8 @@ name|resId
 argument_list|)
 expr_stmt|;
 block|}
-comment|// resource should be marked as available.
 if|if
 condition|(
-operator|!
 name|res
 operator|.
 name|exists
@@ -422,7 +420,7 @@ condition|)
 block|{
 name|fail
 argument_list|(
-literal|"Resource does not exist and it should: "
+literal|"Resource does not exist and it shouldn't: "
 operator|+
 name|resId
 argument_list|)
@@ -599,7 +597,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-literal|""
+literal|"smb1:/goobeldygook"
 argument_list|)
 condition|)
 block|{
