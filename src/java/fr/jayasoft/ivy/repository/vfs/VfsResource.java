@@ -431,8 +431,6 @@ specifier|public
 name|FileContent
 name|getContent
 parameter_list|()
-throws|throws
-name|IOException
 block|{
 name|init
 argument_list|()
