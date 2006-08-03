@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
 name|fr
 operator|.
 name|jayasoft
@@ -116,6 +126,9 @@ name|artifact
 parameter_list|,
 name|ArtifactDownloadReport
 name|report
+parameter_list|,
+name|File
+name|dest
 parameter_list|)
 block|{
 name|super
@@ -171,6 +184,16 @@ operator|.
 name|getSize
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|addAttribute
+argument_list|(
+literal|"file"
+argument_list|,
+name|dest
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ArtifactOrigin

@@ -131,6 +131,30 @@ implements|implements
 name|Filter
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|String
+name|NOT
+init|=
+literal|"NOT "
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|OR
+init|=
+literal|" OR "
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|AND
+init|=
+literal|" AND "
+decl_stmt|;
+specifier|private
 name|PatternMatcher
 name|_matcher
 decl_stmt|;
@@ -287,7 +311,7 @@ name|filterExpression
 operator|.
 name|indexOf
 argument_list|(
-literal|"&&"
+name|AND
 argument_list|)
 decl_stmt|;
 if|if
@@ -304,7 +328,7 @@ name|filterExpression
 operator|.
 name|indexOf
 argument_list|(
-literal|"||"
+name|OR
 argument_list|)
 expr_stmt|;
 if|if
@@ -321,7 +345,7 @@ name|filterExpression
 operator|.
 name|startsWith
 argument_list|(
-literal|"!"
+name|NOT
 argument_list|)
 condition|)
 block|{
@@ -335,7 +359,10 @@ name|filterExpression
 operator|.
 name|substring
 argument_list|(
-literal|1
+name|NOT
+operator|.
+name|length
+argument_list|()
 argument_list|)
 argument_list|)
 argument_list|)
@@ -575,7 +602,10 @@ name|substring
 argument_list|(
 name|index
 operator|+
-literal|2
+name|OR
+operator|.
+name|length
+argument_list|()
 argument_list|)
 argument_list|)
 argument_list|)
@@ -608,7 +638,10 @@ name|substring
 argument_list|(
 name|index
 operator|+
-literal|2
+name|AND
+operator|.
+name|length
+argument_list|()
 argument_list|)
 argument_list|)
 argument_list|)

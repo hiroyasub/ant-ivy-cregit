@@ -615,7 +615,7 @@ name|IvyEventFilter
 argument_list|(
 literal|"pre-resolve"
 argument_list|,
-literal|"organisation = foo&& module = bar"
+literal|"organisation = foo AND module = bar"
 argument_list|,
 literal|null
 argument_list|)
@@ -696,7 +696,7 @@ name|IvyEventFilter
 argument_list|(
 literal|"pre-resolve"
 argument_list|,
-literal|"organisation = foo,foo2&& module = bar"
+literal|"organisation = foo,foo2 AND module = bar"
 argument_list|,
 literal|null
 argument_list|)
@@ -807,7 +807,7 @@ name|IvyEventFilter
 argument_list|(
 literal|"pre-resolve"
 argument_list|,
-literal|"organisation = foo3 || module = bar"
+literal|"organisation = foo3 OR module = bar"
 argument_list|,
 literal|null
 argument_list|)
@@ -918,7 +918,7 @@ name|IvyEventFilter
 argument_list|(
 literal|"pre-resolve"
 argument_list|,
-literal|"! organisation = foo"
+literal|"NOT organisation = foo"
 argument_list|,
 literal|null
 argument_list|)
