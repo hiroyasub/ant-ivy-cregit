@@ -11,6 +11,16 @@ name|repository
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -90,7 +100,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"bassic resource do not support the clone method"
+literal|"basic resource do not support the clone method"
 argument_list|)
 throw|;
 block|}
@@ -138,6 +148,19 @@ block|{
 return|return
 name|_local
 return|;
+block|}
+specifier|public
+name|InputStream
+name|openStream
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"basic resource do not support the openStream method"
+argument_list|)
+throw|;
 block|}
 block|}
 end_class

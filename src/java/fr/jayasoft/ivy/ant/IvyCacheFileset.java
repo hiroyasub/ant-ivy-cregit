@@ -270,9 +270,6 @@ argument_list|(
 literal|"impossible to build ivy cache fileset: "
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)

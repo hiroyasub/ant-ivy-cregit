@@ -2017,6 +2017,9 @@ operator|.
 name|toIvyFile
 argument_list|(
 name|cachedIvyURL
+operator|.
+name|openStream
+argument_list|()
 argument_list|,
 name|ivyRef
 operator|.

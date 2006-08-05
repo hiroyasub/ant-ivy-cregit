@@ -15,6 +15,26 @@ name|repository
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a resource in an Ivy {@link Repository}.  *   * The resource interface allows one to obtain the following information about a resource:  *<ul>  *<li>resource name/identifier in repository syntax</li>  *<li>date the resource was last modified.</li>  *<li>size of the resource in bytes.</li>  *<li>if the resource is available.</li>  *</ul>  *</p>  *<h4>Implementation Notes</h4>  *   In implementing the interface you need to ensure the following behaviors:  *<ul>  *<li>All of the methods specified in the interface fail by returning an empty value  *         (<code>false</code>,<code>0</code>,<code>""</code>). In other words, the specified interface   *         methods should not throw RuntimeExceptions.  *</li>  *<li>Failure conditions should be logged using the  *     {@link fr.jayasoft.ivy.util.Message#verbose} method.  *</li>  *<li>Failure of one of the interface's specified methods results in all other interface specified  *     methods returning an empty value  (<code>false</code>,<code>0</code>,<code>""</code>).</li>  *</ul>  *</p>  */
 end_comment
@@ -62,6 +82,14 @@ parameter_list|(
 name|String
 name|cloneName
 parameter_list|)
+function_decl|;
+comment|/** 	 * Opens a stream on this resource 	 * @return the opened input stream 	 */
+specifier|public
+name|InputStream
+name|openStream
+parameter_list|()
+throws|throws
+name|IOException
 function_decl|;
 block|}
 end_interface

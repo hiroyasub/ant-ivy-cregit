@@ -39,6 +39,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|InputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|URL
@@ -141,8 +151,8 @@ specifier|public
 name|void
 name|toIvyFile
 parameter_list|(
-name|URL
-name|srcURL
+name|InputStream
+name|is
 parameter_list|,
 name|Resource
 name|res

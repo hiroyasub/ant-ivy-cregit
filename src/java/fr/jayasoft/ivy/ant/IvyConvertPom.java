@@ -268,6 +268,9 @@ name|_pomFile
 operator|.
 name|toURL
 argument_list|()
+operator|.
+name|openStream
+argument_list|()
 argument_list|,
 operator|new
 name|URLResource
