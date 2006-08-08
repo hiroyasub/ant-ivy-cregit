@@ -358,6 +358,10 @@ name|_module
 decl_stmt|;
 specifier|private
 name|String
+name|_branch
+decl_stmt|;
+specifier|private
+name|String
 name|_revision
 decl_stmt|;
 specifier|private
@@ -462,6 +466,15 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|()
+expr_stmt|;
+name|_branch
+operator|=
+name|attributes
+operator|.
+name|getValue
+argument_list|(
+literal|"branch"
+argument_list|)
 expr_stmt|;
 name|_revision
 operator|=
@@ -572,6 +585,8 @@ argument_list|(
 name|_organisation
 argument_list|,
 name|_module
+argument_list|,
+name|_branch
 argument_list|,
 name|_revision
 argument_list|,

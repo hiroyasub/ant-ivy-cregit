@@ -30,6 +30,10 @@ name|_module
 decl_stmt|;
 specifier|private
 name|String
+name|_branch
+decl_stmt|;
+specifier|private
+name|String
 name|_rev
 decl_stmt|;
 specifier|public
@@ -143,12 +147,46 @@ literal|" "
 operator|+
 name|_module
 operator|+
+operator|(
+name|_branch
+operator|!=
+literal|null
+condition|?
+literal|" "
+operator|+
+name|_branch
+else|:
+literal|""
+operator|)
+operator|+
 literal|" "
 operator|+
 name|_rev
 operator|+
 literal|" ]"
 return|;
+block|}
+specifier|public
+name|String
+name|getBranch
+parameter_list|()
+block|{
+return|return
+name|_branch
+return|;
+block|}
+specifier|public
+name|void
+name|setBranch
+parameter_list|(
+name|String
+name|branch
+parameter_list|)
+block|{
+name|_branch
+operator|=
+name|branch
+expr_stmt|;
 block|}
 block|}
 end_class

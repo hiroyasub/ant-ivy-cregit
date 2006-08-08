@@ -973,13 +973,11 @@ name|substitute
 argument_list|(
 name|pattern
 argument_list|,
-operator|new
 name|ModuleRevisionId
+operator|.
+name|newInstance
 argument_list|(
 name|mrid
-operator|.
-name|getModuleId
-argument_list|()
 argument_list|,
 name|IvyPatternHelper
 operator|.
@@ -989,11 +987,6 @@ name|IvyPatternHelper
 operator|.
 name|REVISION_KEY
 argument_list|)
-argument_list|,
-name|mrid
-operator|.
-name|getExtraAttributes
-argument_list|()
 argument_list|)
 argument_list|,
 name|artifact

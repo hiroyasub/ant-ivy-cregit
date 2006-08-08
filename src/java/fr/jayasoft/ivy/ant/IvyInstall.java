@@ -317,8 +317,6 @@ literal|"no to resolver name: please provide it through parameter 'to'"
 argument_list|)
 throw|;
 block|}
-try|try
-block|{
 name|ModuleRevisionId
 name|mrid
 init|=
@@ -333,6 +331,8 @@ argument_list|,
 name|_revision
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|ivy
 operator|.
 name|install
@@ -377,16 +377,7 @@ name|BuildException
 argument_list|(
 literal|"impossible to install "
 operator|+
-name|ModuleRevisionId
-operator|.
-name|newInstance
-argument_list|(
-name|_organisation
-argument_list|,
-name|_module
-argument_list|,
-name|_revision
-argument_list|)
+name|mrid
 operator|+
 literal|": "
 operator|+

@@ -1277,6 +1277,18 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
+literal|" branch=\""
+operator|+
+name|dep
+operator|.
+name|getResolvedId
+argument_list|()
+operator|.
+name|getBranch
+argument_list|()
+operator|+
+literal|"\""
+operator|+
 name|details
 operator|+
 literal|" downloaded=\""
