@@ -103,6 +103,10 @@ name|XmlReportParser
 import|;
 end_import
 
+begin_comment
+comment|/**  * Set a set of ant properties according to the last artifact resolved   *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -625,9 +629,6 @@ argument_list|(
 literal|"impossible to add artifact properties: "
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)

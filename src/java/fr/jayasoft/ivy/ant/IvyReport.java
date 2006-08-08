@@ -223,6 +223,10 @@ name|Message
 import|;
 end_import
 
+begin_comment
+comment|/**  * This ant task let users generates reports (html, xml, graphml, ...) from the last resolve done.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -766,7 +770,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to generate report"
+literal|"impossible to generate report: "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)

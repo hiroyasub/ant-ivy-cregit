@@ -188,7 +188,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *   */
+comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies  * and on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  *   * @author Xavier Hanin  *   */
 end_comment
 
 begin_class
@@ -1571,9 +1571,6 @@ operator|+
 literal|": "
 operator|+
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|e
 argument_list|)

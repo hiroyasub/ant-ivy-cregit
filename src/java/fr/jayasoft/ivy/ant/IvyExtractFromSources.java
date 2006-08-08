@@ -292,7 +292,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extracts imports from a set of java sources and generate corresponding  * ivy file  *   * @author Hanin  *  */
+comment|/**  * Extracts imports from a set of java sources and generate corresponding  * ivy file  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -881,6 +881,12 @@ argument_list|(
 literal|"impossible to create file "
 operator|+
 name|_to
+operator|+
+literal|": "
+operator|+
+name|e
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

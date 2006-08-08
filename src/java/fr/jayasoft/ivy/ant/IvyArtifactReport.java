@@ -319,6 +319,10 @@ name|ModuleId
 import|;
 end_import
 
+begin_comment
+comment|/**  * Generates a report of all artifacts involved during the last resolve.   */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -827,7 +831,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"syntax errors in ivy file"
+literal|"syntax errors in ivy file: "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -843,7 +849,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to generate report"
+literal|"impossible to generate report: "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)

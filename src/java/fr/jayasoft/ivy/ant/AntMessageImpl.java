@@ -43,6 +43,10 @@ name|MessageImpl
 import|;
 end_import
 
+begin_comment
+comment|/**  * Implementation of the simple message facility for ant.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class

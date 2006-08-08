@@ -101,6 +101,10 @@ name|ResolveReport
 import|;
 end_import
 
+begin_comment
+comment|/**  * Base class for tasks needing to be performed after a resolve.   *   *   * @author Xavier Hanin  *  */
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract

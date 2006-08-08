@@ -121,6 +121,10 @@ name|Ivy
 import|;
 end_import
 
+begin_comment
+comment|/**  * Creates an ant path consisting in all artifacts found during a resolve.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class

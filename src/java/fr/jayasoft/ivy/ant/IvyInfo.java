@@ -157,6 +157,10 @@ name|ModuleDescriptorParserRegistry
 import|;
 end_import
 
+begin_comment
+comment|/**  * Parses information about an ivy file and make them available in ant.  *   * @author Xavier Hanin  *  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -469,6 +473,10 @@ argument_list|(
 literal|"unable to convert given ivy file to url: "
 operator|+
 name|_file
+operator|+
+literal|": "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -496,7 +504,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"syntax errors in ivy file"
+literal|"syntax errors in ivy file: "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -515,9 +525,6 @@ argument_list|(
 literal|"impossible to resolve dependencies: "
 operator|+
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|e
 argument_list|)

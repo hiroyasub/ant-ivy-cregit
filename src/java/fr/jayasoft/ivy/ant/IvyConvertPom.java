@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * Convert a pom to an ivy file  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -301,6 +301,10 @@ argument_list|(
 literal|"unable to convert given pom file to url: "
 operator|+
 name|_pomFile
+operator|+
+literal|": "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -331,6 +335,10 @@ argument_list|(
 literal|"syntax errors in pom file "
 operator|+
 name|_pomFile
+operator|+
+literal|": "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -349,9 +357,6 @@ argument_list|(
 literal|"impossible convert given pom file to ivy file: "
 operator|+
 name|e
-operator|.
-name|getMessage
-argument_list|()
 operator|+
 literal|" from="
 operator|+

@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * Describes a mapping between a package name and an org name revision uple  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class

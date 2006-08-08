@@ -265,6 +265,10 @@ name|Message
 import|;
 end_import
 
+begin_comment
+comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -731,9 +735,6 @@ operator|+
 literal|" exception="
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)

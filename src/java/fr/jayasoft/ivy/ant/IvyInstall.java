@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * Allow to install a module or a set of module from repository to another one.  *   *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -371,11 +371,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
 throw|throw
 operator|new
 name|BuildException
@@ -396,9 +391,6 @@ operator|+
 literal|": "
 operator|+
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|e
 argument_list|)

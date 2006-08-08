@@ -101,6 +101,10 @@ name|Ivy
 import|;
 end_import
 
+begin_comment
+comment|/**  * This task let user set ivy variables from ant.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -357,7 +361,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to load variables from file"
+literal|"impossible to load variables from file: "
+operator|+
+name|ex
 argument_list|,
 name|ex
 argument_list|)

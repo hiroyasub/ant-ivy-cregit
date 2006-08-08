@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * Configure Ivy with an ivyconf.xml file  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -612,9 +612,6 @@ argument_list|(
 literal|"impossible to load ivy default properties file: "
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)
@@ -830,9 +827,6 @@ operator|+
 literal|" :"
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)

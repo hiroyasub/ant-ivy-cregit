@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Xavier Hanin  *  */
+comment|/**  * Base class for all ivy ant tasks, deaal particularly with ivy instance storage in ant project.  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class

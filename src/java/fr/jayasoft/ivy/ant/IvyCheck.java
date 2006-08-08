@@ -125,6 +125,10 @@ name|Message
 import|;
 end_import
 
+begin_comment
+comment|/**  * Checks the given ivy file using current configuration to see if all dependencies  * are available, with good confs. If a resolver name is given, it also checks that the declared  * publications are available in the corresponding resolver.  * Note that the check is not performed recursively, i.e. if a dependency has itself dependencies  * badly described or not available, this check will not discover it.  *    * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -394,7 +398,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to convert a file to an url!"
+literal|"impossible to convert a file to an url! "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)

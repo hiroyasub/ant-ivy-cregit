@@ -225,6 +225,10 @@ name|XmlReportParser
 import|;
 end_import
 
+begin_comment
+comment|/**  * Base class for the cache path related classes: cachepath and cachefileset.  *   * Most of the behviour is common to the two, since only the produced element differs.  *   * @author Xavier Hanin  */
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract

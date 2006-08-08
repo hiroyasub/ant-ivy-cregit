@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * This task allow to call the Ivy dependency resolution from ant.  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -934,6 +934,10 @@ argument_list|(
 literal|"unable to convert given ivy file to url: "
 operator|+
 name|_file
+operator|+
+literal|": "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)
@@ -961,7 +965,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"syntax errors in ivy file"
+literal|"syntax errors in ivy file: "
+operator|+
+name|e
 argument_list|,
 name|e
 argument_list|)

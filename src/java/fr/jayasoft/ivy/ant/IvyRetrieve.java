@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Xavier Hanin  *  */
+comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -202,9 +202,6 @@ argument_list|(
 literal|"impossible to ivy retrieve: "
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|,
 name|ex
 argument_list|)
