@@ -920,6 +920,17 @@ name|options
 operator|.
 name|addOption
 argument_list|(
+literal|"sync"
+argument_list|,
+literal|false
+argument_list|,
+literal|"in conjonction with -retrieve, does a synced retrieve"
+argument_list|)
+expr_stmt|;
+name|options
+operator|.
+name|addOption
+argument_list|(
 literal|"m2compatible"
 argument_list|,
 literal|false
@@ -1881,6 +1892,17 @@ argument_list|,
 name|cache
 argument_list|,
 name|retrievePattern
+argument_list|,
+literal|null
+argument_list|,
+literal|null
+argument_list|,
+name|line
+operator|.
+name|hasOption
+argument_list|(
+literal|"sync"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
