@@ -752,7 +752,7 @@ name|delete
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns a list of Files composed of all directories being      * parent of file and child of root + file itself.      *       * Example:      * getPathFiles(new File("test"), new File("test/dir1/dir2/file.txt"))      * => {new File("test/dir1"), new File("test/dir1/dir2"), new File("test/dir1/dir2/file.txt") }      *       * Note that if root is not an ancester of file, or if root is null, all directories from the      * file system root will be returned.       */
+comment|/**      * Returns a list of Files composed of all directories being      * parent of file and child of root + file and root themselves.      *       * Example:      * getPathFiles(new File("test"), new File("test/dir1/dir2/file.txt"))      * => {new File("test/dir1"), new File("test/dir1/dir2"), new File("test/dir1/dir2/file.txt") }      *       * Note that if root is not an ancester of file, or if root is null, all directories from the      * file system root will be returned.       */
 specifier|public
 specifier|static
 name|List
@@ -781,9 +781,15 @@ operator|&&
 operator|!
 name|file
 operator|.
+name|getAbsolutePath
+argument_list|()
+operator|.
 name|equals
 argument_list|(
 name|root
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -800,6 +806,21 @@ name|file
 operator|.
 name|getParentFile
 argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|root
+operator|!=
+literal|null
+condition|)
+block|{
+name|ret
+operator|.
+name|add
+argument_list|(
+name|root
+argument_list|)
 expr_stmt|;
 block|}
 name|Collections
