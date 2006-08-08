@@ -137,18 +137,6 @@ name|jayasoft
 operator|.
 name|ivy
 operator|.
-name|IvyContext
-import|;
-end_import
-
-begin_import
-import|import
-name|fr
-operator|.
-name|jayasoft
-operator|.
-name|ivy
-operator|.
 name|LatestStrategy
 import|;
 end_import
@@ -644,16 +632,14 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|Exception
+name|IOException
 name|ex
 parameter_list|)
 block|{
-name|Message
-operator|.
-name|debug
+throw|throw
+operator|new
+name|RuntimeException
 argument_list|(
-literal|"\t"
-operator|+
 name|name
 operator|+
 literal|": unable to get resource for "
@@ -676,14 +662,10 @@ operator|+
 literal|": "
 operator|+
 name|ex
-operator|.
-name|getMessage
-argument_list|()
+argument_list|,
+name|ex
 argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
+throw|;
 block|}
 block|}
 specifier|private

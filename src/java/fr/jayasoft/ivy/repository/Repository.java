@@ -54,7 +54,7 @@ specifier|public
 interface|interface
 name|Repository
 block|{
-comment|/** 	 * Return the resource associated with a specified identifier. 	 *  	 * @param source A string identifying the resource. 	 * @return The resource associated with the resource identifier. 	 * @throws IOException On failure to get resource. 	 */
+comment|/** 	 * Return the resource associated with a specified identifier. 	 *  	 * If the resource does not exist, it should return a Resource with exists() returning false. 	 *  	 * An IOException should only be thrown when a real IO problem occurs, like the impossibility to 	 * connect to a server. 	 *  	 * @param source A string identifying the resource. 	 * @return The resource associated with the resource identifier. 	 * @throws IOException On error whle trying to get resource. 	 */
 name|Resource
 name|getResource
 parameter_list|(
@@ -93,7 +93,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Return a listing of resources      *       * @param parent The parent directory from which to generate the listing.      * @return A listing of the parent directory's file content.      * @throws IOException On listing failure.      */
+comment|/**      * Return a listing of resources names      *       * @param parent The parent directory from which to generate the listing.      * @return A listing of the parent directory's file content, as a List of String.      * @throws IOException On listing failure.      */
 name|List
 name|list
 parameter_list|(

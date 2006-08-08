@@ -17,6 +17,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|InputStream
 import|;
 end_import
@@ -153,6 +163,8 @@ specifier|public
 name|InputStream
 name|openStream
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 throw|throw
 operator|new
@@ -161,6 +173,16 @@ argument_list|(
 literal|"basic resource do not support the openStream method"
 argument_list|)
 throw|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|getName
+argument_list|()
+return|;
 block|}
 block|}
 end_class
