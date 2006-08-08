@@ -670,6 +670,8 @@ argument_list|)
 argument_list|,
 name|_useCacheOnly
 argument_list|,
+name|_transitive
+argument_list|,
 name|FilterHelper
 operator|.
 name|getArtifactTypeFilter
