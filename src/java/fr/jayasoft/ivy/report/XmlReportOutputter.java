@@ -1277,6 +1277,19 @@ argument_list|()
 operator|+
 literal|"\""
 operator|+
+operator|(
+name|dep
+operator|.
+name|getResolvedId
+argument_list|()
+operator|.
+name|getBranch
+argument_list|()
+operator|==
+literal|null
+condition|?
+literal|""
+else|:
 literal|" branch=\""
 operator|+
 name|dep
@@ -1288,6 +1301,7 @@ name|getBranch
 argument_list|()
 operator|+
 literal|"\""
+operator|)
 operator|+
 name|details
 operator|+
