@@ -17,6 +17,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Date
@@ -68,6 +78,10 @@ parameter_list|()
 function_decl|;
 name|String
 name|getExt
+parameter_list|()
+function_decl|;
+name|URL
+name|getUrl
 parameter_list|()
 function_decl|;
 name|String

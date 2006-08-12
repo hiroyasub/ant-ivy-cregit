@@ -15,6 +15,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
 name|fr
 operator|.
 name|jayasoft
@@ -64,6 +74,12 @@ comment|/**      * Returns the ext of the artifact asked      * @return      */
 specifier|public
 name|String
 name|getExt
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the url to look this artifact at      * @return      */
+specifier|public
+name|URL
+name|getUrl
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */

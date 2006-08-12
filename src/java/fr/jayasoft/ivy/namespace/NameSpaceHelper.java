@@ -398,6 +398,11 @@ argument_list|()
 argument_list|,
 name|artifact
 operator|.
+name|getUrl
+argument_list|()
+argument_list|,
+name|artifact
+operator|.
 name|getExtraAttributes
 argument_list|()
 argument_list|)

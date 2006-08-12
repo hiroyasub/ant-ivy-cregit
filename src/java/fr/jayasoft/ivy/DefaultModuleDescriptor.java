@@ -429,6 +429,16 @@ index|]
 operator|.
 name|getExt
 argument_list|()
+argument_list|,
+name|artifacts
+index|[
+name|i
+index|]
+operator|.
+name|getUrl
+argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
