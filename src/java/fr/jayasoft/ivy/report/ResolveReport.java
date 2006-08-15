@@ -752,10 +752,33 @@ name|ret
 operator|.
 name|add
 argument_list|(
+literal|"unresolved dependency: "
+operator|+
+name|unresolved
+index|[
+name|i
+index|]
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|": "
+operator|+
+operator|(
+name|e
+operator|instanceof
+name|RuntimeException
+condition|?
+name|e
+operator|.
+name|getMessage
+argument_list|()
+else|:
 name|e
 operator|.
 name|toString
 argument_list|()
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
