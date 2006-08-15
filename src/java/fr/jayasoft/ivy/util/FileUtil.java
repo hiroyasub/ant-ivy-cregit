@@ -514,6 +514,25 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|isInterrupted
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"transfer interrupted"
+argument_list|)
+throw|;
+block|}
 name|dest
 operator|.
 name|write

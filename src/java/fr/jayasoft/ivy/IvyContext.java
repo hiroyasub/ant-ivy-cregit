@@ -113,6 +113,10 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
+specifier|private
+name|Thread
+name|_operatingThread
+decl_stmt|;
 specifier|public
 specifier|static
 name|IvyContext
@@ -237,6 +241,13 @@ argument_list|(
 name|ivy
 argument_list|)
 expr_stmt|;
+name|_operatingThread
+operator|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|File
@@ -340,6 +351,15 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+name|Thread
+name|getOperatingThread
+parameter_list|()
+block|{
+return|return
+name|_operatingThread
+return|;
 block|}
 comment|// should be better to use context to store this kind of information, but not yet ready to do so...
 comment|//    private WeakReference _root = new WeakReference(null);
