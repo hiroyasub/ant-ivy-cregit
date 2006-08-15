@@ -1596,7 +1596,7 @@ name|reader
 operator|.
 name|join
 argument_list|(
-literal|0
+name|timeout
 argument_list|)
 expr_stmt|;
 block|}
