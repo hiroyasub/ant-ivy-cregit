@@ -3560,7 +3560,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|warn
+name|info
 argument_list|(
 literal|"impossible to define new type: class not found: "
 operator|+
@@ -6865,6 +6865,16 @@ operator|.
 name|info
 argument_list|(
 literal|":: resolution report ::"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setProblemMessages
+argument_list|(
+name|Message
+operator|.
+name|getProblems
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// output report
