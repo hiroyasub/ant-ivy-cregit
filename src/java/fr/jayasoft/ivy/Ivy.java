@@ -7060,20 +7060,9 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|isInterrupted
+name|checkInterrupted
 argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"download interrupted"
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 comment|//download artifacts required in all asked configurations
 if|if
 condition|(
@@ -7363,6 +7352,34 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+block|}
+comment|/**      * Check if the current operation has been interrupted, and if it is the case, throw a runtime exception      */
+specifier|public
+name|void
+name|checkInterrupted
+parameter_list|()
+block|{
+if|if
+condition|(
+name|isInterrupted
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"operation interrupted"
+argument_list|)
+expr_stmt|;
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"operation interrupted"
+argument_list|)
+throw|;
 block|}
 block|}
 comment|/**      * Download an artifact to the cache.      * Not used internally, useful especially for IDE plugins      * needing to download artifact one by one (for source or javadoc artifact,      * for instance).      *       * Downloaded artifact file can be accessed using getArchiveFileInCache method.      *       * It is possible to track the progression of the download using classical ivy       * progress monitoring feature (see addTransferListener).      *       * @param artifact the artifact to download      * @param cache the cache to use. If null, will use default cache      * @return a report concerning the download      */
@@ -8323,20 +8340,9 @@ name|boolean
 name|shouldBePublic
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInterrupted
+name|checkInterrupted
 argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"resolve interrupted"
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 name|long
 name|start
 init|=
@@ -12057,18 +12063,9 @@ argument_list|()
 condition|;
 control|)
 block|{
-if|if
-condition|(
-name|isInterrupted
+name|checkInterrupted
 argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|InterruptedException
-argument_list|()
-throw|;
-block|}
+expr_stmt|;
 name|File
 name|destFile
 init|=
@@ -14549,20 +14546,9 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-if|if
-condition|(
-name|isInterrupted
+name|checkInterrupted
 argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|IOException
-argument_list|(
-literal|"publish interrupted"
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 name|File
 name|src
 init|=
@@ -15303,6 +15289,16 @@ name|operatingThread
 operator|.
 name|stop
 argument_list|()
+expr_stmt|;
+block|}
+synchronized|synchronized
+init|(
+name|this
+init|)
+block|{
+name|_interrupted
+operator|=
+literal|false
 expr_stmt|;
 block|}
 block|}

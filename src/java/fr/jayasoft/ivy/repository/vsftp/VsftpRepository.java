@@ -1272,8 +1272,6 @@ operator|=
 literal|false
 expr_stmt|;
 comment|// use of alone commands does not work properly due to a long delay between end of process and end of stream...
-if|if
-condition|(
 name|IvyContext
 operator|.
 name|getContext
@@ -1282,18 +1280,9 @@ operator|.
 name|getIvy
 argument_list|()
 operator|.
-name|isInterrupted
+name|checkInterrupted
 argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|IOException
-argument_list|(
-literal|"interrupted"
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 name|_inCommand
 operator|=
 literal|true
