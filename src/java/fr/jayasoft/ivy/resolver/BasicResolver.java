@@ -1104,6 +1104,11 @@ if|if
 condition|(
 name|getIvy
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getIvy
+argument_list|()
 operator|.
 name|isInterrupted
 argument_list|()
@@ -1134,6 +1139,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|getIvy
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|getIvy
 argument_list|()
 operator|.
@@ -1237,6 +1247,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|getIvy
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|getIvy
 argument_list|()
 operator|.
@@ -4969,6 +4984,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|getIvy
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|getIvy
 argument_list|()
 operator|.

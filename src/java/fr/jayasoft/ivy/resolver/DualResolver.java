@@ -282,6 +282,11 @@ if|if
 condition|(
 name|getIvy
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getIvy
+argument_list|()
 operator|.
 name|isInterrupted
 argument_list|()
