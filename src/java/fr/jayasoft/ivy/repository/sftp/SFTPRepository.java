@@ -421,8 +421,6 @@ parameter_list|)
 block|{
 name|fireTransferProgress
 argument_list|(
-literal|null
-argument_list|,
 name|count
 argument_list|)
 expr_stmt|;
