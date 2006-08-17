@@ -2242,7 +2242,7 @@ name|attributes
 operator|.
 name|get
 argument_list|(
-literal|"conflict"
+literal|"conflict-manager"
 argument_list|)
 argument_list|)
 decl_stmt|;
