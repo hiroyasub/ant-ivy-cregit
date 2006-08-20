@@ -141,7 +141,8 @@ specifier|private
 name|int
 name|port
 init|=
-literal|22
+operator|-
+literal|1
 decl_stmt|;
 specifier|public
 name|AbstractSshBasedRepository
