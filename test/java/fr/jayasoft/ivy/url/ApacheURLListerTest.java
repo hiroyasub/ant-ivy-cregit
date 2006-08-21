@@ -66,6 +66,7 @@ name|ApacheURLListerTest
 extends|extends
 name|TestCase
 block|{
+comment|// remote.test
 comment|//~ Methods ----------------------------------------------------------------
 comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
 specifier|public

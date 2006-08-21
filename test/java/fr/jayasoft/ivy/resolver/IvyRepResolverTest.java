@@ -212,6 +212,7 @@ name|IvyRepResolverTest
 extends|extends
 name|TestCase
 block|{
+comment|// remote.test
 specifier|private
 name|File
 name|_cache

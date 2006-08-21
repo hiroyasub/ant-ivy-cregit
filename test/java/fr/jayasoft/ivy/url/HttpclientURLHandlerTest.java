@@ -46,6 +46,7 @@ name|HttpclientURLHandlerTest
 extends|extends
 name|TestCase
 block|{
+comment|// remote.test
 specifier|public
 name|void
 name|testIsReachable

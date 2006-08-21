@@ -56,6 +56,7 @@ name|BasicURLHandlerTest
 extends|extends
 name|TestCase
 block|{
+comment|// remote.test
 specifier|public
 name|void
 name|testIsReachable
