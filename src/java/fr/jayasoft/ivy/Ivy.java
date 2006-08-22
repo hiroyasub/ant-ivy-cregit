@@ -8585,27 +8585,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|node
-operator|.
-name|getRequestedConf
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-name|node
-operator|.
-name|setRequestedConf
-argument_list|(
-name|confs
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-block|}
 name|doFetchDependencies
 argument_list|(
 name|node
@@ -8878,6 +8857,35 @@ return|return;
 block|}
 comment|// we handle the case where the asked configuration extends others:
 comment|// we have to first fetch the extended configurations
+comment|// first we check if this is the actual requested conf (not an extended one)
+name|boolean
+name|requestedConfSet
+init|=
+literal|false
+decl_stmt|;
+if|if
+condition|(
+name|node
+operator|.
+name|getRequestedConf
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|node
+operator|.
+name|setRequestedConf
+argument_list|(
+name|conf
+argument_list|)
+expr_stmt|;
+name|requestedConfSet
+operator|=
+literal|true
+expr_stmt|;
+block|}
+comment|// now let's recurse in extended confs
 name|String
 index|[]
 name|extendedConfs
@@ -8939,6 +8947,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+comment|// now we can actually resolve this configuration dependencies
 name|DependencyDescriptor
 name|dd
 init|=
@@ -9107,6 +9116,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+comment|// we have finiched with this configuration, if it was the original requested conf
+comment|// we can clean it now
+if|if
+condition|(
+name|requestedConfSet
+condition|)
+block|{
+name|node
+operator|.
+name|setRequestedConf
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns true if we've already fetched the dependencies for this node and configuration      * @param node node to check      * @param conf configuration to check      * @return true if we've already fetched this dependency      */

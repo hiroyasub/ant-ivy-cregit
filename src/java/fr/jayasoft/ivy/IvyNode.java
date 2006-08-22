@@ -1240,9 +1240,16 @@ name|HashSet
 argument_list|()
 decl_stmt|;
 specifier|private
-name|String
+name|Map
 name|_requestedConf
+init|=
+operator|new
+name|HashMap
+argument_list|()
 decl_stmt|;
+comment|// Maps of requested confs per root configuration
+comment|// this data is contextual to the current step of the
+comment|// resolve process
 specifier|public
 name|IvyNode
 parameter_list|(
@@ -4833,7 +4840,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * @return Returns the requestedConf.      */
+comment|/**      * @return Returns the requestedConf in the current root module configuration      */
 specifier|public
 specifier|final
 name|String
@@ -4841,7 +4848,16 @@ name|getRequestedConf
 parameter_list|()
 block|{
 return|return
+operator|(
+name|String
+operator|)
 name|_requestedConf
+operator|.
+name|get
+argument_list|(
+name|getRootModuleConf
+argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -4854,8 +4870,14 @@ name|requestedConf
 parameter_list|)
 block|{
 name|_requestedConf
-operator|=
+operator|.
+name|put
+argument_list|(
+name|getRootModuleConf
+argument_list|()
+argument_list|,
 name|requestedConf
+argument_list|)
 expr_stmt|;
 block|}
 specifier|private
