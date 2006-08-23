@@ -6283,6 +6283,48 @@ name|NO_FILTER
 argument_list|)
 return|;
 block|}
+comment|/**      * Resolves the module identified by the given mrid with its dependencies.       */
+specifier|public
+name|ResolveReport
+name|resolve
+parameter_list|(
+name|ModuleRevisionId
+name|mrid
+parameter_list|,
+name|String
+index|[]
+name|confs
+parameter_list|)
+throws|throws
+name|ParseException
+throws|,
+name|IOException
+block|{
+return|return
+name|resolve
+argument_list|(
+name|mrid
+argument_list|,
+name|confs
+argument_list|,
+literal|true
+argument_list|,
+literal|false
+argument_list|,
+literal|null
+argument_list|,
+literal|null
+argument_list|,
+literal|true
+argument_list|,
+literal|false
+argument_list|,
+name|FilterHelper
+operator|.
+name|NO_FILTER
+argument_list|)
+return|;
+block|}
 comment|/**      * Resolves the module identified by the given mrid with its dependencies if transitive is set to true.       */
 specifier|public
 name|ResolveReport
@@ -6965,6 +7007,18 @@ argument_list|,
 name|transitive
 argument_list|)
 decl_stmt|;
+name|report
+operator|.
+name|setDependencies
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|dependencies
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|Message
 operator|.
 name|verbose
@@ -14928,6 +14982,7 @@ block|}
 comment|/////////////////////////////////////////////////////////////////////////
 comment|//                         SORT
 comment|/////////////////////////////////////////////////////////////////////////
+comment|/**      * Sorts the collection of IvyNode from the less dependent to the more dependent      */
 specifier|public
 name|List
 name|sortNodes

@@ -460,7 +460,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all non evicted and non error dependency mrids      * @return all non evicted and non error dependency mrids      */
+comment|/**      * Returns all non evicted and non error dependency mrids      * The returned set is ordered so that a dependency will always      * be found before their own dependencies      * @return all non evicted and non error dependency mrids      */
 specifier|public
 name|Set
 name|getModuleRevisionIds
