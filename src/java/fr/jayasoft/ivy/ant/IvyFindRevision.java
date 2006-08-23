@@ -106,7 +106,7 @@ name|_property
 init|=
 literal|"ivy.revision"
 decl_stmt|;
-specifier|protected
+specifier|public
 name|String
 name|getModule
 parameter_list|()
@@ -115,7 +115,7 @@ return|return
 name|_module
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setModule
 parameter_list|(
@@ -128,7 +128,7 @@ operator|=
 name|module
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getOrganisation
 parameter_list|()
@@ -137,7 +137,7 @@ return|return
 name|_organisation
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setOrganisation
 parameter_list|(
@@ -150,7 +150,7 @@ operator|=
 name|organisation
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getRevision
 parameter_list|()
@@ -159,7 +159,7 @@ return|return
 name|_revision
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setRevision
 parameter_list|(
@@ -172,7 +172,7 @@ operator|=
 name|revision
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getBranch
 parameter_list|()
@@ -181,7 +181,7 @@ return|return
 name|_branch
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setBranch
 parameter_list|(
@@ -194,7 +194,7 @@ operator|=
 name|branch
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getProperty
 parameter_list|()
@@ -203,7 +203,7 @@ return|return
 name|_property
 return|;
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setProperty
 parameter_list|(
