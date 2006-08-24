@@ -9239,6 +9239,16 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+name|node
+operator|.
+name|traverse
+argument_list|(
+name|conf
+argument_list|,
+name|dep
+argument_list|)
+expr_stmt|;
+comment|// dependency traversal data may have been changed while resolving other deps, we update it
 if|if
 condition|(
 name|dep
