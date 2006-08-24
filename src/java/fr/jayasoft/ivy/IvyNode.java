@@ -5444,9 +5444,9 @@ decl_stmt|;
 name|ModuleRevisionId
 name|mrid
 init|=
-name|md
+name|node
 operator|.
-name|getModuleRevisionId
+name|getId
 argument_list|()
 decl_stmt|;
 if|if

@@ -128,6 +128,14 @@ name|DEFAULT_CONFIGURATION
 init|=
 literal|"default"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CALLER_ALL_CONFIGURATION
+init|=
+literal|"all"
+decl_stmt|;
 comment|/**      * Returns true if this descriptor is a default one, i.e.      * one generated for a module not actually having one.       * @return      */
 name|boolean
 name|isDefault
