@@ -196,7 +196,7 @@ specifier|private
 name|String
 name|_revision
 init|=
-literal|"latest.integration"
+literal|null
 decl_stmt|;
 specifier|private
 name|String
@@ -552,6 +552,18 @@ argument_list|(
 literal|"'file' not allowed when using inline mode"
 argument_list|)
 throw|;
+block|}
+if|if
+condition|(
+name|_revision
+operator|==
+literal|null
+condition|)
+block|{
+name|_revision
+operator|=
+literal|"latest.integration"
+expr_stmt|;
 block|}
 name|report
 operator|=
