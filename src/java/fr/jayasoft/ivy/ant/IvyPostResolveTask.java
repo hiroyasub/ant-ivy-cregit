@@ -161,7 +161,7 @@ specifier|private
 name|boolean
 name|_inline
 init|=
-literal|true
+literal|false
 decl_stmt|;
 specifier|private
 name|File
