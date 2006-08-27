@@ -1376,13 +1376,15 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|BuildException
-argument_list|(
-literal|"no module revision provided for ivy deliver task: It can either be set explicitely via the attribute 'revision' or via 'ivy.revision' property or a prior call to<resolve/>"
-argument_list|)
-throw|;
+name|_revision
+operator|=
+literal|"working@"
+operator|+
+name|Ivy
+operator|.
+name|getLocalHostName
+argument_list|()
+expr_stmt|;
 block|}
 name|Date
 name|pubdate
