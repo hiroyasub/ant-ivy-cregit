@@ -606,7 +606,7 @@ condition|)
 block|{
 name|info
 argument_list|(
-literal|"---------------- WARNINGS"
+literal|":::: WARNINGS"
 argument_list|)
 expr_stmt|;
 for|for
@@ -637,6 +637,13 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|_impl
+operator|!=
+literal|null
+condition|)
+block|{
 name|_impl
 operator|.
 name|log
@@ -651,6 +658,19 @@ name|MSG_WARN
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 if|if
 condition|(
@@ -664,7 +684,7 @@ condition|)
 block|{
 name|info
 argument_list|(
-literal|"---------------- ERRORS"
+literal|":::: ERRORS"
 argument_list|)
 expr_stmt|;
 for|for
@@ -695,6 +715,13 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|_impl
+operator|!=
+literal|null
+condition|)
+block|{
 name|_impl
 operator|.
 name|log
@@ -709,10 +736,23 @@ name|MSG_ERR
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|System
+operator|.
+name|err
+operator|.
+name|println
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 name|info
 argument_list|(
-literal|"\t--- USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS ---"
+literal|"\n:: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS"
 argument_list|)
 expr_stmt|;
 name|_problems
