@@ -1174,9 +1174,26 @@ index|]
 argument_list|)
 return|;
 block|}
-else|else
+if|else if
+condition|(
+name|partiallyResolvedPattern
+operator|.
+name|indexOf
+argument_list|(
+literal|"["
+operator|+
+name|IvyPatternHelper
+operator|.
+name|REVISION_KEY
+operator|+
+literal|"]"
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
 block|{
-comment|// maybe the partially resolved pattern is completely resolved ?
+comment|// the partially resolved pattern is completely resolved, check the resource
 try|try
 block|{
 name|Resource
