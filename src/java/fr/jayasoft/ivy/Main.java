@@ -1754,13 +1754,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|Date
-name|date
-init|=
-operator|new
-name|Date
-argument_list|()
-decl_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -1779,7 +1772,7 @@ name|confs
 argument_list|,
 name|cache
 argument_list|,
-name|date
+literal|null
 argument_list|,
 name|validate
 argument_list|)
@@ -2003,7 +1996,7 @@ literal|"release"
 argument_list|)
 argument_list|)
 argument_list|,
-name|date
+literal|null
 argument_list|,
 operator|new
 name|DefaultPublishingDRResolver
