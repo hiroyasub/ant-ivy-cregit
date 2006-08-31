@@ -377,6 +377,13 @@ block|{
 comment|// the groups were not found (shouldn't happen, really)
 continue|continue;
 block|}
+name|text
+operator|=
+name|text
+operator|.
+name|trim
+argument_list|()
+expr_stmt|;
 comment|// absolute href: convert to relative one
 if|if
 condition|(
