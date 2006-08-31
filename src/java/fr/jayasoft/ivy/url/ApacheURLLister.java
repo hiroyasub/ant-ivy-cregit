@@ -258,6 +258,17 @@ name|endsWith
 argument_list|(
 literal|"/"
 argument_list|)
+operator|&&
+operator|!
+name|url
+operator|.
+name|getPath
+argument_list|()
+operator|.
+name|endsWith
+argument_list|(
+literal|".html"
+argument_list|)
 condition|)
 block|{
 name|url
