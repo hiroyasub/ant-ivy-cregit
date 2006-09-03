@@ -80,6 +80,7 @@ name|String
 name|getExt
 parameter_list|()
 function_decl|;
+comment|/**      * Returns the url at which this artifact can be found independently of ivy configuration.      * This can be null (and is usually for standard artifacts)      * @return url at which this artifact can be found independently of ivy configuration      */
 name|URL
 name|getUrl
 parameter_list|()
