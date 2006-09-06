@@ -9310,6 +9310,14 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+name|dep
+operator|=
+name|dep
+operator|.
+name|getRealNode
+argument_list|()
+expr_stmt|;
+comment|// the node may have been resolved to another real one while resolving other deps
 name|node
 operator|.
 name|traverse
