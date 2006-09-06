@@ -249,6 +249,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|IvyThread
+import|;
+end_import
+
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|Message
 import|;
 end_import
@@ -601,7 +615,7 @@ name|Thread
 name|get
 init|=
 operator|new
-name|Thread
+name|IvyThread
 argument_list|()
 block|{
 specifier|public
@@ -609,6 +623,9 @@ name|void
 name|run
 parameter_list|()
 block|{
+name|initContext
+argument_list|()
+expr_stmt|;
 try|try
 block|{
 name|sendCommand
@@ -2108,7 +2125,7 @@ block|{
 name|reader
 operator|=
 operator|new
-name|Thread
+name|IvyThread
 argument_list|(
 name|r
 argument_list|)
@@ -2387,7 +2404,7 @@ block|{
 name|_connectionCleaner
 operator|=
 operator|new
-name|Thread
+name|IvyThread
 argument_list|()
 block|{
 specifier|public
@@ -2395,6 +2412,9 @@ name|void
 name|run
 parameter_list|()
 block|{
+name|initContext
+argument_list|()
+expr_stmt|;
 try|try
 block|{
 name|long
@@ -2645,7 +2665,7 @@ expr_stmt|;
 name|_errorsReader
 operator|=
 operator|new
-name|Thread
+name|IvyThread
 argument_list|()
 block|{
 specifier|public
@@ -2653,6 +2673,9 @@ name|void
 name|run
 parameter_list|()
 block|{
+name|initContext
+argument_list|()
+expr_stmt|;
 name|int
 name|c
 decl_stmt|;
