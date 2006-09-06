@@ -214,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for all ivy ant tasks, deaal particularly with ivy instance storage in ant project.  *   * @author Xavier Hanin  *  */
+comment|/**  * Base class for all ivy ant tasks, deal particularly with ivy instance storage in ant project.  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class
@@ -412,6 +412,7 @@ operator|)
 name|reference
 return|;
 block|}
+comment|/**       * Every task MUST call ensureMessageInitialised when the execution method      * starts (at least before doing any log in order to set the correct task      * in the log.      */
 specifier|protected
 name|void
 name|ensureMessageInitialised
@@ -433,8 +434,7 @@ argument_list|(
 operator|new
 name|AntMessageImpl
 argument_list|(
-name|getProject
-argument_list|()
+name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -447,6 +447,12 @@ operator|new
 name|BuildListener
 argument_list|()
 block|{
+specifier|private
+name|int
+name|stackDepth
+init|=
+literal|0
+decl_stmt|;
 specifier|public
 name|void
 name|buildFinished
@@ -455,11 +461,6 @@ name|BuildEvent
 name|event
 parameter_list|)
 block|{
-name|Message
-operator|.
-name|uninit
-argument_list|()
-expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -496,6 +497,9 @@ name|BuildEvent
 name|event
 parameter_list|)
 block|{
+name|stackDepth
+operator|++
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -505,6 +509,27 @@ name|BuildEvent
 name|event
 parameter_list|)
 block|{
+comment|//NB: There is somtimes task created by an other task
+comment|//in that case, we should not uninit Message.  The log should stay associated
+comment|//with the initial task
+comment|//NB2 : Testing the identity of the task is not enought, event.getTask() return
+comment|//an instance of UnknownElement is wrapping the concrete instance
+if|if
+condition|(
+name|stackDepth
+operator|==
+literal|0
+condition|)
+block|{
+name|Message
+operator|.
+name|uninit
+argument_list|()
+expr_stmt|;
+block|}
+name|stackDepth
+operator|--
+expr_stmt|;
 block|}
 specifier|public
 name|void

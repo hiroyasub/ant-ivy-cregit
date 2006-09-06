@@ -25,7 +25,7 @@ name|tools
 operator|.
 name|ant
 operator|.
-name|Project
+name|Task
 import|;
 end_import
 
@@ -55,8 +55,8 @@ implements|implements
 name|MessageImpl
 block|{
 specifier|private
-name|Project
-name|_project
+name|Task
+name|_task
 decl_stmt|;
 specifier|private
 specifier|static
@@ -74,17 +74,17 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-comment|/**      * @param project      */
+comment|/**      * @param task      */
 specifier|public
 name|AntMessageImpl
 parameter_list|(
-name|Project
-name|project
+name|Task
+name|task
 parameter_list|)
 block|{
-name|_project
+name|_task
 operator|=
-name|project
+name|task
 expr_stmt|;
 block|}
 specifier|public
@@ -98,7 +98,7 @@ name|int
 name|level
 parameter_list|)
 block|{
-name|_project
+name|_task
 operator|.
 name|log
 argument_list|(
@@ -137,7 +137,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_project
+name|_task
 operator|!=
 literal|null
 condition|)
@@ -155,7 +155,7 @@ operator|>
 literal|1500
 condition|)
 block|{
-name|_project
+name|_task
 operator|.
 name|log
 argument_list|(
@@ -190,7 +190,7 @@ name|String
 name|msg
 parameter_list|)
 block|{
-name|_project
+name|_task
 operator|.
 name|log
 argument_list|(

@@ -69,8 +69,36 @@ name|CircularDependencyStrategy
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|IvyThread
+import|;
+end_import
+
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|MessageImpl
+import|;
+end_import
+
 begin_comment
-comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @author Xavier Hanin  * @author Maarten Coene  */
+comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @see IvyThread  *   * @author Xavier Hanin  * @author Maarten Coene  */
 end_comment
 
 begin_class
@@ -104,6 +132,10 @@ decl_stmt|;
 specifier|private
 name|File
 name|_cache
+decl_stmt|;
+specifier|private
+name|MessageImpl
+name|_messageImpl
 decl_stmt|;
 specifier|private
 name|Map
@@ -158,6 +190,24 @@ block|}
 return|return
 name|cur
 return|;
+block|}
+comment|/**      * Changes the context associated with this thread.      * This is especially useful when launching a new thread, to associate it with the same context as the initial one.      *       * @param context the new context to use in this thread.      */
+specifier|public
+specifier|static
+name|void
+name|setContext
+parameter_list|(
+name|IvyContext
+name|context
+parameter_list|)
+block|{
+name|_current
+operator|.
+name|set
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Returns the current ivy instance.      * When calling any public ivy method on an ivy instance, a reference to this instance is       * put in this context, and thus accessible using this method, until no code reference      * this instance and the garbage collector collects it.      * Then, or if no ivy method has been called, a default ivy instance is returned      * by this method, so that it never returns null.       * @return the current ivy instance      */
 specifier|public
@@ -360,6 +410,29 @@ block|{
 return|return
 name|_operatingThread
 return|;
+block|}
+comment|/* NB : The messageImpl is only used by Message.  It should be better to place it there. 	 * Alternatively, the Message itself could be placed here, bu this is has a major impact 	 * because Message is used at a lot of place. 	 */
+specifier|public
+name|MessageImpl
+name|getMessageImpl
+parameter_list|()
+block|{
+return|return
+name|_messageImpl
+return|;
+block|}
+specifier|public
+name|void
+name|setMessageImpl
+parameter_list|(
+name|MessageImpl
+name|impl
+parameter_list|)
+block|{
+name|_messageImpl
+operator|=
+name|impl
+expr_stmt|;
 block|}
 comment|// should be better to use context to store this kind of information, but not yet ready to do so...
 comment|//    private WeakReference _root = new WeakReference(null);
