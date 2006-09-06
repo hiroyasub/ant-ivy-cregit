@@ -415,6 +415,11 @@ name|Resource
 name|res
 parameter_list|)
 block|{
+name|_res
+operator|=
+name|res
+expr_stmt|;
+comment|// used for log and date only
 name|_md
 operator|=
 operator|new
@@ -422,14 +427,9 @@ name|DefaultModuleDescriptor
 argument_list|(
 name|_parser
 argument_list|,
-name|_res
+name|res
 argument_list|)
 expr_stmt|;
-name|_res
-operator|=
-name|res
-expr_stmt|;
-comment|// used for log and date only
 name|_md
 operator|.
 name|setLastModified
