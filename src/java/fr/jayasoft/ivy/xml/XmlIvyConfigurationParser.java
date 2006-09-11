@@ -1400,7 +1400,7 @@ block|}
 catch|catch
 parameter_list|(
 name|Exception
-name|ex
+name|fileEx
 parameter_list|)
 block|{
 name|Message
@@ -1412,6 +1412,8 @@ operator|+
 name|propFilePath
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 name|_ivy
 operator|.
 name|loadProperties
@@ -1439,6 +1441,31 @@ name|booleanValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|urlEx
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"unable to load properties from "
+operator|+
+name|propFilePath
+operator|+
+literal|". Tried both as an url and a file, with no success. File exception: "
+operator|+
+name|fileEx
+operator|+
+literal|". URL exception: "
+operator|+
+name|urlEx
+argument_list|)
+throw|;
+block|}
 block|}
 block|}
 if|else if
