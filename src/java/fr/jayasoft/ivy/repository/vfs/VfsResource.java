@@ -481,7 +481,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * The VFS FileName getURI method seems to have a bug in it where      * file: URIs will have 4 forward slashes instead of 3.      *       * @param vfsURI      * @return a normalized<class>String</class> representing the VFS URI      */
-specifier|private
+specifier|public
+specifier|static
 name|String
 name|normalize
 parameter_list|(
