@@ -388,6 +388,19 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+comment|/**      * this method should remove sensitive information from a location to be displayed in a log      * @param name location      * @return location with sensitive data replaced by stars      */
+specifier|public
+name|String
+name|hidePassword
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+name|name
+return|;
+block|}
 specifier|protected
 name|boolean
 name|doValidate

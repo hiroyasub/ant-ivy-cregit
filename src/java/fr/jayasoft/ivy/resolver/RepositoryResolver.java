@@ -1264,7 +1264,10 @@ argument_list|()
 operator|+
 literal|" to "
 operator|+
+name|hidePassword
+argument_list|(
 name|dest
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

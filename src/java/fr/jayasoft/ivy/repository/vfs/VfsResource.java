@@ -155,6 +155,20 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|fr
+operator|.
+name|jayasoft
+operator|.
+name|ivy
+operator|.
+name|resolver
+operator|.
+name|VfsResolver
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -615,8 +629,13 @@ name|toString
 parameter_list|()
 block|{
 return|return
+name|VfsResolver
+operator|.
+name|prepareForDisplay
+argument_list|(
 name|getName
 argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
