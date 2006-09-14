@@ -8468,6 +8468,15 @@ name|isTransitive
 argument_list|()
 return|;
 block|}
+specifier|public
+name|ResolveData
+name|getResolveData
+parameter_list|()
+block|{
+return|return
+name|_data
+return|;
+block|}
 block|}
 end_class
 
