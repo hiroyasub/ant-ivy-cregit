@@ -1022,9 +1022,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-comment|// dependencies has been evicted: it has not been added to the report yet
+comment|// update the configurations reports with the dependencies
+comment|// these reports will be completed later with download information, if any
 name|String
 index|[]
 name|dconfs
@@ -1076,7 +1075,6 @@ argument_list|(
 name|dependency
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
