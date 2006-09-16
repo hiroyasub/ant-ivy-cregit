@@ -17,27 +17,17 @@ name|java
 operator|.
 name|io
 operator|.
-name|BufferedReader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|File
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|junit
 operator|.
-name|io
+name|framework
 operator|.
-name|FileReader
+name|TestCase
 import|;
 end_import
 
@@ -68,30 +58,6 @@ operator|.
 name|taskdefs
 operator|.
 name|Delete
-import|;
-end_import
-
-begin_import
-import|import
-name|fr
-operator|.
-name|jayasoft
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|FileUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -220,6 +186,12 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
+block|}
+specifier|public
+name|void
+name|test
+parameter_list|()
+block|{
 block|}
 comment|// no xslt transformation is possible in the junit test on our continuous integration server for the moment...
 comment|//    public void testGraph() throws Exception {
