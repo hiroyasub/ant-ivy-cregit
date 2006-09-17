@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author X.Hanin  *  */
+comment|/**  * @author Xavier Hanin  */
 end_comment
 
 begin_class
@@ -61,6 +61,49 @@ parameter_list|()
 block|{
 return|return
 literal|"file"
+return|;
+block|}
+specifier|public
+name|boolean
+name|isLocal
+parameter_list|()
+block|{
+return|return
+name|getFileRepository
+argument_list|()
+operator|.
+name|isLocal
+argument_list|()
+return|;
+block|}
+specifier|public
+name|void
+name|setLocal
+parameter_list|(
+name|boolean
+name|local
+parameter_list|)
+block|{
+name|getFileRepository
+argument_list|()
+operator|.
+name|setLocal
+argument_list|(
+name|local
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+name|FileRepository
+name|getFileRepository
+parameter_list|()
+block|{
+return|return
+operator|(
+name|FileRepository
+operator|)
+name|getRepository
+argument_list|()
 return|;
 block|}
 block|}
