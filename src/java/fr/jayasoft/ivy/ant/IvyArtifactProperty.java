@@ -338,6 +338,8 @@ argument_list|(
 name|isHaltonfailure
 argument_list|()
 argument_list|,
+literal|false
+argument_list|,
 name|getOrganisation
 argument_list|()
 argument_list|,

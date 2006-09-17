@@ -594,6 +594,9 @@ parameter_list|(
 name|boolean
 name|haltOnFailure
 parameter_list|,
+name|boolean
+name|useOrigin
+parameter_list|,
 name|String
 name|org
 parameter_list|,
@@ -604,6 +607,8 @@ block|{
 name|ensureResolved
 argument_list|(
 name|haltOnFailure
+argument_list|,
+name|useOrigin
 argument_list|,
 literal|true
 argument_list|,
@@ -621,6 +626,9 @@ name|ensureResolved
 parameter_list|(
 name|boolean
 name|haltOnFailure
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|,
 name|boolean
 name|transitive
@@ -681,6 +689,8 @@ init|=
 name|createResolve
 argument_list|(
 name|haltOnFailure
+argument_list|,
+name|useOrigin
 argument_list|)
 decl_stmt|;
 name|resolve
@@ -1159,6 +1169,9 @@ name|createResolve
 parameter_list|(
 name|boolean
 name|haltOnFailure
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|)
 block|{
 name|Message
@@ -1188,6 +1201,13 @@ operator|.
 name|setHaltonfailure
 argument_list|(
 name|haltOnFailure
+argument_list|)
+expr_stmt|;
+name|resolve
+operator|.
+name|setUseOrigin
+argument_list|(
+name|useOrigin
 argument_list|)
 expr_stmt|;
 if|if

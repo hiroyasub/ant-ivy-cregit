@@ -933,6 +933,9 @@ name|ivy
 parameter_list|,
 name|File
 name|cache
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|)
 block|{
 name|ensureConfigured
@@ -950,6 +953,8 @@ argument_list|,
 name|ivy
 argument_list|,
 name|cache
+argument_list|,
+name|useOrigin
 argument_list|)
 return|;
 block|}

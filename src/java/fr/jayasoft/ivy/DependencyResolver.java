@@ -155,6 +155,9 @@ name|ivy
 parameter_list|,
 name|File
 name|cache
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|)
 function_decl|;
 name|boolean

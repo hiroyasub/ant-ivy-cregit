@@ -1149,6 +1149,9 @@ name|ivy
 parameter_list|,
 name|File
 name|cache
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|)
 block|{
 name|List
@@ -1234,6 +1237,8 @@ argument_list|,
 name|ivy
 argument_list|,
 name|cache
+argument_list|,
+name|useOrigin
 argument_list|)
 decl_stmt|;
 name|ArtifactDownloadReport

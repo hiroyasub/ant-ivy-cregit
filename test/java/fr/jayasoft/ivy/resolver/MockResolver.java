@@ -474,6 +474,9 @@ name|ivy
 parameter_list|,
 name|File
 name|cache
+parameter_list|,
+name|boolean
+name|useOrigin
 parameter_list|)
 block|{
 return|return
