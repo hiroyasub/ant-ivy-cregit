@@ -149,6 +149,9 @@ argument_list|,
 name|artifactFilter
 argument_list|,
 name|_sync
+argument_list|,
+name|isUseOrigin
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|boolean
