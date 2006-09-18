@@ -195,6 +195,15 @@ name|_file
 return|;
 block|}
 specifier|public
+name|FileRepository
+name|getRepository
+parameter_list|()
+block|{
+return|return
+name|_repository
+return|;
+block|}
+specifier|public
 name|boolean
 name|isLocal
 parameter_list|()
