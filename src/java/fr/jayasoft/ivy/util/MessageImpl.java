@@ -33,6 +33,17 @@ parameter_list|)
 function_decl|;
 specifier|public
 name|void
+name|rawlog
+parameter_list|(
+name|String
+name|msg
+parameter_list|,
+name|int
+name|level
+parameter_list|)
+function_decl|;
+specifier|public
+name|void
 name|progress
 parameter_list|()
 function_decl|;

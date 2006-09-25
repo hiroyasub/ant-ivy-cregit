@@ -360,7 +360,7 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 literal|"\t"
 operator|+
@@ -423,7 +423,7 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 name|line
 operator|.
@@ -518,7 +518,7 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 name|line
 operator|.
@@ -528,7 +528,7 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 literal|"\t"
 operator|+
@@ -581,7 +581,7 @@ expr_stmt|;
 block|}
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 literal|"\t"
 operator|+
@@ -945,7 +945,7 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|info
+name|rawinfo
 argument_list|(
 name|line
 operator|.
