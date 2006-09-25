@@ -59,18 +59,6 @@ end_import
 
 begin_import
 import|import
-name|sun
-operator|.
-name|security
-operator|.
-name|action
-operator|.
-name|GetPropertyAction
-import|;
-end_import
-
-begin_import
-import|import
 name|fr
 operator|.
 name|jayasoft
