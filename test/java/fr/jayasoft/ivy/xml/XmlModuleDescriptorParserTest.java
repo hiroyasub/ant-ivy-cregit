@@ -720,8 +720,23 @@ name|ParseException
 name|ex
 parameter_list|)
 block|{
+if|if
+condition|(
+name|XMLHelper
+operator|.
+name|canUseSchemaValidation
+argument_list|()
+condition|)
+block|{
 name|assertTrue
 argument_list|(
+literal|"exception message not explicit. It should contain 'modul', but it's:"
+operator|+
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
 name|ex
 operator|.
 name|getMessage
@@ -736,6 +751,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public
