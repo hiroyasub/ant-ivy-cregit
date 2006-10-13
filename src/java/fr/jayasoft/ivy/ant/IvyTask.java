@@ -788,19 +788,9 @@ block|{
 name|ensureMessageInitialised
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|org
-operator|!=
-literal|null
-operator|&&
-name|module
-operator|!=
-literal|null
-condition|)
-block|{
-return|return;
-block|}
+comment|//        if (org != null&& module != null) {
+comment|//            return;
+comment|//        }
 name|String
 index|[]
 name|confs

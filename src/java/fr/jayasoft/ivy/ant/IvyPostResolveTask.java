@@ -232,6 +232,21 @@ init|=
 name|getIvyInstance
 argument_list|()
 decl_stmt|;
+name|boolean
+name|orgAndModSetManually
+init|=
+operator|(
+name|_organisation
+operator|!=
+literal|null
+operator|)
+operator|&&
+operator|(
+name|_module
+operator|!=
+literal|null
+operator|)
+decl_stmt|;
 name|_organisation
 operator|=
 name|getProperty
@@ -489,6 +504,16 @@ argument_list|(
 literal|"using standard ensure resolved"
 argument_list|)
 expr_stmt|;
+comment|// if the organization and module has been manually specified, we'll reuse the resolved
+comment|// data from another build (there is no way to know which configurations were resolved
+comment|// there (TODO: maybe we can check which reports exist and extract the configurations
+comment|// from these report names?)
+if|if
+condition|(
+operator|!
+name|orgAndModSetManually
+condition|)
+block|{
 name|ensureResolved
 argument_list|(
 name|isHaltonfailure
@@ -516,6 +541,7 @@ literal|"ivy.resolved.configurations"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|_conf
 operator|=
 name|getProperty
