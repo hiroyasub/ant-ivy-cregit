@@ -1038,7 +1038,7 @@ name|debug
 argument_list|(
 literal|"asked configurations:      "
 operator|+
-name|rconfsSet
+name|confsSet
 argument_list|)
 expr_stmt|;
 name|confsSet
