@@ -472,9 +472,35 @@ operator|=
 name|type
 expr_stmt|;
 block|}
+comment|/** 	 * @deprecated Use {@link #setFailureProperty(String)} instead 	 */
 specifier|public
 name|void
 name|setFailurePropery
+parameter_list|(
+name|String
+name|failureProperty
+parameter_list|)
+block|{
+name|log
+argument_list|(
+literal|"The 'failurepropery' attribute is deprecated. "
+operator|+
+literal|"Please use the 'failureproperty' attribute instead"
+argument_list|,
+name|Project
+operator|.
+name|MSG_WARN
+argument_list|)
+expr_stmt|;
+name|setFailureProperty
+argument_list|(
+name|failureProperty
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setFailureProperty
 parameter_list|(
 name|String
 name|failureProperty
