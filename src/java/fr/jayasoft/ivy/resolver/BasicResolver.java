@@ -4517,6 +4517,14 @@ expr_stmt|;
 if|if
 condition|(
 name|useOrigin
+operator|&&
+name|artifactRef
+operator|.
+name|getResource
+argument_list|()
+operator|.
+name|isLocal
+argument_list|()
 condition|)
 block|{
 name|Message
