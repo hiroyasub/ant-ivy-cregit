@@ -872,15 +872,13 @@ operator|new
 name|Properties
 argument_list|()
 decl_stmt|;
-name|log
+name|Message
+operator|.
+name|verbose
 argument_list|(
 literal|"Loading "
 operator|+
 name|url
-argument_list|,
-name|Project
-operator|.
-name|MSG_VERBOSE
 argument_list|)
 expr_stmt|;
 try|try
