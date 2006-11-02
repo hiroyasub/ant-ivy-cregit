@@ -12821,7 +12821,9 @@ argument_list|()
 decl_stmt|;
 name|File
 name|archive
-init|=
+decl_stmt|;
+if|if
+condition|(
 literal|"ivy"
 operator|.
 name|equals
@@ -12831,7 +12833,10 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
-condition|?
+condition|)
+block|{
+name|archive
+operator|=
 name|getIvyFileInCache
 argument_list|(
 name|cache
@@ -12841,7 +12846,12 @@ operator|.
 name|getModuleRevisionId
 argument_list|()
 argument_list|)
-else|:
+expr_stmt|;
+block|}
+else|else
+block|{
+name|archive
+operator|=
 name|getArchiveFileInCache
 argument_list|(
 name|cache
@@ -12857,7 +12867,39 @@ argument_list|)
 argument_list|,
 name|useOrigin
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|useOrigin
+operator|&&
+operator|!
+name|archive
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+comment|// file is not available in cache, maybe the last resolve was performed with useOrigin=true.
+comment|// we try to use the best we can
+name|archive
+operator|=
+name|getArchiveFileInCache
+argument_list|(
+name|cache
+argument_list|,
+name|artifact
+argument_list|,
+name|getSavedArtifactOrigin
+argument_list|(
+name|cache
+argument_list|,
+name|artifact
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|Set
 name|dest
 init|=
@@ -16533,7 +16575,7 @@ return|return
 name|archive
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on its availability and the setting of useOrigin.      *       * If useOrigin is false, this method will always return the file in the cache.      *       */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information provided      * as parameter and the setting of useOrigin.      *       * If useOrigin is false, this method will always return the file in the cache.      *       */
 specifier|public
 name|File
 name|getArchiveFileInCache
