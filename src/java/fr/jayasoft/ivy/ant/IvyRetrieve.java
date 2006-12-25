@@ -70,6 +70,12 @@ name|_sync
 init|=
 literal|false
 decl_stmt|;
+specifier|private
+name|boolean
+name|_symlink
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|String
 name|getPattern
@@ -152,6 +158,8 @@ name|_sync
 argument_list|,
 name|isUseOrigin
 argument_list|()
+argument_list|,
+name|_symlink
 argument_list|)
 decl_stmt|;
 name|boolean
@@ -253,6 +261,20 @@ block|{
 name|_sync
 operator|=
 name|sync
+expr_stmt|;
+block|}
+comment|/**      * Option to create symlinks instead of copying.      */
+specifier|public
+name|void
+name|setSymlink
+parameter_list|(
+name|boolean
+name|symlink
+parameter_list|)
+block|{
+name|_symlink
+operator|=
+name|symlink
 expr_stmt|;
 block|}
 block|}
