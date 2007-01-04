@@ -367,10 +367,6 @@ argument_list|(
 name|_evt
 argument_list|)
 expr_stmt|;
-name|_evt
-operator|=
-literal|null
-expr_stmt|;
 block|}
 specifier|protected
 name|void
@@ -408,10 +404,6 @@ argument_list|(
 name|_evt
 argument_list|)
 expr_stmt|;
-name|_evt
-operator|=
-literal|null
-expr_stmt|;
 block|}
 specifier|protected
 name|void
@@ -431,10 +423,6 @@ name|fireTransferEvent
 argument_list|(
 name|_evt
 argument_list|)
-expr_stmt|;
-name|_evt
-operator|=
-literal|null
 expr_stmt|;
 block|}
 specifier|protected
@@ -465,10 +453,6 @@ name|fireTransferEvent
 argument_list|(
 name|_evt
 argument_list|)
-expr_stmt|;
-name|_evt
-operator|=
-literal|null
 expr_stmt|;
 block|}
 specifier|protected
