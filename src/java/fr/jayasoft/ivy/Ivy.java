@@ -14581,6 +14581,8 @@ argument_list|(
 literal|"malformed url obtained for file "
 operator|+
 name|ivyFile
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -14592,13 +14594,15 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|IllegalStateException
+name|RuntimeException
 argument_list|(
 literal|"bad ivy file in cache for "
 operator|+
 name|mrid
 operator|+
 literal|": please clean and resolve again"
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -14959,13 +14963,15 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|IllegalStateException
+name|RuntimeException
 argument_list|(
 literal|"bad ivy file in cache for "
 operator|+
 name|mrid
 operator|+
 literal|": please clean and resolve again"
+argument_list|,
+name|ex
 argument_list|)
 throw|;
 block|}
