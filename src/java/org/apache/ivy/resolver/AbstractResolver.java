@@ -1352,8 +1352,7 @@ block|{
 return|return
 name|NoMatcher
 operator|.
-name|getInstance
-argument_list|()
+name|INSTANCE
 return|;
 block|}
 name|PatternMatcher

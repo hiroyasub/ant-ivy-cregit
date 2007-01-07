@@ -51,11 +51,16 @@ name|ModuleRevisionId
 import|;
 end_import
 
+begin_comment
+comment|/**  * Set of helper methods to match ModuleId, ModuleRevisionId, ArtifactId  */
+end_comment
+
 begin_class
 specifier|public
 class|class
 name|MatcherHelper
 block|{
+comment|// TODO this class might be better off as MatcherUtils in util package
 specifier|public
 specifier|static
 name|boolean
@@ -65,10 +70,10 @@ name|PatternMatcher
 name|m
 parameter_list|,
 name|String
-name|exp
+name|expression
 parameter_list|,
 name|String
-name|str
+name|input
 parameter_list|)
 block|{
 return|return
@@ -76,12 +81,12 @@ name|m
 operator|.
 name|getMatcher
 argument_list|(
-name|exp
+name|expression
 argument_list|)
 operator|.
 name|matches
 argument_list|(
-name|str
+name|input
 argument_list|)
 return|;
 block|}
@@ -218,37 +223,10 @@ name|exp
 operator|.
 name|getModuleId
 argument_list|()
-operator|.
-name|getOrganisation
-argument_list|()
 argument_list|,
 name|aid
 operator|.
 name|getModuleId
-argument_list|()
-operator|.
-name|getOrganisation
-argument_list|()
-argument_list|)
-operator|&&
-name|matches
-argument_list|(
-name|m
-argument_list|,
-name|exp
-operator|.
-name|getModuleId
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|aid
-operator|.
-name|getModuleId
-argument_list|()
-operator|.
-name|getName
 argument_list|()
 argument_list|)
 operator|&&
@@ -342,6 +320,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|// unused
 specifier|public
 specifier|static
 name|boolean

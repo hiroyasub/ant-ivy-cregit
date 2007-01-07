@@ -32,6 +32,7 @@ specifier|public
 class|class
 name|ModuleIdMatcher
 block|{
+comment|// TODO this class should be moved out of this package
 specifier|private
 name|Matcher
 name|_orgMatcher

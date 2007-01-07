@@ -195,8 +195,7 @@ literal|null
 condition|?
 name|ExactPatternMatcher
 operator|.
-name|getInstance
-argument_list|()
+name|INSTANCE
 else|:
 name|matcher
 expr_stmt|;

@@ -1335,8 +1335,7 @@ literal|false
 argument_list|,
 name|ExactPatternMatcher
 operator|.
-name|getInstance
-argument_list|()
+name|INSTANCE
 argument_list|)
 argument_list|)
 expr_stmt|;

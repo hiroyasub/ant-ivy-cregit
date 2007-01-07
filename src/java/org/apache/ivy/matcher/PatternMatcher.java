@@ -15,11 +15,16 @@ name|matcher
 package|;
 end_package
 
+begin_comment
+comment|/**  * Interface for a pattern matcher.  *<p/>  * The pattern matcher is the main abstraction regarding the matching of an expression. Implementation may vary  * depending on the expression syntax handling that is desired.  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
 name|PatternMatcher
 block|{
+comment|/**      * 'exact' pattern matcher name      */
 specifier|public
 specifier|static
 specifier|final
@@ -28,6 +33,7 @@ name|EXACT
 init|=
 literal|"exact"
 decl_stmt|;
+comment|/**      * pattern matcher name 'regexp'      */
 specifier|public
 specifier|static
 specifier|final
@@ -36,6 +42,7 @@ name|REGEXP
 init|=
 literal|"regexp"
 decl_stmt|;
+comment|/**      * pattern matcher 'glob'      */
 specifier|public
 specifier|static
 specifier|final
@@ -44,6 +51,7 @@ name|GLOB
 init|=
 literal|"glob"
 decl_stmt|;
+comment|/**      * pattern matcher name 'exactOrRegexp'      */
 specifier|public
 specifier|static
 specifier|final
@@ -52,6 +60,7 @@ name|EXACT_OR_REGEXP
 init|=
 literal|"exactOrRegexp"
 decl_stmt|;
+comment|/**      * Any expression string: '*'      */
 specifier|public
 specifier|static
 specifier|final
@@ -60,15 +69,20 @@ name|ANY_EXPRESSION
 init|=
 literal|"*"
 decl_stmt|;
+comment|/**      * Return the matcher for the given expression.      *      * @param expression the expression to be matched. Cannot be null ?      * @return the matcher instance for the given expression. Never null.      */
 specifier|public
+comment|/*@NotNull*/
 name|Matcher
 name|getMatcher
 parameter_list|(
+comment|/*@NotNull*/
 name|String
-name|exp
+name|expression
 parameter_list|)
 function_decl|;
+comment|/**      * return the name of this pattern matcher      *      * @return the name of this pattern matcher. Never null.      * @see #EXACT      * @see #REGEXP      * @see #GLOB      * @see #EXACT_OR_REGEXP      */
 specifier|public
+comment|/*@NotNull*/
 name|String
 name|getName
 parameter_list|()
