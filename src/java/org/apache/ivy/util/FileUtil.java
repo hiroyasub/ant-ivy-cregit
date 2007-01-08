@@ -921,6 +921,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|l
+operator|!=
+literal|null
+condition|)
+block|{
 name|evt
 operator|.
 name|update
@@ -932,6 +939,7 @@ argument_list|,
 name|total
 argument_list|)
 expr_stmt|;
+block|}
 comment|// close the streams
 name|src
 operator|.
