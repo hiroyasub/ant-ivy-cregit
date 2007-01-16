@@ -1398,11 +1398,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-literal|"dependency"
+literal|"project/dependencies/dependency"
 operator|.
 name|equals
 argument_list|(
-name|qName
+name|getContext
+argument_list|()
 argument_list|)
 condition|)
 block|{
