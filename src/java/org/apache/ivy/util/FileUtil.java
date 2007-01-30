@@ -173,6 +173,8 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|util
+operator|.
 name|url
 operator|.
 name|URLHandlerRegistry

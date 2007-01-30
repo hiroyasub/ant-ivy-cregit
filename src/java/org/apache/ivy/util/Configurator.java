@@ -129,6 +129,20 @@ name|Stack
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|IvyPatternHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  * Ant 1.6.1 like Configurator  *   * This configurator is used to configure elements (initialised with setRoot)  * using the behaviour defined by ant for its tasks.  *   * Example (based on<a href="http://ant.apache.org/manual/develop.html#writingowntask">Ant Example</a>) :  * Configurator conf = new Configurator();  * conf.typeDef("buildpath", "Sample$BuildPath");  * conf.typeDef("xinterface", "Sample$XInterface");  *   * Sample.MyFileSelector mfs = new Sample.MyFileSelector();  * conf.setRoot(mfs);  * conf.startCreateChild("buildpath");  * conf.setAttribute("path", ".");  * conf.setAttribute("url", "abc");  * conf.startCreateChild("xinterface");  * conf.setAttribute("count", "4");  * conf.endCreateChild(); // xinterface  * conf.endCreateChild(); // buildpath  *   * @author x.hanin  *  */
 end_comment

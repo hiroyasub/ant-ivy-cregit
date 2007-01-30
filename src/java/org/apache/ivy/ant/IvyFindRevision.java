@@ -35,6 +35,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleId
 import|;
 end_import
@@ -47,6 +53,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleRevisionId
 import|;
 end_import
@@ -58,6 +70,10 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|core
+operator|.
+name|resolve
 operator|.
 name|ResolvedModuleRevision
 import|;

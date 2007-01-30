@@ -65,6 +65,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
 name|ModuleDescriptor
 import|;
 end_import
@@ -77,7 +83,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|external
+name|plugins
+operator|.
+name|parser
 operator|.
 name|m2
 operator|.
@@ -92,6 +100,8 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|plugins
 operator|.
 name|repository
 operator|.

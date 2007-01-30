@@ -55,7 +55,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|ModuleRevisionId
+name|ant
+operator|.
+name|IvyResolve
 import|;
 end_import
 
@@ -67,9 +69,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|ant
+name|core
 operator|.
-name|IvyResolve
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleRevisionId
 import|;
 end_import
 
@@ -453,7 +459,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/java/org/apache/ivy/ivy-198.xml"
+literal|"test/java/org/apache/ivy/core/resolve/ivy-198.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

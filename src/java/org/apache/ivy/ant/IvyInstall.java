@@ -45,6 +45,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleRevisionId
 import|;
 end_import
@@ -57,9 +63,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|filter
+name|plugins
 operator|.
-name|FilterHelper
+name|matcher
+operator|.
+name|PatternMatcher
 import|;
 end_import
 
@@ -71,9 +79,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|matcher
+name|util
 operator|.
-name|PatternMatcher
+name|filter
+operator|.
+name|FilterHelper
 import|;
 end_import
 

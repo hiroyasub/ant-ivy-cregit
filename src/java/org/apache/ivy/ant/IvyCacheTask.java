@@ -113,6 +113,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
 name|Artifact
 import|;
 end_import
@@ -125,6 +131,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleRevisionId
 import|;
 end_import
@@ -136,6 +148,8 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|core
 operator|.
 name|report
 operator|.
@@ -151,6 +165,8 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
 name|report
 operator|.
 name|ConfigurationResolveReport
@@ -164,6 +180,8 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|core
 operator|.
 name|report
 operator|.
@@ -179,9 +197,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|util
+name|plugins
 operator|.
-name|Message
+name|report
+operator|.
+name|XmlReportParser
 import|;
 end_import
 
@@ -193,9 +213,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|xml
+name|util
 operator|.
-name|XmlReportParser
+name|Message
 import|;
 end_import
 

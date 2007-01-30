@@ -35,6 +35,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleRevisionId
 import|;
 end_import

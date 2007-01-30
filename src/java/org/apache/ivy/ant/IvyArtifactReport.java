@@ -201,7 +201,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Artifact
+name|Ivy
 import|;
 end_import
 
@@ -212,6 +212,10 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|core
+operator|.
+name|cache
 operator|.
 name|ArtifactOrigin
 import|;
@@ -225,7 +229,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Artifact
 import|;
 end_import
 
@@ -237,17 +247,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|IvyNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|core
 operator|.
-name|apache
+name|module
 operator|.
-name|ivy
+name|descriptor
 operator|.
 name|ModuleDescriptor
 import|;
@@ -261,7 +265,29 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|resolve
+operator|.
+name|IvyNode
 import|;
 end_import
 

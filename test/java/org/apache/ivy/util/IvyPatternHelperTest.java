@@ -43,7 +43,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|util
+name|core
 operator|.
 name|IvyPatternHelper
 import|;

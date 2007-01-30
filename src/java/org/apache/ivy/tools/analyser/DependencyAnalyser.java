@@ -25,6 +25,12 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
 name|ModuleDescriptor
 import|;
 end_import

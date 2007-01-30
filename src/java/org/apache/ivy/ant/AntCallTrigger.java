@@ -63,6 +63,8 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
 name|IvyContext
 import|;
 end_import
@@ -75,9 +77,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|event
+name|core
 operator|.
-name|AbstractTrigger
+name|IvyPatternHelper
 import|;
 end_import
 
@@ -88,6 +90,8 @@ operator|.
 name|apache
 operator|.
 name|ivy
+operator|.
+name|core
 operator|.
 name|event
 operator|.
@@ -103,9 +107,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|event
+name|plugins
 operator|.
-name|Trigger
+name|trigger
+operator|.
+name|AbstractTrigger
 import|;
 end_import
 
@@ -117,9 +123,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|util
+name|plugins
 operator|.
-name|IvyPatternHelper
+name|trigger
+operator|.
+name|Trigger
 import|;
 end_import
 

@@ -45,6 +45,8 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
 name|report
 operator|.
 name|ResolveReport

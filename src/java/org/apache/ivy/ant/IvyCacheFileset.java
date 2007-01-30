@@ -43,7 +43,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Artifact
+name|Ivy
 import|;
 end_import
 
@@ -55,7 +55,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Artifact
 import|;
 end_import
 
