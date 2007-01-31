@@ -517,10 +517,10 @@ name|CacheManager
 name|getCacheManager
 parameter_list|()
 block|{
-comment|// TODO : reuse one instance
 return|return
-operator|new
 name|CacheManager
+operator|.
+name|getInstance
 argument_list|(
 name|getSettings
 argument_list|()
