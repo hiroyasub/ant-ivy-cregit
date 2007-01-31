@@ -35,18 +35,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|event
@@ -210,9 +198,6 @@ decl_stmt|;
 specifier|public
 name|TransferEvent
 parameter_list|(
-name|Ivy
-name|ivy
-parameter_list|,
 specifier|final
 name|Repository
 name|repository
@@ -232,8 +217,6 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|ivy
-argument_list|,
 name|getName
 argument_list|(
 name|eventType
@@ -295,9 +278,6 @@ block|}
 specifier|public
 name|TransferEvent
 parameter_list|(
-name|Ivy
-name|ivy
-parameter_list|,
 specifier|final
 name|Repository
 name|repository
@@ -317,8 +297,6 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-name|ivy
-argument_list|,
 name|repository
 argument_list|,
 name|resource
@@ -336,9 +314,6 @@ block|}
 specifier|public
 name|TransferEvent
 parameter_list|(
-name|Ivy
-name|ivy
-parameter_list|,
 specifier|final
 name|Repository
 name|repository
@@ -357,8 +332,6 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-name|ivy
-argument_list|,
 name|repository
 argument_list|,
 name|resource

@@ -29,29 +29,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|XmlSettingsParser
+name|TestCase
 import|;
 end_import
 
@@ -135,16 +117,6 @@ name|URLHandlerRegistry
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_comment
 comment|/**  * split from XmlIvyConfigurationParserTest due to dependency on network resource  */
 end_comment
@@ -167,11 +139,11 @@ block|{
 name|configureURLHandler
 argument_list|()
 expr_stmt|;
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -180,7 +152,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -197,7 +169,7 @@ expr_stmt|;
 name|DependencyResolver
 name|resolver
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(

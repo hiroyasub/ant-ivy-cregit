@@ -49,6 +49,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -72,16 +82,6 @@ operator|.
 name|resolver
 operator|.
 name|DependencyResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -116,6 +116,9 @@ expr_stmt|;
 name|assertNotNull
 argument_list|(
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getDefaultResolver
 argument_list|()
@@ -173,6 +176,9 @@ name|DependencyResolver
 name|custom
 init|=
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getResolver
 argument_list|(
@@ -246,6 +252,9 @@ name|DependencyResolver
 name|custom
 init|=
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getResolver
 argument_list|(

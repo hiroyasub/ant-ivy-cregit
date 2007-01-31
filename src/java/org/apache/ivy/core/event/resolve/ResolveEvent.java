@@ -27,18 +27,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|event
@@ -84,9 +72,6 @@ decl_stmt|;
 specifier|protected
 name|ResolveEvent
 parameter_list|(
-name|Ivy
-name|source
-parameter_list|,
 name|String
 name|name
 parameter_list|,
@@ -100,8 +85,6 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|source
-argument_list|,
 name|name
 argument_list|)
 expr_stmt|;

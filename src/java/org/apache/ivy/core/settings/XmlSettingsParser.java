@@ -137,18 +137,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|module
@@ -373,7 +361,7 @@ block|}
 argument_list|)
 decl_stmt|;
 specifier|private
-name|Ivy
+name|IvySettings
 name|_ivy
 decl_stmt|;
 specifier|private
@@ -399,7 +387,7 @@ decl_stmt|;
 specifier|public
 name|XmlSettingsParser
 parameter_list|(
-name|Ivy
+name|IvySettings
 name|ivy
 parameter_list|)
 block|{

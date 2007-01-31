@@ -789,7 +789,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|getVersionMatcher
@@ -1085,7 +1085,7 @@ argument_list|,
 name|token
 argument_list|)
 expr_stmt|;
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|filterIgnore
@@ -1175,7 +1175,7 @@ argument_list|,
 name|token
 argument_list|)
 expr_stmt|;
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|filterIgnore

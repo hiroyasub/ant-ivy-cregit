@@ -35,7 +35,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
 import|;
 end_import
 
@@ -154,17 +158,17 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|setIvy
+name|setSettings
 parameter_list|(
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|)
 block|{
 name|super
 operator|.
-name|setIvy
+name|setSettings
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 expr_stmt|;
 if|if
@@ -181,7 +185,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|getDefaultIvyUserDir
 argument_list|()

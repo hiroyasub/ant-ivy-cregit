@@ -75,7 +75,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|IvyContext
 import|;
 end_import
 
@@ -376,9 +378,12 @@ expr_stmt|;
 name|PatternMatcher
 name|pMatcher
 init|=
-name|Ivy
+name|IvyContext
 operator|.
-name|getCurrent
+name|getContext
+argument_list|()
+operator|.
+name|getSettings
 argument_list|()
 operator|.
 name|getMatcher

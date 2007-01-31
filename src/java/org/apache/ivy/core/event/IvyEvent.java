@@ -45,7 +45,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|IvyContext
 import|;
 end_import
 
@@ -127,7 +129,7 @@ class|class
 name|IvyEvent
 block|{
 specifier|private
-name|Ivy
+name|EventManager
 name|_source
 decl_stmt|;
 specifier|private
@@ -145,16 +147,19 @@ decl_stmt|;
 specifier|protected
 name|IvyEvent
 parameter_list|(
-name|Ivy
-name|source
-parameter_list|,
 name|String
 name|name
 parameter_list|)
 block|{
 name|_source
 operator|=
-name|source
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|getEventManager
+argument_list|()
 expr_stmt|;
 name|_name
 operator|=
@@ -305,7 +310,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|Ivy
+name|EventManager
 name|getSource
 parameter_list|()
 block|{

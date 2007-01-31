@@ -87,18 +87,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|module
@@ -227,6 +215,22 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|conflict
@@ -307,24 +311,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|plugins
-operator|.
-name|parser
-operator|.
-name|xml
-operator|.
-name|XmlModuleDescriptorParser
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|util
 operator|.
 name|XMLHelper
@@ -344,11 +330,11 @@ name|AbstractModuleDescriptorParserTester
 block|{
 comment|// junit test -- DO NOT REMOVE used by ant to know it's a junit test
 specifier|private
-name|Ivy
-name|_ivy
+name|IvySettings
+name|_settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -368,7 +354,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -570,7 +556,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -771,7 +757,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -846,7 +832,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -921,7 +907,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -987,7 +973,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -1017,7 +1003,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -1062,7 +1048,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -3825,7 +3811,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -3990,7 +3976,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4156,7 +4142,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4354,7 +4340,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4507,7 +4493,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4753,7 +4739,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5026,7 +5012,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5299,7 +5285,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5521,7 +5507,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5774,7 +5760,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6082,7 +6068,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6362,7 +6348,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6449,7 +6435,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6538,7 +6524,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6753,7 +6739,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6968,7 +6954,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_ivy
+name|_settings
 argument_list|,
 name|getClass
 argument_list|()

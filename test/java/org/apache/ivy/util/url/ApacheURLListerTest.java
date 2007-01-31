@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|net
@@ -59,17 +49,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|url
-operator|.
-name|ApacheURLLister
+name|TestCase
 import|;
 end_import
 

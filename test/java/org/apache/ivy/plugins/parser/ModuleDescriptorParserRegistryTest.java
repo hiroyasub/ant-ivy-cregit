@@ -69,13 +69,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|Ivy
+name|TestCase
 import|;
 end_import
 
@@ -141,27 +139,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|plugins
+name|core
 operator|.
-name|parser
+name|settings
 operator|.
-name|AbstractModuleDescriptorParser
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|parser
-operator|.
-name|ModuleDescriptorParserRegistry
+name|IvySettings
 import|;
 end_import
 
@@ -178,16 +160,6 @@ operator|.
 name|repository
 operator|.
 name|Resource
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -209,7 +181,7 @@ specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
 parameter_list|(
-name|Ivy
+name|IvySettings
 name|ivy
 parameter_list|,
 name|URL
@@ -286,14 +258,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
-name|ivy
+name|settings
 operator|.
 name|addConfigured
 argument_list|(
@@ -312,7 +284,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|ModuleDescriptorParserRegistryTest
 operator|.

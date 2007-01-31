@@ -27,18 +27,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|cache
@@ -107,9 +95,6 @@ decl_stmt|;
 specifier|public
 name|StartArtifactDownloadEvent
 parameter_list|(
-name|Ivy
-name|source
-parameter_list|,
 name|DependencyResolver
 name|resolver
 parameter_list|,
@@ -122,8 +107,6 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|source
-argument_list|,
 name|NAME
 argument_list|,
 name|artifact

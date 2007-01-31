@@ -33,18 +33,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|IvyPatternHelper
@@ -84,6 +72,22 @@ operator|.
 name|id
 operator|.
 name|ModuleId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
 import|;
 end_import
 
@@ -319,10 +323,10 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
-name|getIvyInstance
+name|getSettings
 argument_list|()
 decl_stmt|;
 name|_organisation
@@ -331,7 +335,7 @@ name|getProperty
 argument_list|(
 name|_organisation
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.organisation"
 argument_list|)
@@ -342,7 +346,7 @@ name|getProperty
 argument_list|(
 name|_module
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.module"
 argument_list|)
@@ -367,7 +371,7 @@ name|getProperty
 argument_list|(
 name|_conf
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.resolved.configurations"
 argument_list|)
@@ -386,7 +390,7 @@ name|_conf
 operator|=
 name|getProperty
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.resolved.configurations"
 argument_list|)
@@ -413,7 +417,7 @@ name|getProperty
 argument_list|(
 name|_organisation
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.organisation"
 argument_list|)
@@ -424,7 +428,7 @@ name|getProperty
 argument_list|(
 name|_module
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.module"
 argument_list|)
@@ -438,7 +442,7 @@ condition|)
 block|{
 name|_cache
 operator|=
-name|ivy
+name|settings
 operator|.
 name|getDefaultCache
 argument_list|()
@@ -580,7 +584,7 @@ name|IvyPatternHelper
 operator|.
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|substitute
 argument_list|(
@@ -603,7 +607,7 @@ name|IvyPatternHelper
 operator|.
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|substitute
 argument_list|(

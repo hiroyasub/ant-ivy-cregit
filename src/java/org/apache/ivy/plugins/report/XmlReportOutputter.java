@@ -879,7 +879,10 @@ literal|" resolver=\""
 operator|+
 name|report
 operator|.
-name|getIvy
+name|getResolveEngine
+argument_list|()
+operator|.
+name|getSettings
 argument_list|()
 operator|.
 name|getResolverName

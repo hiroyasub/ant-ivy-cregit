@@ -29,6 +29,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -103,16 +113,6 @@ name|Delete
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -130,8 +130,9 @@ block|{
 name|Ivy
 name|ivy
 init|=
-operator|new
 name|Ivy
+operator|.
+name|newInstance
 argument_list|()
 decl_stmt|;
 name|ivy
@@ -161,6 +162,9 @@ literal|"2.0"
 argument_list|)
 argument_list|,
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getDefaultResolver
 argument_list|()
@@ -220,8 +224,9 @@ block|{
 name|Ivy
 name|ivy
 init|=
-operator|new
 name|Ivy
+operator|.
+name|newInstance
 argument_list|()
 decl_stmt|;
 name|ivy
@@ -251,6 +256,9 @@ literal|"1.0"
 argument_list|)
 argument_list|,
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getDefaultResolver
 argument_list|()
@@ -334,8 +342,9 @@ block|{
 name|Ivy
 name|ivy
 init|=
-operator|new
 name|Ivy
+operator|.
+name|newInstance
 argument_list|()
 decl_stmt|;
 name|ivy
@@ -365,6 +374,9 @@ literal|"1.0"
 argument_list|)
 argument_list|,
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 operator|.
 name|getDefaultResolver
 argument_list|()
@@ -448,8 +460,9 @@ block|{
 name|Ivy
 name|ivy
 init|=
-operator|new
 name|Ivy
+operator|.
+name|newInstance
 argument_list|()
 decl_stmt|;
 name|ivy

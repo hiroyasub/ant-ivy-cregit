@@ -435,7 +435,7 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|getDefaultBranch

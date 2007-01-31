@@ -17,25 +17,21 @@ end_package
 
 begin_import
 import|import
-name|junit
+name|java
 operator|.
-name|framework
+name|io
 operator|.
-name|TestCase
+name|File
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|ant
-operator|.
-name|IvyBuildList
+name|TestCase
 import|;
 end_import
 
@@ -82,16 +78,6 @@ operator|.
 name|types
 operator|.
 name|Path
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
 import|;
 end_import
 

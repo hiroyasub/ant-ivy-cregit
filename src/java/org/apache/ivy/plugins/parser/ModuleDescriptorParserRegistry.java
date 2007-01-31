@@ -105,7 +105,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|ModuleDescriptor
 import|;
 end_import
 
@@ -119,11 +125,9 @@ name|ivy
 operator|.
 name|core
 operator|.
-name|module
+name|settings
 operator|.
-name|descriptor
-operator|.
-name|ModuleDescriptor
+name|IvySettings
 import|;
 end_import
 
@@ -357,8 +361,8 @@ specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
 parameter_list|(
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|,
 name|URL
 name|descriptorURL
@@ -407,7 +411,7 @@ name|parser
 operator|.
 name|parseDescriptor
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|descriptorURL
 argument_list|,

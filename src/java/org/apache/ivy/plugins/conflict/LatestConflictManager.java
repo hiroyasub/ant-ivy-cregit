@@ -507,7 +507,7 @@ condition|)
 block|{
 name|_strategy
 operator|=
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|getLatestStrategy
@@ -533,7 +533,7 @@ argument_list|)
 expr_stmt|;
 name|_strategy
 operator|=
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|getDefaultLatestStrategy
@@ -545,7 +545,7 @@ else|else
 block|{
 name|_strategy
 operator|=
-name|getIvy
+name|getSettings
 argument_list|()
 operator|.
 name|getDefaultLatestStrategy

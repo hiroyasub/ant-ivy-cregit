@@ -15,36 +15,6 @@ name|util
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
 begin_comment
 comment|/**  * Convenient class used only for uncapitalization  * Usually use commons lang but here we do not want to have such   * a dependency for only one feature  *   * @author X. Hanin  *  */
 end_comment

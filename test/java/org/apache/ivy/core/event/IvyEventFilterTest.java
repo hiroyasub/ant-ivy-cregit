@@ -29,13 +29,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|Ivy
+name|TestCase
 import|;
 end_import
 
@@ -47,11 +45,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
-operator|.
-name|event
-operator|.
-name|IvyEventFilter
+name|Ivy
 import|;
 end_import
 
@@ -158,16 +152,6 @@ operator|.
 name|report
 operator|.
 name|ResolveReport
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -308,8 +292,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -331,8 +313,6 @@ argument_list|(
 operator|new
 name|EndResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -379,8 +359,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -402,8 +380,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -425,8 +401,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -460,8 +434,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -483,8 +455,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -506,8 +476,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md3
 argument_list|,
 operator|new
@@ -529,8 +497,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -564,8 +530,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -587,8 +551,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -610,8 +572,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md3
 argument_list|,
 operator|new
@@ -633,8 +593,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -675,8 +633,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -698,8 +654,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -721,8 +675,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -756,8 +708,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -779,8 +729,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -802,8 +750,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md3
 argument_list|,
 operator|new
@@ -825,8 +771,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -867,8 +811,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -890,8 +832,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -913,8 +853,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md3
 argument_list|,
 operator|new
@@ -936,8 +874,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new
@@ -978,8 +914,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md
 argument_list|,
 operator|new
@@ -1001,8 +935,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md2
 argument_list|,
 operator|new
@@ -1024,8 +956,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md3
 argument_list|,
 operator|new
@@ -1047,8 +977,6 @@ argument_list|(
 operator|new
 name|StartResolveEvent
 argument_list|(
-name|ivy
-argument_list|,
 name|md4
 argument_list|,
 operator|new

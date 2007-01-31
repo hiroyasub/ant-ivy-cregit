@@ -229,6 +229,22 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|namespace
@@ -411,8 +427,8 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|,
 name|URL
 name|srcURL
@@ -451,7 +467,7 @@ name|SAXException
 block|{
 name|update
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|srcURL
 operator|.
@@ -480,8 +496,8 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|,
 name|InputStream
 name|in
@@ -550,7 +566,7 @@ try|try
 block|{
 name|update
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|in
 argument_list|,
@@ -615,8 +631,8 @@ name|LexicalHandler
 block|{
 specifier|private
 specifier|final
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 decl_stmt|;
 specifier|private
 specifier|final
@@ -663,8 +679,8 @@ specifier|public
 name|UpdaterHandler
 parameter_list|(
 specifier|final
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|,
 specifier|final
 name|PrintWriter
@@ -697,9 +713,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|ivy
+name|settings
 operator|=
-name|ivy
+name|settings
 expr_stmt|;
 name|this
 operator|.
@@ -840,7 +856,7 @@ name|_organisation
 operator|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -862,7 +878,7 @@ literal|"\" module=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -914,7 +930,7 @@ literal|" revision=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -957,7 +973,7 @@ literal|" status=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1017,7 +1033,7 @@ literal|" publication=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1076,7 +1092,7 @@ literal|" namespace=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1141,7 +1157,7 @@ literal|"=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1186,7 +1202,7 @@ name|fileName
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1208,7 +1224,7 @@ name|urlStr
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1292,7 +1308,7 @@ name|defaultconf
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1319,7 +1335,7 @@ name|mappingOverride
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1423,7 +1439,7 @@ literal|"=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1492,7 +1508,7 @@ name|org
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1517,7 +1533,7 @@ name|module
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1532,7 +1548,7 @@ name|branch
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1547,7 +1563,7 @@ name|revision
 init|=
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1769,7 +1785,7 @@ literal|"=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1840,7 +1856,7 @@ literal|"=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1963,7 +1979,7 @@ literal|"=\""
 operator|+
 name|substitute
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|attributes
 operator|.
@@ -1988,7 +2004,7 @@ specifier|private
 name|String
 name|substitute
 parameter_list|(
-name|Ivy
+name|IvySettings
 name|ivy
 parameter_list|,
 name|String
@@ -2337,8 +2353,8 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 parameter_list|,
 name|InputStream
 name|inStream
@@ -2430,7 +2446,7 @@ init|=
 operator|new
 name|UpdaterHandler
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 name|out
 argument_list|,

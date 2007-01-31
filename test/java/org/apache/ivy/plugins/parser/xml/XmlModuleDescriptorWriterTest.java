@@ -81,13 +81,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|Ivy
+name|TestCase
 import|;
 end_import
 
@@ -135,31 +133,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|plugins
+name|core
 operator|.
-name|parser
+name|settings
 operator|.
-name|xml
-operator|.
-name|XmlModuleDescriptorParser
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|parser
-operator|.
-name|xml
-operator|.
-name|XmlModuleDescriptorWriter
+name|IvySettings
 import|;
 end_import
 
@@ -174,16 +152,6 @@ operator|.
 name|util
 operator|.
 name|FileUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -225,7 +193,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|XmlModuleDescriptorWriterTest
@@ -361,7 +329,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|XmlModuleDescriptorWriterTest
@@ -473,7 +441,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|XmlModuleDescriptorWriterTest

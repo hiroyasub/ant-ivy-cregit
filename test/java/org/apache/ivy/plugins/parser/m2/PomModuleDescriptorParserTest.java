@@ -47,18 +47,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|module
@@ -149,11 +137,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|plugins
+name|core
 operator|.
-name|parser
+name|settings
 operator|.
-name|AbstractModuleDescriptorParserTester
+name|IvySettings
 import|;
 end_import
 
@@ -169,9 +157,7 @@ name|plugins
 operator|.
 name|parser
 operator|.
-name|m2
-operator|.
-name|PomModuleDescriptorParser
+name|AbstractModuleDescriptorParserTester
 import|;
 end_import
 
@@ -292,7 +278,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -430,7 +416,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -568,7 +554,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -706,7 +692,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -809,7 +795,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -911,7 +897,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -1013,7 +999,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -1115,7 +1101,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -1217,7 +1203,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -1553,7 +1539,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass
@@ -2009,7 +1995,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|getClass

@@ -111,6 +111,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -147,13 +157,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|plugins
+name|core
 operator|.
-name|parser
+name|settings
 operator|.
-name|xml
-operator|.
-name|XmlModuleDescriptorUpdater
+name|IvySettings
 import|;
 end_import
 
@@ -168,16 +176,6 @@ operator|.
 name|util
 operator|.
 name|FileUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -286,8 +284,9 @@ expr_stmt|;
 name|Ivy
 name|ivy
 init|=
-operator|new
 name|Ivy
+operator|.
+name|newInstance
 argument_list|()
 decl_stmt|;
 name|ivy
@@ -304,6 +303,9 @@ operator|.
 name|update
 argument_list|(
 name|ivy
+operator|.
+name|getSettings
+argument_list|()
 argument_list|,
 name|XmlModuleUpdaterTest
 operator|.
@@ -410,7 +412,7 @@ operator|.
 name|update
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|XmlModuleUpdaterTest

@@ -117,6 +117,22 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|util
 operator|.
 name|Message
@@ -549,6 +565,14 @@ init|=
 name|getIvyInstance
 argument_list|()
 decl_stmt|;
+name|IvySettings
+name|settings
+init|=
+name|ivy
+operator|.
+name|getSettings
+argument_list|()
+decl_stmt|;
 try|try
 block|{
 name|_conf
@@ -557,7 +581,7 @@ name|getProperty
 argument_list|(
 name|_conf
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.configurations"
 argument_list|)
@@ -568,7 +592,7 @@ name|getProperty
 argument_list|(
 name|_type
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.resolve.default.type.filter"
 argument_list|)
@@ -582,7 +606,7 @@ condition|)
 block|{
 name|_cache
 operator|=
-name|ivy
+name|settings
 operator|.
 name|getDefaultCache
 argument_list|()
@@ -697,7 +721,7 @@ argument_list|)
 argument_list|,
 name|doValidate
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 argument_list|,
 name|_useCacheOnly
@@ -765,7 +789,7 @@ argument_list|()
 argument_list|,
 name|getProperty
 argument_list|(
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.dep.file"
 argument_list|)
@@ -778,7 +802,7 @@ name|getProperty
 argument_list|(
 name|_revision
 argument_list|,
-name|ivy
+name|settings
 argument_list|,
 literal|"ivy.revision"
 argument_list|)
@@ -809,7 +833,7 @@ argument_list|)
 argument_list|,
 name|doValidate
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 argument_list|,
 name|_useCacheOnly
@@ -908,7 +932,7 @@ name|getOrganisation
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -939,7 +963,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -970,7 +994,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -1008,7 +1032,7 @@ name|hasChanged
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -1051,7 +1075,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -1079,7 +1103,7 @@ argument_list|,
 name|_conf
 argument_list|)
 expr_stmt|;
-name|ivy
+name|settings
 operator|.
 name|setVariable
 argument_list|(

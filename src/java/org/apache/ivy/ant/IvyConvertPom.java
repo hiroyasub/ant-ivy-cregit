@@ -53,7 +53,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|ModuleDescriptor
 import|;
 end_import
 
@@ -67,11 +73,9 @@ name|ivy
 operator|.
 name|core
 operator|.
-name|module
+name|settings
 operator|.
-name|descriptor
-operator|.
-name|ModuleDescriptor
+name|IvySettings
 import|;
 end_import
 
@@ -256,7 +260,7 @@ operator|.
 name|parseDescriptor
 argument_list|(
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 argument_list|,
 name|_pomFile

@@ -360,7 +360,7 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|getIvy
+name|getEventManager
 argument_list|()
 operator|.
 name|addIvyListener

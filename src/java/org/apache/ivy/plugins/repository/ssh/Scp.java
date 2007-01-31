@@ -107,6 +107,18 @@ name|jcraft
 operator|.
 name|jsch
 operator|.
+name|Channel
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|jcraft
+operator|.
+name|jsch
+operator|.
 name|ChannelExec
 import|;
 end_import
@@ -132,18 +144,6 @@ operator|.
 name|jsch
 operator|.
 name|Session
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|jcraft
-operator|.
-name|jsch
-operator|.
-name|Channel
 import|;
 end_import
 

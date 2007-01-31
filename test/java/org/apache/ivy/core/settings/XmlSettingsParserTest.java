@@ -39,13 +39,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|Ivy
+name|TestCase
 import|;
 end_import
 
@@ -80,22 +78,6 @@ operator|.
 name|report
 operator|.
 name|ResolveReport
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|XmlSettingsParser
 import|;
 end_import
 
@@ -307,16 +289,6 @@ name|VersionMatcher
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_comment
 comment|/**  * TODO write javadoc  */
 end_comment
@@ -335,11 +307,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -348,7 +320,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -368,7 +340,7 @@ expr_stmt|;
 name|File
 name|defaultCache
 init|=
-name|ivy
+name|settings
 operator|.
 name|getDefaultCache
 argument_list|()
@@ -390,7 +362,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|isCheckUpToDate
 argument_list|()
@@ -398,7 +370,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|doValidate
 argument_list|()
@@ -408,7 +380,7 @@ name|assertEquals
 argument_list|(
 literal|"[module]/ivys/ivy-[revision].xml"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getCacheIvyPattern
 argument_list|()
@@ -418,7 +390,7 @@ name|assertEquals
 argument_list|(
 literal|"[module]/[type]s/[artifact]-[revision].[ext]"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getCacheArtifactPattern
 argument_list|()
@@ -427,7 +399,7 @@ expr_stmt|;
 name|LatestStrategy
 name|latest
 init|=
-name|ivy
+name|settings
 operator|.
 name|getLatestStrategy
 argument_list|(
@@ -496,7 +468,7 @@ expr_stmt|;
 name|DependencyResolver
 name|defaultResolver
 init|=
-name|ivy
+name|settings
 operator|.
 name|getDefaultResolver
 argument_list|()
@@ -589,7 +561,7 @@ expr_stmt|;
 name|DependencyResolver
 name|internal
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -733,7 +705,7 @@ name|assertEquals
 argument_list|(
 literal|"libraries"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -754,7 +726,7 @@ name|assertEquals
 argument_list|(
 literal|"internal"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -775,7 +747,7 @@ name|assertEquals
 argument_list|(
 literal|"int1"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -796,7 +768,7 @@ name|assertEquals
 argument_list|(
 literal|"int1"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -821,11 +793,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -834,7 +806,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -854,7 +826,7 @@ expr_stmt|;
 name|DependencyResolver
 name|mock
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -876,7 +848,7 @@ expr_stmt|;
 name|DependencyResolver
 name|internal
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -998,11 +970,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1011,7 +983,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1032,7 +1004,7 @@ name|assertEquals
 argument_list|(
 literal|"bronze"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1045,7 +1017,7 @@ name|assertEquals
 argument_list|(
 literal|0
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1060,7 +1032,7 @@ name|assertEquals
 argument_list|(
 literal|1
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1075,7 +1047,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1090,7 +1062,7 @@ name|assertEquals
 argument_list|(
 literal|false
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1105,7 +1077,7 @@ name|assertEquals
 argument_list|(
 literal|false
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1120,7 +1092,7 @@ name|assertEquals
 argument_list|(
 literal|true
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -1139,11 +1111,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1152,7 +1124,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1173,7 +1145,7 @@ name|assertEquals
 argument_list|(
 literal|"latest-time"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getConflictManager
 argument_list|(
@@ -1194,7 +1166,7 @@ name|assertEquals
 argument_list|(
 literal|"all"
 argument_list|,
-name|ivy
+name|settings
 operator|.
 name|getConflictManager
 argument_list|(
@@ -1219,11 +1191,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1232,7 +1204,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1252,7 +1224,7 @@ expr_stmt|;
 name|VersionMatcher
 name|mock
 init|=
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|(
@@ -1274,7 +1246,7 @@ expr_stmt|;
 name|VersionMatcher
 name|v
 init|=
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|()
@@ -1329,7 +1301,7 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|(
@@ -1347,7 +1319,7 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|(
@@ -1364,11 +1336,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1377,7 +1349,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1397,7 +1369,7 @@ expr_stmt|;
 name|VersionMatcher
 name|mock
 init|=
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|(
@@ -1419,7 +1391,7 @@ expr_stmt|;
 name|VersionMatcher
 name|v
 init|=
-name|ivy
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|()
@@ -1473,11 +1445,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1486,7 +1458,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1506,7 +1478,7 @@ expr_stmt|;
 name|DependencyResolver
 name|internal
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -1617,7 +1589,7 @@ expr_stmt|;
 name|DependencyResolver
 name|external
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -1730,11 +1702,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -1743,7 +1715,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -1763,7 +1735,7 @@ expr_stmt|;
 name|DependencyResolver
 name|def
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -1931,7 +1903,7 @@ expr_stmt|;
 name|DependencyResolver
 name|other
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2044,11 +2016,11 @@ throws|throws
 name|Exception
 block|{
 comment|// test case for IVY-319
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -2057,7 +2029,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -2077,7 +2049,7 @@ expr_stmt|;
 name|DependencyResolver
 name|shared
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2099,7 +2071,7 @@ expr_stmt|;
 name|DependencyResolver
 name|mychain
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2186,11 +2158,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -2199,7 +2171,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -2219,7 +2191,7 @@ expr_stmt|;
 name|DependencyResolver
 name|def
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2330,7 +2302,7 @@ expr_stmt|;
 name|DependencyResolver
 name|inc
 init|=
-name|ivy
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2442,11 +2414,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -2455,7 +2427,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -2509,11 +2481,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Ivy
-name|ivy
+name|IvySettings
+name|settings
 init|=
 operator|new
-name|Ivy
+name|IvySettings
 argument_list|()
 decl_stmt|;
 name|XmlSettingsParser
@@ -2522,7 +2494,7 @@ init|=
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|ivy
+name|settings
 argument_list|)
 decl_stmt|;
 name|parser
@@ -2543,7 +2515,7 @@ comment|//System.out.println(Arrays.asList(ivy.getReportOutputters()));
 name|ReportOutputter
 name|testOutputter
 init|=
-name|ivy
+name|settings
 operator|.
 name|getReportOutputter
 argument_list|(

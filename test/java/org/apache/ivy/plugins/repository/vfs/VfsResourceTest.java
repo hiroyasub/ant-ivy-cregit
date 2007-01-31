@@ -81,24 +81,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|repository
-operator|.
-name|vfs
-operator|.
-name|VfsResource
-import|;
-end_import
-
-begin_import
-import|import
 name|junit
 operator|.
 name|framework

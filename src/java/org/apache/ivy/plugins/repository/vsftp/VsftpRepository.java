@@ -2519,6 +2519,9 @@ condition|)
 block|{
 name|_ivy
 operator|.
+name|getEventManager
+argument_list|()
+operator|.
 name|addIvyListener
 argument_list|(
 operator|new

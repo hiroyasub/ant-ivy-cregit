@@ -116,7 +116,7 @@ name|getProperty
 argument_list|(
 name|_pattern
 argument_list|,
-name|getIvyInstance
+name|getSettings
 argument_list|()
 argument_list|,
 literal|"ivy.retrieve.pattern"

@@ -51,19 +51,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|repository
-operator|.
-name|vfs
-operator|.
-name|VfsRepository
+name|TestCase
 import|;
 end_import
 
@@ -78,16 +70,6 @@ operator|.
 name|util
 operator|.
 name|FileUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
