@@ -530,6 +530,18 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|public
+name|void
+name|checkInterrupted
+parameter_list|()
+block|{
+name|getIvy
+argument_list|()
+operator|.
+name|checkInterrupted
+argument_list|()
+expr_stmt|;
+block|}
 comment|// should be better to use context to store this kind of information, but not yet ready to do so...
 comment|//    private WeakReference _root = new WeakReference(null);
 comment|//    private String _rootModuleConf = null;
