@@ -119,6 +119,24 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|resolve
+operator|.
+name|IvyNodeEviction
+operator|.
+name|EvictionData
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|util
 operator|.
 name|Message
@@ -353,8 +371,6 @@ name|j
 operator|++
 control|)
 block|{
-name|IvyNode
-operator|.
 name|EvictionData
 name|evictedData
 init|=
@@ -379,7 +395,7 @@ literal|"\t  in "
 operator|+
 name|evictedData
 operator|.
-name|getNode
+name|getParent
 argument_list|()
 operator|+
 literal|" with "
@@ -721,10 +737,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getProblem
-argument_list|()
-operator|.
-name|getMessage
+name|getProblemMessage
 argument_list|()
 argument_list|)
 expr_stmt|;

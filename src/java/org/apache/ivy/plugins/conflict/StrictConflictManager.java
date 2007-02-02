@@ -23,6 +23,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collection
 import|;
 end_import
@@ -155,10 +165,15 @@ name|lastNode
 operator|+
 literal|" (needed by "
 operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
 name|lastNode
 operator|.
-name|getParent
+name|getAllCallers
 argument_list|()
+argument_list|)
 operator|+
 literal|") conflicts with "
 operator|+
@@ -166,10 +181,15 @@ name|node
 operator|+
 literal|" (needed by "
 operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
 name|node
 operator|.
-name|getParent
+name|getAllCallers
 argument_list|()
+argument_list|)
 operator|+
 literal|")"
 decl_stmt|;

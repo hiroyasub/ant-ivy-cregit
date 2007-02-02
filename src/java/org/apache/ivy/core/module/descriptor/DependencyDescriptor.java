@@ -234,6 +234,7 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
+comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude
