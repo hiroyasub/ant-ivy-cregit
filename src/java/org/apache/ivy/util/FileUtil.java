@@ -309,6 +309,27 @@ operator|.
 name|getRuntime
 argument_list|()
 decl_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"executing 'ln -s -f "
+operator|+
+name|src
+operator|.
+name|getAbsolutePath
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|dest
+operator|.
+name|getPath
+argument_list|()
+operator|+
+literal|"'"
+argument_list|)
+expr_stmt|;
 name|Process
 name|process
 init|=
