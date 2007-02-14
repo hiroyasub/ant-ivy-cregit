@@ -337,12 +337,12 @@ name|runtime
 operator|.
 name|exec
 argument_list|(
-literal|"ln"
-argument_list|,
 operator|new
 name|String
 index|[]
 block|{
+literal|"ln"
+block|,
 literal|"-s"
 block|,
 literal|"-f"
