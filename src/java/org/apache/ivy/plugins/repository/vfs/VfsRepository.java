@@ -364,6 +364,17 @@ operator|=
 operator|new
 name|StandardFileSystemManager
 argument_list|()
+block|{
+specifier|protected
+name|void
+name|configurePlugins
+parameter_list|()
+throws|throws
+name|FileSystemException
+block|{
+comment|// disable automatic loading potential unsupported extensions
+block|}
+block|}
 expr_stmt|;
 name|result
 operator|.
