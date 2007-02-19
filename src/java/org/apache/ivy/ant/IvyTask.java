@@ -1459,6 +1459,17 @@ name|String
 name|conf
 parameter_list|)
 block|{
+if|if
+condition|(
+name|conf
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|String
 index|[]
 name|confs
