@@ -131,7 +131,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"http://repo1.maven.org/maven/"
+literal|"http://repo1.maven.org/maven"
 block|,
 literal|"http://mirrors.sunsite.dk/maven"
 block|,
