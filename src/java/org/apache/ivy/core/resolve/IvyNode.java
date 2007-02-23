@@ -579,6 +579,36 @@ name|String
 name|conf
 parameter_list|)
 block|{
+if|if
+condition|(
+name|node
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"node must not null"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|conf
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"conf must not null"
+argument_list|)
+throw|;
+block|}
 name|_node
 operator|=
 name|node

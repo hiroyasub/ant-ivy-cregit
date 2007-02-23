@@ -330,6 +330,36 @@ name|String
 name|conf
 parameter_list|)
 block|{
+if|if
+condition|(
+name|mid
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"mid cannot be null"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|conf
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"conf cannot be null"
+argument_list|)
+throw|;
+block|}
 name|_moduleId
 operator|=
 name|mid

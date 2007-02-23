@@ -2400,6 +2400,31 @@ name|i
 operator|++
 control|)
 block|{
+if|if
+condition|(
+name|confs
+index|[
+name|i
+index|]
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"null conf not allowed: confs where: "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|confs
+argument_list|)
+argument_list|)
+throw|;
+block|}
 comment|// for each configuration we clear the cache of what's been fetched
 name|_fetchedSet
 operator|.
