@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -105,6 +115,21 @@ name|askedMrid
 parameter_list|,
 name|ModuleDescriptor
 name|foundMD
+parameter_list|)
+function_decl|;
+comment|/**      * Compares a dynamic revision (askedMrid) with a static one (foundMrid)      * to indicate which one should be considered the greater.      * If there is not enough information to know which one is the greater,      * the dynamic one should be considered greater and this method should return 0.      *       * This method should never be called with a askdeMrid for which isDynamic       * returns false.      *       * @param askedMrid the dynamic revision to compare      * @param foundMrid the static revision to compare      * @param staticComparator a comparator which can be used to compare static revisions      * @return 0 if it's not possible to know which one is greater, greater than 0 if askedMrid should be considered greater, lower than 0 if it can't be consider greater      */
+specifier|public
+name|int
+name|compare
+parameter_list|(
+name|ModuleRevisionId
+name|askedMrid
+parameter_list|,
+name|ModuleRevisionId
+name|foundMrid
+parameter_list|,
+name|Comparator
+name|staticComparator
 parameter_list|)
 function_decl|;
 comment|/**      * Returns the version matcher name identifying this version matcher      * @return the version matcher name identifying this version matcher      */

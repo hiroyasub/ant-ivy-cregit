@@ -122,7 +122,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_RevisionMatches
+name|_revisionMatches
 init|=
 operator|new
 name|HashMap
@@ -196,7 +196,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_RevisionMatches
+name|_revisionMatches
 operator|.
 name|get
 argument_list|(
@@ -219,7 +219,7 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_RevisionMatches
+name|_revisionMatches
 operator|.
 name|put
 argument_list|(
@@ -309,7 +309,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_RevisionMatches
+name|_revisionMatches
 operator|.
 name|get
 argument_list|(
@@ -431,7 +431,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_RevisionMatches
+name|_revisionMatches
 operator|.
 name|containsKey
 argument_list|(

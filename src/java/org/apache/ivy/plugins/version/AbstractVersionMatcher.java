@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -176,6 +186,25 @@ operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
 argument_list|)
+return|;
+block|}
+comment|/**      * This method should be overriden in most cases, because it uses the default contract      * to return 1 when it's not possible to know which revision is greater.      */
+specifier|public
+name|int
+name|compare
+parameter_list|(
+name|ModuleRevisionId
+name|askedMrid
+parameter_list|,
+name|ModuleRevisionId
+name|foundMrid
+parameter_list|,
+name|Comparator
+name|staticComparator
+parameter_list|)
+block|{
+return|return
+literal|0
 return|;
 block|}
 specifier|public

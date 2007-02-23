@@ -198,7 +198,7 @@ block|{
 return|return
 name|_node
 operator|.
-name|getId
+name|getResolvedId
 argument_list|()
 operator|.
 name|getRevision
