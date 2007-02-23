@@ -527,6 +527,21 @@ name|IvyNode
 name|node
 parameter_list|)
 block|{
+if|if
+condition|(
+name|node
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"node must not be null"
+argument_list|)
+throw|;
+block|}
 name|_node
 operator|=
 name|node
