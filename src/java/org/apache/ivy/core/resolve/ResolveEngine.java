@@ -3988,6 +3988,39 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|resolved
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|_settings
+operator|.
+name|debugConflictResolution
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"impossible to resolve conflicts for "
+operator|+
+name|node
+operator|+
+literal|" in "
+operator|+
+name|ancestor
+operator|+
+literal|" yet"
+argument_list|)
+expr_stmt|;
+block|}
+return|return;
+block|}
+if|if
+condition|(
 name|_settings
 operator|.
 name|debugConflictResolution

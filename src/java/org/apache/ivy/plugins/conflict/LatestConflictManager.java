@@ -154,6 +154,13 @@ name|LatestConflictManager
 extends|extends
 name|AbstractConflictManager
 block|{
+specifier|public
+specifier|static
+class|class
+name|NoConflictResolvedYetException
+extends|extends
+name|RuntimeException
+block|{ 	}
 specifier|private
 specifier|static
 class|class
@@ -183,12 +190,36 @@ name|long
 name|getLastModified
 parameter_list|()
 block|{
-return|return
+name|long
+name|lastModified
+init|=
 name|_node
 operator|.
-name|getPublication
+name|getLastModified
 argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|lastModified
+operator|==
+literal|0
+condition|)
+block|{
+comment|// if the last modified timestamp is unknown, we can't resolve
+comment|// the conflicts now, and trigger an exception which will be catched
+comment|// in the main resolveConflicts method
+throw|throw
+operator|new
+name|NoConflictResolvedYetException
+argument_list|()
+throw|;
+block|}
+else|else
+block|{
+return|return
+name|lastModified
 return|;
+block|}
 block|}
 specifier|public
 name|String
@@ -358,6 +389,8 @@ argument_list|)
 return|;
 block|}
 block|}
+try|try
+block|{
 name|ArtifactInfo
 name|latest
 init|=
@@ -402,6 +435,19 @@ else|else
 block|{
 return|return
 name|conflicts
+return|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|NoConflictResolvedYetException
+name|ex
+parameter_list|)
+block|{
+comment|// we have not enough informations in the nodes to resolve conflict
+comment|// according to the resolveConflicts contract, we must return null
+return|return
+literal|null
 return|;
 block|}
 block|}

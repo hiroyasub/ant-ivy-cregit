@@ -1073,6 +1073,13 @@ operator|.
 name|getResolvedId
 argument_list|()
 argument_list|)
+operator|&&
+name|getEvictedData
+argument_list|(
+name|rootModuleConf
+argument_list|)
+operator|!=
+literal|null
 return|;
 block|}
 specifier|public

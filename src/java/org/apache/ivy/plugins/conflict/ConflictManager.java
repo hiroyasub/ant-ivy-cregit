@@ -48,7 +48,7 @@ specifier|public
 interface|interface
 name|ConflictManager
 block|{
-comment|/**      * Resolves the eventual conflicts found in the given collection of IvyNode.      * This method return a Collection of IvyNode which have not been evicted.      * The given conflicts Collection contains at least one IvyNode.      * @param parent the ivy node parent for which the conflict is to be resolved      * @param conflicts the collection of IvyNode to check for conflicts      * @return a Collection of IvyNode which have not been evicted      */
+comment|/**      * Resolves the eventual conflicts found in the given collection of IvyNode.      * This method return a Collection of IvyNode which have not been evicted.      * The given conflicts Collection contains at least one IvyNode.      *       * This method can be called with IvyNodes which are not yet loaded.      * If this conflict manager is not able to resolve conflicts with the current      * data found in the IvyNodes and need them to be fully loaded, it will       * return null to indicate that no conflict resolution has been done.      *       * @param parent the ivy node parent for which the conflict is to be resolved      * @param conflicts the collection of IvyNode to check for conflicts      * @return a Collection of IvyNode which have not been evicted, or null if      *         conflict management resolution is not possible yet      */
 name|Collection
 name|resolveConflicts
 parameter_list|(
