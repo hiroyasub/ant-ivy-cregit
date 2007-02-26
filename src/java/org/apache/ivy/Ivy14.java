@@ -949,6 +949,16 @@ operator|.
 name|findModule
 argument_list|(
 name|id
+argument_list|,
+name|CacheManager
+operator|.
+name|getInstance
+argument_list|(
+name|_ivy
+operator|.
+name|getSettings
+argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}

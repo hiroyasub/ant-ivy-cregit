@@ -880,6 +880,11 @@ init|=
 name|findModule
 argument_list|(
 name|mrid
+argument_list|,
+name|options
+operator|.
+name|getCache
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -4956,6 +4961,9 @@ name|findModule
 parameter_list|(
 name|ModuleRevisionId
 name|id
+parameter_list|,
+name|CacheManager
+name|cache
 parameter_list|)
 block|{
 name|DependencyResolver
@@ -5043,12 +5051,7 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|_settings
-argument_list|)
+name|cache
 argument_list|)
 argument_list|,
 operator|new
@@ -5062,9 +5065,9 @@ literal|"default"
 argument_list|,
 literal|null
 argument_list|,
-name|_settings
+name|cache
 operator|.
-name|getDefaultCache
+name|getCache
 argument_list|()
 argument_list|)
 argument_list|)

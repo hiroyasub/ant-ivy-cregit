@@ -1440,6 +1440,13 @@ operator|.
 name|findModule
 argument_list|(
 name|mrid
+argument_list|,
+name|CacheManager
+operator|.
+name|getInstance
+argument_list|(
+name|_settings
+argument_list|)
 argument_list|)
 return|;
 block|}
