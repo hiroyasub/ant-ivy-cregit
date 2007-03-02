@@ -2424,6 +2424,8 @@ literal|"org"
 block|,
 literal|"name"
 block|,
+literal|"branch"
+block|,
 literal|"rev"
 block|,
 literal|"force"
