@@ -505,7 +505,7 @@ literal|"http://www.ibiblio.org/maven2/"
 expr_stmt|;
 name|_pattern
 operator|=
-literal|"[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"
+literal|"[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
 expr_stmt|;
 name|updateWholePattern
 argument_list|()

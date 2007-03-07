@@ -63,6 +63,22 @@ name|PatternMatcher
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|extendable
+operator|.
+name|ExtendableItem
+import|;
+end_import
+
 begin_comment
 comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to resctrict the artifacts asked for a dependency, or describe them  * when there is no ivy file.  */
 end_comment
@@ -71,6 +87,8 @@ begin_interface
 specifier|public
 interface|interface
 name|DependencyArtifactDescriptor
+extends|extends
+name|ExtendableItem
 block|{
 comment|/**      * Returns the dependency descriptor in which this artifact is asked      * @return      */
 specifier|public
@@ -119,6 +137,12 @@ comment|/**      * Returns the matcher to use to know if an artifact match the c
 specifier|public
 name|PatternMatcher
 name|getMatcher
+parameter_list|()
+function_decl|;
+comment|/**      * Indicates if this artifact should be assumed to be published in the dependency.      * This is useful only for dependency artifact include, and is used      * to know if the artifact should be consider to be published in the dependency      * even if it isn't declared in the dependency module descriptor.      * @return true if the artifact should be assumed to be published in the dependency,      * false otherwise      */
+specifier|public
+name|boolean
+name|isAssumePublished
 parameter_list|()
 function_decl|;
 block|}
