@@ -477,6 +477,18 @@ literal|""
 operator|)
 argument_list|)
 expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\tcheckUpToDate="
+operator|+
+name|_settings
+operator|.
+name|isCheckUpToDate
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|long
 name|start
 init|=
@@ -849,7 +861,7 @@ name|destFile
 argument_list|,
 literal|null
 argument_list|,
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -864,6 +876,8 @@ argument_list|,
 name|destFile
 argument_list|,
 literal|null
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -1052,11 +1066,24 @@ literal|"\t"
 operator|+
 name|targetsCopied
 operator|+
-literal|" artifacts copied, "
+literal|" artifacts copied"
+operator|+
+operator|(
+name|_settings
+operator|.
+name|isCheckUpToDate
+argument_list|()
+condition|?
+operator|(
+literal|", "
 operator|+
 name|targetsUpToDate
 operator|+
 literal|" already retrieved"
+operator|)
+else|:
+literal|""
+operator|)
 argument_list|)
 expr_stmt|;
 name|Message

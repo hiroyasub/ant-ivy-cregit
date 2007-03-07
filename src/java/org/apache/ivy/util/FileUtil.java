@@ -631,6 +631,7 @@ operator|+
 literal|" already exists, nothing done"
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 block|}
 name|copy
