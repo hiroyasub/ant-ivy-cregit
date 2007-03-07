@@ -758,6 +758,16 @@ name|Date
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|String
+name|resolveId
+init|=
+name|ResolveOptions
+operator|.
+name|getDefaultResolveId
+argument_list|(
+name|md
+argument_list|)
+decl_stmt|;
 name|md
 operator|.
 name|addConfiguration
@@ -938,6 +948,8 @@ operator|new
 name|ResolveReport
 argument_list|(
 name|md
+argument_list|,
+name|resolveId
 argument_list|)
 decl_stmt|;
 name|Message
@@ -960,6 +972,11 @@ argument_list|,
 operator|new
 name|ResolveOptions
 argument_list|()
+operator|.
+name|setResolveId
+argument_list|(
+name|resolveId
+argument_list|)
 operator|.
 name|setConfs
 argument_list|(

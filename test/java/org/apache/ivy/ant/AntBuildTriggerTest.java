@@ -96,7 +96,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/triggers/ant-build/local/A/A.jar"
+literal|"test/triggers/ant-build/A/A.jar"
 argument_list|)
 operator|.
 name|exists
