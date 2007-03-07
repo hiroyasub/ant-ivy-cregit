@@ -319,6 +319,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|FileUtil
 operator|.
 name|copy
@@ -331,7 +334,47 @@ name|_progress
 argument_list|,
 name|overwrite
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|overwrite
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"file copy not done from "
+operator|+
+name|src
+operator|+
+literal|" to "
+operator|+
+name|destination
+operator|+
+literal|": destination probably already exists and overwrite is false"
+argument_list|)
+throw|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"file copy not done from "
+operator|+
+name|src
+operator|+
+literal|" to "
+operator|+
+name|destination
+argument_list|)
+throw|;
+block|}
+block|}
 block|}
 catch|catch
 parameter_list|(

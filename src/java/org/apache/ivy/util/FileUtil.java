@@ -524,7 +524,7 @@ block|}
 block|}
 specifier|public
 specifier|static
-name|void
+name|boolean
 name|copy
 parameter_list|(
 name|File
@@ -539,6 +539,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+return|return
 name|copy
 argument_list|(
 name|src
@@ -549,11 +550,11 @@ name|l
 argument_list|,
 literal|false
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 specifier|public
 specifier|static
-name|void
+name|boolean
 name|copy
 parameter_list|(
 name|File
@@ -631,7 +632,9 @@ operator|+
 literal|" already exists, nothing done"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|false
+return|;
 block|}
 block|}
 name|copy
@@ -715,6 +718,9 @@ name|lastModified
 argument_list|()
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
 specifier|public
 specifier|static
