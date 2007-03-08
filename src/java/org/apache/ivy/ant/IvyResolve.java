@@ -812,17 +812,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|_revision
-operator|=
-name|getProperty
-argument_list|(
-name|_revision
-argument_list|,
-name|settings
-argument_list|,
-literal|"ivy.revision"
-argument_list|)
-expr_stmt|;
 name|report
 operator|=
 name|ivy
