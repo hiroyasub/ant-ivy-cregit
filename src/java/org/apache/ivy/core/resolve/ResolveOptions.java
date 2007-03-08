@@ -140,10 +140,12 @@ name|revision
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * The cache manager to use during resolve 	 */
+comment|/** 	 * The cache manager to use during resolve. 	 * If it is null, default cache manager will be used.  	 */
 specifier|private
 name|CacheManager
 name|cache
+init|=
+literal|null
 decl_stmt|;
 comment|/** 	 * the date for which the dependencies should be resolved.  	 * All obtained artifacts should have a publication date which is before  	 * or equal to the given date. 	 * The date can be null, in which case all artifacts will be considered 	 */
 specifier|private
