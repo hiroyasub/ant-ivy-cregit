@@ -2345,6 +2345,36 @@ name|EXACT_OR_REGEXP
 else|:
 name|matcher
 expr_stmt|;
+if|if
+condition|(
+name|organisation
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"'organisation' is mandatory in module element: check your configuration"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|module
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"'name' is mandatory in module element: check your configuration"
+argument_list|)
+throw|;
+block|}
 name|_ivy
 operator|.
 name|addModuleConfiguration
@@ -2375,7 +2405,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|Exception
+name|ParseException
 name|ex
 parameter_list|)
 block|{
@@ -2384,6 +2414,27 @@ operator|new
 name|SAXException
 argument_list|(
 literal|"problem in config file: "
+operator|+
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|ex
+argument_list|)
+throw|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|SAXException
+argument_list|(
+literal|"io problem while parsing config file: "
 operator|+
 name|ex
 operator|.

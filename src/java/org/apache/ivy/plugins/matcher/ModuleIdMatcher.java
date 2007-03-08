@@ -85,6 +85,17 @@ name|mid
 operator|.
 name|getOrganisation
 argument_list|()
+operator|==
+literal|null
+condition|?
+name|PatternMatcher
+operator|.
+name|ANY_EXPRESSION
+else|:
+name|mid
+operator|.
+name|getOrganisation
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|_moduleMatcher
