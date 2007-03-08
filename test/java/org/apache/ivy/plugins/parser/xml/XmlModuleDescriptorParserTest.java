@@ -860,11 +860,20 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|XMLHelper
+operator|.
+name|canUseSchemaValidation
+argument_list|()
+condition|)
+block|{
 name|fail
 argument_list|(
 literal|"bad ivy file raised no error"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
@@ -3038,6 +3047,8 @@ name|String
 index|[
 literal|0
 index|]
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|dd
@@ -3132,6 +3143,8 @@ literal|"yourartifact8-1"
 block|,
 literal|"yourartifact8-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3153,6 +3166,8 @@ literal|"yourartifact8-1"
 block|,
 literal|"yourartifact8-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3174,6 +3189,8 @@ literal|"yourartifact8-1"
 block|,
 literal|"yourartifact8-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3195,6 +3212,8 @@ literal|"yourartifact8-1"
 block|,
 literal|"yourartifact8-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|dd
@@ -3291,6 +3310,8 @@ index|[]
 block|{
 literal|"yourartifact9-1"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3312,6 +3333,8 @@ literal|"yourartifact9-1"
 block|,
 literal|"yourartifact9-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3331,6 +3354,8 @@ index|[]
 block|{
 literal|"yourartifact9-2"
 block|}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3348,6 +3373,8 @@ operator|new
 name|String
 index|[]
 block|{}
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsExcludes
@@ -3512,6 +3539,8 @@ name|PatternMatcher
 operator|.
 name|ANY_EXPRESSION
 block|}
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3535,6 +3564,8 @@ name|PatternMatcher
 operator|.
 name|ANY_EXPRESSION
 block|}
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3558,6 +3589,8 @@ name|PatternMatcher
 operator|.
 name|ANY_EXPRESSION
 block|}
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsIncludes
@@ -3581,6 +3614,8 @@ name|PatternMatcher
 operator|.
 name|ANY_EXPRESSION
 block|}
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertDependencyArtifactsExcludes
