@@ -528,15 +528,14 @@ name|isInitialised
 argument_list|()
 condition|)
 block|{
-comment|//Message.init(new AntMessageImpl(this));
 name|Message
 operator|.
 name|init
 argument_list|(
 operator|new
-name|DefaultMessageImpl
+name|AntMessageImpl
 argument_list|(
-literal|100
+name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -970,7 +969,7 @@ name|org
 argument_list|,
 name|module
 argument_list|,
-literal|null
+name|conf
 argument_list|,
 literal|null
 argument_list|)
