@@ -635,11 +635,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_conf
+literal|"*"
 operator|.
 name|equals
 argument_list|(
-literal|"*"
+name|_conf
 argument_list|)
 condition|)
 block|{
