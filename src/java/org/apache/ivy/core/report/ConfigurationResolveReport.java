@@ -487,6 +487,23 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"Error while parsing configuration resolve report "
+operator|+
+name|previousReportFile
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|e
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 name|_previousDeps
 operator|=
 literal|null
