@@ -940,7 +940,7 @@ literal|true
 decl_stmt|;
 specifier|private
 name|Map
-name|_moduleConfigurations
+name|_moduleSettings
 init|=
 operator|new
 name|LinkedHashMap
@@ -1143,12 +1143,19 @@ parameter_list|()
 block|{
 name|setVariable
 argument_list|(
-literal|"ivy.default.conf.dir"
+literal|"ivy.default.settings.dir"
 argument_list|,
-name|getDefaultConfigurationDir
+name|getDefaultSettingsDir
 argument_list|()
 argument_list|,
 literal|true
+argument_list|)
+expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
+literal|"ivy.default.conf.dir"
+argument_list|,
+literal|"ivy.default.settings.dir"
 argument_list|)
 expr_stmt|;
 name|String
@@ -1807,7 +1814,7 @@ name|void
 name|load
 parameter_list|(
 name|File
-name|configurationFile
+name|settingsFile
 parameter_list|)
 throws|throws
 name|ParseException
@@ -1818,9 +1825,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|":: configuring :: file = "
+literal|":: loading settings :: file = "
 operator|+
-name|configurationFile
+name|settingsFile
 argument_list|)
 expr_stmt|;
 name|long
@@ -1831,9 +1838,9 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
-name|setConfigurationVariables
+name|setSettingsVariables
 argument_list|(
-name|configurationFile
+name|settingsFile
 argument_list|)
 expr_stmt|;
 if|if
@@ -1881,7 +1888,7 @@ argument_list|)
 operator|.
 name|parse
 argument_list|(
-name|configurationFile
+name|settingsFile
 operator|.
 name|toURL
 argument_list|()
@@ -1902,7 +1909,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"given file cannot be transformed to url: "
 operator|+
-name|configurationFile
+name|settingsFile
 argument_list|)
 decl_stmt|;
 name|iae
@@ -1933,7 +1940,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"configuration done ("
+literal|"settings loaded ("
 operator|+
 operator|(
 name|System
@@ -1947,7 +1954,7 @@ operator|+
 literal|"ms)"
 argument_list|)
 expr_stmt|;
-name|dumpConfig
+name|dumpSettings
 argument_list|()
 expr_stmt|;
 block|}
@@ -1956,7 +1963,7 @@ name|void
 name|load
 parameter_list|(
 name|URL
-name|configurationURL
+name|settingsURL
 parameter_list|)
 throws|throws
 name|ParseException
@@ -1967,9 +1974,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|":: configuring :: url = "
+literal|":: loading settings :: url = "
 operator|+
-name|configurationURL
+name|settingsURL
 argument_list|)
 expr_stmt|;
 name|long
@@ -1980,9 +1987,9 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 decl_stmt|;
-name|setConfigurationVariables
+name|setSettingsVariables
 argument_list|(
-name|configurationURL
+name|settingsURL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2028,7 +2035,7 @@ argument_list|)
 operator|.
 name|parse
 argument_list|(
-name|configurationURL
+name|settingsURL
 argument_list|)
 expr_stmt|;
 name|setVariable
@@ -2048,7 +2055,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"configuration done ("
+literal|"settings loaded ("
 operator|+
 operator|(
 name|System
@@ -2062,7 +2069,7 @@ operator|+
 literal|"ms)"
 argument_list|)
 expr_stmt|;
-name|dumpConfig
+name|dumpSettings
 argument_list|()
 expr_stmt|;
 block|}
@@ -2077,7 +2084,7 @@ name|IOException
 block|{
 name|load
 argument_list|(
-name|getDefaultConfigurationURL
+name|getDefaultSettingsURL
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -2114,25 +2121,25 @@ block|}
 specifier|public
 specifier|static
 name|URL
-name|getDefaultConfigurationURL
+name|getDefaultSettingsURL
 parameter_list|()
 block|{
 return|return
 name|getSettingsURL
 argument_list|(
-literal|"ivyconf.xml"
+literal|"ivysettings.xml"
 argument_list|)
 return|;
 block|}
 specifier|private
 name|String
-name|getDefaultConfigurationDir
+name|getDefaultSettingsDir
 parameter_list|()
 block|{
 name|String
 name|ivyconfLocation
 init|=
-name|getDefaultConfigurationURL
+name|getDefaultSettingsURL
 argument_list|()
 operator|.
 name|toExternalForm
@@ -2150,7 +2157,7 @@ operator|.
 name|length
 argument_list|()
 operator|-
-literal|"ivyconf.xml"
+literal|"ivysettings.xml"
 operator|.
 name|length
 argument_list|()
@@ -2181,22 +2188,22 @@ return|;
 block|}
 specifier|public
 name|void
-name|setConfigurationVariables
+name|setSettingsVariables
 parameter_list|(
 name|File
-name|configurationFile
+name|settingsFile
 parameter_list|)
 block|{
 try|try
 block|{
 name|setVariable
 argument_list|(
-literal|"ivy.conf.dir"
+literal|"ivy.settings.dir"
 argument_list|,
 operator|new
 name|File
 argument_list|(
-name|configurationFile
+name|settingsFile
 operator|.
 name|getAbsolutePath
 argument_list|()
@@ -2206,27 +2213,48 @@ name|getParent
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
+literal|"ivy.conf.dir"
+argument_list|,
+literal|"ivy.settings.dir"
+argument_list|)
+expr_stmt|;
 name|setVariable
 argument_list|(
-literal|"ivy.conf.file"
+literal|"ivy.settings.file"
 argument_list|,
-name|configurationFile
+name|settingsFile
 operator|.
 name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
+literal|"ivy.conf.file"
+argument_list|,
+literal|"ivy.settings.file"
+argument_list|)
+expr_stmt|;
 name|setVariable
 argument_list|(
-literal|"ivy.conf.url"
+literal|"ivy.settings.url"
 argument_list|,
-name|configurationFile
+name|settingsFile
 operator|.
 name|toURL
 argument_list|()
 operator|.
 name|toExternalForm
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
+literal|"ivy.conf.url"
+argument_list|,
+literal|"ivy.settings.url"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2244,7 +2272,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"given file cannot be transformed to url: "
 operator|+
-name|configurationFile
+name|settingsFile
 argument_list|)
 decl_stmt|;
 name|iae
@@ -2259,33 +2287,63 @@ name|iae
 throw|;
 block|}
 block|}
+comment|/**      * Sets a deprecated variable with the value of the new variable      * @param deprecatedKey the deprecated variable name      * @param newKey the new variable name      */
+specifier|private
+name|void
+name|setDeprecatedVariable
+parameter_list|(
+name|String
+name|deprecatedKey
+parameter_list|,
+name|String
+name|newKey
+parameter_list|)
+block|{
+name|setVariable
+argument_list|(
+name|deprecatedKey
+argument_list|,
+name|getVariable
+argument_list|(
+name|newKey
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
-name|setConfigurationVariables
+name|setSettingsVariables
 parameter_list|(
 name|URL
-name|configurationURL
+name|settingsURL
 parameter_list|)
 block|{
 name|String
-name|confURL
+name|settingsURLStr
 init|=
-name|configurationURL
+name|settingsURL
 operator|.
 name|toExternalForm
 argument_list|()
 decl_stmt|;
 name|setVariable
 argument_list|(
+literal|"ivy.settings.url"
+argument_list|,
+name|settingsURLStr
+argument_list|)
+expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
 literal|"ivy.conf.url"
 argument_list|,
-name|confURL
+literal|"ivy.settings.url"
 argument_list|)
 expr_stmt|;
 name|int
 name|slashIndex
 init|=
-name|confURL
+name|settingsURLStr
 operator|.
 name|lastIndexOf
 argument_list|(
@@ -2302,9 +2360,9 @@ condition|)
 block|{
 name|setVariable
 argument_list|(
-literal|"ivy.conf.dir"
+literal|"ivy.settings.dir"
 argument_list|,
-name|confURL
+name|settingsURLStr
 operator|.
 name|substring
 argument_list|(
@@ -2314,6 +2372,13 @@ name|slashIndex
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|setDeprecatedVariable
+argument_list|(
+literal|"ivy.conf.dir"
+argument_list|,
+literal|"ivy.settings.dir"
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2321,14 +2386,14 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"configuration url does not contain any slash (/): ivy.conf.dir variable not set"
+literal|"settings url does not contain any slash (/): ivy.settings.dir variable not set"
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 specifier|private
 name|void
-name|dumpConfig
+name|dumpSettings
 parameter_list|()
 block|{
 name|Message
@@ -2522,14 +2587,14 @@ argument_list|()
 decl_stmt|;
 name|resolver
 operator|.
-name|dumpConfig
+name|dumpSettings
 argument_list|()
 expr_stmt|;
 block|}
 if|if
 condition|(
 operator|!
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|isEmpty
 argument_list|()
@@ -2539,7 +2604,7 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"\tmodule configurations:"
+literal|"\tmodule settings:"
 argument_list|)
 expr_stmt|;
 for|for
@@ -2547,7 +2612,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -2579,7 +2644,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -3469,7 +3534,7 @@ literal|"no resolver found called "
 operator|+
 name|resolverName
 operator|+
-literal|": check your configuration"
+literal|": check your settings"
 argument_list|)
 throw|;
 block|}
@@ -3500,7 +3565,7 @@ argument_list|(
 name|resolverName
 argument_list|)
 expr_stmt|;
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|put
 argument_list|(
@@ -3811,7 +3876,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -3853,7 +3918,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -3896,7 +3961,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -3938,7 +4003,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -4004,7 +4069,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -4046,7 +4111,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleConfigurations
+name|_moduleSettings
 operator|.
 name|get
 argument_list|(

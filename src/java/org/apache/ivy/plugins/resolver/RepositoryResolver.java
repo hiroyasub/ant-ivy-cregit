@@ -1809,12 +1809,12 @@ return|;
 block|}
 specifier|public
 name|void
-name|dumpConfig
+name|dumpSettings
 parameter_list|()
 block|{
 name|super
 operator|.
-name|dumpConfig
+name|dumpSettings
 argument_list|()
 expr_stmt|;
 name|Message

@@ -312,7 +312,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  * @author Xavier Hanin  */
 end_comment
 
 begin_class
@@ -384,6 +384,10 @@ specifier|private
 name|String
 name|_currentConfiguratorTag
 decl_stmt|;
+specifier|private
+name|URL
+name|_settings
+decl_stmt|;
 specifier|public
 name|XmlSettingsParser
 parameter_list|(
@@ -401,7 +405,7 @@ name|void
 name|parse
 parameter_list|(
 name|URL
-name|configuration
+name|settings
 parameter_list|)
 throws|throws
 name|ParseException
@@ -474,7 +478,7 @@ expr_stmt|;
 block|}
 name|doParse
 argument_list|(
-name|configuration
+name|settings
 argument_list|)
 expr_stmt|;
 block|}
@@ -483,13 +487,17 @@ name|void
 name|doParse
 parameter_list|(
 name|URL
-name|configuration
+name|settings
 parameter_list|)
 throws|throws
 name|IOException
 throws|,
 name|ParseException
 block|{
+name|_settings
+operator|=
+name|settings
+expr_stmt|;
 name|InputStream
 name|stream
 init|=
@@ -506,7 +514,7 @@ argument_list|()
 operator|.
 name|openStream
 argument_list|(
-name|configuration
+name|settings
 argument_list|)
 expr_stmt|;
 name|SAXParserFactory
@@ -547,9 +555,9 @@ init|=
 operator|new
 name|ParseException
 argument_list|(
-literal|"failed to configure with "
+literal|"failed to load settings from "
 operator|+
-name|configuration
+name|settings
 operator|+
 literal|": "
 operator|+
@@ -691,6 +699,28 @@ expr_stmt|;
 block|}
 try|try
 block|{
+if|if
+condition|(
+literal|"ivyconf"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"'ivyconf' element is deprecated, use 'ivysettings' instead ("
+operator|+
+name|_settings
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|_configurator
@@ -1553,7 +1583,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|URL
-name|ivyconfURL
+name|settingsURL
 init|=
 literal|null
 decl_stmt|;
@@ -1608,7 +1638,7 @@ operator|+
 name|propFilePath
 argument_list|)
 expr_stmt|;
-name|ivyconfURL
+name|settingsURL
 operator|=
 operator|new
 name|URL
@@ -1618,9 +1648,9 @@ argument_list|)
 expr_stmt|;
 name|_ivy
 operator|.
-name|setConfigurationVariables
+name|setSettingsVariables
 argument_list|(
-name|ivyconfURL
+name|settingsURL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1671,12 +1701,12 @@ argument_list|)
 expr_stmt|;
 name|_ivy
 operator|.
-name|setConfigurationVariables
+name|setSettingsVariables
 argument_list|(
 name|incFile
 argument_list|)
 expr_stmt|;
-name|ivyconfURL
+name|settingsURL
 operator|=
 name|incFile
 operator|.
@@ -1695,7 +1725,7 @@ name|parse
 argument_list|(
 name|_configurator
 argument_list|,
-name|ivyconfURL
+name|settingsURL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1712,6 +1742,13 @@ block|}
 block|}
 if|else if
 condition|(
+literal|"settings"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+operator|||
 literal|"conf"
 operator|.
 name|equals
@@ -1720,6 +1757,28 @@ name|qName
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+literal|"conf"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"'conf' is deprecated, use 'settings' instead ("
+operator|+
+name|_settings
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 name|cache
 init|=

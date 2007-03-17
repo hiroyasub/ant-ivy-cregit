@@ -323,7 +323,7 @@ name|module
 parameter_list|)
 function_decl|;
 name|void
-name|dumpConfig
+name|dumpSettings
 parameter_list|()
 function_decl|;
 block|}

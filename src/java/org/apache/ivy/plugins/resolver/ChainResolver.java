@@ -1507,7 +1507,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|dumpConfig
+name|dumpSettings
 parameter_list|()
 block|{
 name|Message
