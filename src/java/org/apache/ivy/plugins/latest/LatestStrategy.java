@@ -54,7 +54,7 @@ name|Date
 name|date
 parameter_list|)
 function_decl|;
-comment|/**      * Sorts the given artifacts info from the latest one to the oldest one.      * The definition of 'latest' depends on the strategy itself.      * Given artifacts info are all good candidate.       * @param infos      * @return      */
+comment|/**      * Sorts the given artifacts info from the oldest one to the latest one.      * The definition of 'latest' depends on the strategy itself.      * Given artifacts info are all good candidate.       * @param infos      * @return      */
 name|List
 name|sort
 parameter_list|(

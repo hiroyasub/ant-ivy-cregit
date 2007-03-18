@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|List
 import|;
 end_import
 
@@ -43,7 +43,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|ListIterator
 import|;
 end_import
 
@@ -164,19 +164,26 @@ argument_list|(
 name|infos
 argument_list|)
 decl_stmt|;
+comment|// the latest revision comes last, use a ListIterator to iterate the
+comment|// sorted list in the reverse direction.
 for|for
 control|(
-name|Iterator
+name|ListIterator
 name|iter
 init|=
 name|l
 operator|.
-name|iterator
+name|listIterator
+argument_list|(
+name|l
+operator|.
+name|size
 argument_list|()
+argument_list|)
 init|;
 name|iter
 operator|.
-name|hasNext
+name|hasPrevious
 argument_list|()
 condition|;
 control|)
@@ -189,7 +196,7 @@ name|ArtifactInfo
 operator|)
 name|iter
 operator|.
-name|next
+name|previous
 argument_list|()
 decl_stmt|;
 if|if
