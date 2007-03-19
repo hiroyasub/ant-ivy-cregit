@@ -212,7 +212,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Configure Ivy with an ivyconf.xml file  *   * @author Xavier Hanin  *  */
+comment|/**  * Configure Ivy with an ivysettings.xml file  *   * @author Xavier Hanin  *  */
 end_comment
 
 begin_class

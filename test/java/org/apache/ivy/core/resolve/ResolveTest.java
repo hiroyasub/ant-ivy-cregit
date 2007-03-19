@@ -598,7 +598,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1605,7 +1605,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/norev/ivyconf.xml"
+literal|"test/repositories/norev/ivysettings.xml"
 argument_list|)
 operator|.
 name|toURL
@@ -1725,7 +1725,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-258/ivyconf.xml"
+literal|"test/repositories/IVY-258/ivysettings.xml"
 argument_list|)
 operator|.
 name|toURL
@@ -1844,7 +1844,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2201,7 +2201,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/bugIVY-56/ivyconf.xml"
+literal|"test/repositories/bugIVY-56/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2681,7 +2681,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/bugIVY-56/ivyconf.xml"
+literal|"test/repositories/bugIVY-56/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2833,7 +2833,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4950,7 +4950,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-283/ivyconf.xml"
+literal|"test/repositories/IVY-283/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5114,7 +5114,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-283/ivyconf.xml"
+literal|"test/repositories/IVY-283/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9948,7 +9948,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-264/ivyconf.xml"
+literal|"test/repositories/IVY-264/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15560,7 +15560,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15794,7 +15794,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/bugIVY-56/ivyconf.xml"
+literal|"test/repositories/bugIVY-56/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16641,7 +16641,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/bug148/ivyconf.xml"
+literal|"test/repositories/bug148/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16739,7 +16739,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/bug148/ivyconf.xml"
+literal|"test/repositories/bug148/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16837,7 +16837,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/badfile/ivyconf.xml"
+literal|"test/repositories/badfile/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -17639,7 +17639,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -17804,7 +17804,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -17969,7 +17969,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18134,7 +18134,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18299,7 +18299,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18464,7 +18464,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18631,7 +18631,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/IVY-84/ivyconf.xml"
+literal|"test/repositories/IVY-84/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20029,7 +20029,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/m2/ivyconf.xml"
+literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20253,7 +20253,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/m2/ivyconf.xml"
+literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20422,7 +20422,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/namespace/ivyconf.xml"
+literal|"test/repositories/namespace/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20591,7 +20591,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/namespace/ivyconf.xml"
+literal|"test/repositories/namespace/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20814,7 +20814,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/namespace/ivyconf.xml"
+literal|"test/repositories/namespace/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21038,7 +21038,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/namespace/ivyconf.xml"
+literal|"test/repositories/namespace/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21141,7 +21141,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/multirevisions/ivyconf.xml"
+literal|"test/repositories/multirevisions/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21582,7 +21582,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/extra-attributes/ivyconf.xml"
+literal|"test/repositories/extra-attributes/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21695,7 +21695,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/branches/ivyconf.xml"
+literal|"test/repositories/branches/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21782,7 +21782,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/branches/ivyconf.xml"
+literal|"test/repositories/branches/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21869,7 +21869,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/branches/ivyconf-defaultbranch1.xml"
+literal|"test/repositories/branches/ivysettings-defaultbranch1.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -21956,7 +21956,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/branches/ivyconf.xml"
+literal|"test/repositories/branches/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -22064,7 +22064,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/branches/ivyconf-fooonbranch1.xml"
+literal|"test/repositories/branches/ivysettings-fooonbranch1.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -22195,7 +22195,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/external-artifacts/ivyconf.xml"
+literal|"test/repositories/external-artifacts/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -22550,7 +22550,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/multi-ivypattern/ivyconf.xml"
+literal|"test/repositories/multi-ivypattern/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

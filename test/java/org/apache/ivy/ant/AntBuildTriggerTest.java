@@ -117,7 +117,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/triggers/ant-build/ivyconf.xml"
+literal|"test/triggers/ant-build/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

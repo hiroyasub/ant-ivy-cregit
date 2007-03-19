@@ -143,7 +143,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -195,7 +195,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 operator|.
 name|getAbsolutePath
@@ -208,7 +208,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"ivy.conf.file"
+literal|"ivy.settings.file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -217,7 +217,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 operator|.
 name|toURL
@@ -233,7 +233,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"ivy.conf.url"
+literal|"ivy.settings.url"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -255,7 +255,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"ivy.conf.dir"
+literal|"ivy.settings.dir"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -288,7 +288,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 operator|.
 name|toURL
@@ -385,7 +385,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"ivy.conf.url"
+literal|"ivy.settings.url"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -400,7 +400,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"ivy.conf.dir"
+literal|"ivy.settings.dir"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -436,7 +436,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-test.xml"
+literal|"ivysettings-test.xml"
 argument_list|)
 operator|.
 name|toExternalForm
@@ -513,7 +513,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-props.xml"
+literal|"ivysettings-props.xml"
 argument_list|)
 operator|.
 name|toExternalForm

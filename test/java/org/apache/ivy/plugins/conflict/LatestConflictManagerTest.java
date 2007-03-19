@@ -219,7 +219,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-latest.xml"
+literal|"ivysettings-latest.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -562,7 +562,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-latest-time.xml"
+literal|"ivysettings-latest-time.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -749,7 +749,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-latest-time.xml"
+literal|"ivysettings-latest-time.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -937,7 +937,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-latest-time-transitivity.xml"
+literal|"ivysettings-latest-time-transitivity.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

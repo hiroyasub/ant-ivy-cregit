@@ -610,7 +610,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *   * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</li>  *   * Here is one typical usage:  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL("ivyconf.xml"));  * ivy.resolve(new URL("ivy.xml"));  *    * @author Xavier Hanin  */
+comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *   * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</li>  *   * Here is one typical usage:  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL("ivysettings.xml"));  * ivy.resolve(new URL("ivy.xml"));  *    * @author Xavier Hanin  */
 end_comment
 
 begin_class

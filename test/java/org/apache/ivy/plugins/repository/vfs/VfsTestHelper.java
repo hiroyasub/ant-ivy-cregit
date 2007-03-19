@@ -197,7 +197,7 @@ name|concat
 argument_list|(
 name|TEST_REPO_DIR
 argument_list|,
-literal|"ivyconf.xml"
+literal|"ivysettings.xml"
 argument_list|)
 decl_stmt|;
 specifier|static

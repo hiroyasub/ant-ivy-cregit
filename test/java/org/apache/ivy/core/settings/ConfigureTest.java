@@ -168,7 +168,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-custom-typedef.xml"
+literal|"ivysettings-custom-typedef.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -244,7 +244,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-custom-typedef2.xml"
+literal|"ivysettings-custom-typedef2.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

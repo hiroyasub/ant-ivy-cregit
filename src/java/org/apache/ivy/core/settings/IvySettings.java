@@ -2137,7 +2137,7 @@ name|getDefaultSettingsDir
 parameter_list|()
 block|{
 name|String
-name|ivyconfLocation
+name|ivysettingsLocation
 init|=
 name|getDefaultSettingsURL
 argument_list|()
@@ -2146,13 +2146,13 @@ name|toExternalForm
 argument_list|()
 decl_stmt|;
 return|return
-name|ivyconfLocation
+name|ivysettingsLocation
 operator|.
 name|substring
 argument_list|(
 literal|0
 argument_list|,
-name|ivyconfLocation
+name|ivysettingsLocation
 operator|.
 name|length
 argument_list|()

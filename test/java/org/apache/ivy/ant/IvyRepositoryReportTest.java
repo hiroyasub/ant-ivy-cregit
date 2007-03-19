@@ -101,9 +101,9 @@ name|project
 operator|.
 name|setProperty
 argument_list|(
-literal|"ivy.conf.file"
+literal|"ivy.settings.file"
 argument_list|,
-literal|"test/repositories/ivyconf-1.xml"
+literal|"test/repositories/ivysettings-1.xml"
 argument_list|)
 expr_stmt|;
 name|_report

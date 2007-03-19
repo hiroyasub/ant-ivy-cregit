@@ -142,7 +142,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -236,7 +236,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -354,7 +354,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -472,7 +472,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

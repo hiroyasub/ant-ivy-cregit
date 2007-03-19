@@ -137,7 +137,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-regexp-test.xml"
+literal|"ivysettings-regexp-test.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

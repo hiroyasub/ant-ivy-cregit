@@ -3991,7 +3991,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivyconf.xml"
+literal|"test/repositories/ivysettings.xml"
 argument_list|)
 decl_stmt|;
 name|resolver

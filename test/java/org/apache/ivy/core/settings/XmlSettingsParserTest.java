@@ -353,7 +353,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-test.xml"
+literal|"ivysettings-test.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -841,7 +841,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-no-org-in-module.xml"
+literal|"ivysettings-no-org-in-module.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -917,7 +917,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-no-name-in-module.xml"
+literal|"ivysettings-no-name-in-module.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -991,7 +991,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-typedef.xml"
+literal|"ivysettings-typedef.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1168,7 +1168,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-status.xml"
+literal|"ivysettings-status.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1309,7 +1309,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-conflict-manager.xml"
+literal|"ivysettings-conflict-manager.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1389,7 +1389,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-vmatcher1.xml"
+literal|"ivysettings-vmatcher1.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1534,7 +1534,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-vmatcher2.xml"
+literal|"ivysettings-vmatcher2.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1643,7 +1643,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-ref.xml"
+literal|"ivysettings-ref.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1900,7 +1900,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-macro.xml"
+literal|"ivysettings-macro.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2214,7 +2214,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-macro+ref.xml"
+literal|"ivysettings-macro+ref.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2356,7 +2356,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-include.xml"
+literal|"ivysettings-include.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2612,7 +2612,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-parser.xml"
+literal|"ivysettings-parser.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2679,7 +2679,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-outputter.xml"
+literal|"ivysettings-outputter.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

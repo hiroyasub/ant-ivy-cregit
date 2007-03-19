@@ -133,7 +133,7 @@ name|class
 operator|.
 name|getResource
 argument_list|(
-literal|"ivyconf-strict-test.xml"
+literal|"ivysettings-strict-test.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
