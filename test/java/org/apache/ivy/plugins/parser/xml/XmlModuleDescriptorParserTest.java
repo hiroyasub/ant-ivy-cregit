@@ -7241,6 +7241,51 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testWithNonExistingConfigInDependency
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// IVY-442
+try|try
+block|{
+name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|parseDescriptor
+argument_list|(
+name|_settings
+argument_list|,
+name|getClass
+argument_list|()
+operator|.
+name|getResource
+argument_list|(
+literal|"test-incorrectconf1.xml"
+argument_list|)
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"ParseException hasn't been thrown"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|ParseException
+name|e
+parameter_list|)
+block|{
+comment|// expected
+block|}
+block|}
 block|}
 end_class
 
