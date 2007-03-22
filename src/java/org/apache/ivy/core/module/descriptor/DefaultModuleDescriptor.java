@@ -1694,6 +1694,31 @@ name|Artifact
 name|artifact
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|_configurations
+operator|.
+name|containsKey
+argument_list|(
+name|conf
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Configuration '"
+operator|+
+name|conf
+operator|+
+literal|"' doesn't exist in module "
+operator|+
+name|this
+argument_list|)
+throw|;
+block|}
 name|Collection
 name|artifacts
 init|=
