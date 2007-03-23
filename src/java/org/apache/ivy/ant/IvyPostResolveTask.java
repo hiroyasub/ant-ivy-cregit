@@ -876,6 +876,8 @@ literal|"-caller"
 else|:
 name|getModule
 argument_list|()
+argument_list|,
+name|_resolveId
 argument_list|)
 return|;
 block|}
