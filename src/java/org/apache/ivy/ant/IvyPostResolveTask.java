@@ -636,6 +636,8 @@ name|settings
 argument_list|,
 literal|"ivy.resolved.configurations"
 argument_list|)
+argument_list|,
+name|_resolveId
 argument_list|)
 expr_stmt|;
 block|}
