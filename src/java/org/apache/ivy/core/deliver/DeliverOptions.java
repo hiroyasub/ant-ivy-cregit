@@ -100,6 +100,10 @@ name|_resolveDynamicRevisions
 init|=
 literal|true
 decl_stmt|;
+specifier|private
+name|String
+name|_resolveId
+decl_stmt|;
 comment|/** 	 * Returns an instance of DeliverOptions with options corresponding to default values 	 * taken from the given settings. 	 *  	 * @param settings The settings to use to get default option values 	 * @return a DeliverOptions instance ready to be used or customized 	 */
 specifier|public
 specifier|static
@@ -348,6 +352,33 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Returns the id of a previous resolve to use for delivering. 	 * @return the id of a previous resolve 	 */
+specifier|public
+name|String
+name|getResolveId
+parameter_list|()
+block|{
+return|return
+name|_resolveId
+return|;
+block|}
+comment|/** 	 * Sets the id of a previous resolve to use for delivering. 	 * @param resolveId the id of a previous resolve 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
+specifier|public
+name|DeliverOptions
+name|setResolveId
+parameter_list|(
+name|String
+name|resolveId
+parameter_list|)
+block|{
+name|_resolveId
+operator|=
+name|resolveId
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 specifier|public
 name|String
 name|toString
@@ -373,6 +404,10 @@ operator|+
 literal|" cache="
 operator|+
 name|_cache
+operator|+
+literal|" resolveId="
+operator|+
+name|_resolveId
 return|;
 block|}
 block|}
