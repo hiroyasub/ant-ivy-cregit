@@ -6640,9 +6640,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"conf2"
-block|,
 literal|"conf1"
+block|,
+literal|"conf2"
 block|}
 argument_list|)
 argument_list|,
@@ -6917,9 +6917,9 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"all-public"
-block|,
 literal|"extra"
+block|,
+literal|"all-public"
 block|}
 argument_list|)
 argument_list|,

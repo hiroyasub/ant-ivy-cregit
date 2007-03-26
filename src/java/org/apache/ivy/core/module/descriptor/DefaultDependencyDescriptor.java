@@ -55,27 +55,17 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedHashMap
 import|;
 end_import
 
@@ -489,7 +479,7 @@ operator|.
 name|_confs
 operator|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|(
 name|ddd
 operator|.
@@ -501,7 +491,7 @@ operator|.
 name|_artifactsExcludes
 operator|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|(
 name|ddd
 operator|.
@@ -513,7 +503,7 @@ operator|.
 name|_artifactsIncludes
 operator|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|(
 name|ddd
 operator|.
@@ -671,7 +661,7 @@ name|Map
 name|_confs
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -679,7 +669,7 @@ name|Map
 name|_artifactsIncludes
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 comment|// Map (String masterConf -> Collection(DependencyArtifactDescriptor))
@@ -688,7 +678,7 @@ name|Map
 name|_artifactsExcludes
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 comment|// Map (String masterConf -> Collection(DependencyArtifactDescriptor))
@@ -697,7 +687,7 @@ name|Set
 name|_extends
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently      * of conflicts manager      */
@@ -1656,7 +1646,7 @@ name|Set
 name|ret
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 if|if
@@ -1723,7 +1713,7 @@ name|Set
 name|artifacts
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
@@ -1796,7 +1786,7 @@ name|Set
 name|artifacts
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
@@ -1894,7 +1884,7 @@ name|Set
 name|ret
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for

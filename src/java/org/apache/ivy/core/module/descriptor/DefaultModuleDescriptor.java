@@ -1290,6 +1290,7 @@ operator|new
 name|ArrayList
 argument_list|()
 decl_stmt|;
+comment|// List (DependencyDescriptor)
 specifier|private
 name|Map
 name|_configurations
