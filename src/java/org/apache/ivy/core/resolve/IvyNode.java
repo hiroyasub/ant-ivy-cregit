@@ -5172,8 +5172,10 @@ literal|null
 condition|?
 name|_settings
 operator|.
-name|getDefaultConflictManager
-argument_list|()
+name|getConflictManager
+argument_list|(
+name|mid
+argument_list|)
 else|:
 name|cm
 return|;
