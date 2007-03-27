@@ -6004,6 +6004,7 @@ return|return
 name|size
 return|;
 block|}
+comment|/**      * Checks the given resource checksum if a checksum resource exists.      *       * @param resource the resource to check      * @param dest the file where the resource has been downloaded      * @param algorithm the checksum algorithm to use      * @return true if the checksum has been successfully checked, false if the checksum wasn't available      * @throws IOException if a checksum exist but do not match the downloaded file checksum      */
 specifier|private
 name|boolean
 name|check
@@ -6079,9 +6080,8 @@ argument_list|,
 name|csFile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+try|try
+block|{
 name|ChecksumHelper
 operator|.
 name|check
@@ -6092,25 +6092,7 @@ name|csFile
 argument_list|,
 name|algorithm
 argument_list|)
-condition|)
-block|{
-name|dest
-operator|.
-name|delete
-argument_list|()
 expr_stmt|;
-throw|throw
-operator|new
-name|IOException
-argument_list|(
-literal|"invalid "
-operator|+
-name|algorithm
-argument_list|)
-throw|;
-block|}
-else|else
-block|{
 name|Message
 operator|.
 name|verbose
@@ -6125,6 +6107,21 @@ expr_stmt|;
 return|return
 literal|true
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ex
+parameter_list|)
+block|{
+name|dest
+operator|.
+name|delete
+argument_list|()
+expr_stmt|;
+throw|throw
+name|ex
+throw|;
 block|}
 block|}
 finally|finally

@@ -150,9 +150,10 @@ literal|"SHA-1"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * Checks the checksum of the given file against the given checksumFile, 	 * and throws an IOException if the checksum is not compliant 	 *  	 * @param dest the file to test 	 * @param checksumFile the file containing the expected checksum 	 * @param algorithm the checksum algorithm to use 	 * @throws IOException if an IO problem occur whle reading files or if the checksum is not compliant 	 */
 specifier|public
 specifier|static
-name|boolean
+name|void
 name|check
 parameter_list|(
 name|File
@@ -247,14 +248,35 @@ operator|.
 name|toLowerCase
 argument_list|()
 decl_stmt|;
-return|return
+if|if
+condition|(
+operator|!
 name|expected
 operator|.
 name|equals
 argument_list|(
 name|computed
 argument_list|)
-return|;
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"invalid "
+operator|+
+name|algorithm
+operator|+
+literal|": expected="
+operator|+
+name|expected
+operator|+
+literal|" computed="
+operator|+
+name|computed
+argument_list|)
+throw|;
+block|}
 block|}
 specifier|public
 specifier|static
