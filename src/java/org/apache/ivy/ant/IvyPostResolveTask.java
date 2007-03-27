@@ -537,6 +537,13 @@ argument_list|(
 name|_conf
 argument_list|)
 expr_stmt|;
+name|resolve
+operator|.
+name|setCache
+argument_list|(
+name|_cache
+argument_list|)
+expr_stmt|;
 comment|//        		resolve.setResolveId(_resolveId);  TODO
 name|resolve
 operator|.
