@@ -808,6 +808,13 @@ argument_list|(
 name|rress
 argument_list|)
 decl_stmt|;
+name|List
+name|rejected
+init|=
+operator|new
+name|ArrayList
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|ListIterator
@@ -862,7 +869,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|debug
+name|verbose
 argument_list|(
 literal|"\t"
 operator|+
@@ -871,6 +878,25 @@ operator|+
 literal|": too young: "
 operator|+
 name|rres
+argument_list|)
+expr_stmt|;
+name|rejected
+operator|.
+name|add
+argument_list|(
+name|rres
+operator|.
+name|getRevision
+argument_list|()
+operator|+
+literal|" ("
+operator|+
+name|rres
+operator|.
+name|getLastModified
+argument_list|()
+operator|+
+literal|")"
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -914,6 +940,16 @@ operator|+
 literal|": rejected by version matcher: "
 operator|+
 name|rres
+argument_list|)
+expr_stmt|;
+name|rejected
+operator|.
+name|add
+argument_list|(
+name|rres
+operator|.
+name|getRevision
+argument_list|()
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -985,6 +1021,18 @@ operator|+
 name|rres
 argument_list|)
 expr_stmt|;
+name|rejected
+operator|.
+name|add
+argument_list|(
+name|rres
+operator|.
+name|getRevision
+argument_list|()
+operator|+
+literal|" (MD)"
+argument_list|)
+expr_stmt|;
 continue|continue;
 block|}
 if|else if
@@ -1011,6 +1059,18 @@ operator|+
 literal|": md rejected by version matcher: "
 operator|+
 name|rres
+argument_list|)
+expr_stmt|;
+name|rejected
+operator|.
+name|add
+argument_list|(
+name|rres
+operator|.
+name|getRevision
+argument_list|()
+operator|+
+literal|" (MD)"
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1069,383 +1129,105 @@ name|getResource
 argument_list|()
 argument_list|)
 expr_stmt|;
-continue|continue;
-block|}
-break|break;
-block|}
-block|}
-return|return
+name|logAttempt
+argument_list|(
 name|found
-return|;
-block|}
-comment|/**      * Output message to log indicating what have been done to look for an artifact which      * has finally not been found      *       * @param artifact the artifact which has not been found      */
-specifier|protected
-name|void
-name|logIvyNotFound
-parameter_list|(
-name|ModuleRevisionId
-name|mrid
-parameter_list|)
-block|{
-if|if
-condition|(
-name|isM2compatible
-argument_list|()
-condition|)
-block|{
-name|mrid
-operator|=
-name|convertM2IdForResourceSearch
-argument_list|(
-name|mrid
-argument_list|)
-expr_stmt|;
-block|}
-name|Artifact
-name|artifact
-init|=
-name|DefaultArtifact
 operator|.
-name|newIvyArtifact
-argument_list|(
-name|mrid
-argument_list|,
-literal|null
-argument_list|)
-decl_stmt|;
-name|logMdNotFound
-argument_list|(
-name|mrid
-argument_list|,
-name|artifact
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|logMdNotFound
-parameter_list|(
-name|ModuleRevisionId
-name|mrid
-parameter_list|,
-name|Artifact
-name|artifact
-parameter_list|)
-block|{
-name|String
-name|revisionToken
-init|=
-name|mrid
-operator|.
-name|getRevision
-argument_list|()
-operator|.
-name|startsWith
-argument_list|(
-literal|"latest."
-argument_list|)
-condition|?
-literal|"[any "
-operator|+
-name|mrid
-operator|.
-name|getRevision
-argument_list|()
-operator|.
-name|substring
-argument_list|(
-literal|"latest."
-operator|.
-name|length
-argument_list|()
-argument_list|)
-operator|+
-literal|"]"
-else|:
-literal|"["
-operator|+
-name|mrid
-operator|.
-name|getRevision
-argument_list|()
-operator|+
-literal|"]"
-decl_stmt|;
-name|Artifact
-name|latestArtifact
-init|=
-operator|new
-name|DefaultArtifact
-argument_list|(
-name|ModuleRevisionId
-operator|.
-name|newInstance
-argument_list|(
-name|mrid
-argument_list|,
-name|revisionToken
-argument_list|)
-argument_list|,
-literal|null
-argument_list|,
-name|artifact
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getType
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getExt
-argument_list|()
-argument_list|,
-name|artifact
-operator|.
-name|getExtraAttributes
-argument_list|()
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|_ivyPatterns
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-name|logIvyAttempt
-argument_list|(
-literal|"no ivy pattern => no attempt to find module descriptor file for "
-operator|+
-name|mrid
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-for|for
-control|(
-name|Iterator
-name|iter
-init|=
-name|_ivyPatterns
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|iter
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|String
-name|pattern
-init|=
-operator|(
-name|String
-operator|)
-name|iter
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-name|String
-name|resolvedFileName
-init|=
-name|IvyPatternHelper
-operator|.
-name|substitute
-argument_list|(
-name|pattern
-argument_list|,
-name|artifact
-argument_list|)
-decl_stmt|;
-name|logIvyAttempt
-argument_list|(
-name|resolvedFileName
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|getSettings
-argument_list|()
-operator|.
-name|getVersionMatcher
-argument_list|()
-operator|.
-name|isDynamic
-argument_list|(
-name|mrid
-argument_list|)
-condition|)
-block|{
-name|resolvedFileName
-operator|=
-name|IvyPatternHelper
-operator|.
-name|substitute
-argument_list|(
-name|pattern
-argument_list|,
-name|latestArtifact
-argument_list|)
-expr_stmt|;
-name|logIvyAttempt
-argument_list|(
-name|resolvedFileName
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-block|}
-comment|/**      * Output message to log indicating what have been done to look for an artifact which      * has finally not been found      *       * @param artifact the artifact which has not been found      */
-specifier|protected
-name|void
-name|logArtifactNotFound
-parameter_list|(
-name|Artifact
-name|artifact
-parameter_list|)
-block|{
-if|if
-condition|(
-name|_artifactPatterns
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-if|if
-condition|(
-name|artifact
-operator|.
-name|getUrl
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-name|logArtifactAttempt
-argument_list|(
-name|artifact
-argument_list|,
-literal|"no artifact pattern => no attempt to find artifact "
-operator|+
-name|artifact
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-name|Artifact
-name|used
-init|=
-name|artifact
-decl_stmt|;
-if|if
-condition|(
-name|isM2compatible
-argument_list|()
-condition|)
-block|{
-name|used
-operator|=
-name|DefaultArtifact
-operator|.
-name|cloneWithAnotherMrid
-argument_list|(
-name|artifact
-argument_list|,
-name|convertM2IdForResourceSearch
-argument_list|(
-name|artifact
-operator|.
-name|getModuleRevisionId
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-for|for
-control|(
-name|Iterator
-name|iter
-init|=
-name|_artifactPatterns
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|iter
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|String
-name|pattern
-init|=
-operator|(
-name|String
-operator|)
-name|iter
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-name|String
-name|resolvedFileName
-init|=
-name|IvyPatternHelper
-operator|.
-name|substitute
-argument_list|(
-name|pattern
-argument_list|,
-name|used
-argument_list|)
-decl_stmt|;
-name|logArtifactAttempt
-argument_list|(
-name|artifact
-argument_list|,
-name|resolvedFileName
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|used
-operator|.
-name|getUrl
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-name|logArtifactAttempt
-argument_list|(
-name|artifact
-argument_list|,
-name|used
-operator|.
-name|getUrl
+name|getResource
 argument_list|()
 operator|.
 name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+continue|continue;
+block|}
+break|break;
 block|}
 block|}
+if|if
+condition|(
+name|found
+operator|==
+literal|null
+operator|&&
+operator|!
+name|rejected
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|logAttempt
+argument_list|(
+name|rejected
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|found
+return|;
+block|}
+comment|//    /**
+comment|//     * Output message to log indicating what have been done to look for an artifact which
+comment|//     * has finally not been found
+comment|//     *
+comment|//     * @param artifact the artifact which has not been found
+comment|//     */
+comment|//    protected void logIvyNotFound(ModuleRevisionId mrid) {
+comment|//        if (isM2compatible()) {
+comment|//            mrid = convertM2IdForResourceSearch(mrid);
+comment|//        }
+comment|//        Artifact artifact = DefaultArtifact.newIvyArtifact(mrid, null);
+comment|//        logMdNotFound(mrid, artifact);
+comment|//    }
+comment|//
+comment|//    protected void logMdNotFound(ModuleRevisionId mrid, Artifact artifact) {
+comment|//        String revisionToken = mrid.getRevision().startsWith("latest.")?"[any "+mrid.getRevision().substring("latest.".length())+"]":"["+mrid.getRevision()+"]";
+comment|//        Artifact latestArtifact = new DefaultArtifact(ModuleRevisionId.newInstance(mrid, revisionToken), null, artifact.getName(), artifact.getType(), artifact.getExt(), artifact.getExtraAttributes());
+comment|//        if (_ivyPatterns.isEmpty()) {
+comment|//            logIvyAttempt("no ivy pattern => no attempt to find module descriptor file for "+mrid);
+comment|//        } else {
+comment|//            for (Iterator iter = _ivyPatterns.iterator(); iter.hasNext();) {
+comment|//                String pattern = (String)iter.next();
+comment|//                String resolvedFileName = IvyPatternHelper.substitute(pattern, artifact);
+comment|//                logIvyAttempt(resolvedFileName);
+comment|//                if (getSettings().getVersionMatcher().isDynamic(mrid)) {
+comment|//                    resolvedFileName = IvyPatternHelper.substitute(pattern, latestArtifact);
+comment|//                    logIvyAttempt(resolvedFileName);
+comment|//                }
+comment|//            }
+comment|//        }
+comment|//    }
+comment|//    /**
+comment|//     * Output message to log indicating what have been done to look for an artifact which
+comment|//     * has finally not been found
+comment|//     *
+comment|//     * @param artifact the artifact which has not been found
+comment|//     */
+comment|//    protected void logArtifactNotFound(Artifact artifact) {
+comment|//        if (_artifactPatterns.isEmpty()) {
+comment|//        	if (artifact.getUrl() == null) {
+comment|//        		logArtifactAttempt(artifact, "no artifact pattern => no attempt to find artifact "+artifact);
+comment|//        	}
+comment|//        }
+comment|//        Artifact used = artifact;
+comment|//        if (isM2compatible()) {
+comment|//        	used = DefaultArtifact.cloneWithAnotherMrid(artifact, convertM2IdForResourceSearch(artifact.getModuleRevisionId()));
+comment|//        }
+comment|//
+comment|//        for (Iterator iter = _artifactPatterns.iterator(); iter.hasNext();) {
+comment|//            String pattern = (String)iter.next();
+comment|//            String resolvedFileName = IvyPatternHelper.substitute(pattern, used);
+comment|//            logArtifactAttempt(artifact, resolvedFileName);
+comment|//        }
+comment|//    	if (used.getUrl() != null) {
+comment|//    		logArtifactAttempt(artifact, used.getUrl().toString());
+comment|//    	}
+comment|//    }
 specifier|protected
 name|Collection
 name|findNames

@@ -694,11 +694,21 @@ literal|" with "
 operator|+
 name|rep
 operator|+
-literal|": "
+literal|":"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"  "
 operator|+
 name|e
 operator|.
 name|getClass
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 operator|+
 literal|" "
@@ -926,11 +936,21 @@ literal|" with "
 operator|+
 name|rep
 operator|+
-literal|": "
+literal|":"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"  "
 operator|+
 name|e
 operator|.
 name|getClass
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 operator|+
 literal|" "
