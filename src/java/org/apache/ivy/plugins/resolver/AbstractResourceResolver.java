@@ -1171,63 +1171,6 @@ return|return
 name|found
 return|;
 block|}
-comment|//    /**
-comment|//     * Output message to log indicating what have been done to look for an artifact which
-comment|//     * has finally not been found
-comment|//     *
-comment|//     * @param artifact the artifact which has not been found
-comment|//     */
-comment|//    protected void logIvyNotFound(ModuleRevisionId mrid) {
-comment|//        if (isM2compatible()) {
-comment|//            mrid = convertM2IdForResourceSearch(mrid);
-comment|//        }
-comment|//        Artifact artifact = DefaultArtifact.newIvyArtifact(mrid, null);
-comment|//        logMdNotFound(mrid, artifact);
-comment|//    }
-comment|//
-comment|//    protected void logMdNotFound(ModuleRevisionId mrid, Artifact artifact) {
-comment|//        String revisionToken = mrid.getRevision().startsWith("latest.")?"[any "+mrid.getRevision().substring("latest.".length())+"]":"["+mrid.getRevision()+"]";
-comment|//        Artifact latestArtifact = new DefaultArtifact(ModuleRevisionId.newInstance(mrid, revisionToken), null, artifact.getName(), artifact.getType(), artifact.getExt(), artifact.getExtraAttributes());
-comment|//        if (_ivyPatterns.isEmpty()) {
-comment|//            logIvyAttempt("no ivy pattern => no attempt to find module descriptor file for "+mrid);
-comment|//        } else {
-comment|//            for (Iterator iter = _ivyPatterns.iterator(); iter.hasNext();) {
-comment|//                String pattern = (String)iter.next();
-comment|//                String resolvedFileName = IvyPatternHelper.substitute(pattern, artifact);
-comment|//                logIvyAttempt(resolvedFileName);
-comment|//                if (getSettings().getVersionMatcher().isDynamic(mrid)) {
-comment|//                    resolvedFileName = IvyPatternHelper.substitute(pattern, latestArtifact);
-comment|//                    logIvyAttempt(resolvedFileName);
-comment|//                }
-comment|//            }
-comment|//        }
-comment|//    }
-comment|//    /**
-comment|//     * Output message to log indicating what have been done to look for an artifact which
-comment|//     * has finally not been found
-comment|//     *
-comment|//     * @param artifact the artifact which has not been found
-comment|//     */
-comment|//    protected void logArtifactNotFound(Artifact artifact) {
-comment|//        if (_artifactPatterns.isEmpty()) {
-comment|//        	if (artifact.getUrl() == null) {
-comment|//        		logArtifactAttempt(artifact, "no artifact pattern => no attempt to find artifact "+artifact);
-comment|//        	}
-comment|//        }
-comment|//        Artifact used = artifact;
-comment|//        if (isM2compatible()) {
-comment|//        	used = DefaultArtifact.cloneWithAnotherMrid(artifact, convertM2IdForResourceSearch(artifact.getModuleRevisionId()));
-comment|//        }
-comment|//
-comment|//        for (Iterator iter = _artifactPatterns.iterator(); iter.hasNext();) {
-comment|//            String pattern = (String)iter.next();
-comment|//            String resolvedFileName = IvyPatternHelper.substitute(pattern, used);
-comment|//            logArtifactAttempt(artifact, resolvedFileName);
-comment|//        }
-comment|//    	if (used.getUrl() != null) {
-comment|//    		logArtifactAttempt(artifact, used.getUrl().toString());
-comment|//    	}
-comment|//    }
 specifier|protected
 name|Collection
 name|findNames
