@@ -598,7 +598,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * class used to launch ivy as a standalone tool  * arguments are :  * -conf<conffile> : indicates the path to the ivy configuration file  *                  ivysettings.xml is assumed if not given  * -cache<cachedir> : indicates the path to the cache directory  *                   cache is assumed if not given  * -ivy<ivyfile> : indicates the path to the ivy file to use  *                  ivy.xml is assumed if not given  * -retrieve<retrievepattern> : when used, retrieve is also done using the given retrievepattern  * -revision<revision> : the revision with which the module should be published, required to publish  * -status<status> :   the status with which the module should be published,   *                      release is assumed if not given  * -publish<publishpattern> :  the pattern used to publish the resolved ivy file,   *                              ivy-[revision].xml is assumed if not given  */
+comment|/**  * class used to launch ivy as a standalone tool  * arguments are :  * -settings<settingsfile> : indicates the path to the ivy settings file  *                  ivysettings.xml is assumed if not given  * -cache<cachedir> : indicates the path to the cache directory  *                   cache is assumed if not given  * -ivy<ivyfile> : indicates the path to the ivy file to use  *                  ivy.xml is assumed if not given  * -retrieve<retrievepattern> : when used, retrieve is also done using the given retrievepattern  * -revision<revision> : the revision with which the module should be published, required to publish  * -status<status> :   the status with which the module should be published,   *                      release is assumed if not given  * -publish<publishpattern> :  the pattern used to publish the resolved ivy file,   *                              ivy-[revision].xml is assumed if not given  */
 end_comment
 
 begin_class
@@ -613,13 +613,13 @@ name|getOptions
 parameter_list|()
 block|{
 name|Option
-name|conf
+name|settings
 init|=
 name|OptionBuilder
 operator|.
 name|withArgName
 argument_list|(
-literal|"conffile"
+literal|"settingsfile"
 argument_list|)
 operator|.
 name|hasArg
@@ -627,7 +627,30 @@ argument_list|()
 operator|.
 name|withDescription
 argument_list|(
-literal|"use given file for configuration"
+literal|"use given file for settings"
+argument_list|)
+operator|.
+name|create
+argument_list|(
+literal|"settings"
+argument_list|)
+decl_stmt|;
+name|Option
+name|conf
+init|=
+name|OptionBuilder
+operator|.
+name|withArgName
+argument_list|(
+literal|"settingsfile"
+argument_list|)
+operator|.
+name|hasArg
+argument_list|()
+operator|.
+name|withDescription
+argument_list|(
+literal|"DEPRECATED - use given file for settings"
 argument_list|)
 operator|.
 name|create
@@ -1143,6 +1166,13 @@ name|options
 operator|.
 name|addOption
 argument_list|(
+name|settings
+argument_list|)
+expr_stmt|;
+name|options
+operator|.
+name|addOption
+argument_list|(
 name|confs
 argument_list|)
 expr_stmt|;
@@ -1531,13 +1561,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|String
-name|confPath
+name|settingsPath
 init|=
 name|line
 operator|.
 name|getOptionValue
 argument_list|(
-literal|"conf"
+literal|"settings"
 argument_list|,
 literal|""
 argument_list|)
@@ -1548,7 +1578,48 @@ literal|""
 operator|.
 name|equals
 argument_list|(
-name|confPath
+name|settingsPath
+argument_list|)
+condition|)
+block|{
+name|settingsPath
+operator|=
+name|line
+operator|.
+name|getOptionValue
+argument_list|(
+literal|"conf"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+literal|""
+operator|.
+name|equals
+argument_list|(
+name|settingsPath
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"-conf is deprecated, use -settings instead"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+literal|""
+operator|.
+name|equals
+argument_list|(
+name|settingsPath
 argument_list|)
 condition|)
 block|{
@@ -1566,7 +1637,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|confPath
+name|settingsPath
 argument_list|)
 decl_stmt|;
 if|if
