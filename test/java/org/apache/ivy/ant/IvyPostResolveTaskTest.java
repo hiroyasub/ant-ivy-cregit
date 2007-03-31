@@ -138,7 +138,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|IvyPostResolveTest
+name|IvyPostResolveTaskTest
 extends|extends
 name|TestCase
 block|{
