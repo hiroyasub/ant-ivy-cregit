@@ -977,6 +977,13 @@ argument_list|)
 decl_stmt|;
 name|resolve
 operator|.
+name|setFile
+argument_list|(
+name|_file
+argument_list|)
+expr_stmt|;
+name|resolve
+operator|.
 name|setCache
 argument_list|(
 name|cache
@@ -1400,13 +1407,6 @@ name|setValidate
 argument_list|(
 name|isValidate
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|resolve
-operator|.
-name|setFile
-argument_list|(
-name|_file
 argument_list|)
 expr_stmt|;
 return|return
