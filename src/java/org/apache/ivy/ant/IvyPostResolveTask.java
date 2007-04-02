@@ -1113,15 +1113,34 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// assume the module has been resolved outside this build
+comment|// assume the module has been resolved outside this build, resolve the required
+comment|// configurations again
 comment|// TODO: find a way to discover which confs were resolved by that previous resolve
+if|if
+condition|(
+name|conf
+operator|==
+literal|null
+condition|)
+block|{
 return|return
 operator|new
 name|String
-index|[
-literal|0
-index|]
+index|[]
+block|{
+literal|"*"
+block|}
 return|;
+block|}
+else|else
+block|{
+return|return
+name|splitConfs
+argument_list|(
+name|conf
+argument_list|)
+return|;
+block|}
 block|}
 name|String
 index|[]
@@ -1725,6 +1744,28 @@ parameter_list|()
 block|{
 return|return
 name|_resolveId
+return|;
+block|}
+specifier|public
+name|void
+name|setFile
+parameter_list|(
+name|File
+name|file
+parameter_list|)
+block|{
+name|_file
+operator|=
+name|file
+expr_stmt|;
+block|}
+specifier|public
+name|File
+name|getFile
+parameter_list|()
+block|{
+return|return
+name|_file
 return|;
 block|}
 block|}
