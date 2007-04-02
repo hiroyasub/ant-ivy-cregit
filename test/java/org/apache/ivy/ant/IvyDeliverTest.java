@@ -207,22 +207,6 @@ name|Delete
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|types
-operator|.
-name|Path
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
