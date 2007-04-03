@@ -922,7 +922,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|getAllDependencyArtifactsIncludes
+name|getAllDependencyArtifacts
 argument_list|()
 operator|.
 name|length
@@ -937,7 +937,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|getAllDependencyArtifactsIncludes
+name|getAllDependencyArtifacts
 argument_list|()
 index|[
 literal|0
@@ -2651,7 +2651,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|getAllDependencyArtifactsExcludes
+name|getAllExcludeRules
 argument_list|()
 operator|.
 name|length
@@ -2990,7 +2990,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|getAllDependencyArtifactsExcludes
+name|getAllExcludeRules
 argument_list|()
 operator|.
 name|length

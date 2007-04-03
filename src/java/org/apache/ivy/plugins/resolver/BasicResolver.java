@@ -1447,7 +1447,7 @@ name|mrid
 argument_list|,
 name|dd
 operator|.
-name|getAllDependencyArtifactsIncludes
+name|getAllDependencyArtifacts
 argument_list|()
 argument_list|)
 expr_stmt|;

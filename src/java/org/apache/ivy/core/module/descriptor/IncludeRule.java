@@ -21,11 +21,35 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|net
+name|apache
 operator|.
-name|URL
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ArtifactId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|matcher
+operator|.
+name|PatternMatcher
 import|;
 end_import
 
@@ -46,38 +70,20 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to define an (additional) artifact not declared  * by a dependency module descriptor.  */
+comment|/**  * This describes a rule of inclusion.  *   * It is used to resctrict the artifacts and modules asked for a dependency,   * by including only modules and artifacts matching the rule  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DependencyArtifactDescriptor
+name|IncludeRule
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the name of the artifact asked      * @return      */
+comment|/**      * Returns the id of the described artifact, without revision information      * @return      */
 specifier|public
-name|String
-name|getName
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the type of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getType
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the ext of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getExt
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the url to look this artifact at      * @return      */
-specifier|public
-name|URL
-name|getUrl
+name|ArtifactId
+name|getId
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */
@@ -85,6 +91,12 @@ specifier|public
 name|String
 index|[]
 name|getConfigurations
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      * @return      */
+specifier|public
+name|PatternMatcher
+name|getMatcher
 parameter_list|()
 function_decl|;
 block|}

@@ -23,9 +23,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
+name|util
 operator|.
-name|URL
+name|Map
 import|;
 end_import
 
@@ -37,58 +37,80 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|util
+name|core
 operator|.
-name|extendable
+name|module
 operator|.
-name|ExtendableItem
+name|id
+operator|.
+name|ArtifactId
 import|;
 end_import
 
-begin_comment
-comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to define an (additional) artifact not declared  * by a dependency module descriptor.  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|matcher
+operator|.
+name|PatternMatcher
+import|;
+end_import
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|DependencyArtifactDescriptor
+class|class
+name|DefaultExcludeRule
 extends|extends
-name|ExtendableItem
+name|AbstractIncludeExcludeRule
+implements|implements
+name|ExcludeRule
 block|{
-comment|/**      * Returns the name of the artifact asked      * @return      */
 specifier|public
-name|String
-name|getName
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the type of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getType
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the ext of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getExt
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the url to look this artifact at      * @return      */
-specifier|public
-name|URL
-name|getUrl
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */
-specifier|public
-name|String
-index|[]
-name|getConfigurations
-parameter_list|()
-function_decl|;
+name|DefaultExcludeRule
+parameter_list|(
+name|ArtifactId
+name|aid
+parameter_list|,
+name|PatternMatcher
+name|matcher
+parameter_list|,
+name|Map
+name|extraAttributes
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|aid
+argument_list|,
+name|matcher
+argument_list|,
+name|extraAttributes
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"E:"
+operator|+
+name|super
+operator|.
+name|toString
+argument_list|()
+return|;
+block|}
+block|}
+end_class
 
 end_unit
 

@@ -19,73 +19,30 @@ name|descriptor
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URL
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|extendable
-operator|.
-name|ExtendableItem
-import|;
-end_import
-
 begin_comment
-comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to define an (additional) artifact not declared  * by a dependency module descriptor.  */
+comment|/**  * Objects implementing this interface are aware of module configurations,  * and can thus be added to configurations, and list their configurations.  *   * @author Xavier Hanin  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DependencyArtifactDescriptor
-extends|extends
-name|ExtendableItem
+name|ConfigurationAware
 block|{
-comment|/**      * Returns the name of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getName
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the type of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getType
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the ext of the artifact asked      * @return      */
-specifier|public
-name|String
-name|getExt
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the url to look this artifact at      * @return      */
-specifier|public
-name|URL
-name|getUrl
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */
+comment|/**      * Returns the configurations of the module to which the object is attached      * @return an array of configuration names to which the object is attached      */
 specifier|public
 name|String
 index|[]
 name|getConfigurations
 parameter_list|()
+function_decl|;
+comment|/**      * Tells this object that it will now be part of the given configuration      * @param confName the name of the configuration to which the object is now attached      */
+specifier|public
+name|void
+name|addConfiguration
+parameter_list|(
+name|String
+name|confName
+parameter_list|)
 function_decl|;
 block|}
 end_interface

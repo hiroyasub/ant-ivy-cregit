@@ -73,6 +73,24 @@ name|module
 operator|.
 name|id
 operator|.
+name|ArtifactId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
 name|ModuleId
 import|;
 end_import
@@ -341,6 +359,30 @@ function_decl|;
 comment|/** 	 * The resource being the source of this module descriptor, null if no resource corresponds to this module descriptor 	 * @return 	 */
 name|Resource
 name|getResource
+parameter_list|()
+function_decl|;
+comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return true if this descriptor contains any exclusion rule      */
+name|boolean
+name|canExclude
+parameter_list|()
+function_decl|;
+comment|/** 	 * Returns true if an exclude rule of this module attached to any of the given configurations 	 * matches the given artifact id, and thus exclude it 	 * @param moduleConfs 	 * @param artifactId 	 * @return 	 */
+name|boolean
+name|doesExclude
+parameter_list|(
+name|String
+index|[]
+name|moduleConfs
+parameter_list|,
+name|ArtifactId
+name|artifactId
+parameter_list|)
+function_decl|;
+comment|/** 	 * Returns an array of all the exclude rules this module descriptor currently holds. 	 * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies 	 * for the whole module. 	 * @return an array of {@link ExcludeRule} this module descriptor holds 	 */
+specifier|public
+name|ExcludeRule
+index|[]
+name|getAllExcludeRules
 parameter_list|()
 function_decl|;
 block|}
