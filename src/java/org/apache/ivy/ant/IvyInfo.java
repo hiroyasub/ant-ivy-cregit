@@ -262,15 +262,11 @@ condition|)
 block|{
 name|_file
 operator|=
-operator|new
-name|File
-argument_list|(
 name|getProject
 argument_list|()
 operator|.
-name|getBaseDir
-argument_list|()
-argument_list|,
+name|resolveFile
+argument_list|(
 name|getProperty
 argument_list|(
 name|settings
