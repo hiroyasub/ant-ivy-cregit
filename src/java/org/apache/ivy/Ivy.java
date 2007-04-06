@@ -1022,6 +1022,28 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
+comment|/** 	 * Configures Ivy with 1.4 compatible default settings 	 */
+specifier|public
+name|void
+name|configureDefault14
+parameter_list|()
+throws|throws
+name|ParseException
+throws|,
+name|IOException
+block|{
+name|assertBound
+argument_list|()
+expr_stmt|;
+name|_settings
+operator|.
+name|loadDefault14
+argument_list|()
+expr_stmt|;
+name|postConfigure
+argument_list|()
+expr_stmt|;
+block|}
 comment|/////////////////////////////////////////////////////////////////////////
 comment|//                         CHECK
 comment|/////////////////////////////////////////////////////////////////////////
