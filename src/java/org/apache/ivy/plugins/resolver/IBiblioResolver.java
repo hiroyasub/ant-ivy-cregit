@@ -484,7 +484,7 @@ condition|)
 block|{
 name|_root
 operator|=
-literal|"http://www.ibiblio.org/maven2/"
+literal|"http://repo1.maven.org/maven2/"
 expr_stmt|;
 block|}
 if|if
