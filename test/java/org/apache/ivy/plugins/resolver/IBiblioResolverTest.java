@@ -872,7 +872,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"http://www.ibiblio.org/maven2/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
+literal|"http://repo1.maven.org/maven2/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
 argument_list|,
 name|l
 operator|.
