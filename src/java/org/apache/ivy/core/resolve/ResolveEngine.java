@@ -1618,15 +1618,20 @@ block|}
 block|}
 block|}
 block|}
-name|props
-operator|.
-name|store
-argument_list|(
+name|FileOutputStream
+name|out
+init|=
 operator|new
 name|FileOutputStream
 argument_list|(
 name|ivyPropertiesInCache
 argument_list|)
+decl_stmt|;
+name|props
+operator|.
+name|store
+argument_list|(
+name|out
 argument_list|,
 name|md
 operator|.
@@ -1635,6 +1640,11 @@ argument_list|()
 operator|+
 literal|" resolved revisions"
 argument_list|)
+expr_stmt|;
+name|out
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 name|Message
 operator|.
