@@ -392,6 +392,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
+comment|// WARN: uniqueness needs to be relatively strong here
 name|int
 name|hash
 init|=
