@@ -312,33 +312,6 @@ name|be
 parameter_list|)
 block|{
 comment|// success
-name|assertTrue
-argument_list|(
-literal|"invalid exception message, it should contain '1 unresolved',"
-operator|+
-literal|" but it's: '"
-operator|+
-name|be
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|"'"
-argument_list|,
-name|be
-operator|.
-name|getMessage
-argument_list|()
-operator|.
-name|indexOf
-argument_list|(
-literal|"1 unresolved"
-argument_list|)
-operator|!=
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 specifier|public
@@ -383,7 +356,7 @@ argument_list|)
 expr_stmt|;
 name|_install
 operator|.
-name|setHaltonunresolved
+name|setHaltonfailure
 argument_list|(
 literal|false
 argument_list|)
