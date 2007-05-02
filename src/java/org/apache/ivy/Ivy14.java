@@ -642,6 +642,8 @@ argument_list|,
 name|validate
 argument_list|,
 name|resolveDynamicRevisions
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

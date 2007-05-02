@@ -104,6 +104,11 @@ specifier|private
 name|String
 name|_resolveId
 decl_stmt|;
+specifier|private
+name|String
+index|[]
+name|_confs
+decl_stmt|;
 comment|/** 	 * Returns an instance of DeliverOptions with options corresponding to default values 	 * taken from the given settings. 	 *  	 * @param settings The settings to use to get default option values 	 * @return a DeliverOptions instance ready to be used or customized 	 */
 specifier|public
 specifier|static
@@ -141,6 +146,8 @@ name|doValidate
 argument_list|()
 argument_list|,
 literal|true
+argument_list|,
+literal|null
 argument_list|)
 return|;
 block|}
@@ -171,6 +178,10 @@ name|validate
 parameter_list|,
 name|boolean
 name|resolveDynamicRevisions
+parameter_list|,
+name|String
+index|[]
+name|confs
 parameter_list|)
 block|{
 name|_status
@@ -196,6 +207,10 @@ expr_stmt|;
 name|_resolveDynamicRevisions
 operator|=
 name|resolveDynamicRevisions
+expr_stmt|;
+name|_confs
+operator|=
+name|confs
 expr_stmt|;
 block|}
 specifier|public
@@ -374,6 +389,35 @@ block|{
 name|_resolveId
 operator|=
 name|resolveId
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/** 	 * Return the configurations which must be deliverd. Returns<tt>null</tt> if all 	 * configurations has to be deliverd. Attention: the returned array can contain wildcards! 	 * @return the configurations to deliver 	 */
+specifier|public
+name|String
+index|[]
+name|getConfs
+parameter_list|()
+block|{
+return|return
+name|_confs
+return|;
+block|}
+comment|/** 	 * Sets the configurations to deliver. 	 * @param confs the configurations to deliver 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
+specifier|public
+name|DeliverOptions
+name|setConfs
+parameter_list|(
+name|String
+index|[]
+name|confs
+parameter_list|)
+block|{
+name|_confs
+operator|=
+name|confs
 expr_stmt|;
 return|return
 name|this
