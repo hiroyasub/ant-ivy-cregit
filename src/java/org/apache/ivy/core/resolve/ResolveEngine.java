@@ -777,6 +777,13 @@ name|_dictatorResolver
 operator|=
 name|dictatorResolver
 expr_stmt|;
+name|_settings
+operator|.
+name|setDictatorResolver
+argument_list|(
+name|dictatorResolver
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|ResolveReport
