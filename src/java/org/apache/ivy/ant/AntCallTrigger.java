@@ -261,7 +261,7 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|get
+name|peek
 argument_list|(
 name|IvyTask
 operator|.
