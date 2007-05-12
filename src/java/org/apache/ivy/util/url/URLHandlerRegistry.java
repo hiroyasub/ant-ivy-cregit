@@ -160,10 +160,11 @@ argument_list|(
 literal|"Using jdk url handling instead."
 argument_list|)
 expr_stmt|;
-comment|//return new BasicURLHandler();
-throw|throw
-name|e
-throw|;
+return|return
+operator|new
+name|BasicURLHandler
+argument_list|()
+return|;
 block|}
 catch|catch
 parameter_list|(
