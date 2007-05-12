@@ -137,6 +137,36 @@ return|;
 block|}
 catch|catch
 parameter_list|(
+name|NoClassDefFoundError
+name|e
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"error occurred while loading jakarta commons httpclient: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Using jdk url handling instead."
+argument_list|)
+expr_stmt|;
+comment|//return new BasicURLHandler();
+throw|throw
+name|e
+throw|;
+block|}
+catch|catch
+parameter_list|(
 name|InstantiationException
 name|e
 parameter_list|)
