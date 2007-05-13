@@ -1469,6 +1469,13 @@ name|e
 parameter_list|)
 block|{
 comment|// ignore: the matcher isn't on the classpath
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"impossible to define glob matcher: org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found on the classpath"
+argument_list|)
+expr_stmt|;
 block|}
 name|addReportOutputter
 argument_list|(
