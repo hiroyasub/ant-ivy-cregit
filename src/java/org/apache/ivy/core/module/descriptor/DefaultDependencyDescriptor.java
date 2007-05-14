@@ -676,7 +676,7 @@ name|asList
 argument_list|(
 name|dd
 operator|.
-name|getIncludeRules
+name|getDependencyArtifacts
 argument_list|(
 name|moduleConfs
 index|[
