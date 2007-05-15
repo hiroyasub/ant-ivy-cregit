@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class containing several utility methods for working with configurations.  *   * @author Maarten Coene  *  */
+comment|/**  * Class containing several utility methods for working with configurations.  *   *  */
 end_comment
 
 begin_class

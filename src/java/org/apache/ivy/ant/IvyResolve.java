@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to call the Ivy dependency resolution from ant.  *   * @author Xavier Hanin  *  */
+comment|/**  * This task allow to call the Ivy dependency resolution from ant.  *   *  */
 end_comment
 
 begin_class

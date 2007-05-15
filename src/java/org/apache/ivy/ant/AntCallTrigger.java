@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Triggers an call to an ant target on an event occurence.  *   * This trigger only works when ivy is called from an ant build file, otherwise the trigger  * only log a failure.  *   * Example of use in an ivysettings file:  *<ant-call-trigger  event="post-download-artifact" filter="type=zip"  *                    target="unzip"/>  * Triggers a call to the target "unzip" for any downloaded artifact of type zip  *   * @see AntBuildTrigger  * @since 1.4  * @author Xavier Hanin  *  */
+comment|/**  * Triggers an call to an ant target on an event occurence.  *   * This trigger only works when ivy is called from an ant build file, otherwise the trigger  * only log a failure.  *   * Example of use in an ivysettings file:  *<ant-call-trigger  event="post-download-artifact" filter="type=zip"  *                    target="unzip"/>  * Triggers a call to the target "unzip" for any downloaded artifact of type zip  *   * @see AntBuildTrigger  * @since 1.4  *  */
 end_comment
 
 begin_class

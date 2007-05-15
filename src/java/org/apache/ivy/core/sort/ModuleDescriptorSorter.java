@@ -166,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Inner helper class for sorting ModuleDescriptors.  * @author baumkar (for most of the code)  * @author xavier hanin (for the sorting of nodes based upon sort of modules)  *  */
+comment|/**  * Inner helper class for sorting ModuleDescriptors.  *  */
 end_comment
 
 begin_class

@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to store data related to one node of the dependency graph visit.  *   * It stores both an {@link IvyNode} and related {@link VisitNode} objects.  *   * Indeed, during the visit of the graph, the algorithm can visit the same node  * from several parents, thus requiring several VisitNode.  *   * @author Xavier Hanin  *  */
+comment|/**  * This class is used to store data related to one node of the dependency graph visit.  *   * It stores both an {@link IvyNode} and related {@link VisitNode} objects.  *   * Indeed, during the visit of the graph, the algorithm can visit the same node  * from several parents, thus requiring several VisitNode.  *   *  */
 end_comment
 
 begin_class

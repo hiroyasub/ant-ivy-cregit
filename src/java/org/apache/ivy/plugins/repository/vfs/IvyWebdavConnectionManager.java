@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modified version of the WebdavConnectionManager from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A connection manager that provides access to a single HttpConnection.  This  * manager makes no attempt to provide exclusive access to the contained  * HttpConnection.  *<p/>  * imario@apache.org: Keep connection in ThreadLocal.  *  * @author<a href="mailto:imario@apache.org">Mario Ivankovits</a>  * @author<a href="mailto:becke@u.washington.edu">Michael Becke</a>  * @author Eric Johnson  * @author<a href="mailto:mbowler@GargoyleSoftware.com">Mike Bowler</a>  * @author<a href="mailto:oleg@ural.ru">Oleg Kalnichevski</a>  * @author Laura Werner  * @author Maarten Coene  */
+comment|/**  * Modified version of the WebdavConnectionManager from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A connection manager that provides access to a single HttpConnection.  This  * manager makes no attempt to provide exclusive access to the contained  * HttpConnection.  *<p/>  * imario@apache.org: Keep connection in ThreadLocal.  *  */
 end_comment
 
 begin_class

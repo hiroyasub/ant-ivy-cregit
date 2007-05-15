@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class extends from WebDavFileSystem because it doesn't provide an accessible constructor.  *   * @author Maarten Coene  */
+comment|/**  * This class extends from WebDavFileSystem because it doesn't provide an accessible constructor.  *   */
 end_comment
 
 begin_class

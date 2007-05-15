@@ -17,10 +17,6 @@ name|conflict
 package|;
 end_package
 
-begin_comment
-comment|/**  * @author Anders janmyr  */
-end_comment
-
 begin_import
 import|import
 name|java

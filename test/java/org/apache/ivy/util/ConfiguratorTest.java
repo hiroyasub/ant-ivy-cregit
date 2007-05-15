@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author x.hanin  *  */
+comment|/**  *  */
 end_comment
 
 begin_class

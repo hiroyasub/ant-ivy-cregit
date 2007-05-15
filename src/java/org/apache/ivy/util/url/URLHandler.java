@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This interface is responsible for handling some URL manipulation  * (stream opening, downloading, check reachability, ...).   *   * @author Xavier Hanin  *  */
+comment|/**  * This interface is responsible for handling some URL manipulation  * (stream opening, downloading, check reachability, ...).   *   *  */
 end_comment
 
 begin_interface

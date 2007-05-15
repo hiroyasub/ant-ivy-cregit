@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task let user set ivy variables from ant.  *   * @author Xavier Hanin  */
+comment|/**  * This task let user set ivy variables from ant.  *   */
 end_comment
 
 begin_class

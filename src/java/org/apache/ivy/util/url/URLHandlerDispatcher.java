@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to dispatch downloading requests  *   * @author Xavier Hanin  *  */
+comment|/**  * This class is used to dispatch downloading requests  *   *  */
 end_comment
 
 begin_class

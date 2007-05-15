@@ -412,7 +412,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Used to update ivy files. Uses ivy file as source and not ModuleDescriptor to preserve  * as much as possible the original syntax  *   * @author Hanin  *  */
+comment|/**  * Used to update ivy files. Uses ivy file as source and not ModuleDescriptor to preserve  * as much as possible the original syntax  *   *  */
 end_comment
 
 begin_class

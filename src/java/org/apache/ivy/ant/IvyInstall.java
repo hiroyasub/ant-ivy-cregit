@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Allow to install a module or a set of module from repository to another one.  *  *  * @author Xavier Hanin  *  */
+comment|/**  * Allow to install a module or a set of module from repository to another one.  *  *  *  */
 end_comment
 
 begin_class

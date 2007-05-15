@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Hanin  *  */
+comment|/**  *  */
 end_comment
 
 begin_class

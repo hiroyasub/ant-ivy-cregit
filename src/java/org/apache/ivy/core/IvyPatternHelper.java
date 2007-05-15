@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author x.hanin  * @author Maarten Coene (for the optional part management)  */
+comment|/**  */
 end_comment
 
 begin_class

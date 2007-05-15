@@ -290,7 +290,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository  *   * This is especially useful to leverage the gssapi authentication supported by SecureCRT.  *   * In caseswhere usual sftp is enough, prefer the 100% java solution of sftp repository.  *   * This requires SecureCRT to be in the PATH.  *   * Tested with SecureCRT 5.0.5  *   * @author Xavier Hanin  *  */
+comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository  *   * This is especially useful to leverage the gssapi authentication supported by SecureCRT.  *   * In caseswhere usual sftp is enough, prefer the 100% java solution of sftp repository.  *   * This requires SecureCRT to be in the PATH.  *   * Tested with SecureCRT 5.0.5  *   *  */
 end_comment
 
 begin_class

@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Objects implementing this interface are aware of module configurations,  * and can thus be added to configurations, and list their configurations.  *   * @author Xavier Hanin  */
+comment|/**  * Objects implementing this interface are aware of module configurations,  * and can thus be added to configurations, and list their configurations.  *   */
 end_comment
 
 begin_interface

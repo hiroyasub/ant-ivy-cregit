@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task is not directly related to ivy, but is useful in some modular build systems.  *   * The idea is to be able to contribute new sub path elements to an existing path.  *   * @author Xavier Hanin  */
+comment|/**  * This task is not directly related to ivy, but is useful in some modular build systems.  *   * The idea is to be able to contribute new sub path elements to an existing path.  *   */
 end_comment
 
 begin_class

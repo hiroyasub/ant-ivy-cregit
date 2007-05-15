@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modified version of the WebdavFileProvider from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A provider for WebDAV.  *  * @author<a href="mailto:adammurdoch@apache.org">Adam Murdoch</a>  * @author Maarten Coene  * @version $Revision: 417178 $ $Date: 2006-06-26 05:31:41 -0700 (Mon, 26 Jun 2006) $  */
+comment|/**  * Modified version of the WebdavFileProvider from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A provider for WebDAV.  *  */
 end_comment
 
 begin_class

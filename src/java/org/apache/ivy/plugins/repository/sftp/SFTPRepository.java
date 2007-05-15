@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SFTP Repository, allow to use a repository accessed by sftp protocol.  *   * It supports all operations: get, put and list.  *   * It relies on jsch for sftp handling, and thus is compatible with sftp version 0, 1, 2 and 3  *   * @author Xavier Hanin  *  */
+comment|/**  * SFTP Repository, allow to use a repository accessed by sftp protocol.  *   * It supports all operations: get, put and list.  *   * It relies on jsch for sftp handling, and thus is compatible with sftp version 0, 1, 2 and 3  *   *  */
 end_comment
 
 begin_class

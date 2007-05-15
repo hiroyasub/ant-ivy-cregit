@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests {@link ApacheURLLister}.  *  * @author Xavier Hanin  * @author<a href="johnmshields@yahoo.com">John M. Shields</a>  */
+comment|/**  * Tests {@link ApacheURLLister}.  *  */
 end_comment
 
 begin_class

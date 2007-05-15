@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A set of options used during resolve related tasks  *   * @see ResolveEngine  * @author Xavier Hanin  */
+comment|/**  * A set of options used during resolve related tasks  *   * @see ResolveEngine  */
 end_comment
 
 begin_class
@@ -642,17 +642,10 @@ name|getModuleId
 argument_list|()
 decl_stmt|;
 return|return
+name|getDefaultResolveId
+argument_list|(
 name|module
-operator|.
-name|getOrganisation
-argument_list|()
-operator|+
-literal|"-"
-operator|+
-name|module
-operator|.
-name|getName
-argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public

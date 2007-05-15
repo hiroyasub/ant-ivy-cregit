@@ -646,7 +646,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parses an xml ivy file and output a ModuleDescriptor.  * For dependency and performance reasons, it uses  * only the SAX API, which makes the parsing code harder  * to understand.  *   * @author x.hanin  *  */
+comment|/**  * Parses an xml ivy file and output a ModuleDescriptor.  * For dependency and performance reasons, it uses  * only the SAX API, which makes the parsing code harder  * to understand.  *   *  */
 end_comment
 
 begin_class

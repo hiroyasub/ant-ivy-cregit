@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visit node is an object used to represent one visit from one parent on   * an {@link IvyNode} of the dependency graph.  *   * During dependency resolution, the {@link ResolveEngine} visits nodes of the   * depency graph following the dependencies, thus the same node can be visited  * several times, if it is requested from several module.  *   * In this case you will have one VisitNode per parent and per root module   * configuration.  *   * Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li> the node from which the visit is occuring  *<li>parentConf</li> the configuration of the parent in which this node is visited  *<li>rootModuleConf</li> the configuration of the root module which is currently resolved  *</ul>  *   * @author Xavier Hanin  */
+comment|/**  * A visit node is an object used to represent one visit from one parent on   * an {@link IvyNode} of the dependency graph.  *   * During dependency resolution, the {@link ResolveEngine} visits nodes of the   * depency graph following the dependencies, thus the same node can be visited  * several times, if it is requested from several module.  *   * In this case you will have one VisitNode per parent and per root module   * configuration.  *   * Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li> the node from which the visit is occuring  *<li>parentConf</li> the configuration of the parent in which this node is visited  *<li>rootModuleConf</li> the configuration of the root module which is currently resolved  *</ul>  *   */
 end_comment
 
 begin_class

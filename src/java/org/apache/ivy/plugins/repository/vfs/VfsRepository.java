@@ -272,7 +272,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of a VFS repository  *   * @author glen  * @author Matt Inger  * @author Stephen Nesbitt  *   */
+comment|/**  * Implementation of a VFS repository  *   */
 end_comment
 
 begin_class

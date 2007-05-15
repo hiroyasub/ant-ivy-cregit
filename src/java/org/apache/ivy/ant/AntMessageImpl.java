@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of the simple message facility for ant.  *   * @author Xavier Hanin  */
+comment|/**  * Implementation of the simple message facility for ant.  *   */
 end_comment
 
 begin_class

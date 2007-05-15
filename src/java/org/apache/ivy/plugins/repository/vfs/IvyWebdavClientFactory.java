@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/***************************************************************************************************  * Modified version of the WebdavClientFactory from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * Create a HttpClient instance  *   * @author<a href="mailto:imario@apache.org">Mario Ivankovits</a>  * @author Maarten Coene  * @version $Revision: 330479 $ $Date: 2005-11-03 07:19:24 +0100 (Do, 03 Nov 2005) $  */
+comment|/***************************************************************************************************  * Modified version of the WebdavClientFactory from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * Create a HttpClient instance  *   */
 end_comment
 
 begin_class

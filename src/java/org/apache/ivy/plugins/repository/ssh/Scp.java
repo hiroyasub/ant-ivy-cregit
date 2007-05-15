@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is using the scp client to transfer data and information for the  * repository. It is based on the SCPClient from the ganymed ssh library from  * Christian Plattner. To minimize the dependency to the ssh library and because  * I needed some additional functionality, I decided to copy'n'paste the single  * class rather than to inherit or delegate it somehow. Nevertheless credit  * should go to the original author.  *   * @author Andreas Sahlbach  * @author Christian Plattner, plattner@inf.ethz.ch  */
+comment|/**  * This class is using the scp client to transfer data and information for the  * repository. It is based on the SCPClient from the ganymed ssh library from  * Christian Plattner. To minimize the dependency to the ssh library and because  * I needed some additional functionality, I decided to copy'n'paste the single  * class rather than to inherit or delegate it somehow. Nevertheless credit  * should go to the original author.  *   */
 end_comment
 
 begin_class

@@ -272,7 +272,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates a report of dependencies of a set of modules in the repository.  *   * The set of modules is specified using organisation/module and matcher.  *   * @author Xavier Hanin  *  */
+comment|/**  * Generates a report of dependencies of a set of modules in the repository.  *   * The set of modules is specified using organisation/module and matcher.  *   *  */
 end_comment
 
 begin_class

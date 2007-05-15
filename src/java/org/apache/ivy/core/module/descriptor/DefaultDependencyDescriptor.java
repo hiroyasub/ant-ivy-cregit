@@ -262,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class can be used as the default implementation for DependencyDescriptor.  * It implements required methods and enables to fill dependency information  * with the addDependencyConfiguration method.  *   * @author Xavier Hanin  *  */
+comment|/**  * This class can be used as the default implementation for DependencyDescriptor.  * It implements required methods and enables to fill dependency information  * with the addDependencyConfiguration method.  *   *  */
 end_comment
 
 begin_class

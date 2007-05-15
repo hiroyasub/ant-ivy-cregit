@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * VFS implementation of the Resource interface  *   * @author glen  * @author Matt Inger  * @author Stephen Nesbitt  *  */
+comment|/**  * VFS implementation of the Resource interface  *   */
 end_comment
 
 begin_class

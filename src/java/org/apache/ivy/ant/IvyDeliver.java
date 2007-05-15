@@ -302,7 +302,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies  * and on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  *   * @author Xavier Hanin  *   */
+comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies  * and on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  *   *  */
 end_comment
 
 begin_class

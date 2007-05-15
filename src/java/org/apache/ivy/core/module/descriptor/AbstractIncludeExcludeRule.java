@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Abstract class used as implementation for both {@link IncludeRule} and {@link ExcludeRule},  * since their contract is almost identical  *   * @author Xavier Hanin  *  */
+comment|/**  * Abstract class used as implementation for both {@link IncludeRule} and {@link ExcludeRule},  * since their contract is almost identical  *   *  */
 end_comment
 
 begin_class

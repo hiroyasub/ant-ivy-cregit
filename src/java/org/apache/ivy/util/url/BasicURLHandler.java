@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Xavier Hanin  * @author Christian Riege  *  */
+comment|/**  *  */
 end_comment
 
 begin_class

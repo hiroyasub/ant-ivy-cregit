@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Unchecked exception thrown when a circular dependency exists between projects.  * @author baumkar  *  */
+comment|/**  * Unchecked exception thrown when a circular dependency exists between projects.  *  */
 end_comment
 
 begin_class

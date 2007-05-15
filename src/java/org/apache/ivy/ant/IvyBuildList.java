@@ -334,7 +334,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  *   * @author Xavier Hanin  */
+comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  *   */
 end_comment
 
 begin_class

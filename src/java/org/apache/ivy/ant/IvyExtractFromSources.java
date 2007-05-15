@@ -298,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extracts imports from a set of java sources and generate corresponding  * ivy file  *   * @author Xavier Hanin  *  */
+comment|/**  * Extracts imports from a set of java sources and generate corresponding  * ivy file  *   *  */
 end_comment
 
 begin_class

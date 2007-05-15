@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   * @author Maarten Coene  */
+comment|/**  *   */
 end_comment
 
 begin_class

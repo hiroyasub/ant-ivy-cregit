@@ -262,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to publish a module revision to an Ivy repository.  *   * @author Xavier Hanin  *  */
+comment|/**  * This task allow to publish a module revision to an Ivy repository.  *   *  */
 end_comment
 
 begin_class

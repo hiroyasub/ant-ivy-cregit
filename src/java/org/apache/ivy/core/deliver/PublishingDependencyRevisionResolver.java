@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Xavier Hanin  *  */
+comment|/**  *  */
 end_comment
 
 begin_interface
