@@ -3113,7 +3113,16 @@ expr|class
 block|}
 argument_list|)
 decl_stmt|;
-comment|// Split up arguments
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|setContextClassLoader
+argument_list|(
+name|classLoader
+argument_list|)
+expr_stmt|;
 name|mainMethod
 operator|.
 name|invoke
