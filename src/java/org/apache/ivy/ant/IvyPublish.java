@@ -1109,6 +1109,14 @@ argument_list|()
 decl_stmt|;
 name|deliver
 operator|.
+name|setSettingsRef
+argument_list|(
+name|getSettingsRef
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|deliver
+operator|.
 name|setProject
 argument_list|(
 name|getProject
