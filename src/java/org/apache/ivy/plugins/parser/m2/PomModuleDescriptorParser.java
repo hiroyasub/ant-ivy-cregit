@@ -1131,6 +1131,15 @@ argument_list|,
 name|_revision
 argument_list|)
 expr_stmt|;
+name|_properties
+operator|.
+name|put
+argument_list|(
+literal|"version"
+argument_list|,
+name|_revision
+argument_list|)
+expr_stmt|;
 name|_md
 operator|.
 name|setModuleRevisionId
