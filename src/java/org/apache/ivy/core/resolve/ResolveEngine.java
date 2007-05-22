@@ -701,6 +701,10 @@ name|Filter
 import|;
 end_import
 
+begin_comment
+comment|/**  * The resolve engine which is the core of the dependency resolution  * mechanism used in Ivy.  *   *  It features several resolve methods, some very simple, like {@link #resolve(File)}   *  and {@link #resolve(URL)} which allow to simply resolve dependencies of a single  *  module descriptor, or more complete one, like the {@link #resolve(ModuleDescriptor, ResolveOptions)}  *  which allows to provide options to the resolution engine.  *    *  @see ResolveOptions  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -730,6 +734,7 @@ specifier|private
 name|DependencyResolver
 name|_dictatorResolver
 decl_stmt|;
+comment|/** 	 * Constructs a ResolveEngine. 	 *  	 * @param settings the settings to use to configure the engine. Must not be null. 	 * @param eventManager the event manager to use to send events about the resolution process. Must not be null. 	 * @param sortEngine the sort engine to use to sort modules before producing the dependency resolution report. Must not be null. 	 */
 specifier|public
 name|ResolveEngine
 parameter_list|(
@@ -756,6 +761,7 @@ operator|=
 name|sortEngine
 expr_stmt|;
 block|}
+comment|/**      * Returns the currently configured dictator resolver, which when non      * null is used in place of any specified resolver in the {@link IvySettings}      * @return the currently configured dictator resolver, may be null.      */
 specifier|public
 name|DependencyResolver
 name|getDictatorResolver
@@ -765,6 +771,7 @@ return|return
 name|_dictatorResolver
 return|;
 block|}
+comment|/** 	 * Sets a dictator resolver, which is used in place of regular dependency resolver  	 * for subsequent dependency resolution by this engine. 	 * @param dictatorResolver the dictator resolver to use in this engine,  	 * 		  null if regular settings should used 	 */
 specifier|public
 name|void
 name|setDictatorResolver
@@ -2483,6 +2490,20 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"resolving dependencies for configuration '"
+operator|+
+name|confs
+index|[
+name|i
+index|]
+operator|+
+literal|"'"
+argument_list|)
+expr_stmt|;
 comment|// for each configuration we clear the cache of what's been fetched
 name|_fetchedSet
 operator|.
@@ -3155,24 +3176,68 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_settings
+name|node
 operator|.
-name|debugConflictResolution
+name|getParent
 argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|Message
 operator|.
-name|debug
+name|verbose
 argument_list|(
+literal|"== resolving dependencies "
+operator|+
+name|node
+operator|.
+name|getParent
+argument_list|()
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|"->"
+operator|+
 name|node
 operator|.
 name|getId
 argument_list|()
 operator|+
-literal|" => resolving dependencies in "
+literal|" ["
+operator|+
+name|node
+operator|.
+name|getParentConf
+argument_list|()
+operator|+
+literal|"->"
 operator|+
 name|conf
+operator|+
+literal|"]"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"== resolving dependencies for "
+operator|+
+name|node
+operator|.
+name|getId
+argument_list|()
+operator|+
+literal|" ["
+operator|+
+name|conf
+operator|+
+literal|"]"
 argument_list|)
 expr_stmt|;
 block|}

@@ -816,12 +816,6 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
-name|boolean
-name|_isCircular
-init|=
-literal|false
-decl_stmt|;
-specifier|private
 name|Collection
 name|_confsToFetch
 init|=
@@ -5182,16 +5176,6 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Returns true if this node can already be found among its callers      * @return      */
-specifier|public
-name|boolean
-name|isCircular
-parameter_list|()
-block|{
-return|return
-name|_isCircular
-return|;
-block|}
 specifier|public
 name|boolean
 name|isFetched
@@ -5632,8 +5616,9 @@ argument_list|,
 name|dd
 argument_list|)
 expr_stmt|;
-name|_isCircular
-operator|=
+name|boolean
+name|isCircular
+init|=
 name|_callers
 operator|.
 name|getAllCallersModuleIds
@@ -5647,10 +5632,10 @@ operator|.
 name|getModuleId
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
-name|_isCircular
+name|isCircular
 condition|)
 block|{
 name|IvyContext
