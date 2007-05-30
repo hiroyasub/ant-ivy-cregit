@@ -231,20 +231,6 @@ name|CircularDependencyStrategy
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|Message
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -334,34 +320,6 @@ name|ivy
 operator|.
 name|configureDefault
 argument_list|()
-expr_stmt|;
-name|Message
-operator|.
-name|setImpl
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|tearDown
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|Message
-operator|.
-name|sumupProblems
-argument_list|()
-expr_stmt|;
-comment|//purge the warning and error messages
-name|Message
-operator|.
-name|setImpl
-argument_list|(
-literal|null
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -699,7 +657,7 @@ block|,
 name|md4
 block|}
 comment|//,
-comment|//{md3, md1, md2, md4}	//It should be better to not have this solution.  The loop should apear has one contigous element.
+comment|//{md3, md1, md2, md4}	//we don't have this solution.  The loops apear has one contigous element.
 block|}
 decl_stmt|;
 name|Collection
@@ -800,8 +758,6 @@ argument_list|,
 literal|"rev3"
 argument_list|)
 expr_stmt|;
-comment|//MockMessageImpl mockMessageImpl = new MockMessageImpl();
-comment|//Message.setImpl(mockMessageImpl);
 comment|//Would be much easier with a tool like jmock
 class|class
 name|CircularDependencyReporterMock
@@ -1015,7 +971,6 @@ operator|.
 name|validate
 argument_list|()
 expr_stmt|;
-comment|//mockMessageImpl.assertLogWarningContains("circular dependency detected during sort: [ org | md3 | rev3 ]->[ org | md2 | rev2 ]->[ org | md3 | rev3 ]");
 block|}
 comment|/**      * The dependency can ask for the latest integration.  It should match whatever the version declared in the modules to order.      */
 specifier|public
