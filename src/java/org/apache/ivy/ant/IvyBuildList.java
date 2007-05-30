@@ -334,7 +334,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  *   */
+comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  */
 end_comment
 
 begin_class
@@ -346,7 +346,7 @@ name|IvyTask
 block|{
 specifier|private
 name|List
-name|_buildFiles
+name|buildFileSets
 init|=
 operator|new
 name|ArrayList
@@ -355,57 +355,57 @@ decl_stmt|;
 comment|// List (FileSet)
 specifier|private
 name|String
-name|_reference
+name|reference
 decl_stmt|;
 specifier|private
 name|boolean
-name|_haltOnError
+name|haltOnError
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|boolean
-name|_skipBuildWithoutIvy
+name|skipBuildWithoutIvy
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|boolean
-name|_reverse
+name|reverse
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|String
-name|_ivyFilePath
+name|ivyFilePath
 decl_stmt|;
 specifier|private
 name|String
-name|_root
+name|root
 init|=
 literal|"*"
 decl_stmt|;
 specifier|private
 name|boolean
-name|_excludeRoot
+name|excludeRoot
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|String
-name|_leaf
+name|leaf
 init|=
 literal|"*"
 decl_stmt|;
 specifier|private
 name|String
-name|_delimiter
+name|delimiter
 init|=
 literal|","
 decl_stmt|;
 specifier|private
 name|boolean
-name|_excludeLeaf
+name|excludeLeaf
 init|=
 literal|false
 decl_stmt|;
@@ -417,7 +417,7 @@ name|FileSet
 name|buildFiles
 parameter_list|)
 block|{
-name|_buildFiles
+name|buildFileSets
 operator|.
 name|add
 argument_list|(
@@ -431,7 +431,7 @@ name|getReference
 parameter_list|()
 block|{
 return|return
-name|_reference
+name|reference
 return|;
 block|}
 specifier|public
@@ -442,7 +442,9 @@ name|String
 name|reference
 parameter_list|)
 block|{
-name|_reference
+name|this
+operator|.
+name|reference
 operator|=
 name|reference
 expr_stmt|;
@@ -453,7 +455,7 @@ name|getRoot
 parameter_list|()
 block|{
 return|return
-name|_root
+name|root
 return|;
 block|}
 specifier|public
@@ -464,7 +466,9 @@ name|String
 name|root
 parameter_list|)
 block|{
-name|_root
+name|this
+operator|.
+name|root
 operator|=
 name|root
 expr_stmt|;
@@ -475,7 +479,7 @@ name|isExcludeRoot
 parameter_list|()
 block|{
 return|return
-name|_excludeRoot
+name|excludeRoot
 return|;
 block|}
 specifier|public
@@ -486,7 +490,7 @@ name|boolean
 name|root
 parameter_list|)
 block|{
-name|_excludeRoot
+name|excludeRoot
 operator|=
 name|root
 expr_stmt|;
@@ -497,7 +501,7 @@ name|getLeaf
 parameter_list|()
 block|{
 return|return
-name|_leaf
+name|leaf
 return|;
 block|}
 specifier|public
@@ -508,7 +512,9 @@ name|String
 name|leaf
 parameter_list|)
 block|{
-name|_leaf
+name|this
+operator|.
+name|leaf
 operator|=
 name|leaf
 expr_stmt|;
@@ -519,7 +525,7 @@ name|isExcludeLeaf
 parameter_list|()
 block|{
 return|return
-name|_excludeLeaf
+name|excludeLeaf
 return|;
 block|}
 specifier|public
@@ -530,7 +536,9 @@ name|boolean
 name|excludeLeaf
 parameter_list|)
 block|{
-name|_excludeLeaf
+name|this
+operator|.
+name|excludeLeaf
 operator|=
 name|excludeLeaf
 expr_stmt|;
@@ -541,7 +549,7 @@ name|getDelimiter
 parameter_list|()
 block|{
 return|return
-name|_delimiter
+name|delimiter
 return|;
 block|}
 specifier|public
@@ -552,7 +560,9 @@ name|String
 name|delimiter
 parameter_list|)
 block|{
-name|_delimiter
+name|this
+operator|.
+name|delimiter
 operator|=
 name|delimiter
 expr_stmt|;
@@ -566,7 +576,7 @@ name|BuildException
 block|{
 if|if
 condition|(
-name|_reference
+name|reference
 operator|==
 literal|null
 condition|)
@@ -581,7 +591,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|_buildFiles
+name|buildFileSets
 operator|.
 name|isEmpty
 argument_list|()
@@ -609,11 +619,11 @@ operator|.
 name|getSettings
 argument_list|()
 decl_stmt|;
-name|_ivyFilePath
+name|ivyFilePath
 operator|=
 name|getProperty
 argument_list|(
-name|_ivyFilePath
+name|ivyFilePath
 argument_list|,
 name|settings
 argument_list|,
@@ -667,7 +677,7 @@ literal|"*"
 operator|.
 name|equals
 argument_list|(
-name|_root
+name|root
 argument_list|)
 condition|)
 block|{
@@ -677,9 +687,9 @@ init|=
 operator|new
 name|StringTokenizer
 argument_list|(
-name|_root
+name|root
 argument_list|,
-name|_delimiter
+name|delimiter
 argument_list|)
 decl_stmt|;
 while|while
@@ -716,7 +726,7 @@ literal|"*"
 operator|.
 name|equals
 argument_list|(
-name|_leaf
+name|leaf
 argument_list|)
 condition|)
 block|{
@@ -726,9 +736,9 @@ init|=
 operator|new
 name|StringTokenizer
 argument_list|(
-name|_leaf
+name|leaf
 argument_list|,
-name|_delimiter
+name|delimiter
 argument_list|)
 decl_stmt|;
 while|while
@@ -756,7 +766,7 @@ control|(
 name|ListIterator
 name|iter
 init|=
-name|_buildFiles
+name|buildFileSets
 operator|.
 name|listIterator
 argument_list|()
@@ -852,7 +862,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_skipBuildWithoutIvy
+name|skipBuildWithoutIvy
 condition|)
 block|{
 name|Message
@@ -958,6 +968,21 @@ argument_list|,
 name|md
 argument_list|)
 expr_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Add "
+operator|+
+name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
+operator|.
+name|getModuleId
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -967,7 +992,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_haltOnError
+name|haltOnError
 condition|)
 block|{
 throw|throw
@@ -1503,7 +1528,7 @@ expr_stmt|;
 comment|// With the excluderoot attribute set to true, take the rootmd out of the toKeep set.
 if|if
 condition|(
-name|_excludeRoot
+name|excludeRoot
 condition|)
 block|{
 name|Message
@@ -1782,7 +1807,7 @@ decl_stmt|;
 comment|// With the excludeleaf attribute set to true, take the rootmd out of the toKeep set.
 if|if
 condition|(
-name|_excludeLeaf
+name|excludeLeaf
 condition|)
 block|{
 name|Message
@@ -2086,7 +2111,7 @@ operator|.
 name|getParentFile
 argument_list|()
 argument_list|,
-name|_ivyFilePath
+name|ivyFilePath
 argument_list|)
 return|;
 block|}
@@ -2096,7 +2121,7 @@ name|isHaltonerror
 parameter_list|()
 block|{
 return|return
-name|_haltOnError
+name|haltOnError
 return|;
 block|}
 specifier|public
@@ -2107,7 +2132,9 @@ name|boolean
 name|haltOnError
 parameter_list|)
 block|{
-name|_haltOnError
+name|this
+operator|.
+name|haltOnError
 operator|=
 name|haltOnError
 expr_stmt|;
@@ -2118,7 +2145,7 @@ name|getIvyfilepath
 parameter_list|()
 block|{
 return|return
-name|_ivyFilePath
+name|ivyFilePath
 return|;
 block|}
 specifier|public
@@ -2129,7 +2156,9 @@ name|String
 name|ivyFilePath
 parameter_list|)
 block|{
-name|_ivyFilePath
+name|this
+operator|.
+name|ivyFilePath
 operator|=
 name|ivyFilePath
 expr_stmt|;
@@ -2140,7 +2169,7 @@ name|isSkipbuildwithoutivy
 parameter_list|()
 block|{
 return|return
-name|_skipBuildWithoutIvy
+name|skipBuildWithoutIvy
 return|;
 block|}
 specifier|public
@@ -2151,7 +2180,9 @@ name|boolean
 name|skipBuildFilesWithoutIvy
 parameter_list|)
 block|{
-name|_skipBuildWithoutIvy
+name|this
+operator|.
+name|skipBuildWithoutIvy
 operator|=
 name|skipBuildFilesWithoutIvy
 expr_stmt|;
@@ -2162,7 +2193,7 @@ name|isReverse
 parameter_list|()
 block|{
 return|return
-name|_reverse
+name|reverse
 return|;
 block|}
 specifier|public
@@ -2173,7 +2204,9 @@ name|boolean
 name|reverse
 parameter_list|)
 block|{
-name|_reverse
+name|this
+operator|.
+name|reverse
 operator|=
 name|reverse
 expr_stmt|;
