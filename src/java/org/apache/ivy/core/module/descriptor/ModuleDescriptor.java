@@ -293,6 +293,7 @@ index|[]
 name|getAllArtifacts
 parameter_list|()
 function_decl|;
+comment|/** @retun The dependencies of the module.  If there is no dependencies return an empty array (non null) */
 name|DependencyDescriptor
 index|[]
 name|getDependencies
