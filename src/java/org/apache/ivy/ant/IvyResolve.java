@@ -1092,6 +1092,13 @@ name|_conf
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|_file
+operator|!=
+literal|null
+condition|)
+block|{
 name|getProject
 argument_list|()
 operator|.
@@ -1117,6 +1124,7 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|_resolveId
