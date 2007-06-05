@@ -227,26 +227,26 @@ block|{
 comment|/** 	 * The node which is currently visited  	 */
 specifier|private
 name|IvyNode
-name|_node
+name|node
 decl_stmt|;
 comment|/**       * Represents the current parent of the node during ivy visit      * of dependency graph.      */
 specifier|private
 name|VisitNode
-name|_parent
+name|parent
 init|=
 literal|null
 decl_stmt|;
 comment|/**      * The root node of the current visit      * It is null until it is required, see getRoot      */
 specifier|private
 name|VisitNode
-name|_root
+name|root
 init|=
 literal|null
 decl_stmt|;
 comment|/**      * Direct path from root to this node.       * Note that the colleciton is ordered but is not a list implementation       * This collection is null until it is required, see getPath      */
 specifier|private
 name|Collection
-name|_path
+name|path
 init|=
 literal|null
 decl_stmt|;
@@ -254,29 +254,29 @@ comment|// Collection(VisitNode)
 comment|/**      * The configuration of the parent module in the current visit       */
 specifier|private
 name|String
-name|_parentConf
+name|parentConf
 init|=
 literal|null
 decl_stmt|;
 comment|/**      * The configuration requested by the parent      * Note that this is the actual conf requested by the parent, not       * a configuration extended by the requested conf which actually       * trigger the node visit      */
 specifier|private
 name|String
-name|_requestedConf
+name|requestedConf
 decl_stmt|;
 comment|/**      * The root configuration which is currently visited      */
 specifier|private
 name|String
-name|_rootModuleConf
+name|rootModuleConf
 decl_stmt|;
 comment|/**      * Shared ResolveData instance, which can be used      * to get info on the current resolve process      */
 specifier|private
 name|ResolveData
-name|_data
+name|data
 decl_stmt|;
 comment|/**      * Boolean.TRUE if a node with a same module id as the one visited       * has already been visited in the current path.      * null if not computed yet      * Boolean.FALSE otherwise      */
 specifier|private
 name|Boolean
-name|_isCircular
+name|isCircular
 decl_stmt|;
 specifier|public
 name|VisitNode
@@ -342,23 +342,33 @@ literal|"rootModuleConf must not be null"
 argument_list|)
 throw|;
 block|}
-name|_data
+name|this
+operator|.
+name|data
 operator|=
 name|data
 expr_stmt|;
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
-name|_parent
+name|this
+operator|.
+name|parent
 operator|=
 name|parent
 expr_stmt|;
-name|_rootModuleConf
+name|this
+operator|.
+name|rootModuleConf
 operator|=
 name|rootModuleConf
 expr_stmt|;
-name|_parentConf
+name|this
+operator|.
+name|parentConf
 operator|=
 name|parentConf
 expr_stmt|;
@@ -367,7 +377,9 @@ name|init
 argument_list|(
 name|data
 argument_list|,
-name|_parent
+name|this
+operator|.
+name|parent
 operator|!=
 literal|null
 argument_list|)
@@ -384,7 +396,9 @@ name|boolean
 name|register
 parameter_list|)
 block|{
-name|_data
+name|this
+operator|.
+name|data
 operator|=
 name|data
 expr_stmt|;
@@ -393,7 +407,9 @@ condition|(
 name|register
 condition|)
 block|{
-name|_data
+name|this
+operator|.
+name|data
 operator|.
 name|register
 argument_list|(
@@ -408,7 +424,7 @@ name|getNode
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 return|;
 block|}
 comment|/**      * @return Returns the configuration requested by the parent      */
@@ -418,7 +434,7 @@ name|getRequestedConf
 parameter_list|()
 block|{
 return|return
-name|_requestedConf
+name|requestedConf
 return|;
 block|}
 specifier|public
@@ -429,7 +445,9 @@ name|String
 name|requestedConf
 parameter_list|)
 block|{
-name|_requestedConf
+name|this
+operator|.
+name|requestedConf
 operator|=
 name|requestedConf
 expr_stmt|;
@@ -440,7 +458,7 @@ name|getParent
 parameter_list|()
 block|{
 return|return
-name|_parent
+name|parent
 return|;
 block|}
 specifier|public
@@ -450,19 +468,19 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_root
+name|root
 operator|==
 literal|null
 condition|)
 block|{
-name|_root
+name|root
 operator|=
 name|computeRoot
 argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_root
+name|root
 return|;
 block|}
 specifier|public
@@ -472,19 +490,19 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_path
+name|path
 operator|==
 literal|null
 condition|)
 block|{
-name|_path
+name|path
 operator|=
 name|computePath
 argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_path
+name|path
 return|;
 block|}
 specifier|private
@@ -494,7 +512,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_parent
+name|parent
 operator|!=
 literal|null
 condition|)
@@ -505,7 +523,7 @@ init|=
 operator|new
 name|LinkedHashSet
 argument_list|(
-name|_parent
+name|parent
 operator|.
 name|getPath
 argument_list|()
@@ -541,7 +559,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_node
+name|node
 operator|.
 name|isRoot
 argument_list|()
@@ -553,13 +571,13 @@ return|;
 block|}
 if|else if
 condition|(
-name|_parent
+name|parent
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_parent
+name|parent
 operator|.
 name|getRoot
 argument_list|()
@@ -578,7 +596,7 @@ name|getParentConf
 parameter_list|()
 block|{
 return|return
-name|_parentConf
+name|parentConf
 return|;
 block|}
 specifier|public
@@ -589,7 +607,9 @@ name|String
 name|parentConf
 parameter_list|)
 block|{
-name|_parentConf
+name|this
+operator|.
+name|parentConf
 operator|=
 name|parentConf
 expr_stmt|;
@@ -600,7 +620,7 @@ name|getRootModuleConf
 parameter_list|()
 block|{
 return|return
-name|_rootModuleConf
+name|rootModuleConf
 return|;
 block|}
 specifier|public
@@ -694,12 +714,12 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|_data
+name|data
 operator|.
 name|isTransitive
 argument_list|()
 operator|&&
-name|_node
+name|node
 operator|.
 name|getDependencyDescriptor
 argument_list|(
@@ -768,7 +788,9 @@ block|{
 name|IvyNode
 name|node
 init|=
-name|_node
+name|this
+operator|.
+name|node
 operator|.
 name|getRealNode
 argument_list|()
@@ -787,7 +809,9 @@ block|}
 else|else
 block|{
 return|return
-name|_node
+name|this
+operator|.
+name|node
 return|;
 block|}
 block|}
@@ -799,7 +823,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_parent
+name|parent
 operator|!=
 literal|null
 condition|)
@@ -808,11 +832,13 @@ comment|// use real node make sense only for non root module
 name|IvyNode
 name|node
 init|=
-name|_data
+name|data
 operator|.
 name|getNode
 argument_list|(
-name|_node
+name|this
+operator|.
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -826,10 +852,14 @@ literal|null
 operator|&&
 name|node
 operator|!=
-name|_node
+name|this
+operator|.
+name|node
 condition|)
 block|{
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
@@ -850,16 +880,16 @@ block|{
 name|boolean
 name|loaded
 init|=
-name|_node
+name|node
 operator|.
 name|loadData
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|,
 name|getParentNode
 argument_list|()
 argument_list|,
-name|_parentConf
+name|parentConf
 argument_list|,
 name|conf
 argument_list|,
@@ -878,7 +908,7 @@ comment|// if the revision was a dynamic one (which has now be resolved)
 comment|// we now register this node on the resolved id
 if|if
 condition|(
-name|_data
+name|data
 operator|.
 name|getSettings
 argument_list|()
@@ -893,11 +923,11 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_data
+name|data
 operator|.
 name|register
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getResolvedId
 argument_list|()
@@ -922,15 +952,15 @@ block|{
 name|Collection
 name|deps
 init|=
-name|_node
+name|node
 operator|.
 name|getDependencies
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|,
 name|conf
 argument_list|,
-name|_requestedConf
+name|requestedConf
 argument_list|)
 decl_stmt|;
 name|Collection
@@ -1034,7 +1064,7 @@ block|}
 name|VisitData
 name|visitData
 init|=
-name|_data
+name|data
 operator|.
 name|getVisitData
 argument_list|(
@@ -1073,7 +1103,7 @@ name|visitData
 operator|.
 name|getVisitNodes
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|)
 operator|.
 name|iterator
@@ -1100,7 +1130,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|(
-name|_parent
+name|parent
 operator|==
 literal|null
 operator|&&
@@ -1113,11 +1143,11 @@ literal|null
 operator|)
 operator|||
 operator|(
-name|_parent
+name|parent
 operator|!=
 literal|null
 operator|&&
-name|_parent
+name|parent
 operator|.
 name|getId
 argument_list|()
@@ -1144,9 +1174,9 @@ comment|// the node has not yet been visited from the current parent, we create 
 return|return
 name|traverse
 argument_list|(
-name|_parent
+name|parent
 argument_list|,
-name|_parentConf
+name|parentConf
 argument_list|,
 name|node
 argument_list|)
@@ -1233,13 +1263,13 @@ return|return
 operator|new
 name|VisitNode
 argument_list|(
-name|_data
+name|data
 argument_list|,
 name|node
 argument_list|,
 name|parent
 argument_list|,
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|,
 name|parentConf
 argument_list|)
@@ -1342,7 +1372,7 @@ name|getResolvedId
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getResolvedId
 argument_list|()
@@ -1356,7 +1386,7 @@ name|Collection
 name|confs
 parameter_list|)
 block|{
-name|_node
+name|node
 operator|.
 name|updateConfsToFetch
 argument_list|(
@@ -1370,7 +1400,7 @@ name|getId
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -1382,11 +1412,11 @@ name|isEvicted
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|isEvicted
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|)
 return|;
 block|}
@@ -1400,7 +1430,7 @@ name|conf
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getRealConfs
 argument_list|(
@@ -1414,7 +1444,7 @@ name|hasProblem
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|hasProblem
 argument_list|()
@@ -1429,7 +1459,7 @@ name|conf
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getConfiguration
 argument_list|(
@@ -1443,11 +1473,11 @@ name|getEvictedData
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getEvictedData
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|)
 return|;
 block|}
@@ -1457,7 +1487,7 @@ name|getDependencyDescriptor
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getDependencyDescriptor
 argument_list|(
@@ -1472,13 +1502,13 @@ name|getParentNode
 parameter_list|()
 block|{
 return|return
-name|_parent
+name|parent
 operator|==
 literal|null
 condition|?
 literal|null
 else|:
-name|_parent
+name|parent
 operator|.
 name|getNode
 argument_list|()
@@ -1492,19 +1522,19 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_isCircular
+name|isCircular
 operator|==
 literal|null
 condition|)
 block|{
 if|if
 condition|(
-name|_parent
+name|parent
 operator|!=
 literal|null
 condition|)
 block|{
-name|_isCircular
+name|isCircular
 operator|=
 name|Boolean
 operator|.
@@ -1516,7 +1546,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_parent
+name|parent
 operator|.
 name|getPath
 argument_list|()
@@ -1562,7 +1592,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_isCircular
+name|isCircular
 operator|=
 name|Boolean
 operator|.
@@ -1574,7 +1604,7 @@ block|}
 block|}
 else|else
 block|{
-name|_isCircular
+name|isCircular
 operator|=
 name|Boolean
 operator|.
@@ -1583,7 +1613,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|_isCircular
+name|isCircular
 operator|.
 name|booleanValue
 argument_list|()
@@ -1596,7 +1626,7 @@ name|getConfsToFetch
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getConfsToFetch
 argument_list|()
@@ -1615,7 +1645,7 @@ name|inConf
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getRequiredConfigurations
 argument_list|(
@@ -1634,7 +1664,7 @@ name|getModuleId
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getModuleId
 argument_list|()
@@ -1649,13 +1679,13 @@ name|mid
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getResolvedRevisions
 argument_list|(
 name|mid
 argument_list|,
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|)
 return|;
 block|}
@@ -1667,7 +1697,7 @@ name|EvictionData
 name|evictionData
 parameter_list|)
 block|{
-name|_node
+name|node
 operator|.
 name|markEvicted
 argument_list|(
@@ -1682,7 +1712,7 @@ name|getRequiredConfigurations
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getRequiredConfigurations
 argument_list|()
@@ -1703,11 +1733,11 @@ name|Collection
 name|selected
 parameter_list|)
 block|{
-name|_node
+name|node
 operator|.
 name|markEvicted
 argument_list|(
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|,
 name|parent
 operator|.
@@ -1726,7 +1756,7 @@ name|getDescriptor
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getDescriptor
 argument_list|()
@@ -1744,7 +1774,7 @@ name|ancestor
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getEvictionDataInRoot
 argument_list|(
@@ -1766,24 +1796,24 @@ name|moduleId
 parameter_list|)
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|getEvictedRevisions
 argument_list|(
 name|moduleId
 argument_list|,
-name|_rootModuleConf
+name|rootModuleConf
 argument_list|)
 return|;
 block|}
 comment|//    public void setRootModuleConf(String rootModuleConf) {
-comment|//        if (_rootModuleConf != null&& !_rootModuleConf.equals(rootModuleConf)) {
+comment|//        if (rootModuleConf != null&& !rootModuleConf.equals(rootModuleConf)) {
 comment|//            _confsToFetch.clear(); // we change of root module conf => we discard all confs to fetch
 comment|//        }
-comment|//        if (rootModuleConf != null&& rootModuleConf.equals(_rootModuleConf)) {
+comment|//        if (rootModuleConf != null&& rootModuleConf.equals(rootModuleConf)) {
 comment|//            _selectedDeps.put(new ModuleIdConf(_id.getModuleId(), rootModuleConf), Collections.singleton(this));
 comment|//        }
-comment|//        _rootModuleConf = rootModuleConf;
+comment|//        rootModuleConf = rootModuleConf;
 comment|//    }
 specifier|public
 name|String
@@ -1791,7 +1821,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 operator|.
 name|toString
 argument_list|()

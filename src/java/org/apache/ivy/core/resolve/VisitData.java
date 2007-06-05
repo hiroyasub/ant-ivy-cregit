@@ -69,12 +69,12 @@ block|{
 comment|/** 	 * A node in the graph of module dependencies resolution 	 */
 specifier|private
 name|IvyNode
-name|_node
+name|node
 decl_stmt|;
 comment|/** 	 * The associated visit nodes, per rootModuleConf 	 * Note that the value is a List, because a node can be visited from 	 * several parents during the resolution process 	 */
 specifier|private
 name|Map
-name|_visitNodes
+name|visitNodes
 init|=
 operator|new
 name|HashMap
@@ -88,7 +88,9 @@ name|IvyNode
 name|node
 parameter_list|)
 block|{
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
@@ -134,7 +136,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_visitNodes
+name|visitNodes
 operator|.
 name|get
 argument_list|(
@@ -154,7 +156,7 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_visitNodes
+name|visitNodes
 operator|.
 name|put
 argument_list|(
@@ -174,7 +176,7 @@ name|getNode
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 return|;
 block|}
 specifier|public
@@ -185,7 +187,9 @@ name|IvyNode
 name|node
 parameter_list|)
 block|{
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;

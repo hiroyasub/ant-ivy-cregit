@@ -296,7 +296,7 @@ name|SearchEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|public
 name|SearchEngine
@@ -305,7 +305,9 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -335,7 +337,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -419,7 +421,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -499,7 +501,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -626,7 +628,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -711,7 +713,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -846,7 +848,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -934,7 +936,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolvers
 argument_list|()
@@ -1475,7 +1477,7 @@ operator|new
 name|String
 index|[]
 block|{
-name|_settings
+name|settings
 operator|.
 name|getDefaultBranch
 argument_list|(

@@ -123,22 +123,22 @@ name|EvictionData
 block|{
 specifier|private
 name|IvyNode
-name|_parent
+name|parent
 decl_stmt|;
 comment|// can be null in case of transitive eviction
 specifier|private
 name|ConflictManager
-name|_conflictManager
+name|conflictManager
 decl_stmt|;
 comment|// can be null in case of transitive eviction
 specifier|private
 name|Collection
-name|_selected
+name|selected
 decl_stmt|;
 comment|// Collection(IvyNode); can be null in case of transitive eviction
 specifier|private
 name|String
-name|_rootModuleConf
+name|rootModuleConf
 decl_stmt|;
 specifier|public
 name|EvictionData
@@ -156,19 +156,27 @@ name|Collection
 name|selected
 parameter_list|)
 block|{
-name|_rootModuleConf
+name|this
+operator|.
+name|rootModuleConf
 operator|=
 name|rootModuleConf
 expr_stmt|;
-name|_parent
+name|this
+operator|.
+name|parent
 operator|=
 name|parent
 expr_stmt|;
-name|_conflictManager
+name|this
+operator|.
+name|conflictManager
 operator|=
 name|conflictManager
 expr_stmt|;
-name|_selected
+name|this
+operator|.
+name|selected
 operator|=
 name|selected
 expr_stmt|;
@@ -235,25 +243,25 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_selected
+name|selected
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_selected
+name|selected
 operator|+
 literal|" in "
 operator|+
-name|_parent
+name|parent
 operator|+
 literal|" ("
 operator|+
-name|_conflictManager
+name|conflictManager
 operator|+
 literal|") ["
 operator|+
-name|_rootModuleConf
+name|rootModuleConf
 operator|+
 literal|"]"
 return|;
@@ -263,7 +271,7 @@ block|{
 return|return
 literal|"transitively ["
 operator|+
-name|_rootModuleConf
+name|rootModuleConf
 operator|+
 literal|"]"
 return|;
@@ -275,7 +283,7 @@ name|getConflictManager
 parameter_list|()
 block|{
 return|return
-name|_conflictManager
+name|conflictManager
 return|;
 block|}
 specifier|public
@@ -284,7 +292,7 @@ name|getParent
 parameter_list|()
 block|{
 return|return
-name|_parent
+name|parent
 return|;
 block|}
 specifier|public
@@ -293,7 +301,7 @@ name|getSelected
 parameter_list|()
 block|{
 return|return
-name|_selected
+name|selected
 return|;
 block|}
 specifier|public
@@ -302,7 +310,7 @@ name|getRootModuleConf
 parameter_list|()
 block|{
 return|return
-name|_rootModuleConf
+name|rootModuleConf
 return|;
 block|}
 block|}
@@ -314,11 +322,11 @@ name|ModuleIdConf
 block|{
 specifier|private
 name|ModuleId
-name|_moduleId
+name|moduleId
 decl_stmt|;
 specifier|private
 name|String
-name|_conf
+name|conf
 decl_stmt|;
 specifier|public
 name|ModuleIdConf
@@ -360,11 +368,13 @@ literal|"conf cannot be null"
 argument_list|)
 throw|;
 block|}
-name|_moduleId
+name|moduleId
 operator|=
 name|mid
 expr_stmt|;
-name|_conf
+name|this
+operator|.
+name|conf
 operator|=
 name|conf
 expr_stmt|;
@@ -376,7 +386,7 @@ name|getConf
 parameter_list|()
 block|{
 return|return
-name|_conf
+name|conf
 return|;
 block|}
 specifier|public
@@ -386,7 +396,7 @@ name|getModuleId
 parameter_list|()
 block|{
 return|return
-name|_moduleId
+name|moduleId
 return|;
 block|}
 specifier|public
@@ -482,11 +492,11 @@ block|}
 block|}
 specifier|private
 name|IvyNode
-name|_node
+name|node
 decl_stmt|;
 specifier|private
 name|Map
-name|_selectedDeps
+name|selectedDeps
 init|=
 operator|new
 name|HashMap
@@ -495,7 +505,7 @@ decl_stmt|;
 comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which node has been selected
 specifier|private
 name|Map
-name|_pendingConflicts
+name|pendingConflicts
 init|=
 operator|new
 name|HashMap
@@ -504,7 +514,7 @@ decl_stmt|;
 comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which nodes are in pending conflict (conflict detected but not yet resolved)
 specifier|private
 name|Map
-name|_evictedDeps
+name|evictedDeps
 init|=
 operator|new
 name|HashMap
@@ -513,7 +523,7 @@ decl_stmt|;
 comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which node has been evicted
 specifier|private
 name|Map
-name|_evictedRevs
+name|evictedRevs
 init|=
 operator|new
 name|HashMap
@@ -522,7 +532,7 @@ decl_stmt|;
 comment|// Map (ModuleIdConf -> Set(ModuleRevisionId)) // map indicating for each dependency which revision has been evicted
 specifier|private
 name|Map
-name|_evicted
+name|evicted
 init|=
 operator|new
 name|HashMap
@@ -551,7 +561,9 @@ literal|"node must not be null"
 argument_list|)
 throw|;
 block|}
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
@@ -573,7 +585,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_selectedDeps
+name|selectedDeps
 operator|.
 name|get
 argument_list|(
@@ -661,7 +673,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_selectedDeps
+name|selectedDeps
 operator|.
 name|get
 argument_list|(
@@ -775,7 +787,7 @@ argument_list|,
 name|rootModuleConf
 argument_list|)
 decl_stmt|;
-name|_selectedDeps
+name|selectedDeps
 operator|.
 name|put
 argument_list|(
@@ -806,7 +818,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_evictedDeps
+name|evictedDeps
 operator|.
 name|get
 argument_list|(
@@ -894,7 +906,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_evictedRevs
+name|evictedRevs
 operator|.
 name|get
 argument_list|(
@@ -956,7 +968,7 @@ argument_list|,
 name|rootModuleConf
 argument_list|)
 decl_stmt|;
-name|_evictedDeps
+name|evictedDeps
 operator|.
 name|put
 argument_list|(
@@ -1025,7 +1037,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|_evictedRevs
+name|this
+operator|.
+name|evictedRevs
 operator|.
 name|put
 argument_list|(
@@ -1049,7 +1063,7 @@ expr_stmt|;
 name|IvyNode
 name|root
 init|=
-name|_node
+name|node
 operator|.
 name|getRoot
 argument_list|()
@@ -1057,14 +1071,14 @@ decl_stmt|;
 return|return
 name|root
 operator|!=
-name|_node
+name|node
 operator|&&
 operator|!
 name|root
 operator|.
 name|getResolvedRevisions
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -1077,7 +1091,7 @@ argument_list|)
 operator|.
 name|contains
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getResolvedId
 argument_list|()
@@ -1101,7 +1115,7 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|_node
+name|node
 operator|.
 name|isRoot
 argument_list|()
@@ -1115,7 +1129,7 @@ name|String
 index|[]
 name|rootModuleConfigurations
 init|=
-name|_node
+name|node
 operator|.
 name|getRootModuleConfigurations
 argument_list|()
@@ -1169,7 +1183,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_evicted
+name|evicted
 operator|.
 name|keySet
 argument_list|()
@@ -1201,7 +1215,7 @@ init|=
 operator|(
 name|EvictionData
 operator|)
-name|_evicted
+name|evicted
 operator|.
 name|get
 argument_list|(
@@ -1322,7 +1336,7 @@ name|EvictionData
 name|evictionData
 parameter_list|)
 block|{
-name|_evicted
+name|evicted
 operator|.
 name|put
 argument_list|(
@@ -1350,7 +1364,7 @@ return|return
 operator|(
 name|EvictionData
 operator|)
-name|_evicted
+name|evicted
 operator|.
 name|get
 argument_list|(
@@ -1372,7 +1386,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_evicted
+name|evicted
 operator|.
 name|keySet
 argument_list|()
@@ -1382,7 +1396,7 @@ argument_list|(
 operator|new
 name|String
 index|[
-name|_evicted
+name|evicted
 operator|.
 name|keySet
 argument_list|()
@@ -1409,7 +1423,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_evicted
+name|evicted
 operator|.
 name|values
 argument_list|()
@@ -1494,7 +1508,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_evicted
+name|evicted
 operator|.
 name|values
 argument_list|()
@@ -1550,14 +1564,14 @@ block|{
 name|Collection
 name|selectedNodes
 init|=
-name|_node
+name|node
 operator|.
 name|getRoot
 argument_list|()
 operator|.
 name|getResolvedNodes
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getModuleId
 argument_list|()
@@ -1602,7 +1616,9 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|_node
+name|this
+operator|.
+name|node
 operator|.
 name|getResolvedId
 argument_list|()
@@ -1624,14 +1640,14 @@ name|rootModuleConf
 argument_list|,
 name|ancestor
 argument_list|,
-name|_node
+name|node
 operator|.
 name|getRoot
 argument_list|()
 operator|.
 name|getConflictManager
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getModuleId
 argument_list|()
@@ -1658,7 +1674,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_pendingConflicts
+name|pendingConflicts
 operator|.
 name|get
 argument_list|(
@@ -1754,7 +1770,7 @@ argument_list|,
 name|rootModuleConf
 argument_list|)
 decl_stmt|;
-name|_pendingConflicts
+name|pendingConflicts
 operator|.
 name|put
 argument_list|(

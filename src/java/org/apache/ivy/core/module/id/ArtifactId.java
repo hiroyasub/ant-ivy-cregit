@@ -30,19 +30,19 @@ name|ArtifactId
 block|{
 specifier|private
 name|ModuleId
-name|_mid
+name|mid
 decl_stmt|;
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|String
-name|_type
+name|type
 decl_stmt|;
 specifier|private
 name|String
-name|_ext
+name|ext
 decl_stmt|;
 comment|/**      * @param mid      * @param name      * @param type      */
 specifier|public
@@ -61,19 +61,27 @@ name|String
 name|ext
 parameter_list|)
 block|{
-name|_mid
+name|this
+operator|.
+name|mid
 operator|=
 name|mid
 expr_stmt|;
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
-name|_type
+name|this
+operator|.
+name|type
 operator|=
 name|type
 expr_stmt|;
-name|_ext
+name|this
+operator|.
+name|ext
 operator|=
 name|ext
 expr_stmt|;
@@ -225,7 +233,7 @@ name|getModuleId
 parameter_list|()
 block|{
 return|return
-name|_mid
+name|mid
 return|;
 block|}
 comment|/**      * @return Returns the name.      */
@@ -235,7 +243,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 comment|/**      * @return Returns the type.      */
@@ -245,7 +253,7 @@ name|getType
 parameter_list|()
 block|{
 return|return
-name|_type
+name|type
 return|;
 block|}
 comment|/**      * @return Returns the ext.      */
@@ -255,7 +263,7 @@ name|getExt
 parameter_list|()
 block|{
 return|return
-name|_ext
+name|ext
 return|;
 block|}
 block|}

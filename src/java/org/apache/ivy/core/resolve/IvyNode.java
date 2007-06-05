@@ -583,11 +583,11 @@ name|NodeConf
 block|{
 specifier|private
 name|IvyNode
-name|_node
+name|node
 decl_stmt|;
 specifier|private
 name|String
-name|_conf
+name|conf
 decl_stmt|;
 specifier|public
 name|NodeConf
@@ -629,11 +629,15 @@ literal|"conf must not null"
 argument_list|)
 throw|;
 block|}
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
-name|_conf
+name|this
+operator|.
+name|conf
 operator|=
 name|conf
 expr_stmt|;
@@ -645,7 +649,7 @@ name|getConf
 parameter_list|()
 block|{
 return|return
-name|_conf
+name|conf
 return|;
 block|}
 specifier|public
@@ -655,7 +659,7 @@ name|getNode
 parameter_list|()
 block|{
 return|return
-name|_node
+name|node
 return|;
 block|}
 specifier|public
@@ -752,36 +756,36 @@ block|}
 comment|////////// CONTEXT
 specifier|private
 name|ResolveData
-name|_data
+name|data
 decl_stmt|;
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 comment|////////// DELEGATES
 specifier|private
 name|IvyNodeCallers
-name|_callers
+name|callers
 decl_stmt|;
 specifier|private
 name|IvyNodeEviction
-name|_eviction
+name|eviction
 decl_stmt|;
 comment|////////// MAIN DATA
 specifier|private
 name|IvyNode
-name|_root
+name|root
 decl_stmt|;
 comment|// id as requested, i.e. may be with latest rev
 specifier|private
 name|ModuleRevisionId
-name|_id
+name|id
 decl_stmt|;
 comment|// set only when node has been built or updated from a DependencyDescriptor
 comment|// Map(IvyNode parent -> DependencyDescriptor)
 specifier|private
 name|Map
-name|_dds
+name|dds
 init|=
 operator|new
 name|HashMap
@@ -790,34 +794,34 @@ decl_stmt|;
 comment|// Set when data has been loaded only, or when constructed from a module descriptor
 specifier|private
 name|ModuleDescriptor
-name|_md
+name|md
 decl_stmt|;
 specifier|private
 name|ResolvedModuleRevision
-name|_module
+name|module
 decl_stmt|;
 comment|////////// LOADING METADATA
 specifier|private
 name|Exception
-name|_problem
+name|problem
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|boolean
-name|_downloaded
+name|downloaded
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|boolean
-name|_searched
+name|searched
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|Collection
-name|_confsToFetch
+name|confsToFetch
 init|=
 operator|new
 name|HashSet
@@ -825,7 +829,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Collection
-name|_fetchedConfigurations
+name|fetchedConfigurations
 init|=
 operator|new
 name|HashSet
@@ -833,7 +837,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Collection
-name|_loadedRootModuleConfs
+name|loadedRootModuleConfs
 init|=
 operator|new
 name|HashSet
@@ -845,7 +849,7 @@ comment|// used to know which configurations of the dependency are required
 comment|// for each root module configuration
 specifier|private
 name|Map
-name|_rootModuleConfs
+name|rootModuleConfs
 init|=
 operator|new
 name|HashMap
@@ -854,7 +858,7 @@ decl_stmt|;
 comment|// Map (NodeConf in -> Set(String conf))
 specifier|private
 name|Map
-name|_requiredConfs
+name|requiredConfs
 init|=
 operator|new
 name|HashMap
@@ -863,7 +867,7 @@ decl_stmt|;
 comment|// Map (String rootModuleConf -> Set(DependencyArtifactDescriptor))
 specifier|private
 name|Map
-name|_dependencyArtifacts
+name|dependencyArtifacts
 init|=
 operator|new
 name|HashMap
@@ -872,7 +876,7 @@ decl_stmt|;
 comment|// Map (String rootModuleConf -> Set(IncludeRule))
 specifier|private
 name|Map
-name|_dependencyIncludes
+name|dependencyIncludes
 init|=
 operator|new
 name|HashMap
@@ -891,14 +895,14 @@ name|DependencyDescriptor
 name|dd
 parameter_list|)
 block|{
-name|_id
+name|id
 operator|=
 name|dd
 operator|.
 name|getDependencyRevisionId
 argument_list|()
 expr_stmt|;
-name|_dds
+name|dds
 operator|.
 name|put
 argument_list|(
@@ -907,7 +911,7 @@ argument_list|,
 name|dd
 argument_list|)
 expr_stmt|;
-name|_root
+name|root
 operator|=
 name|parent
 operator|.
@@ -930,18 +934,20 @@ name|ModuleDescriptor
 name|md
 parameter_list|)
 block|{
-name|_id
+name|id
 operator|=
 name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
 expr_stmt|;
-name|_md
+name|this
+operator|.
+name|md
 operator|=
 name|md
 expr_stmt|;
-name|_root
+name|root
 operator|=
 name|this
 expr_stmt|;
@@ -959,18 +965,20 @@ name|ResolveData
 name|data
 parameter_list|)
 block|{
-name|_data
+name|this
+operator|.
+name|data
 operator|=
 name|data
 expr_stmt|;
-name|_settings
+name|settings
 operator|=
 name|data
 operator|.
 name|getSettings
 argument_list|()
 expr_stmt|;
-name|_eviction
+name|eviction
 operator|=
 operator|new
 name|IvyNodeEviction
@@ -978,7 +986,7 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
-name|_callers
+name|callers
 operator|=
 operator|new
 name|IvyNodeCallers
@@ -1044,7 +1052,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -1052,7 +1060,7 @@ block|{
 name|DependencyResolver
 name|resolver
 init|=
-name|_data
+name|data
 operator|.
 name|getSettings
 argument_list|()
@@ -1082,7 +1090,7 @@ operator|+
 literal|": check your configuration"
 argument_list|)
 expr_stmt|;
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -1095,7 +1103,7 @@ operator|+
 literal|": check your configuration"
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -1133,7 +1141,7 @@ argument_list|(
 name|parent
 argument_list|)
 decl_stmt|;
-name|_data
+name|data
 operator|.
 name|getEventManager
 argument_list|()
@@ -1149,7 +1157,7 @@ name|dependencyDescriptor
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_module
+name|module
 operator|=
 name|resolver
 operator|.
@@ -1157,10 +1165,10 @@ name|getDependency
 argument_list|(
 name|dependencyDescriptor
 argument_list|,
-name|_data
+name|data
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|.
 name|getEventManager
 argument_list|()
@@ -1174,30 +1182,30 @@ name|resolver
 argument_list|,
 name|dependencyDescriptor
 argument_list|,
-name|_module
+name|module
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_module
+name|module
 operator|!=
 literal|null
 condition|)
 block|{
-name|_data
+name|data
 operator|.
 name|getCacheManager
 argument_list|()
 operator|.
 name|saveResolver
 argument_list|(
-name|_module
+name|module
 operator|.
 name|getDescriptor
 argument_list|()
 argument_list|,
-name|_module
+name|module
 operator|.
 name|getResolver
 argument_list|()
@@ -1206,19 +1214,19 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|.
 name|getCacheManager
 argument_list|()
 operator|.
 name|saveArtResolver
 argument_list|(
-name|_module
+name|module
 operator|.
 name|getDescriptor
 argument_list|()
 argument_list|,
-name|_module
+name|module
 operator|.
 name|getArtifactResolver
 argument_list|()
@@ -1229,7 +1237,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|logModuleWhenFound
 argument_list|()
@@ -1241,14 +1249,14 @@ name|info
 argument_list|(
 literal|"\tfound "
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
 operator|+
 literal|" in "
 operator|+
-name|_module
+name|module
 operator|.
 name|getResolver
 argument_list|()
@@ -1266,14 +1274,14 @@ name|verbose
 argument_list|(
 literal|"\tfound "
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
 operator|+
 literal|" in "
 operator|+
-name|_module
+name|module
 operator|.
 name|getResolver
 argument_list|()
@@ -1285,7 +1293,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_data
+name|data
 operator|.
 name|getSettings
 argument_list|()
@@ -1303,7 +1311,7 @@ block|{
 comment|// IVY-56: check if revision has actually been resolved
 if|if
 condition|(
-name|_data
+name|data
 operator|.
 name|getSettings
 argument_list|()
@@ -1313,7 +1321,7 @@ argument_list|()
 operator|.
 name|isDynamic
 argument_list|(
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1332,7 +1340,7 @@ operator|+
 literal|": check your configuration and make sure revision is part of your pattern"
 argument_list|)
 expr_stmt|;
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -1340,7 +1348,7 @@ argument_list|(
 literal|"impossible to resolve dynamic revision"
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -1357,11 +1365,11 @@ block|}
 name|IvyNode
 name|resolved
 init|=
-name|_data
+name|data
 operator|.
 name|getNode
 argument_list|(
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1376,9 +1384,9 @@ condition|)
 block|{
 comment|// exact revision has already been resolved
 comment|// => update it and discard this node
-name|_md
+name|md
 operator|=
-name|_module
+name|module
 operator|.
 name|getDescriptor
 argument_list|()
@@ -1411,59 +1419,59 @@ if|if
 condition|(
 name|resolved
 operator|.
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
 block|{
 name|resolved
 operator|.
-name|_md
+name|md
 operator|=
-name|_md
+name|md
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|resolved
 operator|.
-name|_module
+name|module
 operator|==
 literal|null
 condition|)
 block|{
 name|resolved
 operator|.
-name|_module
+name|module
 operator|=
-name|_module
+name|module
 expr_stmt|;
 block|}
 name|resolved
 operator|.
-name|_downloaded
+name|downloaded
 operator||=
-name|_module
+name|module
 operator|.
 name|isDownloaded
 argument_list|()
 expr_stmt|;
 name|resolved
 operator|.
-name|_searched
+name|searched
 operator||=
-name|_module
+name|module
 operator|.
 name|isSearched
 argument_list|()
 expr_stmt|;
 name|resolved
 operator|.
-name|_dds
+name|dds
 operator|.
 name|putAll
 argument_list|(
-name|_dds
+name|dds
 argument_list|)
 expr_stmt|;
 name|resolved
@@ -1531,7 +1539,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|_data
+name|data
 operator|.
 name|replaceNode
 argument_list|(
@@ -1546,7 +1554,7 @@ expr_stmt|;
 comment|// this actually discards the node
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|logResolvedRevision
 argument_list|()
@@ -1558,7 +1566,7 @@ name|info
 argument_list|(
 literal|"\t["
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1581,7 +1589,7 @@ name|verbose
 argument_list|(
 literal|"\t["
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1601,16 +1609,16 @@ literal|true
 return|;
 block|}
 block|}
-name|_downloaded
+name|downloaded
 operator|=
-name|_module
+name|module
 operator|.
 name|isDownloaded
 argument_list|()
 expr_stmt|;
-name|_searched
+name|searched
 operator|=
-name|_module
+name|module
 operator|.
 name|isSearched
 argument_list|()
@@ -1633,7 +1641,7 @@ operator|.
 name|reportFailure
 argument_list|()
 expr_stmt|;
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -1649,7 +1657,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|_problem
+name|problem
 operator|=
 name|e
 expr_stmt|;
@@ -1657,12 +1665,12 @@ block|}
 comment|// still not resolved, report error
 if|if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 condition|)
 block|{
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -1684,7 +1692,7 @@ literal|true
 expr_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|()
@@ -1698,7 +1706,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|logResolvedRevision
 argument_list|()
@@ -1710,7 +1718,7 @@ name|info
 argument_list|(
 literal|"\t["
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1733,7 +1741,7 @@ name|verbose
 argument_list|(
 literal|"\t["
 operator|+
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -1749,14 +1757,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|_md
+name|md
 operator|=
-name|_module
+name|module
 operator|.
 name|getDescriptor
 argument_list|()
 expr_stmt|;
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|remove
 argument_list|(
@@ -1799,7 +1807,7 @@ name|hasProblem
 argument_list|()
 condition|)
 block|{
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -1909,7 +1917,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -1939,7 +1947,7 @@ condition|)
 block|{
 name|confs
 operator|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -2010,7 +2018,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -2027,7 +2035,7 @@ name|DependencyDescriptor
 index|[]
 name|dds
 init|=
-name|_md
+name|md
 operator|.
 name|getDependencies
 argument_list|()
@@ -2128,7 +2136,7 @@ block|}
 name|IvyNode
 name|depNode
 init|=
-name|_data
+name|data
 operator|.
 name|getNode
 argument_list|(
@@ -2150,7 +2158,7 @@ operator|=
 operator|new
 name|IvyNode
 argument_list|(
-name|_data
+name|data
 argument_list|,
 name|this
 argument_list|,
@@ -2252,7 +2260,7 @@ name|DependencyDescriptor
 name|dd
 parameter_list|)
 block|{
-name|_dds
+name|dds
 operator|.
 name|put
 argument_list|(
@@ -2274,7 +2282,7 @@ return|return
 operator|(
 name|DependencyDescriptor
 operator|)
-name|_dds
+name|dds
 operator|.
 name|get
 argument_list|(
@@ -2297,7 +2305,7 @@ name|conf
 parameter_list|)
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|doesCallersExclude
 argument_list|(
@@ -2321,7 +2329,7 @@ parameter_list|()
 block|{
 return|return
 operator|!
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|isEmpty
 argument_list|()
@@ -2336,7 +2344,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_loadedRootModuleConfs
+name|loadedRootModuleConfs
 operator|.
 name|add
 argument_list|(
@@ -2353,7 +2361,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_loadedRootModuleConfs
+name|loadedRootModuleConfs
 operator|.
 name|contains
 argument_list|(
@@ -2386,7 +2394,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|!=
 literal|null
 condition|)
@@ -2420,7 +2428,7 @@ block|{
 name|Configuration
 name|c
 init|=
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -2437,7 +2445,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|remove
 argument_list|(
@@ -2458,7 +2466,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -2490,7 +2498,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -2516,7 +2524,7 @@ name|parentConf
 argument_list|)
 expr_stmt|;
 block|}
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -2550,14 +2558,14 @@ operator|.
 name|PUBLIC
 condition|)
 block|{
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|remove
 argument_list|(
 name|conf
 argument_list|)
 expr_stmt|;
-name|_problem
+name|problem
 operator|=
 operator|new
 name|RuntimeException
@@ -2579,7 +2587,7 @@ operator|+
 name|parentConf
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|.
 name|getReport
 argument_list|()
@@ -2598,14 +2606,14 @@ condition|(
 name|loaded
 condition|)
 block|{
-name|_fetchedConfigurations
+name|fetchedConfigurations
 operator|.
 name|add
 argument_list|(
 name|conf
 argument_list|)
 expr_stmt|;
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|removeAll
 argument_list|(
@@ -2617,7 +2625,7 @@ name|confs
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|remove
 argument_list|(
@@ -2730,18 +2738,18 @@ name|Collection
 name|confs
 parameter_list|)
 block|{
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|addAll
 argument_list|(
 name|confs
 argument_list|)
 expr_stmt|;
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|removeAll
 argument_list|(
-name|_fetchedConfigurations
+name|fetchedConfigurations
 argument_list|)
 expr_stmt|;
 block|}
@@ -2906,7 +2914,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_requiredConfs
+name|requiredConfs
 operator|.
 name|get
 argument_list|(
@@ -2962,12 +2970,12 @@ init|=
 operator|new
 name|ArrayList
 argument_list|(
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|size
 argument_list|()
 operator|+
-name|_fetchedConfigurations
+name|fetchedConfigurations
 operator|.
 name|size
 argument_list|()
@@ -2977,14 +2985,14 @@ name|required
 operator|.
 name|addAll
 argument_list|(
-name|_fetchedConfigurations
+name|fetchedConfigurations
 argument_list|)
 expr_stmt|;
 name|required
 operator|.
 name|addAll
 argument_list|(
-name|_confsToFetch
+name|confsToFetch
 argument_list|)
 expr_stmt|;
 return|return
@@ -3021,7 +3029,7 @@ name|Collection
 name|confs
 parameter_list|)
 block|{
-name|_requiredConfs
+name|requiredConfs
 operator|.
 name|put
 argument_list|(
@@ -3051,7 +3059,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -3082,7 +3090,7 @@ expr_stmt|;
 name|Configuration
 name|configuration
 init|=
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -3098,7 +3106,7 @@ condition|)
 block|{
 name|configuration
 operator|=
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -3110,7 +3118,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given       * root module configuration.      * @param rootModuleConf      * @return      */
+comment|/**      * Returns the configurations of the dependency required in a given      * root module configuration.      * @param rootModuleConf      * @return      */
 specifier|public
 name|String
 index|[]
@@ -3126,7 +3134,7 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|get
 argument_list|(
@@ -3185,7 +3193,7 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|get
 argument_list|(
@@ -3205,7 +3213,7 @@ operator|new
 name|HashSet
 argument_list|()
 expr_stmt|;
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|put
 argument_list|(
@@ -3217,7 +3225,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_md
+name|md
 operator|!=
 literal|null
 condition|)
@@ -3226,7 +3234,7 @@ comment|// remove all given dependency configurations to the set + extended ones
 name|Configuration
 name|c
 init|=
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -3336,7 +3344,7 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|get
 argument_list|(
@@ -3356,7 +3364,7 @@ operator|new
 name|HashSet
 argument_list|()
 expr_stmt|;
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|put
 argument_list|(
@@ -3368,7 +3376,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_md
+name|md
 operator|!=
 literal|null
 condition|)
@@ -3394,7 +3402,7 @@ block|{
 name|Configuration
 name|conf
 init|=
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -3493,7 +3501,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns the root module configurations in which this dependency is required       * @return      */
+comment|/**      * Returns the root module configurations in which this dependency is required      * @return      */
 specifier|public
 name|String
 index|[]
@@ -3505,7 +3513,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|keySet
 argument_list|()
@@ -3515,7 +3523,7 @@ argument_list|(
 operator|new
 name|String
 index|[
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|size
 argument_list|()
@@ -3534,14 +3542,14 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|String
 index|[
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|size
 argument_list|()
@@ -3560,7 +3568,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -3591,7 +3599,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -3884,13 +3892,13 @@ name|rootModuleConf
 parameter_list|)
 block|{
 comment|// update callers
-name|_callers
+name|callers
 operator|.
 name|updateFrom
 argument_list|(
 name|node
 operator|.
-name|_callers
+name|callers
 argument_list|,
 name|rootModuleConf
 argument_list|)
@@ -3900,9 +3908,9 @@ name|updateMapOfSet
 argument_list|(
 name|node
 operator|.
-name|_requiredConfs
+name|requiredConfs
 argument_list|,
-name|_requiredConfs
+name|requiredConfs
 argument_list|)
 expr_stmt|;
 comment|// update rootModuleConfs
@@ -3910,9 +3918,9 @@ name|updateMapOfSetForKey
 argument_list|(
 name|node
 operator|.
-name|_rootModuleConfs
+name|rootModuleConfs
 argument_list|,
-name|_rootModuleConfs
+name|rootModuleConfs
 argument_list|,
 name|rootModuleConf
 argument_list|)
@@ -3922,9 +3930,9 @@ name|updateMapOfSetForKey
 argument_list|(
 name|node
 operator|.
-name|_dependencyArtifacts
+name|dependencyArtifacts
 argument_list|,
-name|_dependencyArtifacts
+name|dependencyArtifacts
 argument_list|,
 name|rootModuleConf
 argument_list|)
@@ -3934,14 +3942,14 @@ name|updateConfsToFetch
 argument_list|(
 name|node
 operator|.
-name|_fetchedConfigurations
+name|fetchedConfigurations
 argument_list|)
 expr_stmt|;
 name|updateConfsToFetch
 argument_list|(
 name|node
 operator|.
-name|_confsToFetch
+name|confsToFetch
 argument_list|)
 expr_stmt|;
 block|}
@@ -4094,7 +4102,7 @@ control|(
 name|Iterator
 name|it
 init|=
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|keySet
 argument_list|()
@@ -4156,7 +4164,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in the      * root module configurations in which the node is not evicted      * @param artifactFilter       * @return      */
+comment|/**      * Returns all the artifacts of this dependency required in the      * root module configurations in which the node is not evicted      * @param artifactFilter      * @return      */
 specifier|public
 name|Artifact
 index|[]
@@ -4178,7 +4186,7 @@ control|(
 name|Iterator
 name|it
 init|=
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|keySet
 argument_list|()
@@ -4279,7 +4287,7 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|get
 argument_list|(
@@ -4317,7 +4325,9 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_dependencyArtifacts
+name|this
+operator|.
+name|dependencyArtifacts
 operator|.
 name|get
 argument_list|(
@@ -4326,7 +4336,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|isDefault
 argument_list|()
@@ -4382,7 +4392,7 @@ argument_list|(
 operator|new
 name|MDArtifact
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|dad
 operator|.
@@ -4421,7 +4431,7 @@ init|=
 operator|(
 name|Set
 operator|)
-name|_dependencyIncludes
+name|dependencyIncludes
 operator|.
 name|get
 argument_list|(
@@ -4490,7 +4500,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-name|_md
+name|md
 operator|.
 name|getArtifacts
 argument_list|(
@@ -4545,7 +4555,7 @@ name|Artifact
 index|[]
 name|arts
 init|=
-name|_md
+name|md
 operator|.
 name|getArtifacts
 argument_list|(
@@ -4628,7 +4638,7 @@ argument_list|(
 operator|new
 name|MDArtifact
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|dad
 operator|.
@@ -4784,7 +4794,7 @@ decl_stmt|;
 name|boolean
 name|excluded
 init|=
-name|_callers
+name|callers
 operator|.
 name|doesCallersExclude
 argument_list|(
@@ -4951,7 +4961,9 @@ argument_list|(
 name|dependencyArtifacts
 argument_list|)
 argument_list|,
-name|_dependencyArtifacts
+name|this
+operator|.
+name|dependencyArtifacts
 argument_list|)
 expr_stmt|;
 block|}
@@ -4978,7 +4990,7 @@ argument_list|(
 name|rules
 argument_list|)
 argument_list|,
-name|_dependencyIncludes
+name|dependencyIncludes
 argument_list|)
 expr_stmt|;
 block|}
@@ -5046,7 +5058,7 @@ name|hasProblem
 parameter_list|()
 block|{
 return|return
-name|_problem
+name|problem
 operator|!=
 literal|null
 return|;
@@ -5057,7 +5069,7 @@ name|getProblem
 parameter_list|()
 block|{
 return|return
-name|_problem
+name|problem
 return|;
 block|}
 specifier|public
@@ -5068,7 +5080,7 @@ block|{
 name|Exception
 name|e
 init|=
-name|_problem
+name|problem
 decl_stmt|;
 if|if
 condition|(
@@ -5153,7 +5165,7 @@ name|isDownloaded
 parameter_list|()
 block|{
 return|return
-name|_downloaded
+name|downloaded
 return|;
 block|}
 specifier|public
@@ -5162,7 +5174,7 @@ name|isSearched
 parameter_list|()
 block|{
 return|return
-name|_searched
+name|searched
 return|;
 block|}
 specifier|public
@@ -5171,7 +5183,7 @@ name|isLoaded
 parameter_list|()
 block|{
 return|return
-name|_md
+name|md
 operator|!=
 literal|null
 return|;
@@ -5185,7 +5197,7 @@ name|conf
 parameter_list|)
 block|{
 return|return
-name|_fetchedConfigurations
+name|fetchedConfigurations
 operator|.
 name|contains
 argument_list|(
@@ -5202,7 +5214,7 @@ name|mrid
 parameter_list|)
 block|{
 return|return
-name|_data
+name|data
 operator|.
 name|getNode
 argument_list|(
@@ -5215,7 +5227,7 @@ name|isRoot
 parameter_list|()
 block|{
 return|return
-name|_root
+name|root
 operator|==
 name|this
 return|;
@@ -5226,7 +5238,7 @@ name|getRoot
 parameter_list|()
 block|{
 return|return
-name|_root
+name|root
 return|;
 block|}
 specifier|public
@@ -5239,7 +5251,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|==
 literal|null
 condition|)
@@ -5255,7 +5267,7 @@ block|}
 name|ConflictManager
 name|cm
 init|=
-name|_md
+name|md
 operator|.
 name|getConflictManager
 argument_list|(
@@ -5267,7 +5279,7 @@ name|cm
 operator|==
 literal|null
 condition|?
-name|_settings
+name|settings
 operator|.
 name|getConflictManager
 argument_list|(
@@ -5285,7 +5297,7 @@ block|{
 name|IvyNode
 name|real
 init|=
-name|_data
+name|data
 operator|.
 name|getNode
 argument_list|(
@@ -5309,7 +5321,7 @@ name|getId
 parameter_list|()
 block|{
 return|return
-name|_id
+name|id
 return|;
 block|}
 specifier|public
@@ -5318,7 +5330,7 @@ name|getModuleId
 parameter_list|()
 block|{
 return|return
-name|_id
+name|id
 operator|.
 name|getModuleId
 argument_list|()
@@ -5330,7 +5342,7 @@ name|getDescriptor
 parameter_list|()
 block|{
 return|return
-name|_md
+name|md
 return|;
 block|}
 specifier|public
@@ -5339,7 +5351,7 @@ name|getData
 parameter_list|()
 block|{
 return|return
-name|_data
+name|data
 return|;
 block|}
 specifier|public
@@ -5348,7 +5360,7 @@ name|getModuleRevision
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -5358,13 +5370,13 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_module
+name|module
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_module
+name|module
 operator|.
 name|getPublicationDate
 argument_list|()
@@ -5385,13 +5397,13 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_md
+name|md
 operator|.
 name|getLastModified
 argument_list|()
@@ -5408,11 +5420,11 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|!=
 literal|null
 operator|&&
-name|_md
+name|md
 operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
@@ -5424,7 +5436,7 @@ literal|null
 condition|)
 block|{
 return|return
-name|_md
+name|md
 operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
@@ -5432,13 +5444,13 @@ return|;
 block|}
 if|else if
 condition|(
-name|_module
+name|module
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_module
+name|module
 operator|.
 name|getId
 argument_list|()
@@ -5458,7 +5470,7 @@ name|void
 name|clean
 parameter_list|()
 block|{
-name|_confsToFetch
+name|confsToFetch
 operator|.
 name|clear
 argument_list|()
@@ -5529,7 +5541,7 @@ name|from
 parameter_list|)
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|getDirectCallerFor
 argument_list|(
@@ -5547,7 +5559,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|getCallers
 argument_list|(
@@ -5561,7 +5573,7 @@ name|getAllCallersModuleIds
 parameter_list|()
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|getAllCallersModuleIds
 argument_list|()
@@ -5574,7 +5586,7 @@ name|getAllCallers
 parameter_list|()
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|getAllCallers
 argument_list|()
@@ -5601,7 +5613,7 @@ name|DependencyDescriptor
 name|dd
 parameter_list|)
 block|{
-name|_callers
+name|callers
 operator|.
 name|addCaller
 argument_list|(
@@ -5619,7 +5631,7 @@ expr_stmt|;
 name|boolean
 name|isCircular
 init|=
-name|_callers
+name|callers
 operator|.
 name|getAllCallersModuleIds
 argument_list|()
@@ -5680,7 +5692,7 @@ name|callersStack
 parameter_list|)
 block|{
 return|return
-name|_callers
+name|callers
 operator|.
 name|doesCallersExclude
 argument_list|(
@@ -5798,7 +5810,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getResolvedNodes
 argument_list|(
@@ -5820,7 +5832,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getResolvedRevisions
 argument_list|(
@@ -5838,7 +5850,7 @@ name|EvictionData
 name|evictionData
 parameter_list|)
 block|{
-name|_eviction
+name|eviction
 operator|.
 name|markEvicted
 argument_list|(
@@ -5848,7 +5860,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|keySet
 argument_list|()
@@ -5862,7 +5874,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_rootModuleConfs
+name|rootModuleConfs
 operator|.
 name|put
 argument_list|(
@@ -5938,7 +5950,7 @@ name|getAllEvictingConflictManagers
 parameter_list|()
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getAllEvictingConflictManagers
 argument_list|()
@@ -5950,7 +5962,7 @@ name|getAllEvictingNodes
 parameter_list|()
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getAllEvictingNodes
 argument_list|()
@@ -5963,7 +5975,7 @@ name|getEvictedConfs
 parameter_list|()
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getEvictedConfs
 argument_list|()
@@ -5978,7 +5990,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getEvictedData
 argument_list|(
@@ -5998,7 +6010,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getEvictedNodes
 argument_list|(
@@ -6020,7 +6032,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getEvictedRevisions
 argument_list|(
@@ -6042,7 +6054,7 @@ name|ancestor
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getEvictionDataInRoot
 argument_list|(
@@ -6058,7 +6070,7 @@ name|isCompletelyEvicted
 parameter_list|()
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|isCompletelyEvicted
 argument_list|()
@@ -6073,7 +6085,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|isEvicted
 argument_list|(
@@ -6098,7 +6110,7 @@ name|Collection
 name|resolved
 parameter_list|)
 block|{
-name|_eviction
+name|eviction
 operator|.
 name|markEvicted
 argument_list|(
@@ -6126,7 +6138,7 @@ name|Collection
 name|evicted
 parameter_list|)
 block|{
-name|_eviction
+name|eviction
 operator|.
 name|setEvictedNodes
 argument_list|(
@@ -6152,7 +6164,7 @@ name|Collection
 name|resolved
 parameter_list|)
 block|{
-name|_eviction
+name|eviction
 operator|.
 name|setResolvedNodes
 argument_list|(
@@ -6277,7 +6289,7 @@ name|mid
 parameter_list|)
 block|{
 return|return
-name|_eviction
+name|eviction
 operator|.
 name|getPendingConflicts
 argument_list|(
@@ -6301,7 +6313,7 @@ name|Collection
 name|conflicts
 parameter_list|)
 block|{
-name|_eviction
+name|eviction
 operator|.
 name|setPendingConflicts
 argument_list|(

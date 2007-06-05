@@ -70,19 +70,19 @@ name|DeliverOptions
 block|{
 specifier|private
 name|String
-name|_status
+name|status
 decl_stmt|;
 specifier|private
 name|Date
-name|_pubdate
+name|pubdate
 decl_stmt|;
 specifier|private
 name|CacheManager
-name|_cache
+name|cache
 decl_stmt|;
 specifier|private
 name|PublishingDependencyRevisionResolver
-name|_pdrResolver
+name|pdrResolver
 init|=
 operator|new
 name|DefaultPublishingDRResolver
@@ -90,24 +90,24 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|boolean
-name|_validate
+name|validate
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|boolean
-name|_resolveDynamicRevisions
+name|resolveDynamicRevisions
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|String
-name|_resolveId
+name|resolveId
 decl_stmt|;
 specifier|private
 name|String
 index|[]
-name|_confs
+name|confs
 decl_stmt|;
 comment|/** 	 * Returns an instance of DeliverOptions with options corresponding to default values 	 * taken from the given settings. 	 *  	 * @param settings The settings to use to get default option values 	 * @return a DeliverOptions instance ready to be used or customized 	 */
 specifier|public
@@ -184,31 +184,45 @@ index|[]
 name|confs
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|=
 name|status
 expr_stmt|;
-name|_pubdate
+name|this
+operator|.
+name|pubdate
 operator|=
 name|pubDate
 expr_stmt|;
-name|_cache
+name|this
+operator|.
+name|cache
 operator|=
 name|cache
 expr_stmt|;
-name|_pdrResolver
+name|this
+operator|.
+name|pdrResolver
 operator|=
 name|pdrResolver
 expr_stmt|;
-name|_validate
+name|this
+operator|.
+name|validate
 operator|=
 name|validate
 expr_stmt|;
-name|_resolveDynamicRevisions
+name|this
+operator|.
+name|resolveDynamicRevisions
 operator|=
 name|resolveDynamicRevisions
 expr_stmt|;
-name|_confs
+name|this
+operator|.
+name|confs
 operator|=
 name|confs
 expr_stmt|;
@@ -219,7 +233,7 @@ name|getCache
 parameter_list|()
 block|{
 return|return
-name|_cache
+name|cache
 return|;
 block|}
 specifier|public
@@ -230,7 +244,9 @@ name|CacheManager
 name|cache
 parameter_list|)
 block|{
-name|_cache
+name|this
+operator|.
+name|cache
 operator|=
 name|cache
 expr_stmt|;
@@ -245,7 +261,7 @@ name|getPdrResolver
 parameter_list|()
 block|{
 return|return
-name|_pdrResolver
+name|pdrResolver
 return|;
 block|}
 comment|/** 	 * Sets the pdrResolver that will be used during deliver for each  	 * dependency to get its published information.  	 * This can particularly useful 	 * when the deliver is made for a release, and when we wish to deliver each 	 * dependency which is still in integration. The PublishingDependencyRevisionResolver 	 * can then do the delivering work for the dependency and return the new (delivered) 	 * dependency info (with the delivered revision). Note that  	 * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency. 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
@@ -257,7 +273,9 @@ name|PublishingDependencyRevisionResolver
 name|pdrResolver
 parameter_list|)
 block|{
-name|_pdrResolver
+name|this
+operator|.
+name|pdrResolver
 operator|=
 name|pdrResolver
 expr_stmt|;
@@ -271,7 +289,7 @@ name|isResolveDynamicRevisions
 parameter_list|()
 block|{
 return|return
-name|_resolveDynamicRevisions
+name|resolveDynamicRevisions
 return|;
 block|}
 specifier|public
@@ -282,7 +300,9 @@ name|boolean
 name|resolveDynamicRevisions
 parameter_list|)
 block|{
-name|_resolveDynamicRevisions
+name|this
+operator|.
+name|resolveDynamicRevisions
 operator|=
 name|resolveDynamicRevisions
 expr_stmt|;
@@ -296,7 +316,7 @@ name|isValidate
 parameter_list|()
 block|{
 return|return
-name|_validate
+name|validate
 return|;
 block|}
 specifier|public
@@ -307,7 +327,9 @@ name|boolean
 name|validate
 parameter_list|)
 block|{
-name|_validate
+name|this
+operator|.
+name|validate
 operator|=
 name|validate
 expr_stmt|;
@@ -321,7 +343,7 @@ name|getPubdate
 parameter_list|()
 block|{
 return|return
-name|_pubdate
+name|pubdate
 return|;
 block|}
 specifier|public
@@ -332,7 +354,9 @@ name|Date
 name|pubdate
 parameter_list|)
 block|{
-name|_pubdate
+name|this
+operator|.
+name|pubdate
 operator|=
 name|pubdate
 expr_stmt|;
@@ -347,7 +371,7 @@ name|getStatus
 parameter_list|()
 block|{
 return|return
-name|_status
+name|status
 return|;
 block|}
 comment|/** 	 * Sets the status to which the module should be delivered, 	 * use null if the current status should be kept. 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
@@ -359,7 +383,9 @@ name|String
 name|status
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|=
 name|status
 expr_stmt|;
@@ -374,7 +400,7 @@ name|getResolveId
 parameter_list|()
 block|{
 return|return
-name|_resolveId
+name|resolveId
 return|;
 block|}
 comment|/** 	 * Sets the id of a previous resolve to use for delivering. 	 * @param resolveId the id of a previous resolve 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
@@ -386,7 +412,9 @@ name|String
 name|resolveId
 parameter_list|)
 block|{
-name|_resolveId
+name|this
+operator|.
+name|resolveId
 operator|=
 name|resolveId
 expr_stmt|;
@@ -402,7 +430,7 @@ name|getConfs
 parameter_list|()
 block|{
 return|return
-name|_confs
+name|confs
 return|;
 block|}
 comment|/** 	 * Sets the configurations to deliver. 	 * @param confs the configurations to deliver 	 * @return the instance of DeliverOptions on which the method has been called,  	 * for easy method chaining  	 */
@@ -415,7 +443,9 @@ index|[]
 name|confs
 parameter_list|)
 block|{
-name|_confs
+name|this
+operator|.
+name|confs
 operator|=
 name|confs
 expr_stmt|;
@@ -431,27 +461,27 @@ block|{
 return|return
 literal|"status="
 operator|+
-name|_status
+name|status
 operator|+
 literal|" pubdate="
 operator|+
-name|_pubdate
+name|pubdate
 operator|+
 literal|" validate="
 operator|+
-name|_validate
+name|validate
 operator|+
 literal|" resolveDynamicRevisions="
 operator|+
-name|_resolveDynamicRevisions
+name|resolveDynamicRevisions
 operator|+
 literal|" cache="
 operator|+
-name|_cache
+name|cache
 operator|+
 literal|" resolveId="
 operator|+
-name|_resolveId
+name|resolveId
 return|;
 block|}
 block|}

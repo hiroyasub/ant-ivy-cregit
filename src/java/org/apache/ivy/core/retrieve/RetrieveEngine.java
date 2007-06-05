@@ -434,7 +434,7 @@ name|RetrieveEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|public
 name|RetrieveEngine
@@ -443,7 +443,9 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -499,7 +501,7 @@ name|verbose
 argument_list|(
 literal|"\tcheckUpToDate="
 operator|+
-name|_settings
+name|settings
 operator|.
 name|isCheckUpToDate
 argument_list|()
@@ -521,7 +523,7 @@ name|substituteVariables
 argument_list|(
 name|destFilePattern
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getVariables
 argument_list|()
@@ -539,7 +541,7 @@ operator|.
 name|getDestIvyPattern
 argument_list|()
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getVariables
 argument_list|()
@@ -836,7 +838,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|_settings
+name|settings
 operator|.
 name|isCheckUpToDate
 argument_list|()
@@ -1085,7 +1087,7 @@ operator|+
 literal|" artifacts copied"
 operator|+
 operator|(
-name|_settings
+name|settings
 operator|.
 name|isCheckUpToDate
 argument_list|()
@@ -1269,7 +1271,7 @@ name|parser
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivySource
 argument_list|,
@@ -1628,7 +1630,7 @@ operator|.
 name|getDestIvyPattern
 argument_list|()
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getVariables
 argument_list|()

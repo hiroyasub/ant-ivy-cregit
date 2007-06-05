@@ -894,7 +894,7 @@ literal|"resolved-[organisation]-[module]-[revision].properties"
 decl_stmt|;
 specifier|private
 name|Map
-name|_typeDefs
+name|typeDefs
 init|=
 operator|new
 name|HashMap
@@ -902,7 +902,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_resolversMap
+name|resolversMap
 init|=
 operator|new
 name|HashMap
@@ -910,37 +910,37 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|DependencyResolver
-name|_defaultResolver
+name|defaultResolver
 decl_stmt|;
 specifier|private
 name|DependencyResolver
-name|_dictatorResolver
+name|dictatorResolver
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_defaultResolverName
+name|defaultResolverName
 decl_stmt|;
 specifier|private
 name|File
-name|_defaultCache
+name|defaultCache
 decl_stmt|;
 specifier|private
 name|String
-name|_defaultBranch
+name|defaultBranch
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|boolean
-name|_checkUpToDate
+name|checkUpToDate
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|Map
-name|_moduleSettings
+name|moduleSettings
 init|=
 operator|new
 name|LinkedHashMap
@@ -949,7 +949,7 @@ decl_stmt|;
 comment|// Map (ModuleIdMatcher -> ModuleSettings)
 specifier|private
 name|Map
-name|_conflictsManager
+name|conflictsManager
 init|=
 operator|new
 name|HashMap
@@ -958,7 +958,7 @@ decl_stmt|;
 comment|// Map (String conflictManagerName -> ConflictManager)
 specifier|private
 name|Map
-name|_latestStrategies
+name|latestStrategies
 init|=
 operator|new
 name|HashMap
@@ -967,7 +967,7 @@ decl_stmt|;
 comment|// Map (String latestStrategyName -> LatestStrategy)
 specifier|private
 name|Map
-name|_namespaces
+name|namespaces
 init|=
 operator|new
 name|HashMap
@@ -976,7 +976,7 @@ decl_stmt|;
 comment|// Map (String namespaceName -> Namespace)
 specifier|private
 name|Map
-name|_matchers
+name|matchers
 init|=
 operator|new
 name|HashMap
@@ -985,7 +985,7 @@ decl_stmt|;
 comment|// Map (String matcherName -> Matcher)
 specifier|private
 name|Map
-name|_reportOutputters
+name|reportOutputters
 init|=
 operator|new
 name|HashMap
@@ -994,7 +994,7 @@ decl_stmt|;
 comment|// Map (String outputterName -> ReportOutputter)
 specifier|private
 name|Map
-name|_versionMatchers
+name|versionMatchers
 init|=
 operator|new
 name|HashMap
@@ -1003,7 +1003,7 @@ decl_stmt|;
 comment|// Map (String matcherName -> VersionMatcher)
 specifier|private
 name|Map
-name|_circularDependencyStrategies
+name|circularDependencyStrategies
 init|=
 operator|new
 name|HashMap
@@ -1012,7 +1012,7 @@ decl_stmt|;
 comment|// Map (String name -> CircularDependencyStrategy)
 specifier|private
 name|List
-name|_triggers
+name|triggers
 init|=
 operator|new
 name|ArrayList
@@ -1021,7 +1021,7 @@ decl_stmt|;
 comment|// List (Trigger)
 specifier|private
 name|IvyVariableContainer
-name|_variableContainer
+name|variableContainer
 init|=
 operator|new
 name|IvyVariableContainerImpl
@@ -1029,61 +1029,61 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_cacheIvyPattern
+name|cacheIvyPattern
 init|=
 name|DEFAULT_CACHE_IVY_PATTERN
 decl_stmt|;
 specifier|private
 name|String
-name|_cacheResolvedIvyPattern
+name|cacheResolvedIvyPattern
 init|=
 name|DEFAULT_CACHE_RESOLVED_IVY_PATTERN
 decl_stmt|;
 specifier|private
 name|String
-name|_cacheResolvedIvyPropertiesPattern
+name|cacheResolvedIvyPropertiesPattern
 init|=
 name|DEFAULT_CACHE_RESOLVED_IVY_PROPERTIES_PATTERN
 decl_stmt|;
 specifier|private
 name|String
-name|_cacheArtifactPattern
+name|cacheArtifactPattern
 init|=
 name|DEFAULT_CACHE_ARTIFACT_PATTERN
 decl_stmt|;
 specifier|private
 name|String
-name|_cacheDataFilePattern
+name|cacheDataFilePattern
 init|=
 name|DEFAULT_CACHE_DATA_FILE_PATTERN
 decl_stmt|;
 specifier|private
 name|boolean
-name|_validate
+name|validate
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|LatestStrategy
-name|_defaultLatestStrategy
+name|defaultLatestStrategy
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|ConflictManager
-name|_defaultConflictManager
+name|defaultConflictManager
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|CircularDependencyStrategy
-name|_circularDependencyStrategy
+name|circularDependencyStrategy
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|List
-name|_listingIgnore
+name|listingIgnore
 init|=
 operator|new
 name|ArrayList
@@ -1091,21 +1091,21 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|boolean
-name|_repositoriesConfigured
+name|repositoriesConfigured
 decl_stmt|;
 specifier|private
 name|boolean
-name|_useRemoteConfig
+name|useRemoteConfig
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|File
-name|_defaultUserDir
+name|defaultUserDir
 decl_stmt|;
 specifier|private
 name|List
-name|_classpathURLs
+name|classpathURLs
 init|=
 operator|new
 name|ArrayList
@@ -1113,29 +1113,29 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|ClassLoader
-name|_classloader
+name|classloader
 decl_stmt|;
 specifier|private
 name|long
-name|_interruptTimeout
+name|interruptTimeout
 init|=
 literal|2000
 decl_stmt|;
 specifier|private
 name|Boolean
-name|_debugConflictResolution
+name|debugConflictResolution
 decl_stmt|;
 specifier|private
 name|boolean
-name|_logNotConvertedExclusionRule
+name|logNotConvertedExclusionRule
 decl_stmt|;
 specifier|private
 name|VersionMatcher
-name|_versionMatcher
+name|versionMatcher
 decl_stmt|;
 specifier|private
 name|StatusManager
-name|_statusManager
+name|statusManager
 decl_stmt|;
 specifier|public
 name|IvySettings
@@ -1514,21 +1514,21 @@ expr_stmt|;
 name|configureDefaultCircularDependencyStrategies
 argument_list|()
 expr_stmt|;
-name|_listingIgnore
+name|listingIgnore
 operator|.
 name|add
 argument_list|(
 literal|".cvsignore"
 argument_list|)
 expr_stmt|;
-name|_listingIgnore
+name|listingIgnore
 operator|.
 name|add
 argument_list|(
 literal|"CVS"
 argument_list|)
 expr_stmt|;
-name|_listingIgnore
+name|listingIgnore
 operator|.
 name|add
 argument_list|(
@@ -1565,7 +1565,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_repositoriesConfigured
+name|repositoriesConfigured
 condition|)
 block|{
 name|Properties
@@ -1582,7 +1582,7 @@ literal|false
 decl_stmt|;
 if|if
 condition|(
-name|_useRemoteConfig
+name|useRemoteConfig
 operator|&&
 name|remote
 condition|)
@@ -1735,7 +1735,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-name|_repositoriesConfigured
+name|repositoriesConfigured
 operator|=
 literal|true
 expr_stmt|;
@@ -2588,7 +2588,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|isEmpty
 argument_list|()
@@ -2600,7 +2600,7 @@ name|verbose
 argument_list|(
 literal|"\t-- "
 operator|+
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|size
 argument_list|()
@@ -2613,7 +2613,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|iterator
 argument_list|()
@@ -2645,7 +2645,7 @@ name|verbose
 argument_list|(
 literal|"\t-- "
 operator|+
-name|_resolversMap
+name|resolversMap
 operator|.
 name|size
 argument_list|()
@@ -2658,7 +2658,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_resolversMap
+name|resolversMap
 operator|.
 name|values
 argument_list|()
@@ -2693,7 +2693,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|isEmpty
 argument_list|()
@@ -2711,7 +2711,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -2743,7 +2743,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -2950,7 +2950,7 @@ name|boolean
 name|overwrite
 parameter_list|)
 block|{
-name|_variableContainer
+name|variableContainer
 operator|.
 name|setVariable
 argument_list|(
@@ -3072,7 +3072,7 @@ name|getVariables
 parameter_list|()
 block|{
 return|return
-name|_variableContainer
+name|variableContainer
 operator|.
 name|getVariables
 argument_list|()
@@ -3131,7 +3131,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_typeDefs
+name|typeDefs
 operator|.
 name|put
 argument_list|(
@@ -3189,7 +3189,7 @@ name|className
 operator|+
 literal|" in "
 operator|+
-name|_classpathURLs
+name|classpathURLs
 operator|+
 literal|" nor Ivy classloader"
 argument_list|)
@@ -3210,7 +3210,7 @@ name|className
 operator|+
 literal|" in "
 operator|+
-name|_classpathURLs
+name|classpathURLs
 operator|+
 literal|" nor Ivy classloader"
 argument_list|)
@@ -3225,20 +3225,20 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_classloader
+name|classloader
 operator|==
 literal|null
 condition|)
 block|{
 if|if
 condition|(
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|_classloader
+name|classloader
 operator|=
 name|Ivy
 operator|.
@@ -3250,7 +3250,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_classloader
+name|classloader
 operator|=
 operator|new
 name|URLClassLoader
@@ -3259,14 +3259,14 @@ operator|(
 name|URL
 index|[]
 operator|)
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|URL
 index|[
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|size
 argument_list|()
@@ -3284,7 +3284,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|_classloader
+name|classloader
 return|;
 block|}
 specifier|public
@@ -3295,14 +3295,14 @@ name|URL
 name|url
 parameter_list|)
 block|{
-name|_classpathURLs
+name|classpathURLs
 operator|.
 name|add
 argument_list|(
 name|url
 argument_list|)
 expr_stmt|;
-name|_classloader
+name|classloader
 operator|=
 literal|null
 expr_stmt|;
@@ -3313,7 +3313,7 @@ name|getTypeDefs
 parameter_list|()
 block|{
 return|return
-name|_typeDefs
+name|typeDefs
 return|;
 block|}
 specifier|public
@@ -3328,7 +3328,7 @@ return|return
 operator|(
 name|Class
 operator|)
-name|_typeDefs
+name|typeDefs
 operator|.
 name|get
 argument_list|(
@@ -3398,7 +3398,7 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-name|_resolversMap
+name|resolversMap
 operator|.
 name|put
 argument_list|(
@@ -3534,7 +3534,7 @@ name|File
 name|cacheDirectory
 parameter_list|)
 block|{
-name|_defaultCache
+name|defaultCache
 operator|=
 name|cacheDirectory
 expr_stmt|;
@@ -3552,7 +3552,7 @@ argument_list|(
 name|resolverName
 argument_list|)
 expr_stmt|;
-name|_defaultResolverName
+name|defaultResolverName
 operator|=
 name|resolverName
 expr_stmt|;
@@ -3572,7 +3572,7 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|_resolversMap
+name|resolversMap
 operator|.
 name|containsKey
 argument_list|(
@@ -3619,7 +3619,7 @@ argument_list|(
 name|resolverName
 argument_list|)
 expr_stmt|;
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|put
 argument_list|(
@@ -3650,7 +3650,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultUserDir
+name|defaultUserDir
 operator|==
 literal|null
 condition|)
@@ -3683,7 +3683,7 @@ name|verbose
 argument_list|(
 literal|"using ivy.default.ivy.user.dir variable for default ivy user dir: "
 operator|+
-name|_defaultUserDir
+name|defaultUserDir
 argument_list|)
 expr_stmt|;
 block|}
@@ -3711,13 +3711,13 @@ name|verbose
 argument_list|(
 literal|"no default ivy user dir defined: set to "
 operator|+
-name|_defaultUserDir
+name|defaultUserDir
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 return|return
-name|_defaultUserDir
+name|defaultUserDir
 return|;
 block|}
 specifier|public
@@ -3728,7 +3728,9 @@ name|File
 name|defaultUserDir
 parameter_list|)
 block|{
-name|_defaultUserDir
+name|this
+operator|.
+name|defaultUserDir
 operator|=
 name|defaultUserDir
 expr_stmt|;
@@ -3736,7 +3738,9 @@ name|setVariable
 argument_list|(
 literal|"ivy.default.ivy.user.dir"
 argument_list|,
-name|_defaultUserDir
+name|this
+operator|.
+name|defaultUserDir
 operator|.
 name|getAbsolutePath
 argument_list|()
@@ -3746,7 +3750,9 @@ name|setVariable
 argument_list|(
 literal|"ivy.home"
 argument_list|,
-name|_defaultUserDir
+name|this
+operator|.
+name|defaultUserDir
 operator|.
 name|getAbsolutePath
 argument_list|()
@@ -3760,12 +3766,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultCache
+name|defaultCache
 operator|==
 literal|null
 condition|)
 block|{
-name|_defaultCache
+name|defaultCache
 operator|=
 operator|new
 name|File
@@ -3782,12 +3788,12 @@ name|verbose
 argument_list|(
 literal|"no default cache defined: set to "
 operator|+
-name|_defaultCache
+name|defaultCache
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_defaultCache
+name|defaultCache
 return|;
 block|}
 specifier|public
@@ -3798,7 +3804,7 @@ name|DependencyResolver
 name|resolver
 parameter_list|)
 block|{
-name|_dictatorResolver
+name|dictatorResolver
 operator|=
 name|resolver
 expr_stmt|;
@@ -3813,13 +3819,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_dictatorResolver
+name|dictatorResolver
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_dictatorResolver
+name|dictatorResolver
 return|;
 block|}
 name|String
@@ -3847,13 +3853,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_dictatorResolver
+name|dictatorResolver
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_dictatorResolver
+name|dictatorResolver
 return|;
 block|}
 name|DependencyResolver
@@ -3862,7 +3868,7 @@ init|=
 operator|(
 name|DependencyResolver
 operator|)
-name|_resolversMap
+name|resolversMap
 operator|.
 name|get
 argument_list|(
@@ -3897,37 +3903,37 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_dictatorResolver
+name|dictatorResolver
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_dictatorResolver
+name|dictatorResolver
 return|;
 block|}
 if|if
 condition|(
-name|_defaultResolver
+name|defaultResolver
 operator|==
 literal|null
 condition|)
 block|{
-name|_defaultResolver
+name|defaultResolver
 operator|=
 operator|(
 name|DependencyResolver
 operator|)
-name|_resolversMap
+name|resolversMap
 operator|.
 name|get
 argument_list|(
-name|_defaultResolverName
+name|defaultResolverName
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_defaultResolver
+name|defaultResolver
 return|;
 block|}
 specifier|public
@@ -3943,7 +3949,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -3985,7 +3991,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -4012,7 +4018,7 @@ block|}
 block|}
 block|}
 return|return
-name|_defaultResolverName
+name|defaultResolverName
 return|;
 block|}
 specifier|public
@@ -4028,7 +4034,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -4070,7 +4076,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -4107,7 +4113,7 @@ name|getDefaultBranch
 parameter_list|()
 block|{
 return|return
-name|_defaultBranch
+name|defaultBranch
 return|;
 block|}
 specifier|public
@@ -4118,7 +4124,9 @@ name|String
 name|defaultBranch
 parameter_list|)
 block|{
-name|_defaultBranch
+name|this
+operator|.
+name|defaultBranch
 operator|=
 name|defaultBranch
 expr_stmt|;
@@ -4136,7 +4144,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|keySet
 argument_list|()
@@ -4178,7 +4186,7 @@ init|=
 operator|(
 name|ModuleSettings
 operator|)
-name|_moduleSettings
+name|moduleSettings
 operator|.
 name|get
 argument_list|(
@@ -4283,7 +4291,7 @@ return|return
 operator|(
 name|ConflictManager
 operator|)
-name|_conflictsManager
+name|conflictsManager
 operator|.
 name|get
 argument_list|(
@@ -4307,7 +4315,7 @@ argument_list|(
 name|cm
 argument_list|)
 expr_stmt|;
-name|_conflictsManager
+name|conflictsManager
 operator|.
 name|put
 argument_list|(
@@ -4363,7 +4371,7 @@ return|return
 operator|(
 name|LatestStrategy
 operator|)
-name|_latestStrategies
+name|latestStrategies
 operator|.
 name|get
 argument_list|(
@@ -4387,7 +4395,7 @@ argument_list|(
 name|latest
 argument_list|)
 expr_stmt|;
-name|_latestStrategies
+name|latestStrategies
 operator|.
 name|put
 argument_list|(
@@ -4438,7 +4446,7 @@ return|return
 operator|(
 name|Namespace
 operator|)
-name|_namespaces
+name|namespaces
 operator|.
 name|get
 argument_list|(
@@ -4470,7 +4478,7 @@ argument_list|(
 name|ns
 argument_list|)
 expr_stmt|;
-name|_namespaces
+name|namespaces
 operator|.
 name|put
 argument_list|(
@@ -4509,7 +4517,7 @@ return|return
 operator|(
 name|PatternMatcher
 operator|)
-name|_matchers
+name|matchers
 operator|.
 name|get
 argument_list|(
@@ -4530,7 +4538,7 @@ argument_list|(
 name|m
 argument_list|)
 expr_stmt|;
-name|_matchers
+name|matchers
 operator|.
 name|put
 argument_list|(
@@ -4569,7 +4577,7 @@ return|return
 operator|(
 name|ReportOutputter
 operator|)
-name|_reportOutputters
+name|reportOutputters
 operator|.
 name|get
 argument_list|(
@@ -4590,7 +4598,7 @@ argument_list|(
 name|outputter
 argument_list|)
 expr_stmt|;
-name|_reportOutputters
+name|reportOutputters
 operator|.
 name|put
 argument_list|(
@@ -4614,7 +4622,7 @@ operator|(
 name|ReportOutputter
 index|[]
 operator|)
-name|_reportOutputters
+name|reportOutputters
 operator|.
 name|values
 argument_list|()
@@ -4624,7 +4632,7 @@ argument_list|(
 operator|new
 name|ReportOutputter
 index|[
-name|_reportOutputters
+name|reportOutputters
 operator|.
 name|size
 argument_list|()
@@ -4658,7 +4666,7 @@ return|return
 operator|(
 name|VersionMatcher
 operator|)
-name|_versionMatchers
+name|versionMatchers
 operator|.
 name|get
 argument_list|(
@@ -4679,7 +4687,7 @@ argument_list|(
 name|vmatcher
 argument_list|)
 expr_stmt|;
-name|_versionMatchers
+name|versionMatchers
 operator|.
 name|put
 argument_list|(
@@ -4693,12 +4701,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_versionMatcher
+name|versionMatcher
 operator|==
 literal|null
 condition|)
 block|{
-name|_versionMatcher
+name|versionMatcher
 operator|=
 operator|new
 name|ChainVersionMatcher
@@ -4714,7 +4722,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_versionMatcher
+name|versionMatcher
 operator|instanceof
 name|ChainVersionMatcher
 condition|)
@@ -4725,7 +4733,7 @@ init|=
 operator|(
 name|ChainVersionMatcher
 operator|)
-name|_versionMatcher
+name|versionMatcher
 decl_stmt|;
 name|chain
 operator|.
@@ -4747,7 +4755,7 @@ operator|(
 name|VersionMatcher
 index|[]
 operator|)
-name|_versionMatchers
+name|versionMatchers
 operator|.
 name|values
 argument_list|()
@@ -4757,7 +4765,7 @@ argument_list|(
 operator|new
 name|VersionMatcher
 index|[
-name|_versionMatchers
+name|versionMatchers
 operator|.
 name|size
 argument_list|()
@@ -4772,7 +4780,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_versionMatcher
+name|versionMatcher
 operator|==
 literal|null
 condition|)
@@ -4782,7 +4790,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_versionMatcher
+name|versionMatcher
 return|;
 block|}
 specifier|public
@@ -4819,12 +4827,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_circularDependencyStrategy
+name|circularDependencyStrategy
 operator|==
 literal|null
 condition|)
 block|{
-name|_circularDependencyStrategy
+name|circularDependencyStrategy
 operator|=
 name|getCircularDependencyStrategy
 argument_list|(
@@ -4833,7 +4841,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_circularDependencyStrategy
+name|circularDependencyStrategy
 return|;
 block|}
 specifier|public
@@ -4863,7 +4871,7 @@ return|return
 operator|(
 name|CircularDependencyStrategy
 operator|)
-name|_circularDependencyStrategies
+name|circularDependencyStrategies
 operator|.
 name|get
 argument_list|(
@@ -4879,7 +4887,7 @@ name|CircularDependencyStrategy
 name|strategy
 parameter_list|)
 block|{
-name|_circularDependencyStrategy
+name|circularDependencyStrategy
 operator|=
 name|strategy
 expr_stmt|;
@@ -4906,7 +4914,7 @@ name|CircularDependencyStrategy
 name|strategy
 parameter_list|)
 block|{
-name|_circularDependencyStrategies
+name|circularDependencyStrategies
 operator|.
 name|put
 argument_list|(
@@ -4956,12 +4964,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_statusManager
+name|statusManager
 operator|==
 literal|null
 condition|)
 block|{
-name|_statusManager
+name|statusManager
 operator|=
 name|StatusManager
 operator|.
@@ -4970,7 +4978,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_statusManager
+name|statusManager
 return|;
 block|}
 specifier|public
@@ -4981,7 +4989,9 @@ name|StatusManager
 name|statusManager
 parameter_list|)
 block|{
-name|_statusManager
+name|this
+operator|.
+name|statusManager
 operator|=
 name|statusManager
 expr_stmt|;
@@ -4996,7 +5006,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|_listingIgnore
+name|listingIgnore
 operator|.
 name|contains
 argument_list|(
@@ -5017,7 +5027,7 @@ name|names
 operator|.
 name|removeAll
 argument_list|(
-name|_listingIgnore
+name|listingIgnore
 argument_list|)
 expr_stmt|;
 block|}
@@ -5027,7 +5037,7 @@ name|isCheckUpToDate
 parameter_list|()
 block|{
 return|return
-name|_checkUpToDate
+name|checkUpToDate
 return|;
 block|}
 specifier|public
@@ -5038,7 +5048,9 @@ name|boolean
 name|checkUpToDate
 parameter_list|)
 block|{
-name|_checkUpToDate
+name|this
+operator|.
+name|checkUpToDate
 operator|=
 name|checkUpToDate
 expr_stmt|;
@@ -5049,7 +5061,7 @@ name|getCacheArtifactPattern
 parameter_list|()
 block|{
 return|return
-name|_cacheArtifactPattern
+name|cacheArtifactPattern
 return|;
 block|}
 specifier|public
@@ -5060,7 +5072,9 @@ name|String
 name|cacheArtifactPattern
 parameter_list|)
 block|{
-name|_cacheArtifactPattern
+name|this
+operator|.
+name|cacheArtifactPattern
 operator|=
 name|cacheArtifactPattern
 expr_stmt|;
@@ -5071,7 +5085,7 @@ name|getCacheIvyPattern
 parameter_list|()
 block|{
 return|return
-name|_cacheIvyPattern
+name|cacheIvyPattern
 return|;
 block|}
 specifier|public
@@ -5082,7 +5096,9 @@ name|String
 name|cacheIvyPattern
 parameter_list|)
 block|{
-name|_cacheIvyPattern
+name|this
+operator|.
+name|cacheIvyPattern
 operator|=
 name|cacheIvyPattern
 expr_stmt|;
@@ -5093,7 +5109,7 @@ name|getCacheDataFilePattern
 parameter_list|()
 block|{
 return|return
-name|_cacheDataFilePattern
+name|cacheDataFilePattern
 return|;
 block|}
 specifier|public
@@ -5102,7 +5118,7 @@ name|doValidate
 parameter_list|()
 block|{
 return|return
-name|_validate
+name|validate
 return|;
 block|}
 specifier|public
@@ -5113,7 +5129,9 @@ name|boolean
 name|validate
 parameter_list|)
 block|{
-name|_validate
+name|this
+operator|.
+name|validate
 operator|=
 name|validate
 expr_stmt|;
@@ -5127,7 +5145,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|_variableContainer
+name|variableContainer
 operator|.
 name|getVariable
 argument_list|(
@@ -5142,12 +5160,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultConflictManager
+name|defaultConflictManager
 operator|==
 literal|null
 condition|)
 block|{
-name|_defaultConflictManager
+name|defaultConflictManager
 operator|=
 operator|new
 name|LatestConflictManager
@@ -5158,7 +5176,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_defaultConflictManager
+name|defaultConflictManager
 return|;
 block|}
 specifier|public
@@ -5169,7 +5187,9 @@ name|ConflictManager
 name|defaultConflictManager
 parameter_list|)
 block|{
-name|_defaultConflictManager
+name|this
+operator|.
+name|defaultConflictManager
 operator|=
 name|defaultConflictManager
 expr_stmt|;
@@ -5181,12 +5201,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultLatestStrategy
+name|defaultLatestStrategy
 operator|==
 literal|null
 condition|)
 block|{
-name|_defaultLatestStrategy
+name|defaultLatestStrategy
 operator|=
 operator|new
 name|LatestRevisionStrategy
@@ -5194,7 +5214,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_defaultLatestStrategy
+name|defaultLatestStrategy
 return|;
 block|}
 specifier|public
@@ -5205,7 +5225,9 @@ name|LatestStrategy
 name|defaultLatestStrategy
 parameter_list|)
 block|{
-name|_defaultLatestStrategy
+name|this
+operator|.
+name|defaultLatestStrategy
 operator|=
 name|defaultLatestStrategy
 expr_stmt|;
@@ -5223,7 +5245,7 @@ argument_list|(
 name|trigger
 argument_list|)
 expr_stmt|;
-name|_triggers
+name|triggers
 operator|.
 name|add
 argument_list|(
@@ -5237,7 +5259,7 @@ name|getTriggers
 parameter_list|()
 block|{
 return|return
-name|_triggers
+name|triggers
 return|;
 block|}
 specifier|public
@@ -5260,7 +5282,7 @@ name|isUseRemoteConfig
 parameter_list|()
 block|{
 return|return
-name|_useRemoteConfig
+name|useRemoteConfig
 return|;
 block|}
 specifier|public
@@ -5271,7 +5293,9 @@ name|boolean
 name|useRemoteConfig
 parameter_list|)
 block|{
-name|_useRemoteConfig
+name|this
+operator|.
+name|useRemoteConfig
 operator|=
 name|useRemoteConfig
 expr_stmt|;
@@ -5370,7 +5394,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_debugConflictResolution
+name|debugConflictResolution
 operator|==
 literal|null
 condition|)
@@ -5383,7 +5407,7 @@ argument_list|(
 literal|"ivy.log.conflict.resolution"
 argument_list|)
 decl_stmt|;
-name|_debugConflictResolution
+name|debugConflictResolution
 operator|=
 name|Boolean
 operator|.
@@ -5406,7 +5430,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_debugConflictResolution
+name|debugConflictResolution
 operator|.
 name|booleanValue
 argument_list|()
@@ -5418,7 +5442,7 @@ name|logNotConvertedExclusionRule
 parameter_list|()
 block|{
 return|return
-name|_logNotConvertedExclusionRule
+name|logNotConvertedExclusionRule
 return|;
 block|}
 specifier|public
@@ -5429,7 +5453,9 @@ name|boolean
 name|logNotConvertedExclusionRule
 parameter_list|)
 block|{
-name|_logNotConvertedExclusionRule
+name|this
+operator|.
+name|logNotConvertedExclusionRule
 operator|=
 name|logNotConvertedExclusionRule
 expr_stmt|;
@@ -5577,7 +5603,7 @@ name|getCacheResolvedIvyPattern
 parameter_list|()
 block|{
 return|return
-name|_cacheResolvedIvyPattern
+name|cacheResolvedIvyPattern
 return|;
 block|}
 specifier|public
@@ -5586,7 +5612,7 @@ name|getCacheResolvedIvyPropertiesPattern
 parameter_list|()
 block|{
 return|return
-name|_cacheResolvedIvyPropertiesPattern
+name|cacheResolvedIvyPropertiesPattern
 return|;
 block|}
 specifier|public
@@ -5595,7 +5621,7 @@ name|getInterruptTimeout
 parameter_list|()
 block|{
 return|return
-name|_interruptTimeout
+name|interruptTimeout
 return|;
 block|}
 specifier|public
@@ -5604,7 +5630,7 @@ name|getResolvers
 parameter_list|()
 block|{
 return|return
-name|_resolversMap
+name|resolversMap
 operator|.
 name|values
 argument_list|()
@@ -5616,7 +5642,7 @@ name|getResolverNames
 parameter_list|()
 block|{
 return|return
-name|_resolversMap
+name|resolversMap
 operator|.
 name|keySet
 argument_list|()
@@ -5628,7 +5654,7 @@ name|getMatcherNames
 parameter_list|()
 block|{
 return|return
-name|_matchers
+name|matchers
 operator|.
 name|keySet
 argument_list|()
@@ -5640,7 +5666,7 @@ name|getVariableContainer
 parameter_list|()
 block|{
 return|return
-name|_variableContainer
+name|variableContainer
 return|;
 block|}
 comment|/**  	 * Use a different variable container. 	 * @param variables 	 */
@@ -5652,7 +5678,7 @@ name|IvyVariableContainer
 name|variables
 parameter_list|)
 block|{
-name|_variableContainer
+name|variableContainer
 operator|=
 name|variables
 expr_stmt|;

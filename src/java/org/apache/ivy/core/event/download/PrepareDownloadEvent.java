@@ -71,7 +71,7 @@ decl_stmt|;
 specifier|private
 name|Artifact
 index|[]
-name|_artifacts
+name|artifacts
 decl_stmt|;
 specifier|public
 name|PrepareDownloadEvent
@@ -86,7 +86,9 @@ argument_list|(
 name|NAME
 argument_list|)
 expr_stmt|;
-name|_artifacts
+name|this
+operator|.
+name|artifacts
 operator|=
 name|artifacts
 expr_stmt|;
@@ -98,7 +100,7 @@ name|getArtifacts
 parameter_list|()
 block|{
 return|return
-name|_artifacts
+name|artifacts
 return|;
 block|}
 block|}

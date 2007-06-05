@@ -42,11 +42,11 @@ name|IvyListener
 block|{
 specifier|private
 name|IvyListener
-name|_listener
+name|listener
 decl_stmt|;
 specifier|private
 name|Filter
-name|_filter
+name|filter
 decl_stmt|;
 specifier|public
 name|FilteredIvyListener
@@ -58,11 +58,15 @@ name|Filter
 name|filter
 parameter_list|)
 block|{
-name|_listener
+name|this
+operator|.
+name|listener
 operator|=
 name|listener
 expr_stmt|;
-name|_filter
+name|this
+operator|.
+name|filter
 operator|=
 name|filter
 expr_stmt|;
@@ -73,7 +77,7 @@ name|getIvyListener
 parameter_list|()
 block|{
 return|return
-name|_listener
+name|listener
 return|;
 block|}
 specifier|public
@@ -82,7 +86,7 @@ name|getFilter
 parameter_list|()
 block|{
 return|return
-name|_filter
+name|filter
 return|;
 block|}
 specifier|public
@@ -95,7 +99,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_filter
+name|filter
 operator|.
 name|accept
 argument_list|(
@@ -103,7 +107,7 @@ name|event
 argument_list|)
 condition|)
 block|{
-name|_listener
+name|listener
 operator|.
 name|progress
 argument_list|(

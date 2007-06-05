@@ -330,7 +330,7 @@ name|DeliverEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|public
 name|DeliverEngine
@@ -339,7 +339,9 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -526,7 +528,7 @@ argument_list|()
 decl_stmt|;
 name|destIvyPattern
 operator|=
-name|_settings
+name|settings
 operator|.
 name|substitute
 argument_list|(
@@ -600,7 +602,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivyFileURL
 argument_list|,
@@ -1065,7 +1067,7 @@ name|XmlModuleDescriptorUpdater
 operator|.
 name|update
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivyFileURL
 argument_list|,

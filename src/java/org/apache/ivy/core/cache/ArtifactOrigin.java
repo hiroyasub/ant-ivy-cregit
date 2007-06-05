@@ -28,11 +28,11 @@ name|ArtifactOrigin
 block|{
 specifier|private
 name|boolean
-name|_isLocal
+name|isLocal
 decl_stmt|;
 specifier|private
 name|String
-name|_location
+name|location
 decl_stmt|;
 comment|/**      *  Create a new instance      *       * @param isLocal<code>boolean</code> value indicating if the resource is local (on the filesystem).      * @param location the location of the resource (normally a url)      */
 specifier|public
@@ -45,11 +45,15 @@ name|String
 name|location
 parameter_list|)
 block|{
-name|_isLocal
+name|this
+operator|.
+name|isLocal
 operator|=
 name|isLocal
 expr_stmt|;
-name|_location
+name|this
+operator|.
+name|location
 operator|=
 name|location
 expr_stmt|;
@@ -61,7 +65,7 @@ name|isLocal
 parameter_list|()
 block|{
 return|return
-name|_isLocal
+name|isLocal
 return|;
 block|}
 comment|/**      * Return the location of the resource (normally a url)      *      * @return the location of the resource      */
@@ -71,7 +75,7 @@ name|getLocation
 parameter_list|()
 block|{
 return|return
-name|_location
+name|location
 return|;
 block|}
 specifier|public
@@ -80,13 +84,13 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"ArtifactOrigin { _isLocal="
+literal|"ArtifactOrigin { isLocal="
 operator|+
-name|_isLocal
+name|isLocal
 operator|+
-literal|", _location="
+literal|", location="
 operator|+
-name|_location
+name|location
 operator|+
 literal|"}"
 return|;
@@ -135,11 +139,11 @@ name|o
 decl_stmt|;
 if|if
 condition|(
-name|_isLocal
+name|isLocal
 operator|!=
 name|that
 operator|.
-name|_isLocal
+name|isLocal
 condition|)
 return|return
 literal|false
@@ -147,13 +151,13 @@ return|;
 if|if
 condition|(
 operator|!
-name|_location
+name|location
 operator|.
 name|equals
 argument_list|(
 name|that
 operator|.
-name|_location
+name|location
 argument_list|)
 condition|)
 return|return
@@ -174,7 +178,7 @@ decl_stmt|;
 name|result
 operator|=
 operator|(
-name|_isLocal
+name|isLocal
 condition|?
 literal|1
 else|:
@@ -187,7 +191,7 @@ literal|31
 operator|*
 name|result
 operator|+
-name|_location
+name|location
 operator|.
 name|hashCode
 argument_list|()

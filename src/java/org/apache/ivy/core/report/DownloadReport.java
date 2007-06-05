@@ -96,7 +96,7 @@ name|DownloadReport
 block|{
 specifier|private
 name|Map
-name|_artifacts
+name|artifacts
 init|=
 operator|new
 name|HashMap
@@ -110,7 +110,7 @@ name|ArtifactDownloadReport
 name|adr
 parameter_list|)
 block|{
-name|_artifacts
+name|artifacts
 operator|.
 name|put
 argument_list|(
@@ -134,7 +134,7 @@ operator|(
 name|ArtifactDownloadReport
 index|[]
 operator|)
-name|_artifacts
+name|artifacts
 operator|.
 name|values
 argument_list|()
@@ -144,7 +144,7 @@ argument_list|(
 operator|new
 name|ArtifactDownloadReport
 index|[
-name|_artifacts
+name|artifacts
 operator|.
 name|size
 argument_list|()
@@ -167,7 +167,7 @@ init|=
 operator|new
 name|ArrayList
 argument_list|(
-name|_artifacts
+name|artifacts
 operator|.
 name|size
 argument_list|()
@@ -178,7 +178,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_artifacts
+name|artifacts
 operator|.
 name|values
 argument_list|()
@@ -255,7 +255,7 @@ return|return
 operator|(
 name|ArtifactDownloadReport
 operator|)
-name|_artifacts
+name|artifacts
 operator|.
 name|get
 argument_list|(

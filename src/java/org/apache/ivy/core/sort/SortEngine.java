@@ -150,7 +150,7 @@ name|SortEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|public
 name|SortEngine
@@ -159,7 +159,9 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -428,14 +430,14 @@ name|ModuleDescriptorSorter
 argument_list|(
 name|moduleDescriptors
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getVersionMatcher
 argument_list|()
 argument_list|,
 name|nonMatchingVersionReporter
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getCircularDependencyStrategy
 argument_list|()

@@ -190,7 +190,7 @@ return|;
 block|}
 specifier|private
 name|List
-name|_status
+name|status
 init|=
 operator|new
 name|ArrayList
@@ -198,20 +198,20 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_defaultStatus
+name|defaultStatus
 decl_stmt|;
 comment|// for easier querying only
 specifier|private
 name|Map
-name|_statusPriorityMap
+name|statusPriorityMap
 decl_stmt|;
 specifier|private
 name|Map
-name|_statusIntegrationMap
+name|statusIntegrationMap
 decl_stmt|;
 specifier|private
 name|String
-name|_deliveryStatusListString
+name|deliveryStatusListString
 decl_stmt|;
 specifier|public
 name|StatusManager
@@ -224,7 +224,9 @@ name|String
 name|defaultStatus
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|.
 name|addAll
 argument_list|(
@@ -236,7 +238,9 @@ name|status
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_defaultStatus
+name|this
+operator|.
+name|defaultStatus
 operator|=
 name|defaultStatus
 expr_stmt|;
@@ -257,7 +261,9 @@ name|Status
 name|status
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|.
 name|add
 argument_list|(
@@ -273,7 +279,9 @@ name|String
 name|defaultStatus
 parameter_list|)
 block|{
-name|_defaultStatus
+name|this
+operator|.
+name|defaultStatus
 operator|=
 name|defaultStatus
 expr_stmt|;
@@ -284,7 +292,7 @@ name|getStatuses
 parameter_list|()
 block|{
 return|return
-name|_status
+name|status
 return|;
 block|}
 specifier|private
@@ -294,7 +302,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_status
+name|status
 operator|.
 name|isEmpty
 argument_list|()
@@ -308,7 +316,7 @@ literal|"badly configured statuses: no status found"
 argument_list|)
 throw|;
 block|}
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|=
 operator|new
 name|HashMap
@@ -319,7 +327,7 @@ control|(
 name|ListIterator
 name|iter
 init|=
-name|_status
+name|status
 operator|.
 name|listIterator
 argument_list|()
@@ -342,7 +350,7 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|.
 name|put
 argument_list|(
@@ -362,7 +370,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|_statusIntegrationMap
+name|statusIntegrationMap
 operator|=
 operator|new
 name|HashMap
@@ -373,7 +381,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_status
+name|status
 operator|.
 name|iterator
 argument_list|()
@@ -396,7 +404,7 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|_statusIntegrationMap
+name|statusIntegrationMap
 operator|.
 name|put
 argument_list|(
@@ -428,7 +436,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|==
 literal|null
 condition|)
@@ -438,7 +446,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|.
 name|containsKey
 argument_list|(
@@ -456,7 +464,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|==
 literal|null
 condition|)
@@ -471,7 +479,7 @@ init|=
 operator|(
 name|Integer
 operator|)
-name|_statusPriorityMap
+name|statusPriorityMap
 operator|.
 name|get
 argument_list|(
@@ -519,7 +527,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_statusIntegrationMap
+name|statusIntegrationMap
 operator|==
 literal|null
 condition|)
@@ -534,7 +542,7 @@ init|=
 operator|(
 name|Boolean
 operator|)
-name|_statusIntegrationMap
+name|statusIntegrationMap
 operator|.
 name|get
 argument_list|(
@@ -577,7 +585,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_deliveryStatusListString
+name|deliveryStatusListString
 operator|==
 literal|null
 condition|)
@@ -594,7 +602,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_status
+name|status
 operator|.
 name|iterator
 argument_list|()
@@ -666,7 +674,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|_deliveryStatusListString
+name|deliveryStatusListString
 operator|=
 name|ret
 operator|.
@@ -675,7 +683,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_deliveryStatusListString
+name|deliveryStatusListString
 return|;
 block|}
 specifier|public
@@ -685,14 +693,14 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultStatus
+name|defaultStatus
 operator|==
 literal|null
 condition|)
 block|{
 if|if
 condition|(
-name|_status
+name|status
 operator|.
 name|isEmpty
 argument_list|()
@@ -706,17 +714,17 @@ literal|"badly configured statuses: no status found"
 argument_list|)
 throw|;
 block|}
-name|_defaultStatus
+name|defaultStatus
 operator|=
 operator|(
 operator|(
 name|Status
 operator|)
-name|_status
+name|status
 operator|.
 name|get
 argument_list|(
-name|_status
+name|status
 operator|.
 name|size
 argument_list|()
@@ -730,7 +738,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_defaultStatus
+name|defaultStatus
 return|;
 block|}
 block|}

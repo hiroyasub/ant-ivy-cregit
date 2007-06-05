@@ -40,11 +40,11 @@ name|ModuleEntry
 block|{
 specifier|private
 name|OrganisationEntry
-name|_organisationEntry
+name|organisationEntry
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|public
 name|ModuleEntry
@@ -56,11 +56,11 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_organisationEntry
+name|organisationEntry
 operator|=
 name|org
 expr_stmt|;
-name|_module
+name|module
 operator|=
 name|name
 expr_stmt|;
@@ -71,7 +71,7 @@ name|getOrganisation
 parameter_list|()
 block|{
 return|return
-name|_organisationEntry
+name|organisationEntry
 operator|.
 name|getOrganisation
 argument_list|()
@@ -83,7 +83,7 @@ name|getResolver
 parameter_list|()
 block|{
 return|return
-name|_organisationEntry
+name|organisationEntry
 operator|.
 name|getResolver
 argument_list|()
@@ -95,7 +95,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -104,7 +104,7 @@ name|getOrganisationEntry
 parameter_list|()
 block|{
 return|return
-name|_organisationEntry
+name|organisationEntry
 return|;
 block|}
 block|}

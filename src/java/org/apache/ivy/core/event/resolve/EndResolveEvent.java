@@ -70,7 +70,7 @@ literal|"post-resolve"
 decl_stmt|;
 specifier|private
 name|ResolveReport
-name|_report
+name|report
 decl_stmt|;
 specifier|public
 name|EndResolveEvent
@@ -95,7 +95,9 @@ argument_list|,
 name|confs
 argument_list|)
 expr_stmt|;
-name|_report
+name|this
+operator|.
+name|report
 operator|=
 name|report
 expr_stmt|;
@@ -106,7 +108,7 @@ name|getReport
 parameter_list|()
 block|{
 return|return
-name|_report
+name|report
 return|;
 block|}
 block|}

@@ -28,7 +28,7 @@ name|IvyPattern
 block|{
 specifier|private
 name|String
-name|_pattern
+name|pattern
 decl_stmt|;
 specifier|public
 name|String
@@ -36,7 +36,7 @@ name|getPattern
 parameter_list|()
 block|{
 return|return
-name|_pattern
+name|pattern
 return|;
 block|}
 specifier|public
@@ -47,7 +47,9 @@ name|String
 name|pattern
 parameter_list|)
 block|{
-name|_pattern
+name|this
+operator|.
+name|pattern
 operator|=
 name|pattern
 expr_stmt|;

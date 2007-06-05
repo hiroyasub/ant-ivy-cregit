@@ -323,19 +323,19 @@ return|;
 block|}
 specifier|private
 name|ModuleId
-name|_moduleId
+name|moduleId
 decl_stmt|;
 specifier|private
 name|String
-name|_branch
+name|branch
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|private
 name|int
-name|_hash
+name|hash
 decl_stmt|;
 specifier|public
 name|ModuleRevisionId
@@ -432,11 +432,15 @@ argument_list|,
 name|extraAttributes
 argument_list|)
 expr_stmt|;
-name|_moduleId
+name|this
+operator|.
+name|moduleId
 operator|=
 name|moduleId
 expr_stmt|;
-name|_branch
+name|this
+operator|.
+name|branch
 operator|=
 name|branch
 operator|==
@@ -457,7 +461,9 @@ argument_list|)
 else|:
 name|branch
 expr_stmt|;
-name|_revision
+name|this
+operator|.
+name|revision
 operator|=
 name|revision
 operator|==
@@ -470,7 +476,7 @@ argument_list|()
 else|:
 name|revision
 expr_stmt|;
-name|_hash
+name|hash
 operator|=
 name|_hashCode
 argument_list|()
@@ -482,7 +488,9 @@ name|IvyPatternHelper
 operator|.
 name|ORGANISATION_KEY
 argument_list|,
-name|_moduleId
+name|this
+operator|.
+name|moduleId
 operator|.
 name|getOrganisation
 argument_list|()
@@ -494,7 +502,9 @@ name|IvyPatternHelper
 operator|.
 name|MODULE_KEY
 argument_list|,
-name|_moduleId
+name|this
+operator|.
+name|moduleId
 operator|.
 name|getName
 argument_list|()
@@ -506,7 +516,9 @@ name|IvyPatternHelper
 operator|.
 name|BRANCH_KEY
 argument_list|,
-name|_branch
+name|this
+operator|.
+name|branch
 argument_list|)
 expr_stmt|;
 name|setStandardAttribute
@@ -515,7 +527,9 @@ name|IvyPatternHelper
 operator|.
 name|REVISION_KEY
 argument_list|,
-name|_revision
+name|this
+operator|.
+name|revision
 argument_list|)
 expr_stmt|;
 block|}
@@ -525,7 +539,7 @@ name|getModuleId
 parameter_list|()
 block|{
 return|return
-name|_moduleId
+name|moduleId
 return|;
 block|}
 specifier|public
@@ -560,7 +574,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -659,7 +673,7 @@ name|hashCode
 parameter_list|()
 block|{
 return|return
-name|_hash
+name|hash
 return|;
 block|}
 specifier|public
@@ -741,24 +755,24 @@ block|{
 return|return
 literal|"[ "
 operator|+
-name|_moduleId
+name|moduleId
 operator|.
 name|getOrganisation
 argument_list|()
 operator|+
 literal|" | "
 operator|+
-name|_moduleId
+name|moduleId
 operator|.
 name|getName
 argument_list|()
 operator|+
 operator|(
-name|_branch
+name|branch
 operator|==
 literal|null
 operator|||
-name|_branch
+name|branch
 operator|.
 name|length
 argument_list|()
@@ -769,19 +783,19 @@ literal|""
 else|:
 literal|" | "
 operator|+
-name|_branch
+name|branch
 operator|)
 operator|+
 literal|" | "
 operator|+
 operator|(
-name|_revision
+name|revision
 operator|==
 literal|null
 condition|?
 literal|"NONE"
 else|:
-name|_revision
+name|revision
 operator|)
 operator|+
 literal|" ]"
@@ -1230,7 +1244,7 @@ name|getBranch
 parameter_list|()
 block|{
 return|return
-name|_branch
+name|branch
 return|;
 block|}
 block|}

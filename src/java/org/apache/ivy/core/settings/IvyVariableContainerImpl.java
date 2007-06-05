@@ -74,7 +74,7 @@ name|IvyVariableContainer
 block|{
 specifier|private
 name|HashMap
-name|_variables
+name|variables
 init|=
 operator|new
 name|HashMap
@@ -100,7 +100,7 @@ condition|(
 name|overwrite
 operator|||
 operator|!
-name|_variables
+name|variables
 operator|.
 name|containsKey
 argument_list|(
@@ -123,7 +123,7 @@ operator|+
 literal|"'"
 argument_list|)
 expr_stmt|;
-name|_variables
+name|variables
 operator|.
 name|put
 argument_list|(
@@ -182,7 +182,7 @@ name|getVariables
 parameter_list|()
 block|{
 return|return
-name|_variables
+name|variables
 return|;
 block|}
 comment|/* (non-Javadoc) 	 * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariable(java.lang.String) 	 */
@@ -200,7 +200,7 @@ init|=
 operator|(
 name|String
 operator|)
-name|_variables
+name|variables
 operator|.
 name|get
 argument_list|(
@@ -262,12 +262,12 @@ throw|;
 block|}
 name|clone
 operator|.
-name|_variables
+name|variables
 operator|=
 operator|(
 name|HashMap
 operator|)
-name|_variables
+name|variables
 operator|.
 name|clone
 argument_list|()

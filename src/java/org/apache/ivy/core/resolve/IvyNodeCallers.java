@@ -199,15 +199,15 @@ name|Caller
 block|{
 specifier|private
 name|ModuleDescriptor
-name|_md
+name|md
 decl_stmt|;
 specifier|private
 name|ModuleRevisionId
-name|_mrid
+name|mrid
 decl_stmt|;
 specifier|private
 name|Map
-name|_confs
+name|confs
 init|=
 operator|new
 name|HashMap
@@ -216,11 +216,11 @@ decl_stmt|;
 comment|// Map (String callerConf -> String[] dependencyConfs)
 specifier|private
 name|DependencyDescriptor
-name|_dd
+name|dd
 decl_stmt|;
 specifier|private
 name|boolean
-name|_callerCanExclude
+name|callerCanExclude
 decl_stmt|;
 specifier|public
 name|Caller
@@ -238,19 +238,27 @@ name|boolean
 name|callerCanExclude
 parameter_list|)
 block|{
-name|_md
+name|this
+operator|.
+name|md
 operator|=
 name|md
 expr_stmt|;
-name|_mrid
+name|this
+operator|.
+name|mrid
 operator|=
 name|mrid
 expr_stmt|;
-name|_dd
+name|this
+operator|.
+name|dd
 operator|=
 name|dd
 expr_stmt|;
-name|_callerCanExclude
+name|this
+operator|.
+name|callerCanExclude
 operator|=
 name|callerCanExclude
 expr_stmt|;
@@ -275,7 +283,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_confs
+name|confs
 operator|.
 name|get
 argument_list|(
@@ -315,7 +323,7 @@ name|dependencyConfs
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_confs
+name|confs
 operator|.
 name|put
 argument_list|(
@@ -343,7 +351,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_confs
+name|confs
 operator|.
 name|put
 argument_list|(
@@ -365,7 +373,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_confs
+name|confs
 operator|.
 name|keySet
 argument_list|()
@@ -375,7 +383,7 @@ argument_list|(
 operator|new
 name|String
 index|[
-name|_confs
+name|confs
 operator|.
 name|keySet
 argument_list|()
@@ -392,7 +400,7 @@ name|getModuleRevisionId
 parameter_list|()
 block|{
 return|return
-name|_mrid
+name|mrid
 return|;
 block|}
 specifier|public
@@ -428,20 +436,20 @@ decl_stmt|;
 return|return
 name|other
 operator|.
-name|_confs
+name|confs
 operator|.
 name|equals
 argument_list|(
-name|_confs
+name|confs
 argument_list|)
 operator|&&
-name|_mrid
+name|mrid
 operator|.
 name|equals
 argument_list|(
 name|other
 operator|.
-name|_mrid
+name|mrid
 argument_list|)
 return|;
 block|}
@@ -461,7 +469,7 @@ name|hash
 operator|*
 literal|13
 operator|+
-name|_confs
+name|confs
 operator|.
 name|hashCode
 argument_list|()
@@ -472,7 +480,7 @@ name|hash
 operator|*
 literal|13
 operator|+
-name|_mrid
+name|mrid
 operator|.
 name|hashCode
 argument_list|()
@@ -487,7 +495,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_mrid
+name|mrid
 operator|.
 name|toString
 argument_list|()
@@ -499,7 +507,7 @@ name|getAskedDependencyId
 parameter_list|()
 block|{
 return|return
-name|_dd
+name|dd
 operator|.
 name|getDependencyRevisionId
 argument_list|()
@@ -511,7 +519,7 @@ name|getModuleDescriptor
 parameter_list|()
 block|{
 return|return
-name|_md
+name|md
 return|;
 block|}
 specifier|public
@@ -520,14 +528,14 @@ name|canExclude
 parameter_list|()
 block|{
 return|return
-name|_callerCanExclude
+name|callerCanExclude
 operator|||
-name|_md
+name|md
 operator|.
 name|canExclude
 argument_list|()
 operator|||
-name|_dd
+name|dd
 operator|.
 name|canExclude
 argument_list|()
@@ -539,14 +547,14 @@ name|getDependencyDescriptor
 parameter_list|()
 block|{
 return|return
-name|_dd
+name|dd
 return|;
 block|}
 block|}
 comment|// Map (String rootModuleConf -> Map (ModuleRevisionId -> Caller)): key in second map is used to easily get a caller by its mrid
 specifier|private
 name|Map
-name|_callersByRootConf
+name|callersByRootConf
 init|=
 operator|new
 name|HashMap
@@ -556,7 +564,7 @@ comment|// this map contains all the module ids calling this one (including tran
 comment|// the mapped nodes (values) correspond to a direct caller from which the transitive caller comes
 specifier|private
 name|Map
-name|_allCallers
+name|allCallers
 init|=
 operator|new
 name|HashMap
@@ -565,7 +573,7 @@ decl_stmt|;
 comment|// Map (ModuleId -> IvyNode)
 specifier|private
 name|IvyNode
-name|_node
+name|node
 decl_stmt|;
 specifier|public
 name|IvyNodeCallers
@@ -574,7 +582,9 @@ name|IvyNode
 name|node
 parameter_list|)
 block|{
-name|_node
+name|this
+operator|.
+name|node
 operator|=
 name|node
 expr_stmt|;
@@ -626,7 +636,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -642,7 +652,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"a module is not authorized to depend on itself: "
 operator|+
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -655,7 +665,7 @@ init|=
 operator|(
 name|Map
 operator|)
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|get
 argument_list|(
@@ -675,7 +685,7 @@ operator|new
 name|HashMap
 argument_list|()
 expr_stmt|;
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|put
 argument_list|(
@@ -782,7 +792,7 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|_allCallers
+name|allCallers
 operator|.
 name|put
 argument_list|(
@@ -792,7 +802,7 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
-name|_allCallers
+name|allCallers
 operator|.
 name|put
 argument_list|(
@@ -820,7 +830,7 @@ init|=
 operator|(
 name|Map
 operator|)
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|get
 argument_list|(
@@ -886,7 +896,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|values
 argument_list|()
@@ -949,7 +959,7 @@ name|getAllCallersModuleIds
 parameter_list|()
 block|{
 return|return
-name|_allCallers
+name|allCallers
 operator|.
 name|keySet
 argument_list|()
@@ -974,7 +984,7 @@ name|Map
 operator|)
 name|callers
 operator|.
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|get
 argument_list|(
@@ -994,7 +1004,7 @@ init|=
 operator|(
 name|Map
 operator|)
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|get
 argument_list|(
@@ -1014,7 +1024,7 @@ operator|new
 name|HashMap
 argument_list|()
 expr_stmt|;
-name|_callersByRootConf
+name|callersByRootConf
 operator|.
 name|put
 argument_list|(
@@ -1097,7 +1107,7 @@ return|return
 operator|(
 name|IvyNode
 operator|)
-name|_allCallers
+name|allCallers
 operator|.
 name|get
 argument_list|(
@@ -1148,7 +1158,7 @@ name|callersStack
 operator|.
 name|contains
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -1163,7 +1173,7 @@ name|callersStack
 operator|.
 name|push
 argument_list|(
-name|_node
+name|node
 operator|.
 name|getId
 argument_list|()
@@ -1367,7 +1377,7 @@ comment|// ... or if it is excluded by all its callers
 name|IvyNode
 name|c
 init|=
-name|_node
+name|node
 operator|.
 name|getData
 argument_list|()

@@ -63,7 +63,7 @@ name|IvyEvent
 block|{
 specifier|private
 name|Artifact
-name|_artifact
+name|artifact
 decl_stmt|;
 specifier|public
 name|DownloadEvent
@@ -80,13 +80,17 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|_artifact
+name|this
+operator|.
+name|artifact
 operator|=
 name|artifact
 expr_stmt|;
 name|addArtifactAttributes
 argument_list|(
-name|_artifact
+name|this
+operator|.
+name|artifact
 argument_list|)
 expr_stmt|;
 block|}
@@ -121,7 +125,7 @@ name|getArtifact
 parameter_list|()
 block|{
 return|return
-name|_artifact
+name|artifact
 return|;
 block|}
 block|}

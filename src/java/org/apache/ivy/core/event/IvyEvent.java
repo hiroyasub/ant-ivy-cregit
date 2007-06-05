@@ -130,15 +130,15 @@ name|IvyEvent
 block|{
 specifier|private
 name|EventManager
-name|_source
+name|source
 decl_stmt|;
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|Map
-name|_attributes
+name|attributes
 init|=
 operator|new
 name|HashMap
@@ -151,7 +151,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_source
+name|this
+operator|.
+name|source
 operator|=
 name|IvyContext
 operator|.
@@ -161,7 +163,9 @@ operator|.
 name|getEventManager
 argument_list|()
 expr_stmt|;
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -178,7 +182,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|_attributes
+name|attributes
 operator|.
 name|put
 argument_list|(
@@ -301,7 +305,9 @@ name|Map
 name|attributes
 parameter_list|)
 block|{
-name|_attributes
+name|this
+operator|.
+name|attributes
 operator|.
 name|putAll
 argument_list|(
@@ -315,7 +321,7 @@ name|getSource
 parameter_list|()
 block|{
 return|return
-name|_source
+name|source
 return|;
 block|}
 specifier|public
@@ -324,7 +330,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 comment|/** 	 * Returns the attributes of this event, as a Map(String->String) 	 * @return the attributes of this event, as a Map(String->String) 	 */
@@ -337,7 +343,7 @@ return|return
 operator|new
 name|HashMap
 argument_list|(
-name|_attributes
+name|attributes
 argument_list|)
 return|;
 block|}
@@ -409,13 +415,13 @@ name|getName
 argument_list|()
 argument_list|)
 operator|&&
-name|_attributes
+name|attributes
 operator|.
 name|equals
 argument_list|(
 name|e
 operator|.
-name|_attributes
+name|attributes
 argument_list|)
 return|;
 block|}
@@ -459,7 +465,7 @@ literal|13
 operator|*
 name|hash
 operator|+
-name|_attributes
+name|attributes
 operator|.
 name|hashCode
 argument_list|()

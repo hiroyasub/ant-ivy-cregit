@@ -96,7 +96,7 @@ name|TransferListener
 block|{
 specifier|private
 name|EventListenerList
-name|_listeners
+name|listeners
 init|=
 operator|new
 name|EventListenerList
@@ -110,7 +110,7 @@ name|IvyListener
 name|listener
 parameter_list|)
 block|{
-name|_listeners
+name|listeners
 operator|.
 name|add
 argument_list|(
@@ -160,7 +160,7 @@ name|Filter
 name|filter
 parameter_list|)
 block|{
-name|_listeners
+name|listeners
 operator|.
 name|add
 argument_list|(
@@ -186,7 +186,7 @@ name|IvyListener
 name|listener
 parameter_list|)
 block|{
-name|_listeners
+name|listeners
 operator|.
 name|remove
 argument_list|(
@@ -205,7 +205,9 @@ operator|(
 name|IvyListener
 index|[]
 operator|)
-name|_listeners
+name|this
+operator|.
+name|listeners
 operator|.
 name|getListeners
 argument_list|(
@@ -262,7 +264,9 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_listeners
+name|this
+operator|.
+name|listeners
 operator|.
 name|remove
 argument_list|(
@@ -293,7 +297,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-name|_listeners
+name|listeners
 operator|.
 name|getListeners
 argument_list|(
@@ -321,7 +325,9 @@ name|Object
 index|[]
 name|listeners
 init|=
-name|_listeners
+name|this
+operator|.
+name|listeners
 operator|.
 name|getListenerList
 argument_list|()
@@ -386,7 +392,7 @@ name|TransferListener
 name|listener
 parameter_list|)
 block|{
-name|_listeners
+name|listeners
 operator|.
 name|add
 argument_list|(
@@ -406,7 +412,7 @@ name|TransferListener
 name|listener
 parameter_list|)
 block|{
-name|_listeners
+name|listeners
 operator|.
 name|remove
 argument_list|(
@@ -431,7 +437,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-name|_listeners
+name|listeners
 operator|.
 name|getListeners
 argument_list|(
@@ -459,7 +465,9 @@ name|Object
 index|[]
 name|listeners
 init|=
-name|_listeners
+name|this
+operator|.
+name|listeners
 operator|.
 name|getListenerList
 argument_list|()

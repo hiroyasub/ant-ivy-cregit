@@ -218,11 +218,11 @@ name|ResolveReport
 block|{
 specifier|private
 name|ModuleDescriptor
-name|_md
+name|md
 decl_stmt|;
 specifier|private
 name|Map
-name|_confReports
+name|confReports
 init|=
 operator|new
 name|LinkedHashMap
@@ -230,28 +230,28 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|List
-name|_problemMessages
+name|problemMessages
 decl_stmt|;
 specifier|private
 name|List
-name|_dependencies
+name|dependencies
 decl_stmt|;
 comment|// the list of all dependencies resolved, ordered from the more dependent to the less dependent
 specifier|private
 name|List
-name|_artifacts
+name|artifacts
 decl_stmt|;
 specifier|private
 name|long
-name|_resolveTime
+name|resolveTime
 decl_stmt|;
 specifier|private
 name|long
-name|_downloadTime
+name|downloadTime
 decl_stmt|;
 specifier|private
 name|String
-name|_resolveId
+name|resolveId
 decl_stmt|;
 specifier|public
 name|ResolveReport
@@ -283,11 +283,15 @@ name|String
 name|resolveId
 parameter_list|)
 block|{
-name|_md
+name|this
+operator|.
+name|md
 operator|=
 name|md
 expr_stmt|;
-name|_resolveId
+name|this
+operator|.
+name|resolveId
 operator|=
 name|resolveId
 expr_stmt|;
@@ -303,7 +307,7 @@ name|ConfigurationResolveReport
 name|report
 parameter_list|)
 block|{
-name|_confReports
+name|confReports
 operator|.
 name|put
 argument_list|(
@@ -325,7 +329,7 @@ return|return
 operator|(
 name|ConfigurationResolveReport
 operator|)
-name|_confReports
+name|confReports
 operator|.
 name|get
 argument_list|(
@@ -344,7 +348,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_confReports
+name|confReports
 operator|.
 name|keySet
 argument_list|()
@@ -354,7 +358,7 @@ argument_list|(
 operator|new
 name|String
 index|[
-name|_confReports
+name|confReports
 operator|.
 name|size
 argument_list|()
@@ -377,7 +381,7 @@ control|(
 name|Iterator
 name|it
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -467,7 +471,7 @@ name|getModuleDescriptor
 parameter_list|()
 block|{
 return|return
-name|_md
+name|md
 return|;
 block|}
 specifier|public
@@ -488,7 +492,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -568,7 +572,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -648,7 +652,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -720,7 +724,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -771,7 +775,7 @@ name|List
 name|problems
 parameter_list|)
 block|{
-name|_problemMessages
+name|problemMessages
 operator|=
 name|problems
 expr_stmt|;
@@ -782,7 +786,7 @@ name|getProblemMessages
 parameter_list|()
 block|{
 return|return
-name|_problemMessages
+name|problemMessages
 return|;
 block|}
 specifier|public
@@ -796,7 +800,7 @@ init|=
 operator|new
 name|ArrayList
 argument_list|(
-name|_problemMessages
+name|problemMessages
 argument_list|)
 decl_stmt|;
 for|for
@@ -804,7 +808,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_confReports
+name|confReports
 operator|.
 name|values
 argument_list|()
@@ -974,12 +978,14 @@ name|Filter
 name|artifactFilter
 parameter_list|)
 block|{
-name|_dependencies
+name|this
+operator|.
+name|dependencies
 operator|=
 name|dependencies
 expr_stmt|;
 comment|// collect list of artifacts
-name|_artifacts
+name|artifacts
 operator|=
 operator|new
 name|ArrayList
@@ -1028,7 +1034,7 @@ name|hasProblem
 argument_list|()
 condition|)
 block|{
-name|_artifacts
+name|artifacts
 operator|.
 name|addAll
 argument_list|(
@@ -1110,7 +1116,7 @@ name|getDependencies
 parameter_list|()
 block|{
 return|return
-name|_dependencies
+name|dependencies
 return|;
 block|}
 comment|/** 	 * Returns the list of all artifacts which should be downloaded per this resolve 	 * To know if the artifact have actually been downloaded use information found 	 * in ConfigurationResolveReport. 	 * @return 	 */
@@ -1120,7 +1126,7 @@ name|getArtifacts
 parameter_list|()
 block|{
 return|return
-name|_artifacts
+name|artifacts
 return|;
 block|}
 comment|/** 	 * gives all the modules ids concerned by this report, from the most dependent to the least one 	 * @return a list of ModuleId 	 */
@@ -1142,7 +1148,7 @@ init|=
 operator|new
 name|ArrayList
 argument_list|(
-name|_dependencies
+name|dependencies
 argument_list|)
 decl_stmt|;
 for|for
@@ -1216,7 +1222,7 @@ name|long
 name|elapsedTime
 parameter_list|)
 block|{
-name|_resolveTime
+name|resolveTime
 operator|=
 name|elapsedTime
 expr_stmt|;
@@ -1227,7 +1233,7 @@ name|getResolveTime
 parameter_list|()
 block|{
 return|return
-name|_resolveTime
+name|resolveTime
 return|;
 block|}
 specifier|public
@@ -1238,7 +1244,7 @@ name|long
 name|elapsedTime
 parameter_list|)
 block|{
-name|_downloadTime
+name|downloadTime
 operator|=
 name|elapsedTime
 expr_stmt|;
@@ -1249,7 +1255,7 @@ name|getDownloadTime
 parameter_list|()
 block|{
 return|return
-name|_downloadTime
+name|downloadTime
 return|;
 block|}
 specifier|public
@@ -1258,7 +1264,7 @@ name|getResolveId
 parameter_list|()
 block|{
 return|return
-name|_resolveId
+name|resolveId
 return|;
 block|}
 block|}

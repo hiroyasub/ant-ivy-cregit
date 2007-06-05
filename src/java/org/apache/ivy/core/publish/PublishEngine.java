@@ -396,7 +396,7 @@ name|PublishEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|public
 name|PublishEngine
@@ -405,7 +405,9 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -466,7 +468,7 @@ name|options
 operator|.
 name|setSrcIvyPattern
 argument_list|(
-name|_settings
+name|settings
 operator|.
 name|substitute
 argument_list|(
@@ -653,7 +655,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivyFileURL
 argument_list|,
@@ -746,7 +748,7 @@ name|XmlModuleDescriptorUpdater
 operator|.
 name|update
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivyFileURL
 argument_list|,
@@ -831,7 +833,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivyFile
 operator|.
@@ -981,7 +983,7 @@ block|}
 name|DependencyResolver
 name|resolver
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -1335,7 +1337,7 @@ name|publish
 argument_list|(
 name|artifact
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|substitute
 argument_list|(

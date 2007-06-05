@@ -472,19 +472,19 @@ name|InstallEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|ResolveEngine
-name|_resolveEngine
+name|resolveEngine
 decl_stmt|;
 specifier|private
 name|PublishEngine
-name|_publishEngine
+name|publishEngine
 decl_stmt|;
 specifier|private
 name|SearchEngine
-name|_searchEngine
+name|searchEngine
 decl_stmt|;
 specifier|public
 name|InstallEngine
@@ -502,19 +502,27 @@ name|PublishEngine
 name|publishEngine
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
-name|_searchEngine
+name|this
+operator|.
+name|searchEngine
 operator|=
 name|searchEngine
 expr_stmt|;
-name|_resolveEngine
+name|this
+operator|.
+name|resolveEngine
 operator|=
 name|resolveEngine
 expr_stmt|;
-name|_publishEngine
+name|this
+operator|.
+name|publishEngine
 operator|=
 name|publishEngine
 expr_stmt|;
@@ -562,7 +570,7 @@ condition|)
 block|{
 name|cache
 operator|=
-name|_settings
+name|settings
 operator|.
 name|getDefaultCache
 argument_list|()
@@ -585,7 +593,7 @@ block|}
 name|DependencyResolver
 name|fromResolver
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -595,7 +603,7 @@ decl_stmt|;
 name|DependencyResolver
 name|toResolver
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -619,7 +627,7 @@ name|from
 operator|+
 literal|". Available resolvers are: "
 operator|+
-name|_settings
+name|settings
 operator|.
 name|getResolverNames
 argument_list|()
@@ -643,7 +651,7 @@ name|to
 operator|+
 literal|". Available resolvers are: "
 operator|+
-name|_settings
+name|settings
 operator|.
 name|getResolverNames
 argument_list|()
@@ -653,7 +661,7 @@ block|}
 name|PatternMatcher
 name|matcher
 init|=
-name|_settings
+name|settings
 operator|.
 name|getMatcher
 argument_list|(
@@ -677,7 +685,7 @@ name|matcherName
 operator|+
 literal|". Available matchers are: "
 operator|+
-name|_settings
+name|settings
 operator|.
 name|getMatcherNames
 argument_list|()
@@ -699,7 +707,7 @@ expr_stmt|;
 name|DependencyResolver
 name|oldDicator
 init|=
-name|_resolveEngine
+name|resolveEngine
 operator|.
 name|getDictatorResolver
 argument_list|()
@@ -707,21 +715,21 @@ decl_stmt|;
 name|boolean
 name|log
 init|=
-name|_settings
+name|settings
 operator|.
 name|logNotConvertedExclusionRule
 argument_list|()
 decl_stmt|;
 try|try
 block|{
-name|_settings
+name|settings
 operator|.
 name|setLogNotConvertedExclusionRule
 argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|_resolveEngine
+name|resolveEngine
 operator|.
 name|setDictatorResolver
 argument_list|(
@@ -745,7 +753,7 @@ argument_list|,
 literal|"1.0"
 argument_list|)
 argument_list|,
-name|_settings
+name|settings
 operator|.
 name|getStatusManager
 argument_list|()
@@ -855,7 +863,7 @@ block|{
 name|Collection
 name|mrids
 init|=
-name|_searchEngine
+name|searchEngine
 operator|.
 name|findModuleRevisionIds
 argument_list|(
@@ -963,7 +971,7 @@ name|IvyNode
 index|[]
 name|dependencies
 init|=
-name|_resolveEngine
+name|resolveEngine
 operator|.
 name|getDependencies
 argument_list|(
@@ -994,7 +1002,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|cache
 argument_list|)
@@ -1024,7 +1032,7 @@ argument_list|(
 literal|":: downloading artifacts to cache ::"
 argument_list|)
 expr_stmt|;
-name|_resolveEngine
+name|resolveEngine
 operator|.
 name|downloadArtifacts
 argument_list|(
@@ -1099,7 +1107,7 @@ name|getModuleRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_publishEngine
+name|publishEngine
 operator|.
 name|publish
 argument_list|(
@@ -1116,7 +1124,7 @@ argument_list|()
 operator|+
 literal|"/"
 operator|+
-name|_settings
+name|settings
 operator|.
 name|getCacheArtifactPattern
 argument_list|()
@@ -1137,7 +1145,7 @@ argument_list|()
 operator|+
 literal|"/"
 operator|+
-name|_settings
+name|settings
 operator|.
 name|getCacheIvyPattern
 argument_list|()
@@ -1163,7 +1171,7 @@ name|report
 operator|.
 name|output
 argument_list|(
-name|_settings
+name|settings
 operator|.
 name|getReportOutputters
 argument_list|()
@@ -1177,14 +1185,14 @@ return|;
 block|}
 finally|finally
 block|{
-name|_resolveEngine
+name|resolveEngine
 operator|.
 name|setDictatorResolver
 argument_list|(
 name|oldDicator
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setLogNotConvertedExclusionRule
 argument_list|(
@@ -1208,7 +1216,7 @@ init|=
 operator|new
 name|CacheManager
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|cache
 argument_list|)

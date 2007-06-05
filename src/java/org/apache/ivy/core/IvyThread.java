@@ -28,7 +28,7 @@ name|Thread
 block|{
 specifier|private
 name|IvyContext
-name|_context
+name|context
 init|=
 name|IvyContext
 operator|.
@@ -197,7 +197,7 @@ name|IvyContext
 operator|.
 name|setContext
 argument_list|(
-name|_context
+name|context
 argument_list|)
 expr_stmt|;
 block|}

@@ -145,7 +145,7 @@ block|}
 block|}
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|Visibility
@@ -154,7 +154,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -165,17 +167,17 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 block|}
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|String
-name|_description
+name|description
 decl_stmt|;
 specifier|private
 name|String
@@ -184,11 +186,11 @@ name|_extends
 decl_stmt|;
 specifier|private
 name|Visibility
-name|_visibility
+name|visibility
 decl_stmt|;
 specifier|private
 name|boolean
-name|_transitive
+name|transitive
 init|=
 literal|true
 decl_stmt|;
@@ -275,15 +277,21 @@ literal|"null visibility not allowed"
 argument_list|)
 throw|;
 block|}
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
-name|_visibility
+name|this
+operator|.
+name|visibility
 operator|=
 name|visibility
 expr_stmt|;
-name|_description
+name|this
+operator|.
+name|description
 operator|=
 name|description
 expr_stmt|;
@@ -347,7 +355,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|_transitive
+name|this
+operator|.
+name|transitive
 operator|=
 name|transitive
 expr_stmt|;
@@ -381,7 +391,7 @@ name|getDescription
 parameter_list|()
 block|{
 return|return
-name|_description
+name|description
 return|;
 block|}
 comment|/**      * @return Returns the extends. May be empty, but never null.      */
@@ -402,7 +412,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 comment|/**      * @return Returns the visibility. Never null.      */
@@ -412,7 +422,7 @@ name|getVisibility
 parameter_list|()
 block|{
 return|return
-name|_visibility
+name|visibility
 return|;
 block|}
 comment|/**      * @return Returns the transitive.      */
@@ -423,7 +433,7 @@ name|isTransitive
 parameter_list|()
 block|{
 return|return
-name|_transitive
+name|transitive
 return|;
 block|}
 specifier|public
@@ -432,7 +442,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -504,7 +514,7 @@ name|md
 operator|.
 name|getConfiguration
 argument_list|(
-name|_name
+name|name
 argument_list|)
 condition|)
 block|{
@@ -705,7 +715,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|_name
+name|name
 operator|.
 name|equals
 argument_list|(

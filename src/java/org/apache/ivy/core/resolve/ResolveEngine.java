@@ -712,19 +712,19 @@ name|ResolveEngine
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|EventManager
-name|_eventManager
+name|eventManager
 decl_stmt|;
 specifier|private
 name|SortEngine
-name|_sortEngine
+name|sortEngine
 decl_stmt|;
 specifier|private
 name|Set
-name|_fetchedSet
+name|fetchedSet
 init|=
 operator|new
 name|HashSet
@@ -732,7 +732,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|DependencyResolver
-name|_dictatorResolver
+name|dictatorResolver
 decl_stmt|;
 comment|/** 	 * Constructs a ResolveEngine. 	 *  	 * @param settings the settings to use to configure the engine. Must not be null. 	 * @param eventManager the event manager to use to send events about the resolution process. Must not be null. 	 * @param sortEngine the sort engine to use to sort modules before producing the dependency resolution report. Must not be null. 	 */
 specifier|public
@@ -748,15 +748,21 @@ name|SortEngine
 name|sortEngine
 parameter_list|)
 block|{
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
-name|_eventManager
+name|this
+operator|.
+name|eventManager
 operator|=
 name|eventManager
 expr_stmt|;
-name|_sortEngine
+name|this
+operator|.
+name|sortEngine
 operator|=
 name|sortEngine
 expr_stmt|;
@@ -768,7 +774,7 @@ name|getDictatorResolver
 parameter_list|()
 block|{
 return|return
-name|_dictatorResolver
+name|dictatorResolver
 return|;
 block|}
 comment|/** 	 * Sets a dictator resolver, which is used in place of regular dependency resolver  	 * for subsequent dependency resolution by this engine. 	 * @param dictatorResolver the dictator resolver to use in this engine,  	 * 		  null if regular settings should used 	 */
@@ -780,11 +786,13 @@ name|DependencyResolver
 name|dictatorResolver
 parameter_list|)
 block|{
-name|_dictatorResolver
+name|this
+operator|.
+name|dictatorResolver
 operator|=
 name|dictatorResolver
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setDictatorResolver
 argument_list|(
@@ -1107,7 +1115,7 @@ name|parser
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivySource
 argument_list|,
@@ -1221,7 +1229,7 @@ argument_list|(
 operator|new
 name|CacheResolver
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1344,7 +1352,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|_eventManager
+name|eventManager
 operator|.
 name|fireIvyEvent
 argument_list|(
@@ -1733,7 +1741,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|_eventManager
+name|eventManager
 operator|.
 name|fireIvyEvent
 argument_list|(
@@ -1794,7 +1802,7 @@ name|report
 operator|.
 name|output
 argument_list|(
-name|_settings
+name|settings
 operator|.
 name|getReportOutputters
 argument_list|()
@@ -1882,7 +1890,7 @@ argument_list|()
 index|]
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|fireIvyEvent
 argument_list|(
@@ -1997,11 +2005,11 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|cacheManager
 argument_list|,
-name|_eventManager
+name|eventManager
 argument_list|,
 name|useOrigin
 argument_list|)
@@ -2203,7 +2211,7 @@ block|{
 name|DependencyResolver
 name|resolver
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -2233,11 +2241,11 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|cacheManager
 argument_list|,
-name|_eventManager
+name|eventManager
 argument_list|,
 name|useOrigin
 argument_list|)
@@ -2279,7 +2287,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|ivySource
 argument_list|,
@@ -2505,7 +2513,7 @@ literal|"'"
 argument_list|)
 expr_stmt|;
 comment|// for each configuration we clear the cache of what's been fetched
-name|_fetchedSet
+name|fetchedSet
 operator|.
 name|clear
 argument_list|()
@@ -2790,7 +2798,7 @@ block|}
 name|List
 name|sortedDependencies
 init|=
-name|_sortEngine
+name|sortEngine
 operator|.
 name|sortNodes
 argument_list|(
@@ -2881,7 +2889,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -3038,7 +3046,7 @@ else|else
 block|{
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -3106,7 +3114,7 @@ else|else
 block|{
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -3478,7 +3486,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -3923,7 +3931,7 @@ name|conf
 decl_stmt|;
 if|if
 condition|(
-name|_fetchedSet
+name|fetchedSet
 operator|.
 name|contains
 argument_list|(
@@ -3935,7 +3943,7 @@ return|return
 literal|true
 return|;
 block|}
-name|_fetchedSet
+name|fetchedSet
 operator|.
 name|add
 argument_list|(
@@ -4070,7 +4078,7 @@ block|{
 comment|// node has been previously evicted in an ancestor: we mark it as evicted
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4100,7 +4108,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4197,7 +4205,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4261,7 +4269,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4318,7 +4326,7 @@ return|;
 block|}
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4417,7 +4425,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4577,7 +4585,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -4710,7 +4718,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -5148,7 +5156,7 @@ block|{
 comment|// resolve conflict has already be done with node with the same id
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -5211,7 +5219,7 @@ block|{
 comment|// resolve conflict has already be done with node with the same id
 if|if
 condition|(
-name|_settings
+name|settings
 operator|.
 name|debugConflictResolution
 argument_list|()
@@ -5253,7 +5261,7 @@ block|{
 name|DependencyResolver
 name|r
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -5395,7 +5403,7 @@ name|getEventManager
 parameter_list|()
 block|{
 return|return
-name|_eventManager
+name|eventManager
 return|;
 block|}
 specifier|public
@@ -5404,7 +5412,7 @@ name|getSettings
 parameter_list|()
 block|{
 return|return
-name|_settings
+name|settings
 return|;
 block|}
 specifier|public
@@ -5413,7 +5421,7 @@ name|getSortEngine
 parameter_list|()
 block|{
 return|return
-name|_sortEngine
+name|sortEngine
 return|;
 block|}
 specifier|private

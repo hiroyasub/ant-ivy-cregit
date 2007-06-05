@@ -40,11 +40,11 @@ name|RevisionEntry
 block|{
 specifier|private
 name|ModuleEntry
-name|_moduleEntry
+name|moduleEntry
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|public
 name|RevisionEntry
@@ -56,11 +56,11 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_moduleEntry
+name|moduleEntry
 operator|=
 name|mod
 expr_stmt|;
-name|_revision
+name|revision
 operator|=
 name|name
 expr_stmt|;
@@ -71,7 +71,7 @@ name|getModuleEntry
 parameter_list|()
 block|{
 return|return
-name|_moduleEntry
+name|moduleEntry
 return|;
 block|}
 specifier|public
@@ -80,7 +80,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -89,7 +89,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_moduleEntry
+name|moduleEntry
 operator|.
 name|getModule
 argument_list|()
@@ -101,7 +101,7 @@ name|getOrganisation
 parameter_list|()
 block|{
 return|return
-name|_moduleEntry
+name|moduleEntry
 operator|.
 name|getOrganisation
 argument_list|()
@@ -113,7 +113,7 @@ name|getOrganisationEntry
 parameter_list|()
 block|{
 return|return
-name|_moduleEntry
+name|moduleEntry
 operator|.
 name|getOrganisationEntry
 argument_list|()
@@ -125,7 +125,7 @@ name|getResolver
 parameter_list|()
 block|{
 return|return
-name|_moduleEntry
+name|moduleEntry
 operator|.
 name|getResolver
 argument_list|()

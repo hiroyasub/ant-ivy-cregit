@@ -70,7 +70,7 @@ literal|"need-artifact"
 decl_stmt|;
 specifier|private
 name|DependencyResolver
-name|_resolver
+name|resolver
 decl_stmt|;
 specifier|public
 name|NeedArtifactEvent
@@ -89,7 +89,9 @@ argument_list|,
 name|artifact
 argument_list|)
 expr_stmt|;
-name|_resolver
+name|this
+operator|.
+name|resolver
 operator|=
 name|resolver
 expr_stmt|;
@@ -97,7 +99,9 @@ name|addAttribute
 argument_list|(
 literal|"resolver"
 argument_list|,
-name|_resolver
+name|this
+operator|.
+name|resolver
 operator|.
 name|getName
 argument_list|()
@@ -110,7 +114,7 @@ name|getResolver
 parameter_list|()
 block|{
 return|return
-name|_resolver
+name|resolver
 return|;
 block|}
 block|}
