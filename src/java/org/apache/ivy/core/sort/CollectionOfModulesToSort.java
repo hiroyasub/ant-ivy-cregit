@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Wrap a collection of descriptores wrapped themself in ModuleInSort elements.  It contains some  * dedicated function to retrieve module descriptors based on dependencies descriptors.<br>  *<i>This class is designed to be used internally by the ModuleDescriptorSorter.</i>  */
+comment|/**  * Wrap a collection of descriptores wrapped themself in ModuleInSort elements. It contains some  * dedicated function to retrieve module descriptors based on dependencies descriptors.<br>  *<i>This class is designed to be used internally by the ModuleDescriptorSorter.</i>  */
 end_comment
 
 begin_class
@@ -170,7 +170,7 @@ specifier|final
 name|List
 name|moduleDescriptors
 decl_stmt|;
-comment|//List<ModuleInSort>
+comment|// List<ModuleInSort>
 specifier|private
 specifier|final
 name|VersionMatcher
@@ -181,13 +181,13 @@ specifier|final
 name|Map
 name|modulesByModuleId
 decl_stmt|;
-comment|//Map<ModuleId , Collection<ModuleInSort>
+comment|// Map<ModuleId , Collection<ModuleInSort>
 specifier|private
 specifier|final
 name|NonMatchingVersionReporter
 name|nonMatchingVersionReporter
 decl_stmt|;
-comment|/** 	 * @param modulesToSort The collection of ModuleDescriptor to sort  	 * @param matcher The matcher to used to check if dependencyDescriptor match a module in this collection 	 * @param nonMatchingVersionReporter  	 */
+comment|/**      * @param modulesToSort      *            The collection of ModuleDescriptor to sort      * @param matcher      *            The matcher to used to check if dependencyDescriptor match a module in this      *            collection      * @param nonMatchingVersionReporter      */
 specifier|public
 name|CollectionOfModulesToSort
 parameter_list|(
@@ -376,7 +376,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Find a matching module descriptor in the list of module to sort.      * @param descriptor      * @return a ModuleDescriptor from the collection of module descriptors to sort.      * If none exists returns null.      */
+comment|/**      * Find a matching module descriptor in the list of module to sort.      *       * @param descriptor      * @return a ModuleDescriptor from the collection of module descriptors to sort. If none exists      *         returns null.      */
 specifier|public
 name|ModuleInSort
 name|getModuleDescriptorDependency

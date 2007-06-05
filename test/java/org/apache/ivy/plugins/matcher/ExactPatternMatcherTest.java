@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/** * @see ExactPatternMatcher  */
+comment|/**  * @see ExactPatternMatcher  */
 end_comment
 
 begin_class

@@ -259,7 +259,7 @@ specifier|static
 name|Ivy
 name|ivy
 decl_stmt|;
-comment|/* (non-Javadoc)      * @see junit.framework.TestCase#setUp()      */
+comment|/*      * (non-Javadoc)      *       * @see junit.framework.TestCase#setUp()      */
 specifier|protected
 name|void
 name|setUp
@@ -281,7 +281,8 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-comment|//The revison is often not set in the ivy.xml file that are ordered
+comment|// The revison is often not set in the
+comment|// ivy.xml file that are ordered
 name|md2
 operator|=
 name|createModuleDescriptorToSort
@@ -291,7 +292,7 @@ argument_list|,
 literal|"rev2"
 argument_list|)
 expr_stmt|;
-comment|//But somtimes they are set
+comment|// But somtimes they are set
 name|md3
 operator|=
 name|createModuleDescriptorToSort
@@ -433,7 +434,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time only.      * However the sort respect the transitive order when it is unambiguous. (if A depends transitively of B,      * but B doesn't depends transitively on A then B always comes before A).      */
+comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (if A depends      * transitively of B, but B doesn't depends transitively on A then B always comes before A).      */
 specifier|public
 name|void
 name|testCircularDependency
@@ -656,8 +657,9 @@ name|md3
 block|,
 name|md4
 block|}
-comment|//,
-comment|//{md3, md1, md2, md4}	//we don't have this solution.  The loops apear has one contigous element.
+comment|// ,
+comment|// {md3, md1, md2, md4} //we don't have this solution. The loops apear has one contigous
+comment|// element.
 block|}
 decl_stmt|;
 name|Collection
@@ -716,7 +718,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      *  In case of Circular dependency a warning is generated.      */
+comment|/**      * In case of Circular dependency a warning is generated.      */
 specifier|public
 name|void
 name|testCircularDependencyReport
@@ -758,7 +760,7 @@ argument_list|,
 literal|"rev3"
 argument_list|)
 expr_stmt|;
-comment|//Would be much easier with a tool like jmock
+comment|// Would be much easier with a tool like jmock
 class|class
 name|CircularDependencyReporterMock
 implements|implements
@@ -972,7 +974,7 @@ name|validate
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * The dependency can ask for the latest integration.  It should match whatever the version declared in the modules to order.      */
+comment|/**      * The dependency can ask for the latest integration. It should match whatever the version      * declared in the modules to order.      */
 specifier|public
 name|void
 name|testLatestIntegration
@@ -1082,14 +1084,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * When the version asked by a dependency is not compatible with the version declared in the module to order,       * the two modules should be considered as independant      * NB:  I'm sure of what 'compatible' means !      */
+comment|/**      * When the version asked by a dependency is not compatible with the version declared in the      * module to order, the two modules should be considered as independant NB: I'm sure of what      * 'compatible' means !      */
 specifier|public
 name|void
 name|testDifferentVersionNotConsidered
 parameter_list|()
 block|{
-comment|//To test it, I use a 'broken' loop (in one step, I change the revision) in such a way that I get only one solution.  If the loop was
-comment|//complete more solutions where possible.
+comment|// To test it, I use a 'broken' loop (in one step, I change the revision) in such a way that
+comment|// I get only one solution. If the loop was
+comment|// complete more solutions where possible.
 name|addDependency
 argument_list|(
 name|md1
@@ -1203,7 +1206,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      *  In case of Different version a warning is generated.      */
+comment|/**      * In case of Different version a warning is generated.      */
 specifier|public
 name|void
 name|testDifferentVersionWarning
@@ -1249,7 +1252,7 @@ argument_list|,
 literal|"rev3"
 argument_list|)
 expr_stmt|;
-comment|//Would be much easier with a tool like jmock
+comment|// Would be much easier with a tool like jmock
 class|class
 name|NonMatchingVersionReporterMock
 implements|implements
@@ -1461,7 +1464,7 @@ return|return
 name|depDescr
 return|;
 block|}
-comment|/**       * Verifies that sorted in one of the list of listOfPossibleSort.      * @param An array of possible sort result      * @param The actual sortedList to compare       */
+comment|/**      * Verifies that sorted in one of the list of listOfPossibleSort.      *       * @param An      *            array of possible sort result      * @param The      *            actual sortedList to compare      */
 specifier|private
 name|void
 name|assertSorted
@@ -1569,7 +1572,7 @@ block|{
 return|return;
 block|}
 block|}
-comment|//failed, build a nice message
+comment|// failed, build a nice message
 name|StringBuffer
 name|errorMessage
 init|=

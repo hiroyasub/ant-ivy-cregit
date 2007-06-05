@@ -78,7 +78,7 @@ specifier|public
 class|class
 name|CircularDependencyHelper
 block|{
-comment|/**      * Returns a string representation of this circular dependency graph      * @param descriptors in order of circular dependency      * @return      */
+comment|/**      * Returns a string representation of this circular dependency graph      *       * @param descriptors      *            in order of circular dependency      * @return      */
 specifier|public
 specifier|static
 name|String
@@ -170,7 +170,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**     * @param loopElements a List<ModuleDescriptor> 	*/
+comment|/**      * @param loopElements      *            a List<ModuleDescriptor>      */
 specifier|public
 specifier|static
 name|String

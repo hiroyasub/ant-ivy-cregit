@@ -163,7 +163,7 @@ name|acceptedTypes
 argument_list|)
 return|;
 block|}
-comment|/**      * we could have used commons-collections facility for this...      * if we accepted to add dependencies on third party jars      * @param col      * @param filter      * @return      */
+comment|/**      * we could have used commons-collections facility for this... if we accepted to add      * dependencies on third party jars      *       * @param col      * @param filter      * @return      */
 specifier|public
 specifier|static
 name|Collection

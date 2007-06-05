@@ -55,11 +55,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|IvySettings
+name|Ivy
 import|;
 end_import
 
@@ -113,7 +109,7 @@ name|module
 operator|.
 name|id
 operator|.
-name|ModuleRevisionId
+name|ModuleId
 import|;
 end_import
 
@@ -131,7 +127,7 @@ name|module
 operator|.
 name|id
 operator|.
-name|ModuleId
+name|ModuleRevisionId
 import|;
 end_import
 
@@ -143,7 +139,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|settings
+operator|.
+name|IvySettings
 import|;
 end_import
 

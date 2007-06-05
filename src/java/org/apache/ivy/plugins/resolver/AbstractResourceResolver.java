@@ -1416,7 +1416,7 @@ name|token
 parameter_list|)
 block|{
 block|}
-comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      * @param pattern      */
+comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      *       * @param pattern      */
 specifier|public
 name|void
 name|addIvyPattern

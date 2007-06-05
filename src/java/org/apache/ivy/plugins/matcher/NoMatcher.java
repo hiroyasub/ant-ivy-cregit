@@ -24,7 +24,7 @@ end_comment
 begin_class
 specifier|public
 specifier|final
-comment|/*@Immutable*/
+comment|/* @Immutable */
 class|class
 name|NoMatcher
 implements|implements

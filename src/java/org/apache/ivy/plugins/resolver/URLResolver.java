@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This resolver is able to work with any URLs, it handles latest revisions  * with file and http urls only, and it does not handle publishing  */
+comment|/**  * This resolver is able to work with any URLs, it handles latest revisions with file and http urls  * only, and it does not handle publishing  */
 end_comment
 
 begin_class

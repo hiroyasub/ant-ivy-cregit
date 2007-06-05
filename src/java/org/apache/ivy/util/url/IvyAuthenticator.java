@@ -88,7 +88,7 @@ operator|new
 name|IvyAuthenticator
 argument_list|()
 decl_stmt|;
-comment|/**      * Private c'tor to prevent instantiation. Also installs this as the default      * Authenticator to use by the JVM.      */
+comment|/**      * Private c'tor to prevent instantiation. Also installs this as the default Authenticator to      * use by the JVM.      */
 specifier|private
 name|IvyAuthenticator
 parameter_list|()

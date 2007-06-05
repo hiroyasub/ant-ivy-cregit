@@ -302,7 +302,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies  * and on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  *   *  */
+comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies and  * on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  */
 end_comment
 
 begin_class
@@ -545,7 +545,7 @@ name|version
 return|;
 block|}
 block|}
-comment|/**              * By setting these properties: recursive.delivery.status and              * recursive.delivery.version, then if the specific status/version              * is not found, then we will use the status/version set in these              * global properties. This will apply to all artifacts in the              * system.              *               * This patch is meant to be used for recursive deliveries so that              * all deliveries will use the global status/version unless a more              * specific one is set.              */
+comment|/**              * By setting these properties: recursive.delivery.status and              * recursive.delivery.version, then if the specific status/version is not found, then we              * will use the status/version set in these global properties. This will apply to all              * artifacts in the system. This patch is meant to be used for recursive deliveries so              * that all deliveries will use the global status/version unless a more specific one is              * set.              */
 name|String
 name|globalStatusProperty
 init|=

@@ -646,7 +646,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parses an xml ivy file and output a ModuleDescriptor.  * For dependency and performance reasons, it uses  * only the SAX API, which makes the parsing code harder  * to understand.  *   *  */
+comment|/**  * Parses an xml ivy file and output a ModuleDescriptor. For dependency and performance reasons, it  * uses only the SAX API, which makes the parsing code harder to understand.  */
 end_comment
 
 begin_class
@@ -707,7 +707,7 @@ name|XmlModuleDescriptorParser
 parameter_list|()
 block|{
 block|}
-comment|/**      *       * @param ivy      * @param xmlURL the url pointing to the file to parse      * @param res the real resource to parse, used for log only      * @param validate      * @return      * @throws ParseException      * @throws IOException      */
+comment|/**      * @param ivy      * @param xmlURL      *            the url pointing to the file to parse      * @param res      *            the real resource to parse, used for log only      * @param validate      * @return      * @throws ParseException      * @throws IOException      */
 specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
@@ -2478,7 +2478,8 @@ literal|"conf"
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|// only add confs if they are specified. if they aren't, endElement will handle this
+comment|// only add confs if they are specified. if they aren't, endElement will
+comment|// handle this
 comment|// only if there are no conf defined in sub elements
 if|if
 condition|(
@@ -4559,12 +4560,15 @@ name|EXCLUDE
 condition|)
 block|{
 comment|// we are adding a configuration to a module wide exclude rule
-comment|// we have nothing special to do here, the rule has already been added to the module descriptor
+comment|// we have nothing special to do here, the rule has already been added to the module
+comment|// descriptor
 block|}
 else|else
 block|{
-comment|// we are currently adding a configuration to either an include, exclude or artifact element
-comment|// of a dependency. This means that we have to add this element to the corresponding conf
+comment|// we are currently adding a configuration to either an include, exclude or artifact
+comment|// element
+comment|// of a dependency. This means that we have to add this element to the corresponding
+comment|// conf
 comment|// of the current dependency descriptor
 if|if
 condition|(

@@ -1085,7 +1085,8 @@ name|getLocation
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// now resolve the same artifact again and verify the origin of the (not-downloaded) artifact
+comment|// now resolve the same artifact again and verify the origin of the (not-downloaded)
+comment|// artifact
 name|report
 operator|=
 name|_ivy
@@ -1590,7 +1591,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// module1 depends on latest version of module2, for which there is no revision in the pattern
+comment|// module1 depends on latest version of module2, for which there is no revision in the
+comment|// pattern
 name|Ivy
 name|ivy
 init|=
@@ -1710,7 +1712,8 @@ throws|throws
 name|Exception
 block|{
 comment|// test case for IVY-258
-comment|// module1 depends on latest version of module2, which contains no revision in its ivy file, nor in the pattern
+comment|// module1 depends on latest version of module2, which contains no revision in its ivy file,
+comment|// nor in the pattern
 name|Ivy
 name|ivy
 init|=
@@ -1832,11 +1835,12 @@ block|{
 comment|// test case for IVY-448
 comment|// all modules from myorg
 comment|// module1
-comment|//    -> module2-1.0
-comment|//    -> module3-2.0
+comment|// -> module2-1.0
+comment|// -> module3-2.0
 comment|// module2
-comment|//    -> module3-1.0
-comment|// settings use 'all' as default conflict manager, and latest-revision for modules from myorg
+comment|// -> module3-1.0
+comment|// settings use 'all' as default conflict manager, and latest-revision for modules from
+comment|// myorg
 name|Ivy
 name|ivy
 init|=
@@ -2800,10 +2804,11 @@ literal|"test/repositories/bugIVY-56/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//        ResolveReport report = ivy.resolve(new File("test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml").toURL(),
-comment|//                getResolveOptions(new String[] {"*"}));
-comment|//        // should have an error, the conf is bad and the dependency should not be found
-comment|//        assertTrue(report.hasError());
+comment|// ResolveReport report = ivy.resolve(new
+comment|// File("test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml").toURL(),
+comment|// getResolveOptions(new String[] {"*"}));
+comment|// // should have an error, the conf is bad and the dependency should not be found
+comment|// assertTrue(report.hasError());
 comment|// put necessary stuff in cache, and it should now be ok
 name|File
 name|ivyfile
@@ -3611,12 +3616,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod6.2  has two confs default and extension
-comment|//    mod6.2 depends on mod6.1 in conf (default->extension)
-comment|//   conf extension extends default
+comment|// mod6.2 has two confs default and extension
+comment|// mod6.2 depends on mod6.1 in conf (default->extension)
+comment|// conf extension extends default
 comment|// mod6.1 has two confs default and extension
-comment|//   mod6.1 depends on mod1.2 2.0 in conf (default->default)
-comment|//   conf extension extends default
+comment|// mod6.1 depends on mod1.2 2.0 in conf (default->default)
+comment|// conf extension extends default
 name|ResolveReport
 name|report
 init|=
@@ -3854,12 +3859,13 @@ name|Exception
 block|{
 comment|// Test case for IVY-240
 comment|//
-comment|// mod6.3 1.1 has four confs libraries, run (extends libraries), compile (extends run) and test (extends libraries)
-comment|//    mod6.3 depends on mod6.2 2.0 in conf (run->default)
-comment|//    mod6.3 depends on mod6.1 2.+ in conf (test->default)
+comment|// mod6.3 1.1 has four confs libraries, run (extends libraries), compile (extends run) and
+comment|// test (extends libraries)
+comment|// mod6.3 depends on mod6.2 2.0 in conf (run->default)
+comment|// mod6.3 depends on mod6.1 2.+ in conf (test->default)
 comment|// mod6.2 2.0 depends on mod6.1 2.0 in conf (default->standalone)
 comment|// mod6.1 2.0 has two confs default and standalone
-comment|//   mod6.1 2.0 depends on mod1.2 2.2 in conf (default->default)
+comment|// mod6.1 2.0 depends on mod1.2 2.2 in conf (default->default)
 name|ResolveReport
 name|report
 init|=
@@ -4102,11 +4108,11 @@ name|Exception
 block|{
 comment|// Test case for IVY-188
 comment|//
-comment|// mod6.2  has two confs compile and run
-comment|//    depends on mod6.1     in conf (compile->default)
-comment|//    depends on mod1.2 latest (which is 2.2) in conf (run->default)
+comment|// mod6.2 has two confs compile and run
+comment|// depends on mod6.1 in conf (compile->default)
+comment|// depends on mod1.2 latest (which is 2.2) in conf (run->default)
 comment|// mod6.1
-comment|//    depends on mod1.2 2.2
+comment|// depends on mod1.2 2.2
 name|ResolveReport
 name|report
 init|=
@@ -4251,14 +4257,14 @@ name|Exception
 block|{
 comment|// Test case for IVY-173
 comment|//
-comment|// mod6.2  has two confs compile and run
-comment|//    depends on mod1.2 2.1 in conf (compile->default)
-comment|//    depends on mod1.1 1.0 in conf (*->default)
-comment|//    depends on mod6.1     in conf (*->default)
+comment|// mod6.2 has two confs compile and run
+comment|// depends on mod1.2 2.1 in conf (compile->default)
+comment|// depends on mod1.1 1.0 in conf (*->default)
+comment|// depends on mod6.1 in conf (*->default)
 comment|// mod6.1
-comment|//    depends on mod1.2 2.1
+comment|// depends on mod1.2 2.1
 comment|// mod1.1
-comment|//    depends on mod1.2 2.0
+comment|// depends on mod1.2 2.0
 name|ResolveReport
 name|report
 init|=
@@ -4962,8 +4968,8 @@ name|Exception
 block|{
 comment|// test case for IVY-261
 comment|// mod1.6 depends on
-comment|//   mod1.4, which depends on mod1.3 and selects one of its artifacts
-comment|//   mod1.3 and selects two of its artifacts
+comment|// mod1.4, which depends on mod1.3 and selects one of its artifacts
+comment|// mod1.3 and selects two of its artifacts
 name|ResolveReport
 name|report
 init|=
@@ -8855,7 +8861,7 @@ literal|"mod1.2"
 argument_list|,
 literal|"2.0"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -8905,7 +8911,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -8944,7 +8950,7 @@ literal|"mod2.1"
 argument_list|,
 literal|"0.3.2"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -8968,8 +8974,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.2 (A,B,compile) depends on
-comment|//		mod 2.1 (A->runtime;B->compile)
-comment|//		mod1.1 (A->*) ]0.9.9,1.0] (which resolves to 1.0)
+comment|// mod 2.1 (A->runtime;B->compile)
+comment|// mod1.1 (A->*) ]0.9.9,1.0] (which resolves to 1.0)
 comment|// compile is not transitive and extends A and B
 comment|//
 comment|// mod2.1 (compile, runtime) depends on mod1.1 1.0 which depends on mod1.2 2.0
@@ -9059,7 +9065,7 @@ literal|"mod1.2"
 argument_list|,
 literal|"2.0"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9109,7 +9115,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9159,7 +9165,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,         }
+block|,}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9183,8 +9189,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 depends on
-comment|//   - mod1.1 which depends on mod1.2
-comment|//   - mod3.1 which depends on mod1.2
+comment|// - mod1.1 which depends on mod1.2
+comment|// - mod3.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
@@ -9406,8 +9412,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.1 depends on
-comment|//   - mod1.1 v 1.0 which depends on mod1.2 v 2.0
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.1 v 1.0 which depends on mod1.2 v 2.0
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -9837,9 +9843,9 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.14 depends on
-comment|//   - mod1.1 v 1.0 which depends on mod1.2 v 2.0
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
-comment|//   - mod6.1 v 0.3 which depends on mod1.2 v 2.0
+comment|// - mod1.1 v 1.0 which depends on mod1.2 v 2.0
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod6.1 v 0.3 which depends on mod1.2 v 2.0
 name|ResolveReport
 name|report
 init|=
@@ -10400,8 +10406,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod7.3 depends on mod7.2 v1.0 and on mod7.1 v2.0
-comment|//      mod7.2 v1.0 depends on mod7.1 v1.0 (which then should be evicted)
-comment|//      mod7.1 v1.0 depends on mod 1.2 v1.0 (which should be evicted by transitivity)
+comment|// mod7.2 v1.0 depends on mod7.1 v1.0 (which then should be evicted)
+comment|// mod7.1 v1.0 depends on mod 1.2 v1.0 (which should be evicted by transitivity)
 name|ResolveReport
 name|report
 init|=
@@ -10625,9 +10631,9 @@ name|Exception
 block|{
 comment|// IVY-199
 comment|// mod4.1 v 4.13 depends on
-comment|//   - mod3.2 v 1.2.1 which depends on
-comment|//         - mod3.1 v 1.0 which depends on mod1.2 v 2.0
-comment|//         - mod1.2 v 2.1
+comment|// - mod3.2 v 1.2.1 which depends on
+comment|// - mod3.1 v 1.0 which depends on mod1.2 v 2.0
+comment|// - mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -10958,10 +10964,10 @@ name|Exception
 block|{
 comment|// bug 105 - test #1
 comment|// mod6.1 r1.0 depends on
-comment|//       mod5.1 r4.2 conf A
-comment|//       mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
+comment|// mod5.1 r4.2 conf A
+comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
 comment|//
-comment|//       mod5.1 r4.2 conf B depends on mod1.2 r2.0
+comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
@@ -11272,10 +11278,10 @@ comment|// same as preceding one but with inverse order, so that
 comment|// eviction is done after download
 comment|// bug 105 - test #2
 comment|// mod6.1 r1.1 depends on
-comment|//       mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
-comment|//       mod5.1 r4.2 conf A
+comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
+comment|// mod5.1 r4.2 conf A
 comment|//
-comment|//       mod5.1 r4.2 conf B depends on mod1.2 r2.0
+comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
@@ -11563,10 +11569,10 @@ block|{
 comment|// same as preceding ones but the conflict appears in several root confs
 comment|// bug 105 - test #3
 comment|// mod6.1 r1.2 conf A and conf B depends on
-comment|//       mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
-comment|//       mod5.1 r4.2 conf A
+comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
+comment|// mod5.1 r4.2 conf A
 comment|//
-comment|//       mod5.1 r4.2 conf B depends on mod1.2 r2.0
+comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
@@ -11931,13 +11937,13 @@ comment|// same as preceding one but the conflict appears in a root conf and not
 comment|// which should keep the evicted
 comment|// bug 105 - test #4
 comment|// mod6.1 r1.3 conf A depends on
-comment|//       mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
+comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
 comment|//
 comment|// mod6.1 r1.3 conf B depends on
-comment|//       mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
-comment|//       mod5.1 r4.2 conf A
+comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
+comment|// mod5.1 r4.2 conf A
 comment|//
-comment|//       mod5.1 r4.2 conf B depends on mod1.2 r2.0
+comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
@@ -12320,8 +12326,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.2 depends on
-comment|//   - mod1.2 v 2.0 and forces it
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.2 v 2.0 and forces it
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -12544,9 +12550,9 @@ name|Exception
 block|{
 comment|// IVY-193
 comment|// mod4.1 v 4.9 depends on
-comment|//   - mod3.2 v 1.1 which depends on mod1.2 v 2.0
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
-comment|//   - mod1.2 v 2.0 and forces it
+comment|// - mod3.2 v 1.1 which depends on mod1.2 v 2.0
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.2 v 2.0 and forces it
 name|ResolveReport
 name|report
 init|=
@@ -12704,8 +12710,8 @@ name|Exception
 block|{
 comment|// IVY-193
 comment|// mod4.1 v 4.10 depends on
-comment|//   - mod3.1 v 1.0.1 which depends on mod1.2 v 2.0 and forces it
-comment|//   - mod3.2 v 1.2 which depends on mod1.2 v 2.1 and on mod3.1 v1.0.1
+comment|// - mod3.1 v 1.0.1 which depends on mod1.2 v 2.0 and forces it
+comment|// - mod3.2 v 1.2 which depends on mod1.2 v 2.1 and on mod3.1 v1.0.1
 name|ResolveReport
 name|report
 init|=
@@ -12813,11 +12819,11 @@ name|Exception
 block|{
 comment|// IVY-193
 comment|// mod4.1 v 4.11 depends on
-comment|//   - mod1.2 v 2.0
-comment|//   - mod3.2 v 1.3 which depends on
-comment|//          - mod3.1 v1.1 which depends on
-comment|//                  - mod1.2 v 2.1
-comment|//          - mod1.2 v 1.0 and forces it
+comment|// - mod1.2 v 2.0
+comment|// - mod3.2 v 1.3 which depends on
+comment|// - mod3.1 v1.1 which depends on
+comment|// - mod1.2 v 2.1
+comment|// - mod1.2 v 1.0 and forces it
 name|ResolveReport
 name|report
 init|=
@@ -12946,12 +12952,12 @@ name|Exception
 block|{
 comment|// IVY-193
 comment|// mod4.1 v 4.12 depends on
-comment|//   - mod3.1 v1.0 which depends on
-comment|//          - mod1.2 v 2.0
-comment|//   - mod3.2 v 1.4 which depends on
-comment|//          - mod1.2 v 2.0 and forces it
-comment|//          - mod3.1 v1.1 which depends on
-comment|//                  - mod1.2 v 2.1
+comment|// - mod3.1 v1.0 which depends on
+comment|// - mod1.2 v 2.0
+comment|// - mod3.2 v 1.4 which depends on
+comment|// - mod1.2 v 2.0 and forces it
+comment|// - mod3.1 v1.1 which depends on
+comment|// - mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -13058,8 +13064,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.5 depends on
-comment|//   - mod1.2 v 1+ and forces it
-comment|//   - mod3.1 v 1.2 which depends on mod1.2 v 2+
+comment|// - mod1.2 v 1+ and forces it
+comment|// - mod3.1 v 1.2 which depends on mod1.2 v 2+
 name|ResolveReport
 name|report
 init|=
@@ -13281,8 +13287,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.6 (conf compile, test extends compile) depends on
-comment|//   - mod1.2 v 1+ and forces it in conf compile
-comment|//   - mod3.1 v 1.2 in conf test which depends on mod1.2 v 2+
+comment|// - mod1.2 v 1+ and forces it in conf compile
+comment|// - mod3.1 v 1.2 in conf test which depends on mod1.2 v 2+
 name|ResolveReport
 name|report
 init|=
@@ -13504,10 +13510,10 @@ throws|throws
 name|Exception
 block|{
 comment|// mod4.1 v 4.7 (conf compile, test extends compile) depends on
-comment|//   - mod1.2 v 1+ and forces it in conf compile
-comment|//   - mod3.1 v 1.3 in conf test->runtime
-comment|//           which defines confs compile, runtime extends compile
-comment|//           which depends on mod1.2 v 2+ in conf compile->default
+comment|// - mod1.2 v 1+ and forces it in conf compile
+comment|// - mod3.1 v 1.3 in conf test->runtime
+comment|// which defines confs compile, runtime extends compile
+comment|// which depends on mod1.2 v 2+ in conf compile->default
 name|ResolveReport
 name|report
 init|=
@@ -13729,14 +13735,14 @@ throws|throws
 name|Exception
 block|{
 comment|// IVY-182
-comment|//   * has no revision
-comment|//   * declares conf compile, test extends compile,
-comment|//   * depends on
-comment|//     - mod1.2 v 1+ and forces it in conf compile
-comment|//     - mod3.1 v 1+ in conf test->runtime excluding mod4.1 (to avoid cyclic dep failure)
-comment|//           which defines confs compile, runtime extends compile
-comment|//           which depends on mod1.2 v 2+ in conf compile->default
-comment|//           which depends on mod4.1 v 4+ in conf compile->compile
+comment|// * has no revision
+comment|// * declares conf compile, test extends compile,
+comment|// * depends on
+comment|// - mod1.2 v 1+ and forces it in conf compile
+comment|// - mod3.1 v 1+ in conf test->runtime excluding mod4.1 (to avoid cyclic dep failure)
+comment|// which defines confs compile, runtime extends compile
+comment|// which depends on mod1.2 v 2+ in conf compile->default
+comment|// which depends on mod4.1 v 4+ in conf compile->compile
 name|ResolveReport
 name|report
 init|=
@@ -13945,11 +13951,11 @@ throws|throws
 name|Exception
 block|{
 comment|// mod10.1 v 1.0 depends on
-comment|//   - mod1.2 v 2.0 and forces it
-comment|//   - mod4.1 v 4.1 (which selects mod1.2 v 2.1 and evicts mod1.2 v 2.0)
+comment|// - mod1.2 v 2.0 and forces it
+comment|// - mod4.1 v 4.1 (which selects mod1.2 v 2.1 and evicts mod1.2 v 2.0)
 comment|// mod4.1 v 4.1 depends on
-comment|//   - mod1.1 v 1.0 which depends on mod1.2 v 2.0
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.1 v 1.0 which depends on mod1.2 v 2.0
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -14129,11 +14135,11 @@ name|Exception
 block|{
 comment|// BUG IVY-130 : only mod1.2 v2.0 should be resolved and not v2.1 (because of force)
 comment|// mod10.1 v 1.1 depends on
-comment|//   - mod1.2 v 2.0 and forces it
-comment|//   - mod4.1 v 4.3
+comment|// - mod1.2 v 2.0 and forces it
+comment|// - mod4.1 v 4.3
 comment|// mod4.1 v 4.3 depends on
-comment|//   - mod1.2 v 2.1
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.2 v 2.1
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|_ivy
 operator|.
 name|resolve
@@ -14253,13 +14259,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod 1.2 v2.0 should be selected (despite conflict manager in 4.1, because of force in 10.1)
+comment|// mod 1.2 v2.0 should be selected (despite conflict manager in 4.1, because of force in
+comment|// 10.1)
 comment|// mod10.1 v 1.3 depends on
-comment|//   - mod1.2 v 2.0 and forces it
-comment|//   - mod4.1 v 4.4
+comment|// - mod1.2 v 2.0 and forces it
+comment|// - mod4.1 v 4.4
 comment|// mod4.1 v 4.4 depends on
-comment|//   - mod1.2 v 2.0 but selects mod1.2 v 2.1
-comment|//   - mod3.1 v 1.1 which depends on mod1.2 v 2.1
+comment|// - mod1.2 v 2.0 but selects mod1.2 v 2.1
+comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
@@ -15566,8 +15573,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod1.5 depends on
-comment|//    latest mod1.4, which depends on mod1.2 2.2
-comment|//    latest mod1.2 (which is 2.2)
+comment|// latest mod1.4, which depends on mod1.2 2.2
+comment|// latest mod1.2 (which is 2.2)
 name|ResolveReport
 name|report
 init|=
@@ -15677,7 +15684,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//The test verify that latest.integration dependencies can be resolved with released version also.
+comment|// The test verify that latest.integration dependencies can be resolved with released
+comment|// version also.
 name|ResolveReport
 name|report
 init|=
@@ -16037,7 +16045,8 @@ block|}
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|// we should have an error since there is no milestone version, it should be considered as a non resolved dependency
+comment|// we should have an error since there is no milestone version, it should be considered as a
+comment|// non resolved dependency
 name|assertTrue
 argument_list|(
 name|report
@@ -17562,7 +17571,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.4 depends on mod1.1 with transitive set to false
-comment|//     mod1.1 depends on mod1.2, which should not be resolved because of the transitive setting
+comment|// mod1.1 depends on mod1.2, which should not be resolved because of the transitive setting
 name|ResolveReport
 name|report
 init|=
@@ -17805,7 +17814,10 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-comment|// creates a fake dependency file in cache
+comment|// creates a
+comment|// fake
+comment|// dependency
+comment|// file in cache
 name|ResolveReport
 name|report
 init|=
@@ -18206,10 +18218,10 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|///////////////////////////////////////////////////////////
+comment|// /////////////////////////////////////////////////////////
 comment|// here comes a series of test provided by Chris Rudd
 comment|// about configuration mapping and eviction
-comment|///////////////////////////////////////////////////////////
+comment|// /////////////////////////////////////////////////////////
 specifier|public
 name|void
 name|testConfigurationMapping1
@@ -19377,7 +19389,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod9.2 depends on mod9.1 and mod1.2
-comment|//     mod9.1 depends on mod1.2
+comment|// mod9.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
@@ -19556,7 +19568,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.5 depends on mod2.3 and excludes one artifact from mod2.1
-comment|//      mod2.3 depends on mod2.1
+comment|// mod2.3 depends on mod2.1
 name|ResolveReport
 name|report
 init|=
@@ -19755,8 +19767,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5
-comment|//      mod2.3 depends on mod2.1 and excludes art21B
-comment|//      mod2.5 depends on mod2.1 and excludes art21A
+comment|// mod2.3 depends on mod2.1 and excludes art21B
+comment|// mod2.5 depends on mod2.1 and excludes art21A
 name|_ivy
 operator|.
 name|resolve
@@ -19832,8 +19844,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5
-comment|//      mod2.3 depends on mod2.1 and excludes art21B
-comment|//      mod2.5 depends on mod2.1 and excludes art21B
+comment|// mod2.3 depends on mod2.1 and excludes art21B
+comment|// mod2.5 depends on mod2.1 and excludes art21B
 name|_ivy
 operator|.
 name|resolve
@@ -19909,8 +19921,8 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5 and on mod2.1 for which it excludes art21A
-comment|//      mod2.3 depends on mod2.1 and excludes art21B
-comment|//      mod2.5 depends on mod2.1 and excludes art21B
+comment|// mod2.3 depends on mod2.1 and excludes art21B
+comment|// mod2.5 depends on mod2.1 and excludes art21B
 name|_ivy
 operator|.
 name|resolve
@@ -19986,7 +19998,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.3 for which it excludes art21A
-comment|//      mod2.3 depends on mod2.1 and excludes art21B
+comment|// mod2.3 depends on mod2.1 and excludes art21B
 name|ResolveReport
 name|report
 init|=
@@ -20092,7 +20104,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.1 and excludes mod1.1
-comment|//      mod2.1 depends on mod1.1 which depends on mod1.2
+comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
@@ -20242,7 +20254,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod2.6 depends on mod2.1 and excludes mod1.1 module wide
-comment|//      mod2.1 depends on mod1.1 which depends on mod1.2
+comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
@@ -21486,7 +21498,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// the dependency is in another namespace and has itself a dependency on a module available in the same namespace
+comment|// the dependency is in another namespace and has itself a dependency on a module available
+comment|// in the same namespace
 name|Ivy
 name|ivy
 init|=
@@ -23612,9 +23625,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|////////////////////////////////////////////////////////////
+comment|// //////////////////////////////////////////////////////////
 comment|// helper methods to ease the tests
-comment|////////////////////////////////////////////////////////////
+comment|// //////////////////////////////////////////////////////////
 specifier|private
 name|void
 name|assertContainsArtifact

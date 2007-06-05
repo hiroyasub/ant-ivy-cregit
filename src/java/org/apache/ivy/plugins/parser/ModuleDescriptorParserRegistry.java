@@ -256,7 +256,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a the given parser to this registry.      *       * @param parser the parser to add      */
+comment|/**      * Adds a the given parser to this registry.      *       * @param parser      *            the parser to add      */
 specifier|public
 name|void
 name|addParser
@@ -265,7 +265,7 @@ name|ModuleDescriptorParser
 name|parser
 parameter_list|)
 block|{
-comment|/*     	 * The parser is added in the front of the list of parsers. This is necessary because     	 * the XmlModuleDescriptorParser accepts all resources!     	 */
+comment|/*          * The parser is added in the front of the list of parsers. This is necessary because the          * XmlModuleDescriptorParser accepts all resources!          */
 name|_parsers
 operator|.
 name|add

@@ -202,7 +202,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * This method should be overriden in most cases, because it uses the default contract      * to return 1 when it's not possible to know which revision is greater.      */
+comment|/**      * This method should be overriden in most cases, because it uses the default contract to return      * 1 when it's not possible to know which revision is greater.      */
 specifier|public
 name|int
 name|compare

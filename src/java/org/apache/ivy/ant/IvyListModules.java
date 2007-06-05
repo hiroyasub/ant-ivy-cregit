@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Look for modules in the repository matching the given criteria, and sets a set of properties  * according to what was found.  *   */
+comment|/**  * Look for modules in the repository matching the given criteria, and sets a set of properties  * according to what was found.  */
 end_comment
 
 begin_class

@@ -33,6 +33,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -103,16 +113,6 @@ name|Reference
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -141,7 +141,7 @@ argument_list|(
 literal|"test/repositories"
 argument_list|)
 expr_stmt|;
-comment|//p.setProperty("ivy.settings.file" , "ivysettings.xml");
+comment|// p.setProperty("ivy.settings.file" , "ivysettings.xml");
 name|p
 operator|.
 name|setProperty
@@ -215,7 +215,7 @@ name|getDefaultCache
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//The next test doesn't always works on windows (mix C: and c: drive)
+comment|// The next test doesn't always works on windows (mix C: and c: drive)
 name|assertEquals
 argument_list|(
 operator|new
@@ -353,8 +353,8 @@ operator|new
 name|Project
 argument_list|()
 decl_stmt|;
-comment|//p.setBasedir("test/repositories");
-comment|//p.setProperty("ivy.settings.file" , "ivysettings.xml");
+comment|// p.setBasedir("test/repositories");
+comment|// p.setProperty("ivy.settings.file" , "ivysettings.xml");
 name|p
 operator|.
 name|setProperty
@@ -378,7 +378,7 @@ argument_list|(
 name|p
 argument_list|)
 expr_stmt|;
-comment|//antSettings.setId("mySettings");
+comment|// antSettings.setId("mySettings");
 name|antSettings
 operator|.
 name|setFile

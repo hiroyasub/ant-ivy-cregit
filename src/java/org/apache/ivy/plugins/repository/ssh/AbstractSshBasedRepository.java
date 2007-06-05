@@ -160,7 +160,7 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * get a new session using the default attributes      * if the given String is a full uri, use the data from the uri      * instead      * @param pathOrUri might be just a path or a full ssh or sftp uri      * @return matching Session      */
+comment|/**      * get a new session using the default attributes if the given String is a full uri, use the      * data from the uri instead      *       * @param pathOrUri      *            might be just a path or a full ssh or sftp uri      * @return matching Session      */
 specifier|protected
 name|Session
 name|getSession
@@ -352,7 +352,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Just check the uri for sanity      * @param source String of the uri      * @return URI object of the String or null      */
+comment|/**      * Just check the uri for sanity      *       * @param source      *            String of the uri      * @return URI object of the String or null      */
 specifier|private
 name|URI
 name|parseURI
@@ -510,7 +510,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      * @param uri key for the cache      * @param conn to release      */
+comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *       * @param uri      *            key for the cache      * @param conn      *            to release      */
 specifier|protected
 name|void
 name|releaseSession
@@ -538,7 +538,7 @@ name|session
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * set the default user to use for the connection if no user is given or a PEM file is used      * @param user to use      */
+comment|/**      * set the default user to use for the connection if no user is given or a PEM file is used      *       * @param user      *            to use      */
 specifier|public
 name|void
 name|setUser
@@ -564,7 +564,7 @@ return|return
 name|user
 return|;
 block|}
-comment|/**      * Sets the full file path to use for accessing a PEM key file       * @param filePath fully qualified name      */
+comment|/**      * Sets the full file path to use for accessing a PEM key file      *       * @param filePath      *            fully qualified name      */
 specifier|public
 name|void
 name|setKeyFile
@@ -663,7 +663,7 @@ return|return
 name|keyFile
 return|;
 block|}
-comment|/**      * @param user password to use for user/password authentication      */
+comment|/**      * @param user      *            password to use for user/password authentication      */
 specifier|public
 name|void
 name|setUserPassword
@@ -689,7 +689,7 @@ return|return
 name|keyFilePassword
 return|;
 block|}
-comment|/**      * @param keyFilePassword sets password for public key based authentication      */
+comment|/**      * @param keyFilePassword      *            sets password for public key based authentication      */
 specifier|public
 name|void
 name|setKeyFilePassword
@@ -725,7 +725,7 @@ return|return
 name|host
 return|;
 block|}
-comment|/**      * @param host the host to set      */
+comment|/**      * @param host      *            the host to set      */
 specifier|public
 name|void
 name|setHost
@@ -751,7 +751,7 @@ return|return
 name|port
 return|;
 block|}
-comment|/**      * @param port the port to set      */
+comment|/**      * @param port      *            the port to set      */
 specifier|public
 name|void
 name|setPort
@@ -767,7 +767,7 @@ operator|=
 name|port
 expr_stmt|;
 block|}
-comment|/**      * @param passFile the passfile to set      */
+comment|/**      * @param passFile      *            the passfile to set      */
 specifier|public
 name|void
 name|setPassFile
@@ -783,7 +783,7 @@ operator|=
 name|passFile
 expr_stmt|;
 block|}
-comment|/**      * @return the passFile       */
+comment|/**      * @return the passFile      */
 specifier|public
 name|File
 name|getPassFile

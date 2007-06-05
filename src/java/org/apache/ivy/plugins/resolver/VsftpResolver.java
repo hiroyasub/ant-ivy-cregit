@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This resolver uses SecureCRT vsft to access an sftp server.  *   * It supports listing and publishing.  *   * The server host should absolutely be set using setHost, so does the username.  *   */
+comment|/**  * This resolver uses SecureCRT vsft to access an sftp server. It supports listing and publishing.  * The server host should absolutely be set using setHost, so does the username.  */
 end_comment
 
 begin_class

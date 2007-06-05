@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/***************************************************************************************************  * Modified version of the WebdavClientFactory from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * Create a HttpClient instance  *   */
+comment|/***************************************************************************************************  * Modified version of the WebdavClientFactory from VFS which adds support for httpclient 3.x. See  * http://issues.apache.org/jira/browse/VFS-74 for more info. Create a HttpClient instance  */
 end_comment
 
 begin_class
@@ -164,7 +164,7 @@ name|IvyWebdavClientFactory
 parameter_list|()
 block|{
 block|}
-comment|/*********************************************************************************************** 	 * Creates a new connection to the server. 	 */
+comment|/***********************************************************************************************      * Creates a new connection to the server.      */
 specifier|public
 specifier|static
 name|HttpClient
@@ -219,7 +219,7 @@ init|=
 operator|new
 name|WebdavResource
 argument_list|()
-block|{ 			}
+block|{             }
 decl_stmt|;
 if|if
 condition|(
@@ -277,7 +277,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* 			 * if (resource == null) { resource = new WebdavResource(url); } 			 * resource.setProperties(WebdavResource.NOACTION, 1); 			 */
+comment|/*              * if (resource == null) { resource = new WebdavResource(url); }              * resource.setProperties(WebdavResource.NOACTION, 1);              */
 name|resource
 operator|.
 name|setHttpURL

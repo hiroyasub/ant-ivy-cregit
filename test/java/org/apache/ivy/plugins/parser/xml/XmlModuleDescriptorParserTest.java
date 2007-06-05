@@ -5095,7 +5095,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// confs def: test: should not use default conf for the right side (use of defaultconfmapping is required for that) => test->test
+comment|// confs def: test: should not use default conf for the right side (use of
+comment|// defaultconfmapping is required for that) => test->test
 name|dd
 operator|=
 name|getDependency

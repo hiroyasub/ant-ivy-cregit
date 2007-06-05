@@ -124,7 +124,7 @@ specifier|private
 name|String
 name|ext
 decl_stmt|;
-comment|/**      * @param dd      * @param name      * @param type      * @param url       */
+comment|/**      * @param dd      * @param name      * @param type      * @param url      */
 specifier|public
 name|DefaultDependencyArtifactDescriptor
 parameter_list|(
@@ -334,7 +334,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Add a configuration for this artifact.      * @param conf      */
+comment|/**      * Add a configuration for this artifact.      *       * @param conf      */
 specifier|public
 name|void
 name|addConfiguration

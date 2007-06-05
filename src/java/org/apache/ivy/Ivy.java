@@ -626,7 +626,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *   * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</li>  *   * Here is one typical usage:  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL("ivysettings.xml"));  * ivy.resolve(new URL("ivy.xml"));  *    */
+comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager. This  * class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</li>  * Here is one typical usage: Ivy ivy = Ivy.newInstance(); ivy.configure(new  * URL("ivysettings.xml")); ivy.resolve(new URL("ivy.xml"));  */
 end_comment
 
 begin_class
@@ -700,17 +700,17 @@ return|return
 name|ivy
 return|;
 block|}
-comment|/** 	 * True if the current processing has been requested to be interrupted, 	 * false otherwise 	 */
+comment|/**      * True if the current processing has been requested to be interrupted, false otherwise      */
 specifier|private
 name|boolean
 name|_interrupted
 decl_stmt|;
-comment|/**      * True if this instance of Ivy hass already been bound to its dependencies,      * false otherwise.      * @see bind()      */
+comment|/**      * True if this instance of Ivy hass already been bound to its dependencies, false otherwise.      *       * @see bind()      */
 specifier|private
 name|boolean
 name|_bound
 decl_stmt|;
-comment|/*       * Following are dependencies of the Ivy instance on      * instances of engines and manager which actually do the work      *       * The attributes can be set either manually using the corresponding setters,      * or all at once with the default implementations using the bind method      */
+comment|/*      * Following are dependencies of the Ivy instance on instances of engines and manager which      * actually do the work The attributes can be set either manually using the corresponding      * setters, or all at once with the default implementations using the bind method      */
 specifier|private
 name|IvySettings
 name|_settings
@@ -751,13 +751,13 @@ specifier|private
 name|InstallEngine
 name|_installEngine
 decl_stmt|;
-comment|/** 	 * The default constructor of Ivy allows to create an instance of Ivy with none of  	 * its dependencies (engines, settings, ...) created. 	 * If you use this constructor, it's your responsibility to set the dependencies 	 * of Ivy using the appropriate setters (setResolveEngine, ...). 	 * You can also call the bind method to set all the dependencies except those that you  	 * have provided using the setters. 	 *  	 * If you want to get an instance ready to use, prefer the use of Ivy.newInstance(). 	 */
+comment|/**      * The default constructor of Ivy allows to create an instance of Ivy with none of its      * dependencies (engines, settings, ...) created. If you use this constructor, it's your      * responsibility to set the dependencies of Ivy using the appropriate setters      * (setResolveEngine, ...). You can also call the bind method to set all the dependencies except      * those that you have provided using the setters. If you want to get an instance ready to use,      * prefer the use of Ivy.newInstance().      */
 specifier|public
 name|Ivy
 parameter_list|()
 block|{
 block|}
-comment|/** 	 * This method is used to bind this Ivy instance to  	 * required dependencies, i.e. instance of settings, engines, and so on. 	 * After thes call Ivy is still not configured, which means that the settings 	 * object is still empty. 	 */
+comment|/**      * This method is used to bind this Ivy instance to required dependencies, i.e. instance of      * settings, engines, and so on. After thes call Ivy is still not configured, which means that      * the settings object is still empty.      */
 specifier|public
 name|void
 name|bind
@@ -994,9 +994,9 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         LOAD SETTINGS
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// LOAD SETTINGS
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|void
 name|configure
@@ -1070,7 +1070,7 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Configures Ivy with 1.4 compatible default settings 	 */
+comment|/**      * Configures Ivy with 1.4 compatible default settings      */
 specifier|public
 name|void
 name|configureDefault14
@@ -1092,9 +1092,9 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         CHECK
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// CHECK
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|boolean
 name|check
@@ -1117,9 +1117,9 @@ name|resolvername
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         RESOLVE
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// RESOLVE
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|ResolveReport
 name|resolve
@@ -1247,9 +1247,9 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         INSTALL
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// INSTALL
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|ResolveReport
 name|install
@@ -1309,9 +1309,9 @@ name|matcherName
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         RETRIEVE
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// RETRIEVE
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|int
 name|retrieve
@@ -1341,9 +1341,9 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         DELIVER
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// DELIVER
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|void
 name|deliver
@@ -1411,7 +1411,7 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Example of use: 	 * deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",  	 *         DeliverOptions.newInstance(settings).setStatus("release").setValidate(false)); 	 *          	 * @param mrid 	 * @param revision 	 * @param destIvyPattern 	 * @param options 	 * @throws IOException 	 * @throws ParseException 	 */
+comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *       * @param mrid      * @param revision      * @param destIvyPattern      * @param options      * @throws IOException      * @throws ParseException      */
 specifier|public
 name|void
 name|deliver
@@ -1447,9 +1447,9 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         PUBLISH
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// PUBLISH
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|Collection
 name|publish
@@ -1484,9 +1484,9 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         SORT
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// SORT
+comment|// ///////////////////////////////////////////////////////////////////////
 comment|/**      * Sorts the collection of IvyNode from the less dependent to the more dependent      */
 specifier|public
 name|List
@@ -1505,7 +1505,7 @@ name|nodes
 argument_list|)
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent.      * This sort ensures that a ModuleDescriptor is always found in the list before all       * ModuleDescriptors depending directly on it.      * @param moduleDescriptors a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      */
 specifier|public
 name|List
 name|sortModuleDescriptors
@@ -1545,9 +1545,9 @@ name|nonMatchingVersionReporter
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         SEARCH
-comment|/////////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// SEARCH
+comment|// ///////////////////////////////////////////////////////////////////////
 specifier|public
 name|ResolvedModuleRevision
 name|findModule
@@ -1765,10 +1765,10 @@ name|otherTokenValues
 argument_list|)
 return|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////////
-comment|//                         INTERRUPTIONS
-comment|/////////////////////////////////////////////////////////////////////////
-comment|/**      * Interrupts the current running operation, no later than      * interruptTimeout milliseconds after the call      */
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|// INTERRUPTIONS
+comment|// ///////////////////////////////////////////////////////////////////////
+comment|/**      * Interrupts the current running operation, no later than interruptTimeout milliseconds after      * the call      */
 specifier|public
 name|void
 name|interrupt
@@ -1791,7 +1791,7 @@ name|operatingThread
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Interrupts the current running operation in the given operating thread,       * no later than interruptTimeout milliseconds after the call      */
+comment|/**      * Interrupts the current running operation in the given operating thread, no later than      * interruptTimeout milliseconds after the call      */
 specifier|public
 name|void
 name|interrupt
@@ -1922,7 +1922,7 @@ return|return
 name|_interrupted
 return|;
 block|}
-comment|/**      * Check if the current operation has been interrupted, and if it is the case, throw a runtime exception      */
+comment|/**      * Check if the current operation has been interrupted, and if it is the case, throw a runtime      * exception      */
 specifier|public
 name|void
 name|checkInterrupted
@@ -1973,7 +1973,7 @@ name|File
 name|cache
 parameter_list|)
 block|{
-comment|//TODO : reuse instance
+comment|// TODO : reuse instance
 name|CacheManager
 name|cacheManager
 init|=
@@ -2124,9 +2124,9 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////
 comment|// GETTERS / SETTERS
-comment|/////////////////////////////////////////////////////////////////////
+comment|// ///////////////////////////////////////////////////////////////////
 specifier|public
 name|IvySettings
 name|getSettings

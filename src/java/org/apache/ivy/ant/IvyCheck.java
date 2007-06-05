@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Checks the given ivy file using current configuration to see if all dependencies  * are available, with good confs. If a resolver name is given, it also checks that the declared  * publications are available in the corresponding resolver.  * Note that the check is not performed recursively, i.e. if a dependency has itself dependencies  * badly described or not available, this check will not discover it.  *    */
+comment|/**  * Checks the given ivy file using current configuration to see if all dependencies are available,  * with good confs. If a resolver name is given, it also checks that the declared publications are  * available in the corresponding resolver. Note that the check is not performed recursively, i.e.  * if a dependency has itself dependencies badly described or not available, this check will not  * discover it.  */
 end_comment
 
 begin_class
@@ -176,7 +176,7 @@ operator|=
 name|file
 expr_stmt|;
 block|}
-comment|/**      * Adds a set of files to check.      * @param set a set of files to check      */
+comment|/**      * Adds a set of files to check.      *       * @param set      *            a set of files to check      */
 specifier|public
 name|void
 name|addFileset

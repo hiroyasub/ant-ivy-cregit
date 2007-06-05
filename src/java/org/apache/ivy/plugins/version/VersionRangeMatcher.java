@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Matches version ranges:  * [1.0,2.0] matches all versions greater or equal to 1.0 and lower or equal to 2.0  * [1.0,2.0[ matches all versions greater or equal to 1.0 and lower than 2.0  * ]1.0,2.0] matches all versions greater than 1.0 and lower or equal to 2.0  * ]1.0,2.0[ matches all versions greater than 1.0 and lower than 2.0  * [1.0,) matches all versions greater or equal to 1.0  * ]1.0,) matches all versions greater than 1.0  * (,2.0] matches all versions lower or equal to 2.0  * (,2.0[ matches all versions lower than 2.0  *   * This class uses a latest strategy to compare revisions.  * If none is set, it uses the default one of the ivy instance set through setIvy().  * If neither a latest strategy nor a ivy instance is set, an IllegalStateException  * will be thrown when calling accept().  *   * Note that it can't work with latest time strategy, cause no time is known for the limits of the range.  * Therefore only purely revision based LatestStrategy can be used.    *   *  */
+comment|/**  * Matches version ranges: [1.0,2.0] matches all versions greater or equal to 1.0 and lower or equal  * to 2.0 [1.0,2.0[ matches all versions greater or equal to 1.0 and lower than 2.0 ]1.0,2.0]  * matches all versions greater than 1.0 and lower or equal to 2.0 ]1.0,2.0[ matches all versions  * greater than 1.0 and lower than 2.0 [1.0,) matches all versions greater or equal to 1.0 ]1.0,)  * matches all versions greater than 1.0 (,2.0] matches all versions lower or equal to 2.0 (,2.0[  * matches all versions lower than 2.0 This class uses a latest strategy to compare revisions. If  * none is set, it uses the default one of the ivy instance set through setIvy(). If neither a  * latest strategy nor a ivy instance is set, an IllegalStateException will be thrown when calling  * accept(). Note that it can't work with latest time strategy, cause no time is known for the  * limits of the range. Therefore only purely revision based LatestStrategy can be used.  */
 end_comment
 
 begin_class
@@ -1038,7 +1038,8 @@ name|foundMrid
 argument_list|)
 decl_stmt|;
 comment|// if the comparison consider them equal, we must return -1, because we can't consider the
-comment|// dynamic revision to be greater. Otherwise we can safeely return the result of the static comparison
+comment|// dynamic revision to be greater. Otherwise we can safeely return the result of the static
+comment|// comparison
 return|return
 name|c
 operator|==

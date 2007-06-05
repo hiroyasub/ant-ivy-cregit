@@ -42,13 +42,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pattern matcher matching input using regular expressions.  *  * @see Pattern  */
+comment|/**  * A pattern matcher matching input using regular expressions.  *   * @see Pattern  */
 end_comment
 
 begin_class
 specifier|public
 specifier|final
-comment|/*@Immutable*/
+comment|/* @Immutable */
 class|class
 name|RegexpPatternMatcher
 extends|extends
@@ -64,7 +64,7 @@ operator|new
 name|RegexpPatternMatcher
 argument_list|()
 decl_stmt|;
-comment|/*     NOTE: Regexp compiler does ~200K compilation/s     - If necessary look into using ThreadLocal Pattern to cut on useless object creation     - If expression are reused over and over a LRU cache could make sense      */
+comment|/*      * NOTE: Regexp compiler does ~200K compilation/s - If necessary look into using ThreadLocal      * Pattern to cut on useless object creation - If expression are reused over and over a LRU      * cache could make sense      */
 specifier|public
 name|RegexpPatternMatcher
 parameter_list|()
@@ -93,7 +93,7 @@ return|;
 block|}
 specifier|private
 specifier|static
-comment|/*@Immutable*/
+comment|/* @Immutable */
 class|class
 name|RegexpMatcher
 implements|implements

@@ -877,7 +877,8 @@ block|}
 block|}
 else|else
 block|{
-comment|// no default mapping found for this configuration, map configuration to itself
+comment|// no default mapping found for this configuration, map
+comment|// configuration to itself
 name|dd
 operator|.
 name|addDependencyConfiguration
@@ -1066,7 +1067,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX".          * If the condition evaluates to true, the configuration is returned, if the condition          * evaluatate to false, null is returned.          * If there are no conditions, the configuration itself is returned.          *  		 * @param conf the configuration to evaluate 		 * @param dd the dependencydescriptor to which the configuration will be added 		 * @return the evaluated condition 		 */
+comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX". If          * the condition evaluates to true, the configuration is returned, if the condition          * evaluatate to false, null is returned. If there are no conditions, the configuration          * itself is returned.          *           * @param conf          *            the configuration to evaluate          * @param dd          *            the dependencydescriptor to which the configuration will be added          * @return the evaluated condition          */
 specifier|private
 name|String
 name|evaluateCondition
@@ -1512,7 +1513,9 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|//                		if (getDefaultConfMappingDescriptor().getDependencyConfigurations(configName).length> 0) {
+comment|// if
+comment|// (getDefaultConfMappingDescriptor().getDependencyConfigurations(configName).length
+comment|//> 0) {
 name|configsToAdd
 operator|.
 name|add
@@ -1520,7 +1523,7 @@ argument_list|(
 name|configName
 argument_list|)
 expr_stmt|;
-comment|//                		} else {
+comment|// } else {
 name|addExtendingConfigurations
 argument_list|(
 name|configName
@@ -1530,7 +1533,7 @@ argument_list|,
 name|useDefaultMappingToGuessRightOperande
 argument_list|)
 expr_stmt|;
-comment|//                		}
+comment|// }
 block|}
 block|}
 block|}

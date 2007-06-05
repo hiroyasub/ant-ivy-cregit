@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class containing several utility methods for working with configurations.  *   *  */
+comment|/**  * Class containing several utility methods for working with configurations.  */
 end_comment
 
 begin_class
@@ -110,13 +110,13 @@ specifier|public
 class|class
 name|ConfigurationUtils
 block|{
-comment|/** 	 * Private constructor to avoid instantiation of this class. 	 */
+comment|/**      * Private constructor to avoid instantiation of this class.      */
 specifier|private
 name|ConfigurationUtils
 parameter_list|()
 block|{
 block|}
-comment|/** 	 * Replace all the wildcards in the given configuration array. Supported wildcards 	 * are: 	 *<ul> 	 *<li><b><tt>*</tt>:</b>all configurations</li> 	 *<li><b><tt>*(public)</tt>:</b>all public configurations</li> 	 *<li><b><tt>*(private)</tt>:</b>all private configurations</li> 	 *</ul> 	 * If the given array of configurations is<tt>null</tt>, all configurations are returned. 	 *  	 * @param confs the configurations, can contain wildcards 	 * @param md the configurations where the wildcards are replaced 	 * @return 	 */
+comment|/**      * Replace all the wildcards in the given configuration array. Supported wildcards are:      *<ul>      *<li><b><tt>*</tt>:</b>all configurations</li>      *<li><b><tt>*(public)</tt>:</b>all public configurations</li>      *<li><b><tt>*(private)</tt>:</b>all private configurations</li>      *</ul>      * If the given array of configurations is<tt>null</tt>, all configurations are returned.      *       * @param confs      *            the configurations, can contain wildcards      * @param md      *            the configurations where the wildcards are replaced      * @return      */
 specifier|public
 specifier|static
 name|String

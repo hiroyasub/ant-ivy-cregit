@@ -139,24 +139,6 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|DefaultDependencyArtifactDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
 name|DefaultDependencyDescriptor
 import|;
 end_import
@@ -422,7 +404,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests URLResolver. Http tests are based upon ibiblio site.  *   */
+comment|/**  * Tests URLResolver. Http tests are based upon ibiblio site.  */
 end_comment
 
 begin_class
@@ -2381,16 +2363,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// test to ask to download again, should use cache
-comment|//        report = resolver.download(new Artifact[] {artifact}, _data.getIvy(), _cache);
-comment|//        assertNotNull(report);
+comment|// report = resolver.download(new Artifact[] {artifact}, _data.getIvy(), _cache);
+comment|// assertNotNull(report);
 comment|//
-comment|//        assertEquals(1, report.getArtifactsReports().length);
+comment|// assertEquals(1, report.getArtifactsReports().length);
 comment|//
-comment|//        ar = report.getArtifactReport(artifact);
-comment|//        assertNotNull(ar);
+comment|// ar = report.getArtifactReport(artifact);
+comment|// assertNotNull(ar);
 comment|//
-comment|//        assertEquals(artifact, ar.getArtifact());
-comment|//        assertEquals(DownloadStatus.NO, ar.getDownloadStatus());
+comment|// assertEquals(artifact, ar.getArtifact());
+comment|// assertEquals(DownloadStatus.NO, ar.getDownloadStatus());
 comment|//
 block|}
 block|}

@@ -955,7 +955,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String conflictManagerName -> ConflictManager)
+comment|// Map (String conflictManagerName ->
+comment|// ConflictManager)
 specifier|private
 name|Map
 name|latestStrategies
@@ -964,7 +965,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String latestStrategyName -> LatestStrategy)
+comment|// Map (String latestStrategyName ->
+comment|// LatestStrategy)
 specifier|private
 name|Map
 name|namespaces
@@ -1009,7 +1011,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String name -> CircularDependencyStrategy)
+comment|// Map (String name ->
+comment|// CircularDependencyStrategy)
 specifier|private
 name|List
 name|triggers
@@ -1553,7 +1556,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local properties file      */
+comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      */
 specifier|public
 name|void
 name|configureRepositories
@@ -2386,7 +2389,7 @@ name|iae
 throw|;
 block|}
 block|}
-comment|/**      * Sets a deprecated variable with the value of the new variable      * @param deprecatedKey the deprecated variable name      * @param newKey the new variable name      */
+comment|/**      * Sets a deprecated variable with the value of the new variable      *       * @param deprecatedKey      *            the deprecated variable name      * @param newKey      *            the new variable name      */
 specifier|private
 name|void
 name|setDeprecatedVariable
@@ -3044,7 +3047,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Substitute variables in the given string by their value found in the current       * set of variables      *       * @param str the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      */
+comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      */
 specifier|public
 name|String
 name|substitute
@@ -3065,7 +3068,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the variables loaded in configuration file. Those variables      * may better be seen as ant properties       *       * @return      */
+comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return      */
 specifier|public
 name|Map
 name|getVariables
@@ -3593,7 +3596,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId      * organisation and name      *       * @param moduleId      * @param resolverName      * @param branch       */
+comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId organisation and      * name      *       * @param moduleId      * @param resolverName      * @param branch      */
 specifier|public
 name|void
 name|addModuleConfiguration
@@ -4996,7 +4999,7 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the name should be ignored in listing      * @param name      * @return      */
+comment|/**      * Returns true if the name should be ignored in listing      *       * @param name      * @return      */
 specifier|public
 name|boolean
 name|listingIgnore
@@ -5014,7 +5017,7 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/**      * Filters the names list by removing all names that should be ignored      * as defined by the listing ignore list      * @param names      */
+comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
 specifier|public
 name|void
 name|filterIgnore
@@ -5495,8 +5498,8 @@ operator|instanceof
 name|IvyAware
 condition|)
 block|{
-comment|//TODO
-comment|//            ((IvyAware)obj).setIvy(this);
+comment|// TODO
+comment|// ((IvyAware)obj).setIvy(this);
 block|}
 block|}
 specifier|private
@@ -5669,7 +5672,7 @@ return|return
 name|variableContainer
 return|;
 block|}
-comment|/**  	 * Use a different variable container. 	 * @param variables 	 */
+comment|/**      * Use a different variable container.      *       * @param variables      */
 specifier|public
 name|void
 name|setVariableContainer

@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/** * @see GlobPatternMatcher  */
+comment|/**  * @see GlobPatternMatcher  */
 end_comment
 
 begin_class

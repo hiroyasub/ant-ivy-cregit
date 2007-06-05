@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to call the Ivy dependency resolution from ant.  *   *  */
+comment|/**  * This task allow to call the Ivy dependency resolution from ant.  */
 end_comment
 
 begin_class
@@ -542,7 +542,7 @@ operator|=
 name|type
 expr_stmt|;
 block|}
-comment|/** 	 * @deprecated Use {@link #setFailureProperty(String)} instead 	 */
+comment|/**      * @deprecated Use {@link #setFailureProperty(String)} instead      */
 specifier|public
 name|void
 name|setFailurePropery
@@ -894,7 +894,8 @@ name|getModuleDescriptor
 argument_list|()
 decl_stmt|;
 comment|// put resolved infos in ant properties and ivy variables
-comment|// putting them in ivy variables is important to be able to change from one resolve call to the other
+comment|// putting them in ivy variables is important to be able to change from one resolve
+comment|// call to the other
 name|getProject
 argument_list|()
 operator|.

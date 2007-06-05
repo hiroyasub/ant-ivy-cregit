@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of the reporter used in the sort.  The reporting is isolated here to make  * it easier to test, and to have a place where adding different type of reporting (silent, warning, exceptions)   */
+comment|/**  * A default implementation of the reporter used in the sort. The reporting is isolated here to make  * it easier to test, and to have a place where adding different type of reporting (silent, warning,  * exceptions)  */
 end_comment
 
 begin_class
@@ -148,8 +148,8 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|//There are some rare case where DependencyDescriptor have no parent.
-comment|//This is should not be used in the SortEngine, but if it is, we show a decent trace.
+comment|// There are some rare case where DependencyDescriptor have no parent.
+comment|// This is should not be used in the SortEngine, but if it is, we show a decent trace.
 name|Message
 operator|.
 name|warn

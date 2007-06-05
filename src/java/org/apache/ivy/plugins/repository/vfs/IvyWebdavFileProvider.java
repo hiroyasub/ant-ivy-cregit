@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modified version of the WebdavFileProvider from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A provider for WebDAV.  *  */
+comment|/**  * Modified version of the WebdavFileProvider from VFS which adds support for httpclient 3.x. See  * http://issues.apache.org/jira/browse/VFS-74 for more info. A provider for WebDAV.  */
 end_comment
 
 begin_class
@@ -134,7 +134,7 @@ name|IvyWebdavFileProvider
 extends|extends
 name|WebdavFileProvider
 block|{
-comment|/*********************************************************************************************** 	 * Creates a filesystem. 	 */
+comment|/***********************************************************************************************      * Creates a filesystem.      */
 specifier|protected
 name|FileSystem
 name|doCreateFileSystem

@@ -150,7 +150,7 @@ literal|"SHA-1"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Checks the checksum of the given file against the given checksumFile, 	 * and throws an IOException if the checksum is not compliant 	 *  	 * @param dest the file to test 	 * @param checksumFile the file containing the expected checksum 	 * @param algorithm the checksum algorithm to use 	 * @throws IOException if an IO problem occur whle reading files or if the checksum is not compliant 	 */
+comment|/**      * Checks the checksum of the given file against the given checksumFile, and throws an      * IOException if the checksum is not compliant      *       * @param dest      *            the file to test      * @param checksumFile      *            the file containing the expected checksum      * @param algorithm      *            the checksum algorithm to use      * @throws IOException      *             if an IO problem occur whle reading files or if the checksum is not compliant      */
 specifier|public
 specifier|static
 name|void
@@ -512,7 +512,7 @@ block|,
 literal|'f'
 block|}
 decl_stmt|;
-comment|/** 	 * Convert a byte[] array to readable string format. This makes the "hex" readable! 	 * @return result String buffer in String format  	 * @param in byte[] buffer to convert to string format 	 */
+comment|/**      * Convert a byte[] array to readable string format. This makes the "hex" readable!      *       * @return result String buffer in String format      * @param in      *            byte[] buffer to convert to string format      */
 specifier|public
 specifier|static
 name|String

@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visit node is an object used to represent one visit from one parent on   * an {@link IvyNode} of the dependency graph.  *   * During dependency resolution, the {@link ResolveEngine} visits nodes of the   * depency graph following the dependencies, thus the same node can be visited  * several times, if it is requested from several module.  *   * In this case you will have one VisitNode per parent and per root module   * configuration.  *   * Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li> the node from which the visit is occuring  *<li>parentConf</li> the configuration of the parent in which this node is visited  *<li>rootModuleConf</li> the configuration of the root module which is currently resolved  *</ul>  *   */
+comment|/**  * A visit node is an object used to represent one visit from one parent on an {@link IvyNode} of  * the dependency graph. During dependency resolution, the {@link ResolveEngine} visits nodes of the  * depency graph following the dependencies, thus the same node can be visited several times, if it  * is requested from several module. In this case you will have one VisitNode per parent and per  * root module configuration. Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li>  * the node from which the visit is occuring  *<li>parentConf</li>  * the configuration of the parent in which this node is visited  *<li>rootModuleConf</li>  * the configuration of the root module which is currently resolved  *</ul>  */
 end_comment
 
 begin_class
@@ -224,26 +224,26 @@ specifier|public
 class|class
 name|VisitNode
 block|{
-comment|/** 	 * The node which is currently visited  	 */
+comment|/**      * The node which is currently visited      */
 specifier|private
 name|IvyNode
 name|node
 decl_stmt|;
-comment|/**       * Represents the current parent of the node during ivy visit      * of dependency graph.      */
+comment|/**      * Represents the current parent of the node during ivy visit of dependency graph.      */
 specifier|private
 name|VisitNode
 name|parent
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * The root node of the current visit      * It is null until it is required, see getRoot      */
+comment|/**      * The root node of the current visit It is null until it is required, see getRoot      */
 specifier|private
 name|VisitNode
 name|root
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Direct path from root to this node.       * Note that the colleciton is ordered but is not a list implementation       * This collection is null until it is required, see getPath      */
+comment|/**      * Direct path from root to this node. Note that the colleciton is ordered but is not a list      * implementation This collection is null until it is required, see getPath      */
 specifier|private
 name|Collection
 name|path
@@ -251,14 +251,14 @@ init|=
 literal|null
 decl_stmt|;
 comment|// Collection(VisitNode)
-comment|/**      * The configuration of the parent module in the current visit       */
+comment|/**      * The configuration of the parent module in the current visit      */
 specifier|private
 name|String
 name|parentConf
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * The configuration requested by the parent      * Note that this is the actual conf requested by the parent, not       * a configuration extended by the requested conf which actually       * trigger the node visit      */
+comment|/**      * The configuration requested by the parent Note that this is the actual conf requested by the      * parent, not a configuration extended by the requested conf which actually trigger the node      * visit      */
 specifier|private
 name|String
 name|requestedConf
@@ -268,12 +268,12 @@ specifier|private
 name|String
 name|rootModuleConf
 decl_stmt|;
-comment|/**      * Shared ResolveData instance, which can be used      * to get info on the current resolve process      */
+comment|/**      * Shared ResolveData instance, which can be used to get info on the current resolve process      */
 specifier|private
 name|ResolveData
 name|data
 decl_stmt|;
-comment|/**      * Boolean.TRUE if a node with a same module id as the one visited       * has already been visited in the current path.      * null if not computed yet      * Boolean.FALSE otherwise      */
+comment|/**      * Boolean.TRUE if a node with a same module id as the one visited has already been visited in      * the current path. null if not computed yet Boolean.FALSE otherwise      */
 specifier|private
 name|Boolean
 name|isCircular
@@ -706,7 +706,7 @@ return|return
 name|root
 return|;
 block|}
-comment|/**      * Returns true if the current dependency descriptor is transitive      * and the parent configuration is transitive.  Otherwise returns false.      * @param node curent node      * @return true if current node is transitive and the parent configuration is      * transitive.      */
+comment|/**      * Returns true if the current dependency descriptor is transitive and the parent configuration      * is transitive. Otherwise returns false.      *       * @param node      *            curent node      * @return true if current node is transitive and the parent configuration is transitive.      */
 specifier|public
 name|boolean
 name|isTransitive
@@ -735,7 +735,7 @@ argument_list|()
 operator|)
 return|;
 block|}
-comment|/**      * Checks if the current node's parent configuration is transitive.      * @param node current node      * @return true if the node's parent configuration is transitive      */
+comment|/**      * Checks if the current node's parent configuration is transitive.      *       * @param node      *            current node      * @return true if the node's parent configuration is transitive      */
 specifier|protected
 name|boolean
 name|isParentConfTransitive
@@ -779,7 +779,7 @@ name|isTransitive
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the 'real' node currently visited.      * 'Real' means that if we are visiting a node created originally with only a version      * constraint, and if this version constraint has been resolved to an existing node      * in the graph, we will return the existing node, and not the one originally used      * which is about to be discarded, since it's not possible to have in the graph      * two nodes for the same ModuleRevisionId      * @return the 'real' node currently visited.      */
+comment|/**      * Returns the 'real' node currently visited. 'Real' means that if we are visiting a node      * created originally with only a version constraint, and if this version constraint has been      * resolved to an existing node in the graph, we will return the existing node, and not the one      * originally used which is about to be discarded, since it's not possible to have in the graph      * two nodes for the same ModuleRevisionId      *       * @return the 'real' node currently visited.      */
 specifier|public
 name|IvyNode
 name|getRealNode
@@ -815,7 +815,7 @@ name|node
 return|;
 block|}
 block|}
-comment|/**      * Ask to the current visited node to use a real node only, if one exist.       * See getRealNode for details about what a 'real' node is.      */
+comment|/**      * Ask to the current visited node to use a real node only, if one exist. See getRealNode for      * details about what a 'real' node is.      */
 specifier|public
 name|void
 name|useRealNode
@@ -1020,7 +1020,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a VisitNode for the given node.      * The given node must be a representation of the same module       * (usually in another revision) as the one visited by this node.      *       * The given node must also have been already visited.      *       * @param node the node to visit      * @return a VisitNode for the given node      */
+comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node. The given node must      * also have been already visited.      *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
 name|VisitNode
 name|gotoNode
 parameter_list|(
@@ -1256,8 +1256,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// we do not use the new parent, but the first one, to always be able to go up to the root
-comment|//			parent = getVisitNode(depNode).getParent();
+comment|// we do not use the new parent, but the first one, to always be able to go up to the
+comment|// root
+comment|// parent = getVisitNode(depNode).getParent();
 block|}
 return|return
 operator|new
@@ -1514,7 +1515,7 @@ name|getNode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if this node can already be found in the path      * @return      */
+comment|/**      * Returns true if this node can already be found in the path      *       * @return      */
 specifier|public
 name|boolean
 name|isCircular
@@ -1540,7 +1541,8 @@ name|Boolean
 operator|.
 name|FALSE
 expr_stmt|;
-comment|// asumme it's false, and see if it isn't by checking the parent path
+comment|// asumme it's false, and see if it isn't by checking
+comment|// the parent path
 for|for
 control|(
 name|Iterator
@@ -1718,7 +1720,7 @@ name|getRequiredConfigurations
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Marks the current node as evicted by the the given selected IvyNodes,  	 * in the given parent and root module configuration, with the given 	 * {@link ConflictManager} 	 *  	 * @param parent the VisitNode in which eviction has been made 	 * @param conflictManager the conflict manager responsible for the eviction 	 * @param selected a Collection of {@link IvyNode} which have been selected  	 */
+comment|/**      * Marks the current node as evicted by the the given selected IvyNodes, in the given parent and      * root module configuration, with the given {@link ConflictManager}      *       * @param parent      *            the VisitNode in which eviction has been made      * @param conflictManager      *            the conflict manager responsible for the eviction      * @param selected      *            a Collection of {@link IvyNode} which have been selected      */
 specifier|public
 name|void
 name|markEvicted
@@ -1806,15 +1808,16 @@ name|rootModuleConf
 argument_list|)
 return|;
 block|}
-comment|//    public void setRootModuleConf(String rootModuleConf) {
-comment|//        if (rootModuleConf != null&& !rootModuleConf.equals(rootModuleConf)) {
-comment|//            _confsToFetch.clear(); // we change of root module conf => we discard all confs to fetch
-comment|//        }
-comment|//        if (rootModuleConf != null&& rootModuleConf.equals(rootModuleConf)) {
-comment|//            _selectedDeps.put(new ModuleIdConf(_id.getModuleId(), rootModuleConf), Collections.singleton(this));
-comment|//        }
-comment|//        rootModuleConf = rootModuleConf;
-comment|//    }
+comment|// public void setRootModuleConf(String rootModuleConf) {
+comment|// if (rootModuleConf != null&& !rootModuleConf.equals(rootModuleConf)) {
+comment|// _confsToFetch.clear(); // we change of root module conf => we discard all confs to fetch
+comment|// }
+comment|// if (rootModuleConf != null&& rootModuleConf.equals(rootModuleConf)) {
+comment|// _selectedDeps.put(new ModuleIdConf(_id.getModuleId(), rootModuleConf),
+comment|// Collections.singleton(this));
+comment|// }
+comment|// rootModuleConf = rootModuleConf;
+comment|// }
 specifier|public
 name|String
 name|toString

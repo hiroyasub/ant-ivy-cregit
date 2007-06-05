@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for all ivy ant tasks, deal particularly with ivy instance storage in ant project.  *   *  */
+comment|/**  * Base class for all ivy ant tasks, deal particularly with ivy instance storage in ant project.  */
 end_comment
 
 begin_class
@@ -440,7 +440,7 @@ name|getConfiguredIvyInstance
 argument_list|()
 return|;
 block|}
-comment|/**       * Every task MUST call ensureMessageInitialised when the execution method      * starts (at least before doing any log in order to set the correct task      * in the log.      */
+comment|/**      * Every task MUST call ensureMessageInitialised when the execution method starts (at least      * before doing any log in order to set the correct task in the log.      */
 specifier|protected
 name|void
 name|ensureMessageInitialised
@@ -1410,7 +1410,7 @@ name|void
 name|prepareTask
 parameter_list|()
 block|{
-comment|//push current project on the stack in context
+comment|// push current project on the stack in context
 name|IvyContext
 operator|.
 name|getContext
@@ -1425,7 +1425,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called when task is about to finish      * Should clean up all state related information (stacks for example)      */
+comment|/**      * Called when task is about to finish Should clean up all state related information (stacks for      * example)      */
 specifier|protected
 name|void
 name|finalizeTask
@@ -1457,7 +1457,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Ant task execute.       * Calls prepareTask, doExecute, finalzeTask      */
+comment|/**      * Ant task execute. Calls prepareTask, doExecute, finalzeTask      */
 specifier|public
 specifier|final
 name|void
@@ -1482,7 +1482,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * The real logic of task execution after project has been set in the context.      * MUST be implemented by subclasses      * @throws BuildException      */
+comment|/**      * The real logic of task execution after project has been set in the context. MUST be      * implemented by subclasses      *       * @throws BuildException      */
 specifier|public
 specifier|abstract
 name|void

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Convenient class used only for uncapitalization  * Usually use commons lang but here we do not want to have such   * a dependency for only one feature  *   *  */
+comment|/**  * Convenient class used only for uncapitalization Usually use commons lang but here we do not want  * to have such a dependency for only one feature  */
 end_comment
 
 begin_class
@@ -89,7 +89,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * Joins the given object array in one string, each separated by the given separator.      * Example: join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *       * @param objs      * @param sep      * @return      */
+comment|/**      * Joins the given object array in one string, each separated by the given separator. Example:      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *       * @param objs      * @param sep      * @return      */
 specifier|public
 specifier|static
 name|String
@@ -699,7 +699,7 @@ block|,
 literal|152
 block|}
 decl_stmt|;
-comment|/**      * Encrypt the given string in a way which anybody having access to this method      * algorithm can easily decrypt.      *       * This is useful only to avoid clear string storage in a file for example,      * but shouldn't be considered as a real mean of security.      *       * This only works with simple characters (char< 256).      * @param str the string to encrypt      * @return the encrypted version of the string      */
+comment|/**      * Encrypt the given string in a way which anybody having access to this method algorithm can      * easily decrypt. This is useful only to avoid clear string storage in a file for example, but      * shouldn't be considered as a real mean of security. This only works with simple characters      * (char< 256).      *       * @param str      *            the string to encrypt      * @return the encrypted version of the string      */
 specifier|public
 specifier|final
 specifier|static
@@ -795,7 +795,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Decrypts a string encrypted with encrypt.      * @param str the encrypted string to decrypt      * @return      */
+comment|/**      * Decrypts a string encrypted with encrypt.      *       * @param str      *            the encrypted string to decrypt      * @return      */
 specifier|public
 specifier|final
 specifier|static

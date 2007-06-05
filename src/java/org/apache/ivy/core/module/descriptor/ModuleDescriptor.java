@@ -220,7 +220,7 @@ name|CALLER_ALL_CONFIGURATION
 init|=
 literal|"all"
 decl_stmt|;
-comment|/**      * Returns true if this descriptor is a default one, i.e.      * one generated for a module not actually having one.       * @return      */
+comment|/**      * Returns true if this descriptor is a default one, i.e. one generated for a module not      * actually having one.      *       * @return      */
 name|boolean
 name|isDefault
 parameter_list|()
@@ -229,12 +229,12 @@ name|ModuleRevisionId
 name|getModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * The module revision id returned here is the resolved one,       * i.e. it is never a latest one. If the revision has not been       * resolved, a null revision should be returned by getRevision()      * of the returned ModuleRevisionId.      * This revision must be the same as the module descriptor resolved      * revision id unless no module descriptor is defined      * @return      */
+comment|/**      * The module revision id returned here is the resolved one, i.e. it is never a latest one. If      * the revision has not been resolved, a null revision should be returned by getRevision() of      * the returned ModuleRevisionId. This revision must be the same as the module descriptor      * resolved revision id unless no module descriptor is defined      *       * @return      */
 name|ModuleRevisionId
 name|getResolvedModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * This method update the resolved module revision id      * @param revId      */
+comment|/**      * This method update the resolved module revision id      *       * @param revId      */
 name|void
 name|setResolvedModuleRevisionId
 parameter_list|(
@@ -242,7 +242,7 @@ name|ModuleRevisionId
 name|revId
 parameter_list|)
 function_decl|;
-comment|/**      * This method update the resolved publication date      * @param publicationDate      */
+comment|/**      * This method update the resolved publication date      *       * @param publicationDate      */
 name|void
 name|setResolvedPublicationDate
 parameter_list|(
@@ -254,17 +254,17 @@ name|String
 name|getStatus
 parameter_list|()
 function_decl|;
-comment|/**      * may be null if unknown in the descriptor itself      * @return      */
+comment|/**      * may be null if unknown in the descriptor itself      *       * @return      */
 name|Date
 name|getPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * the publication date of the module revision should be the date at which it has been published,      * i.e. in general the date of any of its published artifacts, since all published artifact      * of a module should follow the same publishing cycle.      */
+comment|/**      * the publication date of the module revision should be the date at which it has been      * published, i.e. in general the date of any of its published artifacts, since all published      * artifact of a module should follow the same publishing cycle.      */
 name|Date
 name|getResolvedPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * Returns all the configurations declared by this module as an array.      * This array is never empty (a 'default' conf is assumed when none is declared      * in the ivy file)       * @return all the configurations declared by this module as an array.      */
+comment|/**      * Returns all the configurations declared by this module as an array. This array is never empty      * (a 'default' conf is assumed when none is declared in the ivy file)      *       * @return all the configurations declared by this module as an array.      */
 name|Configuration
 index|[]
 name|getConfigurations
@@ -293,13 +293,13 @@ index|[]
 name|getAllArtifacts
 parameter_list|()
 function_decl|;
-comment|/** @retun The dependencies of the module.  If there is no dependencies return an empty array (non null) */
+comment|/**      * @retun The dependencies of the module. If there is no dependencies return an empty array (non      *        null)      */
 name|DependencyDescriptor
 index|[]
 name|getDependencies
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if the module described by this descriptor dependes directly upon the      * given module descriptor       * @param md      * @return      */
+comment|/**      * Returns true if the module described by this descriptor dependes directly upon the given      * module descriptor      *       * @param md      * @return      */
 name|boolean
 name|dependsOn
 parameter_list|(
@@ -326,7 +326,7 @@ name|ModuleId
 name|id
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the licenses of the module described by this descriptor      * @return      */
+comment|/**      * Returns the licenses of the module described by this descriptor      *       * @return      */
 name|License
 index|[]
 name|getLicenses
@@ -340,7 +340,7 @@ name|long
 name|getLastModified
 parameter_list|()
 function_decl|;
-comment|/**      * Writes this module descriptor as an ivy file.      *       * If this descriptor was obtained through the parsing of an ivy file, it should      * keep the layout of the file the most possible similar to the original one.      * @param ivyFile the destination ivy file      */
+comment|/**      * Writes this module descriptor as an ivy file. If this descriptor was obtained through the      * parsing of an ivy file, it should keep the layout of the file the most possible similar to      * the original one.      *       * @param ivyFile      *            the destination ivy file      */
 name|void
 name|toIvyFile
 parameter_list|(
@@ -352,22 +352,22 @@ name|ParseException
 throws|,
 name|IOException
 function_decl|;
-comment|/** 	 * The ModuleDescriptorParser used to parse this module descriptor, null is no parser was used. 	 * @return 	 */
+comment|/**      * The ModuleDescriptorParser used to parse this module descriptor, null is no parser was used.      *       * @return      */
 name|ModuleDescriptorParser
 name|getParser
 parameter_list|()
 function_decl|;
-comment|/** 	 * The resource being the source of this module descriptor, null if no resource corresponds to this module descriptor 	 * @return 	 */
+comment|/**      * The resource being the source of this module descriptor, null if no resource corresponds to      * this module descriptor      *       * @return      */
 name|Resource
 name|getResource
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return true if this descriptor contains any exclusion rule      */
+comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return true if this descriptor contains any exclusion rule      */
 name|boolean
 name|canExclude
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns true if an exclude rule of this module attached to any of the given configurations 	 * matches the given artifact id, and thus exclude it 	 * @param moduleConfs 	 * @param artifactId 	 * @return 	 */
+comment|/**      * Returns true if an exclude rule of this module attached to any of the given configurations      * matches the given artifact id, and thus exclude it      *       * @param moduleConfs      * @param artifactId      * @return      */
 name|boolean
 name|doesExclude
 parameter_list|(
@@ -379,7 +379,7 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns an array of all the exclude rules this module descriptor currently holds. 	 * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies 	 * for the whole module. 	 * @return an array of {@link ExcludeRule} this module descriptor holds 	 */
+comment|/**      * Returns an array of all the exclude rules this module descriptor currently holds. Module      * Descriptor exclude rules are used to exclude (usually transitive) dependencies for the whole      * module.      *       * @return an array of {@link ExcludeRule} this module descriptor holds      */
 specifier|public
 name|ExcludeRule
 index|[]

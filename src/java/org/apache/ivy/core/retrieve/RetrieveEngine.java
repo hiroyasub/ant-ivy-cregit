@@ -450,7 +450,7 @@ operator|=
 name|settings
 expr_stmt|;
 block|}
-comment|/**      * example of destFilePattern :      * - lib/[organisation]/[module]/[artifact]-[revision].[type]      * - lib/[artifact].[type] : flatten with no revision      * moduleId is used with confs and localCacheDirectory to determine      * an ivy report file, used as input for the copy      * If such a file does not exist for any conf (resolve has not been called before ?)      * then an IllegalStateException is thrown and nothing is copied.      *       */
+comment|/**      * example of destFilePattern : - lib/[organisation]/[module]/[artifact]-[revision].[type] -      * lib/[artifact].[type] : flatten with no revision moduleId is used with confs and      * localCacheDirectory to determine an ivy report file, used as input for the copy If such a      * file does not exist for any conf (resolve has not been called before ?) then an      * IllegalStateException is thrown and nothing is copied.      */
 specifier|public
 name|int
 name|retrieve
@@ -635,7 +635,10 @@ operator|new
 name|HashSet
 argument_list|()
 decl_stmt|;
-comment|// Set(File) set of all paths which should be present at then end of retrieve (useful for sync)
+comment|// Set(File) set of all paths
+comment|// which should be present at
+comment|// then end of retrieve (useful
+comment|// for sync)
 name|Collection
 name|targetIvysStructure
 init|=
@@ -753,7 +756,8 @@ name|exists
 argument_list|()
 condition|)
 block|{
-comment|// file is not available in cache, maybe the last resolve was performed with useOrigin=true.
+comment|// file is not available in cache, maybe the last resolve was performed with
+comment|// useOrigin=true.
 comment|// we try to use the best we can
 name|archive
 operator|=
@@ -1645,7 +1649,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Artifact source -> Set (String copyDestAbsolutePath)
+comment|// Artifact source -> Set (String
+comment|// copyDestAbsolutePath)
 specifier|final
 name|Map
 name|conflictsMap
@@ -1654,7 +1659,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// String copyDestAbsolutePath -> Set (Artifact source)
+comment|// String copyDestAbsolutePath -> Set (Artifact
+comment|// source)
 specifier|final
 name|Map
 name|conflictsConfMap
@@ -1663,7 +1669,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// String copyDestAbsolutePath -> Set (String conf)
+comment|// String copyDestAbsolutePath -> Set (String
+comment|// conf)
 name|XmlReportParser
 name|parser
 init|=
@@ -2095,7 +2102,8 @@ argument_list|(
 name|artifacts
 argument_list|)
 decl_stmt|;
-comment|// conflicts battle is resolved by a sort using a conflict resolving policy comparator
+comment|// conflicts battle is resolved by a sort using a conflict resolving policy
+comment|// comparator
 comment|// which consider as greater a winning artifact
 name|Collections
 operator|.
@@ -2192,7 +2200,8 @@ operator|+
 name|looser
 argument_list|)
 expr_stmt|;
-comment|// for each loser, we remove the pair (loser - copyDest) in the artifactsToCopy map
+comment|// for each loser, we remove the pair (loser - copyDest) in the artifactsToCopy
+comment|// map
 name|Set
 name|dest
 init|=
@@ -2272,7 +2281,7 @@ name|lastModified
 argument_list|()
 return|;
 block|}
-comment|/**      * The returned comparator should consider greater the artifact which      * gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager      * to resolve conflicts.      * @return      */
+comment|/**      * The returned comparator should consider greater the artifact which gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager to resolve conflicts.      *       * @return      */
 specifier|private
 name|Comparator
 name|getConflictResolvingPolicy

@@ -312,7 +312,7 @@ operator|=
 name|settings
 expr_stmt|;
 block|}
-comment|/**      * Returns an empty array when no token values are found.      *        * @param token      * @param otherTokenValues      * @return      */
+comment|/**      * Returns an empty array when no token values are found.      *       * @param token      * @param otherTokenValues      * @return      */
 specifier|public
 name|String
 index|[]
@@ -1056,7 +1056,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/** 	 * List module ids of the module accessible through the current resolvers 	 * matching the given mid criteria according to the given matcher. 	 *  	 * @param criteria 	 * @param matcher 	 * @return 	 */
+comment|/**      * List module ids of the module accessible through the current resolvers matching the given mid      * criteria according to the given matcher.      *       * @param criteria      * @param matcher      * @return      */
 specifier|public
 name|ModuleId
 index|[]
@@ -1252,7 +1252,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/** 	 * List module revision ids of the module accessible through the current resolvers 	 * matching the given mrid criteria according to the given matcher. 	 *  	 * @param criteria 	 * @param matcher 	 * @return 	 */
+comment|/**      * List module revision ids of the module accessible through the current resolvers matching the      * given mrid criteria according to the given matcher.      *       * @param criteria      * @param matcher      * @return      */
 specifier|public
 name|ModuleRevisionId
 index|[]
@@ -1740,7 +1740,8 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|// hack for resolvers which are not able to list organisation, we try to see if the asked organisation is not an exact one:
+comment|// hack for resolvers which are not able to list organisation, we try to see if the
+comment|// asked organisation is not an exact one:
 name|String
 name|org
 init|=

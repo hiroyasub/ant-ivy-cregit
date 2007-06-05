@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests {@link ApacheURLLister}.  *  */
+comment|/**  * Tests {@link ApacheURLLister}.  */
 end_comment
 
 begin_class
@@ -68,7 +68,7 @@ name|ApacheURLListerTest
 extends|extends
 name|TestCase
 block|{
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
 specifier|public
 name|void
 name|testRetrieveListing
@@ -232,7 +232,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
 specifier|public
 name|void
 name|testRetrieveListingWithSpaces

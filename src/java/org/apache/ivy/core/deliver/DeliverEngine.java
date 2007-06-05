@@ -346,7 +346,7 @@ operator|=
 name|settings
 expr_stmt|;
 block|}
-comment|/**      * Delivers a resolved ivy file based upon last resolve call status.      *       * If resolve report file cannot be found in cache, then it throws       * an IllegalStateException (maybe resolve has not been called before ?).      *      * @param revision the revision to which the module should be delivered      * @param destIvyPattern the pattern to which the delivered ivy file should be written      * @param options the options with which deliver should be done       */
+comment|/**      * Delivers a resolved ivy file based upon last resolve call status. If resolve report file      * cannot be found in cache, then it throws an IllegalStateException (maybe resolve has not been      * called before ?).      *       * @param revision      *            the revision to which the module should be delivered      * @param destIvyPattern      *            the pattern to which the delivered ivy file should be written      * @param options      *            the options with which deliver should be done      */
 specifier|public
 name|void
 name|deliver
@@ -460,7 +460,7 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Delivers a resolved ivy file based upon last resolve call status.      *       * If resolve report file cannot be found in cache, then it throws       * an IllegalStateException (maybe resolve has not been called before ?).      *      * @param mrid the module revision id of the module to deliver      * @param revision the revision to which the module should be delivered      * @param destIvyPattern the pattern to which the delivered ivy file should be written      * @param options the options with which deliver should be done       */
+comment|/**      * Delivers a resolved ivy file based upon last resolve call status. If resolve report file      * cannot be found in cache, then it throws an IllegalStateException (maybe resolve has not been      * called before ?).      *       * @param mrid      *            the module revision id of the module to deliver      * @param revision      *            the revision to which the module should be delivered      * @param destIvyPattern      *            the pattern to which the delivered ivy file should be written      * @param options      *            the options with which deliver should be done      */
 specifier|public
 name|void
 name|deliver
@@ -990,8 +990,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// 4) copy the source resolved ivy to the destination specified,
-comment|//    updating status, revision and dependency revisions obtained by
-comment|//    PublishingDependencyRevisionResolver
+comment|// updating status, revision and dependency revisions obtained by
+comment|// PublishingDependencyRevisionResolver
 name|String
 name|publishedIvy
 init|=

@@ -2360,7 +2360,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// no need to update new artifact timestamp cause it isn't used
-comment|// should get the new version even if checkModified is false, beacause we ask a latest.integration
+comment|// should get the new version even if checkModified is false, beacause we ask a
+comment|// latest.integration
 name|resolver
 operator|.
 name|setCheckmodified
@@ -2879,7 +2880,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// no need to update new artifact timestamp cause it isn't used
-comment|// should not get the new version: checkmodified is false and edpendency is not told to be a changing one
+comment|// should not get the new version: checkmodified is false and edpendency is not told to be a
+comment|// changing one
 name|resolver
 operator|.
 name|setCheckmodified

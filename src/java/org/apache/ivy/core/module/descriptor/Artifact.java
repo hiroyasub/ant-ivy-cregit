@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Representation of a published 'file' in the development environment. An artifact is generally a file  * that is produced by a project build. This is typically a jar, a war, an ear, a zip, a deb, ...  */
+comment|/**  * Representation of a published 'file' in the development environment. An artifact is generally a  * file that is produced by a project build. This is typically a jar, a war, an ear, a zip, a deb,  * ...  */
 end_comment
 
 begin_interface
@@ -102,43 +102,43 @@ name|Artifact
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the resolved module revision id for this artifact      * @return the resolved module revision id.      */
+comment|/**      * Returns the resolved module revision id for this artifact      *       * @return the resolved module revision id.      */
 name|ModuleRevisionId
 name|getModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the resolved publication date for this artifact      * @return the resolved publication date. Never null.      */
+comment|/**      * Returns the resolved publication date for this artifact      *       * @return the resolved publication date. Never null.      */
 name|Date
 name|getPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * Return the name of the artifact, generally 'part' of the basename of the file.      * @return the name of the artifact. Never null.      */
+comment|/**      * Return the name of the artifact, generally 'part' of the basename of the file.      *       * @return the name of the artifact. Never null.      */
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the type of the artifact, typically 'jar', 'source', 'javadoc', 'debian', ...      * @return the type of the artifact. Never null.      */
+comment|/**      * Returns the type of the artifact, typically 'jar', 'source', 'javadoc', 'debian', ...      *       * @return the type of the artifact. Never null.      */
 name|String
 name|getType
 parameter_list|()
 function_decl|;
-comment|/**      * Retrieve the extension of the artifact. The extension is without dot (ie. 'jar' and not '.jar')      * @return the extension of the artifact. Never null.      */
+comment|/**      * Retrieve the extension of the artifact. The extension is without dot (ie. 'jar' and not      * '.jar')      *       * @return the extension of the artifact. Never null.      */
 name|String
 name|getExt
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the url at which this artifact can be found independently of ivy configuration.      * This can be null (and is usually for standard artifacts)      * @return url at which this artifact can be found independently of ivy configuration      */
+comment|/**      * Returns the url at which this artifact can be found independently of ivy configuration. This      * can be null (and is usually for standard artifacts)      *       * @return url at which this artifact can be found independently of ivy configuration      */
 name|URL
 name|getUrl
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the list of configurations where this artifact is associated to.      * @return the list of configuration this artifact is associated to. Never null.      */
+comment|/**      * Returns the list of configurations where this artifact is associated to.      *       * @return the list of configuration this artifact is associated to. Never null.      */
 name|String
 index|[]
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Return the specific identifier of this artifact.      * @return the id of the artifact      */
+comment|/**      * Return the specific identifier of this artifact.      *       * @return the id of the artifact      */
 name|ArtifactRevisionId
 name|getId
 parameter_list|()

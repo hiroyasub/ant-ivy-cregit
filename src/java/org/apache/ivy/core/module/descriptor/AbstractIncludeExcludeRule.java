@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Abstract class used as implementation for both {@link IncludeRule} and {@link ExcludeRule},  * since their contract is almost identical  *   *  */
+comment|/**  * Abstract class used as implementation for both {@link IncludeRule} and {@link ExcludeRule},  * since their contract is almost identical  */
 end_comment
 
 begin_class
@@ -313,7 +313,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Add a configuration for this rule      * @param conf      */
+comment|/**      * Add a configuration for this rule      *       * @param conf      */
 specifier|public
 name|void
 name|addConfiguration

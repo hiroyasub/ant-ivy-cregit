@@ -425,7 +425,7 @@ name|id
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Returns the default ivy settings of this classloader.  If it doesn't exist yet, a new one is created using the given      * project to back the VariableContainer.        * @param project      * @return      */
+comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param project      * @return      */
 specifier|public
 specifier|static
 name|IvyAntSettings
@@ -821,8 +821,8 @@ name|confUrl
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*public void execute() throws BuildException {     	ensureMessageInitialised();     	if (getId()==null) {     		log("No id specified for the ivy:settings, set the instance as the default one", Project.MSG_DEBUG);     		getProject().addReference("ivy.instance", this);     	} else {     		getProject().addReference(id, this);     	}     }*/
-comment|/**   	 * @return 	 */
+comment|/*      * public void execute() throws BuildException { ensureMessageInitialised(); if (getId()==null) {      * log("No id specified for the ivy:settings, set the instance as the default one",      * Project.MSG_DEBUG); getProject().addReference("ivy.instance", this); } else {      * getProject().addReference(id, this); } }      */
+comment|/**      * @return      */
 specifier|public
 name|Ivy
 name|getConfiguredIvyInstance
@@ -869,7 +869,8 @@ argument_list|(
 name|ivyAntVariableContainer
 argument_list|)
 decl_stmt|;
-comment|//NB: It is alrady done in the ivy.configure, but it is required for defineDefaultSettingFile (that should be done before the ivy.configure
+comment|// NB: It is alrady done in the ivy.configure, but it is required for
+comment|// defineDefaultSettingFile (that should be done before the ivy.configure
 name|settings
 operator|.
 name|addAllVariables
@@ -1057,7 +1058,7 @@ operator|.
 name|getDefaultPropertiesURL
 argument_list|()
 decl_stmt|;
-comment|// this is copy of loadURL code from ant Property task  (not available in 1.5.1)
+comment|// this is copy of loadURL code from ant Property task (not available in 1.5.1)
 name|Properties
 name|props
 init|=
@@ -1129,7 +1130,7 @@ return|return
 name|props
 return|;
 block|}
-comment|/** Set _file or _url to its default value  	 * @param variableContainer */
+comment|/**      * Set _file or _url to its default value      *       * @param variableContainer      */
 specifier|private
 name|void
 name|defineDefaultSettingFile
@@ -1218,7 +1219,7 @@ name|File
 argument_list|(
 literal|"ivyconf.xml"
 argument_list|)
-block|, 		}
+block|,}
 decl_stmt|;
 for|for
 control|(
@@ -1339,7 +1340,7 @@ name|void
 name|configureURLHandler
 parameter_list|()
 block|{
-comment|//TODO : the credentialStore should also be scoped
+comment|// TODO : the credentialStore should also be scoped
 name|CredentialsStore
 operator|.
 name|INSTANCE

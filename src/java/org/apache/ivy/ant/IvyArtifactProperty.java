@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Set a set of ant properties according to the last artifact resolved   *   */
+comment|/**  * Set a set of ant properties according to the last artifact resolved  */
 end_comment
 
 begin_class

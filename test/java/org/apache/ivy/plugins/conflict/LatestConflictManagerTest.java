@@ -913,7 +913,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*     Test case for issue IVY-407 (with transitivity)      There are 5 modules A, B, C, D and E. 		1) publish C-1.0.0, C-1.0.1 and C-1.0.2 		2) B needs C-1.0.0 : retrieve ok and publish B-1.0.0 		3) A needs B-1.0.0 and C-1.0.2 : retrieve ok and publish A-1.0.0 		4) D needs C-1.0.1 : retrieve ok and publish D-1.0.0 		5) E needs D-1.0.0 and A-1.0.0 (D before A in ivy file) retrieve failed to get C-1.0.2 from A 		(get apparently C-1.0.1 from D)      */
+comment|/*      * Test case for issue IVY-407 (with transitivity) There are 5 modules A, B, C, D and E. 1)      * publish C-1.0.0, C-1.0.1 and C-1.0.2 2) B needs C-1.0.0 : retrieve ok and publish B-1.0.0 3)      * A needs B-1.0.0 and C-1.0.2 : retrieve ok and publish A-1.0.0 4) D needs C-1.0.1 : retrieve      * ok and publish D-1.0.0 5) E needs D-1.0.0 and A-1.0.0 (D before A in ivy file) retrieve      * failed to get C-1.0.2 from A (get apparently C-1.0.1 from D)      */
 specifier|public
 name|void
 name|testLatestTimeTransitivity

@@ -191,7 +191,8 @@ class|class
 name|FileUtil
 block|{
 comment|// tried some other values with empty files... seems to be the best one (512 * 1024 is very bad)
-comment|// 8 * 1024 is also the size used by ant in its FileUtils... maybe they've done more study about it ;-)
+comment|// 8 * 1024 is also the size used by ant in its FileUtils... maybe they've done more study about
+comment|// it ;-)
 specifier|private
 specifier|static
 specifier|final
@@ -1174,7 +1175,7 @@ name|delete
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns a list of Files composed of all directories being      * parent of file and child of root + file and root themselves.      *       * Example:      * getPathFiles(new File("test"), new File("test/dir1/dir2/file.txt"))      * => {new File("test/dir1"), new File("test/dir1/dir2"), new File("test/dir1/dir2/file.txt") }      *       * Note that if root is not an ancester of file, or if root is null, all directories from the      * file system root will be returned.       */
+comment|/**      * Returns a list of Files composed of all directories being parent of file and child of root +      * file and root themselves. Example: getPathFiles(new File("test"), new      * File("test/dir1/dir2/file.txt")) => {new File("test/dir1"), new File("test/dir1/dir2"), new      * File("test/dir1/dir2/file.txt") } Note that if root is not an ancester of file, or if root is      * null, all directories from the file system root will be returned.      */
 specifier|public
 specifier|static
 name|List
@@ -1256,7 +1257,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/** 	 * Returns a collection of all Files being contained in the given directory, 	 * recursively, including directories. 	 * @param dir 	 * @return 	 */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      * @return      */
 specifier|public
 specifier|static
 name|Collection

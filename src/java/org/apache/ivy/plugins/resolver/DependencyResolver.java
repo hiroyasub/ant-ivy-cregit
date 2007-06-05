@@ -218,7 +218,7 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Should only be used by configurator      * @param name the new name of the resolver      */
+comment|/**      * Should only be used by configurator      *       * @param name      *            the new name of the resolver      */
 name|void
 name|setName
 parameter_list|(
@@ -226,7 +226,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Resolve a module by id, getting its module descriptor and      * resolving the revision if it's a latest one (i.e. a revision      * uniquely identifying the revision of a module in the current environment -      * If this revision is not able to identify uniquelely the revision of the module      * outside of the current environment, then the resolved revision must begin by ##)      * @throws ParseException      */
+comment|/**      * Resolve a module by id, getting its module descriptor and resolving the revision if it's a      * latest one (i.e. a revision uniquely identifying the revision of a module in the current      * environment - If this revision is not able to identify uniquelely the revision of the module      * outside of the current environment, then the resolved revision must begin by ##)      *       * @throws ParseException      */
 name|ResolvedModuleRevision
 name|getDependency
 parameter_list|(
@@ -277,7 +277,7 @@ name|void
 name|reportFailure
 parameter_list|()
 function_decl|;
-comment|/**      * Reports last artifact download failure as Messages      * @param art      */
+comment|/**      * Reports last artifact download failure as Messages      *       * @param art      */
 name|void
 name|reportFailure
 parameter_list|(
@@ -289,7 +289,7 @@ comment|// listing methods, enable to know what is available from this resolver
 comment|// the listing methods must only list entries directly
 comment|// available from them, no recursion is needed as long as sub resolvers
 comment|// are registered in ivy too.
-comment|/**      * List all the values the given token can take if other tokens are set      * as described in the otherTokenValues map.      *       * For instance, if token = "revision" and the map contains      * "organisation"->"foo"      * "module"->"bar"      *       * The results will be the list of revisions of the module bar from the org foo.      */
+comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      */
 name|String
 index|[]
 name|listTokenValues

@@ -859,7 +859,7 @@ specifier|protected
 name|String
 name|_workspaceName
 decl_stmt|;
-comment|/**      * True if the files resolved are dependent of the environment from which they have been resolved, false otherwise. In general, relative paths are dependent of the environment, and absolute paths including machine reference are not.       */
+comment|/**      * True if the files resolved are dependent of the environment from which they have been      * resolved, false otherwise. In general, relative paths are dependent of the environment, and      * absolute paths including machine reference are not.      */
 specifier|private
 name|boolean
 name|_envDependent
@@ -914,7 +914,8 @@ operator|new
 name|URLRepository
 argument_list|()
 decl_stmt|;
-comment|// used only to download external artifacts
+comment|// used only to download
+comment|// external artifacts
 specifier|public
 name|BasicResolver
 parameter_list|()
@@ -971,7 +972,7 @@ operator|=
 name|envDependent
 expr_stmt|;
 block|}
-comment|/**      * True if this resolver should check lastmodified date to know if ivy files are up to date.      * @return      */
+comment|/**      * True if this resolver should check lastmodified date to know if ivy files are up to date.      *       * @return      */
 specifier|public
 name|boolean
 name|isCheckmodified
@@ -2026,7 +2027,8 @@ name|resolvedMrid
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// keep system md in sync with md
+comment|// keep system md in
+comment|// sync with md
 comment|// check module descriptor revision
 if|if
 condition|(
@@ -2189,7 +2191,8 @@ name|pubDate
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// keep system md in sync with md
+comment|// keep system md in sync
+comment|// with md
 block|}
 try|try
 block|{
@@ -2970,7 +2973,8 @@ name|isChangingDependency
 condition|)
 block|{
 comment|// ivy file has been updated, we should see if it has a new publication date
-comment|// to see if a new download is required (in case the dependency is a changing one)
+comment|// to see if a new download is required (in case the dependency is a
+comment|// changing one)
 name|cachedPublicationDate
 operator|=
 name|rmr
@@ -3616,10 +3620,10 @@ block|}
 block|}
 return|;
 block|}
-comment|//    private boolean isResolved(ResolveData data, ModuleRevisionId mrid) {
-comment|//        IvyNode node = getSystemNode(data, mrid);
-comment|//        return node != null&& node.getModuleRevision() != null;
-comment|//    }
+comment|// private boolean isResolved(ResolveData data, ModuleRevisionId mrid) {
+comment|// IvyNode node = getSystemNode(data, mrid);
+comment|// return node != null&& node.getModuleRevision() != null;
+comment|// }
 comment|//
 specifier|private
 name|void
@@ -4707,8 +4711,10 @@ name|i
 index|]
 argument_list|)
 decl_stmt|;
-comment|// if we can use origin file, we just ask ivy for the file in cache, and it will return
-comment|// the original one if possible. If we are not in useOrigin mode, we use the getArchivePath
+comment|// if we can use origin file, we just ask ivy for the file in cache, and it will
+comment|// return
+comment|// the original one if possible. If we are not in useOrigin mode, we use the
+comment|// getArchivePath
 comment|// method which always return a path in the actual cache
 name|File
 name|archiveFile
@@ -6134,7 +6140,7 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Checks the given resource checksum if a checksum resource exists.      *       * @param resource the resource to check      * @param dest the file where the resource has been downloaded      * @param algorithm the checksum algorithm to use      * @return true if the checksum has been successfully checked, false if the checksum wasn't available      * @throws IOException if a checksum exist but do not match the downloaded file checksum      */
+comment|/**      * Checks the given resource checksum if a checksum resource exists.      *       * @param resource      *            the resource to check      * @param dest      *            the file where the resource has been downloaded      * @param algorithm      *            the checksum algorithm to use      * @return true if the checksum has been successfully checked, false if the checksum wasn't      *         available      * @throws IOException      *             if a checksum exist but do not match the downloaded file checksum      */
 specifier|private
 name|boolean
 name|check

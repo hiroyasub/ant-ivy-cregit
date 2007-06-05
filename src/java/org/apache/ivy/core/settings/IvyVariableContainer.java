@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Store and provide access to the ivy variables.  * @author gscokart  */
+comment|/**  * Store and provide access to the ivy variables.  *   * @author gscokart  */
 end_comment
 
 begin_interface

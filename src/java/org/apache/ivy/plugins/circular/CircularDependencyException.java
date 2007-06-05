@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Unchecked exception thrown when a circular dependency exists between projects.  *  */
+comment|/**  * Unchecked exception thrown when a circular dependency exists between projects.  */
 end_comment
 
 begin_class
@@ -51,7 +51,7 @@ name|ModuleRevisionId
 index|[]
 name|_mrids
 decl_stmt|;
-comment|/**      *       * @param descriptors module descriptors in order of circular dependency      */
+comment|/**      * @param descriptors      *            module descriptors in order of circular dependency      */
 specifier|public
 name|CircularDependencyException
 parameter_list|(

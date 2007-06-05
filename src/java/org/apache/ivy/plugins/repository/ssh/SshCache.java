@@ -226,7 +226,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * a class to cache SSH Connections and Channel for the SSH Repository  * each session is defined by connecting user / host / port  * two maps are used to find cache entries  * one map is using the above keys, the other  * uses the session itself  */
+comment|/**  * a class to cache SSH Connections and Channel for the SSH Repository each session is defined by  * connecting user / host / port two maps are used to find cache entries one map is using the above  * keys, the other uses the session itself  */
 end_comment
 
 begin_class
@@ -401,7 +401,7 @@ name|NAME
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * attach an sftp channel to this cache entry          * @param channelSftp to attach          */
+comment|/**          * attach an sftp channel to this cache entry          *           * @param channelSftp          *            to attach          */
 specifier|public
 name|void
 name|setChannelSftp
@@ -508,7 +508,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * key is username / host / port      * @see SshCache.createCacheKey() for details      */
+comment|/**      * key is username / host / port      *       * @see SshCache.createCacheKey() for details      */
 specifier|private
 name|Map
 name|uriCacheMap
@@ -526,7 +526,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|/**      * retrieves a session entry for a given hostname from the cache      * @param hostname to retrieve session for      * @return null or the existing entry      */
+comment|/**      * retrieves a session entry for a given hostname from the cache      *       * @param hostname      *            to retrieve session for      * @return null or the existing entry      */
 specifier|private
 name|Entry
 name|getCacheEntry
@@ -560,7 +560,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a cobined cache key from the given key parts      * @param user name of the user      * @param host of the connection      * @param port of the connection      * @return key for the cache      */
+comment|/**      * Creates a cobined cache key from the given key parts      *       * @param user      *            name of the user      * @param host      *            of the connection      * @param port      *            of the connection      * @return key for the cache      */
 specifier|private
 specifier|static
 name|String
@@ -625,7 +625,7 @@ operator|+
 name|portToUse
 return|;
 block|}
-comment|/**      * retrieves a session entry for a given session from the cache      * @param session to retrieve cache entry for      * @return null or the existing entry      */
+comment|/**      * retrieves a session entry for a given session from the cache      *       * @param session      *            to retrieve cache entry for      * @return null or the existing entry      */
 specifier|private
 name|Entry
 name|getCacheEntry
@@ -646,7 +646,7 @@ name|session
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets a session to a given combined key into the cache      * If an old session object already exists, close and remove it      * @param user of the session      * @param host of the session      * @param port of the session      * @param session Session to save      */
+comment|/**      * Sets a session to a given combined key into the cache If an old session object already      * exists, close and remove it      *       * @param user      *            of the session      * @param host      *            of the session      * @param port      *            of the session      * @param session      *            Session to save      */
 specifier|private
 name|void
 name|setSession
@@ -854,7 +854,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * discardes session entries from the cache      * @param session to clear      */
+comment|/**      * discardes session entries from the cache      *       * @param session      *            to clear      */
 specifier|public
 name|void
 name|clearSession
@@ -903,7 +903,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * retrieves an sftp channel from the cache      * @param host to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
+comment|/**      * retrieves an sftp channel from the cache      *       * @param host      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
 specifier|public
 name|ChannelSftp
 name|getChannelSftp
@@ -969,7 +969,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * attaches a channelSftp to an existing session cache entry      * @param session to attach the channel to      * @param channelSftp channel to attach      */
+comment|/**      * attaches a channelSftp to an existing session cache entry      *       * @param session      *            to attach the channel to      * @param channelSftp      *            channel to attach      */
 specifier|public
 name|void
 name|attachChannelSftp
@@ -1014,7 +1014,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Gets a session from the cache or establishes a new session if necessary      * @param username for the session to use      * @param host to connect to      * @param port to use for session (-1 == use standard port)      * @param password to use for authentication (optional)      * @param pemFile File to use for public key authentication      * @param pemPassword to use for accessing the pemFile (optional)      * @param passFile to store credentials      * @return session or null if not successful      */
+comment|/**      * Gets a session from the cache or establishes a new session if necessary      *       * @param username      *            for the session to use      * @param host      *            to connect to      * @param port      *            to use for session (-1 == use standard port)      * @param password      *            to use for authentication (optional)      * @param pemFile      *            File to use for public key authentication      * @param pemPassword      *            to use for accessing the pemFile (optional)      * @param passFile      *            to store credentials      * @return session or null if not successful      */
 specifier|public
 name|Session
 name|getSession

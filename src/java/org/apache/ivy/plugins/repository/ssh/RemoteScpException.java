@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This exception will be used for Remote SCP Exceptions (failures on the target system, no connetion probs)   */
+comment|/**  * This exception will be used for Remote SCP Exceptions (failures on the target system, no  * connetion probs)  */
 end_comment
 
 begin_class

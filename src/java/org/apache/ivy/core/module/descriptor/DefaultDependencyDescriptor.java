@@ -262,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class can be used as the default implementation for DependencyDescriptor.  * It implements required methods and enables to fill dependency information  * with the addDependencyConfiguration method.  *   *  */
+comment|/**  * This class can be used as the default implementation for DependencyDescriptor. It implements  * required methods and enables to fill dependency information with the addDependencyConfiguration  * method.  */
 end_comment
 
 begin_class
@@ -298,7 +298,7 @@ argument_list|(
 literal|"#(\\(.*\\))?"
 argument_list|)
 decl_stmt|;
-comment|/**      * Transforms the given dependency descriptor of the given namespace and return      * a new dependency descriptor in the system namespace.      *       *<i>Note that exclude rules are not converted in system namespace, because they aren't       * transformable (the name space hasn't the ability to convert regular expressions).      * However, method doesExclude will work with system artifacts.</i>      *       * @param md      * @param ns      * @return      */
+comment|/**      * Transforms the given dependency descriptor of the given namespace and return a new dependency      * descriptor in the system namespace.<i>Note that exclude rules are not converted in system      * namespace, because they aren't transformable (the name space hasn't the ability to convert      * regular expressions). However, method doesExclude will work with system artifacts.</i>      *       * @param md      * @param ns      * @return      */
 specifier|public
 specifier|static
 name|DependencyDescriptor
@@ -353,7 +353,7 @@ return|return
 name|newdd
 return|;
 block|}
-comment|/**      * Transforms a dependency descriptor using the given transformer.      *       * Note that no namespace info will be attached to the transformed dependency descriptor,       * so calling doesExclude is not recommended (doesExclude only works when namespace is properly set)      * @param dd      * @param t      * @return      */
+comment|/**      * Transforms a dependency descriptor using the given transformer. Note that no namespace info      * will be attached to the transformed dependency descriptor, so calling doesExclude is not      * recommended (doesExclude only works when namespace is properly set)      *       * @param dd      * @param t      * @return      */
 specifier|public
 specifier|static
 name|DefaultDependencyDescriptor
@@ -711,7 +711,8 @@ operator|new
 name|LinkedHashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String masterConf -> Collection(DependencyArtifactDescriptor))
+comment|// Map (String masterConf ->
+comment|// Collection(DependencyArtifactDescriptor))
 specifier|private
 name|Map
 name|_includeRules
@@ -720,7 +721,8 @@ operator|new
 name|LinkedHashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String masterConf -> Collection(IncludeRule))
+comment|// Map (String masterConf ->
+comment|// Collection(IncludeRule))
 specifier|private
 name|Map
 name|_excludeRules
@@ -729,7 +731,8 @@ operator|new
 name|LinkedHashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String masterConf -> Collection(ExcludeRule))
+comment|// Map (String masterConf ->
+comment|// Collection(ExcludeRule))
 specifier|private
 name|Set
 name|_extends
@@ -738,12 +741,12 @@ operator|new
 name|LinkedHashSet
 argument_list|()
 decl_stmt|;
-comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently      * of conflicts manager      */
+comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently of      * conflicts manager      */
 specifier|private
 name|boolean
 name|_force
 decl_stmt|;
-comment|/**      * Used to indicate that the dependency is a changing one, i.e. that ivy should not rely on the version to know if it can trust artifacts in cache      */
+comment|/**      * Used to indicate that the dependency is a changing one, i.e. that ivy should not rely on the      * version to know if it can trust artifacts in cache      */
 specifier|private
 name|boolean
 name|_changing
@@ -758,7 +761,7 @@ name|_transitive
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * This namespace should be used to check       */
+comment|/**      * This namespace should be used to check      */
 specifier|private
 name|Namespace
 name|_namespace
@@ -1109,7 +1112,7 @@ name|moduleConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually resolved      * because of the given requestedConfiguration      *       * Usually requestedConfiguration and moduleConfiguration are the same, except when      * a conf extends another, then the moduleConfiguration is the configuration currently resolved       * (the extended one), and requestedConfiguration is the one actually requested initially (the      * extending one).      *       * Both moduleConfiguration and requestedConfiguration are configurations of the caller,      * the array returned is composed of the required configurations of the dependency described by this      * descriptor.      */
+comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually      * resolved because of the given requestedConfiguration Usually requestedConfiguration and      * moduleConfiguration are the same, except when a conf extends another, then the      * moduleConfiguration is the configuration currently resolved (the extended one), and      * requestedConfiguration is the one actually requested initially (the extending one). Both      * moduleConfiguration and requestedConfiguration are configurations of the caller, the array      * returned is composed of the required configurations of the dependency described by this      * descriptor.      */
 specifier|public
 name|String
 index|[]
@@ -1441,7 +1444,7 @@ name|requestedConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**      * Replaces fallback patterns with correct values if fallback pattern exists.      * @param pattern pattern to look for      * @param conf configuration mapping from dependency element      * @param moduleConfiguration module's configuration to use for replacement      * @return Replaced string if pattern matched. Otherwise null.      */
+comment|/**      * Replaces fallback patterns with correct values if fallback pattern exists.      *       * @param pattern      *            pattern to look for      * @param conf      *            configuration mapping from dependency element      * @param moduleConfiguration      *            module's configuration to use for replacement      * @return Replaced string if pattern matched. Otherwise null.      */
 specifier|protected
 specifier|static
 name|String
@@ -2437,7 +2440,7 @@ name|toAdd
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not set      */
+comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not      * set      */
 specifier|public
 name|boolean
 name|doesExclude
@@ -2533,7 +2536,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return      */
+comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return      */
 specifier|public
 name|boolean
 name|canExclude

@@ -753,7 +753,7 @@ name|hash
 return|;
 block|}
 block|}
-comment|////////// CONTEXT
+comment|// //////// CONTEXT
 specifier|private
 name|ResolveData
 name|data
@@ -762,7 +762,7 @@ specifier|private
 name|IvySettings
 name|settings
 decl_stmt|;
-comment|////////// DELEGATES
+comment|// //////// DELEGATES
 specifier|private
 name|IvyNodeCallers
 name|callers
@@ -771,7 +771,7 @@ specifier|private
 name|IvyNodeEviction
 name|eviction
 decl_stmt|;
-comment|////////// MAIN DATA
+comment|// //////// MAIN DATA
 specifier|private
 name|IvyNode
 name|root
@@ -800,7 +800,7 @@ specifier|private
 name|ResolvedModuleRevision
 name|module
 decl_stmt|;
-comment|////////// LOADING METADATA
+comment|// //////// LOADING METADATA
 specifier|private
 name|Exception
 name|problem
@@ -843,7 +843,7 @@ operator|new
 name|HashSet
 argument_list|()
 decl_stmt|;
-comment|////////// USAGE DATA
+comment|// //////// USAGE DATA
 comment|// Map (String rootConfName -> Set(String confName))
 comment|// used to know which configurations of the dependency are required
 comment|// for each root module configuration
@@ -995,7 +995,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * After the call node may be discarded. To avoid using discarded node, make sure      * to get the real node after the call      * IvyNode node = ...      * node.loadData();      * node = node.getRealNode();      * ...      */
+comment|/**      * After the call node may be discarded. To avoid using discarded node, make sure to get the      * real node after the call IvyNode node = ... node.loadData(); node = node.getRealNode(); ...      */
 specifier|public
 name|boolean
 name|loadData
@@ -1551,7 +1551,10 @@ argument_list|,
 name|rootModuleConf
 argument_list|)
 expr_stmt|;
-comment|// this actually discards the node
+comment|// this
+comment|// actually
+comment|// discards
+comment|// the node
 if|if
 condition|(
 name|settings
@@ -2047,7 +2050,8 @@ operator|new
 name|LinkedHashSet
 argument_list|()
 decl_stmt|;
-comment|// it's important to respect dependencies order
+comment|// it's important to respect dependencies
+comment|// order
 for|for
 control|(
 name|int
@@ -2114,7 +2118,8 @@ name|conf
 argument_list|)
 condition|)
 block|{
-comment|// the whole module is excluded, it is considered as not being part of dependencies at all
+comment|// the whole module is excluded, it is considered as not being part of dependencies
+comment|// at all
 name|Message
 operator|.
 name|verbose
@@ -2895,7 +2900,7 @@ return|return
 name|dependencyConfigurations
 return|;
 block|}
-comment|/**      * returns the required configurations from the given node      * @param in      * @return      */
+comment|/**      * returns the required configurations from the given node      *       * @param in      * @return      */
 specifier|public
 name|String
 index|[]
@@ -2957,7 +2962,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * returns all the current required configurations of the node      * @return      */
+comment|/**      * returns all the current required configurations of the node      *       * @return      */
 specifier|public
 name|String
 index|[]
@@ -3118,7 +3123,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given      * root module configuration.      * @param rootModuleConf      * @return      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf      * @return      */
 specifier|public
 name|String
 index|[]
@@ -3284,7 +3289,8 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|// recursive remove of extended configurations
+comment|// recursive remove of extended
+comment|// configurations
 block|}
 name|depConfs
 operator|.
@@ -3435,7 +3441,8 @@ argument_list|,
 name|exts
 argument_list|)
 expr_stmt|;
-comment|// recursive add of extended configurations
+comment|// recursive add of extended
+comment|// configurations
 name|depConfs
 operator|.
 name|add
@@ -3501,7 +3508,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns the root module configurations in which this dependency is required      * @return      */
+comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return      */
 specifier|public
 name|String
 index|[]
@@ -3721,7 +3728,7 @@ name|conf
 block|}
 return|;
 block|}
-comment|/**      * Finds and returns a path in callers from the given module id to the current node      * @param from the module id to start the path from      * @return a collection representing the path, starting with the from node, followed by      * the list of nodes being one path to the current node, excluded      */
+comment|/**      * Finds and returns a path in callers from the given module id to the current node      *       * @param from      *            the module id to start the path from      * @return a collection representing the path, starting with the from node, followed by the list      *         of nodes being one path to the current node, excluded      */
 specifier|private
 name|Collection
 name|findPath
@@ -4083,7 +4090,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in all the      * root module configurations      * @return      */
+comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *       * @return      */
 specifier|public
 name|Artifact
 index|[]
@@ -4164,7 +4171,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in the      * root module configurations in which the node is not evicted      * @param artifactFilter      * @return      */
+comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted      *       * @param artifactFilter      * @return      */
 specifier|public
 name|Artifact
 index|[]
@@ -4269,7 +4276,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the artifacts of this dependency required in the      * configurations themselves required in the given root module configuration      * @param rootModuleConf      * @return      */
+comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf      * @return      */
 specifier|public
 name|Artifact
 index|[]
@@ -4727,7 +4734,8 @@ name|getId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// we remove it from required list to prevent message to be displayed more than once
+comment|// we remove it from required list to prevent message to be displayed more
+comment|// than once
 name|it
 operator|.
 name|remove
@@ -5389,7 +5397,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/**      * Returns the last modified timestamp of the module represented by this Node,      * or 0 if the last modified timestamp is currently unkwown (module not loaded)      * @return the last modified timestamp of the module represented by this Node      */
+comment|/**      * Returns the last modified timestamp of the module represented by this Node, or 0 if the last      * modified timestamp is currently unkwown (module not loaded)      *       * @return the last modified timestamp of the module represented by this Node      */
 specifier|public
 name|long
 name|getLastModified
@@ -5464,7 +5472,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/** 	 * Clean data related to one root module configuration only 	 */
+comment|/**      * Clean data related to one root module configuration only      */
 specifier|public
 name|void
 name|clean
@@ -5476,9 +5484,9 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|///////////////////////////////////////////////////////////////////////////////
-comment|//          CALLERS MANAGEMENT
-comment|///////////////////////////////////////////////////////////////////////////////
+comment|// /////////////////////////////////////////////////////////////////////////////
+comment|// CALLERS MANAGEMENT
+comment|// /////////////////////////////////////////////////////////////////////////////
 name|boolean
 name|canExclude
 parameter_list|(
@@ -5795,9 +5803,9 @@ return|return
 name|ret
 return|;
 block|}
-comment|///////////////////////////////////////////////////////////////////////////////
-comment|//          EVICTION MANAGEMENT
-comment|///////////////////////////////////////////////////////////////////////////////
+comment|// /////////////////////////////////////////////////////////////////////////////
+comment|// EVICTION MANAGEMENT
+comment|// /////////////////////////////////////////////////////////////////////////////
 specifier|public
 name|Collection
 name|getResolvedNodes
@@ -6276,7 +6284,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected      * but conflict resolution hasn't been done yet      * @param rootModuleConf      * @param mid the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
+comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected but conflict      * resolution hasn't been done yet      *       * @param rootModuleConf      * @param mid      *            the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
 specifier|public
 name|Collection
 name|getPendingConflicts

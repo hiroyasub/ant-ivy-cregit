@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Objects implementing this interface are aware of module configurations,  * and can thus be added to configurations, and list their configurations.  *   */
+comment|/**  * Objects implementing this interface are aware of module configurations, and can thus be added to  * configurations, and list their configurations.  */
 end_comment
 
 begin_interface
@@ -28,14 +28,14 @@ specifier|public
 interface|interface
 name|ConfigurationAware
 block|{
-comment|/**      * Returns the configurations of the module to which the object is attached      * @return an array of configuration names to which the object is attached      */
+comment|/**      * Returns the configurations of the module to which the object is attached      *       * @return an array of configuration names to which the object is attached      */
 specifier|public
 name|String
 index|[]
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Tells this object that it will now be part of the given configuration      * @param confName the name of the configuration to which the object is now attached      */
+comment|/**      * Tells this object that it will now be part of the given configuration      *       * @param confName      *            the name of the configuration to which the object is now attached      */
 specifier|public
 name|void
 name|addConfiguration

@@ -83,16 +83,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Arrays
@@ -333,7 +323,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|/*          * For updated file to be equals to updated.xml,          * we have to fix the line separator to the one used          * in updated.xml, in order for this test to works in          * all platforms (default line separator used in           * updater being platform dependent           */
+comment|/*          * For updated file to be equals to updated.xml, we have to fix the line separator to the          * one used in updated.xml, in order for this test to works in all platforms (default line          * separator used in updater being platform dependent          */
 name|XmlModuleDescriptorUpdater
 operator|.
 name|LINE_SEPARATOR

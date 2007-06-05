@@ -174,7 +174,7 @@ name|Collection
 name|nodes
 parameter_list|)
 block|{
-comment|/* here we want to use the sort algorithm which work on module descriptors :          * so we first put dependencies on a map from descriptors to dependency, then we           * sort the keySet (i.e. a collection of descriptors), then we replace          * in the sorted list each descriptor by the corresponding dependency          */
+comment|/*          * here we want to use the sort algorithm which work on module descriptors : so we first put          * dependencies on a map from descriptors to dependency, then we sort the keySet (i.e. a          * collection of descriptors), then we replace in the sorted list each descriptor by the          * corresponding dependency          */
 name|Map
 name|dependenciesMap
 init|=
@@ -323,7 +323,9 @@ argument_list|()
 operator|)
 argument_list|)
 decl_stmt|;
-comment|//attempt to adjust the size to avoid too much list resizing
+comment|// attempt to adjust the
+comment|// size to avoid too
+comment|// much list resizing
 for|for
 control|(
 name|int
@@ -389,7 +391,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent.      * This sort ensures that a ModuleDescriptor is always found in the list before all       * ModuleDescriptors depending directly on it.      * @param moduleDescriptors a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException if a circular dependency exists      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists      */
 specifier|public
 name|List
 name|sortModuleDescriptors

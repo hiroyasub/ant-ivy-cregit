@@ -388,7 +388,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * IvyRepResolver is a resolver which can be used to resolve dependencies found  * in the ivy official repository for ivy files and ibiblio maven repository for the artifacts,   * or similar repositories.  * For more flexibility with url and patterns, see {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
+comment|/**  * IvyRepResolver is a resolver which can be used to resolve dependencies found in the ivy official  * repository for ivy files and ibiblio maven repository for the artifacts, or similar repositories.  * For more flexibility with url and patterns, see  * {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
 end_comment
 
 begin_class
@@ -791,7 +791,7 @@ return|return
 name|_ivyroot
 return|;
 block|}
-comment|/**      * Sets the root of the maven like repository.      * The maven like repository is necessarily an http repository.      * @param root the root of the maven like repository      * @throws IllegalArgumentException if root does not start with "http://"      */
+comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *       * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
 specifier|public
 name|void
 name|setIvyroot
@@ -1209,7 +1209,8 @@ name|listOrganisations
 argument_list|()
 return|;
 block|}
-comment|// overwrite parent to use only ivy patterns (and not artifact ones, cause ibiblio is too slow to answer)
+comment|// overwrite parent to use only ivy patterns (and not artifact ones, cause ibiblio is too slow
+comment|// to answer)
 specifier|public
 name|ModuleEntry
 index|[]

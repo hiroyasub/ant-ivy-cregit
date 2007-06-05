@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SFTP Repository, allow to use a repository accessed by sftp protocol.  *   * It supports all operations: get, put and list.  *   * It relies on jsch for sftp handling, and thus is compatible with sftp version 0, 1, 2 and 3  *   *  */
+comment|/**  * SFTP Repository, allow to use a repository accessed by sftp protocol. It supports all operations:  * get, put and list. It relies on jsch for sftp handling, and thus is compatible with sftp version  * 0, 1, 2 and 3  */
 end_comment
 
 begin_class
@@ -374,7 +374,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * This method is similar to getResource, except that the returned resource is fully initialised       * (resolved in the sftp repository), and that the given string is a full remote path      * @param path the full remote path in the repository of the resource      * @return a fully initialised resource, able to answer to all its methods without needing      * 	any further connection      */
+comment|/**      * This method is similar to getResource, except that the returned resource is fully initialised      * (resolved in the sftp repository), and that the given string is a full remote path      *       * @param path      *            the full remote path in the repository of the resource      * @return a fully initialised resource, able to answer to all its methods without needing any      *         further connection      */
 specifier|public
 name|Resource
 name|resolveResource
@@ -503,7 +503,7 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//silent fail, return unexisting resource
+comment|// silent fail, return unexisting resource
 block|}
 return|return
 operator|new
@@ -1105,13 +1105,13 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//silent fail, return null listing
+comment|// silent fail, return null listing
 block|}
 return|return
 literal|null
 return|;
 block|}
-comment|/**      * Checks the existence for a remote file      * @param file to check      * @param channel to use      * @returns true if file exists, false otherwise      * @throws IOException      * @throws SftpException      */
+comment|/**      * Checks the existence for a remote file      *       * @param file      *            to check      * @param channel      *            to use      * @returns true if file exists, false otherwise      * @throws IOException      * @throws SftpException      */
 specifier|private
 name|boolean
 name|checkExistence
@@ -1151,7 +1151,7 @@ literal|false
 return|;
 block|}
 block|}
-comment|/** 	 * Establish the connection to the server if not yet connected, and listen to ivy events 	 * for closing connection when resolve is finished. 	 *  	 * Not meant to be used in multi threaded environment. 	 *  	 * @return the ChannelSftp with which a connection is established 	 * @throws IOException if any connection problem occurs 	 */
+comment|/**      * Establish the connection to the server if not yet connected, and listen to ivy events for      * closing connection when resolve is finished. Not meant to be used in multi threaded      * environment.      *       * @return the ChannelSftp with which a connection is established      * @throws IOException      *             if any connection problem occurs      */
 specifier|private
 name|ChannelSftp
 name|getSftpChannel

@@ -92,12 +92,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pattern matcher matching input using unix-like glob matcher expressions. Meta characters are:  *<ul>  *<li> * -  Matches zero or more characters</li>  *<li> ? - Matches exactly one character.</li>  *</ul>  *<p/>  *<b> Note that this matcher is available only with<a href="http://jakarta.apache.org/oro"Apache Jakarta Oro 2.0.8</a>  * in your classpath.</b>  *  * @see<a href="http://jakarta.apache.org/oro/api/org/apache/oro/text/GlobCompiler.html">GlobCompiler</a>  */
+comment|/**  * A pattern matcher matching input using unix-like glob matcher expressions. Meta characters are:  *<ul>  *<li> * - Matches zero or more characters</li>  *<li> ? - Matches exactly one character.</li>  *</ul>  *<p/><b> Note that this matcher is available only with<a  * href="http://jakarta.apache.org/oro"Apache Jakarta Oro 2.0.8</a> in your classpath.</b>  *   * @see<a  *      href="http://jakarta.apache.org/oro/api/org/apache/oro/text/GlobCompiler.html">GlobCompiler</a>  */
 end_comment
 
 begin_class
 specifier|public
-comment|/*@Immutable*/
+comment|/* @Immutable */
 specifier|final
 class|class
 name|GlobPatternMatcher
@@ -114,7 +114,7 @@ operator|new
 name|GlobPatternMatcher
 argument_list|()
 decl_stmt|;
-comment|/*     NOTE: GlobCompiler does ~100K compilation/s     - If necessary look into using ThreadLocal for GlobCompiler/Perl5Matcher to cut on useless object creation     - If expression are reused over and over a LRU cache could make sense      */
+comment|/*      * NOTE: GlobCompiler does ~100K compilation/s - If necessary look into using ThreadLocal for      * GlobCompiler/Perl5Matcher to cut on useless object creation - If expression are reused over      * and over a LRU cache could make sense      */
 specifier|public
 name|GlobPatternMatcher
 parameter_list|()

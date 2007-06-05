@@ -80,7 +80,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|/* (non-Javadoc) 	 * @see org.apache.ivy.core.settings.IvyVariableContainer#setVariable(java.lang.String, java.lang.String, boolean) 	 */
+comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.core.settings.IvyVariableContainer#setVariable(java.lang.String,      *      java.lang.String, boolean)      */
 specifier|public
 name|void
 name|setVariable
@@ -175,7 +175,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/* (non-Javadoc) 	 * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariables() 	 */
+comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariables()      */
 specifier|public
 name|Map
 name|getVariables
@@ -185,7 +185,7 @@ return|return
 name|variables
 return|;
 block|}
-comment|/* (non-Javadoc) 	 * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariable(java.lang.String) 	 */
+comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariable(java.lang.String)      */
 specifier|public
 name|String
 name|getVariable

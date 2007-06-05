@@ -218,7 +218,7 @@ name|showInfo
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**       * same as init, but without displaying info      * @param impl      */
+comment|/**      * same as init, but without displaying info      *       * @param impl      */
 specifier|public
 specifier|static
 name|void

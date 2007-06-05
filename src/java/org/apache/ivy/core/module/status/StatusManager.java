@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Note: update methods (such as addStatus) should only be called BEFORE any call to accessor methods  *  */
+comment|/**  * Note: update methods (such as addStatus) should only be called BEFORE any call to accessor  * methods  */
 end_comment
 
 begin_class

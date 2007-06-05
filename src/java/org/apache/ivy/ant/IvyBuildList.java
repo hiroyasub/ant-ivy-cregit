@@ -334,7 +334,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies declared in ivy files.  */
+comment|/**  * Creates an ant filelist of files (usually build.xml) ordered according to the dependencies  * declared in ivy files.  */
 end_comment
 
 begin_class
@@ -1415,7 +1415,7 @@ return|return
 name|mds
 return|;
 block|}
-comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input      * collection of ModuleDescriptors and upon which the root module depends      *      * @param mds input collection of ModuleDescriptors      * @param rootmd root module      * @return filtered list of modules      */
+comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input collection of      * ModuleDescriptors and upon which the root module depends      *       * @param mds      *            input collection of ModuleDescriptors      * @param rootmd      *            root module      * @return filtered list of modules      */
 specifier|private
 name|Collection
 name|filterModulesFromRoot
@@ -1612,7 +1612,7 @@ return|return
 name|toKeep
 return|;
 block|}
-comment|/**      * Adds the current node to the toKeep collection and then processes the each of the direct dependencies      * of this node that appear in the moduleIdMap (indicating that the dependency is part of this BuildList)      *      * @param node the node to be processed      * @param toKeep the set of ModuleDescriptors that should be kept      * @param moduleIdMap reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
+comment|/**      * Adds the current node to the toKeep collection and then processes the each of the direct      * dependencies of this node that appear in the moduleIdMap (indicating that the dependency is      * part of this BuildList)      *       * @param node      *            the node to be processed      * @param toKeep      *            the set of ModuleDescriptors that should be kept      * @param moduleIdMap      *            reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
 specifier|private
 name|void
 name|processFilterNodeFromRoot
@@ -1703,7 +1703,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input      * collection of ModuleDescriptors which depends on the leaf module      *      * @param mds input collection of ModuleDescriptors      * @param leafmd leaf module      * @return filtered list of modules      */
+comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input collection of      * ModuleDescriptors which depends on the leaf module      *       * @param mds      *            input collection of ModuleDescriptors      * @param leafmd      *            leaf module      * @return filtered list of modules      */
 specifier|private
 name|Collection
 name|filterModulesFromLeaf
@@ -1903,7 +1903,7 @@ return|return
 name|toKeep
 return|;
 block|}
-comment|/**      * Search in the moduleIdMap modules depending on node, add them to the toKeep set and process them       * recursively.      *      * @param node the node to be processed      * @param toKeep the set of ModuleDescriptors that should be kept      * @param moduleIdMap reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
+comment|/**      * Search in the moduleIdMap modules depending on node, add them to the toKeep set and process      * them recursively.      *       * @param node      *            the node to be processed      * @param toKeep      *            the set of ModuleDescriptors that should be kept      * @param moduleIdMap      *            reference mapping of moduleId to ModuleDescriptor that are part of the BuildList      */
 specifier|private
 name|void
 name|processFilterNodeFromLeaf

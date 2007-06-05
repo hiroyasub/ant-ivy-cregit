@@ -31,16 +31,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|text
 operator|.
 name|ParseException
@@ -2683,7 +2673,7 @@ literal|"ivysettings-outputter.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//System.out.println(Arrays.asList(ivy.getReportOutputters()));
+comment|// System.out.println(Arrays.asList(ivy.getReportOutputters()));
 name|ReportOutputter
 name|testOutputter
 init|=

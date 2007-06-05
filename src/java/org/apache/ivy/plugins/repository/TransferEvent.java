@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * TransferEvent is used to notify TransferListeners about progress in transfer  * of resources form/to the respository  *   * This class is LARGELY inspired by org.apache.maven.wagon.events.TransferEvent  * released under the following copyright license:  *   *<pre>  *   *  Copyright 2001-2005 The Apache Software Foundation.  *   *  Licensed under the Apache License, Version 2.0 (the&quot;License&quot;);  *  you may not use this file except in compliance with the License.  *  You may obtain a copy of the License at  *   *       http://www.apache.org/licenses/LICENSE-2.0  *   *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an&quot;AS IS&quot; BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *    *</pre>  *   * Orginal class written by Michal Maczka.  *   */
+comment|/**  * TransferEvent is used to notify TransferListeners about progress in transfer of resources form/to  * the respository This class is LARGELY inspired by org.apache.maven.wagon.events.TransferEvent  * released under the following copyright license:  *   *<pre>  *   *  Copyright 2001-2005 The Apache Software Foundation.  *   *  Licensed under the Apache License, Version 2.0 (the&quot;License&quot;);  *  you may not use this file except in compliance with the License.  *  You may obtain a copy of the License at  *   *       http://www.apache.org/licenses/LICENSE-2.0  *   *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an&quot;AS IS&quot; BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *    *</pre>  *   * Orginal class written by Michal Maczka.  */
 end_comment
 
 begin_class
@@ -429,7 +429,7 @@ return|return
 name|_requestType
 return|;
 block|}
-comment|/**      * Sets the request type      *       * @param requestType      *            The requestType to set. The Request type value should be      *            either      *<code>TransferEvent.REQUEST_GET<code> or<code>TransferEvent.REQUEST_PUT<code>.      * @throws IllegalArgumentException when      */
+comment|/**      * Sets the request type      *       * @param requestType      *            The requestType to set. The Request type value should be either      *<code>TransferEvent.REQUEST_GET<code> or<code>TransferEvent.REQUEST_PUT<code>.      * @throws IllegalArgumentException when      */
 specifier|protected
 name|void
 name|setRequestType

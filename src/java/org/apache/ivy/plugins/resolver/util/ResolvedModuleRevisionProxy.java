@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * the same ResolvedModuleRevision except that we say that it is another resolver  * the artifact resolver, so that it's it that is used for artifact download  * ==> forward all except getArtifactResolver method  */
+comment|/**  * the same ResolvedModuleRevision except that we say that it is another resolver the artifact  * resolver, so that it's it that is used for artifact download ==> forward all except  * getArtifactResolver method  */
 end_comment
 
 begin_class

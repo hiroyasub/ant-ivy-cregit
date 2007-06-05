@@ -256,7 +256,8 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// do not test any xsl transformation here, because of problems of build in our continuous integration server
+comment|// do not test any xsl transformation here, because of problems of build in our continuous
+comment|// integration server
 name|_report
 operator|.
 name|setXsl

@@ -272,7 +272,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of a VFS repository  *   */
+comment|/**  * Implementation of a VFS repository  */
 end_comment
 
 begin_class
@@ -282,7 +282,7 @@ name|VfsRepository
 extends|extends
 name|AbstractRepository
 block|{
-comment|/** 	 * Name of the resource defining the Ivy VFS Repo configuration. 	 */
+comment|/**      * Name of the resource defining the Ivy VFS Repo configuration.      */
 specifier|private
 specifier|static
 specifier|final
@@ -308,7 +308,7 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
-comment|/** 	 * Create a new Ivy VFS Repository Instance 	 * 	 */
+comment|/**      * Create a new Ivy VFS Repository Instance      */
 specifier|public
 name|VfsRepository
 parameter_list|()
@@ -358,7 +358,7 @@ literal|null
 decl_stmt|;
 try|try
 block|{
-comment|/* 			 * The DefaultFileSystemManager gets its configuration from the jakarta-vfs-common 			 * implementation which includes the res and tmp schemes which are of no use to use here. 			 * Using StandardFileSystemManager lets us specify which schemes to support as well as  			 * providing a mechanism to change this support without recompilation. 			 */
+comment|/*              * The DefaultFileSystemManager gets its configuration from the jakarta-vfs-common              * implementation which includes the res and tmp schemes which are of no use to use              * here. Using StandardFileSystemManager lets us specify which schemes to support as              * well as providing a mechanism to change this support without recompilation.              */
 name|result
 operator|=
 operator|new
@@ -455,7 +455,7 @@ name|FileSystemException
 name|e
 parameter_list|)
 block|{
-comment|/* 			 * If our attempt to initialize a VFS Repository fails we log the failure 			 * but continue on. Given that an Ivy instance may involve numerous 			 * different repository types, it seems overly cautious to throw a runtime 			 * exception on the initialization failure of just one repository type. 			 */
+comment|/*              * If our attempt to initialize a VFS Repository fails we log the failure but continue              * on. Given that an Ivy instance may involve numerous different repository types, it              * seems overly cautious to throw a runtime exception on the initialization failure of              * just one repository type.              */
 name|Message
 operator|.
 name|error
@@ -523,7 +523,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Get a VfsResource 	 *  	 * @param source a<code>String</code> identifying a VFS Resource 	 * @throws<code>IOException</code> on failure 	 * @see "Supported File Systems in the jakarta-commons-vfs documentation" 	 */
+comment|/**      * Get a VfsResource      *       * @param source      *            a<code>String</code> identifying a VFS Resource      * @throws<code>IOException</code> on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|Resource
 name|getResource
@@ -545,7 +545,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Transfer a VFS Resource from the repository to the local file system. 	 *  	 * @param srcVfsURI a<code>String</code> identifying the VFS resource to be fetched 	 * @param destination a<code>File</code> identifying the destination file 	 * @throws<code>IOException</code> on failure 	 * @see "Supported File Systems in the jakarta-commons-vfs documentation" 	 */
+comment|/**      * Transfer a VFS Resource from the repository to the local file system.      *       * @param srcVfsURI      *            a<code>String</code> identifying the VFS resource to be fetched      * @param destination      *            a<code>File</code> identifying the destination file      * @throws<code>IOException</code> on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|void
 name|get
@@ -655,7 +655,7 @@ name|ex
 throw|;
 block|}
 block|}
-comment|/** 	 * Return a listing of the contents of a parent directory. Listing is a set 	 * of strings representing VFS URIs. 	 *  	 * @param vfsURI providing identifying a VFS provided resource 	 * @throws IOException on failure. 	 * @see "Supported File Systems in the jakarta-commons-vfs documentation" 	 */
+comment|/**      * Return a listing of the contents of a parent directory. Listing is a set of strings      * representing VFS URIs.      *       * @param vfsURI      *            providing identifying a VFS provided resource      * @throws IOException      *             on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|List
 name|list
@@ -840,7 +840,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/** 	 * Transfer an Ivy resource to a VFS repository 	 *  	 * @param source a<code>File</code> indentifying the local file to transfer to the repository 	 * @param vfsURI a<code>String</code> identifying the destination VFS Resource. 	 * @param overwrite whether to overwrite an existing resource. 	 * @throws<code>IOException</code> on failure. 	 * @see "Supported File Systems in the jakarta-commons-vfs documentation" 	 *  	 */
+comment|/**      * Transfer an Ivy resource to a VFS repository      *       * @param source      *            a<code>File</code> indentifying the local file to transfer to the repository      * @param vfsURI      *            a<code>String</code> identifying the destination VFS Resource.      * @param overwrite      *            whether to overwrite an existing resource.      * @throws<code>IOException</code> on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|void
 name|put

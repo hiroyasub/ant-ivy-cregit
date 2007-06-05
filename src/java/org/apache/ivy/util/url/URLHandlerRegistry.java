@@ -73,7 +73,7 @@ operator|=
 name|def
 expr_stmt|;
 block|}
-comment|/**      * This method is used to get appropriate http downloader      * dependening on Jakarta Commons HttpClient      * availability in classpath, or simply use jdk url      * handling in other cases.      *       * @return most accurate http downloader      */
+comment|/**      * This method is used to get appropriate http downloader dependening on Jakarta Commons      * HttpClient availability in classpath, or simply use jdk url handling in other cases.      *       * @return most accurate http downloader      */
 specifier|public
 specifier|static
 name|URLHandler

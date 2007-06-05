@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modified version of the WebdavConnectionManager from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info.  *   * A connection manager that provides access to a single HttpConnection.  This  * manager makes no attempt to provide exclusive access to the contained  * HttpConnection.  *<p/>  * imario@apache.org: Keep connection in ThreadLocal.  *  */
+comment|/**  * Modified version of the WebdavConnectionManager from VFS which adds support for httpclient 3.x.  * See http://issues.apache.org/jira/browse/VFS-74 for more info. A connection manager that provides  * access to a single HttpConnection. This manager makes no attempt to provide exclusive access to  * the contained HttpConnection.<p/> imario@apache.org: Keep connection in ThreadLocal.  */
 end_comment
 
 begin_class
@@ -107,7 +107,7 @@ name|IvyWebdavConnectionManager
 implements|implements
 name|HttpConnectionManager
 block|{
-comment|/**      * Since the same connection is about to be reused, make sure the      * previous request was completely processed, and if not      * consume it now.      *      * @param conn The connection      */
+comment|/**      * Since the same connection is about to be reused, make sure the previous request was      * completely processed, and if not consume it now.      *       * @param conn      *            The connection      */
 specifier|static
 name|void
 name|finishLastResponse
@@ -152,7 +152,7 @@ name|IOException
 name|ioe
 parameter_list|)
 block|{
-comment|//FIXME: badness - close to force reconnect.
+comment|// FIXME: badness - close to force reconnect.
 name|conn
 operator|.
 name|close
@@ -343,7 +343,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Gets the staleCheckingEnabled value to be set on HttpConnections that are created.      *      * @return<code>true</code> if stale checking will be enabled on HttpConections      * @see HttpConnection#isStaleCheckingEnabled()      */
+comment|/**      * Gets the staleCheckingEnabled value to be set on HttpConnections that are created.      *       * @return<code>true</code> if stale checking will be enabled on HttpConections      * @see HttpConnection#isStaleCheckingEnabled()      */
 specifier|public
 name|boolean
 name|isConnectionStaleCheckingEnabled
@@ -358,7 +358,7 @@ name|isStaleCheckingEnabled
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets the staleCheckingEnabled value to be set on HttpConnections that are created.      *      * @param connectionStaleCheckingEnabled<code>true</code> if stale checking will be enabled      *                                       on HttpConections      * @see HttpConnection#setStaleCheckingEnabled(boolean)      */
+comment|/**      * Sets the staleCheckingEnabled value to be set on HttpConnections that are created.      *       * @param connectionStaleCheckingEnabled      *<code>true</code> if stale checking will be enabled on HttpConections      * @see HttpConnection#setStaleCheckingEnabled(boolean)      */
 specifier|public
 name|void
 name|setConnectionStaleCheckingEnabled
@@ -651,7 +651,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * {@inheritDoc} 	 */
+comment|/**      * {@inheritDoc}      */
 specifier|public
 name|HttpConnectionManagerParams
 name|getParams
@@ -661,7 +661,7 @@ return|return
 name|params
 return|;
 block|}
-comment|/** 	 * {@inheritDoc} 	 */
+comment|/**      * {@inheritDoc}      */
 specifier|public
 name|void
 name|setParams

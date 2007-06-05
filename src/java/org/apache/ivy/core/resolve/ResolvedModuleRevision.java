@@ -98,12 +98,12 @@ specifier|public
 interface|interface
 name|ResolvedModuleRevision
 block|{
-comment|/**      * The resolver which resolved this ResolvedModuleRevision      * @return The resolver which resolved this ResolvedModuleRevision      */
+comment|/**      * The resolver which resolved this ResolvedModuleRevision      *       * @return The resolver which resolved this ResolvedModuleRevision      */
 name|DependencyResolver
 name|getResolver
 parameter_list|()
 function_decl|;
-comment|/**      * The resolver to use to download artifacts      * @return The resolver to use to download artifacts      */
+comment|/**      * The resolver to use to download artifacts      *       * @return The resolver to use to download artifacts      */
 name|DependencyResolver
 name|getArtifactResolver
 parameter_list|()

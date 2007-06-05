@@ -246,7 +246,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * {@inheritDoc} 	 */
+comment|/**      * {@inheritDoc}      */
 specifier|public
 name|boolean
 name|accept
@@ -381,7 +381,7 @@ return|return
 name|accept
 return|;
 block|}
-comment|/** 	 * {@inheritDoc} 	 */
+comment|/**      * {@inheritDoc}      */
 specifier|public
 name|boolean
 name|isDynamic

@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to dispatch downloading requests  *   *  */
+comment|/**  * This class is used to dispatch downloading requests  */
 end_comment
 
 begin_class

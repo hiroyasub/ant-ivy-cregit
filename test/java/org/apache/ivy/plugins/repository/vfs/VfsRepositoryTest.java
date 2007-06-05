@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing  * Testing was the single biggest hurdle I faced. I have tried to provide a  * complete test suite that covers all protocols and which can be easily extended.  * It does differ - somewhat - in structure from the resolver/repository test  * suites.   * Setting up smb, ftp, sftp will undoubtedly be your biggest headache (it was  * mine). Here are a few notes about the setup:  * - the VFS test suite uses the build/test/repositories area  * - when setting samba, sftp, etc. the corresponding user needs both read and  * write privileges.  * - the tests assume that the user and password is the same for all services.  * - a limited amount of configuration is available by setting the following  * properties in the ivy.properties file:  *   * vfs.host  *   * vfs.username  *   * vfs.password  *   * vfs.samba_share  *   * Running the test requires that commons-io and ant.jar are on the classpath.  *   * Also, I would recommend that at some time the tests be converted from straight  * junit to something which betters supports functional testing.  * Although somewhat crude I am using jsystem (http://jsystemtest.sourceforge.net/)  * in other projects and am finding it a much better solution than straight junit.  *   * Stephen Nesbitt  */
+comment|/**  * Testing Testing was the single biggest hurdle I faced. I have tried to provide a complete test  * suite that covers all protocols and which can be easily extended. It does differ - somewhat - in  * structure from the resolver/repository test suites. Setting up smb, ftp, sftp will undoubtedly be  * your biggest headache (it was mine). Here are a few notes about the setup: - the VFS test suite  * uses the build/test/repositories area - when setting samba, sftp, etc. the corresponding user  * needs both read and write privileges. - the tests assume that the user and password is the same  * for all services. - a limited amount of configuration is available by setting the following  * properties in the ivy.properties file: * vfs.host * vfs.username * vfs.password * vfs.samba_share  * Running the test requires that commons-io and ant.jar are on the classpath. Also, I would  * recommend that at some time the tests be converted from straight junit to something which betters  * supports functional testing. Although somewhat crude I am using jsystem  * (http://jsystemtest.sourceforge.net/) in other projects and am finding it a much better solution  * than straight junit. Stephen Nesbitt  */
 end_comment
 
 begin_class
@@ -199,7 +199,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Basic validation of happy path put - valid VFS URI and no conflict with existing file 	 *  	 * @throws Exception 	 */
+comment|/**      * Basic validation of happy path put - valid VFS URI and no conflict with existing file      *       * @throws Exception      */
 specifier|public
 name|void
 name|testPutValid
@@ -376,7 +376,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we can overwrite an existing file 	 *  	 * @throws Exception 	 */
+comment|/**      * Validate that we can overwrite an existing file      *       * @throws Exception      */
 specifier|public
 name|void
 name|testPutOverwriteTrue
@@ -589,7 +589,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we put will respect a request not to overwrite an existing file 	 *  	 * @throws Exception 	 */
+comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *       * @throws Exception      */
 specifier|public
 name|void
 name|testPutOverwriteFalse
@@ -727,7 +727,7 @@ block|{
 block|}
 block|}
 block|}
-comment|/** 	 * Test the retrieval of an artifact from the repository creating a new artifact 	 *  	 * @throws Exception 	 */
+comment|/**      * Test the retrieval of an artifact from the repository creating a new artifact      *       * @throws Exception      */
 specifier|public
 name|void
 name|testGetNoExisting
@@ -878,7 +878,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Test the retrieval of an artifact from the repository overwriting an existing artifact 	 *  	 * @throws Exception 	 */
+comment|/**      * Test the retrieval of an artifact from the repository overwriting an existing artifact      *       * @throws Exception      */
 specifier|public
 name|void
 name|testGetOverwriteExisting
@@ -1055,7 +1055,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we get a non null Resource instance when 	 * passed a well-formed VfsURI pointing to an existing file 	 * 	 */
+comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to an existing file      */
 specifier|public
 name|void
 name|testGetResourceValidExist
@@ -1137,7 +1137,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we get a non null Resource instance when 	 * passed a well-formed VfsURI pointing to a non-existent 	 * file. 	 * 	 */
+comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to a non-existent file.      */
 specifier|public
 name|void
 name|testGetResourceValidNoExist

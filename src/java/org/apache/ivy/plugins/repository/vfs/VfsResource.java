@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * VFS implementation of the Resource interface  *   */
+comment|/**  * VFS implementation of the Resource interface  */
 end_comment
 
 begin_class
@@ -344,7 +344,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a list of direct descendents of the given resource.      * Note that attempts to get a list of children does<emphasize>not</emphasize>      * result in an error. Instead an error message is logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      *      */
+comment|/**      * Get a list of direct descendents of the given resource. Note that attempts to get a list of      * children does<emphasize>not</emphasize> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      */
 specifier|public
 name|List
 name|getChildren
@@ -504,7 +504,7 @@ name|_fsManager
 argument_list|)
 return|;
 block|}
-comment|/**      * The VFS FileName getURI method seems to have a bug in it where      * file: URIs will have 4 forward slashes instead of 3.      *       * @param vfsURI      * @return a normalized<class>String</class> representing the VFS URI      */
+comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *       * @param vfsURI      * @return a normalized<class>String</class> representing the VFS URI      */
 specifier|public
 specifier|static
 name|String
@@ -564,7 +564,7 @@ return|return
 name|_lastModified
 return|;
 block|}
-comment|/**       * Get the size of the resource       *        * @return a<code>long</code> representing the size of the resource (in bytes).       */
+comment|/**      * Get the size of the resource      *       * @return a<code>long</code> representing the size of the resource (in bytes).      */
 specifier|public
 name|long
 name|getContentLength
@@ -577,7 +577,7 @@ return|return
 name|_contentLength
 return|;
 block|}
-comment|/**      * Flag indicating whether a resource is available for querying      *       * @return<code>true</code> if the resource is available for querying,      *<code>false</code> otherwise.      */
+comment|/**      * Flag indicating whether a resource is available for querying      *       * @return<code>true</code> if the resource is available for querying,<code>false</code>      *         otherwise.      */
 specifier|public
 name|boolean
 name|exists

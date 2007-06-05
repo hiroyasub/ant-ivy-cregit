@@ -402,7 +402,8 @@ operator|new
 name|TreeMap
 argument_list|()
 decl_stmt|;
-comment|// Use a TreeMap to order by position (position = key)
+comment|// Use a TreeMap to order by
+comment|// position (position = key)
 specifier|private
 name|List
 name|_revisionArtifacts
@@ -508,7 +509,8 @@ operator|.
 name|booleanValue
 argument_list|()
 expr_stmt|;
-comment|// retrieve position from file. If no position is found, it may be an old report generated with a previous version,
+comment|// retrieve position from file. If no position is found, it may be an old
+comment|// report generated with a previous version,
 comment|// in which case, we put it at the last position
 name|String
 name|pos

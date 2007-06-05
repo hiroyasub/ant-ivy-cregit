@@ -120,7 +120,7 @@ specifier|public
 class|class
 name|ResolveOptions
 block|{
-comment|/** 	 * an array of configuration names to resolve - must not be null nor empty 	 */
+comment|/**      * an array of configuration names to resolve - must not be null nor empty      */
 specifier|private
 name|String
 index|[]
@@ -133,70 +133,70 @@ block|{
 literal|"*"
 block|}
 decl_stmt|;
-comment|/** 	 * the revision of the module for which dependencies should be resolved.      * This revision is considered as the resolved revision of the module, unless it is null.      * If it is null, then a default revision is given if necessary (no revision found in ivy file) 	 */
+comment|/**      * the revision of the module for which dependencies should be resolved. This revision is      * considered as the resolved revision of the module, unless it is null. If it is null, then a      * default revision is given if necessary (no revision found in ivy file)      */
 specifier|private
 name|String
 name|revision
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * The cache manager to use during resolve. 	 * If it is null, default cache manager will be used.  	 */
+comment|/**      * The cache manager to use during resolve. If it is null, default cache manager will be used.      */
 specifier|private
 name|CacheManager
 name|cache
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * the date for which the dependencies should be resolved.  	 * All obtained artifacts should have a publication date which is before  	 * or equal to the given date. 	 * The date can be null, in which case all artifacts will be considered 	 */
+comment|/**      * the date for which the dependencies should be resolved. All obtained artifacts should have a      * publication date which is before or equal to the given date. The date can be null, in which      * case all artifacts will be considered      */
 specifier|private
 name|Date
 name|date
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * True if validation of module descriptors should done, false otherwise 	 */
+comment|/**      * True if validation of module descriptors should done, false otherwise      */
 specifier|private
 name|boolean
 name|validate
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * True if only the cache should be used for resolve, false 	 * if a real resolve with dependency resolvers should be done 	 */
+comment|/**      * True if only the cache should be used for resolve, false if a real resolve with dependency      * resolvers should be done      */
 specifier|private
 name|boolean
 name|useCacheOnly
 init|=
 literal|false
 decl_stmt|;
-comment|/** 	 * True if the dependencies should be resolved transitively, false 	 * if only direct dependencies should be resolved 	 */
+comment|/**      * True if the dependencies should be resolved transitively, false if only direct dependencies      * should be resolved      */
 specifier|private
 name|boolean
 name|transitive
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * True if the resolve should also download artifacts, false 	 * if only dependency resolution with module descriptors should be done 	 */
+comment|/**      * True if the resolve should also download artifacts, false if only dependency resolution with      * module descriptors should be done      */
 specifier|private
 name|boolean
 name|download
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * True if a report of the resolve process should be output at the end of the  	 * process, false otherwise 	 */
+comment|/**      * True if a report of the resolve process should be output at the end of the process, false      * otherwise      */
 specifier|private
 name|boolean
 name|outputReport
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * True if the original files from the repositories should be used instead  	 * of downloaded ones, false otherwise. 	 * This means that artifacts which can be used directory in their original location 	 * won't be downloaded if this option is set to true  	 */
+comment|/**      * True if the original files from the repositories should be used instead of downloaded ones,      * false otherwise. This means that artifacts which can be used directory in their original      * location won't be downloaded if this option is set to true      */
 specifier|private
 name|boolean
 name|useOrigin
 init|=
 literal|false
 decl_stmt|;
-comment|/** 	 * A filter to use to avoid downloading all artifacts. 	 */
+comment|/**      * A filter to use to avoid downloading all artifacts.      */
 specifier|private
 name|Filter
 name|artifactFilter
@@ -205,7 +205,7 @@ name|FilterHelper
 operator|.
 name|NO_FILTER
 decl_stmt|;
-comment|/** 	 * The id used to store the resolve information. 	 */
+comment|/**      * The id used to store the resolve information.      */
 specifier|private
 name|String
 name|resolveId

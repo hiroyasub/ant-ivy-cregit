@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test the deprecated IvyConfigureTest and the underlying implementation   * AntIvySettings.  When IvyConfigure will be removed, this class should be renamed AntIvySettingsTest  */
+comment|/**  * Test the deprecated IvyConfigureTest and the underlying implementation AntIvySettings. When  * IvyConfigure will be removed, this class should be renamed AntIvySettingsTest  */
 end_comment
 
 begin_class

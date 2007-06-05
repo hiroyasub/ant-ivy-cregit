@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of Properties which stores the values encrypted.  *   * The use is transparent from the user point of view (use as any Properties instance),  * except that get, put and putAll do not handle encryption/decryption.  *   * This means that get returns the encrypted value, while put and putAll  * puts given values without encrypting them.  *   * It this thus recommended to void using them, use setProperty and getProperty instead.  *   *  */
+comment|/**  * An implementation of Properties which stores the values encrypted. The use is transparent from  * the user point of view (use as any Properties instance), except that get, put and putAll do not  * handle encryption/decryption. This means that get returns the encrypted value, while put and  * putAll puts given values without encrypting them. It this thus recommended to void using them,  * use setProperty and getProperty instead.  */
 end_comment
 
 begin_class

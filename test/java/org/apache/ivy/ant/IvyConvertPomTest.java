@@ -214,7 +214,7 @@ literal|'\n'
 argument_list|)
 decl_stmt|;
 comment|// do not work properly on all platform and depends on the file date
-comment|//        assertEquals(expected, wrote);
+comment|// assertEquals(expected, wrote);
 block|}
 specifier|private
 name|String

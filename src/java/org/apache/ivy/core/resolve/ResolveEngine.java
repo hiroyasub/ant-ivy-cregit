@@ -702,7 +702,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The resolve engine which is the core of the dependency resolution  * mechanism used in Ivy.  *   *  It features several resolve methods, some very simple, like {@link #resolve(File)}   *  and {@link #resolve(URL)} which allow to simply resolve dependencies of a single  *  module descriptor, or more complete one, like the {@link #resolve(ModuleDescriptor, ResolveOptions)}  *  which allows to provide options to the resolution engine.  *    *  @see ResolveOptions  */
+comment|/**  * The resolve engine which is the core of the dependency resolution mechanism used in Ivy. It  * features several resolve methods, some very simple, like {@link #resolve(File)} and  * {@link #resolve(URL)} which allow to simply resolve dependencies of a single module descriptor,  * or more complete one, like the {@link #resolve(ModuleDescriptor, ResolveOptions)} which allows to  * provide options to the resolution engine.  *   * @see ResolveOptions  */
 end_comment
 
 begin_class
@@ -734,7 +734,7 @@ specifier|private
 name|DependencyResolver
 name|dictatorResolver
 decl_stmt|;
-comment|/** 	 * Constructs a ResolveEngine. 	 *  	 * @param settings the settings to use to configure the engine. Must not be null. 	 * @param eventManager the event manager to use to send events about the resolution process. Must not be null. 	 * @param sortEngine the sort engine to use to sort modules before producing the dependency resolution report. Must not be null. 	 */
+comment|/**      * Constructs a ResolveEngine.      *       * @param settings      *            the settings to use to configure the engine. Must not be null.      * @param eventManager      *            the event manager to use to send events about the resolution process. Must not be      *            null.      * @param sortEngine      *            the sort engine to use to sort modules before producing the dependency resolution      *            report. Must not be null.      */
 specifier|public
 name|ResolveEngine
 parameter_list|(
@@ -767,7 +767,7 @@ operator|=
 name|sortEngine
 expr_stmt|;
 block|}
-comment|/**      * Returns the currently configured dictator resolver, which when non      * null is used in place of any specified resolver in the {@link IvySettings}      * @return the currently configured dictator resolver, may be null.      */
+comment|/**      * Returns the currently configured dictator resolver, which when non null is used in place of      * any specified resolver in the {@link IvySettings}      *       * @return the currently configured dictator resolver, may be null.      */
 specifier|public
 name|DependencyResolver
 name|getDictatorResolver
@@ -777,7 +777,7 @@ return|return
 name|dictatorResolver
 return|;
 block|}
-comment|/** 	 * Sets a dictator resolver, which is used in place of regular dependency resolver  	 * for subsequent dependency resolution by this engine. 	 * @param dictatorResolver the dictator resolver to use in this engine,  	 * 		  null if regular settings should used 	 */
+comment|/**      * Sets a dictator resolver, which is used in place of regular dependency resolver for      * subsequent dependency resolution by this engine.      *       * @param dictatorResolver      *            the dictator resolver to use in this engine, null if regular settings should used      */
 specifier|public
 name|void
 name|setDictatorResolver
@@ -845,7 +845,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolves the module identified by the given mrid with its dependencies if transitive is set to true.       */
+comment|/**      * Resolves the module identified by the given mrid with its dependencies if transitive is set      * to true.      */
 specifier|public
 name|ResolveReport
 name|resolve
@@ -1057,7 +1057,7 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve dependencies of a module described by an ivy file.      *       * Note: the method signature is way too long, we should use a class to store the settings of the resolve.      */
+comment|/**      * Resolve dependencies of a module described by an ivy file. Note: the method signature is way      * too long, we should use a class to store the settings of the resolve.      */
 specifier|public
 name|ResolveReport
 name|resolve
@@ -1192,7 +1192,7 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve dependencies of a module described by a module descriptor      *       * Note: the method signature is way too long, we should use a class to store the settings of the resolve.      */
+comment|/**      * Resolve dependencies of a module described by a module descriptor Note: the method signature      * is way too long, we should use a class to store the settings of the resolve.      */
 specifier|public
 name|ResolveReport
 name|resolve
@@ -1488,7 +1488,8 @@ argument_list|(
 name|ivyFileInCache
 argument_list|)
 expr_stmt|;
-comment|// we store the resolved dependencies revisions and statuses per asked dependency revision id,
+comment|// we store the resolved dependencies revisions and statuses per asked dependency
+comment|// revision id,
 comment|// for direct dependencies only.
 comment|// this is used by the deliver task to resolve dynamic revisions to static ones
 name|File
@@ -1943,7 +1944,7 @@ block|{
 name|checkInterrupted
 argument_list|()
 expr_stmt|;
-comment|//download artifacts required in all asked configurations
+comment|// download artifacts required in all asked configurations
 if|if
 condition|(
 operator|!
@@ -2193,7 +2194,7 @@ name|start
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Download an artifact to the cache.      * Not used internally, useful especially for IDE plugins      * needing to download artifact one by one (for source or javadoc artifact,      * for instance).      *       * Downloaded artifact file can be accessed using getArchiveFileInCache method.      *       * It is possible to track the progression of the download using classical ivy       * progress monitoring feature (see addTransferListener).      *       * @param artifact the artifact to download      * @param cacheManager the cacheManager to use.      * @return a report concerning the download      */
+comment|/**      * Download an artifact to the cache. Not used internally, useful especially for IDE plugins      * needing to download artifact one by one (for source or javadoc artifact, for instance).      * Downloaded artifact file can be accessed using getArchiveFileInCache method. It is possible      * to track the progression of the download using classical ivy progress monitoring feature (see      * addTransferListener).      *       * @param artifact      *            the artifact to download      * @param cacheManager      *            the cacheManager to use.      * @return a report concerning the download      */
 specifier|public
 name|ArtifactDownloadReport
 name|download
@@ -2260,7 +2261,7 @@ name|artifact
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts.      * The module to resolve is given by its ivy file URL. This method requires      * appropriate configuration of the ivy instance, especially resolvers.      *       * @param ivySource url of the ivy file to use for dependency resolving      * @param confs an array of configuration names to resolve - must not be null nor empty      * @param cache the cache to use - default cache is used if null      * @param date the date to which resolution must be done - may be null      * @return an array of the resolved dependencies      * @throws ParseException if a parsing problem occured in the ivy file      * @throws IOException if an IO problem was raised during ivy file parsing      */
+comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its ivy file URL. This method requires appropriate configuration of      * the ivy instance, especially resolvers.      *       * @param ivySource      *            url of the ivy file to use for dependency resolving      * @param confs      *            an array of configuration names to resolve - must not be null nor empty      * @param cache      *            the cache to use - default cache is used if null      * @param date      *            the date to which resolution must be done - may be null      * @return an array of the resolved dependencies      * @throws ParseException      *             if a parsing problem occured in the ivy file      * @throws IOException      *             if an IO problem was raised during ivy file parsing      */
 specifier|public
 name|IvyNode
 index|[]
@@ -2303,7 +2304,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts.      * The module to resolve is given by its module descriptor.This method requires      * appropriate configuration of the ivy instance, especially resolvers.      *       * @param md the descriptor of the module for which we want to get dependencies - must not be null      * @param options the resolve options to use to resolve the dependencies      * @param report a resolve report to fill during resolution - may be null      * @return an array of the resolved Dependencies      */
+comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its module descriptor.This method requires appropriate configuration      * of the ivy instance, especially resolvers.      *       * @param md      *            the descriptor of the module for which we want to get dependencies - must not be      *            null      * @param options      *            the resolve options to use to resolve the dependencies      * @param report      *            a resolve report to fill during resolution - may be null      * @return an array of the resolved Dependencies      */
 specifier|public
 name|IvyNode
 index|[]
@@ -2747,7 +2748,8 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// use a Set to avoids duplicates
+comment|// use a Set to
+comment|// avoids duplicates
 for|for
 control|(
 name|Iterator
@@ -3449,7 +3451,8 @@ name|isLoaded
 argument_list|()
 condition|)
 block|{
-comment|// the node is not yet loaded, we can simply update its set of configurations to fetch
+comment|// the node is not yet loaded, we can simply update its set of
+comment|// configurations to fetch
 name|selected
 operator|.
 name|updateConfsToFetch
@@ -3465,7 +3468,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// the node has already been loaded, we must fetch its dependencies in the required conf
+comment|// the node has already been loaded, we must fetch its dependencies in the
+comment|// required conf
 name|fetchDependencies
 argument_list|(
 name|node
@@ -3764,7 +3768,8 @@ operator|.
 name|useRealNode
 argument_list|()
 expr_stmt|;
-comment|// the node may have been resolved to another real one while resolving other deps
+comment|// the node may have been resolved to another real one while
+comment|// resolving other deps
 if|if
 condition|(
 name|dep
@@ -3875,7 +3880,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns true if we've already fetched the dependencies for this node and configuration      * @param node node to check      * @param conf configuration to check      * @return true if we've already fetched this dependency      */
+comment|/**      * Returns true if we've already fetched the dependencies for this node and configuration      *       * @param node      *            node to check      * @param conf      *            configuration to check      * @return true if we've already fetched this dependency      */
 specifier|private
 name|boolean
 name|isDependenciesFetched
@@ -3977,7 +3982,7 @@ name|EMPTY_SET
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resolves conflict for the given node in the given ancestor.      * This method do conflict resolution in ancestor parents recursively,      * unless not necessary.      * @param node the node for which conflict resolution should be done      * @param ancestor the ancestor in which the conflict resolution should be done      * @param toevict a collection of IvyNode to evict (as computed by conflict resolution in descendants of ancestor)      * @return true if conflict resolution has been done, false it can't be done yet      */
+comment|/**      * Resolves conflict for the given node in the given ancestor. This method do conflict      * resolution in ancestor parents recursively, unless not necessary.      *       * @param node      *            the node for which conflict resolution should be done      * @param ancestor      *            the ancestor in which the conflict resolution should be done      * @param toevict      *            a collection of IvyNode to evict (as computed by conflict resolution in      *            descendants of ancestor)      * @return true if conflict resolution has been done, false it can't be done yet      */
 specifier|private
 name|boolean
 name|resolveConflict

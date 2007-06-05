@@ -198,7 +198,10 @@ name|getClass
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// do not remove, ensure IvyAuthenticator class loading!
+comment|// do not remove,
+comment|// ensure
+comment|// IvyAuthenticator
+comment|// class loading!
 block|}
 specifier|public
 name|URLInfo

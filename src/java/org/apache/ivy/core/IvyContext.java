@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class represents an execution context of an Ivy action.  * It contains several getters to retrieve information, like the used Ivy instance, the  * cache location...   *   * @see IvyThread  *   */
+comment|/**  * This class represents an execution context of an Ivy action. It contains several getters to  * retrieve information, like the used Ivy instance, the cache location...  *   * @see IvyThread  */
 end_comment
 
 begin_class
@@ -296,7 +296,7 @@ return|return
 name|cur
 return|;
 block|}
-comment|/**      * Changes the context associated with this thread.      * This is especially useful when launching a new thread, to associate it with the same context as the initial one.      *       * @param context the new context to use in this thread.      */
+comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one.      *       * @param context      *            the new context to use in this thread.      */
 specifier|public
 specifier|static
 name|void
@@ -314,7 +314,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the current ivy instance.      * When calling any public ivy method on an ivy instance, a reference to this instance is       * put in this context, and thus accessible using this method, until no code reference      * this instance and the garbage collector collects it.      * Then, or if no ivy method has been called, a default ivy instance is returned      * by this method, so that it never returns null.       * @return the current ivy instance      */
+comment|/**      * Returns the current ivy instance. When calling any public ivy method on an ivy instance, a      * reference to this instance is put in this context, and thus accessible using this method,      * until no code reference this instance and the garbage collector collects it. Then, or if no      * ivy method has been called, a default ivy instance is returned by this method, so that it      * never returns null.      *       * @return the current ivy instance      */
 specifier|public
 name|Ivy
 name|getIvy
@@ -528,7 +528,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Reads the first object from the list saved under given key in the context. 	 * If value under key represents non List object then a RuntimeException is thrown. 	 * @param key context key for the string 	 * @return top object from the list (index 0) or null if no key or list empty 	 */
+comment|/**      * Reads the first object from the list saved under given key in the context. If value under key      * represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
 specifier|public
 name|Object
 name|peek
@@ -618,7 +618,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/** 	 * Removes and returns first object from the list saved under given key in the context. 	 * If value under key represents non List object then a RuntimeException is thrown. 	 * @param key context key for the string 	 * @return top object from the list (index 0) or null if no key or list empty 	 */
+comment|/**      * Removes and returns first object from the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
 specifier|public
 name|Object
 name|pop
@@ -708,7 +708,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/** 	 * Removes and returns first object from the list saved under given key in the context 	 * but only if it equals the given expectedValue - if not a false value is returned. 	 * If value under key represents non List object then a RuntimeException is thrown. 	 * @param key context key for the string 	 * @return true if the r 	 */
+comment|/**      * Removes and returns first object from the list saved under given key in the context but only      * if it equals the given expectedValue - if not a false value is returned. If value under key      * represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return true if the r      */
 specifier|public
 name|boolean
 name|pop
@@ -826,7 +826,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/** 	 * Puts a new object at the start of the list saved under given key in the context. 	 * If value under key represents non List object then a RuntimeException is thrown. 	 * If no list exists under given key a new LinkedList is created. This is kept 	 * without WeakReference in opposite to the put() results. 	 * @param key key context key for the string 	 * @param value value to be saved under the key 	 */
+comment|/**      * Puts a new object at the start of the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown. If no list exists      * under given key a new LinkedList is created. This is kept without WeakReference in opposite      * to the put() results.      *       * @param key      *            key context key for the string      * @param value      *            value to be saved under the key      */
 specifier|public
 name|void
 name|push
@@ -919,7 +919,7 @@ return|return
 name|operatingThread
 return|;
 block|}
-comment|/* NB : The messageImpl is only used by Message.  It should be better to place it there. 	 * Alternatively, the Message itself could be placed here, bu this is has a major impact 	 * because Message is used at a lot of place. 	 */
+comment|/*      * NB : The messageImpl is only used by Message. It should be better to place it there.      * Alternatively, the Message itself could be placed here, bu this is has a major impact because      * Message is used at a lot of place.      */
 specifier|public
 name|MessageImpl
 name|getMessageImpl
@@ -1029,24 +1029,25 @@ name|pop
 argument_list|()
 expr_stmt|;
 block|}
-comment|// should be better to use context to store this kind of information, but not yet ready to do so...
-comment|//    private WeakReference _root = new WeakReference(null);
-comment|//    private String _rootModuleConf = null;
-comment|//	public IvyNode getRoot() {
-comment|//		return (IvyNode) _root.get();
-comment|//	}
+comment|// should be better to use context to store this kind of information, but not yet ready to do
+comment|// so...
+comment|// private WeakReference _root = new WeakReference(null);
+comment|// private String _rootModuleConf = null;
+comment|// public IvyNode getRoot() {
+comment|// return (IvyNode) _root.get();
+comment|// }
 comment|//
-comment|//	public void setRoot(IvyNode root) {
-comment|//		_root = new WeakReference(root);
-comment|//	}
+comment|// public void setRoot(IvyNode root) {
+comment|// _root = new WeakReference(root);
+comment|// }
 comment|//
-comment|//	public String getRootModuleConf() {
-comment|//		return _rootModuleConf;
-comment|//	}
+comment|// public String getRootModuleConf() {
+comment|// return _rootModuleConf;
+comment|// }
 comment|//
-comment|//	public void setRootModuleConf(String rootModuleConf) {
-comment|//		_rootModuleConf = rootModuleConf;
-comment|//	}
+comment|// public void setRootModuleConf(String rootModuleConf) {
+comment|// _rootModuleConf = rootModuleConf;
+comment|// }
 block|}
 end_class
 

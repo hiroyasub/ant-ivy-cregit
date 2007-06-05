@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This resolver is able to work with any sftp server.  *   * It supports listing and publishing.  *   * The server host should absolutely be set using setHost.  *   * basedir defaults to .  * port default to 22  *   * username and password will be prompted using a dialog box if not set. So if you are in  * an headless environment, provide username and password.  */
+comment|/**  * This resolver is able to work with any sftp server. It supports listing and publishing. The  * server host should absolutely be set using setHost. basedir defaults to . port default to 22  * username and password will be prompted using a dialog box if not set. So if you are in an  * headless environment, provide username and password.  */
 end_comment
 
 begin_class

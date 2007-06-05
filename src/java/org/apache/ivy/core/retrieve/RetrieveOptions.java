@@ -74,7 +74,7 @@ specifier|public
 class|class
 name|RetrieveOptions
 block|{
-comment|/** 	 * The names of configurations to retrieve. 	 * If the array consists only of '*', then all configurations of  	 * the module will be retrieved. 	 */
+comment|/**      * The names of configurations to retrieve. If the array consists only of '*', then all      * configurations of the module will be retrieved.      */
 specifier|private
 name|String
 index|[]
@@ -87,21 +87,21 @@ block|{
 literal|"*"
 block|}
 decl_stmt|;
-comment|/** 	 * The cache manager to retrieve files from. 	 * If null, the default cache manager of the current Ivy instance will be used. 	 */
+comment|/**      * The cache manager to retrieve files from. If null, the default cache manager of the current      * Ivy instance will be used.      */
 specifier|private
 name|CacheManager
 name|cache
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * The pattern to which ivy files should be retrieved.  	 * If destIvyPattern is null no ivy files will be copied. 	 */
+comment|/**      * The pattern to which ivy files should be retrieved. If destIvyPattern is null no ivy files      * will be copied.      */
 specifier|private
 name|String
 name|destIvyPattern
 init|=
 literal|null
 decl_stmt|;
-comment|/** 	 * The filter to apply before retrieving artifacts. 	 */
+comment|/**      * The filter to apply before retrieving artifacts.      */
 specifier|private
 name|Filter
 name|artifactFilter
@@ -110,28 +110,28 @@ name|FilterHelper
 operator|.
 name|NO_FILTER
 decl_stmt|;
-comment|/** 	 * True if a synchronisation of the destination directory should be done, 	 * false if a simple copy is enough. 	 * Synchronisation means that after the retrieve only files which have been 	 * retrieved will be present in the destination directory, which means  	 * that some files may be deleted. 	 */
+comment|/**      * True if a synchronisation of the destination directory should be done, false if a simple copy      * is enough. Synchronisation means that after the retrieve only files which have been retrieved      * will be present in the destination directory, which means that some files may be deleted.      */
 specifier|private
 name|boolean
 name|sync
 init|=
 literal|false
 decl_stmt|;
-comment|/** 	 * True if the original files should be used insteaad of their cache copy. 	 */
+comment|/**      * True if the original files should be used insteaad of their cache copy.      */
 specifier|private
 name|boolean
 name|useOrigin
 init|=
 literal|false
 decl_stmt|;
-comment|/** 	 * True if symbolic links should be created instead of plain copy. 	 * Works only on OS supporting symbolic links. 	 */
+comment|/**      * True if symbolic links should be created instead of plain copy. Works only on OS supporting      * symbolic links.      */
 specifier|private
 name|boolean
 name|makeSymlinks
 init|=
 literal|false
 decl_stmt|;
-comment|/** 	 * The id used to store the resolve information. 	 */
+comment|/**      * The id used to store the resolve information.      */
 specifier|private
 name|String
 name|resolveId

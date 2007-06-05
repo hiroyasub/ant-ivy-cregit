@@ -382,7 +382,7 @@ name|_proxyRealm
 operator|=
 literal|null
 expr_stmt|;
-comment|//no equivalent for realm in jdk proxy support ?
+comment|// no equivalent for realm in jdk proxy support ?
 name|_proxyHost
 operator|=
 name|System
@@ -392,7 +392,7 @@ argument_list|(
 literal|"http.proxyHost"
 argument_list|)
 expr_stmt|;
-comment|//TODO constant is better ...
+comment|// TODO constant is better ...
 if|if
 condition|(
 name|useProxy
@@ -433,7 +433,7 @@ argument_list|(
 literal|"http.proxyPassword"
 argument_list|)
 expr_stmt|;
-comment|//It seems there is no equivalent in HttpClient for
+comment|// It seems there is no equivalent in HttpClient for
 comment|// 'http.nonProxyHosts' property
 name|Message
 operator|.
@@ -1683,7 +1683,7 @@ name|getResponseContentLength
 argument_list|()
 return|;
 block|}
-comment|/** 		 * {@inheritDoc} 		 */
+comment|/**          * {@inheritDoc}          */
 specifier|public
 name|int
 name|getHttpClientMajorVersion
@@ -1770,7 +1770,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/** 		 * {@inheritDoc} 		 */
+comment|/**          * {@inheritDoc}          */
 specifier|public
 name|int
 name|getHttpClientMajorVersion

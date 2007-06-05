@@ -153,7 +153,7 @@ name|host
 return|;
 block|}
 block|}
-comment|/** 	 * Return a string that can be used for debug purpose.  It contains only stars for each password character. 	 */
+comment|/**      * Return a string that can be used for debug purpose. It contains only stars for each password      * character.      */
 specifier|public
 name|String
 name|toString

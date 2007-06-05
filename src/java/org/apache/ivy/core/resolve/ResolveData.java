@@ -312,7 +312,7 @@ operator|=
 name|options
 expr_stmt|;
 block|}
-comment|/**      * Returns the Map of visit data.      * Map (ModuleRevisionId -> VisitData)      * @return      */
+comment|/**      * Returns the Map of visit data. Map (ModuleRevisionId -> VisitData)      *       * @return      */
 specifier|public
 name|Map
 name|getVisitDataMap
@@ -546,7 +546,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Updates the visit data currently associated with the given mrid      * with the given node and the visit nodes of the old visitData      * for the given rootModuleConf      * @param mrid the module revision id for which the update should be done      * @param node the IvyNode to associate with the visit data to update      * @param rootModuleConf the root module configuration in which the update is made      */
+comment|/**      * Updates the visit data currently associated with the given mrid with the given node and the      * visit nodes of the old visitData for the given rootModuleConf      *       * @param mrid      *            the module revision id for which the update should be done      * @param node      *            the IvyNode to associate with the visit data to update      * @param rootModuleConf      *            the root module configuration in which the update is made      */
 name|void
 name|replaceNode
 parameter_list|(

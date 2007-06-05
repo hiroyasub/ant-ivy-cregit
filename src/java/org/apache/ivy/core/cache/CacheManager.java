@@ -549,7 +549,7 @@ block|}
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local      * and if the resolve has been done with useOrigin = true      *       */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -575,7 +575,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local      * and if the resolve has been done with useOrigin = true      *       */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -650,7 +650,7 @@ return|return
 name|archive
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information provided      * as parameter and the setting of useOrigin.      *       * If useOrigin is false, this method will always return the file in the cache.      *       */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information      * provided as parameter and the setting of useOrigin. If useOrigin is false, this method will      * always return the file in the cache.      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -757,7 +757,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md,      * so that this info can be retrieve later (even after a jvm restart)      * by getSavedResolverName(ModuleDescriptor md)      * @param md the module descriptor resolved      * @param name resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param name      *            resolver name      */
 specifier|public
 name|void
 name|saveResolver
@@ -792,7 +792,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md,      * so that this info can be retrieve later (even after a jvm restart)      * by getSavedArtResolverName(ModuleDescriptor md)      * @param md the module descriptor resolved      * @param name artifact resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param name      *            artifact resolver name      */
 specifier|public
 name|void
 name|saveArtResolver
@@ -1015,7 +1015,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      * @param artifact the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
+comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      *       * @param artifact      *            the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
 specifier|private
 name|String
 name|getPrefixKey
@@ -1064,7 +1064,7 @@ operator|+
 name|hashCode
 return|;
 block|}
-comment|/**      * Returns the key used to identify the location of the artifact.      * @param artifact the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
+comment|/**      * Returns the key used to identify the location of the artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
 specifier|private
 name|String
 name|getLocationKey
@@ -1087,7 +1087,7 @@ operator|+
 literal|".location"
 return|;
 block|}
-comment|/**      * Returns the key used to identify if the artifact is local.      * @param artifact the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
+comment|/**      * Returns the key used to identify if the artifact is local.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
 specifier|private
 name|String
 name|getIsLocalKey

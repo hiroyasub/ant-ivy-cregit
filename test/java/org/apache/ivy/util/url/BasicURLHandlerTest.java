@@ -136,7 +136,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// to test ftp we should know of an anonymous ftp site... !
-comment|//        assertTrue(handler.isReachable(new URL("ftp://ftp.mozilla.org/pub/dir.sizes")));
+comment|// assertTrue(handler.isReachable(new URL("ftp://ftp.mozilla.org/pub/dir.sizes")));
 name|assertFalse
 argument_list|(
 name|handler

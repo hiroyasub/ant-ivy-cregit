@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DualResolver is used to resolve dependencies with one dependency revolver, called ivy resolver,  * and then download artifacts found in the resolved dependencies from a second dependency resolver,  * called artifact resolver.  *   * It is especially useful with resolvers using repository where there is a lot of artifact, but no  * ivy file, like the maven ibiblio repository.  *   * If no ivy file is found by the ivy resolver, the artifact resolver is used to check if there is  * artifact corresponding to the request (with default ivy file).  *   * For artifact download, however, only the artifact resolver is used.  *   * Exactly two resolvers should be added to this resolver for it to work properly. The first resolver added  * if the ivy resolver, the second is the artifact one.  */
+comment|/**  * DualResolver is used to resolve dependencies with one dependency revolver, called ivy resolver,  * and then download artifacts found in the resolved dependencies from a second dependency resolver,  * called artifact resolver. It is especially useful with resolvers using repository where there is  * a lot of artifact, but no ivy file, like the maven ibiblio repository. If no ivy file is found by  * the ivy resolver, the artifact resolver is used to check if there is artifact corresponding to  * the request (with default ivy file). For artifact download, however, only the artifact resolver  * is used. Exactly two resolvers should be added to this resolver for it to work properly. The  * first resolver added if the ivy resolver, the second is the artifact one.  */
 end_comment
 
 begin_class

@@ -147,7 +147,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * Validate VFSResource creation for a valid VFS URI pointing to an physically existing file 	 */
+comment|/**      * Validate VFSResource creation for a valid VFS URI pointing to an physically existing file      */
 specifier|public
 name|void
 name|testCreateResourceThatExists
@@ -340,7 +340,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validating that resource can be created for files which don't physically exists -  	 * e.g. resources that are going to created. 	 * 	 */
+comment|/**      * Validating that resource can be created for files which don't physically exists - e.g.      * resources that are going to created.      */
 specifier|public
 name|void
 name|testCreateResourceThatDoesntExist
@@ -536,7 +536,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate VFSResource creation when given a poorly formed VFS identifier 	 * 	 */
+comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      */
 specifier|public
 name|void
 name|testBadURI
@@ -682,7 +682,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**  	 * Validate getChildren when given a VFS URI for a directory 	 * 	 */
+comment|/**      * Validate getChildren when given a VFS URI for a directory      */
 specifier|public
 name|void
 name|testListFolderChildren
@@ -919,7 +919,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we don't get any results when we query a VFSResource file object 	 * for its children 	 * 	 */
+comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      */
 specifier|public
 name|void
 name|testListFileChildren
@@ -1003,7 +1003,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a 	 * nonexistent file - for a list of its children 	 * 	 */
+comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      */
 specifier|public
 name|void
 name|testListImaginary

@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of the simple message facility for ant.  *   */
+comment|/**  * Implementation of the simple message facility for ant.  */
 end_comment
 
 begin_class
@@ -201,11 +201,11 @@ name|BuildEvent
 name|event
 parameter_list|)
 block|{
-comment|//NB: There is somtimes task created by an other task
-comment|//in that case, we should not uninit Message.  The log should stay associated
-comment|//with the initial task, except if it was an antcall, ant or subant target
-comment|//NB2 : Testing the identity of the task is not enought, event.getTask() return
-comment|//an instance of UnknownElement is wrapping the concrete instance
+comment|// NB: There is somtimes task created by an other task
+comment|// in that case, we should not uninit Message. The log should stay associated
+comment|// with the initial task, except if it was an antcall, ant or subant target
+comment|// NB2 : Testing the identity of the task is not enought, event.getTask() return
+comment|// an instance of UnknownElement is wrapping the concrete instance
 if|if
 condition|(
 name|stackDepth

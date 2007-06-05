@@ -2062,7 +2062,7 @@ name|Stack
 name|substituting
 parameter_list|)
 block|{
-comment|//TODO : refactor this with substituteVariables
+comment|// TODO : refactor this with substituteVariables
 comment|// if you supply null, null is what you get
 if|if
 condition|(
@@ -2476,7 +2476,7 @@ operator|=
 name|artifactExt
 expr_stmt|;
 block|}
-comment|/** 		 * @param origin 		 */
+comment|/**          * @param origin          */
 specifier|public
 name|OriginalArtifactNameValue
 parameter_list|(

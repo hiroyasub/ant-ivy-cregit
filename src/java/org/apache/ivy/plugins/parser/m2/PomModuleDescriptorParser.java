@@ -660,7 +660,7 @@ index|[
 literal|0
 index|]
 argument_list|)
-block|,     }
+block|,}
 decl_stmt|;
 specifier|private
 specifier|static
@@ -1427,7 +1427,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// we deal with classifiers by setting an extra attribute and forcing the dependency to assume such an artifact is published
+comment|// we deal with classifiers by setting an extra attribute and forcing the
+comment|// dependency to assume such an artifact is published
 name|Map
 name|extraAtt
 init|=
@@ -1494,7 +1495,13 @@ literal|"jar"
 argument_list|,
 literal|"jar"
 argument_list|,
-comment|// here we have to assume a type and ext for the artifact, so this is a limitation compared to how m2 behave with classifiers
+comment|// here we have
+comment|// to assume a
+comment|// type
+comment|// and ext for the artifact, so
+comment|// this is a limitation compared
+comment|// to how m2 behave with
+comment|// classifiers
 literal|null
 argument_list|,
 name|extraAtt

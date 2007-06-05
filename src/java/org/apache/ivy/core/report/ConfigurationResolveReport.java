@@ -557,7 +557,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all non evicted and non error dependency mrids      * The returned set is ordered so that a dependency will always      * be found before their own dependencies      * @return all non evicted and non error dependency mrids      */
+comment|/**      * Returns all non evicted and non error dependency mrids The returned set is ordered so that a      * dependency will always be found before their own dependencies      *       * @return all non evicted and non error dependency mrids      */
 specifier|public
 name|Set
 name|getModuleRevisionIds
@@ -1256,7 +1256,7 @@ name|mrid
 argument_list|)
 return|;
 block|}
-comment|/** 	 * gives all the modules ids concerned by this report, from the most dependent to the least one 	 * @return a list of ModuleId 	 */
+comment|/**      * gives all the modules ids concerned by this report, from the most dependent to the least one      *       * @return a list of ModuleId      */
 specifier|public
 name|List
 name|getModuleIds

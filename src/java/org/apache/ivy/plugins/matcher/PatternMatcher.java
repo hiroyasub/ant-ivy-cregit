@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Interface for a pattern matcher.  *<p/>  * The pattern matcher is the main abstraction regarding the matching of an expression. Implementation may vary  * depending on the expression syntax handling that is desired.  */
+comment|/**  * Interface for a pattern matcher.<p/> The pattern matcher is the main abstraction regarding the  * matching of an expression. Implementation may vary depending on the expression syntax handling  * that is desired.  */
 end_comment
 
 begin_interface
@@ -71,20 +71,20 @@ name|ANY_EXPRESSION
 init|=
 literal|"*"
 decl_stmt|;
-comment|/**      * Return the matcher for the given expression.      *      * @param expression the expression to be matched. Cannot be null ?      * @return the matcher instance for the given expression. Never null.      */
+comment|/**      * Return the matcher for the given expression.      *       * @param expression      *            the expression to be matched. Cannot be null ?      * @return the matcher instance for the given expression. Never null.      */
 specifier|public
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|Matcher
 name|getMatcher
 parameter_list|(
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|expression
 parameter_list|)
 function_decl|;
-comment|/**      * return the name of this pattern matcher      *      * @return the name of this pattern matcher. Never null.      * @see #EXACT      * @see #REGEXP      * @see #GLOB      * @see #EXACT_OR_REGEXP      */
+comment|/**      * return the name of this pattern matcher      *       * @return the name of this pattern matcher. Never null.      * @see #EXACT      * @see #REGEXP      * @see #GLOB      * @see #EXACT_OR_REGEXP      */
 specifier|public
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|getName
 parameter_list|()

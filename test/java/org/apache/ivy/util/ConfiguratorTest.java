@@ -317,7 +317,7 @@ class|class
 name|House
 extends|extends
 name|Housing
-block|{    	     }
+block|{     }
 specifier|public
 specifier|static
 class|class

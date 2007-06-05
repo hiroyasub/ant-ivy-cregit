@@ -18,12 +18,12 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Implementation of an exact matcher.  *<p/>  * The matching will be performed against an expression being a string. It will only  * matches if both strings are equal (per equals()) rule or if both strings are null.  */
+comment|/**  * Implementation of an exact matcher.<p/> The matching will be performed against an expression  * being a string. It will only matches if both strings are equal (per equals()) rule or if both  * strings are null.  */
 end_comment
 
 begin_class
 specifier|public
-comment|/*@Immutable*/
+comment|/* @Immutable */
 specifier|final
 class|class
 name|ExactPatternMatcher
@@ -68,7 +68,7 @@ return|;
 block|}
 specifier|private
 specifier|static
-comment|/*@Immutable*/
+comment|/* @Immutable */
 class|class
 name|ExactMatcher
 implements|implements

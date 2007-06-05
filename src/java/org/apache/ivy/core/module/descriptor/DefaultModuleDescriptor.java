@@ -930,7 +930,7 @@ return|return
 name|moduleDescriptor
 return|;
 block|}
-comment|/**      * Transforms the given module descriptor of the given namespace and return      * a new module descriptor in the system namespace.      *       *<i>Note that dependency exclude rules are not converted in system namespace, because they aren't       * transformable (the name space hasn't the ability to convert regular expressions)</i>      *       * @param md      * @param ns      * @return      */
+comment|/**      * Transforms the given module descriptor of the given namespace and return a new module      * descriptor in the system namespace.<i>Note that dependency exclude rules are not converted      * in system namespace, because they aren't transformable (the name space hasn't the ability to      * convert regular expressions)</i>      *       * @param md      * @param ns      * @return      */
 specifier|public
 specifier|static
 name|ModuleDescriptor
@@ -1345,7 +1345,10 @@ operator|new
 name|LinkedHashSet
 argument_list|()
 decl_stmt|;
-comment|// Collection(Artifact) // all artifacts could also be found in the artifactsByConf map, but here we can preserve the order
+comment|// Collection(Artifact) // all artifacts
+comment|// could also be found in the
+comment|// artifactsByConf map, but here we can
+comment|// preserve the order
 specifier|private
 name|boolean
 name|_isDefault
@@ -1509,7 +1512,7 @@ operator|=
 name|isDefault
 expr_stmt|;
 block|}
-comment|/** 	 * IMPORTANT : at least call setModuleRevisionId and setResolvedPublicationDate 	 * with instances created by this constructor ! 	 * 	 */
+comment|/**      * IMPORTANT : at least call setModuleRevisionId and setResolvedPublicationDate with instances      * created by this constructor !      */
 specifier|public
 name|DefaultModuleDescriptor
 parameter_list|(
@@ -1720,7 +1723,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Artifact configurations are not used since added artifact may not be      * entirely completed, so its configurations data may not be accurate      * @param conf      * @param artifact      */
+comment|/**      * Artifact configurations are not used since added artifact may not be entirely completed, so      * its configurations data may not be accurate      *       * @param conf      * @param artifact      */
 specifier|public
 name|void
 name|addArtifact
@@ -2367,7 +2370,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId      * organisation and name      *       * @param moduleId      * @param matcher       * @param resolverName      */
+comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId organisation and      * name      *       * @param moduleId      * @param matcher      * @param resolverName      */
 specifier|public
 name|void
 name|addConflictManager
@@ -2641,7 +2644,7 @@ operator|=
 name|ns
 expr_stmt|;
 block|}
-comment|/**      * Throws an exception if the module descriptor is inconsistent      * For the moment, only extended configurations existence is checked      */
+comment|/**      * Throws an exception if the module descriptor is inconsistent For the moment, only extended      * configurations existence is checked      */
 specifier|public
 name|void
 name|check
@@ -2900,7 +2903,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not set      */
+comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not      * set      */
 specifier|public
 name|boolean
 name|doesExclude

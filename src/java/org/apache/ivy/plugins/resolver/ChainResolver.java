@@ -1062,7 +1062,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine      * which is the latest      * @param rmr1      * @param rmr2      * @return      */
+comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine which is the      * latest      *       * @param rmr1      * @param rmr2      * @return      */
 specifier|private
 name|boolean
 name|isAfter

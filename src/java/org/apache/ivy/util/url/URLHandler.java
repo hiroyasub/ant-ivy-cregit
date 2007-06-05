@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This interface is responsible for handling some URL manipulation  * (stream opening, downloading, check reachability, ...).   *   *  */
+comment|/**  * This interface is responsible for handling some URL manipulation (stream opening, downloading,  * check reachability, ...).  */
 end_comment
 
 begin_interface
@@ -167,7 +167,7 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      * @param url the url to check      * @return true if the target is reachable      */
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *       * @param url      *            the url to check      * @return true if the target is reachable      */
 specifier|public
 name|boolean
 name|isReachable
@@ -176,7 +176,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      * @param url the url to check      * @return true if the target is reachable      */
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *       * @param url      *            the url to check      * @return true if the target is reachable      */
 specifier|public
 name|boolean
 name|isReachable
@@ -188,7 +188,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the length of the target if the given url is reachable, and without      * error code in case of http urls.      * Please prefer getURLInfo when several infos are needed.      * @param url the url to check      * @return the length of the target if available, 0 if not reachable      */
+comment|/**      * Returns the length of the target if the given url is reachable, and without error code in      * case of http urls. Please prefer getURLInfo when several infos are needed.      *       * @param url      *            the url to check      * @return the length of the target if available, 0 if not reachable      */
 specifier|public
 name|long
 name|getContentLength
@@ -197,7 +197,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the length of the target if the given url is reachable, and without      * error code in case of http urls.      * @param url the url to check      * @param timeout the maximum time before considering an url is not reachable      *        a timeout of zero indicates no timeout      * @return the length of the target if available, 0 if not reachable      */
+comment|/**      * Returns the length of the target if the given url is reachable, and without error code in      * case of http urls.      *       * @param url      *            the url to check      * @param timeout      *            the maximum time before considering an url is not reachable a timeout of zero      *            indicates no timeout      * @return the length of the target if available, 0 if not reachable      */
 specifier|public
 name|long
 name|getContentLength
@@ -209,7 +209,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      * @param url the url to check      * @return last modified timestamp of the given url      */
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *       * @param url      *            the url to check      * @return last modified timestamp of the given url      */
 specifier|public
 name|long
 name|getLastModified
@@ -218,7 +218,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      * @param url the url to check      * @return last modified timestamp of the given url      */
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *       * @param url      *            the url to check      * @return last modified timestamp of the given url      */
 specifier|public
 name|long
 name|getLastModified
@@ -230,7 +230,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      * @param url      * @return      */
+comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      *       * @param url      * @return      */
 specifier|public
 name|URLInfo
 name|getURLInfo
@@ -239,7 +239,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      * @param url      * @return      */
+comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      *       * @param url      * @return      */
 specifier|public
 name|URLInfo
 name|getURLInfo

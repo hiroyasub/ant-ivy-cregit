@@ -120,12 +120,12 @@ name|ModuleId
 name|getDependencyId
 parameter_list|()
 function_decl|;
-comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently      * of conflicts manager. This only works for direct dependencies, and not transitive ones.      * @return true if this dependency should be used, false if conflicts manager      * can do its work.      */
+comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently of      * conflicts manager. This only works for direct dependencies, and not transitive ones.      *       * @return true if this dependency should be used, false if conflicts manager can do its work.      */
 name|boolean
 name|isForce
 parameter_list|()
 function_decl|;
-comment|/**      * Used to indicate that this dependency is a changing one.      * A changing dependency in ivy means that the revision may have its artifacts modified      * without revision change. When new artifacts are published a new ivy file should also      * be published with a new publication date to indicate to ivy that artifacts have changed and that they       * should be downloaded again.       * @return true if this dependency is a changing one      */
+comment|/**      * Used to indicate that this dependency is a changing one. A changing dependency in ivy means      * that the revision may have its artifacts modified without revision change. When new artifacts      * are published a new ivy file should also be published with a new publication date to indicate      * to ivy that artifacts have changed and that they should be downloaded again.      *       * @return true if this dependency is a changing one      */
 name|boolean
 name|isChanging
 parameter_list|()
@@ -245,7 +245,7 @@ index|[]
 name|moduleConfigurations
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if      * @param moduleConfigurations      * @param artifactId      * @return      */
+comment|/**      * Returns true if      *       * @param moduleConfigurations      * @param artifactId      * @return      */
 name|boolean
 name|doesExclude
 parameter_list|(
@@ -257,7 +257,7 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if this descriptor contains any exclusion rule      * @return true if this descriptor contains any exclusion rule      */
+comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude

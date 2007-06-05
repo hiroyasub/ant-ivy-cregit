@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Convert a pom to an ivy file  *   *  */
+comment|/**  * Convert a pom to an ivy file  */
 end_comment
 
 begin_class

@@ -197,34 +197,35 @@ name|test
 parameter_list|()
 block|{
 block|}
-comment|// no xslt transformation is possible in the junit test on our continuous integration server for the moment...
-comment|//    public void testGraph() throws Exception {
-comment|//    	_report.setOrganisation("org1");
-comment|//		_report.setXml(false);
-comment|//		_report.setGraph(true);
-comment|//		_report.setTodir(_cache);
-comment|//		_report.setOutputname("test-graph");
-comment|//    	_report.execute();
-comment|//    	File graphml = new File(_cache, "test-graph.graphml");
-comment|//    	assertTrue(graphml.exists());
-comment|//    	String g = FileUtil.readEntirely(new BufferedReader(new FileReader(graphml)));
-comment|//    	assertFalse(g.indexOf("caller") != -1);
-comment|//    	assertTrue(g.indexOf("mod1.1") != -1);
-comment|//    }
+comment|// no xslt transformation is possible in the junit test on our continuous integration server for
+comment|// the moment...
+comment|// public void testGraph() throws Exception {
+comment|// _report.setOrganisation("org1");
+comment|// _report.setXml(false);
+comment|// _report.setGraph(true);
+comment|// _report.setTodir(_cache);
+comment|// _report.setOutputname("test-graph");
+comment|// _report.execute();
+comment|// File graphml = new File(_cache, "test-graph.graphml");
+comment|// assertTrue(graphml.exists());
+comment|// String g = FileUtil.readEntirely(new BufferedReader(new FileReader(graphml)));
+comment|// assertFalse(g.indexOf("caller") != -1);
+comment|// assertTrue(g.indexOf("mod1.1") != -1);
+comment|// }
 comment|//
-comment|//    public void testDot() throws Exception {
-comment|//    	_report.setOrganisation("org1");
-comment|//		_report.setXml(false);
-comment|//		_report.setDot(true);
-comment|//		_report.setTodir(_cache);
-comment|//		_report.setOutputname("test-graph");
-comment|//    	_report.execute();
-comment|//    	File dot = new File(_cache, "test-graph.dot");
-comment|//    	assertTrue(dot.exists());
-comment|//    	String g = FileUtil.readEntirely(new BufferedReader(new FileReader(dot)));
-comment|//    	assertFalse(g.indexOf("caller") != -1);
-comment|//    	assertTrue(g.indexOf("mod1.1") != -1);
-comment|//    }
+comment|// public void testDot() throws Exception {
+comment|// _report.setOrganisation("org1");
+comment|// _report.setXml(false);
+comment|// _report.setDot(true);
+comment|// _report.setTodir(_cache);
+comment|// _report.setOutputname("test-graph");
+comment|// _report.execute();
+comment|// File dot = new File(_cache, "test-graph.dot");
+comment|// assertTrue(dot.exists());
+comment|// String g = FileUtil.readEntirely(new BufferedReader(new FileReader(dot)));
+comment|// assertFalse(g.indexOf("caller") != -1);
+comment|// assertTrue(g.indexOf("mod1.1") != -1);
+comment|// }
 block|}
 end_class
 

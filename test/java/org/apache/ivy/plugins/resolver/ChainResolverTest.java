@@ -1329,7 +1329,9 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest -> should the one kept
+comment|// latest ->
+comment|// should the
+comment|// one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -1599,7 +1601,10 @@ argument_list|,
 literal|true
 argument_list|)
 block|,
-comment|// latest -> but default
+comment|// latest
+comment|// ->
+comment|// but
+comment|// default
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -1655,7 +1660,9 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest -> should the one kept
+comment|// latest ->
+comment|// should the
+comment|// one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -1954,7 +1961,10 @@ argument_list|,
 literal|true
 argument_list|)
 block|,
-comment|// latest -> but default
+comment|// latest
+comment|// ->
+comment|// but
+comment|// default
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2032,7 +2042,9 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest -> should the one kept
+comment|// latest ->
+comment|// should the
+comment|// one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2347,7 +2359,9 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// not default -> should the one kept
+comment|// not default
+comment|// -> should the
+comment|// one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2601,7 +2615,8 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-comment|// second resolver has an ivy pattern and will thus find the real module, which should be kept
+comment|// second resolver has an ivy pattern and will thus find the real module, which should be
+comment|// kept
 name|resolver
 operator|=
 operator|new
@@ -3088,8 +3103,9 @@ argument_list|,
 name|_data
 argument_list|)
 expr_stmt|;
-comment|// 2 ---- now we ask to resolve dependencies with a chain in return first mode, in which the first resolver
-comment|//        is not able to find the module, but the second is
+comment|// 2 ---- now we ask to resolve dependencies with a chain in return first mode, in which the
+comment|// first resolver
+comment|// is not able to find the module, but the second is
 name|chain
 operator|=
 operator|new

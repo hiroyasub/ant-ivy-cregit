@@ -24,7 +24,7 @@ specifier|public
 class|class
 name|Checks
 block|{
-comment|/** 	 * Checks that an object is not null, and throw an exception 	 * if the object is null. 	 *  	 * @param o the object to check 	 * @param objectName the name of the object to check. This name will be used in the exception message. 	 * @throws IllegalArgumentException if the object is null 	 */
+comment|/**      * Checks that an object is not null, and throw an exception if the object is null.      *       * @param o      *            the object to check      * @param objectName      *            the name of the object to check. This name will be used in the exception message.      * @throws IllegalArgumentException      *             if the object is null      */
 specifier|public
 specifier|static
 name|void

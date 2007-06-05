@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for easy trigger implementation.  *   * This base class takes of the event filtering part, the only method to implement in subclasses  * is {@link IvyListener#progress(IvyEvent)} which should do whatever the trigger needs to do when  * the event occurs. This method will only be called when an event matching the trigger filter occurs.  *   *   *   * @since 1.4  *  */
+comment|/**  * Base class for easy trigger implementation. This base class takes of the event filtering part,  * the only method to implement in subclasses is {@link IvyListener#progress(IvyEvent)} which should  * do whatever the trigger needs to do when the event occurs. This method will only be called when  * an event matching the trigger filter occurs.  *   * @since 1.4  */
 end_comment
 
 begin_class

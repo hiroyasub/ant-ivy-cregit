@@ -372,7 +372,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates a report of all artifacts involved during the last resolve.   */
+comment|/**  * Generates a report of all artifacts involved during the last resolve.  */
 end_comment
 
 begin_class

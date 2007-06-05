@@ -280,7 +280,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This ant task let users generates reports (html, xml, graphml, ...) from the last resolve done.  *   */
+comment|/**  * This ant task let users generates reports (html, xml, graphml, ...) from the last resolve done.  */
 end_comment
 
 begin_class

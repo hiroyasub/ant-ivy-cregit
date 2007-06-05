@@ -463,7 +463,7 @@ name|IvySettingsAware
 implements|,
 name|HasLatestStrategy
 block|{
-comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not,      * null if default behaviour should be used      */
+comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviour should be used      */
 specifier|private
 name|Boolean
 name|_validate
@@ -552,7 +552,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * this method should remove sensitive information from a location to be displayed in a log      * @param name location      * @return location with sensitive data replaced by stars      */
+comment|/**      * this method should remove sensitive information from a location to be displayed in a log      *       * @param name      *            location      * @return location with sensitive data replaced by stars      */
 specifier|public
 name|String
 name|hidePassword
@@ -819,7 +819,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|/**      * Default implementation actually download the artifact      * Subclasses should overwrite this to avoid the download      */
+comment|/**      * Default implementation actually download the artifact Subclasses should overwrite this to      * avoid the download      */
 specifier|public
 name|boolean
 name|exists

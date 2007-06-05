@@ -290,7 +290,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository  *   * This is especially useful to leverage the gssapi authentication supported by SecureCRT.  *   * In caseswhere usual sftp is enough, prefer the 100% java solution of sftp repository.  *   * This requires SecureCRT to be in the PATH.  *   * Tested with SecureCRT 5.0.5  *   *  */
+comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository This is  * especially useful to leverage the gssapi authentication supported by SecureCRT. In caseswhere  * usual sftp is enough, prefer the 100% java solution of sftp repository. This requires SecureCRT  * to be in the PATH. Tested with SecureCRT 5.0.5  */
 end_comment
 
 begin_class
@@ -1472,7 +1472,7 @@ name|_readTimeout
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * The behaviour of vsftp with some commands is to log the resulting message on the error stream, 	 * even if everything is ok. 	 *   	 * So it's quite difficult if there was an error or not. 	 *  	 * Hence we compare the response with the expected message and deal with it. 	 * The problem is that this is very specific to the version of vsftp used for the test, 	 *  	 * That's why expected messages are obtained using overridable protected methods. 	 */
+comment|/**      * The behaviour of vsftp with some commands is to log the resulting message on the error      * stream, even if everything is ok. So it's quite difficult if there was an error or not. Hence      * we compare the response with the expected message and deal with it. The problem is that this      * is very specific to the version of vsftp used for the test, That's why expected messages are      * obtained using overridable protected methods.      */
 specifier|protected
 name|void
 name|sendCommand
@@ -1658,7 +1658,8 @@ name|single
 operator|=
 literal|false
 expr_stmt|;
-comment|// use of alone commands does not work properly due to a long delay between end of process and end of stream...
+comment|// use of alone commands does not work properly due to a long delay between
+comment|// end of process and end of stream...
 name|checkInterrupted
 argument_list|()
 expr_stmt|;
@@ -1848,7 +1849,8 @@ name|getPrompt
 init|=
 literal|false
 decl_stmt|;
-comment|// the reading is done in a for loop making five attempts to read the stream if we do not reach the next prompt
+comment|// the reading is done in a for loop making five attempts to read the stream
+comment|// if we do not reach the next prompt
 for|for
 control|(
 name|int
@@ -1886,7 +1888,8 @@ name|attempts
 operator|=
 literal|0
 expr_stmt|;
-comment|// we manage to read something, reset numer of attempts
+comment|// we manage to read something, reset numer of
+comment|// attempts
 name|response
 operator|.
 name|append
@@ -2779,7 +2782,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Called whenever an api level method end 	 */
+comment|/**      * Called whenever an api level method end      */
 specifier|private
 name|void
 name|cleanup
@@ -2815,7 +2818,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Called whenever an api level method end 	 */
+comment|/**      * Called whenever an api level method end      */
 specifier|private
 name|void
 name|cleanup
@@ -3024,7 +3027,7 @@ literal|" closed"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Parses a ls -l line and transforms it in a resource 	 * @param file 	 * @param responseLine 	 * @return 	 */
+comment|/**      * Parses a ls -l line and transforms it in a resource      *       * @param file      * @param responseLine      * @return      */
 specifier|protected
 name|Resource
 name|lslToResource
@@ -3511,7 +3514,7 @@ operator|+
 literal|")"
 return|;
 block|}
-comment|/** 	 * Sets the reuse connection time. 	 * The same connection will be reused if the time here does not last  	 * between two commands. 	 * O indicates that the connection should never be reused 	 *  	 * @param time 	 */
+comment|/**      * Sets the reuse connection time. The same connection will be reused if the time here does not      * last between two commands. O indicates that the connection should never be reused      *       * @param time      */
 specifier|public
 name|void
 name|setReuseConnection

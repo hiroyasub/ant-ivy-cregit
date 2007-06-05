@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This describes an artifact that is asked for a dependency.  *   * It is used to define an (additional) artifact not declared  * by a dependency module descriptor.  */
+comment|/**  * This describes an artifact that is asked for a dependency. It is used to define an (additional)  * artifact not declared by a dependency module descriptor.  */
 end_comment
 
 begin_interface
@@ -56,31 +56,31 @@ name|DependencyArtifactDescriptor
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the name of the artifact asked      * @return      */
+comment|/**      * Returns the name of the artifact asked      *       * @return      */
 specifier|public
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the type of the artifact asked      * @return      */
+comment|/**      * Returns the type of the artifact asked      *       * @return      */
 specifier|public
 name|String
 name|getType
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the ext of the artifact asked      * @return      */
+comment|/**      * Returns the ext of the artifact asked      *       * @return      */
 specifier|public
 name|String
 name|getExt
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the url to look this artifact at      * @return      */
+comment|/**      * Returns the url to look this artifact at      *       * @return      */
 specifier|public
 name|URL
 name|getUrl
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */
+comment|/**      * Returns the configurations of the module in which the artifact is asked      *       * @return an array of configuration names in which the artifact is asked      */
 specifier|public
 name|String
 index|[]

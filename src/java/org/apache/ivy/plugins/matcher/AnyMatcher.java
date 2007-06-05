@@ -23,7 +23,7 @@ end_comment
 
 begin_class
 specifier|public
-comment|/*@Immutable*/
+comment|/* @Immutable */
 class|class
 name|AnyMatcher
 implements|implements

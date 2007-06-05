@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is using the scp client to transfer data and information for the  * repository. It is based on the SCPClient from the ganymed ssh library from  * Christian Plattner. To minimize the dependency to the ssh library and because  * I needed some additional functionality, I decided to copy'n'paste the single  * class rather than to inherit or delegate it somehow. Nevertheless credit  * should go to the original author.  *   */
+comment|/**  * This class is using the scp client to transfer data and information for the repository. It is  * based on the SCPClient from the ganymed ssh library from Christian Plattner. To minimize the  * dependency to the ssh library and because I needed some additional functionality, I decided to  * copy'n'paste the single class rather than to inherit or delegate it somehow. Nevertheless credit  * should go to the original author.  */
 end_comment
 
 begin_class
@@ -175,7 +175,7 @@ specifier|private
 name|long
 name|lastModified
 decl_stmt|;
-comment|/**          * @param filename The filename to set.          */
+comment|/**          * @param filename          *            The filename to set.          */
 specifier|public
 name|void
 name|setFilename
@@ -201,7 +201,7 @@ return|return
 name|filename
 return|;
 block|}
-comment|/**          * @param length The length to set.          */
+comment|/**          * @param length          *            The length to set.          */
 specifier|public
 name|void
 name|setLength
@@ -227,7 +227,7 @@ return|return
 name|length
 return|;
 block|}
-comment|/**          * @param lastModified The lastModified to set.          */
+comment|/**          * @param lastModified          *            The lastModified to set.          */
 specifier|public
 name|void
 name|setLastModified
@@ -402,7 +402,7 @@ condition|(
 literal|true
 condition|)
 block|{
-comment|/*              * This is a random limit - if your path names are longer, then              * adjust it              */
+comment|/*              * This is a random limit - if your path names are longer, then adjust it              */
 if|if
 condition|(
 name|sb
@@ -1441,7 +1441,7 @@ name|flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Receive a file via scp and store it in a stream      * @param channel ssh channel to use      * @param file to receive from remote      * @param target to store file into (if null, get only file info)      * @return file information of the file we received      * @throws IOException in case of network or protocol trouble      * @throws RemoteScpException in case of problems on the target system (connection is fine)      */
+comment|/**      * Receive a file via scp and store it in a stream      *       * @param channel      *            ssh channel to use      * @param file      *            to receive from remote      * @param target      *            to store file into (if null, get only file info)      * @return file information of the file we received      * @throws IOException      *             in case of network or protocol trouble      * @throws RemoteScpException      *             in case of problems on the target system (connection is fine)      */
 specifier|private
 name|FileInfo
 name|receiveStream
@@ -1823,7 +1823,7 @@ return|return
 name|fileInfo
 return|;
 block|}
-comment|/**      * Copy a local file to a remote directory, uses mode 0600 when creating the      * file on the remote side.      *       * @param localFile Path and name of local file.      * @param remoteTargetDirectory Remote target directory where the file has to end up (optional)      * @param remoteName target filename to use      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Copy a local file to a remote directory, uses mode 0600 when creating the file on the remote      * side.      *       * @param localFile      *            Path and name of local file.      * @param remoteTargetDirectory      *            Remote target directory where the file has to end up (optional)      * @param remoteName      *            target filename to use      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|put
@@ -1854,7 +1854,7 @@ literal|"0600"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Create a remote file and copy the contents of the passed byte array into      * it. Uses mode 0600 for creating the remote file.      *       * @param data the data to be copied into the remote file.      * @param remoteFileName The name of the file which will be created in the remote target directory.      * @param remoteTargetDirectory Remote target directory where the file has to end up (optional)      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Create a remote file and copy the contents of the passed byte array into it. Uses mode 0600      * for creating the remote file.      *       * @param data      *            the data to be copied into the remote file.      * @param remoteFileName      *            The name of the file which will be created in the remote target directory.      * @param remoteTargetDirectory      *            Remote target directory where the file has to end up (optional)      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|put
@@ -1886,7 +1886,7 @@ literal|"0600"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Create a remote file and copy the contents of the passed byte array into      * it. The method use the specified mode when creating the file on the      * remote side.      *       * @param data the data to be copied into the remote file.      * @param remoteFileName The name of the file which will be created in the remote target directory.      * @param remoteTargetDirectory Remote target directory where the file has to end up (optional)      * @param mode a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Create a remote file and copy the contents of the passed byte array into it. The method use      * the specified mode when creating the file on the remote side.      *       * @param data      *            the data to be copied into the remote file.      * @param remoteFileName      *            The name of the file which will be created in the remote target directory.      * @param remoteTargetDirectory      *            Remote target directory where the file has to end up (optional)      * @param mode      *            a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|put
@@ -2044,7 +2044,7 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-comment|//channel.disconnect();
+comment|// channel.disconnect();
 block|}
 catch|catch
 parameter_list|(
@@ -2112,7 +2112,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * Copy a local file to a remote site, uses the specified mode when      * creating the file on the remote side.      *       * @param localFile Path and name of local file.      * @param remoteTargetDir Remote target directory where the file has to end up (optional)      * @param remoteTargetName file name to use on the target system       * @param mode a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Copy a local file to a remote site, uses the specified mode when creating the file on the      * remote side.      *       * @param localFile      *            Path and name of local file.      * @param remoteTargetDir      *            Remote target directory where the file has to end up (optional)      * @param remoteTargetName      *            file name to use on the target system      * @param mode      *            a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|put
@@ -2320,7 +2320,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Download a file from the remote server to a local file.      * @param remoteFile Path and name of the remote file.      * @param localTarget Local file where to store the data.      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Download a file from the remote server to a local file.      *       * @param remoteFile      *            Path and name of the remote file.      * @param localTarget      *            Local file where to store the data.      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|get
@@ -2362,7 +2362,7 @@ name|fop
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Download a file from the remote server into an OutputStream      * @param remoteFile Path and name of the remote file.      * @param localTarget OutputStream to store the data.      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Download a file from the remote server into an OutputStream      *       * @param remoteFile      *            Path and name of the remote file.      * @param localTarget      *            OutputStream to store the data.      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|get
@@ -2479,7 +2479,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Initiates an SCP sequence but stops after getting fileinformation header      * @param remoteFile to get information for      * @return the file information got      * @throws IOException in case of network problems      * @throws RemoteScpException in case of problems on the target system (connection ok)      */
+comment|/**      * Initiates an SCP sequence but stops after getting fileinformation header      *       * @param remoteFile      *            to get information for      * @return the file information got      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|FileInfo
 name|getFileinfo

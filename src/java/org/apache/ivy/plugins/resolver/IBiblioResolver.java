@@ -324,7 +324,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * IBiblioResolver is a resolver which can be used to resolve dependencies found  * in the ibiblio maven repository, or similar repositories.  * For more flexibility with url and patterns, see {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
+comment|/**  * IBiblioResolver is a resolver which can be used to resolve dependencies found in the ibiblio  * maven repository, or similar repositories. For more flexibility with url and patterns, see  * {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
 end_comment
 
 begin_class
@@ -698,7 +698,7 @@ return|return
 name|_root
 return|;
 block|}
-comment|/**      * Sets the root of the maven like repository.      * The maven like repository is necessarily an http repository.      * @param root the root of the maven like repository      * @throws IllegalArgumentException if root does not start with "http://"      */
+comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *       * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
 specifier|public
 name|void
 name|setRoot

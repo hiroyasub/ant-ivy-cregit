@@ -60,7 +60,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* 	 * Test method for 'org.apache.ivy.DefaultDependencyDescriptor.replaceSelfFallbackPattern(String, String)' 	 */
+comment|/*      * Test method for      * 'org.apache.ivy.DefaultDependencyDescriptor.replaceSelfFallbackPattern(String, String)'      */
 specifier|public
 name|void
 name|testReplaceSelfFallbackPattern
@@ -120,7 +120,7 @@ literal|"runtime"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* 	 * Test method for 'org.apache.ivy.DefaultDependencyDescriptor.replaceThisFallbackPattern(String, String)' 	 */
+comment|/*      * Test method for      * 'org.apache.ivy.DefaultDependencyDescriptor.replaceThisFallbackPattern(String, String)'      */
 specifier|public
 name|void
 name|testReplaceThisFallbackPattern

@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parses information about an ivy file and make them available in ant.  *   *  */
+comment|/**  * Parses information about an ivy file and make them available in ant.  */
 end_comment
 
 begin_class

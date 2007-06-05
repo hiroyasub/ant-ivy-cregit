@@ -160,7 +160,7 @@ class|class
 name|NoConflictResolvedYetException
 extends|extends
 name|RuntimeException
-block|{ 	}
+block|{     }
 specifier|private
 specifier|static
 class|class
@@ -603,7 +603,7 @@ return|return
 name|_strategy
 return|;
 block|}
-comment|/**      * To conform to configurator API      * @param latestStrategy      */
+comment|/**      * To conform to configurator API      *       * @param latestStrategy      */
 specifier|public
 name|void
 name|setLatest

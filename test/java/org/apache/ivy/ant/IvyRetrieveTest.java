@@ -1000,7 +1000,8 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//even conf directory should have been deleted
+comment|// even conf directory should
+comment|// have been deleted
 block|}
 specifier|public
 name|void
@@ -1389,7 +1390,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//      mod2.5 depends on virtual mod2.3 which depends on mod2.1 which depends on mod1.1 which depends on mod1.2
+comment|// mod2.5 depends on virtual mod2.3 which depends on mod2.1 which depends on mod1.1 which
+comment|// depends on mod1.2
 name|_project
 operator|.
 name|setProperty

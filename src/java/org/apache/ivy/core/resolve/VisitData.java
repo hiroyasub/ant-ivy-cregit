@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to store data related to one node of the dependency graph visit.  *   * It stores both an {@link IvyNode} and related {@link VisitNode} objects.  *   * Indeed, during the visit of the graph, the algorithm can visit the same node  * from several parents, thus requiring several VisitNode.  *   *  */
+comment|/**  * This class is used to store data related to one node of the dependency graph visit. It stores  * both an {@link IvyNode} and related {@link VisitNode} objects. Indeed, during the visit of the  * graph, the algorithm can visit the same node from several parents, thus requiring several  * VisitNode.  */
 end_comment
 
 begin_class
@@ -66,12 +66,12 @@ specifier|public
 class|class
 name|VisitData
 block|{
-comment|/** 	 * A node in the graph of module dependencies resolution 	 */
+comment|/**      * A node in the graph of module dependencies resolution      */
 specifier|private
 name|IvyNode
 name|node
 decl_stmt|;
-comment|/** 	 * The associated visit nodes, per rootModuleConf 	 * Note that the value is a List, because a node can be visited from 	 * several parents during the resolution process 	 */
+comment|/**      * The associated visit nodes, per rootModuleConf Note that the value is a List, because a node      * can be visited from several parents during the resolution process      */
 specifier|private
 name|Map
 name|visitNodes

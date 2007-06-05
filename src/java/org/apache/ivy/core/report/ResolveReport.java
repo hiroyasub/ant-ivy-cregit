@@ -236,7 +236,8 @@ specifier|private
 name|List
 name|dependencies
 decl_stmt|;
-comment|// the list of all dependencies resolved, ordered from the more dependent to the less dependent
+comment|// the list of all dependencies resolved, ordered from the more
+comment|// dependent to the less dependent
 specifier|private
 name|List
 name|artifacts
@@ -1109,7 +1110,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/** 	 * Returns the list of all dependencies concerned by this report as a List of IvyNode 	 * ordered from the more dependent to the least one 	 * @return 	 */
+comment|/**      * Returns the list of all dependencies concerned by this report as a List of IvyNode ordered      * from the more dependent to the least one      *       * @return      */
 specifier|public
 name|List
 name|getDependencies
@@ -1119,7 +1120,7 @@ return|return
 name|dependencies
 return|;
 block|}
-comment|/** 	 * Returns the list of all artifacts which should be downloaded per this resolve 	 * To know if the artifact have actually been downloaded use information found 	 * in ConfigurationResolveReport. 	 * @return 	 */
+comment|/**      * Returns the list of all artifacts which should be downloaded per this resolve To know if the      * artifact have actually been downloaded use information found in ConfigurationResolveReport.      *       * @return      */
 specifier|public
 name|List
 name|getArtifacts
@@ -1129,7 +1130,7 @@ return|return
 name|artifacts
 return|;
 block|}
-comment|/** 	 * gives all the modules ids concerned by this report, from the most dependent to the least one 	 * @return a list of ModuleId 	 */
+comment|/**      * gives all the modules ids concerned by this report, from the most dependent to the least one      *       * @return a list of ModuleId      */
 specifier|public
 name|List
 name|getModuleIds

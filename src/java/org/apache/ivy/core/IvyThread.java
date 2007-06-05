@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A simple thread subclass associated the same IvyContext as the thread in which it is instanciated.  *   * If you override the run target, then you will have to call initContext() to do the association  * with the original IvyContext.  *   * @see IvyContext  */
+comment|/**  * A simple thread subclass associated the same IvyContext as the thread in which it is  * instanciated. If you override the run target, then you will have to call initContext() to do the  * association with the original IvyContext.  *   * @see IvyContext  */
 end_comment
 
 begin_class

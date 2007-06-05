@@ -34,11 +34,11 @@ specifier|final
 name|String
 name|name
 decl_stmt|;
-comment|/**      * Create a new instance of a pattern matcher      *      * @param name the name of the pattern matcher. Never null.      */
+comment|/**      * Create a new instance of a pattern matcher      *       * @param name      *            the name of the pattern matcher. Never null.      */
 specifier|public
 name|AbstractPatternMatcher
 parameter_list|(
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|name
 parameter_list|)
@@ -51,11 +51,11 @@ name|name
 expr_stmt|;
 block|}
 specifier|public
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|Matcher
 name|getMatcher
 parameter_list|(
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|expression
 parameter_list|)
@@ -97,7 +97,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|getName
 parameter_list|()
@@ -106,14 +106,14 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns an instance of the implementation specific matcher.      *      * @param expression the string to be matched.      * @return the instance of the related matcher. Never null.      */
+comment|/**      * Returns an instance of the implementation specific matcher.      *       * @param expression      *            the string to be matched.      * @return the instance of the related matcher. Never null.      */
 specifier|protected
 specifier|abstract
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|Matcher
 name|newMatcher
 parameter_list|(
-comment|/*@NotNull*/
+comment|/* @NotNull */
 name|String
 name|expression
 parameter_list|)

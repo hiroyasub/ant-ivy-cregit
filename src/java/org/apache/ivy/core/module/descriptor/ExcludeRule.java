@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This describes a rule of exclusion.  *   * It is used to resctrict the artifacts asked for a dependency,   * by excluding a whole module or some artifacts of a dependency.  */
+comment|/**  * This describes a rule of exclusion. It is used to resctrict the artifacts asked for a dependency,  * by excluding a whole module or some artifacts of a dependency.  */
 end_comment
 
 begin_interface
@@ -80,20 +80,20 @@ name|ExcludeRule
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the id of the described artifact, without revision information      * @return      */
+comment|/**      * Returns the id of the described artifact, without revision information      *       * @return      */
 specifier|public
 name|ArtifactId
 name|getId
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the configurations of the module in which the artifact is asked      * @return an array of configuration names in which the artifact is asked      */
+comment|/**      * Returns the configurations of the module in which the artifact is asked      *       * @return an array of configuration names in which the artifact is asked      */
 specifier|public
 name|String
 index|[]
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      * @return      */
+comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      *       * @return      */
 specifier|public
 name|PatternMatcher
 name|getMatcher

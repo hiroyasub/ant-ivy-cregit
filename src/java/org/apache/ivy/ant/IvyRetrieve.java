@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  *   *  */
+comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  */
 end_comment
 
 begin_class

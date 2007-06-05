@@ -395,24 +395,24 @@ name|messageLevel
 argument_list|)
 expr_stmt|;
 comment|// this exits the jvm at the end of the call
-comment|//		Main.main(new String[] {"-f", buildFile.getAbsolutePath(), target});
+comment|// Main.main(new String[] {"-f", buildFile.getAbsolutePath(), target});
 comment|// this does not set the good message level
-comment|//		Ant ant = new Ant();
-comment|//		Project project = new Project();
-comment|//		project.setBaseDir(buildFile.getParentFile());
-comment|//		project.init();
+comment|// Ant ant = new Ant();
+comment|// Project project = new Project();
+comment|// project.setBaseDir(buildFile.getParentFile());
+comment|// project.init();
 comment|//
-comment|//		ant.setProject(project);
-comment|//		ant.setTaskName("ant");
+comment|// ant.setProject(project);
+comment|// ant.setTaskName("ant");
 comment|//
-comment|//		ant.setAntfile(buildFile.getAbsolutePath());
-comment|//		ant.setInheritAll(false);
-comment|//		if (target != null) {
-comment|//			ant.setTarget(target);
-comment|//		}
-comment|//		ant.execute();
+comment|// ant.setAntfile(buildFile.getAbsolutePath());
+comment|// ant.setInheritAll(false);
+comment|// if (target != null) {
+comment|// ant.setTarget(target);
+comment|// }
+comment|// ant.execute();
 block|}
-comment|//////////////////////////////////////////////////////////////////////////////
+comment|// ////////////////////////////////////////////////////////////////////////////
 comment|// miserable copy (updated to simple test cases) from ant Main class:
 comment|// the only available way I found to easily run ant exits jvm at the end
 specifier|private
@@ -501,10 +501,10 @@ operator|.
 name|getSecurityManager
 argument_list|()
 expr_stmt|;
-comment|//SecurityManager can not be installed here for backwards
-comment|//compatibility reasons (PD). Needs to be loaded prior to
-comment|//ant class if we are going to implement it.
-comment|//System.setSecurityManager(new NoExitSecurityManager());
+comment|// SecurityManager can not be installed here for backwards
+comment|// compatibility reasons (PD). Needs to be loaded prior to
+comment|// ant class if we are going to implement it.
+comment|// System.setSecurityManager(new NoExitSecurityManager());
 try|try
 block|{
 name|project
@@ -648,7 +648,7 @@ block|}
 finally|finally
 block|{
 comment|// put back the original security manager
-comment|//The following will never eval to true. (PD)
+comment|// The following will never eval to true. (PD)
 if|if
 condition|(
 name|oldsm
@@ -726,7 +726,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds the listeners specified in the command line arguments,      * along with the default listener, to the specified project.      *      * @param project The project to add listeners to.      *                Must not be<code>null</code>.      */
+comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *       * @param project      *            The project to add listeners to. Must not be<code>null</code>.      */
 specifier|protected
 name|void
 name|addBuildListeners
@@ -750,7 +750,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates the InputHandler and adds it to the project.      *      * @param project the project instance.      * @param inputHandlerClassname       *      * @exception BuildException if a specified InputHandler      *                           implementation could not be loaded.      */
+comment|/**      * Creates the InputHandler and adds it to the project.      *       * @param project      *            the project instance.      * @param inputHandlerClassname      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
 specifier|private
 name|void
 name|addInputHandler
@@ -889,7 +889,7 @@ comment|// XXX: (Jon Skeet) Any reason for writing a message and then using a ba
 comment|// RuntimeException rather than just using a BuildException here? Is it
 comment|// in case the message could end up being written to no loggers (as the
 comment|// loggers could have failed to be created due to this failure)?
-comment|/**      * Creates the default build logger for sending build events to the ant      * log.      *      * @return the logger instance for this build.      */
+comment|/**      * Creates the default build logger for sending build events to the ant log.      *       * @return the logger instance for this build.      */
 specifier|private
 name|BuildLogger
 name|createLogger

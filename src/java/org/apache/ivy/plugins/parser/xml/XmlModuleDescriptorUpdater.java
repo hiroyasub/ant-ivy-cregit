@@ -412,7 +412,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Used to update ivy files. Uses ivy file as source and not ModuleDescriptor to preserve  * as much as possible the original syntax  *   *  */
+comment|/**  * Used to update ivy files. Uses ivy file as source and not ModuleDescriptor to preserve as much as  * possible the original syntax  */
 end_comment
 
 begin_class
@@ -432,7 +432,7 @@ argument_list|(
 literal|"line.separator"
 argument_list|)
 decl_stmt|;
-comment|/**      * used to copy a module descriptor xml file (also known as ivy file)      * and update the revisions of its dependencies, its status and revision      *       * @param srcURL the url of the source module descriptor file      * @param destFile The file to which the updated module descriptor should be output      * @param resolvedRevisions Map from ModuleId of dependencies to new revision (as String)      * @param status the new status, null to keep the old one      * @param revision the new revision, null to keep the old one      */
+comment|/**      * used to copy a module descriptor xml file (also known as ivy file) and update the revisions      * of its dependencies, its status and revision      *       * @param srcURL      *            the url of the source module descriptor file      * @param destFile      *            The file to which the updated module descriptor should be output      * @param resolvedRevisions      *            Map from ModuleId of dependencies to new revision (as String)      * @param status      *            the new status, null to keep the old one      * @param revision      *            the new revision, null to keep the old one      */
 specifier|public
 specifier|static
 name|void
@@ -898,21 +898,24 @@ name|_defaultConfMapping
 init|=
 literal|null
 decl_stmt|;
-comment|// defaultConfMapping of imported configurations, if any
+comment|// defaultConfMapping of imported
+comment|// configurations, if any
 specifier|private
 name|Boolean
 name|_confMappingOverride
 init|=
 literal|null
 decl_stmt|;
-comment|// confMappingOverride of imported configurations, if any
+comment|// confMappingOverride of imported
+comment|// configurations, if any
 specifier|private
 name|String
 name|_justOpen
 init|=
 literal|null
 decl_stmt|;
-comment|// used to know if the last open tag was empty, to adjust termination with /> instead of></qName>
+comment|// used to know if the last open tag was empty, to
+comment|// adjust termination with /> instead of></qName>
 specifier|private
 name|Stack
 name|_context
@@ -2993,7 +2996,7 @@ name|_justOpen
 operator|=
 name|qName
 expr_stmt|;
-comment|//            indent.append("\t");
+comment|// indent.append("\t");
 block|}
 specifier|private
 name|void
@@ -4102,7 +4105,7 @@ name|ise
 throw|;
 block|}
 block|}
-comment|/**      * Copy xml header from src url ivy file to given printwriter      * In fact, copies everything before<ivy-module to out, except      * if<ivy-module is not found, in which case nothing is copied.      *       * The prolog<?xml version="..." encoding="...."?> is also replaced by      *<?xml version="1.0" encoding="UTF-8"?> if it was present.      *       * @param in      * @param out      * @throws IOException      */
+comment|/**      * Copy xml header from src url ivy file to given printwriter In fact, copies everything before      *<ivy-module to out, except if<ivy-module is not found, in which case nothing is copied. The      * prolog<?xml version="..." encoding="...."?> is also replaced by<?xml version="1.0"      * encoding="UTF-8"?> if it was present.      *       * @param in      * @param out      * @throws IOException      */
 specifier|private
 specifier|static
 name|void
@@ -4248,7 +4251,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-comment|//r.close();
+comment|// r.close();
 block|}
 specifier|private
 specifier|static

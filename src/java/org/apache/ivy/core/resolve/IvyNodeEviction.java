@@ -135,7 +135,8 @@ specifier|private
 name|Collection
 name|selected
 decl_stmt|;
-comment|// Collection(IvyNode); can be null in case of transitive eviction
+comment|// Collection(IvyNode); can be null in case of transitive
+comment|// eviction
 specifier|private
 name|String
 name|rootModuleConf
@@ -502,7 +503,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which node has been selected
+comment|// Map (ModuleIdConf -> Set(Node)) // map indicating
+comment|// for each dependency which node has been selected
 specifier|private
 name|Map
 name|pendingConflicts
@@ -511,7 +513,10 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which nodes are in pending conflict (conflict detected but not yet resolved)
+comment|// Map (ModuleIdConf -> Set(Node)) // map
+comment|// indicating for each dependency which nodes
+comment|// are in pending conflict (conflict detected
+comment|// but not yet resolved)
 specifier|private
 name|Map
 name|evictedDeps
@@ -520,7 +525,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (ModuleIdConf -> Set(Node)) // map indicating for each dependency which node has been evicted
+comment|// Map (ModuleIdConf -> Set(Node)) // map indicating
+comment|// for each dependency which node has been evicted
 specifier|private
 name|Map
 name|evictedRevs
@@ -529,7 +535,9 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (ModuleIdConf -> Set(ModuleRevisionId)) // map indicating for each dependency which revision has been evicted
+comment|// Map (ModuleIdConf -> Set(ModuleRevisionId)) //
+comment|// map indicating for each dependency which revision
+comment|// has been evicted
 specifier|private
 name|Map
 name|evicted
@@ -538,7 +546,8 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (root module conf -> EvictionData) // indicates if the node is evicted in each root module conf
+comment|// Map (root module conf -> EvictionData) // indicates
+comment|// if the node is evicted in each root module conf
 specifier|public
 name|IvyNodeEviction
 parameter_list|(
@@ -1407,7 +1416,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns null if this node has only be evicted transitively, or the the colletion of selected nodes      * if it has been evicted by other selected nodes      * @return      */
+comment|/**      * Returns null if this node has only be evicted transitively, or the the colletion of selected      * nodes if it has been evicted by other selected nodes      *       * @return      */
 specifier|public
 name|Collection
 name|getAllEvictingNodes
@@ -1549,7 +1558,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root,      * null otherwise (if it hasn't been evicted in root) for the       * given rootModuleConf.      * Note that this method only works if conflict resolution has already be done in all the ancestors.      *       * @param rootModuleConf      * @param ancestor      * @return      */
+comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root, null      * otherwise (if it hasn't been evicted in root) for the given rootModuleConf. Note that this      * method only works if conflict resolution has already be done in all the ancestors.      *       * @param rootModuleConf      * @param ancestor      * @return      */
 specifier|public
 name|EvictionData
 name|getEvictionDataInRoot
@@ -1631,7 +1640,8 @@ literal|null
 return|;
 block|}
 block|}
-comment|// we didn't find this mrid in the selected ones for the root: it has been previously evicted
+comment|// we didn't find this mrid in the selected ones for the root: it has been previously
+comment|// evicted
 return|return
 operator|new
 name|EvictionData

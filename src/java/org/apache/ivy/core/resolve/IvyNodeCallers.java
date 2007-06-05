@@ -551,7 +551,8 @@ name|dd
 return|;
 block|}
 block|}
-comment|// Map (String rootModuleConf -> Map (ModuleRevisionId -> Caller)): key in second map is used to easily get a caller by its mrid
+comment|// Map (String rootModuleConf -> Map (ModuleRevisionId -> Caller)): key in second map is used to
+comment|// easily get a caller by its mrid
 specifier|private
 name|Map
 name|callersByRootConf
@@ -561,7 +562,8 @@ name|HashMap
 argument_list|()
 decl_stmt|;
 comment|// this map contains all the module ids calling this one (including transitively) as keys
-comment|// the mapped nodes (values) correspond to a direct caller from which the transitive caller comes
+comment|// the mapped nodes (values) correspond to a direct caller from which the transitive caller
+comment|// comes
 specifier|private
 name|Map
 name|allCallers
@@ -589,7 +591,7 @@ operator|=
 name|node
 expr_stmt|;
 block|}
-comment|/**      *       * @param rootModuleConf      * @param mrid      * @param callerConf      * @param dependencyConfs '*' must have been resolved      * @param dd the dependency revision id asked by the caller      */
+comment|/**      * @param rootModuleConf      * @param mrid      * @param callerConf      * @param dependencyConfs      *            '*' must have been resolved      * @param dd      *            the dependency revision id asked by the caller      */
 specifier|public
 name|void
 name|addCaller
@@ -1115,7 +1117,7 @@ name|from
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if ALL callers exclude the given artifact in the given root module conf      * @param rootModuleConf      * @param artifact      * @return      */
+comment|/**      * Returns true if ALL callers exclude the given artifact in the given root module conf      *       * @param rootModuleConf      * @param artifact      * @return      */
 name|boolean
 name|doesCallersExclude
 parameter_list|(

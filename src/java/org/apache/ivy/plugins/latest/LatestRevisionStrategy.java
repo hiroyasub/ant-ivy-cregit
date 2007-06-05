@@ -251,7 +251,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Compares two ModuleRevisionId by their revision.      * Revisions are compared using an algorithm inspired by PHP      * version_compare one.       */
+comment|/**      * Compares two ModuleRevisionId by their revision. Revisions are compared using an algorithm      * inspired by PHP version_compare one.      */
 specifier|public
 specifier|final
 name|Comparator
@@ -666,7 +666,7 @@ return|;
 block|}
 block|}
 decl_stmt|;
-comment|/**      * Compares two ArtifactInfo by their revision.      * Revisions are compared using an algorithm inspired by PHP      * version_compare one, unless a dynamic revision is given,      * in which case the version matcher is used to perform the comparison.       */
+comment|/**      * Compares two ArtifactInfo by their revision. Revisions are compared using an algorithm      * inspired by PHP version_compare one, unless a dynamic revision is given, in which case the      * version matcher is used to perform the comparison.      */
 specifier|public
 name|Comparator
 name|COMPARATOR
@@ -712,7 +712,7 @@ operator|.
 name|getRevision
 argument_list|()
 decl_stmt|;
-comment|/* The revisions can still be not resolved, so we use the current               * version matcher to know if one revision is dynamic, and in this               * case if it should be considered greater or lower than the other one.              *               * Note that if the version matcher compare method returns 0, it's because              * it's not possible to know which revision is greater. In this case we               * consider the dynamic one to be greater, because most of the time              * it will then be actually resolved and a real comparison will occur.              */
+comment|/*              * The revisions can still be not resolved, so we use the current version matcher to              * know if one revision is dynamic, and in this case if it should be considered greater              * or lower than the other one. Note that if the version matcher compare method returns              * 0, it's because it's not possible to know which revision is greater. In this case we              * consider the dynamic one to be greater, because most of the time it will then be              * actually resolved and a real comparison will occur.              */
 name|VersionMatcher
 name|vmatcher
 init|=

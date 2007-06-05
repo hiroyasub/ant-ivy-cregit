@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates an ant path consisting in all artifacts found during a resolve.  *   */
+comment|/**  * Creates an ant path consisting in all artifacts found during a resolve.  */
 end_comment
 
 begin_class

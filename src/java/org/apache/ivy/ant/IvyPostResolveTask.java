@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for tasks needing to be performed after a resolve.   *   *   *  */
+comment|/**  * Base class for tasks needing to be performed after a resolve.  */
 end_comment
 
 begin_class

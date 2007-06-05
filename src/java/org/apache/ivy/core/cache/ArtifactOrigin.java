@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This class contains information about the origin of an artifact.  * @see org.apache.ivy.plugins.resolver.BasicResolver  * @see org.apache.ivy.plugins.resolver.util.ResolvedResource  */
+comment|/**  * This class contains information about the origin of an artifact.  *   * @see org.apache.ivy.plugins.resolver.BasicResolver  * @see org.apache.ivy.plugins.resolver.util.ResolvedResource  */
 end_comment
 
 begin_class
@@ -34,7 +34,7 @@ specifier|private
 name|String
 name|location
 decl_stmt|;
-comment|/**      *  Create a new instance      *       * @param isLocal<code>boolean</code> value indicating if the resource is local (on the filesystem).      * @param location the location of the resource (normally a url)      */
+comment|/**      * Create a new instance      *       * @param isLocal      *<code>boolean</code> value indicating if the resource is local (on the      *            filesystem).      * @param location      *            the location of the resource (normally a url)      */
 specifier|public
 name|ArtifactOrigin
 parameter_list|(
@@ -58,7 +58,7 @@ operator|=
 name|location
 expr_stmt|;
 block|}
-comment|/**      * Is this resource local to this host, i.e. is it on the file system?      *      * @return<code>boolean</code> value indicating if the resource is local.      */
+comment|/**      * Is this resource local to this host, i.e. is it on the file system?      *       * @return<code>boolean</code> value indicating if the resource is local.      */
 specifier|public
 name|boolean
 name|isLocal
@@ -68,7 +68,7 @@ return|return
 name|isLocal
 return|;
 block|}
-comment|/**      * Return the location of the resource (normally a url)      *      * @return the location of the resource      */
+comment|/**      * Return the location of the resource (normally a url)      *       * @return the location of the resource      */
 specifier|public
 name|String
 name|getLocation

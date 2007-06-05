@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class which helps to list urls under a given url. This has been  * tested with Apache 1.3.33 server listing, as the one used at ibiblio, and  * with Apache 2.0.53 server listing, as the one on mirrors.sunsite.dk.  *  */
+comment|/**  * Utility class which helps to list urls under a given url. This has been tested with Apache 1.3.33  * server listing, as the one used at ibiblio, and with Apache 2.0.53 server listing, as the one on  * mirrors.sunsite.dk.  */
 end_comment
 
 begin_class
@@ -138,7 +138,7 @@ specifier|public
 class|class
 name|ApacheURLLister
 block|{
-comment|//~ Static variables/initializers ------------------------------------------
+comment|// ~ Static variables/initializers ------------------------------------------
 specifier|private
 specifier|static
 specifier|final
@@ -156,8 +156,8 @@ operator|.
 name|CASE_INSENSITIVE
 argument_list|)
 decl_stmt|;
-comment|//~ Methods ----------------------------------------------------------------
-comment|/**      * Returns a list of sub urls of the given url. The returned list is a list      * of URL.      *      * @param url The base URL from which to retrieve the listing.      *      * @return a list of sub urls of the given url.      *      * @throws IOException If an error occures retrieving the HTML.      */
+comment|// ~ Methods ----------------------------------------------------------------
+comment|/**      * Returns a list of sub urls of the given url. The returned list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub urls of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
 name|listAll
@@ -179,7 +179,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of sub 'directories' of the given url. The returned list      * is a list of URL.      *      * @param url The base URL from which to retrieve the listing.      *      * @return a list of sub 'directories' of the given url.      *      * @throws IOException If an error occures retrieving the HTML.      */
+comment|/**      * Returns a list of sub 'directories' of the given url. The returned list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub 'directories' of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
 name|listDirectories
@@ -201,7 +201,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of sub 'files' (in opposition to directories) of the      * given url. The returned list is a list of URL.      *      * @param url The base URL from which to retrieve the listing.      *      * @return a list of sub 'files' of the given url.      *      * @throws IOException If an error occures retrieving the HTML.      */
+comment|/**      * Returns a list of sub 'files' (in opposition to directories) of the given url. The returned      * list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub 'files' of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
 name|listFiles
@@ -223,7 +223,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Retrieves a {@link List} of {@link URL}s corresponding to the files      * and/or directories found at the supplied base URL.      *      * @param url The base URL from which to retrieve the listing.      * @param includeFiles If true include files in the returned list.      * @param includeDirectories If true include directories in the returned      *        list.      *      * @return A {@link List} of {@link URL}s.      *      * @throws IOException If an error occures retrieving the HTML.      */
+comment|/**      * Retrieves a {@link List} of {@link URL}s corresponding to the files and/or directories found      * at the supplied base URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @param includeFiles      *            If true include files in the returned list.      * @param includeDirectories      *            If true include directories in the returned list.      * @return A {@link List} of {@link URL}s.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
 name|retrieveListing
