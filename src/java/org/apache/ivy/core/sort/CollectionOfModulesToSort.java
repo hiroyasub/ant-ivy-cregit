@@ -164,8 +164,6 @@ end_comment
 begin_class
 class|class
 name|CollectionOfModulesToSort
-implements|implements
-name|Iterable
 block|{
 specifier|private
 specifier|final
