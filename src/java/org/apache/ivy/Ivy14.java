@@ -29,16 +29,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileNotFoundException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|IOException
 import|;
 end_import
@@ -458,7 +448,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class can be used for easy migration from Ivy 1.4 API. Indeed, Ivy 2.0 API has changed  * substantially, so it can take time to migrate existing code using Ivy 1.4 API to the new API.  * Using this class it's really easy: replace your instance of Ivy by an instance of this class. For  * instance, where you were doing: Ivy ivy = new Ivy(); do instead: Ivy14 ivy = new Ivy14(); And  * that should be enough in most cases!  */
+comment|/**  * This class can be used for easy migration from Ivy 1.4 API.  *<p>  * Indeed, Ivy 2.0 API has changed substantially, so it can take time to migrate existing code using  * Ivy 1.4 API to the new API. Using this class it's really easy: replace your instance of Ivy by an  * instance of this class.  *<p>  * For instance, where you were doing:  *   *<pre>  * Ivy ivy = new Ivy();  *</pre>  *   * do instead:  *   *<pre>  * Ivy14 ivy = new Ivy14();  *</pre>  *   * And that should be enough in most cases!  */
 end_comment
 
 begin_class
@@ -466,9 +456,11 @@ specifier|public
 class|class
 name|Ivy14
 block|{
+comment|//CheckStyle:ParameterNumberCheck OFF
+comment|// don't check parameter numbers, since this class is here for backward compatibility
 specifier|private
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|public
 name|Ivy14
@@ -490,7 +482,9 @@ name|Ivy
 name|ivy
 parameter_list|)
 block|{
-name|_ivy
+name|this
+operator|.
+name|ivy
 operator|=
 name|ivy
 expr_stmt|;
@@ -507,7 +501,7 @@ name|resolvername
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|check
 argument_list|(
@@ -529,7 +523,7 @@ name|ParseException
 throws|,
 name|IOException
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -549,7 +543,7 @@ name|ParseException
 throws|,
 name|IOException
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -566,7 +560,7 @@ name|ParseException
 throws|,
 name|IOException
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|configureDefault
 argument_list|()
@@ -608,7 +602,7 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|deliver
 argument_list|(
@@ -629,7 +623,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -732,7 +726,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getRetrieveEngine
 argument_list|()
@@ -767,7 +761,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -814,7 +808,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getRetrieveEngine
 argument_list|()
@@ -849,7 +843,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -880,7 +874,7 @@ name|useOrigin
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -889,7 +883,7 @@ name|download
 argument_list|(
 name|artifact
 argument_list|,
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -917,7 +911,7 @@ name|Filter
 name|artifactFilter
 parameter_list|)
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -964,7 +958,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -972,7 +966,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -1014,7 +1008,7 @@ name|transitive
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -1080,7 +1074,7 @@ name|validate
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -1147,7 +1141,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -1194,7 +1188,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getVariable
 argument_list|(
@@ -1237,7 +1231,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|install
 argument_list|(
@@ -1266,7 +1260,7 @@ name|void
 name|interrupt
 parameter_list|()
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|interrupt
 argument_list|()
@@ -1280,7 +1274,7 @@ name|Thread
 name|operatingThread
 parameter_list|)
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|interrupt
 argument_list|(
@@ -1294,7 +1288,7 @@ name|isInterrupted
 parameter_list|()
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|isInterrupted
 argument_list|()
@@ -1310,7 +1304,7 @@ name|org
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listModuleEntries
 argument_list|(
@@ -1331,7 +1325,7 @@ name|matcher
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listModules
 argument_list|(
@@ -1354,7 +1348,7 @@ name|matcher
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listModules
 argument_list|(
@@ -1374,7 +1368,7 @@ name|org
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listModules
 argument_list|(
@@ -1389,7 +1383,7 @@ name|listOrganisationEntries
 parameter_list|()
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listOrganisationEntries
 argument_list|()
@@ -1402,7 +1396,7 @@ name|listOrganisations
 parameter_list|()
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listOrganisations
 argument_list|()
@@ -1418,7 +1412,7 @@ name|module
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listRevisionEntries
 argument_list|(
@@ -1439,7 +1433,7 @@ name|module
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listRevisions
 argument_list|(
@@ -1462,7 +1456,7 @@ name|otherTokenValues
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|listTokenValues
 argument_list|(
@@ -1502,7 +1496,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|getPublishEngine
 argument_list|()
@@ -1592,7 +1586,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|publish
 argument_list|(
@@ -1608,7 +1602,7 @@ argument_list|()
 operator|.
 name|setCache
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -1616,7 +1610,7 @@ name|cache
 operator|==
 literal|null
 condition|?
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -1710,7 +1704,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|publish
 argument_list|(
@@ -1731,7 +1725,7 @@ argument_list|()
 operator|.
 name|setCache
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -1739,7 +1733,7 @@ name|cache
 operator|==
 literal|null
 condition|?
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -1802,7 +1796,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|publish
 argument_list|(
@@ -1823,7 +1817,7 @@ argument_list|()
 operator|.
 name|setCache
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -1831,7 +1825,7 @@ name|cache
 operator|==
 literal|null
 condition|?
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -1908,7 +1902,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|publish
 argument_list|(
@@ -1929,7 +1923,7 @@ argument_list|()
 operator|.
 name|setCache
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -1937,7 +1931,7 @@ name|cache
 operator|==
 literal|null
 condition|?
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -2012,7 +2006,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2062,11 +2056,9 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|FileNotFoundException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2155,7 +2147,7 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -2163,7 +2155,7 @@ name|cache
 operator|==
 literal|null
 condition|?
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -2250,11 +2242,9 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|FileNotFoundException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2320,11 +2310,9 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|FileNotFoundException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2387,11 +2375,9 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|FileNotFoundException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2465,7 +2451,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2538,7 +2524,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2590,7 +2576,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2602,7 +2588,7 @@ name|confs
 argument_list|,
 literal|null
 argument_list|,
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -2674,7 +2660,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2745,7 +2731,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2813,7 +2799,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2878,7 +2864,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2942,7 +2928,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2990,7 +2976,7 @@ throws|,
 name|IOException
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -3034,7 +3020,7 @@ block|{
 try|try
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -3066,7 +3052,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -3150,7 +3136,7 @@ block|{
 try|try
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -3182,7 +3168,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -3255,7 +3241,7 @@ block|{
 try|try
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -3287,7 +3273,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -3347,7 +3333,7 @@ block|{
 try|try
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -3379,7 +3365,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -3431,7 +3417,7 @@ block|{
 try|try
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -3463,7 +3449,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -3500,7 +3486,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|setVariable
 argument_list|(
@@ -3519,7 +3505,7 @@ name|moduleDescriptors
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|sortModuleDescriptors
 argument_list|(
@@ -3536,7 +3522,7 @@ name|nodes
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|sortNodes
 argument_list|(
@@ -3553,7 +3539,7 @@ name|str
 parameter_list|)
 block|{
 return|return
-name|_ivy
+name|ivy
 operator|.
 name|substitute
 argument_list|(
@@ -3634,6 +3620,7 @@ return|return
 name|confs
 return|;
 block|}
+comment|//CheckStyle:ParameterNumberCheck ON
 block|}
 end_class
 
