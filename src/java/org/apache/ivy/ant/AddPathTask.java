@@ -152,17 +152,17 @@ name|Task
 block|{
 specifier|private
 name|String
-name|_topath
+name|toPath
 decl_stmt|;
 specifier|private
 name|boolean
-name|_first
+name|first
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|Path
-name|_toadd
+name|toAdd
 decl_stmt|;
 specifier|public
 name|String
@@ -170,7 +170,7 @@ name|getTopath
 parameter_list|()
 block|{
 return|return
-name|_topath
+name|toPath
 return|;
 block|}
 specifier|public
@@ -178,12 +178,14 @@ name|void
 name|setTopath
 parameter_list|(
 name|String
-name|topath
+name|toPath
 parameter_list|)
 block|{
-name|_topath
+name|this
+operator|.
+name|toPath
 operator|=
-name|topath
+name|toPath
 expr_stmt|;
 block|}
 specifier|public
@@ -201,7 +203,7 @@ argument_list|(
 name|project
 argument_list|)
 expr_stmt|;
-name|_toadd
+name|toAdd
 operator|=
 operator|new
 name|Path
@@ -225,7 +227,7 @@ argument_list|()
 operator|.
 name|getReference
 argument_list|(
-name|_topath
+name|toPath
 argument_list|)
 decl_stmt|;
 if|if
@@ -241,7 +243,7 @@ name|BuildException
 argument_list|(
 literal|"destination path not found: "
 operator|+
-name|_topath
+name|toPath
 argument_list|)
 throw|;
 block|}
@@ -278,12 +280,12 @@ name|element
 decl_stmt|;
 if|if
 condition|(
-name|_first
+name|first
 condition|)
 block|{
 comment|// now way to add path elements at te beginning of the existing path: we do the opposite
 comment|// and replace the reference
-name|_toadd
+name|toAdd
 operator|.
 name|append
 argument_list|(
@@ -295,9 +297,9 @@ argument_list|()
 operator|.
 name|addReference
 argument_list|(
-name|_topath
+name|toPath
 argument_list|,
-name|_toadd
+name|toAdd
 argument_list|)
 expr_stmt|;
 block|}
@@ -307,7 +309,7 @@ name|dest
 operator|.
 name|append
 argument_list|(
-name|_toadd
+name|toAdd
 argument_list|)
 expr_stmt|;
 block|}
@@ -322,7 +324,7 @@ parameter_list|)
 throws|throws
 name|BuildException
 block|{
-name|_toadd
+name|toAdd
 operator|.
 name|add
 argument_list|(
@@ -340,7 +342,7 @@ parameter_list|)
 throws|throws
 name|BuildException
 block|{
-name|_toadd
+name|toAdd
 operator|.
 name|addDirset
 argument_list|(
@@ -358,7 +360,7 @@ parameter_list|)
 throws|throws
 name|BuildException
 block|{
-name|_toadd
+name|toAdd
 operator|.
 name|addFilelist
 argument_list|(
@@ -376,7 +378,7 @@ parameter_list|)
 throws|throws
 name|BuildException
 block|{
-name|_toadd
+name|toAdd
 operator|.
 name|addFileset
 argument_list|(
@@ -392,7 +394,7 @@ throws|throws
 name|BuildException
 block|{
 return|return
-name|_toadd
+name|toAdd
 operator|.
 name|createPath
 argument_list|()
@@ -406,7 +408,7 @@ throws|throws
 name|BuildException
 block|{
 return|return
-name|_toadd
+name|toAdd
 operator|.
 name|createPathElement
 argument_list|()
@@ -418,7 +420,7 @@ name|isFirst
 parameter_list|()
 block|{
 return|return
-name|_first
+name|first
 return|;
 block|}
 specifier|public
@@ -429,7 +431,9 @@ name|boolean
 name|first
 parameter_list|)
 block|{
-name|_first
+name|this
+operator|.
+name|first
 operator|=
 name|first
 expr_stmt|;
