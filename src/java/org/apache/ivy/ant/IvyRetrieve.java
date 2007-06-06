@@ -230,6 +230,12 @@ name|setMakeSymlinks
 argument_list|(
 name|_symlink
 argument_list|)
+operator|.
+name|setResolveId
+argument_list|(
+name|getResolveId
+argument_list|()
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|boolean
