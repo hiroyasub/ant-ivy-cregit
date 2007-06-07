@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Triggers an ant build on an event occurence. Example of use:<ant-build-trigger  * event="pre-resolve-dependency" filter="revision=latest.integration"  * antfile="/path/to/[module]/build.xml" target="compile"/> Triggers an ant build for any dependency  * in asked in latest.integration, just before resolving the dependency.  *   * @see AntCallTrigger  * @since 1.4  */
+comment|/**  * Triggers an ant build on an event occurence.  *<p>  * Example of use:  *   *<pre>  *&lt;ant-build-trigger event=&quot;pre-resolve-dependency&quot;   *                    filter=&quot;revision=latest.integration&quot;  *                    antfile=&quot;/path/to/[module]/build.xml&quot;   *                    target=&quot;compile&quot;/&gt;  *</pre>  *   * Triggers an ant build for any dependency in asked in latest.integration, just before resolving  * the dependency.  *   * @see AntCallTrigger  * @since 1.4  */
 end_comment
 
 begin_class

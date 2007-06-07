@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Triggers an call to an ant target on an event occurence. This trigger only works when ivy is  * called from an ant build file, otherwise the trigger only log a failure. Example of use in an  * ivysettings file:<ant-call-trigger event="post-download-artifact" filter="type=zip"  * target="unzip"/> Triggers a call to the target "unzip" for any downloaded artifact of type zip  *   * @see AntBuildTrigger  * @since 1.4  */
+comment|/**  * Triggers an call to an ant target on an event occurence.  *<p>  * This trigger only works when ivy is called from an ant build file, otherwise the trigger only log  * a failure.  *<p>  * Example of use in an ivysettings file:  *   *<pre>  *&lt;ant-call-trigger event=&quot;post-download-artifact&quot; filter=&quot;type=zip&quot;  * target=&quot;unzip&quot;/&gt;  *</pre>  * Triggers a call to the target "unzip" for any downloaded artifact of type zip  *   * @see AntBuildTrigger  * @since 1.4  */
 end_comment
 
 begin_class
@@ -220,19 +220,19 @@ name|Trigger
 block|{
 specifier|private
 name|boolean
-name|_onlyonce
+name|onlyonce
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|String
-name|_target
+name|target
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|Collection
-name|_calls
+name|calls
 init|=
 operator|new
 name|ArrayList
@@ -240,7 +240,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_prefix
+name|prefix
 decl_stmt|;
 specifier|public
 name|void
@@ -286,7 +286,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|_onlyonce
+name|onlyonce
 operator|&&
 name|isTriggered
 argument_list|(
@@ -411,13 +411,13 @@ name|p
 operator|.
 name|setName
 argument_list|(
-name|_prefix
+name|prefix
 operator|==
 literal|null
 condition|?
 name|key
 else|:
-name|_prefix
+name|prefix
 operator|+
 name|key
 argument_list|)
@@ -519,7 +519,7 @@ name|IvyEvent
 name|event
 parameter_list|)
 block|{
-name|_calls
+name|calls
 operator|.
 name|add
 argument_list|(
@@ -536,7 +536,7 @@ name|event
 parameter_list|)
 block|{
 return|return
-name|_calls
+name|calls
 operator|.
 name|contains
 argument_list|(
@@ -550,7 +550,7 @@ name|getTarget
 parameter_list|()
 block|{
 return|return
-name|_target
+name|target
 return|;
 block|}
 specifier|public
@@ -561,7 +561,9 @@ name|String
 name|target
 parameter_list|)
 block|{
-name|_target
+name|this
+operator|.
+name|target
 operator|=
 name|target
 expr_stmt|;
@@ -572,7 +574,7 @@ name|isOnlyonce
 parameter_list|()
 block|{
 return|return
-name|_onlyonce
+name|onlyonce
 return|;
 block|}
 specifier|public
@@ -583,7 +585,9 @@ name|boolean
 name|onlyonce
 parameter_list|)
 block|{
-name|_onlyonce
+name|this
+operator|.
+name|onlyonce
 operator|=
 name|onlyonce
 expr_stmt|;
@@ -594,7 +598,7 @@ name|getPrefix
 parameter_list|()
 block|{
 return|return
-name|_prefix
+name|prefix
 return|;
 block|}
 specifier|public
@@ -605,7 +609,9 @@ name|String
 name|prefix
 parameter_list|)
 block|{
-name|_prefix
+name|this
+operator|.
+name|prefix
 operator|=
 name|prefix
 expr_stmt|;
@@ -620,7 +626,7 @@ literal|"."
 argument_list|)
 condition|)
 block|{
-name|_prefix
+name|prefix
 operator|+=
 literal|"."
 expr_stmt|;
