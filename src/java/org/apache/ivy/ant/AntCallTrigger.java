@@ -626,6 +626,8 @@ literal|"."
 argument_list|)
 condition|)
 block|{
+name|this
+operator|.
 name|prefix
 operator|+=
 literal|"."
