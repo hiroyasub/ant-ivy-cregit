@@ -154,7 +154,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"Non matching revision detected.  Dependency "
+literal|"Non matching revision detected in sort.  Dependency "
 operator|+
 name|dependencyRevisionId
 operator|+

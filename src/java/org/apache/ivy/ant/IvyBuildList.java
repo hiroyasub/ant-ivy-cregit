@@ -902,7 +902,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"\t(set skipbuildwithoutivy to true if you don't want this file to be added to the path)"
+literal|"\t(set skipbuildwithoutivy to true if you don't want this"
+operator|+
+literal|" file to be added to the path)"
 argument_list|)
 expr_stmt|;
 name|independent

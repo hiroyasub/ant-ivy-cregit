@@ -221,7 +221,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator
-name|_moduleDescriptorsIterator
+name|moduleDescriptorsIterator
 init|=
 name|moduleDescriptors
 operator|.
@@ -230,7 +230,7 @@ argument_list|()
 decl_stmt|;
 while|while
 condition|(
-name|_moduleDescriptorsIterator
+name|moduleDescriptorsIterator
 operator|.
 name|hasNext
 argument_list|()
@@ -242,7 +242,7 @@ init|=
 operator|(
 name|ModuleInSort
 operator|)
-name|_moduleDescriptorsIterator
+name|moduleDescriptorsIterator
 operator|.
 name|next
 argument_list|()

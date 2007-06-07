@@ -324,8 +324,7 @@ operator|)
 argument_list|)
 decl_stmt|;
 comment|// attempt to adjust the
-comment|// size to avoid too
-comment|// much list resizing
+comment|// size to avoid too much list resizing
 for|for
 control|(
 name|int

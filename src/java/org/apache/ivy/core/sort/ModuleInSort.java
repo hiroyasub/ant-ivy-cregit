@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Decorates a ModuleDescriptor with some attributes used during the sort. Thus every instance of a  * ModuleInSort can be used in only one ModuleDescriptorSorter at a time.<br>  * The added fields are :<br>  *<ul>  *<li><code>isSorted</code> : is true iff this module has already been added to the sorted list.</li>  *<li><code>loopElements</code> : When the module is the root of a loop (=the first element of a  * loop met during the sort),<code>loopElements</code> contains all ModuleInSort of the loop  * (excluding the root itself.</li>  *<li><code>isLoopIntermediateElement</code> : When a loop is detected, all modules included in  * the loop (except the root) have<code>isLoopIntermediateElement</code> set to true.</li>  *<li><code>caller</code> : During the sort, we traverse recursively the graph. When doing that,  * caller point to the parent element.  */
+comment|/**  * Decorates a ModuleDescriptor with some attributes used during the sort. Thus every instance of a  * ModuleInSort can be used in only one ModuleDescriptorSorter at a time.<br>  * The added fields are :<br>  *<ul>  *<li><code>isSorted</code> : is true iff this module has already been added to the sorted list.  *</li>  *<li><code>loopElements</code> : When the module is the root of a loop (=the first element of a  * loop met during the sort),<code>loopElements</code> contains all ModuleInSort of the loop  * (excluding the root itself.</li>  *<li><code>isLoopIntermediateElement</code> : When a loop is detected, all modules included in  * the loop (except the root) have<code>isLoopIntermediateElement</code> set to true.</li>  *<li><code>caller</code> : During the sort, we traverse recursively the graph. When doing that,  * caller point to the parent element.  */
 end_comment
 
 begin_class
@@ -335,17 +335,17 @@ expr_stmt|;
 for|for
 control|(
 name|ModuleInSort
-name|stackElem
+name|stackEl
 init|=
 name|futurCaller
 init|;
-name|stackElem
+name|stackEl
 operator|!=
 name|this
 condition|;
-name|stackElem
+name|stackEl
 operator|=
-name|stackElem
+name|stackEl
 operator|.
 name|caller
 control|)
@@ -354,7 +354,7 @@ name|elemOfLoop
 operator|.
 name|add
 argument_list|(
-name|stackElem
+name|stackEl
 operator|.
 name|module
 operator|.
@@ -362,7 +362,7 @@ name|getModuleRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|stackElem
+name|stackEl
 operator|.
 name|isLoopIntermediateElement
 operator|=
@@ -372,7 +372,7 @@ name|loopElements
 operator|.
 name|add
 argument_list|(
-name|stackElem
+name|stackEl
 argument_list|)
 expr_stmt|;
 block|}
