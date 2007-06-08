@@ -453,6 +453,27 @@ name|error
 argument_list|)
 throw|;
 block|}
+if|if
+condition|(
+operator|!
+name|dest
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"error symlinking "
+operator|+
+name|dest
+operator|+
+literal|" doesn't exists"
+argument_list|)
+throw|;
+block|}
 block|}
 catch|catch
 parameter_list|(
