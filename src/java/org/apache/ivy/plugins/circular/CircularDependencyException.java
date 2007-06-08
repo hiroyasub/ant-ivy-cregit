@@ -49,7 +49,7 @@ block|{
 specifier|private
 name|ModuleRevisionId
 index|[]
-name|_mrids
+name|mrids
 decl_stmt|;
 comment|/**      * @param descriptors      *            module descriptors in order of circular dependency      */
 specifier|public
@@ -71,7 +71,9 @@ name|mrids
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_mrids
+name|this
+operator|.
+name|mrids
 operator|=
 name|mrids
 expr_stmt|;
@@ -83,7 +85,9 @@ name|getPath
 parameter_list|()
 block|{
 return|return
-name|_mrids
+name|this
+operator|.
+name|mrids
 return|;
 block|}
 block|}

@@ -51,6 +51,8 @@ name|ModuleRevisionId
 index|[]
 name|mrids
 parameter_list|)
+throws|throws
+name|CircularDependencyException
 function_decl|;
 block|}
 end_interface

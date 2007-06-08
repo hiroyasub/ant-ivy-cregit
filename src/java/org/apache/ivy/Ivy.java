@@ -503,6 +503,22 @@ name|core
 operator|.
 name|sort
 operator|.
+name|SilentNonMatchingVersionReporter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|sort
+operator|.
 name|SortEngine
 import|;
 end_import
@@ -1501,7 +1517,7 @@ name|nodes
 argument_list|)
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @return a List of sorted ModuleDescriptors      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param nonMatchingVersionReporter      *            Used to report some non matching version (when a modules depends on a specific      *            revision of an other modules present in the of modules to sort with a different      *            revision.      * @return a List of sorted ModuleDescriptors      * @deprecated Use sortModuleDescriptors(Collection,NonMatchingVersionReporter)      */
 specifier|public
 name|List
 name|sortModuleDescriptors
@@ -1516,6 +1532,10 @@ operator|.
 name|sortModuleDescriptors
 argument_list|(
 name|moduleDescriptors
+argument_list|,
+operator|new
+name|SilentNonMatchingVersionReporter
+argument_list|()
 argument_list|)
 return|;
 block|}

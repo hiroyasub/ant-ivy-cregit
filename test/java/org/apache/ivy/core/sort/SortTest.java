@@ -1611,6 +1611,7 @@ name|i
 operator|>
 literal|0
 condition|)
+block|{
 name|errorMessage
 operator|.
 name|append
@@ -1618,6 +1619,7 @@ argument_list|(
 literal|" , "
 argument_list|)
 expr_stmt|;
+block|}
 name|errorMessage
 operator|.
 name|append
@@ -1678,6 +1680,7 @@ name|i
 operator|>
 literal|0
 condition|)
+block|{
 name|errorMessage
 operator|.
 name|append
@@ -1685,6 +1688,7 @@ argument_list|(
 literal|" or\n"
 argument_list|)
 expr_stmt|;
+block|}
 name|errorMessage
 operator|.
 name|append
@@ -1715,6 +1719,7 @@ name|j
 operator|>
 literal|0
 condition|)
+block|{
 name|errorMessage
 operator|.
 name|append
@@ -1722,6 +1727,7 @@ argument_list|(
 literal|" , "
 argument_list|)
 expr_stmt|;
+block|}
 name|errorMessage
 operator|.
 name|append
@@ -1771,13 +1777,19 @@ name|Object
 name|d
 parameter_list|)
 block|{
+specifier|final
+name|int
+name|nbOfList
+init|=
+literal|24
+decl_stmt|;
 name|ArrayList
 name|r
 init|=
 operator|new
 name|ArrayList
 argument_list|(
-literal|24
+name|nbOfList
 argument_list|)
 decl_stmt|;
 name|r

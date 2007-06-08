@@ -89,28 +89,10 @@ name|ModuleRevisionId
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|Message
-import|;
-end_import
-
-begin_comment
-comment|/**  * A default implementation of the reporter used in the sort. The reporting is isolated here to make  * it easier to test, and to have a place where adding different type of reporting (silent, warning,  * exceptions)  */
-end_comment
-
 begin_class
-specifier|public
+specifier|abstract
 class|class
-name|DefaultNonMatchingVersionReporter
+name|MessageBasedNonMatchingVersionReporter
 implements|implements
 name|NonMatchingVersionReporter
 block|{
@@ -149,18 +131,20 @@ literal|null
 condition|)
 block|{
 comment|// There are some rare case where DependencyDescriptor have no parent.
-comment|// This is should not be used in the SortEngine, but if it is, we show a decent trace.
-name|Message
-operator|.
-name|warn
+comment|// This is should not be used in the SortEngine, but if it is, we
+comment|// show a decent trace.
+name|reportMessage
 argument_list|(
-literal|"Non matching revision detected in sort.  Dependency "
+literal|"Non matching revision detected when sorting.  Dependency "
 operator|+
 name|dependencyRevisionId
 operator|+
 literal|" doesn't match "
 operator|+
 name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -174,11 +158,9 @@ operator|.
 name|getModuleId
 argument_list|()
 decl_stmt|;
-name|Message
-operator|.
-name|warn
+name|reportMessage
 argument_list|(
-literal|"Non matching revision detected.  "
+literal|"Non matching revision detected when sorting.  "
 operator|+
 name|parentModuleId
 operator|+
@@ -189,10 +171,22 @@ operator|+
 literal|", doesn't match "
 operator|+
 name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
+specifier|abstract
+name|void
+name|reportMessage
+parameter_list|(
+name|String
+name|msg
+parameter_list|)
+function_decl|;
 block|}
 end_class
 
