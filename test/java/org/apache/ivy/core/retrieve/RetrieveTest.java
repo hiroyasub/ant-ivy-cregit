@@ -179,11 +179,11 @@ block|{
 specifier|private
 specifier|final
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|public
 name|RetrieveTest
@@ -191,13 +191,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|=
 operator|new
 name|Ivy
 argument_list|()
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -225,7 +225,7 @@ name|void
 name|createCache
 parameter_list|()
 block|{
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -233,7 +233,7 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
@@ -307,7 +307,7 @@ name|del
 operator|.
 name|setDir
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|del
@@ -327,7 +327,7 @@ comment|// mod1.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -374,7 +374,7 @@ name|pattern
 init|=
 literal|"build/test/retrieve/[module]/[conf]/[artifact]-[revision].[ext]"
 decl_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -424,7 +424,7 @@ name|pattern
 operator|=
 literal|"build/test/retrieve/[module]/[conf]/[type]s/[artifact]-[revision].[ext]"
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -482,7 +482,7 @@ comment|// mod1.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -578,7 +578,7 @@ argument_list|(
 literal|10000
 argument_list|)
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -622,7 +622,7 @@ comment|// mod1.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -669,7 +669,7 @@ name|pattern
 init|=
 literal|"build/test/retrieve/[module]/[conf]/[artifact]-[revision].[ext]"
 decl_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -717,7 +717,7 @@ name|pattern
 operator|=
 literal|"build/test/retrieve/[module]/[conf]/[type]s/[artifact]-[revision].[ext]"
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -876,7 +876,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod1.1 depends on mod1.2
-name|_ivy
+name|ivy
 operator|.
 name|setVariable
 argument_list|(
@@ -888,7 +888,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -935,7 +935,7 @@ name|pattern
 init|=
 literal|"build/test/${retrieve.dir}/[module]/[conf]/[artifact]-[revision].[ext]"
 decl_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -998,7 +998,7 @@ name|pattern
 operator|=
 literal|"build/test/${retrieve.dir}/[module]/[conf]/[type]s/[artifact]-[revision].[ext]"
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|retrieve
 argument_list|(
@@ -1074,12 +1074,12 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 argument_list|)
 return|;
@@ -1109,12 +1109,12 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 argument_list|)
 return|;
