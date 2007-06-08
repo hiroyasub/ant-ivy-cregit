@@ -466,21 +466,21 @@ block|{
 comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviour should be used      */
 specifier|private
 name|Boolean
-name|_validate
+name|validate
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|String
-name|_changingPattern
+name|changingPattern
 decl_stmt|;
 specifier|private
 name|String
-name|_changingMatcherName
+name|changingMatcherName
 init|=
 name|PatternMatcher
 operator|.
@@ -488,25 +488,25 @@ name|EXACT_OR_REGEXP
 decl_stmt|;
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 comment|/**      * The latest strategy to use to find latest among several artifacts      */
 specifier|private
 name|LatestStrategy
-name|_latestStrategy
+name|latestStrategy
 decl_stmt|;
 specifier|private
 name|String
-name|_latestStrategyName
+name|latestStrategyName
 decl_stmt|;
 comment|/**      * The namespace to which this resolver belongs      */
 specifier|private
 name|Namespace
-name|_namespace
+name|namespace
 decl_stmt|;
 specifier|private
 name|String
-name|_namespaceName
+name|namespaceName
 decl_stmt|;
 specifier|public
 name|IvySettings
@@ -514,7 +514,7 @@ name|getSettings
 parameter_list|()
 block|{
 return|return
-name|_settings
+name|settings
 return|;
 block|}
 specifier|public
@@ -525,7 +525,7 @@ name|IvySettings
 name|ivy
 parameter_list|)
 block|{
-name|_settings
+name|settings
 operator|=
 name|ivy
 expr_stmt|;
@@ -536,7 +536,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -547,7 +547,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -575,13 +577,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_validate
+name|validate
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|_validate
+name|validate
 operator|.
 name|booleanValue
 argument_list|()
@@ -603,13 +605,13 @@ name|isValidate
 parameter_list|()
 block|{
 return|return
-name|_validate
+name|validate
 operator|==
 literal|null
 condition|?
 literal|true
 else|:
-name|_validate
+name|validate
 operator|.
 name|booleanValue
 argument_list|()
@@ -623,7 +625,9 @@ name|boolean
 name|validate
 parameter_list|)
 block|{
-name|_validate
+name|this
+operator|.
+name|validate
 operator|=
 name|Boolean
 operator|.
@@ -893,7 +897,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_latestStrategy
+name|latestStrategy
 operator|==
 literal|null
 condition|)
@@ -908,7 +912,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_latestStrategyName
+name|latestStrategyName
 operator|!=
 literal|null
 operator|&&
@@ -917,23 +921,23 @@ literal|"default"
 operator|.
 name|equals
 argument_list|(
-name|_latestStrategyName
+name|latestStrategyName
 argument_list|)
 condition|)
 block|{
-name|_latestStrategy
+name|latestStrategy
 operator|=
 name|getSettings
 argument_list|()
 operator|.
 name|getLatestStrategy
 argument_list|(
-name|_latestStrategyName
+name|latestStrategyName
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_latestStrategy
+name|latestStrategy
 operator|==
 literal|null
 condition|)
@@ -944,10 +948,10 @@ name|error
 argument_list|(
 literal|"unknown latest strategy: "
 operator|+
-name|_latestStrategyName
+name|latestStrategyName
 argument_list|)
 expr_stmt|;
-name|_latestStrategy
+name|latestStrategy
 operator|=
 name|getSettings
 argument_list|()
@@ -959,7 +963,7 @@ block|}
 block|}
 else|else
 block|{
-name|_latestStrategy
+name|latestStrategy
 operator|=
 name|getSettings
 argument_list|()
@@ -985,13 +989,15 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"no ivy instance found: impossible to get a latest strategy without ivy instance"
+literal|"no ivy instance found: "
+operator|+
+literal|"impossible to get a latest strategy without ivy instance"
 argument_list|)
 throw|;
 block|}
 block|}
 return|return
-name|_latestStrategy
+name|latestStrategy
 return|;
 block|}
 specifier|public
@@ -1002,7 +1008,9 @@ name|LatestStrategy
 name|latestStrategy
 parameter_list|)
 block|{
-name|_latestStrategy
+name|this
+operator|.
+name|latestStrategy
 operator|=
 name|latestStrategy
 expr_stmt|;
@@ -1015,7 +1023,7 @@ name|String
 name|strategyName
 parameter_list|)
 block|{
-name|_latestStrategyName
+name|latestStrategyName
 operator|=
 name|strategyName
 expr_stmt|;
@@ -1027,18 +1035,18 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_latestStrategyName
+name|latestStrategyName
 operator|==
 literal|null
 condition|)
 block|{
-name|_latestStrategyName
+name|latestStrategyName
 operator|=
 literal|"default"
 expr_stmt|;
 block|}
 return|return
-name|_latestStrategyName
+name|latestStrategyName
 return|;
 block|}
 specifier|public
@@ -1048,7 +1056,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_namespace
+name|namespace
 operator|==
 literal|null
 condition|)
@@ -1063,24 +1071,24 @@ condition|)
 block|{
 if|if
 condition|(
-name|_namespaceName
+name|namespaceName
 operator|!=
 literal|null
 condition|)
 block|{
-name|_namespace
+name|namespace
 operator|=
 name|getSettings
 argument_list|()
 operator|.
 name|getNamespace
 argument_list|(
-name|_namespaceName
+name|namespaceName
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_namespace
+name|namespace
 operator|==
 literal|null
 condition|)
@@ -1091,10 +1099,10 @@ name|error
 argument_list|(
 literal|"unknown namespace: "
 operator|+
-name|_namespaceName
+name|namespaceName
 argument_list|)
 expr_stmt|;
-name|_namespace
+name|namespace
 operator|=
 name|getSettings
 argument_list|()
@@ -1106,7 +1114,7 @@ block|}
 block|}
 else|else
 block|{
-name|_namespace
+name|namespace
 operator|=
 name|getSettings
 argument_list|()
@@ -1138,7 +1146,7 @@ operator|+
 literal|": no namespace defined nor ivy instance: using system namespace"
 argument_list|)
 expr_stmt|;
-name|_namespace
+name|namespace
 operator|=
 name|Namespace
 operator|.
@@ -1147,7 +1155,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|_namespace
+name|namespace
 return|;
 block|}
 specifier|public
@@ -1158,7 +1166,9 @@ name|String
 name|namespaceName
 parameter_list|)
 block|{
-name|_namespaceName
+name|this
+operator|.
+name|namespaceName
 operator|=
 name|namespaceName
 expr_stmt|;
@@ -1431,7 +1441,7 @@ name|getChangingMatcherName
 parameter_list|()
 block|{
 return|return
-name|_changingMatcherName
+name|changingMatcherName
 return|;
 block|}
 specifier|public
@@ -1442,7 +1452,9 @@ name|String
 name|changingMatcherName
 parameter_list|)
 block|{
-name|_changingMatcherName
+name|this
+operator|.
+name|changingMatcherName
 operator|=
 name|changingMatcherName
 expr_stmt|;
@@ -1453,7 +1465,7 @@ name|getChangingPattern
 parameter_list|()
 block|{
 return|return
-name|_changingPattern
+name|changingPattern
 return|;
 block|}
 specifier|public
@@ -1464,7 +1476,9 @@ name|String
 name|changingPattern
 parameter_list|)
 block|{
-name|_changingPattern
+name|this
+operator|.
+name|changingPattern
 operator|=
 name|changingPattern
 expr_stmt|;
@@ -1476,7 +1490,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_changingPattern
+name|changingPattern
 operator|==
 literal|null
 condition|)
@@ -1490,11 +1504,11 @@ block|}
 name|PatternMatcher
 name|matcher
 init|=
-name|_settings
+name|settings
 operator|.
 name|getMatcher
 argument_list|(
-name|_changingMatcherName
+name|changingMatcherName
 argument_list|)
 decl_stmt|;
 if|if
@@ -1510,7 +1524,7 @@ name|IllegalStateException
 argument_list|(
 literal|"unknown matcher '"
 operator|+
-name|_changingMatcherName
+name|changingMatcherName
 operator|+
 literal|"'. It is set as changing matcher in "
 operator|+
@@ -1523,7 +1537,7 @@ name|matcher
 operator|.
 name|getMatcher
 argument_list|(
-name|_changingPattern
+name|changingPattern
 argument_list|)
 return|;
 block|}

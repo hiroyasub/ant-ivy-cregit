@@ -855,20 +855,20 @@ argument_list|(
 literal|"yyyyMMddHHmmss"
 argument_list|)
 decl_stmt|;
-specifier|protected
+specifier|private
 name|String
-name|_workspaceName
+name|workspaceName
 decl_stmt|;
 comment|/**      * True if the files resolved are dependent of the environment from which they have been      * resolved, false otherwise. In general, relative paths are dependent of the environment, and      * absolute paths including machine reference are not.      */
 specifier|private
 name|boolean
-name|_envDependent
+name|envDependent
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|List
-name|_ivyattempts
+name|ivyattempts
 init|=
 operator|new
 name|ArrayList
@@ -876,7 +876,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_artattempts
+name|artattempts
 init|=
 operator|new
 name|HashMap
@@ -884,31 +884,31 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Boolean
-name|_checkmodified
+name|checkmodified
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|boolean
-name|_checkconsistency
+name|checkconsistency
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|boolean
-name|_allownomd
+name|allownomd
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|String
-name|_checksums
+name|checksums
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|URLRepository
-name|_extartifactrep
+name|extartifactrep
 init|=
 operator|new
 name|URLRepository
@@ -920,7 +920,7 @@ specifier|public
 name|BasicResolver
 parameter_list|()
 block|{
-name|_workspaceName
+name|workspaceName
 operator|=
 name|HostUtil
 operator|.
@@ -934,7 +934,7 @@ name|getWorkspaceName
 parameter_list|()
 block|{
 return|return
-name|_workspaceName
+name|workspaceName
 return|;
 block|}
 specifier|public
@@ -945,7 +945,9 @@ name|String
 name|workspaceName
 parameter_list|)
 block|{
-name|_workspaceName
+name|this
+operator|.
+name|workspaceName
 operator|=
 name|workspaceName
 expr_stmt|;
@@ -956,7 +958,7 @@ name|isEnvDependent
 parameter_list|()
 block|{
 return|return
-name|_envDependent
+name|envDependent
 return|;
 block|}
 specifier|public
@@ -967,7 +969,9 @@ name|boolean
 name|envDependent
 parameter_list|)
 block|{
-name|_envDependent
+name|this
+operator|.
+name|envDependent
 operator|=
 name|envDependent
 expr_stmt|;
@@ -980,7 +984,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_checkmodified
+name|checkmodified
 operator|==
 literal|null
 condition|)
@@ -1032,7 +1036,7 @@ block|}
 else|else
 block|{
 return|return
-name|_checkmodified
+name|checkmodified
 operator|.
 name|booleanValue
 argument_list|()
@@ -1047,7 +1051,7 @@ name|boolean
 name|check
 parameter_list|)
 block|{
-name|_checkmodified
+name|checkmodified
 operator|=
 name|Boolean
 operator|.
@@ -1154,7 +1158,7 @@ argument_list|)
 operator|.
 name|equals
 argument_list|(
-name|_workspaceName
+name|workspaceName
 argument_list|)
 condition|)
 block|{
@@ -1488,65 +1492,6 @@ operator|+
 name|mrid
 argument_list|)
 expr_stmt|;
-name|String
-index|[]
-name|conf
-init|=
-name|md
-operator|.
-name|getConfigurationsNames
-argument_list|()
-decl_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|conf
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|Artifact
-index|[]
-name|artifacts
-init|=
-name|md
-operator|.
-name|getArtifacts
-argument_list|(
-name|conf
-index|[
-name|i
-index|]
-argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|int
-name|j
-init|=
-literal|0
-init|;
-name|j
-operator|<
-name|artifacts
-operator|.
-name|length
-condition|;
-name|j
-operator|++
-control|)
-block|{
-block|}
-block|}
 if|if
 condition|(
 operator|!
@@ -1784,7 +1729,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_checkconsistency
+name|checkconsistency
 condition|)
 block|{
 name|checkDescriptorConsistency
@@ -1856,7 +1801,9 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"consistency disabled with instance of non DefaultModuleDescriptor... module info can't be updated, so consistency check will be done"
+literal|"consistency disabled with instance of non DefaultModuleDescriptor..."
+operator|+
+literal|" module info can't be updated, so consistency check will be done"
 argument_list|)
 expr_stmt|;
 name|checkDescriptorConsistency
@@ -2274,7 +2221,11 @@ operator|.
 name|getResource
 argument_list|()
 operator|+
-literal|" has information which can't be converted into the system namespace. It will require the availability of the namespace '"
+literal|" has information which can't be converted into "
+operator|+
+literal|"the system namespace. "
+operator|+
+literal|"It will require the availability of the namespace '"
 operator|+
 name|getNamespace
 argument_list|()
@@ -4036,7 +3987,7 @@ name|void
 name|clearIvyAttempts
 parameter_list|()
 block|{
-name|_ivyattempts
+name|ivyattempts
 operator|.
 name|clear
 argument_list|()
@@ -4164,7 +4115,7 @@ name|String
 name|attempt
 parameter_list|)
 block|{
-name|_ivyattempts
+name|ivyattempts
 operator|.
 name|add
 argument_list|(
@@ -4198,7 +4149,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_artattempts
+name|artattempts
 operator|.
 name|get
 argument_list|(
@@ -4218,7 +4169,7 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_artattempts
+name|artattempts
 operator|.
 name|put
 argument_list|(
@@ -4354,7 +4305,7 @@ control|(
 name|ListIterator
 name|iter
 init|=
-name|_ivyattempts
+name|ivyattempts
 operator|.
 name|listIterator
 argument_list|()
@@ -4392,7 +4343,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_artattempts
+name|artattempts
 operator|.
 name|keySet
 argument_list|()
@@ -4424,7 +4375,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_artattempts
+name|artattempts
 operator|.
 name|get
 argument_list|(
@@ -4516,7 +4467,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_artattempts
+name|artattempts
 operator|.
 name|get
 argument_list|(
@@ -5193,7 +5144,7 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-name|_extartifactrep
+name|extartifactrep
 operator|.
 name|get
 argument_list|(
@@ -5456,7 +5407,7 @@ name|void
 name|clearArtifactAttempts
 parameter_list|()
 block|{
-name|_artattempts
+name|artattempts
 operator|.
 name|clear
 argument_list|()
@@ -6435,7 +6386,7 @@ name|isCheckconsistency
 parameter_list|()
 block|{
 return|return
-name|_checkconsistency
+name|checkconsistency
 return|;
 block|}
 specifier|public
@@ -6446,7 +6397,7 @@ name|boolean
 name|checkConsitency
 parameter_list|)
 block|{
-name|_checkconsistency
+name|checkconsistency
 operator|=
 name|checkConsitency
 expr_stmt|;
@@ -6457,7 +6408,7 @@ name|isAllownomd
 parameter_list|()
 block|{
 return|return
-name|_allownomd
+name|allownomd
 return|;
 block|}
 specifier|public
@@ -6468,7 +6419,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|_allownomd
+name|allownomd
 operator|=
 name|b
 expr_stmt|;
@@ -6482,7 +6433,7 @@ block|{
 name|String
 name|csDef
 init|=
-name|_checksums
+name|checksums
 operator|==
 literal|null
 condition|?
@@ -6494,7 +6445,7 @@ argument_list|(
 literal|"ivy.checksums"
 argument_list|)
 else|:
-name|_checksums
+name|checksums
 decl_stmt|;
 if|if
 condition|(
@@ -6615,7 +6566,9 @@ name|String
 name|checksums
 parameter_list|)
 block|{
-name|_checksums
+name|this
+operator|.
+name|checksums
 operator|=
 name|checksums
 expr_stmt|;
