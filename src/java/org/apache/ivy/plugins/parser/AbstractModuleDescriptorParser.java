@@ -396,7 +396,7 @@ argument_list|()
 decl_stmt|;
 specifier|protected
 name|DefaultModuleDescriptor
-name|_md
+name|md
 decl_stmt|;
 specifier|private
 name|ModuleDescriptorParser
@@ -466,7 +466,7 @@ operator|=
 name|res
 expr_stmt|;
 comment|// used for log and date only
-name|_md
+name|md
 operator|=
 operator|new
 name|DefaultModuleDescriptor
@@ -476,7 +476,7 @@ argument_list|,
 name|res
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setLastModified
 argument_list|(
@@ -661,7 +661,7 @@ parameter_list|)
 block|{
 name|replaceConfigurationWildcards
 argument_list|(
-name|_md
+name|md
 argument_list|)
 expr_stmt|;
 for|for
@@ -1050,7 +1050,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|isMappingOverride
 argument_list|()
@@ -1438,7 +1438,7 @@ name|Configuration
 index|[]
 name|configs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurations
 argument_list|()
@@ -1916,7 +1916,7 @@ name|checkErrors
 argument_list|()
 expr_stmt|;
 return|return
-name|_md
+name|md
 return|;
 block|}
 specifier|protected
@@ -1928,7 +1928,7 @@ return|return
 operator|new
 name|Date
 argument_list|(
-name|_md
+name|md
 operator|.
 name|getLastModified
 argument_list|()

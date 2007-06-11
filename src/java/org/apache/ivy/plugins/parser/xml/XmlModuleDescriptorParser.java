@@ -1214,7 +1214,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -1236,7 +1236,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -1248,9 +1248,9 @@ argument_list|,
 operator|new
 name|MDArtifact
 argument_list|(
-name|_md
+name|md
 argument_list|,
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1266,7 +1266,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|_md
+name|md
 operator|.
 name|check
 argument_list|()
@@ -1413,7 +1413,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -1435,7 +1435,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -1447,9 +1447,9 @@ argument_list|,
 operator|new
 name|MDArtifact
 argument_list|(
-name|_md
+name|md
 argument_list|,
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1465,7 +1465,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|_md
+name|md
 operator|.
 name|check
 argument_list|()
@@ -1750,7 +1750,7 @@ literal|"branch"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|_md
+name|md
 operator|.
 name|setModuleRevisionId
 argument_list|(
@@ -1841,7 +1841,7 @@ name|warn
 argument_list|(
 literal|"namespace not found for "
 operator|+
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1854,7 +1854,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_md
+name|md
 operator|.
 name|setNamespace
 argument_list|(
@@ -1878,7 +1878,7 @@ literal|"status"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|_md
+name|md
 operator|.
 name|setStatus
 argument_list|(
@@ -1897,7 +1897,7 @@ else|:
 name|status
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setDefault
 argument_list|(
@@ -1953,7 +1953,7 @@ condition|)
 block|{
 try|try
 block|{
-name|_md
+name|md
 operator|.
 name|setPublicationDate
 argument_list|(
@@ -1981,7 +1981,7 @@ operator|+
 name|pubDate
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setPublicationDate
 argument_list|(
@@ -1993,7 +1993,7 @@ block|}
 block|}
 else|else
 block|{
-name|_md
+name|md
 operator|.
 name|setPublicationDate
 argument_list|(
@@ -2013,7 +2013,7 @@ name|qName
 argument_list|)
 condition|)
 block|{
-name|_md
+name|md
 operator|.
 name|addLicense
 argument_list|(
@@ -2057,7 +2057,7 @@ name|qName
 argument_list|)
 condition|)
 block|{
-name|_md
+name|md
 operator|.
 name|setHomePage
 argument_list|(
@@ -2104,7 +2104,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setMappingOverride
 argument_list|(
@@ -2243,7 +2243,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_md
+name|md
 operator|.
 name|setMappingOverride
 argument_list|(
@@ -2342,7 +2342,7 @@ name|artName
 operator|==
 literal|null
 condition|?
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -2422,7 +2422,7 @@ operator|=
 operator|new
 name|MDArtifact
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|artName
 argument_list|,
@@ -2511,7 +2511,7 @@ condition|)
 block|{
 name|conf
 operator|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -2559,7 +2559,7 @@ name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -2685,7 +2685,7 @@ condition|)
 block|{
 name|org
 operator|=
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -2831,7 +2831,7 @@ operator|=
 operator|new
 name|DefaultDependencyDescriptor
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|ModuleRevisionId
 operator|.
@@ -2862,7 +2862,7 @@ argument_list|,
 name|transitive
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addDependency
 argument_list|(
@@ -3081,7 +3081,7 @@ literal|"description"
 block|}
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addConfiguration
 argument_list|(
@@ -3106,7 +3106,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -3138,7 +3138,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -3161,7 +3161,7 @@ argument_list|(
 name|conf
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -3557,7 +3557,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|_md
+name|md
 operator|.
 name|addConflictManager
 argument_list|(
@@ -3596,7 +3596,7 @@ argument_list|,
 name|attributes
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addExcludeRule
 argument_list|(
@@ -3702,7 +3702,7 @@ argument_list|)
 decl_stmt|;
 name|parser
 operator|.
-name|_md
+name|md
 operator|=
 operator|new
 name|DefaultModuleDescriptor
@@ -3758,7 +3758,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_md
+name|md
 operator|.
 name|addConfiguration
 argument_list|(
@@ -3804,7 +3804,7 @@ if|if
 condition|(
 name|parser
 operator|.
-name|_md
+name|md
 operator|.
 name|isMappingOverride
 argument_list|()
@@ -3817,7 +3817,7 @@ argument_list|(
 literal|"enabling mapping-override from imported configurations file"
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setMappingOverride
 argument_list|(
@@ -4488,7 +4488,7 @@ condition|)
 block|{
 name|conf
 operator|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -4730,7 +4730,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -4762,7 +4762,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -4852,7 +4852,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -4919,7 +4919,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurationsNames
 argument_list|()
@@ -5007,7 +5007,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getConfigurations
 argument_list|()
@@ -5017,7 +5017,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|_md
+name|md
 operator|.
 name|addConfiguration
 argument_list|(
@@ -5039,7 +5039,7 @@ name|Configuration
 index|[]
 name|configs
 init|=
-name|_md
+name|md
 operator|.
 name|getConfigurations
 argument_list|()
@@ -5068,7 +5068,7 @@ index|]
 operator|.
 name|replaceWildcards
 argument_list|(
-name|_md
+name|md
 argument_list|)
 expr_stmt|;
 block|}
