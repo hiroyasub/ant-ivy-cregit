@@ -513,8 +513,13 @@ name|SAXException
 import|;
 end_import
 
+begin_comment
+comment|/**  * A parser for Maven 2 POM.  *<p>  * The configurations used in the generated module descriptor mimics the behavior defined by maven 2  * scopes, as documented here:<br/>  * http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html  *   */
+end_comment
+
 begin_class
 specifier|public
+specifier|final
 class|class
 name|PomModuleDescriptorParser
 extends|extends
@@ -561,7 +566,9 @@ name|Visibility
 operator|.
 name|PUBLIC
 argument_list|,
-literal|"contains only the artifact published by this module itself, with no transitive dependencies"
+literal|"contains only the artifact published by this module itself, "
+operator|+
+literal|"with no transitive dependencies"
 argument_list|,
 operator|new
 name|String
@@ -579,7 +586,9 @@ name|Visibility
 operator|.
 name|PUBLIC
 argument_list|,
-literal|"this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."
+literal|"this is the default scope, used if none is specified. "
+operator|+
+literal|"Compile dependencies are available in all classpaths."
 argument_list|,
 operator|new
 name|String
@@ -597,7 +606,11 @@ name|Visibility
 operator|.
 name|PUBLIC
 argument_list|,
-literal|"this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."
+literal|"this is much like compile, but indicates you expect the JDK or a container "
+operator|+
+literal|"to provide it. "
+operator|+
+literal|"It is only available on the compilation classpath, and is not transitive."
 argument_list|,
 operator|new
 name|String
@@ -615,7 +628,11 @@ name|Visibility
 operator|.
 name|PUBLIC
 argument_list|,
-literal|"this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath."
+literal|"this scope indicates that the dependency is not required for compilation, "
+operator|+
+literal|"but is for execution. It is in the runtime and test classpaths, "
+operator|+
+literal|"but not the compile classpath."
 argument_list|,
 operator|new
 name|String
@@ -634,7 +651,11 @@ name|Visibility
 operator|.
 name|PRIVATE
 argument_list|,
-literal|"this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases."
+literal|"this scope indicates that the dependency is not required for normal use of "
+operator|+
+literal|"the application, and is only available for the test compilation and "
+operator|+
+literal|"execution phases."
 argument_list|,
 operator|new
 name|String
@@ -652,7 +673,11 @@ name|Visibility
 operator|.
 name|PUBLIC
 argument_list|,
-literal|"this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."
+literal|"this scope is similar to provided except that you have to provide the JAR "
+operator|+
+literal|"which contains it explicitly. The artifact is always available and is not "
+operator|+
+literal|"looked up in a repository."
 argument_list|,
 operator|new
 name|String
@@ -660,7 +685,7 @@ index|[
 literal|0
 index|]
 argument_list|)
-block|,}
+block|,                     }
 decl_stmt|;
 specifier|private
 specifier|static
@@ -753,12 +778,20 @@ extends|extends
 name|AbstractParser
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|String
+name|JAR_EXTENSION
+init|=
+literal|"jar"
+decl_stmt|;
+specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|Stack
-name|_contextStack
+name|contextStack
 init|=
 operator|new
 name|Stack
@@ -766,41 +799,41 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_organisation
+name|organisation
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|private
 name|String
-name|_scope
+name|scope
 decl_stmt|;
 specifier|private
 name|String
-name|_classifier
+name|classifier
 decl_stmt|;
 specifier|private
 name|String
-name|_type
+name|type
 decl_stmt|;
 specifier|private
 name|String
-name|_ext
+name|ext
 decl_stmt|;
 specifier|private
 name|boolean
-name|_optional
+name|optional
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|List
-name|_exclusions
+name|exclusions
 init|=
 operator|new
 name|ArrayList
@@ -808,11 +841,11 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|DefaultDependencyDescriptor
-name|_dd
+name|dd
 decl_stmt|;
 specifier|private
 name|Map
-name|_properties
+name|properties
 init|=
 operator|new
 name|HashMap
@@ -836,7 +869,9 @@ argument_list|(
 name|parser
 argument_list|)
 expr_stmt|;
-name|_settings
+name|this
+operator|.
+name|settings
 operator|=
 name|settings
 expr_stmt|;
@@ -845,7 +880,7 @@ argument_list|(
 name|res
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setResolvedPublicationDate
 argument_list|(
@@ -876,7 +911,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_md
+name|md
 operator|.
 name|addConfiguration
 argument_list|(
@@ -907,7 +942,7 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|_contextStack
+name|contextStack
 operator|.
 name|push
 argument_list|(
@@ -930,7 +965,7 @@ name|qName
 argument_list|)
 condition|)
 block|{
-name|_optional
+name|optional
 operator|=
 literal|true
 expr_stmt|;
@@ -947,28 +982,28 @@ condition|)
 block|{
 if|if
 condition|(
-name|_dd
+name|dd
 operator|==
 literal|null
 condition|)
 block|{
 comment|// stores dd now cause exclusions will override org and module
-name|_dd
+name|dd
 operator|=
 operator|new
 name|DefaultDependencyDescriptor
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|ModuleRevisionId
 operator|.
 name|newInstance
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
-name|_module
+name|module
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 argument_list|,
 literal|true
@@ -978,15 +1013,15 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|_organisation
+name|organisation
 operator|=
 literal|null
 expr_stmt|;
-name|_module
+name|module
 operator|=
 literal|null
 expr_stmt|;
-name|_revision
+name|revision
 operator|=
 literal|null
 expr_stmt|;
@@ -994,7 +1029,7 @@ block|}
 block|}
 if|else if
 condition|(
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1041,7 +1076,7 @@ name|SAXException
 block|{
 if|if
 condition|(
-name|_organisation
+name|organisation
 operator|==
 literal|null
 condition|)
@@ -1056,7 +1091,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 condition|)
@@ -1071,12 +1106,12 @@ throw|;
 block|}
 if|if
 condition|(
-name|_revision
+name|revision
 operator|==
 literal|null
 condition|)
 block|{
-name|_revision
+name|revision
 operator|=
 literal|"SNAPSHOT"
 expr_stmt|;
@@ -1088,59 +1123,59 @@ name|ModuleRevisionId
 operator|.
 name|newInstance
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
-name|_module
+name|module
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 decl_stmt|;
-name|_properties
+name|properties
 operator|.
 name|put
 argument_list|(
 literal|"project.groupId"
 argument_list|,
-name|_organisation
+name|organisation
 argument_list|)
 expr_stmt|;
-name|_properties
+name|properties
 operator|.
 name|put
 argument_list|(
 literal|"project.artifactId"
 argument_list|,
-name|_module
+name|module
 argument_list|)
 expr_stmt|;
-name|_properties
+name|properties
 operator|.
 name|put
 argument_list|(
 literal|"project.version"
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 expr_stmt|;
-name|_properties
+name|properties
 operator|.
 name|put
 argument_list|(
 literal|"pom.version"
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 expr_stmt|;
-name|_properties
+name|properties
 operator|.
 name|put
 argument_list|(
 literal|"version"
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 expr_stmt|;
-name|_md
+name|md
 operator|.
 name|setModuleRevisionId
 argument_list|(
@@ -1149,19 +1184,21 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_type
+name|type
 operator|==
 literal|null
 condition|)
 block|{
-name|_type
+name|type
 operator|=
-name|_ext
+name|JAR_EXTENSION
+expr_stmt|;
+name|ext
 operator|=
-literal|"jar"
+name|JAR_EXTENSION
 expr_stmt|;
 block|}
-name|_md
+name|md
 operator|.
 name|addArtifact
 argument_list|(
@@ -1175,23 +1212,23 @@ argument_list|,
 name|getDefaultPubDate
 argument_list|()
 argument_list|,
-name|_module
+name|module
 argument_list|,
-name|_type
+name|type
 argument_list|,
-name|_ext
+name|ext
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_organisation
+name|organisation
 operator|=
 literal|null
 expr_stmt|;
-name|_module
+name|module
 operator|=
 literal|null
 expr_stmt|;
-name|_revision
+name|revision
 operator|=
 literal|null
 expr_stmt|;
@@ -1214,7 +1251,7 @@ name|SAXException
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1240,20 +1277,20 @@ if|else if
 condition|(
 operator|(
 operator|(
-name|_organisation
+name|organisation
 operator|!=
 literal|null
 operator|&&
-name|_module
+name|module
 operator|!=
 literal|null
 operator|&&
-name|_revision
+name|revision
 operator|!=
 literal|null
 operator|)
 operator|||
-name|_dd
+name|dd
 operator|!=
 literal|null
 operator|)
@@ -1269,27 +1306,27 @@ condition|)
 block|{
 if|if
 condition|(
-name|_dd
+name|dd
 operator|==
 literal|null
 condition|)
 block|{
-name|_dd
+name|dd
 operator|=
 operator|new
 name|DefaultDependencyDescriptor
 argument_list|(
-name|_md
+name|md
 argument_list|,
 name|ModuleRevisionId
 operator|.
 name|newInstance
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
-name|_module
+name|module
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 argument_list|,
 literal|true
@@ -1300,29 +1337,29 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-name|_scope
+name|scope
 operator|=
-name|_scope
+name|scope
 operator|==
 literal|null
 condition|?
 literal|"compile"
 else|:
-name|_scope
+name|scope
 expr_stmt|;
 if|if
 condition|(
-name|_optional
+name|optional
 operator|&&
 literal|"compile"
 operator|.
 name|equals
 argument_list|(
-name|_scope
+name|scope
 argument_list|)
 condition|)
 block|{
-name|_scope
+name|scope
 operator|=
 literal|"runtime"
 expr_stmt|;
@@ -1337,7 +1374,7 @@ name|MAVEN2_CONF_MAPPING
 operator|.
 name|get
 argument_list|(
-name|_scope
+name|scope
 argument_list|)
 decl_stmt|;
 if|if
@@ -1353,7 +1390,7 @@ name|verbose
 argument_list|(
 literal|"unknown scope "
 operator|+
-name|_scope
+name|scope
 operator|+
 literal|" in "
 operator|+
@@ -1376,7 +1413,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_optional
+name|optional
 condition|)
 block|{
 name|mapping
@@ -1385,7 +1422,7 @@ name|mapping
 operator|.
 name|replaceAll
 argument_list|(
-name|_scope
+name|scope
 operator|+
 literal|"\\-\\>"
 argument_list|,
@@ -1394,7 +1431,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getConfiguration
 argument_list|(
@@ -1404,7 +1441,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|_md
+name|md
 operator|.
 name|addConfiguration
 argument_list|(
@@ -1417,12 +1454,12 @@ name|parseDepsConfs
 argument_list|(
 name|mapping
 argument_list|,
-name|_dd
+name|dd
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_classifier
+name|classifier
 operator|!=
 literal|null
 condition|)
@@ -1442,14 +1479,14 @@ name|put
 argument_list|(
 literal|"classifier"
 argument_list|,
-name|_classifier
+name|classifier
 argument_list|)
 expr_stmt|;
 name|String
 index|[]
 name|confs
 init|=
-name|_dd
+name|dd
 operator|.
 name|getModuleConfigurations
 argument_list|()
@@ -1471,7 +1508,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_dd
+name|dd
 operator|.
 name|addDependencyArtifact
 argument_list|(
@@ -1483,7 +1520,7 @@ argument_list|,
 operator|new
 name|DefaultDependencyArtifactDescriptor
 argument_list|(
-name|_dd
+name|dd
 operator|.
 name|getDependencyId
 argument_list|()
@@ -1491,17 +1528,11 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|"jar"
+name|JAR_EXTENSION
 argument_list|,
-literal|"jar"
+name|JAR_EXTENSION
 argument_list|,
-comment|// here we have
-comment|// to assume a
-comment|// type
-comment|// and ext for the artifact, so
-comment|// this is a limitation compared
-comment|// to how m2 behave with
-comment|// classifiers
+comment|/*                                      * here we have to assume a type and ext for the artifact, so                                      * this is a limitation compared to how m2 behave with                                      * classifiers                                      */
 literal|null
 argument_list|,
 name|extraAtt
@@ -1515,7 +1546,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_exclusions
+name|exclusions
 operator|.
 name|iterator
 argument_list|()
@@ -1542,7 +1573,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|_dd
+name|dd
 operator|.
 name|getModuleConfigurations
 argument_list|()
@@ -1564,7 +1595,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_dd
+name|dd
 operator|.
 name|addExcludeRule
 argument_list|(
@@ -1604,14 +1635,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|_md
+name|md
 operator|.
 name|addDependency
 argument_list|(
-name|_dd
+name|dd
 argument_list|)
 expr_stmt|;
-name|_dd
+name|dd
 operator|=
 literal|null
 expr_stmt|;
@@ -1619,11 +1650,11 @@ block|}
 if|else if
 condition|(
 operator|(
-name|_organisation
+name|organisation
 operator|!=
 literal|null
 operator|&&
-name|_module
+name|module
 operator|!=
 literal|null
 operator|)
@@ -1637,24 +1668,24 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_exclusions
+name|exclusions
 operator|.
 name|add
 argument_list|(
 operator|new
 name|ModuleId
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
-name|_module
+name|module
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_organisation
+name|organisation
 operator|=
 literal|null
 expr_stmt|;
-name|_module
+name|module
 operator|=
 literal|null
 expr_stmt|;
@@ -1670,37 +1701,37 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|_organisation
+name|organisation
 operator|=
 literal|null
 expr_stmt|;
-name|_module
+name|module
 operator|=
 literal|null
 expr_stmt|;
-name|_revision
+name|revision
 operator|=
 literal|null
 expr_stmt|;
-name|_scope
+name|scope
 operator|=
 literal|null
 expr_stmt|;
-name|_classifier
+name|classifier
 operator|=
 literal|null
 expr_stmt|;
-name|_optional
+name|optional
 operator|=
 literal|false
 expr_stmt|;
-name|_exclusions
+name|exclusions
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
 block|}
-name|_contextStack
+name|contextStack
 operator|.
 name|pop
 argument_list|()
@@ -1743,7 +1774,7 @@ operator|.
 name|trim
 argument_list|()
 argument_list|,
-name|_properties
+name|properties
 argument_list|)
 decl_stmt|;
 if|if
@@ -1776,12 +1807,12 @@ argument_list|(
 literal|"project/parent/groupId"
 argument_list|)
 operator|&&
-name|_organisation
+name|organisation
 operator|==
 literal|null
 condition|)
 block|{
-name|_organisation
+name|organisation
 operator|=
 name|txt
 expr_stmt|;
@@ -1796,12 +1827,12 @@ argument_list|(
 literal|"project/parent/version"
 argument_list|)
 operator|&&
-name|_revision
+name|revision
 operator|==
 literal|null
 condition|)
 block|{
-name|_revision
+name|revision
 operator|=
 name|txt
 expr_stmt|;
@@ -1816,16 +1847,16 @@ argument_list|(
 literal|"project/parent/packaging"
 argument_list|)
 operator|&&
-name|_type
+name|type
 operator|==
 literal|null
 condition|)
 block|{
-name|_type
+name|type
 operator|=
 name|txt
 expr_stmt|;
-name|_ext
+name|ext
 operator|=
 name|txt
 expr_stmt|;
@@ -1845,7 +1876,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -1870,14 +1901,14 @@ literal|"project/groupId"
 argument_list|)
 condition|)
 block|{
-name|_organisation
+name|organisation
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_organisation
+name|organisation
 operator|==
 literal|null
 operator|&&
@@ -1889,14 +1920,14 @@ literal|"groupId"
 argument_list|)
 condition|)
 block|{
-name|_organisation
+name|organisation
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 operator|&&
@@ -1908,7 +1939,7 @@ literal|"artifactId"
 argument_list|)
 condition|)
 block|{
-name|_module
+name|module
 operator|=
 name|txt
 expr_stmt|;
@@ -1923,7 +1954,7 @@ literal|"project/version"
 argument_list|)
 operator|||
 operator|(
-name|_revision
+name|revision
 operator|==
 literal|null
 operator|&&
@@ -1936,14 +1967,14 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|_revision
+name|revision
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_revision
+name|revision
 operator|==
 literal|null
 operator|&&
@@ -1955,14 +1986,14 @@ literal|"version"
 argument_list|)
 condition|)
 block|{
-name|_revision
+name|revision
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_type
+name|type
 operator|==
 literal|null
 operator|&&
@@ -1974,18 +2005,18 @@ literal|"packaging"
 argument_list|)
 condition|)
 block|{
-name|_type
+name|type
 operator|=
 name|txt
 expr_stmt|;
-name|_ext
+name|ext
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_scope
+name|scope
 operator|==
 literal|null
 operator|&&
@@ -1997,14 +2028,14 @@ literal|"scope"
 argument_list|)
 condition|)
 block|{
-name|_scope
+name|scope
 operator|=
 name|txt
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|_classifier
+name|classifier
 operator|==
 literal|null
 operator|&&
@@ -2016,7 +2047,7 @@ literal|"dependency/classifier"
 argument_list|)
 condition|)
 block|{
-name|_classifier
+name|classifier
 operator|=
 name|txt
 expr_stmt|;
@@ -2040,7 +2071,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_contextStack
+name|contextStack
 operator|.
 name|iterator
 argument_list|()
@@ -2113,7 +2144,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_md
+name|md
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -2126,12 +2157,13 @@ literal|null
 return|;
 block|}
 return|return
-name|_md
+name|md
 return|;
 block|}
 block|}
 specifier|private
 specifier|static
+specifier|final
 name|PomModuleDescriptorParser
 name|INSTANCE
 init|=
