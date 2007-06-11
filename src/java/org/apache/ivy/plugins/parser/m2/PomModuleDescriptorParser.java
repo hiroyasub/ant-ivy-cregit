@@ -786,10 +786,6 @@ init|=
 literal|"jar"
 decl_stmt|;
 specifier|private
-name|IvySettings
-name|settings
-decl_stmt|;
-specifier|private
 name|Stack
 name|contextStack
 init|=
@@ -865,9 +861,6 @@ parameter_list|(
 name|ModuleDescriptorParser
 name|parser
 parameter_list|,
-name|IvySettings
-name|settings
-parameter_list|,
 name|Resource
 name|res
 parameter_list|)
@@ -876,12 +869,6 @@ name|super
 argument_list|(
 name|parser
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|settings
-operator|=
-name|settings
 expr_stmt|;
 name|setResource
 argument_list|(
@@ -2262,8 +2249,6 @@ operator|new
 name|Parser
 argument_list|(
 name|this
-argument_list|,
-name|settings
 argument_list|,
 name|res
 argument_list|)
