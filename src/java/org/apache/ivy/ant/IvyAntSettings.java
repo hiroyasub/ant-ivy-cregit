@@ -265,19 +265,19 @@ name|Credentials
 block|{
 specifier|private
 name|String
-name|_realm
+name|realm
 decl_stmt|;
 specifier|private
 name|String
-name|_host
+name|host
 decl_stmt|;
 specifier|private
 name|String
-name|_username
+name|username
 decl_stmt|;
 specifier|private
 name|String
-name|_passwd
+name|passwd
 decl_stmt|;
 specifier|public
 name|String
@@ -285,7 +285,9 @@ name|getPasswd
 parameter_list|()
 block|{
 return|return
-name|_passwd
+name|this
+operator|.
+name|passwd
 return|;
 block|}
 specifier|public
@@ -296,7 +298,9 @@ name|String
 name|passwd
 parameter_list|)
 block|{
-name|_passwd
+name|this
+operator|.
+name|passwd
 operator|=
 name|passwd
 expr_stmt|;
@@ -307,7 +311,9 @@ name|getRealm
 parameter_list|()
 block|{
 return|return
-name|_realm
+name|this
+operator|.
+name|realm
 return|;
 block|}
 specifier|public
@@ -318,7 +324,9 @@ name|String
 name|realm
 parameter_list|)
 block|{
-name|_realm
+name|this
+operator|.
+name|realm
 operator|=
 name|format
 argument_list|(
@@ -332,7 +340,9 @@ name|getHost
 parameter_list|()
 block|{
 return|return
-name|_host
+name|this
+operator|.
+name|host
 return|;
 block|}
 specifier|public
@@ -343,7 +353,9 @@ name|String
 name|host
 parameter_list|)
 block|{
-name|_host
+name|this
+operator|.
+name|host
 operator|=
 name|format
 argument_list|(
@@ -357,7 +369,9 @@ name|getUsername
 parameter_list|()
 block|{
 return|return
-name|_username
+name|this
+operator|.
+name|username
 return|;
 block|}
 specifier|public
@@ -368,7 +382,9 @@ name|String
 name|userName
 parameter_list|)
 block|{
-name|_username
+name|this
+operator|.
+name|username
 operator|=
 name|format
 argument_list|(
@@ -379,43 +395,43 @@ block|}
 block|}
 specifier|private
 name|Ivy
-name|_ivyEngine
+name|ivyEngine
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|File
-name|_file
+name|file
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|URL
-name|_url
+name|url
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_realm
+name|realm
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_host
+name|host
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_userName
+name|userName
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_passwd
+name|passwd
 init|=
 literal|null
 decl_stmt|;
@@ -471,7 +487,9 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"ivy.instance reference an ivy:settings defined in an other classloader.  An new default one will be used in this project."
+literal|"ivy.instance reference an ivy:settings defined in an other classloader.  "
+operator|+
+literal|"An new default one will be used in this project."
 argument_list|)
 expr_stmt|;
 name|defaultInstanceObj
@@ -522,7 +540,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|"No ivy:settings found for the default reference 'ivy.instance'.  A default instance will be used"
+literal|"No ivy:settings found for the default reference 'ivy.instance'.  "
+operator|+
+literal|"A default instance will be used"
 argument_list|)
 expr_stmt|;
 name|IvyAntSettings
@@ -580,7 +600,7 @@ name|getFile
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 return|;
 block|}
 specifier|public
@@ -589,7 +609,7 @@ name|getUrl
 parameter_list|()
 block|{
 return|return
-name|_url
+name|url
 return|;
 block|}
 specifier|public
@@ -598,7 +618,7 @@ name|getPasswd
 parameter_list|()
 block|{
 return|return
-name|_passwd
+name|passwd
 return|;
 block|}
 specifier|public
@@ -606,12 +626,12 @@ name|void
 name|setPasswd
 parameter_list|(
 name|String
-name|passwd
+name|aPasswd
 parameter_list|)
 block|{
-name|_passwd
-operator|=
 name|passwd
+operator|=
+name|aPasswd
 expr_stmt|;
 block|}
 specifier|public
@@ -620,7 +640,7 @@ name|getRealm
 parameter_list|()
 block|{
 return|return
-name|_realm
+name|realm
 return|;
 block|}
 specifier|public
@@ -628,14 +648,14 @@ name|void
 name|setRealm
 parameter_list|(
 name|String
-name|realm
+name|aRealm
 parameter_list|)
 block|{
-name|_realm
+name|realm
 operator|=
 name|format
 argument_list|(
-name|realm
+name|aRealm
 argument_list|)
 expr_stmt|;
 block|}
@@ -645,7 +665,7 @@ name|getHost
 parameter_list|()
 block|{
 return|return
-name|_host
+name|host
 return|;
 block|}
 specifier|public
@@ -653,14 +673,14 @@ name|void
 name|setHost
 parameter_list|(
 name|String
-name|host
+name|aHost
 parameter_list|)
 block|{
-name|_host
+name|host
 operator|=
 name|format
 argument_list|(
-name|host
+name|aHost
 argument_list|)
 expr_stmt|;
 block|}
@@ -670,7 +690,7 @@ name|getUsername
 parameter_list|()
 block|{
 return|return
-name|_userName
+name|userName
 return|;
 block|}
 specifier|public
@@ -678,14 +698,14 @@ name|void
 name|setUsername
 parameter_list|(
 name|String
-name|userName
+name|aUserName
 parameter_list|)
 block|{
-name|_userName
+name|userName
 operator|=
 name|format
 argument_list|(
-name|userName
+name|aUserName
 argument_list|)
 expr_stmt|;
 block|}
@@ -795,7 +815,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_file
+name|file
 operator|=
 name|file
 expr_stmt|;
@@ -812,7 +832,7 @@ name|MalformedURLException
 block|{
 name|this
 operator|.
-name|_url
+name|url
 operator|=
 operator|new
 name|URL
@@ -821,7 +841,7 @@ name|confUrl
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * public void execute() throws BuildException { ensureMessageInitialised(); if (getId()==null) {      * log("No id specified for the ivy:settings, set the instance as the default one",      * Project.MSG_DEBUG); getProject().addReference("ivy.instance", this); } else {      * getProject().addReference(id, this); } }      */
+comment|/*      * public void execute() throws BuildException {       * ensureMessageInitialised();       * if (getId()==null) {      * log("No id specified for the ivy:settings, set the instance as the default one",      * Project.MSG_DEBUG); getProject().addReference("ivy.instance", this); } else {      * getProject().addReference(id, this); } }      */
 comment|/**      * @return      */
 specifier|public
 name|Ivy
@@ -830,19 +850,19 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_ivyEngine
+name|ivyEngine
 operator|==
 literal|null
 condition|)
 block|{
-name|_ivyEngine
+name|ivyEngine
 operator|=
 name|createIvyEngine
 argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|_ivyEngine
+name|ivyEngine
 return|;
 block|}
 specifier|private
@@ -893,11 +913,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|==
 literal|null
 operator|&&
-name|_url
+name|url
 operator|==
 literal|null
 condition|)
@@ -915,7 +935,7 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|!=
 literal|null
 condition|)
@@ -923,7 +943,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_file
+name|file
 operator|.
 name|exists
 argument_list|()
@@ -935,7 +955,7 @@ name|BuildException
 argument_list|(
 literal|"settings file does not exist: "
 operator|+
-name|_file
+name|file
 argument_list|)
 throw|;
 block|}
@@ -943,7 +963,7 @@ name|ivy
 operator|.
 name|configure
 argument_list|(
-name|_file
+name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -951,7 +971,7 @@ else|else
 block|{
 if|if
 condition|(
-name|_url
+name|url
 operator|==
 literal|null
 condition|)
@@ -960,7 +980,9 @@ throw|throw
 operator|new
 name|AssertionError
 argument_list|(
-literal|"ivy setting should have either a file, either an url, and if not defineDefaultSettingFile must set it."
+literal|"ivy setting should have either a file, either an url,"
+operator|+
+literal|" and if not defineDefaultSettingFile must set it."
 argument_list|)
 throw|;
 block|}
@@ -968,7 +990,7 @@ name|ivy
 operator|.
 name|configure
 argument_list|(
-name|_url
+name|url
 argument_list|)
 expr_stmt|;
 block|}
@@ -986,17 +1008,17 @@ argument_list|(
 literal|"impossible to configure ivy:settings with given "
 operator|+
 operator|(
-name|_file
+name|file
 operator|!=
 literal|null
 condition|?
 literal|"file: "
 operator|+
-name|_file
+name|file
 else|:
 literal|"url :"
 operator|+
-name|_url
+name|url
 operator|)
 operator|+
 literal|" :"
@@ -1020,17 +1042,17 @@ argument_list|(
 literal|"impossible to configure ivy:settings with given "
 operator|+
 operator|(
-name|_file
+name|file
 operator|!=
 literal|null
 condition|?
 literal|"file: "
 operator|+
-name|_file
+name|file
 else|:
 literal|"url :"
 operator|+
-name|_url
+name|url
 operator|)
 operator|+
 literal|" :"
@@ -1219,7 +1241,7 @@ name|File
 argument_list|(
 literal|"ivyconf.xml"
 argument_list|)
-block|,}
+block|}
 decl_stmt|;
 for|for
 control|(
@@ -1238,7 +1260,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_file
+name|file
 operator|=
 name|settingsLocations
 index|[
@@ -1251,12 +1273,12 @@ name|verbose
 argument_list|(
 literal|"searching settings file: trying "
 operator|+
-name|_file
+name|file
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|.
 name|exists
 argument_list|()
@@ -1268,7 +1290,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|_file
+name|file
 operator|.
 name|exists
 argument_list|()
@@ -1300,11 +1322,11 @@ argument_list|(
 literal|"no settings file found, using Ivy 1.4 default..."
 argument_list|)
 expr_stmt|;
-name|_file
+name|file
 operator|=
 literal|null
 expr_stmt|;
-name|_url
+name|url
 operator|=
 name|IvySettings
 operator|.
@@ -1321,11 +1343,11 @@ argument_list|(
 literal|"no settings file found, using default..."
 argument_list|)
 expr_stmt|;
-name|_file
+name|file
 operator|=
 literal|null
 expr_stmt|;
-name|_url
+name|url
 operator|=
 name|IvySettings
 operator|.

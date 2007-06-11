@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/**  *   */
+comment|/*  *  Licensed to the Apache Software Foundation (ASF) under one or more  *  contributor license agreements.  See the NOTICE file distributed with  *  this work for additional information regarding copyright ownership.  *  The ASF licenses this file to You under the Apache License, Version 2.0  *  (the "License"); you may not use this file except in compliance with  *  the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an "AS IS" BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *  */
 end_comment
 
 begin_package
@@ -103,17 +103,17 @@ name|IvyVariableContainerImpl
 implements|implements
 name|IvyVariableContainer
 block|{
-specifier|protected
+specifier|private
 name|Map
-name|_overwrittenProperties
+name|overwrittenProperties
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-specifier|protected
+specifier|private
 name|Project
-name|_project
+name|project
 decl_stmt|;
 specifier|public
 name|IvyAntVariableContainer
@@ -124,7 +124,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_project
+name|project
 operator|=
 name|project
 expr_stmt|;
@@ -143,7 +143,7 @@ init|=
 operator|(
 name|String
 operator|)
-name|_overwrittenProperties
+name|overwrittenProperties
 operator|.
 name|get
 argument_list|(
@@ -159,7 +159,7 @@ condition|)
 block|{
 name|r
 operator|=
-name|_project
+name|project
 operator|.
 name|getProperty
 argument_list|(
@@ -209,7 +209,7 @@ name|r
 operator|.
 name|putAll
 argument_list|(
-name|_project
+name|project
 operator|.
 name|getProperties
 argument_list|()
@@ -219,7 +219,7 @@ name|r
 operator|.
 name|putAll
 argument_list|(
-name|_overwrittenProperties
+name|overwrittenProperties
 argument_list|)
 expr_stmt|;
 return|return
@@ -260,7 +260,7 @@ operator|+
 literal|"'"
 argument_list|)
 expr_stmt|;
-name|_overwrittenProperties
+name|overwrittenProperties
 operator|.
 name|put
 argument_list|(

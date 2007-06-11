@@ -132,11 +132,11 @@ name|IvyPostResolveTask
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|String
-name|_value
+name|value
 decl_stmt|;
 specifier|public
 name|String
@@ -144,7 +144,9 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|this
+operator|.
+name|name
 return|;
 block|}
 specifier|public
@@ -155,7 +157,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -166,7 +170,9 @@ name|getValue
 parameter_list|()
 block|{
 return|return
-name|_value
+name|this
+operator|.
+name|value
 return|;
 block|}
 specifier|public
@@ -177,7 +183,9 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|_value
+name|this
+operator|.
+name|value
 operator|=
 name|value
 expr_stmt|;
