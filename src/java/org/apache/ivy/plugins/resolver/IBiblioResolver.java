@@ -324,7 +324,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * IBiblioResolver is a resolver which can be used to resolve dependencies found in the ibiblio  * maven repository, or similar repositories. For more flexibility with url and patterns, see  * {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
+comment|/**  * IBiblioResolver is a resolver which can be used to resolve dependencies found in the ibiblio  * maven repository, or similar repositories.  *<p>  * For more flexibility with url and patterns, see  * {@link org.apache.ivy.plugins.resolver.URLResolver}.  */
 end_comment
 
 begin_class
@@ -352,20 +352,20 @@ literal|"http://www.ibiblio.org/maven/"
 decl_stmt|;
 specifier|private
 name|String
-name|_root
+name|root
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_pattern
+name|pattern
 init|=
 literal|null
 decl_stmt|;
 comment|// use poms if m2 compatible is true
 specifier|private
 name|boolean
-name|_usepoms
+name|usepoms
 init|=
 literal|true
 decl_stmt|;
@@ -477,24 +477,24 @@ condition|)
 block|{
 if|if
 condition|(
-name|_root
+name|root
 operator|==
 literal|null
 condition|)
 block|{
-name|_root
+name|root
 operator|=
 literal|"http://repo1.maven.org/maven2/"
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|_pattern
+name|pattern
 operator|==
 literal|null
 condition|)
 block|{
-name|_pattern
+name|pattern
 operator|=
 literal|"[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
 expr_stmt|;
@@ -519,11 +519,11 @@ operator|!=
 literal|null
 operator|&&
 operator|(
-name|_root
+name|root
 operator|==
 literal|null
 operator|||
-name|_pattern
+name|pattern
 operator|==
 literal|null
 operator|)
@@ -531,7 +531,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_root
+name|root
 operator|==
 literal|null
 condition|)
@@ -553,7 +553,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_root
+name|this
+operator|.
+name|root
 operator|=
 name|root
 expr_stmt|;
@@ -567,7 +569,9 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|_root
+name|this
+operator|.
+name|root
 operator|=
 name|settings
 operator|.
@@ -580,7 +584,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_pattern
+name|pattern
 operator|==
 literal|null
 condition|)
@@ -602,7 +606,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_pattern
+name|this
+operator|.
+name|pattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -616,7 +622,9 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-name|_pattern
+name|this
+operator|.
+name|pattern
 operator|=
 name|settings
 operator|.
@@ -638,9 +646,9 @@ name|getWholePattern
 parameter_list|()
 block|{
 return|return
-name|_root
+name|root
 operator|+
-name|_pattern
+name|pattern
 return|;
 block|}
 specifier|public
@@ -649,7 +657,7 @@ name|getPattern
 parameter_list|()
 block|{
 return|return
-name|_pattern
+name|pattern
 return|;
 block|}
 specifier|public
@@ -675,7 +683,9 @@ literal|"pattern must not be null"
 argument_list|)
 throw|;
 block|}
-name|_pattern
+name|this
+operator|.
+name|pattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -695,7 +705,7 @@ name|getRoot
 parameter_list|()
 block|{
 return|return
-name|_root
+name|root
 return|;
 block|}
 comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *       * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
@@ -733,7 +743,9 @@ literal|"/"
 argument_list|)
 condition|)
 block|{
-name|_root
+name|this
+operator|.
+name|root
 operator|=
 name|root
 operator|+
@@ -742,7 +754,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_root
+name|this
+operator|.
+name|root
 operator|=
 name|root
 expr_stmt|;
@@ -1112,7 +1126,7 @@ name|isUsepoms
 parameter_list|()
 block|{
 return|return
-name|_usepoms
+name|usepoms
 return|;
 block|}
 specifier|public
@@ -1123,7 +1137,9 @@ name|boolean
 name|usepoms
 parameter_list|)
 block|{
-name|_usepoms
+name|this
+operator|.
+name|usepoms
 operator|=
 name|usepoms
 expr_stmt|;
@@ -1173,7 +1189,7 @@ name|debug
 argument_list|(
 literal|"\t\tusepoms: "
 operator|+
-name|_usepoms
+name|usepoms
 argument_list|)
 expr_stmt|;
 block|}
