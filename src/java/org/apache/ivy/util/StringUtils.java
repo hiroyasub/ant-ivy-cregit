@@ -15,6 +15,16 @@ name|util
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Locale
+import|;
+end_import
+
 begin_comment
 comment|/**  * Convenient class used only for uncapitalization Usually use commons lang but here we do not want  * to have such a dependency for only one feature  */
 end_comment
@@ -65,7 +75,11 @@ return|return
 name|string
 operator|.
 name|toLowerCase
-argument_list|()
+argument_list|(
+name|Locale
+operator|.
+name|US
+argument_list|)
 return|;
 block|}
 return|return
@@ -79,7 +93,11 @@ literal|1
 argument_list|)
 operator|.
 name|toLowerCase
-argument_list|()
+argument_list|(
+name|Locale
+operator|.
+name|US
+argument_list|)
 operator|+
 name|string
 operator|.
