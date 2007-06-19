@@ -35,6 +35,10 @@ name|ModuleRevisionId
 import|;
 end_import
 
+begin_comment
+comment|/**  * A CircularDependencyStrategy indicates what ivy does when a circular dependency is detected.  * Ivy can ignore it, warn the user, or interupt the processing.   */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

@@ -75,9 +75,16 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|CircularDependencyHelper
 block|{
+comment|/** CircularDependencyHelper is not designed to be an instance */
+specifier|private
+name|CircularDependencyHelper
+parameter_list|()
+block|{
+block|}
 comment|/**      * Returns a string representation of this circular dependency graph      *       * @param descriptors      *            in order of circular dependency      * @return      */
 specifier|public
 specifier|static
