@@ -269,6 +269,22 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|sort
+operator|.
+name|SortEngineSettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|IvyAware
@@ -893,6 +909,14 @@ init|=
 literal|"resolved-[organisation]-[module]-[revision].properties"
 decl_stmt|;
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|INTERUPT_TIMEOUT
+init|=
+literal|2000
+decl_stmt|;
+specifier|private
 name|Map
 name|typeDefs
 init|=
@@ -1117,12 +1141,6 @@ decl_stmt|;
 specifier|private
 name|ClassLoader
 name|classloader
-decl_stmt|;
-specifier|private
-name|long
-name|interruptTimeout
-init|=
-literal|2000
 decl_stmt|;
 specifier|private
 name|Boolean
@@ -1496,7 +1514,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|"impossible to define glob matcher: org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found on the classpath"
+literal|"impossible to define glob matcher: "
+operator|+
+literal|"org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1726,8 +1746,8 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
+comment|//nothing to do
 block|}
-empty_stmt|;
 block|}
 block|}
 block|}
@@ -2488,7 +2508,9 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"settings url does not contain any slash (/): ivy.settings.dir variable not set"
+literal|"settings url does not contain any slash (/): "
+operator|+
+literal|"ivy.settings.dir variable not set"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2914,6 +2936,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|//nothing
 block|}
 block|}
 block|}
@@ -5509,40 +5532,40 @@ name|ModuleSettings
 block|{
 specifier|private
 name|String
-name|_resolverName
+name|resolverName
 decl_stmt|;
 specifier|private
 name|String
-name|_branch
+name|branch
 decl_stmt|;
 specifier|private
 name|String
-name|_conflictManager
+name|conflictManager
 decl_stmt|;
 specifier|public
 name|ModuleSettings
 parameter_list|(
 name|String
-name|resolverName
+name|resolver
 parameter_list|,
 name|String
-name|branch
+name|branchName
 parameter_list|,
 name|String
-name|conflictManager
+name|conflictMgr
 parameter_list|)
 block|{
-name|_resolverName
-operator|=
 name|resolverName
-expr_stmt|;
-name|_branch
 operator|=
+name|resolver
+expr_stmt|;
 name|branch
-expr_stmt|;
-name|_conflictManager
 operator|=
+name|branchName
+expr_stmt|;
 name|conflictManager
+operator|=
+name|conflictMgr
 expr_stmt|;
 block|}
 specifier|public
@@ -5551,23 +5574,23 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_resolverName
+name|resolverName
 operator|!=
 literal|null
 condition|?
 literal|"resolver: "
 operator|+
-name|_resolverName
+name|resolverName
 else|:
 literal|""
 operator|+
-name|_branch
+name|branch
 operator|!=
 literal|null
 condition|?
 literal|"branch: "
 operator|+
-name|_branch
+name|branch
 else|:
 literal|""
 return|;
@@ -5578,7 +5601,7 @@ name|getBranch
 parameter_list|()
 block|{
 return|return
-name|_branch
+name|branch
 return|;
 block|}
 specifier|public
@@ -5587,7 +5610,7 @@ name|getResolverName
 parameter_list|()
 block|{
 return|return
-name|_resolverName
+name|resolverName
 return|;
 block|}
 specifier|protected
@@ -5596,7 +5619,7 @@ name|getConflictManager
 parameter_list|()
 block|{
 return|return
-name|_conflictManager
+name|conflictManager
 return|;
 block|}
 block|}
@@ -5624,7 +5647,7 @@ name|getInterruptTimeout
 parameter_list|()
 block|{
 return|return
-name|interruptTimeout
+name|INTERUPT_TIMEOUT
 return|;
 block|}
 specifier|public
