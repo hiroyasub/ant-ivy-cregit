@@ -867,6 +867,8 @@ begin_class
 specifier|public
 class|class
 name|IvySettings
+implements|implements
+name|SortEngineSettings
 block|{
 specifier|private
 specifier|static
