@@ -43,6 +43,22 @@ name|core
 operator|.
 name|retrieve
 operator|.
+name|RetrieveEngine
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|retrieve
+operator|.
 name|RetrieveOptions
 import|;
 end_import
@@ -78,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  */
+comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  *   * @see RetrieveEngine  */
 end_comment
 
 begin_class
@@ -90,23 +106,23 @@ name|IvyPostResolveTask
 block|{
 specifier|private
 name|String
-name|_pattern
+name|pattern
 decl_stmt|;
 specifier|private
 name|String
-name|_ivypattern
+name|ivypattern
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|boolean
-name|_sync
+name|sync
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|boolean
-name|_symlink
+name|symlink
 init|=
 literal|false
 decl_stmt|;
@@ -116,7 +132,7 @@ name|getPattern
 parameter_list|()
 block|{
 return|return
-name|_pattern
+name|pattern
 return|;
 block|}
 specifier|public
@@ -127,7 +143,9 @@ name|String
 name|pattern
 parameter_list|)
 block|{
-name|_pattern
+name|this
+operator|.
+name|pattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -142,11 +160,11 @@ block|{
 name|prepareAndCheck
 argument_list|()
 expr_stmt|;
-name|_pattern
+name|pattern
 operator|=
 name|getProperty
 argument_list|(
-name|_pattern
+name|pattern
 argument_list|,
 name|getSettings
 argument_list|()
@@ -173,7 +191,7 @@ argument_list|(
 name|getResolvedMrid
 argument_list|()
 argument_list|,
-name|_pattern
+name|pattern
 argument_list|,
 operator|new
 name|RetrieveOptions
@@ -207,7 +225,7 @@ argument_list|)
 operator|.
 name|setDestIvyPattern
 argument_list|(
-name|_ivypattern
+name|ivypattern
 argument_list|)
 operator|.
 name|setArtifactFilter
@@ -217,7 +235,7 @@ argument_list|)
 operator|.
 name|setSync
 argument_list|(
-name|_sync
+name|sync
 argument_list|)
 operator|.
 name|setUseOrigin
@@ -228,7 +246,7 @@ argument_list|)
 operator|.
 name|setMakeSymlinks
 argument_list|(
-name|_symlink
+name|symlink
 argument_list|)
 operator|.
 name|setResolveId
@@ -301,7 +319,7 @@ name|getIvypattern
 parameter_list|()
 block|{
 return|return
-name|_ivypattern
+name|ivypattern
 return|;
 block|}
 specifier|public
@@ -312,7 +330,9 @@ name|String
 name|ivypattern
 parameter_list|)
 block|{
-name|_ivypattern
+name|this
+operator|.
+name|ivypattern
 operator|=
 name|ivypattern
 expr_stmt|;
@@ -323,7 +343,7 @@ name|isSync
 parameter_list|()
 block|{
 return|return
-name|_sync
+name|sync
 return|;
 block|}
 specifier|public
@@ -334,7 +354,9 @@ name|boolean
 name|sync
 parameter_list|)
 block|{
-name|_sync
+name|this
+operator|.
+name|sync
 operator|=
 name|sync
 expr_stmt|;
@@ -348,7 +370,9 @@ name|boolean
 name|symlink
 parameter_list|)
 block|{
-name|_symlink
+name|this
+operator|.
+name|symlink
 operator|=
 name|symlink
 expr_stmt|;
