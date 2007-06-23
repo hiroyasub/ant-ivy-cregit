@@ -236,6 +236,7 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|host
 operator|=
 name|uri
@@ -243,6 +244,7 @@ operator|.
 name|getHost
 argument_list|()
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|uri
@@ -417,6 +419,7 @@ name|US
 argument_list|)
 argument_list|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|URISyntaxException
@@ -431,6 +434,7 @@ operator|+
 literal|" as scheme!"
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|uri
@@ -445,6 +449,7 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|URISyntaxException
@@ -454,6 +459,7 @@ argument_list|,
 literal|"Missing host in URI or in resolver"
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|uri
@@ -463,6 +469,7 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|URISyntaxException
@@ -472,6 +479,7 @@ argument_list|,
 literal|"Missing path in URI"
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|uri
@@ -486,6 +494,7 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|URISyntaxException
@@ -495,6 +504,7 @@ argument_list|,
 literal|"Missing username in URI or in resolver"
 argument_list|)
 throw|;
+block|}
 return|return
 name|uri
 return|;

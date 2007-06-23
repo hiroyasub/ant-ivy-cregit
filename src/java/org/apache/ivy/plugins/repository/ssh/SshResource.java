@@ -217,9 +217,11 @@ condition|(
 operator|!
 name|resolved
 condition|)
+block|{
 name|resolve
 argument_list|()
 expr_stmt|;
+block|}
 return|return
 name|bExists
 return|;
@@ -235,9 +237,11 @@ condition|(
 operator|!
 name|resolved
 condition|)
+block|{
 name|resolve
 argument_list|()
 expr_stmt|;
+block|}
 return|return
 name|len
 return|;
@@ -253,9 +257,11 @@ condition|(
 operator|!
 name|resolved
 condition|)
+block|{
 name|resolve
 argument_list|()
 expr_stmt|;
+block|}
 return|return
 name|lastModified
 return|;

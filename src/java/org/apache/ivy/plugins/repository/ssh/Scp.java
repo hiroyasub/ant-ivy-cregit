@@ -156,6 +156,7 @@ specifier|public
 class|class
 name|Scp
 block|{
+specifier|private
 name|Session
 name|session
 decl_stmt|;
@@ -267,6 +268,7 @@ name|session
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -274,6 +276,7 @@ argument_list|(
 literal|"Cannot accept null argument!"
 argument_list|)
 throw|;
+block|}
 name|this
 operator|.
 name|session
@@ -307,7 +310,9 @@ name|c
 operator|==
 literal|0
 condition|)
+block|{
 return|return;
+block|}
 if|if
 condition|(
 name|c
@@ -315,6 +320,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -322,6 +328,7 @@ argument_list|(
 literal|"Remote scp terminated unexpectedly."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 operator|(
@@ -336,6 +343,7 @@ operator|!=
 literal|2
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -343,12 +351,14 @@ argument_list|(
 literal|"Remote scp sent illegal error code."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|c
 operator|==
 literal|2
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -356,6 +366,7 @@ argument_list|(
 literal|"Remote scp terminated with error."
 argument_list|)
 throw|;
+block|}
 name|String
 name|err
 init|=
@@ -412,6 +423,7 @@ argument_list|()
 operator|>
 literal|8192
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -419,6 +431,7 @@ argument_list|(
 literal|"Remote scp sent a too long line"
 argument_list|)
 throw|;
+block|}
 name|int
 name|c
 init|=
@@ -433,6 +446,7 @@ name|c
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -440,13 +454,16 @@ argument_list|(
 literal|"Remote scp terminated unexpectedly."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|c
 operator|==
 literal|'\n'
 condition|)
+block|{
 break|break;
+block|}
 name|sb
 operator|.
 name|append
@@ -491,6 +508,7 @@ argument_list|()
 operator|<
 literal|8
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -498,6 +516,7 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary, line too short."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 operator|(
@@ -522,6 +541,7 @@ operator|==
 literal|' '
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -529,8 +549,9 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary."
 argument_list|)
 throw|;
+block|}
 name|int
-name|length_name_sep
+name|lengthNameSep
 init|=
 name|line
 operator|.
@@ -543,11 +564,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|length_name_sep
+name|lengthNameSep
 operator|==
 operator|-
 literal|1
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -555,8 +577,9 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary."
 argument_list|)
 throw|;
+block|}
 name|String
-name|length_substring
+name|lengthSubstring
 init|=
 name|line
 operator|.
@@ -564,17 +587,17 @@ name|substring
 argument_list|(
 literal|5
 argument_list|,
-name|length_name_sep
+name|lengthNameSep
 argument_list|)
 decl_stmt|;
 name|String
-name|name_substring
+name|nameSubstring
 init|=
 name|line
 operator|.
 name|substring
 argument_list|(
-name|length_name_sep
+name|lengthNameSep
 operator|+
 literal|1
 argument_list|)
@@ -582,7 +605,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|(
-name|length_substring
+name|lengthSubstring
 operator|.
 name|length
 argument_list|()
@@ -591,7 +614,7 @@ literal|0
 operator|)
 operator|||
 operator|(
-name|name_substring
+name|nameSubstring
 operator|.
 name|length
 argument_list|()
@@ -599,6 +622,7 @@ operator|<=
 literal|0
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -606,17 +630,18 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 operator|(
 literal|6
 operator|+
-name|length_substring
+name|lengthSubstring
 operator|.
 name|length
 argument_list|()
 operator|+
-name|name_substring
+name|nameSubstring
 operator|.
 name|length
 argument_list|()
@@ -627,6 +652,7 @@ operator|.
 name|length
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -634,6 +660,7 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary."
 argument_list|)
 throw|;
+block|}
 try|try
 block|{
 name|len
@@ -642,7 +669,7 @@ name|Long
 operator|.
 name|parseLong
 argument_list|(
-name|length_substring
+name|lengthSubstring
 argument_list|)
 expr_stmt|;
 block|}
@@ -666,6 +693,7 @@ name|len
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -673,6 +701,7 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary, illegal file length."
 argument_list|)
 throw|;
+block|}
 name|fileInfo
 operator|.
 name|setLength
@@ -684,7 +713,7 @@ name|fileInfo
 operator|.
 name|setFilename
 argument_list|(
-name|name_substring
+name|nameSubstring
 argument_list|)
 expr_stmt|;
 block|}
@@ -706,13 +735,13 @@ name|long
 name|modtime
 decl_stmt|;
 name|long
-name|first_msec
+name|firstMsec
 decl_stmt|;
 name|long
 name|atime
 decl_stmt|;
 name|long
-name|second_msec
+name|secondMsec
 decl_stmt|;
 if|if
 condition|(
@@ -723,6 +752,7 @@ argument_list|()
 operator|<
 literal|8
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -730,8 +760,9 @@ argument_list|(
 literal|"Malformed T line sent by remote SCP binary, line too short."
 argument_list|)
 throw|;
+block|}
 name|int
-name|first_msec_begin
+name|firstMsecBegin
 init|=
 name|line
 operator|.
@@ -744,17 +775,18 @@ literal|1
 decl_stmt|;
 if|if
 condition|(
-name|first_msec_begin
+name|firstMsecBegin
 operator|==
 literal|0
 operator|||
-name|first_msec_begin
+name|firstMsecBegin
 operator|>=
 name|line
 operator|.
 name|length
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -762,44 +794,9 @@ argument_list|(
 literal|"Malformed T line sent by remote SCP binary, line not enough data."
 argument_list|)
 throw|;
+block|}
 name|int
-name|atime_begin
-init|=
-name|line
-operator|.
-name|indexOf
-argument_list|(
-literal|" "
-argument_list|,
-name|first_msec_begin
-operator|+
-literal|1
-argument_list|)
-operator|+
-literal|1
-decl_stmt|;
-if|if
-condition|(
-name|atime_begin
-operator|==
-literal|0
-operator|||
-name|atime_begin
-operator|>=
-name|line
-operator|.
-name|length
-argument_list|()
-condition|)
-throw|throw
-operator|new
-name|RemoteScpException
-argument_list|(
-literal|"Malformed T line sent by remote SCP binary, line not enough data."
-argument_list|)
-throw|;
-name|int
-name|second_msec_begin
+name|atimeBegin
 init|=
 name|line
 operator|.
@@ -807,7 +804,7 @@ name|indexOf
 argument_list|(
 literal|" "
 argument_list|,
-name|atime_begin
+name|firstMsecBegin
 operator|+
 literal|1
 argument_list|)
@@ -816,17 +813,18 @@ literal|1
 decl_stmt|;
 if|if
 condition|(
-name|second_msec_begin
+name|atimeBegin
 operator|==
 literal|0
 operator|||
-name|second_msec_begin
+name|atimeBegin
 operator|>=
 name|line
 operator|.
 name|length
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -834,6 +832,45 @@ argument_list|(
 literal|"Malformed T line sent by remote SCP binary, line not enough data."
 argument_list|)
 throw|;
+block|}
+name|int
+name|secondMsecBegin
+init|=
+name|line
+operator|.
+name|indexOf
+argument_list|(
+literal|" "
+argument_list|,
+name|atimeBegin
+operator|+
+literal|1
+argument_list|)
+operator|+
+literal|1
+decl_stmt|;
+if|if
+condition|(
+name|secondMsecBegin
+operator|==
+literal|0
+operator|||
+name|secondMsecBegin
+operator|>=
+name|line
+operator|.
+name|length
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|RemoteScpException
+argument_list|(
+literal|"Malformed T line sent by remote SCP binary, line not enough data."
+argument_list|)
+throw|;
+block|}
 try|try
 block|{
 name|modtime
@@ -848,13 +885,13 @@ name|substring
 argument_list|(
 literal|0
 argument_list|,
-name|first_msec_begin
+name|firstMsecBegin
 operator|-
 literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|first_msec
+name|firstMsec
 operator|=
 name|Long
 operator|.
@@ -864,9 +901,9 @@ name|line
 operator|.
 name|substring
 argument_list|(
-name|first_msec_begin
+name|firstMsecBegin
 argument_list|,
-name|atime_begin
+name|atimeBegin
 operator|-
 literal|1
 argument_list|)
@@ -882,15 +919,15 @@ name|line
 operator|.
 name|substring
 argument_list|(
-name|atime_begin
+name|atimeBegin
 argument_list|,
-name|second_msec_begin
+name|secondMsecBegin
 operator|-
 literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|second_msec
+name|secondMsec
 operator|=
 name|Long
 operator|.
@@ -900,7 +937,7 @@ name|line
 operator|.
 name|substring
 argument_list|(
-name|second_msec_begin
+name|secondMsecBegin
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -925,7 +962,7 @@ name|modtime
 operator|<
 literal|0
 operator|||
-name|first_msec
+name|firstMsec
 operator|<
 literal|0
 operator|||
@@ -933,10 +970,11 @@ name|atime
 operator|<
 literal|0
 operator|||
-name|second_msec
+name|secondMsec
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -944,6 +982,7 @@ argument_list|(
 literal|"Malformed C line sent by remote SCP binary, illegal file length."
 argument_list|)
 throw|;
+block|}
 name|fileInfo
 operator|.
 name|setLastModified
@@ -1005,17 +1044,21 @@ operator|.
 name|isConnected
 argument_list|()
 condition|)
+block|{
 name|channel
 operator|.
 name|start
 argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|channel
 operator|.
 name|connect
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
@@ -1197,17 +1240,21 @@ operator|.
 name|isConnected
 argument_list|()
 condition|)
+block|{
 name|channel
 operator|.
 name|start
 argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|channel
 operator|.
 name|connect
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
@@ -1323,13 +1370,16 @@ name|buffer
 operator|.
 name|length
 condition|)
+block|{
 name|trans
 operator|=
 name|buffer
 operator|.
 name|length
 expr_stmt|;
+block|}
 else|else
+block|{
 name|trans
 operator|=
 operator|(
@@ -1337,6 +1387,7 @@ name|int
 operator|)
 name|remain
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|fis
@@ -1352,6 +1403,7 @@ argument_list|)
 operator|!=
 name|trans
 condition|)
+block|{
 throw|throw
 operator|new
 name|IOException
@@ -1361,6 +1413,7 @@ operator|+
 name|localFile
 argument_list|)
 throw|;
+block|}
 name|os
 operator|.
 name|write
@@ -1495,17 +1548,21 @@ operator|.
 name|isConnected
 argument_list|()
 condition|)
+block|{
 name|channel
 operator|.
 name|start
 argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|channel
 operator|.
 name|connect
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
@@ -1567,6 +1624,7 @@ name|c
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -1574,6 +1632,7 @@ argument_list|(
 literal|"Remote scp terminated unexpectedly."
 argument_list|)
 throw|;
+block|}
 name|String
 name|line
 init|=
@@ -1624,6 +1683,7 @@ operator|==
 literal|2
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|RemoteScpException
@@ -1633,6 +1693,7 @@ operator|+
 name|line
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|c
@@ -1713,13 +1774,16 @@ name|buffer
 operator|.
 name|length
 condition|)
+block|{
 name|trans
 operator|=
 name|buffer
 operator|.
 name|length
 expr_stmt|;
+block|}
 else|else
+block|{
 name|trans
 operator|=
 operator|(
@@ -1727,8 +1791,9 @@ name|int
 operator|)
 name|remain
 expr_stmt|;
+block|}
 name|int
-name|this_time_received
+name|thisTimeReceived
 init|=
 name|is
 operator|.
@@ -1743,7 +1808,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|this_time_received
+name|thisTimeReceived
 operator|<
 literal|0
 condition|)
@@ -1764,12 +1829,12 @@ name|buffer
 argument_list|,
 literal|0
 argument_list|,
-name|this_time_received
+name|thisTimeReceived
 argument_list|)
 expr_stmt|;
 name|remain
 operator|-=
-name|this_time_received
+name|thisTimeReceived
 expr_stmt|;
 block|}
 name|targetStream
@@ -1790,11 +1855,13 @@ name|targetStream
 operator|!=
 literal|null
 condition|)
+block|{
 name|targetStream
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 throw|throw
 operator|(
 name|e
@@ -1928,6 +1995,7 @@ operator|==
 literal|null
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -1935,6 +2003,7 @@ argument_list|(
 literal|"Null argument."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|mode
@@ -1944,6 +2013,7 @@ argument_list|()
 operator|!=
 literal|4
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -1951,6 +2021,7 @@ argument_list|(
 literal|"Invalid mode."
 argument_list|)
 throw|;
+block|}
 for|for
 control|(
 name|int
@@ -1968,8 +2039,10 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
+operator|!
 name|Character
 operator|.
 name|isDigit
@@ -1981,9 +2054,8 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|)
-operator|==
-literal|false
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -1991,6 +2063,8 @@ argument_list|(
 literal|"Invalid mode."
 argument_list|)
 throw|;
+block|}
+block|}
 name|String
 name|cmd
 init|=
@@ -2058,11 +2132,13 @@ name|channel
 operator|!=
 literal|null
 condition|)
+block|{
 name|channel
 operator|.
 name|disconnect
 argument_list|()
 expr_stmt|;
+block|}
 throw|throw
 operator|(
 name|IOException
@@ -2159,6 +2235,7 @@ operator|==
 literal|null
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -2166,6 +2243,7 @@ argument_list|(
 literal|"Null argument."
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|mode
@@ -2175,6 +2253,7 @@ argument_list|()
 operator|!=
 literal|4
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -2182,6 +2261,7 @@ argument_list|(
 literal|"Invalid mode."
 argument_list|)
 throw|;
+block|}
 for|for
 control|(
 name|int
@@ -2199,8 +2279,10 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
+operator|!
 name|Character
 operator|.
 name|isDigit
@@ -2212,9 +2294,8 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|)
-operator|==
-literal|false
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -2222,6 +2303,8 @@ argument_list|(
 literal|"Invalid mode."
 argument_list|)
 throw|;
+block|}
+block|}
 name|String
 name|cmd
 init|=
@@ -2293,11 +2376,13 @@ name|channel
 operator|!=
 literal|null
 condition|)
+block|{
 name|channel
 operator|.
 name|disconnect
 argument_list|()
 expr_stmt|;
+block|}
 throw|throw
 operator|(
 name|IOException
@@ -2397,6 +2482,7 @@ operator|==
 literal|null
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -2404,6 +2490,7 @@ argument_list|(
 literal|"Null argument."
 argument_list|)
 throw|;
+block|}
 name|String
 name|cmd
 init|=
@@ -2452,11 +2539,13 @@ name|channel
 operator|!=
 literal|null
 condition|)
+block|{
 name|channel
 operator|.
 name|disconnect
 argument_list|()
 expr_stmt|;
+block|}
 throw|throw
 operator|(
 name|IOException
@@ -2508,6 +2597,7 @@ name|remoteFile
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -2515,6 +2605,7 @@ argument_list|(
 literal|"Null argument."
 argument_list|)
 throw|;
+block|}
 name|String
 name|cmd
 init|=
@@ -2590,11 +2681,13 @@ name|channel
 operator|!=
 literal|null
 condition|)
+block|{
 name|channel
 operator|.
 name|disconnect
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 return|return
 name|fileInfo

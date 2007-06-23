@@ -241,9 +241,18 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|SshCache
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|SSH_DEFAULT_PORT
+init|=
+literal|22
+decl_stmt|;
 specifier|private
 name|SshCache
 parameter_list|()
@@ -301,7 +310,7 @@ specifier|private
 name|int
 name|port
 init|=
-literal|22
+name|SSH_DEFAULT_PORT
 decl_stmt|;
 comment|/**          * @return the host          */
 specifier|public
@@ -430,6 +439,7 @@ name|newChannel
 operator|!=
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalStateException
@@ -437,6 +447,7 @@ argument_list|(
 literal|"Only one sftp channelSftp per session allowed"
 argument_list|)
 throw|;
+block|}
 name|this
 operator|.
 name|channelSftp
@@ -600,8 +611,9 @@ literal|1
 operator|&&
 name|port
 operator|!=
-literal|22
+name|SSH_DEFAULT_PORT
 condition|)
+block|{
 name|portToUse
 operator|=
 name|Integer
@@ -611,6 +623,7 @@ argument_list|(
 name|port
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|user
 operator|.
@@ -664,7 +677,7 @@ name|session
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets a session to a given combined key into the cache If an old session object already      * exists, close and remove it      *       * @param user      *            of the session      * @param host      *            of the session      * @param port      *            of the session      * @param session      *            Session to save      */
+comment|/**      * Sets a session to a given combined key into the cache If an old session object already      * exists, close and remove it      *       * @param user      *            of the session      * @param host      *            of the session      * @param port      *            of the session      * @param newSession      *            Session to save      */
 specifier|private
 name|void
 name|setSession
@@ -713,6 +726,7 @@ name|entry
 operator|!=
 literal|null
 condition|)
+block|{
 name|oldSession
 operator|=
 name|entry
@@ -720,6 +734,7 @@ operator|.
 name|getSession
 argument_list|()
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|oldSession
@@ -817,6 +832,7 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|sessionCacheMap
 operator|.
 name|remove
@@ -827,6 +843,7 @@ name|getSession
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -900,6 +917,7 @@ name|entry
 operator|!=
 literal|null
 condition|)
+block|{
 name|setSession
 argument_list|(
 name|entry
@@ -920,6 +938,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * retrieves an sftp channel from the cache      *       * @param host      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
 specifier|public
@@ -1013,6 +1032,7 @@ name|entry
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -1024,6 +1044,7 @@ operator|+
 literal|" in the cache"
 argument_list|)
 throw|;
+block|}
 name|entry
 operator|.
 name|setChannelSftp
@@ -1084,6 +1105,7 @@ name|entry
 operator|!=
 literal|null
 condition|)
+block|{
 name|session
 operator|=
 name|entry
@@ -1091,6 +1113,7 @@ operator|.
 name|getSession
 argument_list|()
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|session
@@ -1131,6 +1154,7 @@ operator|!=
 operator|-
 literal|1
 condition|)
+block|{
 name|session
 operator|=
 name|jsch
@@ -1144,7 +1168,9 @@ argument_list|,
 name|port
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|session
 operator|=
 name|jsch
@@ -1156,6 +1182,7 @@ argument_list|,
 name|host
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|pemFile
@@ -1181,7 +1208,7 @@ operator|.
 name|setUserInfo
 argument_list|(
 operator|new
-name|cfUserInfo
+name|CfUserInfo
 argument_list|(
 name|host
 argument_list|,
@@ -1277,7 +1304,7 @@ comment|/**      * feeds in password silently into JSch      */
 specifier|private
 specifier|static
 class|class
-name|cfUserInfo
+name|CfUserInfo
 implements|implements
 name|UserInfo
 block|{
@@ -1309,7 +1336,7 @@ name|File
 name|passfile
 decl_stmt|;
 specifier|public
-name|cfUserInfo
+name|CfUserInfo
 parameter_list|(
 name|String
 name|host
