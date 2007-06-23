@@ -198,11 +198,11 @@ return|;
 block|}
 specifier|private
 name|ArtifactId
-name|_artifactId
+name|artifactId
 decl_stmt|;
 specifier|private
 name|ModuleRevisionId
-name|_mrid
+name|mrid
 decl_stmt|;
 specifier|public
 name|ArtifactRevisionId
@@ -228,10 +228,10 @@ specifier|public
 name|ArtifactRevisionId
 parameter_list|(
 name|ArtifactId
-name|artifactId
+name|artfId
 parameter_list|,
 name|ModuleRevisionId
-name|mrid
+name|mdlRevId
 parameter_list|,
 name|Map
 name|extraAttributes
@@ -244,13 +244,13 @@ argument_list|,
 name|extraAttributes
 argument_list|)
 expr_stmt|;
-name|_artifactId
-operator|=
 name|artifactId
-expr_stmt|;
-name|_mrid
 operator|=
+name|artfId
+expr_stmt|;
 name|mrid
+operator|=
+name|mdlRevId
 expr_stmt|;
 name|setStandardAttribute
 argument_list|(
@@ -393,6 +393,7 @@ name|hashCode
 parameter_list|()
 block|{
 comment|// WARN: uniqueness needs to be relatively strong here
+comment|//CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -428,6 +429,7 @@ argument_list|()
 operator|*
 literal|37
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| ON
 return|return
 name|hash
 return|;
@@ -487,7 +489,7 @@ name|getArtifactId
 parameter_list|()
 block|{
 return|return
-name|_artifactId
+name|artifactId
 return|;
 block|}
 specifier|public
@@ -496,7 +498,7 @@ name|getModuleRevisionId
 parameter_list|()
 block|{
 return|return
-name|_mrid
+name|mrid
 return|;
 block|}
 specifier|public
@@ -505,7 +507,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_artifactId
+name|artifactId
 operator|.
 name|getName
 argument_list|()
@@ -517,7 +519,7 @@ name|getType
 parameter_list|()
 block|{
 return|return
-name|_artifactId
+name|artifactId
 operator|.
 name|getType
 argument_list|()
@@ -529,7 +531,7 @@ name|getExt
 parameter_list|()
 block|{
 return|return
-name|_artifactId
+name|artifactId
 operator|.
 name|getExt
 argument_list|()
@@ -542,7 +544,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_mrid
+name|mrid
 operator|.
 name|getRevision
 argument_list|()

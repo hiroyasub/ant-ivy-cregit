@@ -723,6 +723,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
+comment|//CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -748,6 +749,7 @@ argument_list|()
 operator|*
 literal|17
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| OFF
 return|return
 name|hash
 return|;

@@ -33,16 +33,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileNotFoundException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|FileOutputStream
 import|;
 end_import
@@ -1207,8 +1197,6 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|FileNotFoundException
 block|{
 name|DependencyResolver
 name|oldDictator
@@ -3131,7 +3119,9 @@ operator|.
 name|getId
 argument_list|()
 operator|+
-literal|" isn't transitively evicted, at least one caller was not evicted"
+literal|" isn't transitively evicted, at least one caller was"
+operator|+
+literal|" not evicted"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4299,7 +4289,9 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"setting all nodes as pending conflicts for later conflict resolution: "
+literal|"setting all nodes as pending conflicts for later conflict"
+operator|+
+literal|" resolution: "
 operator|+
 name|conflicts
 argument_list|)
