@@ -202,6 +202,7 @@ name|int
 name|_hashCode
 parameter_list|()
 block|{
+comment|//CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -237,6 +238,7 @@ operator|.
 name|hashCode
 argument_list|()
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| ON
 return|return
 name|hash
 return|;
