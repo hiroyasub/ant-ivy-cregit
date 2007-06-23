@@ -73,27 +73,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
 import|;
 end_import
 
@@ -573,18 +553,6 @@ name|DefaultHandler
 import|;
 end_import
 
-begin_import
-import|import
-name|sun
-operator|.
-name|security
-operator|.
-name|action
-operator|.
-name|GetIntegerAction
-import|;
-end_import
-
 begin_comment
 comment|/**  *  */
 end_comment
@@ -598,19 +566,19 @@ name|TestCase
 block|{
 specifier|private
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|private
 name|CacheManager
-name|_cacheManager
+name|cacheManager
 decl_stmt|;
 specifier|public
 name|ResolveTest
@@ -624,14 +592,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|=
 name|Ivy
 operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -642,14 +610,14 @@ literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
 expr_stmt|;
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -657,13 +625,13 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_cacheManager
+name|cacheManager
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|createCache
@@ -675,7 +643,7 @@ name|void
 name|createCache
 parameter_list|()
 block|{
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
@@ -717,7 +685,7 @@ name|del
 operator|.
 name|setDir
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|del
@@ -733,11 +701,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_settings
+name|settings
 operator|.
 name|setCacheArtifactPattern
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|substitute
 argument_list|(
@@ -748,7 +716,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -837,7 +805,7 @@ expr_stmt|;
 name|String
 name|cachePath
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getArchivePathInCache
 argument_list|(
@@ -914,7 +882,7 @@ argument_list|)
 expr_stmt|;
 name|cachePath
 operator|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getArchivePathInCache
 argument_list|(
@@ -946,7 +914,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -1089,7 +1057,7 @@ comment|// verify the saved origin on disk
 name|ArtifactOrigin
 name|ivyOrigin
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getSavedArtifactOrigin
 argument_list|(
@@ -1129,7 +1097,7 @@ comment|// now resolve the same artifact again and verify the origin of the (not
 comment|// artifact
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -1264,7 +1232,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -1387,7 +1355,7 @@ decl_stmt|;
 name|ArtifactOrigin
 name|origin
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getSavedArtifactOrigin
 argument_list|(
@@ -1400,9 +1368,9 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getArchivePathInCache
 argument_list|(
@@ -1428,7 +1396,7 @@ literal|"location for artifact not correct."
 argument_list|,
 name|expectedLocation
 argument_list|,
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getArchiveFileInCache
 argument_list|(
@@ -1451,7 +1419,7 @@ comment|// mod1.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -1519,7 +1487,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -1533,7 +1501,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -1586,7 +1554,7 @@ comment|// mod1.4 depends on modfailure, modfailure has a bad status
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -1706,7 +1674,7 @@ comment|// mod1.4 depends on mod1.6, in which the ivy file has no revision
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2078,7 +2046,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2145,7 +2113,7 @@ comment|// module depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2213,7 +2181,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -2227,7 +2195,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -2270,7 +2238,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -2321,7 +2289,7 @@ name|Exception
 block|{
 comment|// mod1.1 depends on mod1.2
 comment|// we first do a simple resolve so that module is in cache
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -2438,7 +2406,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -2452,7 +2420,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -2763,7 +2731,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -2777,7 +2745,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -2857,7 +2825,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -2883,7 +2851,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org1"
 argument_list|,
@@ -3098,7 +3066,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -3117,7 +3085,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -3143,7 +3111,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 literal|"mod1.2/ivy.xml"
 argument_list|)
@@ -3160,7 +3128,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org1"
 argument_list|,
@@ -3184,7 +3152,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 literal|"mod1.2.jar"
 argument_list|)
@@ -3205,7 +3173,7 @@ comment|// mod6.1 depends on mod1.2 2.0 in conf default, and conf extension exte
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -3273,7 +3241,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -3287,7 +3255,7 @@ expr_stmt|;
 comment|// dependencies from default
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -3340,7 +3308,7 @@ comment|// mod6.1 depends on mod1.2 2.0 in conf default, and conf extension exte
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -3408,7 +3376,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -3422,7 +3390,7 @@ expr_stmt|;
 comment|// dependencies from default
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -3475,7 +3443,7 @@ comment|// mod6.1 depends on mod1.2 2.0 in conf default, and conf extension exte
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -3594,7 +3562,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -3607,7 +3575,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -3665,7 +3633,7 @@ comment|// conf extension extends default
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -3792,7 +3760,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -3805,7 +3773,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -3848,7 +3816,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -3909,7 +3877,7 @@ comment|// mod6.1 2.0 depends on mod1.2 2.2 in conf (default->default)
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -4156,7 +4124,7 @@ comment|// depends on mod1.2 2.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -4246,7 +4214,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4308,7 +4276,7 @@ comment|// depends on mod1.2 2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -4435,7 +4403,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -4448,7 +4416,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4491,7 +4459,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4534,7 +4502,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4577,7 +4545,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4631,7 +4599,7 @@ comment|// so mod1.2 2.0 should be evicted in conf extension
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -4858,7 +4826,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -4871,7 +4839,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4914,7 +4882,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -4957,7 +4925,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -5013,7 +4981,7 @@ comment|// mod1.3 and selects two of its artifacts
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -5554,7 +5522,7 @@ comment|// mod2.2 depends on mod1.3 and selects its artifacts
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -5622,7 +5590,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -5636,7 +5604,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -5732,7 +5700,7 @@ comment|// mod2.2 depends on mod1.3 and selects its artifacts
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -5800,7 +5768,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -5813,7 +5781,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -5910,7 +5878,7 @@ comment|// mod2.2 depends on mod1.3 and specify its artifacts and a conf mapping
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -5986,7 +5954,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -5999,7 +5967,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6095,7 +6063,7 @@ comment|// mod2.3 depends on mod2.1 and selects its artifacts in myconf1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -6163,7 +6131,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -6176,7 +6144,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6273,7 +6241,7 @@ comment|// mod2.3 depends on mod2.1 and selects its artifacts in myconf1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -6341,7 +6309,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -6354,7 +6322,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6450,7 +6418,7 @@ comment|// mod2.3 depends on mod2.1 and selects its artifacts
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -6518,7 +6486,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -6531,7 +6499,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6628,7 +6596,7 @@ comment|// mod2.3 depends on mod2.1 and selects its artifacts
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -6696,7 +6664,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -6709,7 +6677,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6806,7 +6774,7 @@ comment|// mod2.3 depends on mod2.1 and badly excludes artifacts with incorrect 
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -6874,7 +6842,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -6887,7 +6855,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -6983,7 +6951,7 @@ comment|// mod2.3 depends on mod2.1 and excludes artifacts with exact matcher
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -7051,7 +7019,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -7064,7 +7032,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7161,7 +7129,7 @@ comment|// mod2.3 depends on mod2.1 and excludes artifacts with regexp matcher
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -7229,7 +7197,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -7242,7 +7210,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7339,7 +7307,7 @@ comment|// mod2.3 depends on mod2.1 and excludes artifacts with glob matcher
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -7407,7 +7375,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -7420,7 +7388,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7517,7 +7485,7 @@ comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -7585,7 +7553,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -7599,7 +7567,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7642,7 +7610,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7695,7 +7663,7 @@ comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -7768,7 +7736,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -7782,7 +7750,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7825,7 +7793,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -7877,7 +7845,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8027,7 +7995,7 @@ block|{
 comment|// mod2.1 (compile, runtime) depends on mod1.1 which depends on mod1.2
 comment|// compile conf is not transitive
 comment|// first we resolve compile conf only
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8054,7 +8022,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8097,7 +8065,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8139,7 +8107,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// then we resolve runtime conf
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8166,7 +8134,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8211,7 +8179,7 @@ comment|// same as before, but resolve both confs in one call
 name|ResolveReport
 name|r
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8287,7 +8255,7 @@ comment|// mod2.1 (compile, runtime) depends on mod1.1 which depends on mod1.2
 comment|// compile conf is not transitive
 comment|// compile extends runtime
 comment|// first we resolve compile conf only
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8314,7 +8282,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8357,7 +8325,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8399,7 +8367,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// then we resolve runtime conf
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8426,7 +8394,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8471,7 +8439,7 @@ comment|// same as before, but resolve both confs in one call
 name|ResolveReport
 name|r
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8547,7 +8515,7 @@ comment|// mod2.1 (compile, runtime) depends on mod1.1 which depends on mod1.2
 comment|// compile conf is not transitive
 comment|// runtime extends compile
 comment|// first we resolve compile conf only
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8574,7 +8542,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8617,7 +8585,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8659,7 +8627,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// then we resolve runtime conf
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8686,7 +8654,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -8731,7 +8699,7 @@ comment|// same as before, but resolve both confs in one call
 name|ResolveReport
 name|r
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8811,7 +8779,7 @@ comment|// compile conf is not transitive and extends runtime
 name|ResolveReport
 name|r
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -8889,7 +8857,7 @@ literal|"mod1.2"
 argument_list|,
 literal|"2.0"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -8939,7 +8907,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -8978,7 +8946,7 @@ literal|"mod2.1"
 argument_list|,
 literal|"0.3.2"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9011,7 +8979,7 @@ comment|// compile conf is not transitive and extends runtime
 name|ResolveReport
 name|r
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -9093,7 +9061,7 @@ literal|"mod1.2"
 argument_list|,
 literal|"2.0"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9143,7 +9111,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9193,7 +9161,7 @@ literal|"mod1.1"
 argument_list|,
 literal|"1.0"
 argument_list|)
-block|,}
+block|}
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9222,7 +9190,7 @@ comment|// - mod3.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -9290,7 +9258,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -9304,7 +9272,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9347,7 +9315,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9390,7 +9358,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9445,7 +9413,7 @@ comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -9513,7 +9481,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -9589,7 +9557,7 @@ expr_stmt|;
 name|File
 name|r
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getConfigurationResolveReportInCache
 argument_list|(
@@ -9714,7 +9682,7 @@ expr_stmt|;
 comment|// the report should contain the evicted revision
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9757,7 +9725,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9821,7 +9789,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -9877,7 +9845,7 @@ comment|// - mod6.1 v 0.3 which depends on mod1.2 v 2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -9980,7 +9948,7 @@ decl_stmt|;
 name|File
 name|r
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getConfigurationResolveReportInCache
 argument_list|(
@@ -10108,7 +10076,7 @@ expr_stmt|;
 comment|// the report should contain the evicted revision
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10151,7 +10119,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10215,7 +10183,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10439,7 +10407,7 @@ comment|// mod7.1 v1.0 depends on mod 1.2 v1.0 (which should be evicted by trans
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -10507,7 +10475,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -10521,7 +10489,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10564,7 +10532,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10665,7 +10633,7 @@ comment|// - mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -10697,7 +10665,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10773,7 +10741,7 @@ comment|// mod2.1 conf B depends on mod1.2 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -10841,7 +10809,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -10855,7 +10823,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10898,7 +10866,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10941,7 +10909,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -10999,7 +10967,7 @@ comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -11067,7 +11035,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -11081,7 +11049,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11145,7 +11113,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11188,7 +11156,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11232,7 +11200,7 @@ expr_stmt|;
 comment|// should have been evicted before download
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11313,7 +11281,7 @@ comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -11381,7 +11349,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -11395,7 +11363,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11459,7 +11427,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11502,7 +11470,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11604,7 +11572,7 @@ comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -11672,7 +11640,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -11686,7 +11654,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11750,7 +11718,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11793,7 +11761,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -11975,7 +11943,7 @@ comment|// mod5.1 r4.2 conf B depends on mod1.2 r2.0
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -12043,7 +12011,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -12057,7 +12025,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12121,7 +12089,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12185,7 +12153,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12228,7 +12196,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12359,7 +12327,7 @@ comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -12427,7 +12395,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -12441,7 +12409,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12484,7 +12452,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12527,7 +12495,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12584,7 +12552,7 @@ comment|// - mod1.2 v 2.0 and forces it
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -12652,7 +12620,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -12666,7 +12634,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12743,7 +12711,7 @@ comment|// - mod3.2 v 1.2 which depends on mod1.2 v 2.1 and on mod3.1 v1.0.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -12796,7 +12764,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12855,7 +12823,7 @@ comment|// - mod1.2 v 1.0 and forces it
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -12887,7 +12855,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -12989,7 +12957,7 @@ comment|// - mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -13021,7 +12989,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13097,7 +13065,7 @@ comment|// - mod3.1 v 1.2 which depends on mod1.2 v 2+
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -13165,7 +13133,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -13179,7 +13147,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13222,7 +13190,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13265,7 +13233,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13320,7 +13288,7 @@ comment|// - mod3.1 v 1.2 in conf test which depends on mod1.2 v 2+
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -13388,7 +13356,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -13402,7 +13370,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13445,7 +13413,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13488,7 +13456,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13545,7 +13513,7 @@ comment|// which depends on mod1.2 v 2+ in conf compile->default
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -13613,7 +13581,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -13627,7 +13595,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13670,7 +13638,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13713,7 +13681,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13774,7 +13742,7 @@ comment|// which depends on mod4.1 v 4+ in conf compile->compile
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -13843,7 +13811,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13886,7 +13854,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13929,7 +13897,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -13987,7 +13955,7 @@ comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14055,7 +14023,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -14069,7 +14037,7 @@ expr_stmt|;
 comment|// conflicting dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14112,7 +14080,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14168,7 +14136,7 @@ comment|// - mod4.1 v 4.3
 comment|// mod4.1 v 4.3 depends on
 comment|// - mod1.2 v 2.1
 comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14195,7 +14163,7 @@ expr_stmt|;
 comment|// conflicting dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14238,7 +14206,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14298,7 +14266,7 @@ comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14382,7 +14350,7 @@ comment|// mod5.1 conf A publishes art51A
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14450,7 +14418,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -14464,7 +14432,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14540,7 +14508,7 @@ comment|// mod5.1 conf A publishes art51A
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14610,7 +14578,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -14671,7 +14639,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 name|ResolveOptions
 operator|.
@@ -14796,7 +14764,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14860,7 +14828,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -14953,7 +14921,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14975,7 +14943,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -14997,7 +14965,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15020,7 +14988,7 @@ expr_stmt|;
 name|assertTrue
 argument_list|(
 operator|!
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15042,7 +15010,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15070,7 +15038,7 @@ argument_list|()
 expr_stmt|;
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -15120,7 +15088,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15142,7 +15110,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15165,7 +15133,7 @@ expr_stmt|;
 name|assertTrue
 argument_list|(
 operator|!
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15187,7 +15155,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15209,7 +15177,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15231,7 +15199,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15253,7 +15221,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15275,7 +15243,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15307,7 +15275,7 @@ comment|// mod1.4 depends on latest mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -15375,7 +15343,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -15433,7 +15401,7 @@ expr_stmt|;
 name|File
 name|r
 init|=
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getConfigurationResolveReportInCache
 argument_list|(
@@ -15560,7 +15528,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15606,7 +15574,7 @@ comment|// latest mod1.2 (which is 2.2)
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -15641,7 +15609,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15663,7 +15631,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15717,7 +15685,7 @@ comment|// version also.
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -15752,7 +15720,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15784,7 +15752,7 @@ comment|// mod 1.4 depends on mod1.2 [1.0,2.0[
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -15862,7 +15830,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -15947,7 +15915,7 @@ comment|// mod9.2 depends on latest.milestone of mod6.4
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16025,7 +15993,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -16049,7 +16017,7 @@ comment|// test case for IVY-318
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16178,7 +16146,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16243,7 +16211,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16309,7 +16277,7 @@ comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16341,7 +16309,7 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16353,7 +16321,7 @@ argument_list|)
 expr_stmt|;
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16385,7 +16353,7 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16397,7 +16365,7 @@ argument_list|)
 expr_stmt|;
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16429,7 +16397,7 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16441,7 +16409,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16500,7 +16468,7 @@ comment|// mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16532,7 +16500,7 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16544,7 +16512,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16606,7 +16574,7 @@ comment|// in both configuration default and test
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16671,7 +16639,7 @@ name|getArtifactsNumber
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16683,7 +16651,7 @@ argument_list|)
 expr_stmt|;
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16747,7 +16715,7 @@ name|getArtifactsNumber
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16759,7 +16727,7 @@ argument_list|)
 expr_stmt|;
 name|report
 operator|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16823,7 +16791,7 @@ name|getArtifactsNumber
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16835,7 +16803,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16894,7 +16862,7 @@ name|Exception
 block|{
 comment|// mod11.1 depends on mod11.2 but excludes itself
 comment|// mod11.2 depends on mod11.1
-name|_settings
+name|settings
 operator|.
 name|setCircularDependencyStrategy
 argument_list|(
@@ -16907,7 +16875,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -16946,7 +16914,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -16989,7 +16957,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -17603,7 +17571,7 @@ comment|// mod1.1 depends on mod1.2, which should not be resolved because of the
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -17671,7 +17639,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -17685,7 +17653,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -17729,7 +17697,7 @@ expr_stmt|;
 name|assertTrue
 argument_list|(
 operator|!
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -17807,7 +17775,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -17921,7 +17889,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -17951,7 +17919,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org1"
 argument_list|,
@@ -17978,7 +17946,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -18031,7 +17999,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -18105,7 +18073,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -18179,7 +18147,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -19421,7 +19389,7 @@ comment|// mod9.1 depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -19489,7 +19457,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -19503,7 +19471,7 @@ expr_stmt|;
 comment|// dependencies
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -19546,7 +19514,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -19600,7 +19568,7 @@ comment|// mod2.3 depends on mod2.1
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -19668,7 +19636,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getResolvedIvyFileInCache
 argument_list|(
@@ -19681,7 +19649,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -19724,7 +19692,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -19797,7 +19765,7 @@ block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5
 comment|// mod2.3 depends on mod2.1 and excludes art21B
 comment|// mod2.5 depends on mod2.1 and excludes art21A
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -19874,7 +19842,7 @@ block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5
 comment|// mod2.3 depends on mod2.1 and excludes art21B
 comment|// mod2.5 depends on mod2.1 and excludes art21B
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -19951,7 +19919,7 @@ block|{
 comment|// mod2.6 depends on mod2.3 and mod2.5 and on mod2.1 for which it excludes art21A
 comment|// mod2.3 depends on mod2.1 and excludes art21B
 comment|// mod2.5 depends on mod2.1 and excludes art21B
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20030,7 +19998,7 @@ comment|// mod2.3 depends on mod2.1 and excludes art21B
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20136,7 +20104,7 @@ comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20189,7 +20157,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -20232,7 +20200,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -20286,7 +20254,7 @@ comment|// mod2.1 depends on mod1.1 which depends on mod1.2
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20339,7 +20307,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -20382,7 +20350,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -20432,7 +20400,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod10.2 depends on mod5.1 conf *, !A
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20507,7 +20475,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod10.2 depends on mod5.1 conf runtime(default)
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20561,7 +20529,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod10.2 depends on mod5.1 conf runtime(*)
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20636,7 +20604,7 @@ throws|throws
 name|Exception
 block|{
 comment|// mod10.2 depends on mod5.1 conf runtime(*),compile(*)
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20714,7 +20682,7 @@ comment|// mod10.2 depends on mod5.1 conf runtime()
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -20890,7 +20858,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -20909,7 +20877,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -20938,7 +20906,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org.apache"
 argument_list|,
@@ -20963,7 +20931,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -20992,7 +20960,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org.apache"
 argument_list|,
@@ -21114,7 +21082,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -21133,7 +21101,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21162,7 +21130,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org.apache"
 argument_list|,
@@ -21282,7 +21250,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -21301,7 +21269,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21330,7 +21298,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"org.apache"
 argument_list|,
@@ -21451,7 +21419,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -21471,7 +21439,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21554,7 +21522,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"systemorg"
 argument_list|,
@@ -21676,7 +21644,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -21695,7 +21663,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21724,7 +21692,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"systemorg"
 argument_list|,
@@ -21749,7 +21717,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21778,7 +21746,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"systemorg"
 argument_list|,
@@ -21899,7 +21867,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getResolvedIvyFileInCache
@@ -21918,7 +21886,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -21947,7 +21915,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"systemorg2"
 argument_list|,
@@ -21972,7 +21940,7 @@ name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 operator|.
 name|getIvyFileInCache
@@ -22001,7 +21969,7 @@ name|getArchiveFileInCache
 argument_list|(
 name|ivy
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
 literal|"systemorg2"
 argument_list|,
@@ -22220,7 +22188,7 @@ comment|// mod12.1 doesn't have revision in its ivy file
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -22254,7 +22222,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -22297,7 +22265,7 @@ argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -22352,7 +22320,7 @@ operator|(
 operator|(
 name|BasicResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -22368,7 +22336,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -22402,7 +22370,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -22445,7 +22413,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_cacheManager
+name|cacheManager
 operator|.
 name|getIvyFileInCache
 argument_list|(
@@ -22504,7 +22472,7 @@ comment|// thus conf j2ee should be empty for each modules
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -22642,7 +22610,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 literal|"apache/mymodule/task1/1854/ivy.xml"
 argument_list|)
@@ -22656,7 +22624,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 literal|"apache/mymodule/task1/1854/mymodule-windows.jar"
 argument_list|)
@@ -22670,7 +22638,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|_cache
+name|cache
 argument_list|,
 literal|"apache/mymodule/task1/1854/mymodule-linux.jar"
 argument_list|)
@@ -23327,14 +23295,14 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
 operator|.
 name|setDefaultCache
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 comment|// the module to resolve
@@ -23388,7 +23356,7 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -23400,7 +23368,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|getResolveEngine
 argument_list|()
@@ -23431,7 +23399,7 @@ name|assertEquals
 argument_list|(
 literal|"Default cache is not empty"
 argument_list|,
-name|_cache
+name|cache
 operator|.
 name|list
 argument_list|()
@@ -23445,7 +23413,7 @@ comment|// verify the artifact does exist in the non-default cache.
 name|CacheManager
 name|nonDefaultManager
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|getCacheManager
 argument_list|(
@@ -24060,7 +24028,7 @@ name|TestHelper
 operator|.
 name|getArchiveFileInCache
 argument_list|(
-name|_cacheManager
+name|cacheManager
 argument_list|,
 name|organisation
 argument_list|,
@@ -24088,7 +24056,7 @@ block|{
 return|return
 name|getResolveOptions
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -24127,7 +24095,7 @@ name|getInstance
 argument_list|(
 name|settings
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 argument_list|)
 return|;
