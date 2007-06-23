@@ -1637,9 +1637,7 @@ name|archiveInCachePathWithSlashes
 init|=
 operator|new
 name|StringBuffer
-argument_list|(
-literal|1000
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|replaceFileSeparatorWithSlash
 argument_list|(
@@ -1735,9 +1733,7 @@ name|artifactDestPathWithSlashes
 init|=
 operator|new
 name|StringBuffer
-argument_list|(
-literal|1000
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|replaceFileSeparatorWithSlash
 argument_list|(
