@@ -443,7 +443,7 @@ block|,
 literal|"0.2-QA"
 block|,
 literal|"1.0-dev1"
-block|,}
+block|}
 argument_list|)
 decl_stmt|;
 name|List

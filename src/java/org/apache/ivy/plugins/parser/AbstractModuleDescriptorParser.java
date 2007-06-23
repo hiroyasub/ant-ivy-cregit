@@ -1788,6 +1788,7 @@ operator|!=
 operator|-
 literal|1
 condition|)
+block|{
 name|systemId
 operator|=
 name|systemId
@@ -1799,6 +1800,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 name|str
 operator|.
 name|append
