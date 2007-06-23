@@ -86,12 +86,6 @@ name|name
 operator|=
 name|name
 expr_stmt|;
-name|hash
-operator|=
-name|_hashCode
-argument_list|()
-expr_stmt|;
-comment|// stored for performance reasons, hashCode is very used in many maps
 block|}
 specifier|public
 name|String
@@ -193,21 +187,18 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-return|return
+if|if
+condition|(
 name|hash
-return|;
-block|}
-specifier|public
-name|int
-name|_hashCode
-parameter_list|()
+operator|==
+literal|0
+condition|)
 block|{
 comment|//CheckStyle:MagicNumber| OFF
-name|int
 name|hash
-init|=
+operator|=
 literal|31
-decl_stmt|;
+expr_stmt|;
 name|hash
 operator|=
 name|hash
@@ -239,6 +230,7 @@ name|hashCode
 argument_list|()
 expr_stmt|;
 comment|//CheckStyle:MagicNumber| ON
+block|}
 return|return
 name|hash
 return|;
