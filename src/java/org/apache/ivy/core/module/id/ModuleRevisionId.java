@@ -476,12 +476,6 @@ argument_list|()
 else|:
 name|revision
 expr_stmt|;
-name|hash
-operator|=
-name|_hashCode
-argument_list|()
-expr_stmt|;
-comment|// stored for performance reasons, hashCode is very used in many maps
 name|setStandardAttribute
 argument_list|(
 name|IvyPatternHelper
@@ -672,20 +666,18 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-return|return
+if|if
+condition|(
 name|hash
-return|;
-block|}
-specifier|public
-name|int
-name|_hashCode
-parameter_list|()
+operator|==
+literal|0
+condition|)
 block|{
-name|int
+comment|//CheckStyle:MagicNumber| OFF
 name|hash
-init|=
+operator|=
 literal|31
-decl_stmt|;
+expr_stmt|;
 name|hash
 operator|=
 name|hash
@@ -743,6 +735,8 @@ operator|.
 name|hashCode
 argument_list|()
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| ON
+block|}
 return|return
 name|hash
 return|;
