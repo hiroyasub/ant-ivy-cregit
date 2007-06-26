@@ -335,35 +335,35 @@ decl_stmt|;
 comment|// proxy configuration: obtain from system properties
 specifier|private
 name|int
-name|_proxyPort
+name|proxyPort
 decl_stmt|;
 specifier|private
 name|String
-name|_proxyRealm
+name|proxyRealm
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_proxyHost
+name|proxyHost
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_proxyUserName
+name|proxyUserName
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_proxyPasswd
+name|proxyPasswd
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|HttpClientHelper
-name|_httpClientHelper
+name|httpClientHelper
 decl_stmt|;
 specifier|public
 name|HttpClientHandler
@@ -378,12 +378,12 @@ name|void
 name|configureProxy
 parameter_list|()
 block|{
-name|_proxyRealm
+name|proxyRealm
 operator|=
 literal|null
 expr_stmt|;
 comment|// no equivalent for realm in jdk proxy support ?
-name|_proxyHost
+name|proxyHost
 operator|=
 name|System
 operator|.
@@ -399,7 +399,7 @@ name|useProxy
 argument_list|()
 condition|)
 block|{
-name|_proxyPort
+name|proxyPort
 operator|=
 name|Integer
 operator|.
@@ -415,7 +415,7 @@ literal|"80"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_proxyUserName
+name|proxyUserName
 operator|=
 name|System
 operator|.
@@ -424,7 +424,7 @@ argument_list|(
 literal|"http.proxyUser"
 argument_list|)
 expr_stmt|;
-name|_proxyPasswd
+name|proxyPasswd
 operator|=
 name|System
 operator|.
@@ -441,15 +441,15 @@ name|verbose
 argument_list|(
 literal|"proxy configured: host="
 operator|+
-name|_proxyHost
+name|proxyHost
 operator|+
 literal|" port="
 operator|+
-name|_proxyPort
+name|proxyPort
 operator|+
 literal|" user="
 operator|+
-name|_proxyUserName
+name|proxyUserName
 argument_list|)
 expr_stmt|;
 block|}
@@ -783,7 +783,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|"You probably access the destination server through a proxy server that is not well configured."
+literal|"You probably access the destination server through "
+operator|+
+literal|"a proxy server that is not well configured."
 argument_list|)
 expr_stmt|;
 block|}
@@ -883,6 +885,7 @@ name|ParseException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 return|return
 name|System
@@ -926,7 +929,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_httpClientHelper
+name|httpClientHelper
 operator|==
 literal|null
 condition|)
@@ -949,7 +952,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|_httpClientHelper
+name|httpClientHelper
 operator|=
 operator|new
 name|HttpClientHelper3x
@@ -973,7 +976,11 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"unable to get access to getResponseContentLength of commons-httpclient HeadMethod. Please use commons-httpclient 3.0 or use ivy with sufficient security permissions."
+literal|"unable to get access to getResponseContentLength of "
+operator|+
+literal|"commons-httpclient HeadMethod. Please use commons-httpclient 3.0 or "
+operator|+
+literal|"use ivy with sufficient security permissions."
 argument_list|)
 expr_stmt|;
 name|Message
@@ -988,7 +995,7 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_httpClientHelper
+name|httpClientHelper
 operator|=
 operator|new
 name|HttpClientHelper2x
@@ -1008,7 +1015,7 @@ name|NoSuchMethodException
 name|e
 parameter_list|)
 block|{
-name|_httpClientHelper
+name|httpClientHelper
 operator|=
 operator|new
 name|HttpClientHelper2x
@@ -1024,7 +1031,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|_httpClientHelper
+name|httpClientHelper
 return|;
 block|}
 specifier|public
@@ -1054,8 +1061,6 @@ name|url
 parameter_list|)
 throws|throws
 name|IOException
-throws|,
-name|HttpException
 block|{
 name|HttpClient
 name|client
@@ -1113,8 +1118,6 @@ name|timeout
 parameter_list|)
 throws|throws
 name|IOException
-throws|,
-name|HttpException
 block|{
 name|HttpClient
 name|client
@@ -1237,9 +1240,9 @@ argument_list|()
 operator|.
 name|setProxy
 argument_list|(
-name|_proxyHost
+name|proxyHost
 argument_list|,
-name|_proxyPort
+name|proxyPort
 argument_list|)
 expr_stmt|;
 if|if
@@ -1255,16 +1258,16 @@ argument_list|()
 operator|.
 name|setProxyCredentials
 argument_list|(
-name|_proxyRealm
+name|proxyRealm
 argument_list|,
-name|_proxyHost
+name|proxyHost
 argument_list|,
 operator|new
 name|UsernamePasswordCredentials
 argument_list|(
-name|_proxyUserName
+name|proxyUserName
 argument_list|,
-name|_proxyPasswd
+name|proxyPasswd
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1341,11 +1344,11 @@ name|useProxy
 parameter_list|()
 block|{
 return|return
-name|_proxyHost
+name|proxyHost
 operator|!=
 literal|null
 operator|&&
-name|_proxyHost
+name|proxyHost
 operator|.
 name|trim
 argument_list|()
@@ -1404,11 +1407,11 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|_proxyUserName
+name|proxyUserName
 operator|!=
 literal|null
 operator|&&
-name|_proxyUserName
+name|proxyUserName
 operator|.
 name|trim
 argument_list|()
@@ -1430,11 +1433,11 @@ name|InputStream
 block|{
 specifier|private
 name|InputStream
-name|_is
+name|is
 decl_stmt|;
 specifier|private
 name|GetMethod
-name|_get
+name|get
 decl_stmt|;
 specifier|private
 name|GETInputStream
@@ -1445,11 +1448,13 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|_get
+name|this
+operator|.
+name|get
 operator|=
 name|get
 expr_stmt|;
-name|_is
+name|is
 operator|=
 name|get
 operator|.
@@ -1465,7 +1470,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|available
 argument_list|()
@@ -1478,12 +1483,12 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-name|_is
+name|is
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
-name|_get
+name|get
 operator|.
 name|releaseConnection
 argument_list|()
@@ -1498,7 +1503,7 @@ name|obj
 parameter_list|)
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|equals
 argument_list|(
@@ -1512,7 +1517,7 @@ name|hashCode
 parameter_list|()
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|hashCode
 argument_list|()
@@ -1526,7 +1531,7 @@ name|int
 name|readlimit
 parameter_list|)
 block|{
-name|_is
+name|is
 operator|.
 name|mark
 argument_list|(
@@ -1540,7 +1545,7 @@ name|markSupported
 parameter_list|()
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|markSupported
 argument_list|()
@@ -1554,7 +1559,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|read
 argument_list|()
@@ -1578,7 +1583,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|read
 argument_list|(
@@ -1602,7 +1607,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|read
 argument_list|(
@@ -1617,7 +1622,7 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-name|_is
+name|is
 operator|.
 name|reset
 argument_list|()
@@ -1634,7 +1639,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|skip
 argument_list|(
@@ -1648,7 +1653,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_is
+name|is
 operator|.
 name|toString
 argument_list|()
@@ -1663,6 +1668,14 @@ name|HttpClientHelper3x
 implements|implements
 name|HttpClientHelper
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|VERSION
+init|=
+literal|3
+decl_stmt|;
 specifier|private
 name|HttpClientHelper3x
 parameter_list|()
@@ -1690,7 +1703,7 @@ name|getHttpClientMajorVersion
 parameter_list|()
 block|{
 return|return
-literal|3
+name|VERSION
 return|;
 block|}
 block|}
@@ -1702,6 +1715,14 @@ name|HttpClientHelper2x
 implements|implements
 name|HttpClientHelper
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|VERSION
+init|=
+literal|2
+decl_stmt|;
 specifier|private
 name|HttpClientHelper2x
 parameter_list|()
@@ -1777,7 +1798,7 @@ name|getHttpClientMajorVersion
 parameter_list|()
 block|{
 return|return
-literal|2
+name|VERSION
 return|;
 block|}
 block|}

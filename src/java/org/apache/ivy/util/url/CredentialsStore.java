@@ -71,23 +71,24 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|CredentialsStore
 block|{
 comment|/**      * A Map of Credentials objects keyed by the 'key' of the Credentials.      */
 specifier|private
-specifier|final
 specifier|static
+specifier|final
 name|Map
-name|keyring
+name|KEYRING
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|CredentialsStore
 name|INSTANCE
 init|=
@@ -150,7 +151,7 @@ operator|+
 name|c
 argument_list|)
 expr_stmt|;
-name|keyring
+name|KEYRING
 operator|.
 name|put
 argument_list|(
@@ -164,7 +165,7 @@ argument_list|)
 expr_stmt|;
 comment|// add also with host only, to be able to find credential with host only
 comment|// (useful for httpclient especially)
-name|keyring
+name|KEYRING
 operator|.
 name|put
 argument_list|(
@@ -192,7 +193,7 @@ return|return
 operator|(
 name|Credentials
 operator|)
-name|keyring
+name|KEYRING
 operator|.
 name|get
 argument_list|(

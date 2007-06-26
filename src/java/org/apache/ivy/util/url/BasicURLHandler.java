@@ -162,7 +162,15 @@ name|AbstractURLHandler
 block|{
 specifier|private
 specifier|static
-interface|interface
+specifier|final
+name|int
+name|BUFFER_SIZE
+init|=
+literal|4096
+decl_stmt|;
+specifier|private
+specifier|static
+class|class
 name|HttpStatus
 block|{
 specifier|static
@@ -468,7 +476,9 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|"You probably access the destination server through a proxy server that is not well configured."
+literal|"You probably access the destination server through "
+operator|+
+literal|"a proxy server that is not well configured."
 argument_list|)
 expr_stmt|;
 block|}
@@ -557,7 +567,7 @@ init|=
 operator|new
 name|byte
 index|[
-literal|4096
+name|BUFFER_SIZE
 index|]
 decl_stmt|;
 name|int
@@ -786,6 +796,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}

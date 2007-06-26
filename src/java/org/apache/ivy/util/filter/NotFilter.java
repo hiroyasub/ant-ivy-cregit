@@ -26,7 +26,7 @@ name|Filter
 block|{
 specifier|private
 name|Filter
-name|_op
+name|op
 decl_stmt|;
 specifier|public
 name|NotFilter
@@ -35,7 +35,9 @@ name|Filter
 name|op
 parameter_list|)
 block|{
-name|_op
+name|this
+operator|.
+name|op
 operator|=
 name|op
 expr_stmt|;
@@ -46,7 +48,7 @@ name|getOp
 parameter_list|()
 block|{
 return|return
-name|_op
+name|op
 return|;
 block|}
 specifier|public
@@ -59,7 +61,7 @@ parameter_list|)
 block|{
 return|return
 operator|!
-name|_op
+name|op
 operator|.
 name|accept
 argument_list|(

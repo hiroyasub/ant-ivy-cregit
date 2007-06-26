@@ -79,8 +79,8 @@ name|Authenticator
 block|{
 comment|/**      * The sole instance.      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|IvyAuthenticator
 name|INSTANCE
 init|=

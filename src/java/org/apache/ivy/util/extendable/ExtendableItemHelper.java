@@ -81,9 +81,15 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ExtendableItemHelper
 block|{
+specifier|private
+name|ExtendableItemHelper
+parameter_list|()
+block|{
+block|}
 specifier|public
 specifier|static
 name|Map

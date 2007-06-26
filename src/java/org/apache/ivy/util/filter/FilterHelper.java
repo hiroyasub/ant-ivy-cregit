@@ -59,11 +59,18 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|FilterHelper
 block|{
+specifier|private
+name|FilterHelper
+parameter_list|()
+block|{
+block|}
 specifier|public
 specifier|static
+specifier|final
 name|Filter
 name|NO_FILTER
 init|=

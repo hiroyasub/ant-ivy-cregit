@@ -64,7 +64,7 @@ name|Filter
 block|{
 specifier|private
 name|Collection
-name|_acceptedTypes
+name|acceptedTypes
 decl_stmt|;
 specifier|public
 name|ArtifactTypeFilter
@@ -73,7 +73,9 @@ name|Collection
 name|acceptedTypes
 parameter_list|)
 block|{
-name|_acceptedTypes
+name|this
+operator|.
+name|acceptedTypes
 operator|=
 operator|new
 name|ArrayList
@@ -113,7 +115,7 @@ operator|)
 name|o
 decl_stmt|;
 return|return
-name|_acceptedTypes
+name|acceptedTypes
 operator|.
 name|contains
 argument_list|(

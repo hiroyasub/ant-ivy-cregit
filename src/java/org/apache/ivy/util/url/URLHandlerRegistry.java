@@ -37,13 +37,19 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|URLHandlerRegistry
 block|{
 specifier|private
+name|URLHandlerRegistry
+parameter_list|()
+block|{
+block|}
+specifier|private
 specifier|static
 name|URLHandler
-name|_default
+name|defaultHandler
 init|=
 operator|new
 name|BasicURLHandler
@@ -56,7 +62,7 @@ name|getDefault
 parameter_list|()
 block|{
 return|return
-name|_default
+name|defaultHandler
 return|;
 block|}
 specifier|public
@@ -68,7 +74,7 @@ name|URLHandler
 name|def
 parameter_list|)
 block|{
-name|_default
+name|defaultHandler
 operator|=
 name|def
 expr_stmt|;

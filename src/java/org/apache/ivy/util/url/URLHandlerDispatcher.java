@@ -102,17 +102,17 @@ name|URLHandlerDispatcher
 implements|implements
 name|URLHandler
 block|{
-specifier|protected
+specifier|private
 name|Map
-name|_handlers
+name|handlers
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-specifier|protected
+specifier|private
 name|URLHandler
-name|_default
+name|defaultHandler
 init|=
 operator|new
 name|BasicURLHandler
@@ -397,7 +397,7 @@ name|URLHandler
 name|downloader
 parameter_list|)
 block|{
-name|_handlers
+name|handlers
 operator|.
 name|put
 argument_list|(
@@ -421,7 +421,7 @@ init|=
 operator|(
 name|URLHandler
 operator|)
-name|_handlers
+name|handlers
 operator|.
 name|get
 argument_list|(
@@ -433,7 +433,7 @@ name|downloader
 operator|==
 literal|null
 condition|?
-name|_default
+name|defaultHandler
 else|:
 name|downloader
 return|;
@@ -444,7 +444,7 @@ name|getDefault
 parameter_list|()
 block|{
 return|return
-name|_default
+name|defaultHandler
 return|;
 block|}
 specifier|public
@@ -455,7 +455,7 @@ name|URLHandler
 name|default1
 parameter_list|)
 block|{
-name|_default
+name|defaultHandler
 operator|=
 name|default1
 expr_stmt|;
