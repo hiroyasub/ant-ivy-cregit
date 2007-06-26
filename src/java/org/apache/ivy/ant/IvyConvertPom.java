@@ -156,13 +156,13 @@ name|IvyTask
 block|{
 specifier|private
 name|File
-name|_pomFile
+name|pomFile
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|File
-name|_ivyFile
+name|ivyFile
 init|=
 literal|null
 decl_stmt|;
@@ -172,7 +172,7 @@ name|getPomFile
 parameter_list|()
 block|{
 return|return
-name|_pomFile
+name|pomFile
 return|;
 block|}
 specifier|public
@@ -183,7 +183,7 @@ name|File
 name|file
 parameter_list|)
 block|{
-name|_pomFile
+name|pomFile
 operator|=
 name|file
 expr_stmt|;
@@ -194,7 +194,7 @@ name|getIvyFile
 parameter_list|()
 block|{
 return|return
-name|_ivyFile
+name|ivyFile
 return|;
 block|}
 specifier|public
@@ -205,7 +205,9 @@ name|File
 name|ivyFile
 parameter_list|)
 block|{
-name|_ivyFile
+name|this
+operator|.
+name|ivyFile
 operator|=
 name|ivyFile
 expr_stmt|;
@@ -221,7 +223,7 @@ try|try
 block|{
 if|if
 condition|(
-name|_pomFile
+name|pomFile
 operator|==
 literal|null
 condition|)
@@ -236,7 +238,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|_ivyFile
+name|ivyFile
 operator|==
 literal|null
 condition|)
@@ -263,7 +265,7 @@ operator|new
 name|IvySettings
 argument_list|()
 argument_list|,
-name|_pomFile
+name|pomFile
 operator|.
 name|toURL
 argument_list|()
@@ -278,7 +280,7 @@ argument_list|()
 operator|.
 name|toIvyFile
 argument_list|(
-name|_pomFile
+name|pomFile
 operator|.
 name|toURL
 argument_list|()
@@ -289,7 +291,7 @@ argument_list|,
 operator|new
 name|URLResource
 argument_list|(
-name|_pomFile
+name|pomFile
 operator|.
 name|toURL
 argument_list|()
@@ -314,7 +316,7 @@ name|BuildException
 argument_list|(
 literal|"unable to convert given pom file to url: "
 operator|+
-name|_pomFile
+name|pomFile
 operator|+
 literal|": "
 operator|+
@@ -348,7 +350,7 @@ name|BuildException
 argument_list|(
 literal|"syntax errors in pom file "
 operator|+
-name|_pomFile
+name|pomFile
 operator|+
 literal|": "
 operator|+
@@ -374,11 +376,11 @@ name|e
 operator|+
 literal|" from="
 operator|+
-name|_pomFile
+name|pomFile
 operator|+
 literal|" to="
 operator|+
-name|_ivyFile
+name|ivyFile
 argument_list|,
 name|e
 argument_list|)

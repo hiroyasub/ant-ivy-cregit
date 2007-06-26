@@ -419,7 +419,11 @@ operator|.
 name|getRefId
 argument_list|()
 operator|+
-literal|" has been defined in a different classloader.  Please use the same loader when defining your task, or redeclare your ivy:settings in this classloader"
+literal|" has been defined in a different classloader.  "
+operator|+
+literal|"Please use the same loader when defining your task, or "
+operator|+
+literal|"redeclare your ivy:settings in this classloader"
 argument_list|,
 name|getLocation
 argument_list|()

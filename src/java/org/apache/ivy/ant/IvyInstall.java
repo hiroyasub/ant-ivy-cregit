@@ -146,45 +146,45 @@ name|IvyTask
 block|{
 specifier|private
 name|String
-name|_organisation
+name|organisation
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|private
 name|boolean
-name|_overwrite
+name|overwrite
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|String
-name|_from
+name|from
 decl_stmt|;
 specifier|private
 name|String
-name|_to
+name|to
 decl_stmt|;
 specifier|private
 name|boolean
-name|_transitive
+name|transitive
 decl_stmt|;
 specifier|private
 name|String
-name|_type
+name|type
 decl_stmt|;
 specifier|private
 name|String
-name|_matcher
+name|matcher
 init|=
 name|PatternMatcher
 operator|.
@@ -192,7 +192,7 @@ name|EXACT
 decl_stmt|;
 specifier|private
 name|boolean
-name|_haltOnFailure
+name|haltOnFailure
 init|=
 literal|true
 decl_stmt|;
@@ -219,12 +219,12 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_cache
+name|cache
 operator|==
 literal|null
 condition|)
 block|{
-name|_cache
+name|cache
 operator|=
 name|settings
 operator|.
@@ -234,7 +234,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_organisation
+name|organisation
 operator|==
 literal|null
 condition|)
@@ -243,13 +243,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy publish task: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
+literal|"no organisation provided for ivy publish task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'organisation' "
+operator|+
+literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 if|if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 operator|&&
@@ -259,7 +263,7 @@ name|EXACT
 operator|.
 name|equals
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|)
 condition|)
 block|{
@@ -267,13 +271,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy publish task: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
+literal|"no module name provided for ivy publish task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'module' "
+operator|+
+literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 if|else if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 operator|&&
@@ -284,11 +292,11 @@ name|EXACT
 operator|.
 name|equals
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|)
 condition|)
 block|{
-name|_module
+name|module
 operator|=
 name|PatternMatcher
 operator|.
@@ -297,7 +305,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_revision
+name|revision
 operator|==
 literal|null
 operator|&&
@@ -307,7 +315,7 @@ name|EXACT
 operator|.
 name|equals
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|)
 condition|)
 block|{
@@ -315,13 +323,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module revision provided for ivy publish task: It can either be set explicitely via the attribute 'revision' or via 'ivy.revision' property or a prior call to<resolve/>"
+literal|"no module revision provided for ivy publish task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'revision' "
+operator|+
+literal|"or via 'ivy.revision' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 if|else if
 condition|(
-name|_revision
+name|revision
 operator|==
 literal|null
 operator|&&
@@ -332,11 +344,11 @@ name|EXACT
 operator|.
 name|equals
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|)
 condition|)
 block|{
-name|_revision
+name|revision
 operator|=
 name|PatternMatcher
 operator|.
@@ -345,7 +357,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_from
+name|from
 operator|==
 literal|null
 condition|)
@@ -360,7 +372,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|_to
+name|to
 operator|==
 literal|null
 condition|)
@@ -380,11 +392,11 @@ name|ModuleRevisionId
 operator|.
 name|newInstance
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
-name|_module
+name|module
 argument_list|,
-name|_revision
+name|revision
 argument_list|)
 decl_stmt|;
 name|ResolveReport
@@ -400,29 +412,29 @@ name|install
 argument_list|(
 name|mrid
 argument_list|,
-name|_from
+name|from
 argument_list|,
-name|_to
+name|to
 argument_list|,
-name|_transitive
+name|transitive
 argument_list|,
 name|doValidate
 argument_list|(
 name|settings
 argument_list|)
 argument_list|,
-name|_overwrite
+name|overwrite
 argument_list|,
 name|FilterHelper
 operator|.
 name|getArtifactTypeFilter
 argument_list|(
-name|_type
+name|type
 argument_list|)
 argument_list|,
-name|_cache
+name|cache
 argument_list|,
-name|_matcher
+name|matcher
 argument_list|)
 expr_stmt|;
 block|}
@@ -474,7 +486,7 @@ name|isHaltonfailure
 parameter_list|()
 block|{
 return|return
-name|_haltOnFailure
+name|haltOnFailure
 return|;
 block|}
 specifier|public
@@ -485,7 +497,9 @@ name|boolean
 name|haltOnFailure
 parameter_list|)
 block|{
-name|_haltOnFailure
+name|this
+operator|.
+name|haltOnFailure
 operator|=
 name|haltOnFailure
 expr_stmt|;
@@ -496,7 +510,7 @@ name|getCache
 parameter_list|()
 block|{
 return|return
-name|_cache
+name|cache
 return|;
 block|}
 specifier|public
@@ -507,7 +521,9 @@ name|File
 name|cache
 parameter_list|)
 block|{
-name|_cache
+name|this
+operator|.
+name|cache
 operator|=
 name|cache
 expr_stmt|;
@@ -518,7 +534,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -529,7 +545,9 @@ name|String
 name|module
 parameter_list|)
 block|{
-name|_module
+name|this
+operator|.
+name|module
 operator|=
 name|module
 expr_stmt|;
@@ -540,7 +558,7 @@ name|getOrganisation
 parameter_list|()
 block|{
 return|return
-name|_organisation
+name|organisation
 return|;
 block|}
 specifier|public
@@ -551,7 +569,9 @@ name|String
 name|organisation
 parameter_list|)
 block|{
-name|_organisation
+name|this
+operator|.
+name|organisation
 operator|=
 name|organisation
 expr_stmt|;
@@ -562,7 +582,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -573,7 +593,9 @@ name|String
 name|revision
 parameter_list|)
 block|{
-name|_revision
+name|this
+operator|.
+name|revision
 operator|=
 name|revision
 expr_stmt|;
@@ -584,7 +606,7 @@ name|isOverwrite
 parameter_list|()
 block|{
 return|return
-name|_overwrite
+name|overwrite
 return|;
 block|}
 specifier|public
@@ -595,7 +617,9 @@ name|boolean
 name|overwrite
 parameter_list|)
 block|{
-name|_overwrite
+name|this
+operator|.
+name|overwrite
 operator|=
 name|overwrite
 expr_stmt|;
@@ -606,7 +630,7 @@ name|getFrom
 parameter_list|()
 block|{
 return|return
-name|_from
+name|from
 return|;
 block|}
 specifier|public
@@ -617,7 +641,9 @@ name|String
 name|from
 parameter_list|)
 block|{
-name|_from
+name|this
+operator|.
+name|from
 operator|=
 name|from
 expr_stmt|;
@@ -628,7 +654,7 @@ name|getTo
 parameter_list|()
 block|{
 return|return
-name|_to
+name|to
 return|;
 block|}
 specifier|public
@@ -639,7 +665,9 @@ name|String
 name|to
 parameter_list|)
 block|{
-name|_to
+name|this
+operator|.
+name|to
 operator|=
 name|to
 expr_stmt|;
@@ -650,7 +678,7 @@ name|isTransitive
 parameter_list|()
 block|{
 return|return
-name|_transitive
+name|transitive
 return|;
 block|}
 specifier|public
@@ -661,7 +689,9 @@ name|boolean
 name|transitive
 parameter_list|)
 block|{
-name|_transitive
+name|this
+operator|.
+name|transitive
 operator|=
 name|transitive
 expr_stmt|;
@@ -672,7 +702,7 @@ name|getType
 parameter_list|()
 block|{
 return|return
-name|_type
+name|type
 return|;
 block|}
 specifier|public
@@ -683,7 +713,9 @@ name|String
 name|type
 parameter_list|)
 block|{
-name|_type
+name|this
+operator|.
+name|type
 operator|=
 name|type
 expr_stmt|;
@@ -694,7 +726,7 @@ name|getMatcher
 parameter_list|()
 block|{
 return|return
-name|_matcher
+name|matcher
 return|;
 block|}
 specifier|public
@@ -705,7 +737,9 @@ name|String
 name|matcher
 parameter_list|)
 block|{
-name|_matcher
+name|this
+operator|.
+name|matcher
 operator|=
 name|matcher
 expr_stmt|;

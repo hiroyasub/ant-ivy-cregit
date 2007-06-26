@@ -138,13 +138,13 @@ name|IvyTask
 block|{
 specifier|private
 name|File
-name|_file
+name|file
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|List
-name|_filesets
+name|filesets
 init|=
 operator|new
 name|ArrayList
@@ -152,7 +152,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_resolvername
+name|resolvername
 decl_stmt|;
 specifier|public
 name|File
@@ -160,7 +160,7 @@ name|getFile
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 return|;
 block|}
 specifier|public
@@ -171,7 +171,9 @@ name|File
 name|file
 parameter_list|)
 block|{
-name|_file
+name|this
+operator|.
+name|file
 operator|=
 name|file
 expr_stmt|;
@@ -185,7 +187,7 @@ name|FileSet
 name|set
 parameter_list|)
 block|{
-name|_filesets
+name|filesets
 operator|.
 name|add
 argument_list|(
@@ -199,7 +201,7 @@ name|getResolvername
 parameter_list|()
 block|{
 return|return
-name|_resolvername
+name|resolvername
 return|;
 block|}
 specifier|public
@@ -210,7 +212,7 @@ name|String
 name|resolverName
 parameter_list|)
 block|{
-name|_resolvername
+name|resolvername
 operator|=
 name|resolverName
 expr_stmt|;
@@ -232,7 +234,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|!=
 literal|null
 condition|)
@@ -243,12 +245,12 @@ name|ivy
 operator|.
 name|check
 argument_list|(
-name|_file
+name|file
 operator|.
 name|toURL
 argument_list|()
 argument_list|,
-name|_resolvername
+name|resolvername
 argument_list|)
 condition|)
 block|{
@@ -258,7 +260,7 @@ name|verbose
 argument_list|(
 literal|"checked "
 operator|+
-name|_file
+name|file
 operator|+
 literal|": OK"
 argument_list|)
@@ -274,7 +276,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|_filesets
+name|filesets
 operator|.
 name|size
 argument_list|()
@@ -289,7 +291,7 @@ init|=
 operator|(
 name|FileSet
 operator|)
-name|_filesets
+name|filesets
 operator|.
 name|get
 argument_list|(
@@ -369,7 +371,7 @@ operator|.
 name|toURL
 argument_list|()
 argument_list|,
-name|_resolvername
+name|resolvername
 argument_list|)
 condition|)
 block|{

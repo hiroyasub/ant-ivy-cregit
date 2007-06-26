@@ -130,7 +130,7 @@ name|IvyCacheTask
 block|{
 specifier|private
 name|String
-name|_setid
+name|setid
 decl_stmt|;
 specifier|public
 name|String
@@ -138,7 +138,7 @@ name|getSetid
 parameter_list|()
 block|{
 return|return
-name|_setid
+name|setid
 return|;
 block|}
 specifier|public
@@ -149,7 +149,7 @@ name|String
 name|id
 parameter_list|)
 block|{
-name|_setid
+name|setid
 operator|=
 name|id
 expr_stmt|;
@@ -171,7 +171,11 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"the cachefileset task does not support the useOrigin mode, since filesets require to have only one root directory. Please use the the cachepath task instead"
+literal|"the cachefileset task does not support the useOrigin mode, since filesets "
+operator|+
+literal|"require to have only one root directory. Please use the the cachepath "
+operator|+
+literal|"task instead"
 argument_list|)
 throw|;
 block|}
@@ -188,7 +192,7 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|_setid
+name|setid
 operator|==
 literal|null
 condition|)
@@ -223,7 +227,7 @@ argument_list|()
 operator|.
 name|addReference
 argument_list|(
-name|_setid
+name|setid
 argument_list|,
 name|fileset
 argument_list|)

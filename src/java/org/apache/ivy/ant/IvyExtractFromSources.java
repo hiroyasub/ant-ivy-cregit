@@ -313,8 +313,9 @@ specifier|static
 class|class
 name|Ignore
 block|{
+specifier|private
 name|String
-name|_package
+name|packageName
 decl_stmt|;
 specifier|public
 name|String
@@ -322,7 +323,7 @@ name|getPackage
 parameter_list|()
 block|{
 return|return
-name|_package
+name|packageName
 return|;
 block|}
 specifier|public
@@ -333,7 +334,7 @@ name|String
 name|package1
 parameter_list|)
 block|{
-name|_package
+name|packageName
 operator|=
 name|package1
 expr_stmt|;
@@ -341,23 +342,23 @@ block|}
 block|}
 specifier|private
 name|String
-name|_organisation
+name|organisation
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|private
 name|String
-name|_status
+name|status
 decl_stmt|;
 specifier|private
 name|List
-name|_ignoredPackaged
+name|ignoredPackaged
 init|=
 operator|new
 name|ArrayList
@@ -366,7 +367,7 @@ decl_stmt|;
 comment|// List (String package)
 specifier|private
 name|Map
-name|_mapping
+name|mapping
 init|=
 operator|new
 name|HashMap
@@ -375,7 +376,7 @@ decl_stmt|;
 comment|// Map (String package -> ModuleRevisionId)
 specifier|private
 name|Concat
-name|_concat
+name|concat
 init|=
 operator|new
 name|Concat
@@ -383,7 +384,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|File
-name|_to
+name|to
 decl_stmt|;
 specifier|public
 name|void
@@ -393,7 +394,7 @@ name|Ignore
 name|ignore
 parameter_list|)
 block|{
-name|_ignoredPackaged
+name|ignoredPackaged
 operator|.
 name|add
 argument_list|(
@@ -410,7 +411,7 @@ name|getTo
 parameter_list|()
 block|{
 return|return
-name|_to
+name|to
 return|;
 block|}
 specifier|public
@@ -421,7 +422,9 @@ name|File
 name|to
 parameter_list|)
 block|{
-name|_to
+name|this
+operator|.
+name|to
 operator|=
 name|to
 expr_stmt|;
@@ -432,7 +435,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -443,7 +446,9 @@ name|String
 name|module
 parameter_list|)
 block|{
-name|_module
+name|this
+operator|.
+name|module
 operator|=
 name|module
 expr_stmt|;
@@ -454,7 +459,7 @@ name|getOrganisation
 parameter_list|()
 block|{
 return|return
-name|_organisation
+name|organisation
 return|;
 block|}
 specifier|public
@@ -465,7 +470,9 @@ name|String
 name|organisation
 parameter_list|)
 block|{
-name|_organisation
+name|this
+operator|.
+name|organisation
 operator|=
 name|organisation
 expr_stmt|;
@@ -476,7 +483,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -487,7 +494,9 @@ name|String
 name|revision
 parameter_list|)
 block|{
-name|_revision
+name|this
+operator|.
+name|revision
 operator|=
 name|revision
 expr_stmt|;
@@ -498,7 +507,7 @@ name|getStatus
 parameter_list|()
 block|{
 return|return
-name|_status
+name|status
 return|;
 block|}
 specifier|public
@@ -509,7 +518,9 @@ name|String
 name|status
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|=
 name|status
 expr_stmt|;
@@ -522,7 +533,9 @@ name|PackageMapping
 name|mapping
 parameter_list|)
 block|{
-name|_mapping
+name|this
+operator|.
+name|mapping
 operator|.
 name|put
 argument_list|(
@@ -546,7 +559,7 @@ name|FileSet
 name|fileSet
 parameter_list|)
 block|{
-name|_concat
+name|concat
 operator|.
 name|addFileset
 argument_list|(
@@ -571,14 +584,14 @@ operator|new
 name|StringWriter
 argument_list|()
 decl_stmt|;
-name|_concat
+name|concat
 operator|.
 name|setWriter
 argument_list|(
 name|out
 argument_list|)
 expr_stmt|;
-name|_concat
+name|concat
 operator|.
 name|execute
 argument_list|()
@@ -680,7 +693,7 @@ argument_list|(
 operator|new
 name|FileOutputStream
 argument_list|(
-name|_to
+name|to
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -697,7 +710,7 @@ name|println
 argument_list|(
 literal|"\t<info organisation=\""
 operator|+
-name|_organisation
+name|organisation
 operator|+
 literal|"\""
 argument_list|)
@@ -708,14 +721,14 @@ name|println
 argument_list|(
 literal|"\t       module=\""
 operator|+
-name|_module
+name|module
 operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_revision
+name|revision
 operator|!=
 literal|null
 condition|)
@@ -726,7 +739,7 @@ name|println
 argument_list|(
 literal|"\t       revision=\""
 operator|+
-name|_revision
+name|revision
 operator|+
 literal|"\""
 argument_list|)
@@ -734,7 +747,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_status
+name|status
 operator|!=
 literal|null
 condition|)
@@ -745,7 +758,7 @@ name|println
 argument_list|(
 literal|"\t       status=\""
 operator|+
-name|_status
+name|status
 operator|+
 literal|"\""
 argument_list|)
@@ -870,7 +883,7 @@ argument_list|()
 operator|+
 literal|" dependencies put in "
 operator|+
-name|_to
+name|to
 argument_list|)
 expr_stmt|;
 block|}
@@ -886,7 +899,7 @@ name|BuildException
 argument_list|(
 literal|"impossible to create file "
 operator|+
-name|_to
+name|to
 operator|+
 literal|": "
 operator|+
@@ -932,7 +945,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_ignoredPackaged
+name|ignoredPackaged
 operator|.
 name|contains
 argument_list|(
@@ -949,7 +962,7 @@ operator|=
 operator|(
 name|ModuleRevisionId
 operator|)
-name|_mapping
+name|mapping
 operator|.
 name|get
 argument_list|(
@@ -1019,7 +1032,7 @@ name|void
 name|configureConcat
 parameter_list|()
 block|{
-name|_concat
+name|concat
 operator|.
 name|setProject
 argument_list|(
@@ -1027,7 +1040,7 @@ name|getProject
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_concat
+name|concat
 operator|.
 name|setTaskName
 argument_list|(
@@ -1123,7 +1136,7 @@ argument_list|(
 name|tf
 argument_list|)
 expr_stmt|;
-name|_concat
+name|concat
 operator|.
 name|addFilterChain
 argument_list|(

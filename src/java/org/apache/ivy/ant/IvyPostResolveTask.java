@@ -231,59 +231,59 @@ name|IvyTask
 block|{
 specifier|private
 name|String
-name|_conf
+name|conf
 decl_stmt|;
 specifier|private
 name|boolean
-name|_haltOnFailure
+name|haltOnFailure
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|boolean
-name|_transitive
+name|transitive
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 name|boolean
-name|_inline
+name|inline
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|private
 name|String
-name|_organisation
+name|organisation
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|private
 name|String
-name|_revision
+name|revision
 init|=
 literal|"latest.integration"
 decl_stmt|;
 specifier|private
 name|String
-name|_resolveId
+name|resolveId
 decl_stmt|;
 specifier|private
 name|String
-name|_type
+name|type
 decl_stmt|;
 specifier|private
 name|File
-name|_file
+name|file
 decl_stmt|;
 specifier|private
 name|Filter
-name|_artifactFilter
+name|artifactFilter
 init|=
 literal|null
 decl_stmt|;
@@ -346,33 +346,33 @@ name|boolean
 name|orgAndModSetManually
 init|=
 operator|(
-name|_organisation
+name|organisation
 operator|!=
 literal|null
 operator|)
 operator|&&
 operator|(
-name|_module
+name|module
 operator|!=
 literal|null
 operator|)
 decl_stmt|;
-name|_organisation
+name|organisation
 operator|=
 name|getProperty
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
 name|settings
 argument_list|,
 literal|"ivy.organisation"
 argument_list|)
 expr_stmt|;
-name|_module
+name|module
 operator|=
 name|getProperty
 argument_list|(
-name|_module
+name|module
 argument_list|,
 name|settings
 argument_list|,
@@ -381,12 +381,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_cache
+name|cache
 operator|==
 literal|null
 condition|)
 block|{
-name|_cache
+name|cache
 operator|=
 name|settings
 operator|.
@@ -396,7 +396,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|_file
+name|file
 operator|==
 literal|null
 condition|)
@@ -410,7 +410,7 @@ name|settings
 argument_list|,
 literal|"ivy.resolved.file"
 argument_list|,
-name|_resolveId
+name|resolveId
 argument_list|)
 decl_stmt|;
 if|if
@@ -420,7 +420,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_file
+name|file
 operator|=
 operator|new
 name|File
@@ -436,19 +436,19 @@ name|isInline
 argument_list|()
 condition|)
 block|{
-name|_conf
+name|conf
 operator|=
-name|_conf
+name|conf
 operator|==
 literal|null
 condition|?
 literal|"*"
 else|:
-name|_conf
+name|conf
 expr_stmt|;
 if|if
 condition|(
-name|_organisation
+name|organisation
 operator|==
 literal|null
 condition|)
@@ -457,13 +457,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy cache task in inline mode: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property"
+literal|"no organisation provided for ivy cache task in inline mode: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'organisation' "
+operator|+
+literal|"or via 'ivy.organisation' property"
 argument_list|)
 throw|;
 block|}
 if|if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 condition|)
@@ -472,7 +476,11 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy cache task in inline mode: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property"
+literal|"no module name provided for ivy cache task in inline mode: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'module' "
+operator|+
+literal|"or via 'ivy.module' property"
 argument_list|)
 throw|;
 block|}
@@ -490,7 +498,7 @@ argument_list|()
 operator|+
 literal|"-caller"
 argument_list|,
-name|_conf
+name|conf
 argument_list|,
 literal|true
 argument_list|)
@@ -584,21 +592,21 @@ name|resolve
 operator|.
 name|setConf
 argument_list|(
-name|_conf
+name|conf
 argument_list|)
 expr_stmt|;
 name|resolve
 operator|.
 name|setCache
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|resolve
 operator|.
 name|setResolveId
 argument_list|(
-name|_resolveId
+name|resolveId
 argument_list|)
 expr_stmt|;
 name|resolve
@@ -630,7 +638,7 @@ argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|_conf
+name|conf
 operator|+
 literal|")"
 argument_list|)
@@ -642,11 +650,11 @@ literal|"*"
 operator|.
 name|equals
 argument_list|(
-name|_conf
+name|conf
 argument_list|)
 condition|)
 block|{
-name|_conf
+name|conf
 operator|=
 name|StringUtils
 operator|.
@@ -708,24 +716,24 @@ argument_list|()
 argument_list|,
 name|getProperty
 argument_list|(
-name|_conf
+name|conf
 argument_list|,
 name|settings
 argument_list|,
 literal|"ivy.resolved.configurations"
 argument_list|)
 argument_list|,
-name|_resolveId
+name|resolveId
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 block|}
-name|_conf
+name|conf
 operator|=
 name|getProperty
 argument_list|(
-name|_conf
+name|conf
 argument_list|,
 name|settings
 argument_list|,
@@ -738,11 +746,11 @@ literal|"*"
 operator|.
 name|equals
 argument_list|(
-name|_conf
+name|conf
 argument_list|)
 condition|)
 block|{
-name|_conf
+name|conf
 operator|=
 name|getProperty
 argument_list|(
@@ -753,7 +761,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_conf
+name|conf
 operator|==
 literal|null
 condition|)
@@ -762,28 +770,30 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"bad conf provided for ivy cache task: * can only be used with a prior call to<resolve/>"
+literal|"bad conf provided for ivy cache task: "
+operator|+
+literal|"'*' can only be used with a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 block|}
 block|}
-name|_organisation
+name|organisation
 operator|=
 name|getProperty
 argument_list|(
-name|_organisation
+name|organisation
 argument_list|,
 name|settings
 argument_list|,
 literal|"ivy.organisation"
 argument_list|)
 expr_stmt|;
-name|_module
+name|module
 operator|=
 name|getProperty
 argument_list|(
-name|_module
+name|module
 argument_list|,
 name|settings
 argument_list|,
@@ -792,7 +802,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_organisation
+name|organisation
 operator|==
 literal|null
 condition|)
@@ -801,13 +811,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy cache task: It can either be set explicitely via the attribute 'organisation' or via 'ivy.organisation' property or a prior call to<resolve/>"
+literal|"no organisation provided for ivy cache task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'organisation' "
+operator|+
+literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 if|if
 condition|(
-name|_module
+name|module
 operator|==
 literal|null
 condition|)
@@ -816,13 +830,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy cache task: It can either be set explicitely via the attribute 'module' or via 'ivy.module' property or a prior call to<resolve/>"
+literal|"no module name provided for ivy cache task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'module' "
+operator|+
+literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
 if|if
 condition|(
-name|_conf
+name|conf
 operator|==
 literal|null
 condition|)
@@ -831,17 +849,21 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no conf provided for ivy cache task: It can either be set explicitely via the attribute 'conf' or via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
+literal|"no conf provided for ivy cache task: "
+operator|+
+literal|"It can either be set explicitely via the attribute 'conf' or "
+operator|+
+literal|"via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
 argument_list|)
 throw|;
 block|}
-name|_artifactFilter
+name|artifactFilter
 operator|=
 name|FilterHelper
 operator|.
 name|getArtifactTypeFilter
 argument_list|(
-name|_type
+name|type
 argument_list|)
 expr_stmt|;
 block|}
@@ -939,7 +961,7 @@ name|resolve
 operator|.
 name|setFile
 argument_list|(
-name|_file
+name|file
 argument_list|)
 expr_stmt|;
 name|resolve
@@ -1481,7 +1503,7 @@ else|:
 name|getModule
 argument_list|()
 argument_list|,
-name|_resolveId
+name|resolveId
 argument_list|)
 return|;
 block|}
@@ -1491,7 +1513,7 @@ name|getType
 parameter_list|()
 block|{
 return|return
-name|_type
+name|type
 return|;
 block|}
 specifier|public
@@ -1502,7 +1524,9 @@ name|String
 name|type
 parameter_list|)
 block|{
-name|_type
+name|this
+operator|.
+name|type
 operator|=
 name|type
 expr_stmt|;
@@ -1513,7 +1537,7 @@ name|getConf
 parameter_list|()
 block|{
 return|return
-name|_conf
+name|conf
 return|;
 block|}
 specifier|public
@@ -1524,7 +1548,9 @@ name|String
 name|conf
 parameter_list|)
 block|{
-name|_conf
+name|this
+operator|.
+name|conf
 operator|=
 name|conf
 expr_stmt|;
@@ -1535,7 +1561,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -1546,7 +1572,9 @@ name|String
 name|module
 parameter_list|)
 block|{
-name|_module
+name|this
+operator|.
+name|module
 operator|=
 name|module
 expr_stmt|;
@@ -1557,7 +1585,7 @@ name|getOrganisation
 parameter_list|()
 block|{
 return|return
-name|_organisation
+name|organisation
 return|;
 block|}
 specifier|public
@@ -1568,7 +1596,9 @@ name|String
 name|organisation
 parameter_list|)
 block|{
-name|_organisation
+name|this
+operator|.
+name|organisation
 operator|=
 name|organisation
 expr_stmt|;
@@ -1579,7 +1609,7 @@ name|isHaltonfailure
 parameter_list|()
 block|{
 return|return
-name|_haltOnFailure
+name|haltOnFailure
 return|;
 block|}
 specifier|public
@@ -1590,7 +1620,9 @@ name|boolean
 name|haltOnFailure
 parameter_list|)
 block|{
-name|_haltOnFailure
+name|this
+operator|.
+name|haltOnFailure
 operator|=
 name|haltOnFailure
 expr_stmt|;
@@ -1601,7 +1633,7 @@ name|getCache
 parameter_list|()
 block|{
 return|return
-name|_cache
+name|cache
 return|;
 block|}
 specifier|public
@@ -1612,7 +1644,9 @@ name|File
 name|cache
 parameter_list|)
 block|{
-name|_cache
+name|this
+operator|.
+name|cache
 operator|=
 name|cache
 expr_stmt|;
@@ -1623,7 +1657,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -1634,7 +1668,7 @@ name|String
 name|rev
 parameter_list|)
 block|{
-name|_revision
+name|revision
 operator|=
 name|rev
 expr_stmt|;
@@ -1645,7 +1679,7 @@ name|getArtifactFilter
 parameter_list|()
 block|{
 return|return
-name|_artifactFilter
+name|artifactFilter
 return|;
 block|}
 specifier|public
@@ -1654,7 +1688,7 @@ name|isTransitive
 parameter_list|()
 block|{
 return|return
-name|_transitive
+name|transitive
 return|;
 block|}
 specifier|public
@@ -1665,7 +1699,9 @@ name|boolean
 name|transitive
 parameter_list|)
 block|{
-name|_transitive
+name|this
+operator|.
+name|transitive
 operator|=
 name|transitive
 expr_stmt|;
@@ -1676,7 +1712,7 @@ name|isInline
 parameter_list|()
 block|{
 return|return
-name|_inline
+name|inline
 return|;
 block|}
 specifier|public
@@ -1687,7 +1723,9 @@ name|boolean
 name|inline
 parameter_list|)
 block|{
-name|_inline
+name|this
+operator|.
+name|inline
 operator|=
 name|inline
 expr_stmt|;
@@ -1700,7 +1738,9 @@ name|String
 name|resolveId
 parameter_list|)
 block|{
-name|_resolveId
+name|this
+operator|.
+name|resolveId
 operator|=
 name|resolveId
 expr_stmt|;
@@ -1711,7 +1751,7 @@ name|getResolveId
 parameter_list|()
 block|{
 return|return
-name|_resolveId
+name|resolveId
 return|;
 block|}
 specifier|public
@@ -1722,7 +1762,9 @@ name|File
 name|file
 parameter_list|)
 block|{
-name|_file
+name|this
+operator|.
+name|file
 operator|=
 name|file
 expr_stmt|;
@@ -1733,7 +1775,7 @@ name|getFile
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 return|;
 block|}
 specifier|public

@@ -206,7 +206,7 @@ name|IvyTask
 block|{
 specifier|private
 name|File
-name|_file
+name|file
 init|=
 literal|null
 decl_stmt|;
@@ -216,7 +216,7 @@ name|getFile
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 return|;
 block|}
 specifier|public
@@ -227,7 +227,9 @@ name|File
 name|file
 parameter_list|)
 block|{
-name|_file
+name|this
+operator|.
+name|file
 operator|=
 name|file
 expr_stmt|;
@@ -255,12 +257,12 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|==
 literal|null
 condition|)
 block|{
-name|_file
+name|file
 operator|=
 name|getProject
 argument_list|()
@@ -290,7 +292,7 @@ name|parseDescriptor
 argument_list|(
 name|settings
 argument_list|,
-name|_file
+name|file
 operator|.
 name|toURL
 argument_list|()
@@ -480,7 +482,7 @@ name|BuildException
 argument_list|(
 literal|"unable to convert given ivy file to url: "
 operator|+
-name|_file
+name|file
 operator|+
 literal|": "
 operator|+
