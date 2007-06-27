@@ -128,6 +128,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|this
+operator|.
 name|attributes
 operator|.
 name|putAll
@@ -135,6 +137,8 @@ argument_list|(
 name|stdAttributes
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|stdAttributes
 operator|.
 name|putAll
@@ -150,6 +154,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|this
+operator|.
 name|attributes
 operator|.
 name|putAll
@@ -157,6 +163,8 @@ argument_list|(
 name|extraAttributes
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|extraAttributes
 operator|.
 name|putAll
