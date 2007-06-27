@@ -68,11 +68,13 @@ name|DefaultExtendableItem
 block|{
 specifier|public
 specifier|static
+specifier|final
 class|class
 name|Visibility
 block|{
 specifier|public
 specifier|static
+specifier|final
 name|Visibility
 name|PUBLIC
 init|=
@@ -84,6 +86,7 @@ argument_list|)
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|Visibility
 name|PRIVATE
 init|=
@@ -182,7 +185,7 @@ decl_stmt|;
 specifier|private
 name|String
 index|[]
-name|_extends
+name|extendsFrom
 decl_stmt|;
 specifier|private
 name|Visibility
@@ -302,7 +305,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|_extends
+name|extendsFrom
 operator|=
 operator|new
 name|String
@@ -313,7 +316,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_extends
+name|extendsFrom
 operator|=
 operator|new
 name|String
@@ -340,7 +343,7 @@ name|i
 operator|++
 control|)
 block|{
-name|_extends
+name|extendsFrom
 index|[
 name|i
 index|]
@@ -402,7 +405,7 @@ name|getExtends
 parameter_list|()
 block|{
 return|return
-name|_extends
+name|extendsFrom
 return|;
 block|}
 comment|/**      * @return Returns the name. Never null;      */
@@ -551,7 +554,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|_extends
+name|extendsFrom
 operator|.
 name|length
 condition|;
@@ -565,7 +568,7 @@ literal|"*"
 operator|.
 name|equals
 argument_list|(
-name|_extends
+name|extendsFrom
 index|[
 name|j
 index|]
@@ -588,7 +591,7 @@ literal|"*(public)"
 operator|.
 name|equals
 argument_list|(
-name|_extends
+name|extendsFrom
 index|[
 name|j
 index|]
@@ -613,7 +616,7 @@ literal|"*(private)"
 operator|.
 name|equals
 argument_list|(
-name|_extends
+name|extendsFrom
 index|[
 name|j
 index|]
@@ -638,7 +641,7 @@ name|newExtends
 operator|.
 name|add
 argument_list|(
-name|_extends
+name|extendsFrom
 index|[
 name|j
 index|]
@@ -648,7 +651,7 @@ block|}
 block|}
 name|this
 operator|.
-name|_extends
+name|extendsFrom
 operator|=
 operator|(
 name|String
