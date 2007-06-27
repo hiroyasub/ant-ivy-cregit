@@ -82,7 +82,7 @@ name|AbstractConflictManager
 block|{
 specifier|private
 name|Collection
-name|_revs
+name|revisions
 decl_stmt|;
 specifier|public
 name|FixedConflictManager
@@ -92,7 +92,7 @@ index|[]
 name|revs
 parameter_list|)
 block|{
-name|_revs
+name|revisions
 operator|=
 name|Arrays
 operator|.
@@ -105,7 +105,7 @@ name|setName
 argument_list|(
 literal|"fixed"
 operator|+
-name|_revs
+name|revisions
 argument_list|)
 expr_stmt|;
 block|}
@@ -173,7 +173,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_revs
+name|revisions
 operator|.
 name|contains
 argument_list|(
@@ -200,7 +200,7 @@ name|getRevs
 parameter_list|()
 block|{
 return|return
-name|_revs
+name|revisions
 return|;
 block|}
 block|}
