@@ -43,22 +43,6 @@ name|core
 operator|.
 name|retrieve
 operator|.
-name|RetrieveEngine
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|retrieve
-operator|.
 name|RetrieveOptions
 import|;
 end_import
@@ -94,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  *   * @see RetrieveEngine  */
+comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  */
 end_comment
 
 begin_class
