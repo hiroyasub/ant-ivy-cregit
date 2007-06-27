@@ -127,13 +127,22 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ChecksumHelper
 block|{
 specifier|private
 specifier|static
+specifier|final
+name|int
+name|BUFFER_SIZE
+init|=
+literal|2048
+decl_stmt|;
+specifier|private
+specifier|static
 name|Map
-name|_algorithms
+name|algorithms
 init|=
 operator|new
 name|HashMap
@@ -141,7 +150,7 @@ argument_list|()
 decl_stmt|;
 static|static
 block|{
-name|_algorithms
+name|algorithms
 operator|.
 name|put
 argument_list|(
@@ -150,7 +159,7 @@ argument_list|,
 literal|"MD5"
 argument_list|)
 expr_stmt|;
-name|_algorithms
+name|algorithms
 operator|.
 name|put
 argument_list|(
@@ -368,7 +377,7 @@ init|=
 operator|new
 name|byte
 index|[
-literal|2048
+name|BUFFER_SIZE
 index|]
 decl_stmt|;
 name|int
@@ -436,7 +445,7 @@ init|=
 operator|(
 name|String
 operator|)
-name|_algorithms
+name|algorithms
 operator|.
 name|get
 argument_list|(
@@ -490,8 +499,8 @@ block|}
 block|}
 comment|// byte to hex string converter
 specifier|private
-specifier|final
 specifier|static
+specifier|final
 name|char
 index|[]
 name|CHARS
@@ -537,8 +546,8 @@ name|String
 name|byteArrayToHexString
 parameter_list|(
 name|byte
-name|in
 index|[]
+name|in
 parameter_list|)
 block|{
 name|byte
@@ -576,6 +585,7 @@ operator|*
 literal|2
 argument_list|)
 decl_stmt|;
+comment|//CheckStyle:MagicNumber OFF
 for|for
 control|(
 name|int
@@ -676,12 +686,18 @@ argument_list|)
 expr_stmt|;
 comment|// convert the nibble to a String Character
 block|}
+comment|//CheckStyle:MagicNumber ON
 return|return
 name|out
 operator|.
 name|toString
 argument_list|()
 return|;
+block|}
+specifier|private
+name|ChecksumHelper
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

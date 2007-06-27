@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Ant 1.6.1 like Configurator This configurator is used to configure elements (initialised with  * setRoot) using the behaviour defined by ant for its tasks. Example (based on<a  * href="http://ant.apache.org/manual/develop.html#writingowntask">Ant Example</a>) : Configurator  * conf = new Configurator(); conf.typeDef("buildpath", "Sample$BuildPath");  * conf.typeDef("xinterface", "Sample$XInterface"); Sample.MyFileSelector mfs = new  * Sample.MyFileSelector(); conf.setRoot(mfs); conf.startCreateChild("buildpath");  * conf.setAttribute("path", "."); conf.setAttribute("url", "abc");  * conf.startCreateChild("xinterface"); conf.setAttribute("count", "4"); conf.endCreateChild(); //  * xinterface conf.endCreateChild(); // buildpath  */
+comment|/**  * Ant 1.6.1 like Configurator   *<p>  * This configurator is used to configure elements (initialised with  * setRoot) using the behaviour defined by ant for its tasks.   *<p>  * Example (based on<a  * href="http://ant.apache.org/manual/develop.html#writingowntask">Ant Example</a>):  *<pre>  * Configurator conf = new Configurator();   * conf.typeDef("buildpath", "Sample$BuildPath");  * conf.typeDef("xinterface", "Sample$XInterface");   * Sample.MyFileSelector mfs = new Sample.MyFileSelector();   * conf.setRoot(mfs);   * conf.startCreateChild("buildpath");  * conf.setAttribute("path", ".");   * conf.setAttribute("url", "abc");  * conf.startCreateChild("xinterface");   * conf.setAttribute("count", "4");   * conf.endCreateChild(); // xinterface   * conf.endCreateChild(); // buildpath  *</pre>  */
 end_comment
 
 begin_class
@@ -159,11 +159,11 @@ name|Macro
 block|{
 specifier|private
 name|MacroDef
-name|_macrodef
+name|macrodef
 decl_stmt|;
 specifier|private
 name|Map
-name|_attValues
+name|attValues
 init|=
 operator|new
 name|HashMap
@@ -171,7 +171,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_macroRecords
+name|macroRecords
 init|=
 operator|new
 name|HashMap
@@ -184,7 +184,7 @@ name|MacroDef
 name|def
 parameter_list|)
 block|{
-name|_macrodef
+name|macrodef
 operator|=
 name|def
 expr_stmt|;
@@ -202,7 +202,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_macrodef
+name|macrodef
 operator|.
 name|getAttribute
 argument_list|(
@@ -222,14 +222,14 @@ name|attributeName
 operator|+
 literal|" on macro "
 operator|+
-name|_macrodef
+name|macrodef
 operator|.
 name|getName
 argument_list|()
 argument_list|)
 throw|;
 block|}
-name|_attValues
+name|attValues
 operator|.
 name|put
 argument_list|(
@@ -262,7 +262,7 @@ init|=
 operator|(
 name|List
 operator|)
-name|_macroRecords
+name|macroRecords
 operator|.
 name|get
 argument_list|(
@@ -282,7 +282,7 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_macroRecords
+name|macroRecords
 operator|.
 name|put
 argument_list|(
@@ -312,15 +312,15 @@ name|conf
 parameter_list|)
 block|{
 return|return
-name|_macrodef
+name|macrodef
 operator|.
 name|play
 argument_list|(
 name|conf
 argument_list|,
-name|_attValues
+name|attValues
 argument_list|,
-name|_macroRecords
+name|macroRecords
 argument_list|)
 return|;
 block|}
@@ -332,11 +332,11 @@ name|Attribute
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|String
-name|_default
+name|defaultValue
 decl_stmt|;
 specifier|public
 name|String
@@ -344,7 +344,7 @@ name|getDefault
 parameter_list|()
 block|{
 return|return
-name|_default
+name|defaultValue
 return|;
 block|}
 specifier|public
@@ -355,7 +355,7 @@ name|String
 name|default1
 parameter_list|)
 block|{
-name|_default
+name|defaultValue
 operator|=
 name|default1
 expr_stmt|;
@@ -366,7 +366,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -377,7 +377,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -390,11 +392,11 @@ name|Element
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|boolean
-name|_optional
+name|optional
 init|=
 literal|false
 decl_stmt|;
@@ -404,7 +406,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -415,7 +417,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -426,7 +430,7 @@ name|isOptional
 parameter_list|()
 block|{
 return|return
-name|_optional
+name|optional
 return|;
 block|}
 specifier|public
@@ -437,7 +441,9 @@ name|boolean
 name|optional
 parameter_list|)
 block|{
-name|_optional
+name|this
+operator|.
+name|optional
 operator|=
 name|optional
 expr_stmt|;
@@ -450,11 +456,11 @@ name|MacroRecord
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|Map
-name|_attributes
+name|attributes
 init|=
 operator|new
 name|LinkedHashMap
@@ -462,7 +468,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|List
-name|_children
+name|children
 init|=
 operator|new
 name|ArrayList
@@ -475,7 +481,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -486,7 +494,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -500,7 +508,7 @@ name|String
 name|value
 parameter_list|)
 block|{
-name|_attributes
+name|attributes
 operator|.
 name|put
 argument_list|(
@@ -527,7 +535,7 @@ argument_list|(
 name|name
 argument_list|)
 decl_stmt|;
-name|_children
+name|children
 operator|.
 name|add
 argument_list|(
@@ -544,7 +552,7 @@ name|getAttributes
 parameter_list|()
 block|{
 return|return
-name|_attributes
+name|attributes
 return|;
 block|}
 specifier|public
@@ -553,7 +561,7 @@ name|getChildren
 parameter_list|()
 block|{
 return|return
-name|_children
+name|children
 return|;
 block|}
 block|}
@@ -564,11 +572,11 @@ name|MacroDef
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|Map
-name|_attributes
+name|attributes
 init|=
 operator|new
 name|HashMap
@@ -576,7 +584,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_elements
+name|elements
 init|=
 operator|new
 name|HashMap
@@ -584,7 +592,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|MacroRecord
-name|_macroRecord
+name|macroRecord
 decl_stmt|;
 specifier|public
 name|MacroDef
@@ -593,7 +601,7 @@ name|String
 name|macroName
 parameter_list|)
 block|{
-name|_name
+name|name
 operator|=
 name|macroName
 expr_stmt|;
@@ -610,7 +618,7 @@ return|return
 operator|(
 name|Attribute
 operator|)
-name|_attributes
+name|attributes
 operator|.
 name|get
 argument_list|(
@@ -637,7 +645,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_attributes
+name|attributes
 operator|.
 name|values
 argument_list|()
@@ -739,7 +747,7 @@ name|play
 argument_list|(
 name|conf
 argument_list|,
-name|_macroRecord
+name|macroRecord
 argument_list|,
 name|attValues
 argument_list|,
@@ -878,7 +886,7 @@ init|=
 operator|(
 name|Element
 operator|)
-name|_elements
+name|elements
 operator|.
 name|get
 argument_list|(
@@ -1069,7 +1077,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -1080,7 +1088,7 @@ name|Attribute
 name|att
 parameter_list|)
 block|{
-name|_attributes
+name|attributes
 operator|.
 name|put
 argument_list|(
@@ -1101,7 +1109,7 @@ name|Element
 name|elt
 parameter_list|)
 block|{
-name|_elements
+name|elements
 operator|.
 name|put
 argument_list|(
@@ -1211,7 +1219,7 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_macroRecord
+name|macroRecord
 operator|=
 operator|new
 name|MacroRecord
@@ -1220,7 +1228,7 @@ name|name
 argument_list|)
 expr_stmt|;
 return|return
-name|_macroRecord
+name|macroRecord
 return|;
 block|}
 block|}
@@ -1231,15 +1239,15 @@ name|ObjectDescriptor
 block|{
 specifier|private
 name|Object
-name|_obj
+name|obj
 decl_stmt|;
 specifier|private
 name|String
-name|_objName
+name|objName
 decl_stmt|;
 specifier|private
 name|Map
-name|_createMethods
+name|createMethods
 init|=
 operator|new
 name|HashMap
@@ -1247,7 +1255,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_addMethods
+name|addMethods
 init|=
 operator|new
 name|HashMap
@@ -1255,7 +1263,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_addConfiguredMethods
+name|addConfiguredMethods
 init|=
 operator|new
 name|HashMap
@@ -1263,7 +1271,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_setMethods
+name|setMethods
 init|=
 operator|new
 name|HashMap
@@ -1271,7 +1279,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_typeAddMethods
+name|typeAddMethods
 init|=
 operator|new
 name|HashMap
@@ -1279,7 +1287,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_typeAddConfiguredMethods
+name|typeAddConfiguredMethods
 init|=
 operator|new
 name|HashMap
@@ -1295,11 +1303,13 @@ name|String
 name|objName
 parameter_list|)
 block|{
-name|_obj
+name|obj
 operator|=
 name|object
 expr_stmt|;
-name|_objName
+name|this
+operator|.
+name|objName
 operator|=
 name|objName
 expr_stmt|;
@@ -1673,7 +1683,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_createMethods
+name|createMethods
 operator|.
 name|put
 argument_list|(
@@ -1694,7 +1704,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_addMethods
+name|addMethods
 operator|.
 name|put
 argument_list|(
@@ -1715,7 +1725,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_addConfiguredMethods
+name|addConfiguredMethods
 operator|.
 name|put
 argument_list|(
@@ -1733,7 +1743,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_typeAddMethods
+name|typeAddMethods
 operator|.
 name|put
 argument_list|(
@@ -1757,7 +1767,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_typeAddConfiguredMethods
+name|typeAddConfiguredMethods
 operator|.
 name|put
 argument_list|(
@@ -1784,7 +1794,7 @@ name|Method
 name|m
 parameter_list|)
 block|{
-name|_setMethods
+name|setMethods
 operator|.
 name|put
 argument_list|(
@@ -1800,7 +1810,7 @@ name|getObject
 parameter_list|()
 block|{
 return|return
-name|_obj
+name|obj
 return|;
 block|}
 specifier|public
@@ -1815,7 +1825,7 @@ return|return
 operator|(
 name|Method
 operator|)
-name|_createMethods
+name|createMethods
 operator|.
 name|get
 argument_list|(
@@ -1835,7 +1845,7 @@ return|return
 operator|(
 name|Method
 operator|)
-name|_addMethods
+name|addMethods
 operator|.
 name|get
 argument_list|(
@@ -1855,7 +1865,7 @@ return|return
 operator|(
 name|Method
 operator|)
-name|_addConfiguredMethods
+name|addConfiguredMethods
 operator|.
 name|get
 argument_list|(
@@ -1876,7 +1886,7 @@ name|getTypeMatchingMethod
 argument_list|(
 name|type
 argument_list|,
-name|_typeAddMethods
+name|typeAddMethods
 argument_list|)
 return|;
 block|}
@@ -1893,7 +1903,7 @@ name|getTypeMatchingMethod
 argument_list|(
 name|type
 argument_list|,
-name|_typeAddConfiguredMethods
+name|typeAddConfiguredMethods
 argument_list|)
 return|;
 block|}
@@ -2002,7 +2012,7 @@ return|return
 operator|(
 name|Method
 operator|)
-name|_setMethods
+name|setMethods
 operator|.
 name|get
 argument_list|(
@@ -2016,13 +2026,13 @@ name|getObjectName
 parameter_list|()
 block|{
 return|return
-name|_objName
+name|objName
 return|;
 block|}
 block|}
 specifier|private
 name|Map
-name|_typedefs
+name|typedefs
 init|=
 operator|new
 name|HashMap
@@ -2030,7 +2040,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_macrodefs
+name|macrodefs
 init|=
 operator|new
 name|HashMap
@@ -2039,7 +2049,7 @@ decl_stmt|;
 comment|// stack in which the top is current configured object descriptor
 specifier|private
 name|Stack
-name|_objectStack
+name|objectStack
 init|=
 operator|new
 name|Stack
@@ -2104,7 +2114,7 @@ name|Class
 name|clazz
 parameter_list|)
 block|{
-name|_typedefs
+name|typedefs
 operator|.
 name|put
 argument_list|(
@@ -2135,7 +2145,7 @@ name|NullPointerException
 argument_list|()
 throw|;
 block|}
-name|_objectStack
+name|objectStack
 operator|.
 name|clear
 argument_list|()
@@ -2153,7 +2163,7 @@ name|void
 name|clear
 parameter_list|()
 block|{
-name|_objectStack
+name|objectStack
 operator|.
 name|clear
 argument_list|()
@@ -2170,7 +2180,7 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_objectStack
+name|objectStack
 operator|.
 name|push
 argument_list|(
@@ -2194,7 +2204,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -2214,7 +2224,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -2357,7 +2367,7 @@ init|=
 operator|(
 name|MacroDef
 operator|)
-name|_macrodefs
+name|macrodefs
 operator|.
 name|get
 argument_list|(
@@ -2396,7 +2406,7 @@ init|=
 operator|(
 name|Class
 operator|)
-name|_typedefs
+name|typedefs
 operator|.
 name|get
 argument_list|(
@@ -2670,7 +2680,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -2690,7 +2700,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -2940,7 +2950,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -2956,7 +2966,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -2985,7 +2995,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -3005,7 +3015,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -3484,7 +3494,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -3504,7 +3514,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -3592,7 +3602,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -3612,20 +3622,20 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|pop
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|_objectStack
+name|objectStack
 operator|.
 name|push
 argument_list|(
@@ -3674,7 +3684,7 @@ init|=
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -3693,7 +3703,7 @@ init|=
 operator|(
 name|Class
 operator|)
-name|_typedefs
+name|typedefs
 operator|.
 name|get
 argument_list|(
@@ -3816,7 +3826,7 @@ name|getCurrent
 parameter_list|()
 block|{
 return|return
-name|_objectStack
+name|objectStack
 operator|.
 name|isEmpty
 argument_list|()
@@ -3827,7 +3837,7 @@ operator|(
 operator|(
 name|ObjectDescriptor
 operator|)
-name|_objectStack
+name|objectStack
 operator|.
 name|peek
 argument_list|()
@@ -3843,7 +3853,7 @@ name|getDepth
 parameter_list|()
 block|{
 return|return
-name|_objectStack
+name|objectStack
 operator|.
 name|size
 argument_list|()
@@ -3947,7 +3957,7 @@ argument_list|()
 operator|)
 argument_list|)
 expr_stmt|;
-name|_objectStack
+name|objectStack
 operator|.
 name|pop
 argument_list|()
@@ -3961,7 +3971,7 @@ name|MacroDef
 name|macrodef
 parameter_list|)
 block|{
-name|_macrodefs
+name|macrodefs
 operator|.
 name|put
 argument_list|(
@@ -3986,7 +3996,7 @@ return|return
 operator|(
 name|Class
 operator|)
-name|_typedefs
+name|typedefs
 operator|.
 name|get
 argument_list|(

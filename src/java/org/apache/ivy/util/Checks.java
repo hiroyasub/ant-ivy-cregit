@@ -21,9 +21,15 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Checks
 block|{
+specifier|private
+name|Checks
+parameter_list|()
+block|{
+block|}
 comment|/**      * Checks that an object is not null, and throw an exception if the object is null.      *       * @param o      *            the object to check      * @param objectName      *            the name of the object to check. This name will be used in the exception message.      * @throws IllegalArgumentException      *             if the object is null      */
 specifier|public
 specifier|static
