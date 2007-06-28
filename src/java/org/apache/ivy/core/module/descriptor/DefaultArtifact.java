@@ -305,12 +305,15 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+specifier|private
 name|Date
 name|publicationDate
 decl_stmt|;
+specifier|private
 name|ArtifactRevisionId
 name|arid
 decl_stmt|;
+specifier|private
 name|URL
 name|url
 decl_stmt|;
