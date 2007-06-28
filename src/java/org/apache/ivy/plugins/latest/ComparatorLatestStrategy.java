@@ -76,7 +76,7 @@ name|AbstractLatestStrategy
 block|{
 specifier|private
 name|Comparator
-name|_comparator
+name|comparator
 decl_stmt|;
 specifier|public
 name|ComparatorLatestStrategy
@@ -90,7 +90,9 @@ name|Comparator
 name|comparator
 parameter_list|)
 block|{
-name|_comparator
+name|this
+operator|.
+name|comparator
 operator|=
 name|comparator
 expr_stmt|;
@@ -124,7 +126,7 @@ name|sort
 argument_list|(
 name|ret
 argument_list|,
-name|_comparator
+name|comparator
 argument_list|)
 expr_stmt|;
 return|return
@@ -137,7 +139,7 @@ name|getComparator
 parameter_list|()
 block|{
 return|return
-name|_comparator
+name|comparator
 return|;
 block|}
 specifier|public
@@ -148,7 +150,9 @@ name|Comparator
 name|comparator
 parameter_list|)
 block|{
-name|_comparator
+name|this
+operator|.
+name|comparator
 operator|=
 name|comparator
 expr_stmt|;

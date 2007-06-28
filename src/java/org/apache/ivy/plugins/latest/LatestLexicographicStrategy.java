@@ -37,6 +37,7 @@ block|{
 comment|/**      * Compares two revisions. Revisions are compared lexicographically unless a 'latest' revision      * is found. If the latest revision found is an absolute latest (latest. like), then it is      * assumed to be the greater. If a partial latest is found, then it is assumed to be greater      * than any matching fixed revision.      */
 specifier|private
 specifier|static
+specifier|final
 name|Comparator
 name|COMPARATOR
 init|=

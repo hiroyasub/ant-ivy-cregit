@@ -85,11 +85,11 @@ name|IvyAware
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|public
 name|Ivy
@@ -97,7 +97,7 @@ name|getIvy
 parameter_list|()
 block|{
 return|return
-name|_ivy
+name|ivy
 return|;
 block|}
 specifier|public
@@ -108,7 +108,9 @@ name|Ivy
 name|ivy
 parameter_list|)
 block|{
-name|_ivy
+name|this
+operator|.
+name|ivy
 operator|=
 name|ivy
 expr_stmt|;
@@ -119,7 +121,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -130,7 +132,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -141,7 +145,7 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
