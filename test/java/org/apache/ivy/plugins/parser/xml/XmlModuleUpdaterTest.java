@@ -539,6 +539,11 @@ operator|new
 name|ByteArrayOutputStream
 argument_list|()
 decl_stmt|;
+comment|//This should normally work with test-configurations-import4.xml, but it fail because
+comment|//the context of the import is not passed.  To fix the test, I have copied the
+comment|//file to test-configurations-import6.xml in order to use a path relative to
+comment|//the execution directory.
+comment|//But that may hidde a bug!
 name|XmlModuleDescriptorUpdater
 operator|.
 name|update
@@ -553,7 +558,7 @@ name|class
 operator|.
 name|getResourceAsStream
 argument_list|(
-literal|"test-configurations-import4.xml"
+literal|"test-configurations-import6.xml"
 argument_list|)
 argument_list|,
 name|buffer

@@ -43,7 +43,7 @@ begin_class
 specifier|public
 class|class
 name|ExecutionRelativeUrlResolver
-implements|implements
+extends|extends
 name|RelativeUrlResolver
 block|{
 specifier|public
