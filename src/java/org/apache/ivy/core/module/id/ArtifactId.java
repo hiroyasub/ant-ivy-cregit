@@ -44,7 +44,7 @@ specifier|private
 name|String
 name|ext
 decl_stmt|;
-comment|/**      * @param mid      * @param name      * @param type      */
+comment|/**      * @param mid  The ModuleId, which is the base of this artifact.      * @param name  The name of the artifact.      * @param type  The type of the artifact.      */
 specifier|public
 name|ArtifactId
 parameter_list|(
@@ -86,6 +86,7 @@ operator|=
 name|ext
 expr_stmt|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|boolean
 name|equals
@@ -162,6 +163,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|int
 name|hashCode
@@ -208,6 +210,7 @@ return|return
 name|hash
 return|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|String
 name|toString

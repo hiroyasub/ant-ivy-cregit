@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Representation of a published 'file' in the development environment. An artifact is generally a  * file that is produced by a project build. This is typically a jar, a war, an ear, a zip, a deb,  * ...  */
+comment|/**  * Representation of a published 'file' in the development environment. An artifact is generally a  * file that is produced by a project build. This is typically a<code>jar</code>, a<code>war</code>,  * an<code>ear</code>, a<code>zip</code>, a<code>deb</code>, etc.  */
 end_comment
 
 begin_interface

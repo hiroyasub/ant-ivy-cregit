@@ -435,7 +435,7 @@ name|passwd
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param project      * @return      */
+comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param  project  TODO add text.      * @return  An IvySetting instance.      */
 specifier|public
 specifier|static
 name|IvyAntSettings
@@ -812,7 +812,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*      * public void execute() throws BuildException {       * ensureMessageInitialised();       * if (getId()==null) {      * log("No id specified for the ivy:settings, set the instance as the default one",      * Project.MSG_DEBUG); getProject().addReference("ivy.instance", this); } else {      * getProject().addReference(id, this); } }      */
-comment|/**      * @return      */
+comment|/**      * Return the configured Ivy instance.      * @return Returns the configured Ivy instance.      */
 specifier|public
 name|Ivy
 name|getConfiguredIvyInstance

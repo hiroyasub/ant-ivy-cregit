@@ -426,7 +426,7 @@ operator|=
 name|destivypattern
 expr_stmt|;
 block|}
-comment|/**      * @deprecated use getSrcivypattern instead      * @return      */
+comment|/**      * @deprecated use {@link #getSrcivypattern()} instead.      */
 specifier|public
 name|String
 name|getDeliverivypattern
@@ -436,7 +436,7 @@ return|return
 name|srcivypattern
 return|;
 block|}
-comment|/**      * @deprecated use setSrcivypattern instead      * @return      */
+comment|/**      * @deprecated use {@link #setSrcivypattern(String)} instead.      */
 specifier|public
 name|void
 name|setDeliverivypattern

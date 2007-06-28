@@ -254,12 +254,12 @@ name|String
 name|getStatus
 parameter_list|()
 function_decl|;
-comment|/**      * may be null if unknown in the descriptor itself      *       * @return      */
+comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return  The publication date or<code>null</code> when not knwon.      */
 name|Date
 name|getPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * the publication date of the module revision should be the date at which it has been      * published, i.e. in general the date of any of its published artifacts, since all published      * artifact of a module should follow the same publishing cycle.      */
+comment|/**      * The publication date of the module revision should be the date at which it has been      * published, i.e. in general the date of any of its published artifacts, since all published      * artifact of a module should follow the same publishing cycle.      */
 name|Date
 name|getResolvedPublicationDate
 parameter_list|()

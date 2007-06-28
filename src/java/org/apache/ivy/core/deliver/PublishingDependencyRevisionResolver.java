@@ -62,7 +62,7 @@ specifier|public
 interface|interface
 name|PublishingDependencyRevisionResolver
 block|{
-comment|/**      * Returns the revision of the dependency for the publishing of the 'published' module in      * 'publishedStatus' status.      *       * @param published      * @param publishedStatus      * @param dependency      * @return the revision of the dependency      */
+comment|/**      * Returns the revision of the dependency for the publishing of the 'published' module in      * 'publishedStatus' status.      *       * @param published      * @param publishedStatus      * @param depMrid      * @param status      * @return the revision of the dependency      */
 name|String
 name|resolve
 parameter_list|(

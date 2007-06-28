@@ -49,6 +49,7 @@ specifier|private
 name|int
 name|hash
 decl_stmt|;
+comment|/**      * Constructor.      * @param  organisation  The organisation which creates the module.      * @param  name  The name of the module.      */
 specifier|public
 name|ModuleId
 parameter_list|(
@@ -87,6 +88,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+comment|/**      * Returns the name of the module.      * @return  The name of the module.      */
 specifier|public
 name|String
 name|getName
@@ -96,6 +98,7 @@ return|return
 name|name
 return|;
 block|}
+comment|/**      * Returns the name of the organisation.      * @return  The name of the organisation.      */
 specifier|public
 name|String
 name|getOrganisation
@@ -105,6 +108,7 @@ return|return
 name|organisation
 return|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|boolean
 name|equals
@@ -182,6 +186,7 @@ argument_list|)
 return|;
 block|}
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|int
 name|hashCode
@@ -235,6 +240,7 @@ return|return
 name|hash
 return|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|String
 name|toString
@@ -252,6 +258,7 @@ operator|+
 literal|" ]"
 return|;
 block|}
+comment|/** {@inheritDoc} */
 specifier|public
 name|int
 name|compareTo
@@ -303,6 +310,7 @@ return|return
 name|result
 return|;
 block|}
+comment|/**      * Returns the encoded String representing this ModuleId.      * @return  The ModuleId encoded as String.      */
 specifier|public
 name|String
 name|encodeToString
@@ -318,6 +326,7 @@ name|getName
 argument_list|()
 return|;
 block|}
+comment|/**      * Returns a ModuleId        * @param  encoded        * @return  The new ModuleId.      * @throws  IllegalArgumentException  If the given String could not be decoded.      */
 specifier|public
 specifier|static
 name|ModuleId
