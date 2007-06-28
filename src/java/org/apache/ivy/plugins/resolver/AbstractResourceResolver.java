@@ -413,7 +413,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|List
-name|_ivyPatterns
+name|ivyPatterns
 init|=
 operator|new
 name|ArrayList
@@ -422,7 +422,7 @@ decl_stmt|;
 comment|// List (String pattern)
 specifier|private
 name|List
-name|_artifactPatterns
+name|artifactPatterns
 init|=
 operator|new
 name|ArrayList
@@ -431,7 +431,7 @@ decl_stmt|;
 comment|// List (String pattern)
 specifier|private
 name|boolean
-name|_m2compatible
+name|m2compatible
 init|=
 literal|false
 decl_stmt|;
@@ -478,7 +478,7 @@ name|findResourceUsingPatterns
 argument_list|(
 name|mrid
 argument_list|,
-name|_ivyPatterns
+name|ivyPatterns
 argument_list|,
 name|DefaultArtifact
 operator|.
@@ -544,7 +544,7 @@ name|findResourceUsingPatterns
 argument_list|(
 name|mrid
 argument_list|,
-name|_artifactPatterns
+name|artifactPatterns
 argument_list|,
 name|artifact
 argument_list|,
@@ -1016,7 +1016,9 @@ literal|"\t"
 operator|+
 name|name
 operator|+
-literal|": default md rejected by version matcher requiring module descriptor: "
+literal|": default md rejected by version matcher"
+operator|+
+literal|"requiring module descriptor: "
 operator|+
 name|rres
 argument_list|)
@@ -1397,7 +1399,6 @@ return|return
 name|names
 return|;
 block|}
-comment|// should be overridden by subclasses wanting to have listing features
 specifier|protected
 name|void
 name|findTokenValues
@@ -1415,6 +1416,7 @@ name|String
 name|token
 parameter_list|)
 block|{
+comment|//to be overridden by subclasses wanting to have listing features
 block|}
 comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      *       * @param pattern      */
 specifier|public
@@ -1425,7 +1427,7 @@ name|String
 name|pattern
 parameter_list|)
 block|{
-name|_ivyPatterns
+name|ivyPatterns
 operator|.
 name|add
 argument_list|(
@@ -1441,7 +1443,7 @@ name|String
 name|pattern
 parameter_list|)
 block|{
-name|_artifactPatterns
+name|artifactPatterns
 operator|.
 name|add
 argument_list|(
@@ -1459,7 +1461,7 @@ name|Collections
 operator|.
 name|unmodifiableList
 argument_list|(
-name|_ivyPatterns
+name|ivyPatterns
 argument_list|)
 return|;
 block|}
@@ -1473,7 +1475,7 @@ name|Collections
 operator|.
 name|unmodifiableList
 argument_list|(
-name|_artifactPatterns
+name|artifactPatterns
 argument_list|)
 return|;
 block|}
@@ -1482,12 +1484,12 @@ name|void
 name|setIvyPatterns
 parameter_list|(
 name|List
-name|ivyPatterns
+name|patterns
 parameter_list|)
 block|{
-name|_ivyPatterns
-operator|=
 name|ivyPatterns
+operator|=
+name|patterns
 expr_stmt|;
 block|}
 specifier|protected
@@ -1495,12 +1497,12 @@ name|void
 name|setArtifactPatterns
 parameter_list|(
 name|List
-name|artifactPatterns
+name|patterns
 parameter_list|)
 block|{
-name|_artifactPatterns
-operator|=
 name|artifactPatterns
+operator|=
+name|patterns
 expr_stmt|;
 block|}
 comment|/*      * Methods respecting ivy conf method specifications      */
@@ -1512,7 +1514,7 @@ name|IvyPattern
 name|p
 parameter_list|)
 block|{
-name|_ivyPatterns
+name|ivyPatterns
 operator|.
 name|add
 argument_list|(
@@ -1531,7 +1533,7 @@ name|IvyPattern
 name|p
 parameter_list|)
 block|{
-name|_artifactPatterns
+name|artifactPatterns
 operator|.
 name|add
 argument_list|(
@@ -1661,7 +1663,7 @@ name|isM2compatible
 parameter_list|()
 block|{
 return|return
-name|_m2compatible
+name|m2compatible
 return|;
 block|}
 specifier|public
@@ -1669,12 +1671,12 @@ name|void
 name|setM2compatible
 parameter_list|(
 name|boolean
-name|m2compatible
+name|compatible
 parameter_list|)
 block|{
-name|_m2compatible
-operator|=
 name|m2compatible
+operator|=
+name|compatible
 expr_stmt|;
 block|}
 specifier|protected
