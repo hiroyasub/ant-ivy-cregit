@@ -706,7 +706,7 @@ return|return
 name|root
 return|;
 block|}
-comment|/**      * Returns true if the current dependency descriptor is transitive and the parent configuration      * is transitive. Otherwise returns false.      *       * @param node      *            curent node      * @return true if current node is transitive and the parent configuration is transitive.      */
+comment|/**      * Returns true if the current dependency descriptor is transitive and the parent configuration      * is transitive. Otherwise returns false.      *       * @return true if current node is transitive and the parent configuration is transitive.      */
 specifier|public
 name|boolean
 name|isTransitive
@@ -1047,7 +1047,9 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"you can't use gotoNode for a node which does not represent the same Module as the one represented by this node.\nCurrent node module id="
+literal|"You can't use gotoNode for a node which does not represent the same Module "
+operator|+
+literal|"as the one represented by this node.\nCurrent node module id="
 operator|+
 name|getModuleId
 argument_list|()
@@ -1085,7 +1087,9 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"you can't use gotoNode with a node which has not been visited yet.\nGiven node id="
+literal|"You can't use gotoNode with a node which has not been visited yet.\n"
+operator|+
+literal|"Given node id="
 operator|+
 name|node
 operator|.
@@ -1720,7 +1724,7 @@ name|getRequiredConfigurations
 argument_list|()
 return|;
 block|}
-comment|/**      * Marks the current node as evicted by the the given selected IvyNodes, in the given parent and      * root module configuration, with the given {@link ConflictManager}      *       * @param parent      *            the VisitNode in which eviction has been made      * @param conflictManager      *            the conflict manager responsible for the eviction      * @param selected      *            a Collection of {@link IvyNode} which have been selected      */
+comment|/**      * Marks the current node as evicted by the the given selected IvyNodes, in the given parent and      * root module configuration, with the given {@link ConflictManager}      *       * @param parent      *            the VisitNode in which eviction has been made      * @param conflictMgr      *            the conflict manager responsible for the eviction      * @param selected      *            a Collection of {@link IvyNode} which have been selected      */
 specifier|public
 name|void
 name|markEvicted
@@ -1729,7 +1733,7 @@ name|VisitNode
 name|parent
 parameter_list|,
 name|ConflictManager
-name|conflictManager
+name|conflictMgr
 parameter_list|,
 name|Collection
 name|selected
@@ -1746,7 +1750,7 @@ operator|.
 name|getNode
 argument_list|()
 argument_list|,
-name|conflictManager
+name|conflictMgr
 argument_list|,
 name|selected
 argument_list|)
