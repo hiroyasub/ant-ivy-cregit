@@ -114,7 +114,7 @@ name|AbstractVersionMatcher
 block|{
 specifier|private
 name|List
-name|_matches
+name|matches
 init|=
 operator|new
 name|ArrayList
@@ -122,7 +122,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-name|_revisionMatches
+name|revisionMatches
 init|=
 operator|new
 name|HashMap
@@ -131,7 +131,7 @@ decl_stmt|;
 comment|// revision -> list of Match instances
 specifier|private
 name|boolean
-name|_init
+name|init
 init|=
 literal|false
 decl_stmt|;
@@ -143,7 +143,7 @@ name|Match
 name|match
 parameter_list|)
 block|{
-name|_matches
+name|matches
 operator|.
 name|add
 argument_list|(
@@ -159,7 +159,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_init
+name|init
 condition|)
 block|{
 for|for
@@ -167,7 +167,7 @@ control|(
 name|Iterator
 name|it
 init|=
-name|_matches
+name|matches
 operator|.
 name|iterator
 argument_list|()
@@ -191,12 +191,12 @@ name|next
 argument_list|()
 decl_stmt|;
 name|List
-name|matches
+name|revMatches
 init|=
 operator|(
 name|List
 operator|)
-name|_revisionMatches
+name|revisionMatches
 operator|.
 name|get
 argument_list|(
@@ -208,18 +208,18 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|matches
+name|revMatches
 operator|==
 literal|null
 condition|)
 block|{
-name|matches
+name|revMatches
 operator|=
 operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_revisionMatches
+name|revisionMatches
 operator|.
 name|put
 argument_list|(
@@ -228,11 +228,11 @@ operator|.
 name|getRevision
 argument_list|()
 argument_list|,
-name|matches
+name|revMatches
 argument_list|)
 expr_stmt|;
 block|}
-name|matches
+name|revMatches
 operator|.
 name|add
 argument_list|(
@@ -240,7 +240,7 @@ name|match
 argument_list|)
 expr_stmt|;
 block|}
-name|_init
+name|init
 operator|=
 literal|true
 expr_stmt|;
@@ -304,12 +304,12 @@ argument_list|)
 expr_stmt|;
 block|}
 name|List
-name|matches
+name|revMatches
 init|=
 operator|(
 name|List
 operator|)
-name|_revisionMatches
+name|revisionMatches
 operator|.
 name|get
 argument_list|(
@@ -318,7 +318,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|matches
+name|revMatches
 operator|!=
 literal|null
 condition|)
@@ -326,7 +326,7 @@ block|{
 name|Iterator
 name|it
 init|=
-name|matches
+name|revMatches
 operator|.
 name|iterator
 argument_list|()
@@ -431,7 +431,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_revisionMatches
+name|revisionMatches
 operator|.
 name|containsKey
 argument_list|(

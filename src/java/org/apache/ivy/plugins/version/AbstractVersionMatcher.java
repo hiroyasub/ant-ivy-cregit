@@ -119,7 +119,7 @@ name|IvySettingsAware
 block|{
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|IvySettings
@@ -137,7 +137,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -148,7 +150,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -159,7 +161,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;

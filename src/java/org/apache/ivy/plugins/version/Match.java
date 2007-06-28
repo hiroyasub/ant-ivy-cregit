@@ -156,19 +156,19 @@ name|Match
 block|{
 specifier|private
 name|String
-name|_revision
+name|revision
 decl_stmt|;
 specifier|private
 name|String
-name|_pattern
+name|pattern
 decl_stmt|;
 specifier|private
 name|String
-name|_args
+name|args
 decl_stmt|;
 specifier|private
 name|String
-name|_matcher
+name|matcher
 decl_stmt|;
 specifier|public
 name|String
@@ -176,7 +176,7 @@ name|getArgs
 parameter_list|()
 block|{
 return|return
-name|_args
+name|args
 return|;
 block|}
 specifier|public
@@ -189,7 +189,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_args
+name|args
 operator|=
 name|args
 expr_stmt|;
@@ -200,7 +200,7 @@ name|getMatcher
 parameter_list|()
 block|{
 return|return
-name|_matcher
+name|matcher
 return|;
 block|}
 specifier|public
@@ -213,7 +213,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_matcher
+name|matcher
 operator|=
 name|matcher
 expr_stmt|;
@@ -224,7 +224,7 @@ name|getPattern
 parameter_list|()
 block|{
 return|return
-name|_pattern
+name|pattern
 return|;
 block|}
 specifier|public
@@ -237,7 +237,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_pattern
+name|pattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -248,7 +248,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_revision
+name|revision
 return|;
 block|}
 specifier|public
@@ -261,7 +261,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_revision
+name|revision
 operator|=
 name|revision
 expr_stmt|;
@@ -388,7 +388,7 @@ argument_list|()
 operator|.
 name|getMatcher
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|)
 decl_stmt|;
 return|return
