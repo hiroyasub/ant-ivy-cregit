@@ -1117,6 +1117,14 @@ init|=
 literal|9
 decl_stmt|;
 specifier|private
+specifier|static
+specifier|final
+name|int
+name|DEPS
+init|=
+literal|10
+decl_stmt|;
+specifier|private
 name|int
 name|_state
 init|=
@@ -2177,7 +2185,7 @@ condition|)
 block|{
 name|_state
 operator|=
-name|DEP
+name|DEPS
 expr_stmt|;
 name|String
 name|defaultConf
@@ -2289,28 +2297,6 @@ block|{
 name|_state
 operator|=
 name|CONFLICT
-expr_stmt|;
-name|checkConfigurations
-argument_list|()
-expr_stmt|;
-block|}
-if|else if
-condition|(
-literal|"exclude"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
-operator|&&
-name|_state
-operator|!=
-name|DEP
-condition|)
-block|{
-name|_state
-operator|=
-name|EXCLUDE
 expr_stmt|;
 name|checkConfigurations
 argument_list|()
@@ -2666,6 +2652,42 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+literal|"exclude"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+operator|&&
+name|_state
+operator|==
+name|DEPS
+condition|)
+block|{
+name|_state
+operator|=
+name|EXCLUDE
+expr_stmt|;
+name|parseRule
+argument_list|(
+name|qName
+argument_list|,
+name|attributes
+argument_list|)
+expr_stmt|;
+name|md
+operator|.
+name|addExcludeRule
+argument_list|(
+operator|(
+name|ExcludeRule
+operator|)
+name|_confAware
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 literal|"dependency"
 operator|.
 name|equals
@@ -2674,6 +2696,10 @@ name|qName
 argument_list|)
 condition|)
 block|{
+name|_state
+operator|=
+name|DEP
+expr_stmt|;
 name|String
 name|org
 init|=
@@ -3590,38 +3616,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"rule"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
-operator|&&
-name|_state
-operator|==
-name|EXCLUDE
-condition|)
-block|{
-name|parseRule
-argument_list|(
-name|qName
-argument_list|,
-name|attributes
-argument_list|)
-expr_stmt|;
-name|md
-operator|.
-name|addExcludeRule
-argument_list|(
-operator|(
-name|ExcludeRule
-operator|)
-name|_confAware
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
 literal|"include"
 operator|.
 name|equals
@@ -4316,7 +4310,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// _state == ARTIFACT_EXCLUDE
+comment|// _state == ARTIFACT_EXCLUDE || EXCLUDE
 name|PatternMatcher
 name|matcher
 init|=
@@ -4900,13 +4894,6 @@ condition|(
 name|_state
 operator|==
 name|EXCLUDE
-operator|&&
-literal|"rule"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
 condition|)
 block|{
 if|if
@@ -4961,6 +4948,10 @@ name|_confAware
 operator|=
 literal|null
 expr_stmt|;
+name|_state
+operator|=
+name|DEPS
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -4970,7 +4961,10 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|_dd
 operator|.
 name|getModuleConfigurations
@@ -4988,6 +4982,11 @@ argument_list|()
 argument_list|,
 name|_dd
 argument_list|)
+expr_stmt|;
+block|}
+name|_state
+operator|=
+name|DEPS
 expr_stmt|;
 block|}
 if|else if
