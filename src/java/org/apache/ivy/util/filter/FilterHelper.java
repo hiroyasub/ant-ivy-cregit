@@ -125,10 +125,9 @@ init|=
 operator|new
 name|ArrayList
 argument_list|(
-name|types
+name|t
 operator|.
 name|length
-argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
@@ -170,7 +169,7 @@ name|acceptedTypes
 argument_list|)
 return|;
 block|}
-comment|/**      * we could have used commons-collections facility for this... if we accepted to add      * dependencies on third party jars      *       * @param col      * @param filter      * @return      */
+comment|/**      * Returns a new collection containing only the items from the given collectoin, which are      * accepted by the filter.      *       * @param  col  The collection to filter.      * @param  filter  The filter to use.      * @return  A new collection instance containing the only the instance accepted by the filter.      *      *<br />      * Comment: We could have used       *<a  href="http://jakarta.apache.org/commons/collections/">Commons-Collections</a>      *          facility for this. If we accepted to add dependencies on third party jars.      */
 specifier|public
 specifier|static
 name|Collection

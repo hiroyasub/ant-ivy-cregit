@@ -940,7 +940,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * retrieves an sftp channel from the cache      *       * @param host      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
+comment|/**      * retrieves an sftp channel from the cache      *       * @param session      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
 specifier|public
 name|ChannelSftp
 name|getChannelSftp
@@ -1006,7 +1006,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * attaches a channelSftp to an existing session cache entry      *       * @param session      *            to attach the channel to      * @param channelSftp      *            channel to attach      */
+comment|/**      * attaches a channelSftp to an existing session cache entry      *       * @param session      *            to attach the channel to      * @param channel      *            channel to attach      */
 specifier|public
 name|void
 name|attachChannelSftp
@@ -1053,7 +1053,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Gets a session from the cache or establishes a new session if necessary      *       * @param username      *            for the session to use      * @param host      *            to connect to      * @param port      *            to use for session (-1 == use standard port)      * @param password      *            to use for authentication (optional)      * @param pemFile      *            File to use for public key authentication      * @param pemPassword      *            to use for accessing the pemFile (optional)      * @param passFile      *            to store credentials      * @return session or null if not successful      */
+comment|/**      * Gets a session from the cache or establishes a new session if necessary      *       * @param host      *            to connect to      * @param port      *            to use for session (-1 == use standard port)      * @param username      *            for the session to use      * @param userPassword      *            to use for authentication (optional)      * @param pemFile      *            File to use for public key authentication      * @param pemPassword      *            to use for accessing the pemFile (optional)      * @param passFile      *            to store credentials      * @return session or null if not successful      */
 specifier|public
 name|Session
 name|getSession

@@ -117,7 +117,7 @@ name|ConfigurationUtils
 parameter_list|()
 block|{
 block|}
-comment|/**      * Replace all the wildcards in the given configuration array. Supported wildcards are:      *<ul>      *<li><b><tt>*</tt>:</b>all configurations</li>      *<li><b><tt>*(public)</tt>:</b>all public configurations</li>      *<li><b><tt>*(private)</tt>:</b>all private configurations</li>      *</ul>      * If the given array of configurations is<tt>null</tt>, all configurations are returned.      *       * @param confs      *            the configurations, can contain wildcards      * @param md      *            the configurations where the wildcards are replaced      * @return      */
+comment|/**      * Replace the wildcards in the given configuration array, by the name of the given      * ModuleDescriptor      *       * The supported wildcards are:      *<ul>      *<li><b><tt>*</tt> :</b> all configurations</li>      *<li><b><tt>*(public)</tt> :</b> all public configurations</li>      *<li><b><tt>*(private)</tt> :</b> all private configurations</li>      *</ul>      * If the given array of configurations is<code>null</code>, all configurations       * from the given module descriptor are returned, including if this array is empty.      *       * @param confs      *            the configurations, can contain wildcards      * @param md      *            the configurations where the wildcards are replaced      * @return      */
 specifier|public
 specifier|static
 name|String
@@ -132,13 +132,6 @@ name|ModuleDescriptor
 name|md
 parameter_list|)
 block|{
-name|Set
-name|result
-init|=
-operator|new
-name|LinkedHashSet
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|confs
@@ -153,6 +146,13 @@ name|getConfigurationsNames
 argument_list|()
 return|;
 block|}
+name|Set
+name|result
+init|=
+operator|new
+name|LinkedHashSet
+argument_list|()
+decl_stmt|;
 for|for
 control|(
 name|int

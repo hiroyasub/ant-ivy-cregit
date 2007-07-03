@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  */
+comment|/**  * Utility class used to deal with file related operations, like copy, full reading, symlink, ...  */
 end_comment
 
 begin_class
@@ -1278,7 +1278,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      * @return      */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory) are extracted.      * @return  A collectoin containing all the files of the given directory and it's subdirectories.      */
 specifier|public
 specifier|static
 name|Collection

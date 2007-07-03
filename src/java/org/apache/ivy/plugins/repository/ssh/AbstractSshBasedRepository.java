@@ -544,7 +544,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *       * @param uri      *            key for the cache      * @param conn      *            to release      */
+comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *       * @param session      *            key for the cache      * @param pathOrUri      *            to release      */
 specifier|protected
 name|void
 name|releaseSession
@@ -697,7 +697,7 @@ return|return
 name|keyFile
 return|;
 block|}
-comment|/**      * @param user      *            password to use for user/password authentication      */
+comment|/**      * @param password      *            password to use for user/password authentication      */
 specifier|public
 name|void
 name|setUserPassword

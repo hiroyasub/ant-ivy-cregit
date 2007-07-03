@@ -274,7 +274,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *       * @param uri      *            ssh uri for the file to get info for      * @return SshResource filled with the needed informations      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
+comment|/**      * Fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *       * @param source       *            ssh uri for the file to get info for      * @return SshResource filled with the needed informations      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
 specifier|public
 name|SshResource
 name|resolveResource

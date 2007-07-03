@@ -236,7 +236,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      *       * @param url      * @return      */
+comment|/**      * Returns the URLInfo of the given url or a {@link #UNAVAILABLE} instance,      * if the url is not reachable.      *       * @param  url  The url from which information is retrieved.      * @return  The URLInfo extracted from the given url, or {@link #UNAVAILABLE} when      *          the url is not available.      */
 specifier|public
 name|URLInfo
 name|getURLInfo
@@ -245,7 +245,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      *       * @param url      * @return      */
+comment|/**      * never returns null, return UNAVAILABLE when url is not reachable      *       * @param  url  The url from which information is retrieved.      * @param  timeout  The timeout in milliseconds.      * @return  The URLInfo extracted from the given url, or {@link #UNAVAILABLE} when      *          the url is not available.      */
 specifier|public
 name|URLInfo
 name|getURLInfo

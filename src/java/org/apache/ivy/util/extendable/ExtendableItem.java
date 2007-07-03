@@ -56,17 +56,17 @@ name|String
 name|attName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a Map of all attributes of this extendable item, including standard and extra ones.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too)      *       * @return      */
+comment|/**      * Returns a Map of all attributes of this extendable item, including standard and extra ones.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too)      *       * @return A Map instance containing all the attributes and their values.      */
 name|Map
 name|getAttributes
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a Map of all standard attributes of this extendable item. The Map keys are attribute      * names as Strings, and values are corresponding attribute values (as String too)      *       * @return      */
+comment|/**      * Returns a Map of all standard attributes of this extendable item. The Map keys are attribute      * names as Strings, and values are corresponding attribute values (as String too)      *       * @return A Map instance containing all the standard attributes and their values.      */
 name|Map
 name|getStandardAttributes
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a Map of all extra attributes of this extendable item. The Map keys are attribute      * names as Strings, and values are corresponding attribute values (as String too)      *       * @return      */
+comment|/**      * Returns a Map of all extra attributes of this extendable item. The Map keys are attribute      * names as Strings, and values are corresponding attribute values (as String too)      *       * @return A Map instance containing all the extra attributes and their values.      */
 name|Map
 name|getExtraAttributes
 parameter_list|()
