@@ -3757,7 +3757,7 @@ argument_list|(
 literal|"user.home"
 argument_list|)
 argument_list|,
-literal|".ivy"
+literal|".ivy2"
 argument_list|)
 argument_list|)
 expr_stmt|;
