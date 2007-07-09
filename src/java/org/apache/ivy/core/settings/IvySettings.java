@@ -3590,6 +3590,18 @@ name|File
 name|cacheDirectory
 parameter_list|)
 block|{
+name|setVariable
+argument_list|(
+literal|"ivy.cache.dir"
+argument_list|,
+name|cacheDirectory
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
 name|defaultCache
 operator|=
 name|cacheDirectory
@@ -3827,8 +3839,8 @@ operator|==
 literal|null
 condition|)
 block|{
-name|defaultCache
-operator|=
+name|setDefaultCache
+argument_list|(
 operator|new
 name|File
 argument_list|(
@@ -3836,6 +3848,7 @@ name|getDefaultIvyUserDir
 argument_list|()
 argument_list|,
 literal|"cache"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Message
