@@ -1200,7 +1200,9 @@ init|=
 operator|new
 name|byte
 index|[
-literal|8192
+literal|64
+operator|*
+literal|1024
 index|]
 decl_stmt|;
 name|OutputStream
@@ -1520,7 +1522,9 @@ init|=
 operator|new
 name|byte
 index|[
-literal|8192
+literal|64
+operator|*
+literal|1024
 index|]
 decl_stmt|;
 name|OutputStream

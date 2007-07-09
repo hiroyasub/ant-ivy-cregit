@@ -190,16 +190,15 @@ specifier|public
 class|class
 name|FileUtil
 block|{
-comment|// tried some other values with empty files... seems to be the best one (512 * 1024 is very bad)
-comment|// 8 * 1024 is also the size used by ant in its FileUtils... maybe they've done more study about
-comment|// it ;-)
+comment|// according to tests by users, 64kB seems to be a good value for the buffer used during copy
+comment|// further improvements could be obtained using NIO API
 specifier|private
 specifier|static
 specifier|final
 name|int
 name|BUFFER_SIZE
 init|=
-literal|8
+literal|64
 operator|*
 literal|1024
 decl_stmt|;

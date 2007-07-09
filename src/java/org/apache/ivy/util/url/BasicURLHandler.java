@@ -166,7 +166,9 @@ specifier|final
 name|int
 name|BUFFER_SIZE
 init|=
-literal|4096
+literal|64
+operator|*
+literal|1024
 decl_stmt|;
 specifier|private
 specifier|static
