@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is using the scp client to transfer data and information for the repository. It is  * based on the SCPClient from the ganymed ssh library from Christian Plattner. To minimize the  * dependency to the ssh library and because I needed some additional functionality, I decided to  * copy'n'paste the single class rather than to inherit or delegate it somehow. Nevertheless credit  * should go to the original author.  */
+comment|/**  * This class is using the scp client to transfer data and information for the repository.   *<p>  * It is based on the SCPClient from the ganymed ssh library from Christian Plattner,  * released under a BSD style license.   *<p>  * To minimize the dependency to the ssh library and because we needed some additional   * functionality, we decided to copy'n'paste the single class rather than to inherit or   * delegate it somehow.   *<p>  * Nevertheless credit should go to the original author.  */
 end_comment
 
 begin_class
@@ -156,6 +156,25 @@ specifier|public
 class|class
 name|Scp
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|BUFFER_SIZE
+init|=
+literal|64
+operator|*
+literal|1024
+decl_stmt|;
+comment|/*      * Maximum length authorized for scp lines.       * This is a random limit - if your path names are longer, then adjust it.      */
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|MAX_SCP_LINE_LENGTH
+init|=
+literal|8192
+decl_stmt|;
 specifier|private
 name|Session
 name|session
@@ -413,7 +432,6 @@ condition|(
 literal|true
 condition|)
 block|{
-comment|/*              * This is a random limit - if your path names are longer, then adjust it              */
 if|if
 condition|(
 name|sb
@@ -421,7 +439,7 @@ operator|.
 name|length
 argument_list|()
 operator|>
-literal|8192
+name|MAX_SCP_LINE_LENGTH
 condition|)
 block|{
 throw|throw
@@ -1200,9 +1218,7 @@ init|=
 operator|new
 name|byte
 index|[
-literal|64
-operator|*
-literal|1024
+name|BUFFER_SIZE
 index|]
 decl_stmt|;
 name|OutputStream
@@ -1522,9 +1538,7 @@ init|=
 operator|new
 name|byte
 index|[
-literal|64
-operator|*
-literal|1024
+name|BUFFER_SIZE
 index|]
 decl_stmt|;
 name|OutputStream
