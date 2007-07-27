@@ -64,11 +64,6 @@ specifier|private
 name|ModuleDescriptor
 name|md
 decl_stmt|;
-specifier|private
-name|String
-index|[]
-name|confs
-decl_stmt|;
 specifier|protected
 name|ResolveEvent
 parameter_list|(
@@ -93,12 +88,6 @@ operator|.
 name|md
 operator|=
 name|md
-expr_stmt|;
-name|this
-operator|.
-name|confs
-operator|=
-name|confs
 expr_stmt|;
 name|addMDAttributes
 argument_list|(
