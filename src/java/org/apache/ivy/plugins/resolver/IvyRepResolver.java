@@ -416,25 +416,25 @@ literal|"http://ivyrep.jayasoft.org/"
 decl_stmt|;
 specifier|private
 name|String
-name|_ivyroot
+name|ivyroot
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_ivypattern
+name|ivypattern
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_artroot
+name|artroot
 init|=
 literal|null
 decl_stmt|;
 specifier|private
 name|String
-name|_artpattern
+name|artpattern
 init|=
 literal|null
 decl_stmt|;
@@ -458,11 +458,11 @@ operator|!=
 literal|null
 operator|&&
 operator|(
-name|_artroot
+name|artroot
 operator|==
 literal|null
 operator|||
-name|_artpattern
+name|artpattern
 operator|==
 literal|null
 operator|)
@@ -470,7 +470,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_artroot
+name|artroot
 operator|==
 literal|null
 condition|)
@@ -492,7 +492,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_artroot
+name|artroot
 operator|=
 name|root
 expr_stmt|;
@@ -506,7 +506,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|_artroot
+name|artroot
 operator|=
 name|settings
 operator|.
@@ -519,7 +519,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_artpattern
+name|artpattern
 operator|==
 literal|null
 condition|)
@@ -541,7 +541,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_artpattern
+name|artpattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -555,7 +555,7 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-name|_artpattern
+name|artpattern
 operator|=
 name|settings
 operator|.
@@ -586,11 +586,11 @@ operator|!=
 literal|null
 operator|&&
 operator|(
-name|_ivyroot
+name|ivyroot
 operator|==
 literal|null
 operator|||
-name|_ivypattern
+name|ivypattern
 operator|==
 literal|null
 operator|)
@@ -598,7 +598,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|_ivyroot
+name|ivyroot
 operator|==
 literal|null
 condition|)
@@ -620,7 +620,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_ivyroot
+name|ivyroot
 operator|=
 name|root
 expr_stmt|;
@@ -634,7 +634,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|_ivyroot
+name|ivyroot
 operator|=
 name|settings
 operator|.
@@ -647,7 +647,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_ivypattern
+name|ivypattern
 operator|==
 literal|null
 condition|)
@@ -669,7 +669,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_ivypattern
+name|ivypattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -683,7 +683,7 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-name|_ivypattern
+name|ivypattern
 operator|=
 name|settings
 operator|.
@@ -706,11 +706,11 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_ivyroot
+name|ivyroot
 operator|==
 literal|null
 operator|||
-name|_ivypattern
+name|ivypattern
 operator|==
 literal|null
 condition|)
@@ -720,9 +720,9 @@ literal|null
 return|;
 block|}
 return|return
-name|_ivyroot
+name|ivyroot
 operator|+
-name|_ivypattern
+name|ivypattern
 return|;
 block|}
 specifier|private
@@ -731,9 +731,9 @@ name|getWholeArtPattern
 parameter_list|()
 block|{
 return|return
-name|_artroot
+name|artroot
 operator|+
-name|_artpattern
+name|artpattern
 return|;
 block|}
 specifier|public
@@ -742,7 +742,7 @@ name|getIvypattern
 parameter_list|()
 block|{
 return|return
-name|_ivypattern
+name|ivypattern
 return|;
 block|}
 specifier|public
@@ -768,7 +768,7 @@ literal|"pattern must not be null"
 argument_list|)
 throw|;
 block|}
-name|_ivypattern
+name|ivypattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -788,7 +788,7 @@ name|getIvyroot
 parameter_list|()
 block|{
 return|return
-name|_ivyroot
+name|ivyroot
 return|;
 block|}
 comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *       * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
@@ -826,7 +826,7 @@ literal|"/"
 argument_list|)
 condition|)
 block|{
-name|_ivyroot
+name|ivyroot
 operator|=
 name|root
 operator|+
@@ -835,7 +835,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_ivyroot
+name|ivyroot
 operator|=
 name|root
 expr_stmt|;
@@ -867,7 +867,11 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"ivyrep does not support maven2 compatibility. Please use ibiblio resolver instead, or even url or filesystem resolvers for more specific needs."
+literal|"ivyrep does not support maven2 compatibility. "
+operator|+
+literal|"Please use ibiblio resolver instead, or even url or filesystem resolvers for"
+operator|+
+literal|" more specific needs."
 argument_list|)
 throw|;
 block|}
@@ -931,7 +935,7 @@ name|getArtroot
 parameter_list|()
 block|{
 return|return
-name|_artroot
+name|artroot
 return|;
 block|}
 specifier|public
@@ -940,7 +944,7 @@ name|getArtpattern
 parameter_list|()
 block|{
 return|return
-name|_artpattern
+name|artpattern
 return|;
 block|}
 specifier|public
@@ -966,7 +970,7 @@ literal|"pattern must not be null"
 argument_list|)
 throw|;
 block|}
-name|_artpattern
+name|artpattern
 operator|=
 name|pattern
 expr_stmt|;
@@ -1014,7 +1018,7 @@ literal|"/"
 argument_list|)
 condition|)
 block|{
-name|_artroot
+name|artroot
 operator|=
 name|root
 operator|+
@@ -1023,7 +1027,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_artroot
+name|artroot
 operator|=
 name|root
 expr_stmt|;
@@ -1058,7 +1062,7 @@ init|=
 operator|new
 name|URL
 argument_list|(
-name|_ivyroot
+name|ivyroot
 operator|+
 literal|"content.xml"
 argument_list|)
@@ -1182,6 +1186,7 @@ name|MalformedURLException
 name|e
 parameter_list|)
 block|{
+comment|//???
 block|}
 catch|catch
 parameter_list|(

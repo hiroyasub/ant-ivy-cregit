@@ -293,7 +293,7 @@ name|SftpProgressMonitor
 block|{
 specifier|private
 name|long
-name|_totalLength
+name|totalLength
 decl_stmt|;
 specifier|public
 name|void
@@ -312,7 +312,7 @@ name|long
 name|max
 parameter_list|)
 block|{
-name|_totalLength
+name|totalLength
 operator|=
 name|max
 expr_stmt|;
@@ -329,7 +329,7 @@ parameter_list|()
 block|{
 name|fireTransferCompleted
 argument_list|(
-name|_totalLength
+name|totalLength
 argument_list|)
 expr_stmt|;
 block|}
@@ -772,6 +772,7 @@ argument_list|,
 name|c
 argument_list|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IOException
@@ -779,6 +780,7 @@ argument_list|(
 literal|"destination file exists and overwrite == true"
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|destination

@@ -403,7 +403,7 @@ block|{
 comment|// junit test -- DO NOT REMOVE used by ant to know it's a junit test
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 init|=
 operator|new
 name|IvySettings
@@ -426,7 +426,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -631,7 +631,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -832,7 +832,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -907,7 +907,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -991,7 +991,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -1057,7 +1057,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -1087,7 +1087,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -1132,7 +1132,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4012,7 +4012,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4177,7 +4177,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4346,7 +4346,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4544,7 +4544,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4697,7 +4697,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -4943,7 +4943,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5217,7 +5217,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5490,7 +5490,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5712,7 +5712,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -5965,7 +5965,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6273,7 +6273,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6543,7 +6543,7 @@ throws|throws
 name|Exception
 block|{
 comment|// import configurations
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -6569,7 +6569,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6822,7 +6822,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6909,7 +6909,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -6998,7 +6998,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -7213,7 +7213,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -7428,7 +7428,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -7679,7 +7679,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -7723,7 +7723,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()
@@ -7768,7 +7768,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 name|getClass
 argument_list|()

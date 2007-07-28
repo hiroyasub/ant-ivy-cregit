@@ -187,9 +187,16 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|FileUtil
 block|{
+specifier|private
+name|FileUtil
+parameter_list|()
+block|{
+comment|//Utility class
+block|}
 comment|// according to tests by users, 64kB seems to be a good value for the buffer used during copy
 comment|// further improvements could be obtained using NIO API
 specifier|private
@@ -1277,7 +1284,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory) are extracted.      * @return  A collectoin containing all the files of the given directory and it's subdirectories.      */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory)      *              are extracted.      * @return  A collectoin containing all the files of the given directory and it's      *              subdirectories.      */
 specifier|public
 specifier|static
 name|Collection

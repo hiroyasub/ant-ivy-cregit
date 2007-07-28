@@ -384,6 +384,7 @@ name|session
 operator|!=
 literal|null
 condition|)
+block|{
 name|releaseSession
 argument_list|(
 name|session
@@ -391,6 +392,7 @@ argument_list|,
 name|source
 argument_list|)
 expr_stmt|;
+block|}
 name|result
 operator|=
 operator|new
@@ -410,6 +412,7 @@ name|session
 operator|!=
 literal|null
 condition|)
+block|{
 name|releaseSession
 argument_list|(
 name|session
@@ -417,6 +420,7 @@ argument_list|,
 name|source
 argument_list|)
 expr_stmt|;
+block|}
 name|result
 operator|=
 operator|new
@@ -1283,6 +1287,7 @@ name|session
 operator|!=
 literal|null
 condition|)
+block|{
 name|releaseSession
 argument_list|(
 name|session
@@ -1290,6 +1295,7 @@ argument_list|,
 name|destination
 argument_list|)
 expr_stmt|;
+block|}
 throw|throw
 name|e
 throw|;
@@ -1361,6 +1367,7 @@ argument_list|)
 operator|==
 name|fileSeparator
 condition|)
+block|{
 name|trimmed
 operator|=
 name|trimmed
@@ -1377,6 +1384,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|trimmed
@@ -1498,11 +1506,13 @@ name|channel
 operator|!=
 literal|null
 condition|)
+block|{
 name|channel
 operator|.
 name|disconnect
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/**      * check for existence of file or dir on target system      *       * @param filePath      *            to the object to check      * @param session      *            to use      * @return true: object exists, false otherwise      */
@@ -1727,6 +1737,7 @@ name|session
 operator|!=
 literal|null
 condition|)
+block|{
 name|releaseSession
 argument_list|(
 name|session
@@ -1734,6 +1745,7 @@ argument_list|,
 name|source
 argument_list|)
 expr_stmt|;
+block|}
 throw|throw
 name|e
 throw|;
@@ -1928,6 +1940,7 @@ name|session
 operator|!=
 literal|null
 condition|)
+block|{
 name|releaseSession
 argument_list|(
 name|session
@@ -1938,6 +1951,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 throw|throw
 name|e
 throw|;

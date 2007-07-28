@@ -292,8 +292,8 @@ name|port
 argument_list|)
 expr_stmt|;
 block|}
-specifier|abstract
 specifier|public
+specifier|abstract
 name|String
 name|getTypeName
 parameter_list|()

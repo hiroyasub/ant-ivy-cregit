@@ -31,9 +31,16 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|StringUtils
 block|{
+specifier|private
+name|StringUtils
+parameter_list|()
+block|{
+comment|//Utility class
+block|}
 specifier|public
 specifier|static
 name|String
@@ -197,8 +204,8 @@ block|}
 comment|// basic string codec (same algo as CVS passfile, inspired by ant CVSPass class
 comment|/** Array contain char conversion data */
 specifier|private
-specifier|final
 specifier|static
+specifier|final
 name|char
 index|[]
 name|SHIFTS
@@ -719,8 +726,8 @@ block|}
 decl_stmt|;
 comment|/**      * Encrypt the given string in a way which anybody having access to this method algorithm can      * easily decrypt. This is useful only to avoid clear string storage in a file for example, but      * shouldn't be considered as a real mean of security. This only works with simple characters      * (char< 256).      *       * @param str      *            the string to encrypt      * @return the encrypted version of the string      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|encrypt
 parameter_list|(
@@ -815,8 +822,8 @@ return|;
 block|}
 comment|/**      * Decrypts a string encrypted with encrypt.      *       * @param str      *            the encrypted string to decrypt      * @return  The decrypted string.      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|decrypt
 parameter_list|(

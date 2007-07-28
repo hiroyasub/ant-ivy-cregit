@@ -331,7 +331,7 @@ name|ArtifactInfo
 block|{
 specifier|private
 name|ResolvedModuleRevision
-name|_rmr
+name|rmr
 decl_stmt|;
 specifier|public
 name|ResolvedModuleRevisionArtifactInfo
@@ -340,7 +340,9 @@ name|ResolvedModuleRevision
 name|rmr
 parameter_list|)
 block|{
-name|_rmr
+name|this
+operator|.
+name|rmr
 operator|=
 name|rmr
 expr_stmt|;
@@ -351,7 +353,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_rmr
+name|rmr
 operator|.
 name|getId
 argument_list|()
@@ -366,7 +368,7 @@ name|getLastModified
 parameter_list|()
 block|{
 return|return
-name|_rmr
+name|rmr
 operator|.
 name|getPublicationDate
 argument_list|()
@@ -378,13 +380,13 @@ block|}
 block|}
 specifier|private
 name|boolean
-name|_returnFirst
+name|returnFirst
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|List
-name|_chain
+name|chain
 init|=
 operator|new
 name|ArrayList
@@ -392,7 +394,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|boolean
-name|_dual
+name|dual
 decl_stmt|;
 specifier|public
 name|void
@@ -402,7 +404,7 @@ name|DependencyResolver
 name|resolver
 parameter_list|)
 block|{
-name|_chain
+name|chain
 operator|.
 name|add
 argument_list|(
@@ -453,7 +455,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -568,7 +570,7 @@ block|{
 name|boolean
 name|shouldReturn
 init|=
-name|_returnFirst
+name|returnFirst
 decl_stmt|;
 name|shouldReturn
 operator||=
@@ -1125,7 +1127,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -1168,7 +1170,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -1238,7 +1240,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -1426,7 +1428,7 @@ name|getResolvers
 parameter_list|()
 block|{
 return|return
-name|_chain
+name|chain
 return|;
 block|}
 specifier|public
@@ -1447,7 +1449,7 @@ name|IOException
 block|{
 if|if
 condition|(
-name|_chain
+name|chain
 operator|.
 name|isEmpty
 argument_list|()
@@ -1465,7 +1467,7 @@ operator|(
 operator|(
 name|DependencyResolver
 operator|)
-name|_chain
+name|chain
 operator|.
 name|get
 argument_list|(
@@ -1489,7 +1491,7 @@ name|isReturnFirst
 parameter_list|()
 block|{
 return|return
-name|_returnFirst
+name|returnFirst
 return|;
 block|}
 specifier|public
@@ -1500,7 +1502,9 @@ name|boolean
 name|returnFirst
 parameter_list|)
 block|{
-name|_returnFirst
+name|this
+operator|.
+name|returnFirst
 operator|=
 name|returnFirst
 expr_stmt|;
@@ -1521,7 +1525,7 @@ argument_list|()
 operator|+
 literal|" [chain] "
 operator|+
-name|_chain
+name|chain
 argument_list|)
 expr_stmt|;
 name|Message
@@ -1549,7 +1553,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -1599,7 +1603,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_chain
+name|chain
 operator|.
 name|iterator
 argument_list|()
@@ -1755,7 +1759,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|_dual
+name|dual
 operator|=
 name|b
 expr_stmt|;
@@ -1766,7 +1770,7 @@ name|isDual
 parameter_list|()
 block|{
 return|return
-name|_dual
+name|dual
 return|;
 block|}
 block|}
