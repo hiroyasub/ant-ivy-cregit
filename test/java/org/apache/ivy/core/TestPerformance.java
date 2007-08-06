@@ -257,8 +257,8 @@ class|class
 name|TestPerformance
 block|{
 specifier|private
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|PATTERN
 init|=
@@ -267,11 +267,11 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|public
 name|TestPerformance
@@ -279,7 +279,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|=
 operator|new
 name|Ivy
@@ -303,7 +303,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -323,7 +323,7 @@ argument_list|(
 name|PATTERN
 argument_list|)
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -333,7 +333,7 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
@@ -360,7 +360,7 @@ name|void
 name|createCache
 parameter_list|()
 block|{
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -368,7 +368,7 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
@@ -410,7 +410,7 @@ name|del
 operator|.
 name|setDir
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|del
@@ -799,7 +799,7 @@ decl_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -894,12 +894,12 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_ivy
+name|ivy
 operator|.
 name|getSettings
 argument_list|()
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 argument_list|)
 return|;
