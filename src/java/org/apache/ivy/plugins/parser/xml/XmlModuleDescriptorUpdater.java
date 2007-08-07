@@ -313,6 +313,22 @@ name|ivy
 operator|.
 name|plugins
 operator|.
+name|parser
+operator|.
+name|ParserSettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
 name|repository
 operator|.
 name|Resource
@@ -568,7 +584,7 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|IvySettings
+name|ParserSettings
 name|settings
 parameter_list|,
 name|URL
@@ -701,7 +717,7 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|IvySettings
+name|ParserSettings
 name|settings
 parameter_list|,
 name|URL
@@ -1062,7 +1078,7 @@ name|LexicalHandler
 block|{
 specifier|private
 specifier|final
-name|IvySettings
+name|ParserSettings
 name|settings
 decl_stmt|;
 specifier|private
@@ -1120,7 +1136,7 @@ specifier|public
 name|UpdaterHandler
 parameter_list|(
 specifier|final
-name|IvySettings
+name|ParserSettings
 name|settings
 parameter_list|,
 specifier|final
@@ -3727,7 +3743,7 @@ specifier|private
 name|String
 name|substitute
 parameter_list|(
-name|IvySettings
+name|ParserSettings
 name|ivy
 parameter_list|,
 name|String
@@ -4473,7 +4489,7 @@ name|void
 name|update
 parameter_list|(
 specifier|final
-name|IvySettings
+name|ParserSettings
 name|settings
 parameter_list|,
 name|URL

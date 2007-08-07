@@ -181,7 +181,7 @@ specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
 parameter_list|(
-name|IvySettings
+name|ParserSettings
 name|ivy
 parameter_list|,
 name|URL
