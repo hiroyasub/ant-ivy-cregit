@@ -982,7 +982,7 @@ argument_list|)
 decl_stmt|;
 name|nmd
 operator|.
-name|_revId
+name|revId
 operator|=
 name|t
 operator|.
@@ -996,7 +996,7 @@ argument_list|)
 expr_stmt|;
 name|nmd
 operator|.
-name|_resolvedRevId
+name|resolvedRevId
 operator|=
 name|t
 operator|.
@@ -1010,7 +1010,7 @@ argument_list|)
 expr_stmt|;
 name|nmd
 operator|.
-name|_status
+name|status
 operator|=
 name|md
 operator|.
@@ -1019,7 +1019,7 @@ argument_list|()
 expr_stmt|;
 name|nmd
 operator|.
-name|_publicationDate
+name|publicationDate
 operator|=
 name|md
 operator|.
@@ -1028,7 +1028,7 @@ argument_list|()
 expr_stmt|;
 name|nmd
 operator|.
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 operator|=
 name|md
 operator|.
@@ -1063,7 +1063,7 @@ control|)
 block|{
 name|nmd
 operator|.
-name|_dependencies
+name|dependencies
 operator|.
 name|add
 argument_list|(
@@ -1109,7 +1109,7 @@ control|)
 block|{
 name|nmd
 operator|.
-name|_configurations
+name|configurations
 operator|.
 name|put
 argument_list|(
@@ -1215,13 +1215,13 @@ name|md
 decl_stmt|;
 name|nmd
 operator|.
-name|_conflictManagers
+name|conflictManagers
 operator|.
 name|putAll
 argument_list|(
 name|dmd
 operator|.
-name|_conflictManagers
+name|conflictManagers
 argument_list|)
 expr_stmt|;
 block|}
@@ -1231,7 +1231,9 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"transformed module descriptor is not a default module descriptor: impossible to copy conflict manager configuration: "
+literal|"transformed module descriptor is not a default module descriptor: "
+operator|+
+literal|"impossible to copy conflict manager configuration: "
 operator|+
 name|md
 argument_list|)
@@ -1239,7 +1241,7 @@ expr_stmt|;
 block|}
 name|nmd
 operator|.
-name|_licenses
+name|licenses
 operator|.
 name|addAll
 argument_list|(
@@ -1256,7 +1258,7 @@ argument_list|)
 expr_stmt|;
 name|nmd
 operator|.
-name|_homePage
+name|homePage
 operator|=
 name|md
 operator|.
@@ -1265,7 +1267,7 @@ argument_list|()
 expr_stmt|;
 name|nmd
 operator|.
-name|_lastModified
+name|lastModified
 operator|=
 name|md
 operator|.
@@ -1274,7 +1276,7 @@ argument_list|()
 expr_stmt|;
 name|nmd
 operator|.
-name|_namespace
+name|namespace
 operator|=
 name|ns
 expr_stmt|;
@@ -1284,15 +1286,15 @@ return|;
 block|}
 specifier|private
 name|ModuleRevisionId
-name|_revId
+name|revId
 decl_stmt|;
 specifier|private
 name|ModuleRevisionId
-name|_resolvedRevId
+name|resolvedRevId
 decl_stmt|;
 specifier|private
 name|String
-name|_status
+name|status
 init|=
 name|StatusManager
 operator|.
@@ -1304,15 +1306,15 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Date
-name|_publicationDate
+name|publicationDate
 decl_stmt|;
 specifier|private
 name|Date
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 decl_stmt|;
 specifier|private
 name|List
-name|_dependencies
+name|dependencies
 init|=
 operator|new
 name|ArrayList
@@ -1321,7 +1323,7 @@ decl_stmt|;
 comment|// List (DependencyDescriptor)
 specifier|private
 name|Map
-name|_configurations
+name|configurations
 init|=
 operator|new
 name|LinkedHashMap
@@ -1330,7 +1332,7 @@ decl_stmt|;
 comment|// Map(String conf -> Configuration)
 specifier|private
 name|Map
-name|_artifactsByConf
+name|artifactsByConf
 init|=
 operator|new
 name|HashMap
@@ -1339,25 +1341,24 @@ decl_stmt|;
 comment|// Map (String conf -> Collection(Artifact))
 specifier|private
 name|Collection
-name|_artifacts
+name|artifacts
 init|=
 operator|new
 name|LinkedHashSet
 argument_list|()
 decl_stmt|;
-comment|// Collection(Artifact) // all artifacts
-comment|// could also be found in the
-comment|// artifactsByConf map, but here we can
+comment|// Collection(Artifact)
+comment|// all artifacts could also be found in the artifactsByConf map, but here we can
 comment|// preserve the order
 specifier|private
 name|boolean
-name|_isDefault
+name|isDefault
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|Map
-name|_conflictManagers
+name|conflictManagers
 init|=
 operator|new
 name|LinkedHashMap
@@ -1366,7 +1367,7 @@ decl_stmt|;
 comment|// Map (ModuleId -> )
 specifier|private
 name|List
-name|_licenses
+name|licenses
 init|=
 operator|new
 name|ArrayList
@@ -1375,33 +1376,33 @@ decl_stmt|;
 comment|// List(License)
 specifier|private
 name|String
-name|_homePage
+name|homePage
 decl_stmt|;
 specifier|private
 name|long
-name|_lastModified
+name|lastModified
 init|=
 literal|0
 decl_stmt|;
 specifier|private
 name|Namespace
-name|_namespace
+name|namespace
 decl_stmt|;
 specifier|private
 name|boolean
-name|_mappingOverride
+name|mappingOverride
 decl_stmt|;
 specifier|private
 name|ModuleDescriptorParser
-name|_parser
+name|parser
 decl_stmt|;
 specifier|private
 name|Resource
-name|_resource
+name|resource
 decl_stmt|;
 specifier|private
 name|List
-name|_excludeRules
+name|excludeRules
 init|=
 operator|new
 name|ArrayList
@@ -1479,25 +1480,27 @@ literal|"null status not allowed"
 argument_list|)
 throw|;
 block|}
-name|_revId
+name|revId
 operator|=
 name|id
 expr_stmt|;
-name|_resolvedRevId
+name|resolvedRevId
 operator|=
 name|id
 expr_stmt|;
-name|_status
+name|this
+operator|.
+name|status
 operator|=
 name|status
 expr_stmt|;
-name|_publicationDate
+name|publicationDate
 operator|=
 name|pubDate
 expr_stmt|;
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 operator|=
-name|_publicationDate
+name|publicationDate
 operator|==
 literal|null
 condition|?
@@ -1505,9 +1508,11 @@ operator|new
 name|Date
 argument_list|()
 else|:
-name|_publicationDate
+name|publicationDate
 expr_stmt|;
-name|_isDefault
+name|this
+operator|.
+name|isDefault
 operator|=
 name|isDefault
 expr_stmt|;
@@ -1523,11 +1528,13 @@ name|Resource
 name|res
 parameter_list|)
 block|{
-name|_parser
+name|this
+operator|.
+name|parser
 operator|=
 name|parser
 expr_stmt|;
-name|_resource
+name|resource
 operator|=
 name|res
 expr_stmt|;
@@ -1538,7 +1545,7 @@ name|isDefault
 parameter_list|()
 block|{
 return|return
-name|_isDefault
+name|isDefault
 return|;
 block|}
 specifier|public
@@ -1549,20 +1556,22 @@ name|Date
 name|publicationDate
 parameter_list|)
 block|{
-name|_publicationDate
+name|this
+operator|.
+name|publicationDate
 operator|=
 name|publicationDate
 expr_stmt|;
 if|if
 condition|(
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 operator|==
 literal|null
 condition|)
 block|{
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 operator|=
-name|_publicationDate
+name|publicationDate
 operator|==
 literal|null
 condition|?
@@ -1570,7 +1579,7 @@ operator|new
 name|Date
 argument_list|()
 else|:
-name|_publicationDate
+name|publicationDate
 expr_stmt|;
 block|}
 block|}
@@ -1580,7 +1589,7 @@ name|getPublicationDate
 parameter_list|()
 block|{
 return|return
-name|_publicationDate
+name|publicationDate
 return|;
 block|}
 specifier|public
@@ -1606,7 +1615,7 @@ literal|"null publication date not allowed"
 argument_list|)
 throw|;
 block|}
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 operator|=
 name|publicationDate
 expr_stmt|;
@@ -1617,7 +1626,7 @@ name|getResolvedPublicationDate
 parameter_list|()
 block|{
 return|return
-name|_resolvedPublicationDate
+name|resolvedPublicationDate
 return|;
 block|}
 specifier|public
@@ -1643,20 +1652,22 @@ literal|"null module revision id not allowed"
 argument_list|)
 throw|;
 block|}
-name|_revId
+name|this
+operator|.
+name|revId
 operator|=
 name|revId
 expr_stmt|;
 if|if
 condition|(
-name|_resolvedRevId
+name|resolvedRevId
 operator|==
 literal|null
 condition|)
 block|{
-name|_resolvedRevId
+name|resolvedRevId
 operator|=
-name|_revId
+name|revId
 expr_stmt|;
 block|}
 block|}
@@ -1668,7 +1679,7 @@ name|ModuleRevisionId
 name|revId
 parameter_list|)
 block|{
-name|_resolvedRevId
+name|resolvedRevId
 operator|=
 name|revId
 expr_stmt|;
@@ -1681,7 +1692,9 @@ name|String
 name|status
 parameter_list|)
 block|{
-name|_status
+name|this
+operator|.
+name|status
 operator|=
 name|status
 expr_stmt|;
@@ -1694,7 +1707,7 @@ name|DependencyDescriptor
 name|dependency
 parameter_list|)
 block|{
-name|_dependencies
+name|dependencies
 operator|.
 name|add
 argument_list|(
@@ -1710,7 +1723,7 @@ name|Configuration
 name|conf
 parameter_list|)
 block|{
-name|_configurations
+name|configurations
 operator|.
 name|put
 argument_list|(
@@ -1738,7 +1751,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_configurations
+name|configurations
 operator|.
 name|containsKey
 argument_list|(
@@ -1766,7 +1779,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_artifactsByConf
+name|artifactsByConf
 operator|.
 name|get
 argument_list|(
@@ -1786,7 +1799,7 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-name|_artifactsByConf
+name|artifactsByConf
 operator|.
 name|put
 argument_list|(
@@ -1803,7 +1816,9 @@ argument_list|(
 name|artifact
 argument_list|)
 expr_stmt|;
-name|_artifacts
+name|this
+operator|.
+name|artifacts
 operator|.
 name|add
 argument_list|(
@@ -1817,7 +1832,7 @@ name|getModuleRevisionId
 parameter_list|()
 block|{
 return|return
-name|_revId
+name|revId
 return|;
 block|}
 specifier|public
@@ -1826,7 +1841,7 @@ name|getResolvedModuleRevisionId
 parameter_list|()
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 return|;
 block|}
 specifier|public
@@ -1835,7 +1850,7 @@ name|getStatus
 parameter_list|()
 block|{
 return|return
-name|_status
+name|status
 return|;
 block|}
 specifier|public
@@ -1849,7 +1864,7 @@ operator|(
 name|Configuration
 index|[]
 operator|)
-name|_configurations
+name|configurations
 operator|.
 name|values
 argument_list|()
@@ -1859,7 +1874,7 @@ argument_list|(
 operator|new
 name|Configuration
 index|[
-name|_configurations
+name|configurations
 operator|.
 name|size
 argument_list|()
@@ -1878,7 +1893,7 @@ operator|(
 name|String
 index|[]
 operator|)
-name|_configurations
+name|configurations
 operator|.
 name|keySet
 argument_list|()
@@ -1888,7 +1903,7 @@ argument_list|(
 operator|new
 name|String
 index|[
-name|_configurations
+name|configurations
 operator|.
 name|size
 argument_list|()
@@ -1914,7 +1929,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_configurations
+name|configurations
 operator|.
 name|values
 argument_list|()
@@ -1999,7 +2014,7 @@ return|return
 operator|(
 name|Configuration
 operator|)
-name|_configurations
+name|configurations
 operator|.
 name|get
 argument_list|(
@@ -2022,7 +2037,7 @@ init|=
 operator|(
 name|Collection
 operator|)
-name|_artifactsByConf
+name|artifactsByConf
 operator|.
 name|get
 argument_list|(
@@ -2078,14 +2093,14 @@ operator|(
 name|Artifact
 index|[]
 operator|)
-name|_artifacts
+name|artifacts
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|Artifact
 index|[
-name|_artifacts
+name|artifacts
 operator|.
 name|size
 argument_list|()
@@ -2104,14 +2119,14 @@ operator|(
 name|DependencyDescriptor
 index|[]
 operator|)
-name|_dependencies
+name|dependencies
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|DependencyDescriptor
 index|[
-name|_dependencies
+name|dependencies
 operator|.
 name|size
 argument_list|()
@@ -2135,7 +2150,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_dependencies
+name|dependencies
 operator|.
 name|iterator
 argument_list|()
@@ -2233,25 +2248,25 @@ name|IOException
 block|{
 if|if
 condition|(
-name|_parser
+name|parser
 operator|!=
 literal|null
 operator|&&
-name|_resource
+name|resource
 operator|!=
 literal|null
 condition|)
 block|{
-name|_parser
+name|parser
 operator|.
 name|toIvyFile
 argument_list|(
-name|_resource
+name|resource
 operator|.
 name|openStream
 argument_list|()
 argument_list|,
-name|_resource
+name|resource
 argument_list|,
 name|destFile
 argument_list|,
@@ -2280,27 +2295,27 @@ block|{
 return|return
 literal|"module: "
 operator|+
-name|_revId
+name|revId
 operator|+
 literal|" status="
 operator|+
-name|_status
+name|status
 operator|+
 literal|" publication="
 operator|+
-name|_publicationDate
+name|publicationDate
 operator|+
 literal|" configurations="
 operator|+
-name|_configurations
+name|configurations
 operator|+
 literal|" artifacts="
 operator|+
-name|_artifactsByConf
+name|artifactsByConf
 operator|+
 literal|" dependencies="
 operator|+
-name|_dependencies
+name|dependencies
 return|;
 block|}
 specifier|public
@@ -2311,7 +2326,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|_isDefault
+name|isDefault
 operator|=
 name|b
 expr_stmt|;
@@ -2323,11 +2338,11 @@ name|ModuleIdMatcher
 block|{
 specifier|private
 name|PatternMatcher
-name|_matcher
+name|matcher
 decl_stmt|;
 specifier|private
 name|ModuleId
-name|_mid
+name|mid
 decl_stmt|;
 specifier|public
 name|ModuleIdMatcher
@@ -2339,11 +2354,15 @@ name|ModuleId
 name|mid
 parameter_list|)
 block|{
-name|_matcher
+name|this
+operator|.
+name|matcher
 operator|=
 name|matcher
 expr_stmt|;
-name|_mid
+name|this
+operator|.
+name|mid
 operator|=
 name|mid
 expr_stmt|;
@@ -2361,9 +2380,11 @@ name|MatcherHelper
 operator|.
 name|matches
 argument_list|(
-name|_matcher
+name|matcher
 argument_list|,
-name|_mid
+name|this
+operator|.
+name|mid
 argument_list|,
 name|mid
 argument_list|)
@@ -2385,7 +2406,7 @@ name|ConflictManager
 name|manager
 parameter_list|)
 block|{
-name|_conflictManagers
+name|conflictManagers
 operator|.
 name|put
 argument_list|(
@@ -2414,7 +2435,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_conflictManagers
+name|conflictManagers
 operator|.
 name|keySet
 argument_list|()
@@ -2454,7 +2475,7 @@ return|return
 operator|(
 name|ConflictManager
 operator|)
-name|_conflictManagers
+name|conflictManagers
 operator|.
 name|get
 argument_list|(
@@ -2475,7 +2496,7 @@ name|License
 name|license
 parameter_list|)
 block|{
-name|_licenses
+name|licenses
 operator|.
 name|add
 argument_list|(
@@ -2494,14 +2515,14 @@ operator|(
 name|License
 index|[]
 operator|)
-name|_licenses
+name|licenses
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|License
 index|[
-name|_licenses
+name|licenses
 operator|.
 name|size
 argument_list|()
@@ -2515,7 +2536,7 @@ name|getHomePage
 parameter_list|()
 block|{
 return|return
-name|_homePage
+name|homePage
 return|;
 block|}
 specifier|public
@@ -2526,7 +2547,9 @@ name|String
 name|homePage
 parameter_list|)
 block|{
-name|_homePage
+name|this
+operator|.
+name|homePage
 operator|=
 name|homePage
 expr_stmt|;
@@ -2537,7 +2560,7 @@ name|getLastModified
 parameter_list|()
 block|{
 return|return
-name|_lastModified
+name|lastModified
 return|;
 block|}
 specifier|public
@@ -2548,7 +2571,9 @@ name|long
 name|lastModified
 parameter_list|)
 block|{
-name|_lastModified
+name|this
+operator|.
+name|lastModified
 operator|=
 name|lastModified
 expr_stmt|;
@@ -2559,7 +2584,7 @@ name|getNamespace
 parameter_list|()
 block|{
 return|return
-name|_namespace
+name|namespace
 return|;
 block|}
 specifier|public
@@ -2572,7 +2597,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_dependencies
+name|dependencies
 operator|.
 name|iterator
 argument_list|()
@@ -2624,7 +2649,7 @@ name|Namespace
 name|ns
 parameter_list|)
 block|{
-name|_namespace
+name|namespace
 operator|=
 name|ns
 expr_stmt|;
@@ -2640,7 +2665,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_configurations
+name|configurations
 operator|.
 name|values
 argument_list|()
@@ -2695,7 +2720,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_configurations
+name|configurations
 operator|.
 name|containsKey
 argument_list|(
@@ -2740,7 +2765,7 @@ name|boolean
 name|override
 parameter_list|)
 block|{
-name|_mappingOverride
+name|mappingOverride
 operator|=
 name|override
 expr_stmt|;
@@ -2751,7 +2776,7 @@ name|isMappingOverride
 parameter_list|()
 block|{
 return|return
-name|_mappingOverride
+name|mappingOverride
 return|;
 block|}
 specifier|public
@@ -2763,7 +2788,7 @@ name|attName
 parameter_list|)
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getAttribute
 argument_list|(
@@ -2777,7 +2802,7 @@ name|getAttributes
 parameter_list|()
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getAttributes
 argument_list|()
@@ -2792,7 +2817,7 @@ name|attName
 parameter_list|)
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getExtraAttribute
 argument_list|(
@@ -2806,7 +2831,7 @@ name|getExtraAttributes
 parameter_list|()
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getExtraAttributes
 argument_list|()
@@ -2821,7 +2846,7 @@ name|attName
 parameter_list|)
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getStandardAttribute
 argument_list|(
@@ -2835,7 +2860,7 @@ name|getStandardAttributes
 parameter_list|()
 block|{
 return|return
-name|_resolvedRevId
+name|resolvedRevId
 operator|.
 name|getStandardAttributes
 argument_list|()
@@ -2847,7 +2872,7 @@ name|getParser
 parameter_list|()
 block|{
 return|return
-name|_parser
+name|parser
 return|;
 block|}
 specifier|public
@@ -2856,7 +2881,7 @@ name|getResource
 parameter_list|()
 block|{
 return|return
-name|_resource
+name|resource
 return|;
 block|}
 specifier|public
@@ -2867,7 +2892,7 @@ name|ExcludeRule
 name|rule
 parameter_list|)
 block|{
-name|_excludeRules
+name|excludeRules
 operator|.
 name|add
 argument_list|(
@@ -2882,7 +2907,7 @@ parameter_list|()
 block|{
 return|return
 operator|!
-name|_excludeRules
+name|excludeRules
 operator|.
 name|isEmpty
 argument_list|()
@@ -2903,7 +2928,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_namespace
+name|namespace
 operator|!=
 literal|null
 condition|)
@@ -2916,7 +2941,7 @@ name|transform
 argument_list|(
 name|artifactId
 argument_list|,
-name|_namespace
+name|namespace
 operator|.
 name|getFromSystemTransformer
 argument_list|()
@@ -2995,14 +3020,14 @@ operator|(
 name|ExcludeRule
 index|[]
 operator|)
-name|_excludeRules
+name|excludeRules
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|ExcludeRule
 index|[
-name|_excludeRules
+name|excludeRules
 operator|.
 name|size
 argument_list|()
@@ -3032,7 +3057,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_excludeRules
+name|excludeRules
 operator|.
 name|iterator
 argument_list|()
