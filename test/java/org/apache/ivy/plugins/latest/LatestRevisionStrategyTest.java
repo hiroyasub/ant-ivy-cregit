@@ -164,7 +164,9 @@ operator|new
 name|LatestRevisionStrategy
 argument_list|()
 operator|.
-name|COMPARATOR
+operator|new
+name|ArtifactInfoComparator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -552,7 +554,9 @@ name|shuffled
 argument_list|,
 name|latestRevisionStrategy
 operator|.
-name|COMPARATOR
+expr|new
+name|ArtifactInfoComparator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertEquals
