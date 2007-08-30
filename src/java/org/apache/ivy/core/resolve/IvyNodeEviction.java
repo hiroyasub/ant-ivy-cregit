@@ -116,31 +116,33 @@ specifier|public
 class|class
 name|IvyNodeEviction
 block|{
+comment|/**      * This class contains data about the eviction of an {@link IvyNode}.      */
 specifier|public
 specifier|static
 class|class
 name|EvictionData
 block|{
+comment|/**          * Can be null in case of transitive eviction.          */
 specifier|private
 name|IvyNode
 name|parent
 decl_stmt|;
-comment|// can be null in case of transitive eviction
+comment|/**          * Can be null in case of transitive eviction.          */
 specifier|private
 name|ConflictManager
 name|conflictManager
 decl_stmt|;
-comment|// can be null in case of transitive eviction
+comment|/**          * Can be null in case of transitive eviction.          */
 specifier|private
 name|Collection
 name|selected
 decl_stmt|;
-comment|// Collection(IvyNode); can be null in case of transitive
-comment|// eviction
+comment|// Collection(IvyNode)
 specifier|private
 name|String
 name|rootModuleConf
 decl_stmt|;
+comment|/**          * Creates a new object containing the eviction data of an {@link IvyNode}.          *           * @param rootModuleConf the rootmodule configuration          * @param parent the parent node (or<tt>null</tt> in case of transitive eviction)          * @param conflictManager the conflictmanager which evicted the node (or<tt>null</tt> in          *                        case of transitive eviction)          * @param selected a collection of {@link IvyNode}s which evict the evicted node (or           *<tt>null</tt> in case of transitive eviction)          */
 specifier|public
 name|EvictionData
 parameter_list|(
@@ -181,61 +183,6 @@ name|selected
 operator|=
 name|selected
 expr_stmt|;
-for|for
-control|(
-name|Iterator
-name|iter
-init|=
-name|selected
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|iter
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|Object
-name|o
-init|=
-operator|(
-name|Object
-operator|)
-name|iter
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|o
-operator|instanceof
-name|IvyNode
-operator|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"selected nodes must be instance of IvyNode. Found: "
-operator|+
-name|o
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
-block|}
 block|}
 specifier|public
 name|String
