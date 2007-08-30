@@ -647,6 +647,16 @@ name|j
 index|]
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|evictedData
+operator|.
+name|getParent
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -666,6 +676,7 @@ name|getConflictManager
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
