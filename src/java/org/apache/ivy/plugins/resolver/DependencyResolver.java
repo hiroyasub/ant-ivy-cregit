@@ -326,6 +326,13 @@ name|void
 name|dumpSettings
 parameter_list|()
 function_decl|;
+name|void
+name|setSettings
+parameter_list|(
+name|ResolverSettings
+name|settings
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

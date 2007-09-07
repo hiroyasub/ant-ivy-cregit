@@ -297,36 +297,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|IvySettings
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|IvySettingsAware
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|plugins
 operator|.
 name|latest
@@ -459,8 +429,6 @@ name|AbstractResolver
 implements|implements
 name|DependencyResolver
 implements|,
-name|IvySettingsAware
-implements|,
 name|HasLatestStrategy
 block|{
 comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviour should be used      */
@@ -487,7 +455,7 @@ operator|.
 name|EXACT_OR_REGEXP
 decl_stmt|;
 specifier|private
-name|IvySettings
+name|ResolverSettings
 name|settings
 decl_stmt|;
 comment|/**      * The latest strategy to use to find latest among several artifacts      */
@@ -509,7 +477,7 @@ name|String
 name|namespaceName
 decl_stmt|;
 specifier|public
-name|IvySettings
+name|ResolverSettings
 name|getSettings
 parameter_list|()
 block|{
@@ -521,7 +489,7 @@ specifier|public
 name|void
 name|setSettings
 parameter_list|(
-name|IvySettings
+name|ResolverSettings
 name|ivy
 parameter_list|)
 block|{
@@ -847,9 +815,6 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|getSettings
-argument_list|()
-argument_list|,
 operator|new
 name|CacheManager
 argument_list|(

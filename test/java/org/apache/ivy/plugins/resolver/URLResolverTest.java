@@ -2292,8 +2292,6 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|_settings
-argument_list|,
 operator|new
 name|CacheManager
 argument_list|(

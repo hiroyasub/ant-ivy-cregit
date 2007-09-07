@@ -701,7 +701,7 @@ class|class
 name|ResolveEngine
 block|{
 specifier|private
-name|IvySettings
+name|ResolveEngineSettings
 name|settings
 decl_stmt|;
 specifier|private
@@ -728,7 +728,7 @@ comment|/**      * Constructs a ResolveEngine.      *       * @param settings   
 specifier|public
 name|ResolveEngine
 parameter_list|(
-name|IvySettings
+name|ResolveEngineSettings
 name|settings
 parameter_list|,
 name|EventManager
@@ -1964,8 +1964,6 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|settings
-argument_list|,
 name|cacheManager
 argument_list|,
 name|eventManager
@@ -2200,8 +2198,6 @@ argument_list|,
 operator|new
 name|DownloadOptions
 argument_list|(
-name|settings
-argument_list|,
 name|cacheManager
 argument_list|,
 name|eventManager
@@ -5349,7 +5345,7 @@ name|eventManager
 return|;
 block|}
 specifier|public
-name|IvySettings
+name|ResolveEngineSettings
 name|getSettings
 parameter_list|()
 block|{

@@ -143,22 +143,6 @@ name|ConfigurationResolveReport
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|IvySettings
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -725,7 +709,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|IvySettings
+name|ResolveEngineSettings
 name|getSettings
 parameter_list|()
 block|{
