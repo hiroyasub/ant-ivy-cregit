@@ -134,7 +134,7 @@ specifier|final
 name|String
 name|RETRIEVE_PATTERN
 init|=
-literal|"µbuild/test/lib/[conf]/[artifact]-[revision].[type]"
+literal|"build/test/lib/[conf]/[artifact]-[revision].[type]"
 decl_stmt|;
 specifier|private
 name|File
