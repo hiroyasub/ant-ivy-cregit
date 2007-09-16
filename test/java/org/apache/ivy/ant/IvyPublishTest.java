@@ -262,6 +262,11 @@ argument_list|()
 expr_stmt|;
 name|project
 operator|.
+name|init
+argument_list|()
+expr_stmt|;
+name|project
+operator|.
 name|setProperty
 argument_list|(
 literal|"ivy.settings.file"
