@@ -881,7 +881,7 @@ argument_list|(
 name|ivyAntVariableContainer
 argument_list|)
 decl_stmt|;
-comment|// NB: It is alrady done in the ivy.configure, but it is required for
+comment|// NB: It is already done in the ivy.configure, but it is required for
 comment|// defineDefaultSettingFile (that should be done before the ivy.configure
 name|settings
 operator|.
