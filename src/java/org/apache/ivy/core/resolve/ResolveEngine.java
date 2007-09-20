@@ -1515,15 +1515,6 @@ index|[
 name|i
 index|]
 operator|.
-name|isCompletelyEvicted
-argument_list|()
-operator|&&
-operator|!
-name|dependencies
-index|[
-name|i
-index|]
-operator|.
 name|hasProblem
 argument_list|()
 condition|)
