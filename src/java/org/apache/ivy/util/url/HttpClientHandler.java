@@ -812,6 +812,15 @@ name|url
 argument_list|)
 expr_stmt|;
 block|}
+catch|catch
+parameter_list|(
+name|IllegalArgumentException
+name|e
+parameter_list|)
+block|{
+comment|// thrown by HttpClient to indicate the URL is not valid, this happens for instance
+comment|// when trying to download a dynamic version (cfr IVY-390)
+block|}
 finally|finally
 block|{
 if|if
