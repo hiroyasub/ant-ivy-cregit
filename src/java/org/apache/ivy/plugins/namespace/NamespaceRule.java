@@ -57,6 +57,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|this
+operator|.
 name|fromSystem
 operator|!=
 literal|null
@@ -96,6 +98,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|this
+operator|.
 name|toSystem
 operator|!=
 literal|null

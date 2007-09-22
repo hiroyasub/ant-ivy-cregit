@@ -757,6 +757,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|this
+operator|.
 name|dest
 operator|!=
 literal|null
