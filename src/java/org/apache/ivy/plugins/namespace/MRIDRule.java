@@ -24,19 +24,19 @@ name|MRIDRule
 block|{
 specifier|private
 name|String
-name|_org
+name|org
 decl_stmt|;
 specifier|private
 name|String
-name|_module
+name|module
 decl_stmt|;
 specifier|private
 name|String
-name|_branch
+name|branch
 decl_stmt|;
 specifier|private
 name|String
-name|_rev
+name|rev
 decl_stmt|;
 specifier|public
 name|MRIDRule
@@ -51,15 +51,21 @@ name|String
 name|rev
 parameter_list|)
 block|{
-name|_org
+name|this
+operator|.
+name|org
 operator|=
 name|org
 expr_stmt|;
-name|_module
+name|this
+operator|.
+name|module
 operator|=
 name|mod
 expr_stmt|;
-name|_rev
+name|this
+operator|.
+name|rev
 operator|=
 name|rev
 expr_stmt|;
@@ -75,7 +81,7 @@ name|getModule
 parameter_list|()
 block|{
 return|return
-name|_module
+name|module
 return|;
 block|}
 specifier|public
@@ -86,7 +92,9 @@ name|String
 name|module
 parameter_list|)
 block|{
-name|_module
+name|this
+operator|.
+name|module
 operator|=
 name|module
 expr_stmt|;
@@ -97,7 +105,7 @@ name|getOrg
 parameter_list|()
 block|{
 return|return
-name|_org
+name|org
 return|;
 block|}
 specifier|public
@@ -108,7 +116,9 @@ name|String
 name|org
 parameter_list|)
 block|{
-name|_org
+name|this
+operator|.
+name|org
 operator|=
 name|org
 expr_stmt|;
@@ -119,7 +129,7 @@ name|getRev
 parameter_list|()
 block|{
 return|return
-name|_rev
+name|rev
 return|;
 block|}
 specifier|public
@@ -130,7 +140,9 @@ name|String
 name|rev
 parameter_list|)
 block|{
-name|_rev
+name|this
+operator|.
+name|rev
 operator|=
 name|rev
 expr_stmt|;
@@ -143,27 +155,27 @@ block|{
 return|return
 literal|"[ "
 operator|+
-name|_org
+name|org
 operator|+
 literal|" "
 operator|+
-name|_module
+name|module
 operator|+
 operator|(
-name|_branch
+name|branch
 operator|!=
 literal|null
 condition|?
 literal|" "
 operator|+
-name|_branch
+name|branch
 else|:
 literal|""
 operator|)
 operator|+
 literal|" "
 operator|+
-name|_rev
+name|rev
 operator|+
 literal|" ]"
 return|;
@@ -174,7 +186,7 @@ name|getBranch
 parameter_list|()
 block|{
 return|return
-name|_branch
+name|branch
 return|;
 block|}
 specifier|public
@@ -185,7 +197,9 @@ name|String
 name|branch
 parameter_list|)
 block|{
-name|_branch
+name|this
+operator|.
+name|branch
 operator|=
 name|branch
 expr_stmt|;

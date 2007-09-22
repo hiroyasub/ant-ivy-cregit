@@ -87,7 +87,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|List
-name|_rules
+name|rules
 init|=
 operator|new
 name|ArrayList
@@ -95,17 +95,17 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|String
-name|_name
+name|name
 decl_stmt|;
 specifier|private
 name|boolean
-name|_chainRules
+name|chainRules
 init|=
 literal|false
 decl_stmt|;
 specifier|private
 name|NamespaceTransformer
-name|_fromSystemTransformer
+name|fromSystemTransformer
 init|=
 operator|new
 name|NamespaceTransformer
@@ -124,7 +124,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_rules
+name|rules
 operator|.
 name|iterator
 argument_list|()
@@ -162,7 +162,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_chainRules
+name|chainRules
 condition|)
 block|{
 name|mrid
@@ -196,7 +196,7 @@ name|isIdentity
 parameter_list|()
 block|{
 return|return
-name|_rules
+name|rules
 operator|.
 name|isEmpty
 argument_list|()
@@ -206,7 +206,7 @@ block|}
 decl_stmt|;
 specifier|private
 name|NamespaceTransformer
-name|_toSystemTransformer
+name|toSystemTransformer
 init|=
 operator|new
 name|NamespaceTransformer
@@ -225,7 +225,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_rules
+name|rules
 operator|.
 name|iterator
 argument_list|()
@@ -263,7 +263,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|_chainRules
+name|chainRules
 condition|)
 block|{
 name|mrid
@@ -297,7 +297,7 @@ name|isIdentity
 parameter_list|()
 block|{
 return|return
-name|_rules
+name|rules
 operator|.
 name|isEmpty
 argument_list|()
@@ -313,7 +313,7 @@ name|NamespaceRule
 name|rule
 parameter_list|)
 block|{
-name|_rules
+name|rules
 operator|.
 name|add
 argument_list|(
@@ -327,7 +327,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_name
+name|name
 return|;
 block|}
 specifier|public
@@ -338,7 +338,9 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|_name
+name|this
+operator|.
+name|name
 operator|=
 name|name
 expr_stmt|;
@@ -349,7 +351,7 @@ name|getFromSystemTransformer
 parameter_list|()
 block|{
 return|return
-name|_fromSystemTransformer
+name|fromSystemTransformer
 return|;
 block|}
 specifier|public
@@ -358,7 +360,7 @@ name|getToSystemTransformer
 parameter_list|()
 block|{
 return|return
-name|_toSystemTransformer
+name|toSystemTransformer
 return|;
 block|}
 specifier|public
@@ -367,7 +369,7 @@ name|isChainrules
 parameter_list|()
 block|{
 return|return
-name|_chainRules
+name|chainRules
 return|;
 block|}
 specifier|public
@@ -378,7 +380,9 @@ name|boolean
 name|chainRules
 parameter_list|)
 block|{
-name|_chainRules
+name|this
+operator|.
+name|chainRules
 operator|=
 name|chainRules
 expr_stmt|;

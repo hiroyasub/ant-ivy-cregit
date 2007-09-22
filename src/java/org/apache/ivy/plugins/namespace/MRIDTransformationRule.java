@@ -138,12 +138,14 @@ decl_stmt|;
 specifier|private
 name|Matcher
 index|[]
-name|_matchers
+name|matchers
 init|=
 operator|new
 name|Matcher
 index|[
-literal|4
+name|TYPES
+operator|.
+name|length
 index|]
 decl_stmt|;
 specifier|public
@@ -157,7 +159,8 @@ name|ModuleRevisionId
 name|mrid
 parameter_list|)
 block|{
-name|_matchers
+comment|//CheckStyle:MagicNumber| OFF
+name|matchers
 index|[
 literal|0
 index|]
@@ -186,7 +189,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_matchers
+name|matchers
 index|[
 literal|0
 index|]
@@ -199,7 +202,7 @@ return|return
 literal|false
 return|;
 block|}
-name|_matchers
+name|matchers
 index|[
 literal|1
 index|]
@@ -228,7 +231,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_matchers
+name|matchers
 index|[
 literal|1
 index|]
@@ -251,7 +254,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|_matchers
+name|matchers
 index|[
 literal|2
 index|]
@@ -261,7 +264,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_matchers
+name|matchers
 index|[
 literal|2
 index|]
@@ -290,7 +293,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_matchers
+name|matchers
 index|[
 literal|2
 index|]
@@ -304,7 +307,7 @@ literal|false
 return|;
 block|}
 block|}
-name|_matchers
+name|matchers
 index|[
 literal|3
 index|]
@@ -333,7 +336,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|_matchers
+name|matchers
 index|[
 literal|3
 index|]
@@ -349,6 +352,7 @@ block|}
 return|return
 literal|true
 return|;
+comment|//CheckStyle:MagicNumber| ON
 block|}
 specifier|public
 name|ModuleRevisionId
@@ -474,7 +478,7 @@ index|]
 argument_list|,
 name|type
 argument_list|,
-name|_matchers
+name|matchers
 index|[
 name|i
 index|]
@@ -715,7 +719,7 @@ block|}
 block|}
 specifier|private
 name|List
-name|_src
+name|src
 init|=
 operator|new
 name|ArrayList
@@ -723,7 +727,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|MRIDRule
-name|_dest
+name|dest
 decl_stmt|;
 specifier|public
 name|void
@@ -733,7 +737,9 @@ name|MRIDRule
 name|src
 parameter_list|)
 block|{
-name|_src
+name|this
+operator|.
+name|src
 operator|.
 name|add
 argument_list|(
@@ -751,7 +757,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_dest
+name|dest
 operator|!=
 literal|null
 condition|)
@@ -764,7 +770,9 @@ literal|"only one dest is allowed per mapping"
 argument_list|)
 throw|;
 block|}
-name|_dest
+name|this
+operator|.
+name|dest
 operator|=
 name|dest
 expr_stmt|;
@@ -789,7 +797,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_src
+name|src
 operator|.
 name|iterator
 argument_list|()
@@ -831,7 +839,7 @@ name|matcher
 operator|.
 name|apply
 argument_list|(
-name|_dest
+name|dest
 argument_list|,
 name|mrid
 argument_list|)
@@ -846,7 +854,7 @@ name|rule
 operator|+
 literal|". Applied "
 operator|+
-name|_dest
+name|dest
 operator|+
 literal|" on "
 operator|+

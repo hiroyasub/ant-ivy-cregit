@@ -213,9 +213,15 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|NameSpaceHelper
 block|{
+specifier|private
+name|NameSpaceHelper
+parameter_list|()
+block|{
+block|}
 specifier|public
 specifier|static
 name|DependencyDescriptor
