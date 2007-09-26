@@ -100,11 +100,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   */
+comment|/**  * Logging utility class.  *<p>  * To initialize Message you can call {@link #init(MessageImpl)} with  * the {@link MessageImpl} of your choice.  *<p>   * This only takes effect in the current thread.  */
 end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Message
 block|{
@@ -157,7 +158,7 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|List
-name|_problems
+name|problems
 init|=
 operator|new
 name|ArrayList
@@ -166,7 +167,7 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|List
-name|_warns
+name|warns
 init|=
 operator|new
 name|ArrayList
@@ -175,7 +176,7 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|List
-name|_errors
+name|errors
 init|=
 operator|new
 name|ArrayList
@@ -184,14 +185,14 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|boolean
-name|_showProgress
+name|showProgress
 init|=
 literal|true
 decl_stmt|;
 specifier|private
 specifier|static
 name|boolean
-name|_showedInfo
+name|showedInfo
 init|=
 literal|false
 decl_stmt|;
@@ -282,7 +283,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_showedInfo
+name|showedInfo
 condition|)
 block|{
 name|Properties
@@ -385,7 +386,7 @@ literal|":: Ivy non official version :: http://incubator.apache.org/ivy/ ::"
 argument_list|)
 expr_stmt|;
 block|}
-name|_showedInfo
+name|showedInfo
 operator|=
 literal|true
 expr_stmt|;
@@ -694,7 +695,7 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-name|_problems
+name|problems
 operator|.
 name|add
 argument_list|(
@@ -703,7 +704,7 @@ operator|+
 name|msg
 argument_list|)
 expr_stmt|;
-name|_warns
+name|warns
 operator|.
 name|add
 argument_list|(
@@ -764,7 +765,7 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-name|_problems
+name|problems
 operator|.
 name|add
 argument_list|(
@@ -773,7 +774,7 @@ operator|+
 name|msg
 argument_list|)
 expr_stmt|;
-name|_errors
+name|errors
 operator|.
 name|add
 argument_list|(
@@ -788,7 +789,7 @@ name|getProblems
 parameter_list|()
 block|{
 return|return
-name|_problems
+name|problems
 return|;
 block|}
 specifier|public
@@ -799,7 +800,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_problems
+name|problems
 operator|.
 name|size
 argument_list|()
@@ -825,7 +826,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|_warns
+name|warns
 operator|.
 name|size
 argument_list|()
@@ -843,7 +844,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_warns
+name|warns
 operator|.
 name|iterator
 argument_list|()
@@ -903,7 +904,7 @@ block|}
 block|}
 if|if
 condition|(
-name|_errors
+name|errors
 operator|.
 name|size
 argument_list|()
@@ -921,7 +922,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_errors
+name|errors
 operator|.
 name|iterator
 argument_list|()
@@ -984,17 +985,17 @@ argument_list|(
 literal|"\n:: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS"
 argument_list|)
 expr_stmt|;
-name|_problems
+name|problems
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|_warns
+name|warns
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|_errors
+name|errors
 operator|.
 name|clear
 argument_list|()
@@ -1009,7 +1010,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_showProgress
+name|showProgress
 condition|)
 block|{
 name|MessageImpl
@@ -1073,7 +1074,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_showProgress
+name|showProgress
 condition|)
 block|{
 name|MessageImpl
@@ -1111,7 +1112,7 @@ name|isShowProgress
 parameter_list|()
 block|{
 return|return
-name|_showProgress
+name|showProgress
 return|;
 block|}
 specifier|public
@@ -1123,7 +1124,7 @@ name|boolean
 name|progress
 parameter_list|)
 block|{
-name|_showProgress
+name|showProgress
 operator|=
 name|progress
 expr_stmt|;
@@ -1144,6 +1145,11 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Message
+parameter_list|()
+block|{
 block|}
 block|}
 end_class
