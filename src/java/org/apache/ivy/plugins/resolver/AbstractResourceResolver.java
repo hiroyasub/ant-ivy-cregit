@@ -786,7 +786,6 @@ name|date
 parameter_list|)
 function_decl|;
 specifier|public
-specifier|static
 name|ResolvedResource
 name|findResource
 parameter_list|(

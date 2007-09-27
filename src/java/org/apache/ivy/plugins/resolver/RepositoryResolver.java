@@ -537,7 +537,6 @@ argument_list|)
 return|;
 block|}
 specifier|public
-specifier|static
 name|ResolvedResource
 name|findResourceUsingPattern
 parameter_list|(
@@ -794,7 +793,6 @@ throw|;
 block|}
 block|}
 specifier|private
-specifier|static
 name|ResolvedResource
 name|findDynamicResourceUsingPattern
 parameter_list|(
