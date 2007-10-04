@@ -389,10 +389,6 @@ name|XMLHelper
 import|;
 end_import
 
-begin_comment
-comment|/**  *   */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -400,15 +396,33 @@ name|XmlModuleDescriptorParserTest
 extends|extends
 name|AbstractModuleDescriptorParserTester
 block|{
-comment|// junit test -- DO NOT REMOVE used by ant to know it's a junit test
 specifier|private
 name|IvySettings
 name|settings
 init|=
+literal|null
+decl_stmt|;
+specifier|protected
+name|void
+name|setUp
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|super
+operator|.
+name|setUp
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|settings
+operator|=
 operator|new
 name|IvySettings
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|testSimple

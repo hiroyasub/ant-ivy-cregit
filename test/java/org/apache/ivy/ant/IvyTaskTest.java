@@ -434,8 +434,6 @@ argument_list|(
 operator|new
 name|Reference
 argument_list|(
-name|p
-argument_list|,
 literal|"mySettings"
 argument_list|)
 argument_list|)

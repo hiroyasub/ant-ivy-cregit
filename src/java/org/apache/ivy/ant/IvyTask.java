@@ -360,7 +360,10 @@ operator|=
 name|antIvyEngineRef
 operator|.
 name|getReferencedObject
+argument_list|(
+name|getProject
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

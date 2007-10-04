@@ -129,7 +129,6 @@ extends|extends
 name|TestCase
 block|{
 specifier|private
-specifier|final
 name|Ivy
 name|_ivy
 decl_stmt|;
@@ -137,8 +136,9 @@ specifier|private
 name|File
 name|_cache
 decl_stmt|;
-specifier|public
-name|XmlReportOutputterTest
+specifier|protected
+name|void
+name|setUp
 parameter_list|()
 throws|throws
 name|Exception
@@ -160,14 +160,6 @@ literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|setUp
-parameter_list|()
-throws|throws
-name|Exception
-block|{
 name|createCache
 argument_list|()
 expr_stmt|;
