@@ -1594,29 +1594,6 @@ throw|;
 block|}
 if|if
 condition|(
-name|depDescriptor
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|NullPointerException
-argument_list|(
-literal|"getDescriptor() is null for "
-operator|+
-name|dependencies
-index|[
-name|i
-index|]
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-throw|;
-block|}
-if|if
-condition|(
 name|depRevisionId
 operator|==
 literal|null
@@ -1645,9 +1622,16 @@ operator|.
 name|getRevision
 argument_list|()
 decl_stmt|;
+comment|//The evicted modules have no descritpion, so we can't put their status.
 name|String
 name|status
 init|=
+name|depDescriptor
+operator|==
+literal|null
+condition|?
+literal|"?"
+else|:
 name|depDescriptor
 operator|.
 name|getStatus
