@@ -10762,7 +10762,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/2/mod10.1/ivy-1.0.xml"
+literal|"test/repositories/2/mod17.1/ivy-1.0.xml"
 argument_list|)
 operator|.
 name|toURL
