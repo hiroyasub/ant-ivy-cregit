@@ -10744,6 +10744,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test IVY-618.       */
+comment|/*    public void testResolveConflictFromPoms() throws Exception {         ResolveReport report = ivy.resolve(new File("test/repositories/2/mod9.1/ivy-1.0.xml")                 .toURL(), getResolveOptions(new String[] {"*"}));         assertNotNull(report);         assertFalse(report.hasError());     } */
 specifier|public
 name|void
 name|testTransitiveEviction
