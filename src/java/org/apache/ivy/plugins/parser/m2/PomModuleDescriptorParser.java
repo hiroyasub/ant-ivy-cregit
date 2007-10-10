@@ -1296,6 +1296,26 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+literal|"project/parent/version"
+operator|.
+name|equals
+argument_list|(
+name|context
+argument_list|)
+condition|)
+block|{
+name|properties
+operator|.
+name|put
+argument_list|(
+literal|"parent.version"
+argument_list|,
+name|revision
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 operator|(
 operator|(
 name|organisation
