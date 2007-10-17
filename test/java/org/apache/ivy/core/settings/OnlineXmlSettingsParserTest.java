@@ -162,7 +162,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://incubator.apache.org/ivy/test/ivysettings-include-http-url.xml"
+literal|"http://ant.apache.org/ivy/test/ivysettings-include-http-url.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
