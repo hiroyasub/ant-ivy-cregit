@@ -792,7 +792,7 @@ name|getIvyHomeURL
 parameter_list|()
 block|{
 return|return
-literal|"http://incubator.apache.org/ivy/"
+literal|"http://ant.apache.org/ivy/"
 return|;
 block|}
 specifier|public
