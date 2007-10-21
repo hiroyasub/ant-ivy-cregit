@@ -278,7 +278,7 @@ if|if
 condition|(
 name|current
 operator|.
-name|isSorted
+name|isProcessed
 argument_list|()
 condition|)
 block|{

@@ -233,6 +233,7 @@ return|return
 name|isLoopIntermediateElement
 return|;
 block|}
+comment|/** This ModuleInSort has been placed on the sorted list */
 specifier|public
 name|boolean
 name|isSorted
@@ -248,6 +249,45 @@ operator|.
 name|debug
 argument_list|(
 literal|"Module descriptor already sorted : "
+operator|+
+name|module
+operator|.
+name|getModuleRevisionId
+argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+else|else
+block|{
+return|return
+literal|false
+return|;
+block|}
+block|}
+comment|/** This ModuleInSort has already been analyzed.  It is either already added      * to the sorted list, either it is included in a loop and will be added      * when the root of the loop will be added to the list.       */
+specifier|public
+name|boolean
+name|isProcessed
+parameter_list|()
+block|{
+if|if
+condition|(
+name|isSorted
+operator|||
+name|isLoopIntermediateElement
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Module descriptor is processed : "
 operator|+
 name|module
 operator|.
