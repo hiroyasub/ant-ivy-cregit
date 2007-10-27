@@ -611,22 +611,17 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|settings
-operator|.
-name|configureRepositories
+throw|throw
+operator|new
+name|IllegalStateException
 argument_list|(
-literal|true
+literal|"ivyroot is mandatory on IvyRepResolver. "
+operator|+
+literal|"Make sure to set it in your settings, before setting ivypattern "
+operator|+
+literal|"if you wish to set ivypattern too."
 argument_list|)
-expr_stmt|;
-name|ivyroot
-operator|=
-name|settings
-operator|.
-name|getVariable
-argument_list|(
-literal|"ivy.ivyrep.default.ivy.root"
-argument_list|)
-expr_stmt|;
+throw|;
 block|}
 block|}
 if|if
