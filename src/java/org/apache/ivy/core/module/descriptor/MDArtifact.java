@@ -164,10 +164,6 @@ name|ArrayList
 argument_list|()
 decl_stmt|;
 specifier|private
-name|ArtifactRevisionId
-name|arid
-decl_stmt|;
-specifier|private
 name|Map
 name|extraAttributes
 init|=
@@ -357,15 +353,8 @@ name|ArtifactRevisionId
 name|getId
 parameter_list|()
 block|{
-if|if
-condition|(
-name|arid
-operator|==
-literal|null
-condition|)
-block|{
-name|arid
-operator|=
+comment|// do not cache the result because the resolvedModuleRevisionId can change!
+return|return
 name|ArtifactRevisionId
 operator|.
 name|newInstance
@@ -383,10 +372,6 @@ name|ext
 argument_list|,
 name|extraAttributes
 argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|arid
 return|;
 block|}
 specifier|public
