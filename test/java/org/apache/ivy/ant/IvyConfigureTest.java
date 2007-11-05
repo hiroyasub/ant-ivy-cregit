@@ -500,6 +500,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*@SuppressWarnings*/
 specifier|public
 name|void
 name|testURL

@@ -21,47 +21,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|BufferedReader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|FileReader
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|InputStreamReader
 import|;
 end_import
 
@@ -72,20 +32,6 @@ operator|.
 name|framework
 operator|.
 name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|FileUtil
 import|;
 end_import
 
@@ -173,100 +119,19 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|String
-name|wrote
-init|=
-name|FileUtil
-operator|.
-name|readEntirely
-argument_list|(
-operator|new
-name|BufferedReader
-argument_list|(
-operator|new
-name|FileReader
-argument_list|(
-name|destFile
-argument_list|)
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|String
-name|expected
-init|=
-name|readEntirely
-argument_list|(
-literal|"test-convertpom.xml"
-argument_list|)
-operator|.
-name|replaceAll
-argument_list|(
-literal|"\r\n"
-argument_list|,
-literal|"\n"
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|'\r'
-argument_list|,
-literal|'\n'
-argument_list|)
-decl_stmt|;
-comment|// do not work properly on all platform and depends on the file date
-comment|// assertEquals(expected, wrote);
+comment|//do not work properly on all platform and depends on the file date
+comment|//keep the code in comments in case someone manage to fix this and to highlight the fact
+comment|//that this is not checked
+comment|//        String wrote = FileUtil.readEntirely(new BufferedReader(new FileReader(destFile)));
+comment|//        String expected = readEntirely("test-convertpom.xml").replaceAll("\r\n", "\n").replace(
+comment|//            '\r', '\n');
+comment|//         assertEquals(expected, wrote);
 block|}
-specifier|private
-name|String
-name|readEntirely
-parameter_list|(
-name|String
-name|resource
-parameter_list|)
-throws|throws
-name|IOException
-block|{
-return|return
-name|FileUtil
-operator|.
-name|readEntirely
-argument_list|(
-operator|new
-name|BufferedReader
-argument_list|(
-operator|new
-name|InputStreamReader
-argument_list|(
-name|IvyConvertPomTest
-operator|.
-name|class
-operator|.
-name|getResource
-argument_list|(
-name|resource
-argument_list|)
-operator|.
-name|openStream
-argument_list|()
-argument_list|)
-argument_list|)
-argument_list|)
-operator|.
-name|replaceAll
-argument_list|(
-literal|"\r\n"
-argument_list|,
-literal|"\n"
-argument_list|)
-operator|.
-name|replace
-argument_list|(
-literal|'\r'
-argument_list|,
-literal|'\n'
-argument_list|)
-return|;
-block|}
+comment|//    private String readEntirely(String resource) throws IOException {
+comment|//        return FileUtil.readEntirely(
+comment|//            new BufferedReader(new InputStreamReader(IvyConvertPomTest.class.getResource(resource)
+comment|//                    .openStream()))).replaceAll("\r\n", "\n").replace('\r', '\n');
+comment|//    }
 block|}
 end_class
 

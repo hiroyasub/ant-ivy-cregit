@@ -330,16 +330,13 @@ parameter_list|()
 block|{
 try|try
 block|{
-name|Matcher
-name|matcher
-init|=
 name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
 literal|"["
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|fail
 argument_list|(
 literal|"Should fail on invalid regexp syntax"
