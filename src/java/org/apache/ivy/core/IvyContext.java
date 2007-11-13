@@ -177,20 +177,6 @@ name|MessageLogger
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Project
-import|;
-end_import
-
 begin_comment
 comment|/**  * This class represents an execution context of an Ivy action. It contains several getters to  * retrieve information, like the used Ivy instance, the cache location...  *   * @see IvyThread  */
 end_comment
