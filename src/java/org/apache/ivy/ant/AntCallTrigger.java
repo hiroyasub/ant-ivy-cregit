@@ -244,10 +244,7 @@ name|Project
 operator|)
 name|IvyContext
 operator|.
-name|getContext
-argument_list|()
-operator|.
-name|peek
+name|peekInContextStack
 argument_list|(
 name|IvyTask
 operator|.
