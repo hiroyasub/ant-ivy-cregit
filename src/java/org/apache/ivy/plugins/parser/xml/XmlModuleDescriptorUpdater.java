@@ -3352,17 +3352,27 @@ name|write
 argument_list|(
 literal|"<info organisation=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|systemMid
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\" module=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|systemMid
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -3381,10 +3391,15 @@ name|write
 argument_list|(
 literal|" revision=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|systemMid
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -3401,7 +3416,12 @@ name|write
 argument_list|(
 literal|" status=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|status
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -3750,7 +3770,9 @@ name|String
 name|value
 parameter_list|)
 block|{
-return|return
+name|String
+name|result
+init|=
 name|ivy
 operator|==
 literal|null
@@ -3762,6 +3784,14 @@ operator|.
 name|substitute
 argument_list|(
 name|value
+argument_list|)
+decl_stmt|;
+return|return
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
+name|result
 argument_list|)
 return|;
 block|}

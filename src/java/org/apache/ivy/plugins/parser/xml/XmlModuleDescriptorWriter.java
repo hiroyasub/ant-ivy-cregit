@@ -255,6 +255,20 @@ name|ModuleDescriptor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|XMLHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -493,6 +507,10 @@ name|print
 argument_list|(
 literal|" org=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dds
 index|[
 name|i
@@ -503,6 +521,7 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -513,6 +532,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dds
 index|[
 name|i
@@ -523,6 +546,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -533,6 +557,10 @@ name|print
 argument_list|(
 literal|" rev=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dds
 index|[
 name|i
@@ -543,6 +571,7 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -692,10 +721,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|modConfs
 index|[
 name|j
 index|]
+argument_list|)
 operator|+
 literal|"->"
 argument_list|)
@@ -721,10 +755,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|depConfs
 index|[
 name|k
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1011,6 +1050,10 @@ name|print
 argument_list|(
 literal|" org=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1024,6 +1067,7 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1034,6 +1078,10 @@ name|print
 argument_list|(
 literal|" module=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1047,6 +1095,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1057,6 +1106,10 @@ name|print
 argument_list|(
 literal|" artifact=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1067,6 +1120,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1077,6 +1131,10 @@ name|print
 argument_list|(
 literal|" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1087,6 +1145,7 @@ argument_list|()
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1097,6 +1156,10 @@ name|print
 argument_list|(
 literal|" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1107,6 +1170,7 @@ argument_list|()
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1175,10 +1239,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|ruleConfs
 index|[
 name|k
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1215,6 +1284,10 @@ name|print
 argument_list|(
 literal|" matcher=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1225,6 +1298,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1301,6 +1375,10 @@ name|print
 argument_list|(
 literal|" org=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1314,6 +1392,7 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1324,6 +1403,10 @@ name|print
 argument_list|(
 literal|" module=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1337,6 +1420,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1347,6 +1431,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1357,6 +1445,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1367,6 +1456,10 @@ name|print
 argument_list|(
 literal|" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1377,6 +1470,7 @@ argument_list|()
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1387,6 +1481,10 @@ name|print
 argument_list|(
 literal|" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1397,6 +1495,7 @@ argument_list|()
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1465,10 +1564,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|ruleConfs
 index|[
 name|k
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1505,6 +1609,10 @@ name|print
 argument_list|(
 literal|" matcher=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|excludes
 index|[
 name|j
@@ -1515,6 +1623,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1584,6 +1693,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|includes
 index|[
 name|j
@@ -1594,6 +1707,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1604,6 +1718,10 @@ name|print
 argument_list|(
 literal|" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|includes
 index|[
 name|j
@@ -1614,6 +1732,7 @@ argument_list|()
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1624,6 +1743,10 @@ name|print
 argument_list|(
 literal|" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|includes
 index|[
 name|j
@@ -1634,6 +1757,7 @@ argument_list|()
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1702,10 +1826,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|ruleConfs
 index|[
 name|k
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1742,6 +1871,10 @@ name|print
 argument_list|(
 literal|" matcher=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|includes
 index|[
 name|j
@@ -1752,6 +1885,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1821,6 +1955,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|depArtifacts
 index|[
 name|j
@@ -1828,6 +1966,7 @@ index|]
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1838,6 +1977,10 @@ name|print
 argument_list|(
 literal|" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|depArtifacts
 index|[
 name|j
@@ -1845,6 +1988,7 @@ index|]
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1855,6 +1999,10 @@ name|print
 argument_list|(
 literal|" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|depArtifacts
 index|[
 name|j
@@ -1862,6 +2010,7 @@ index|]
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -1930,10 +2079,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dadconfs
 index|[
 name|k
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2023,10 +2177,18 @@ argument_list|()
 operator|+
 literal|"=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|entry
 operator|.
 name|getValue
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2100,6 +2262,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|artifacts
 index|[
 name|i
@@ -2107,6 +2273,7 @@ index|]
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2117,6 +2284,10 @@ name|print
 argument_list|(
 literal|" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|artifacts
 index|[
 name|i
@@ -2124,6 +2295,7 @@ index|]
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2134,6 +2306,10 @@ name|print
 argument_list|(
 literal|" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|artifacts
 index|[
 name|i
@@ -2141,6 +2317,7 @@ index|]
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2151,6 +2328,10 @@ name|print
 argument_list|(
 literal|" conf=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|getConfs
 argument_list|(
 name|md
@@ -2159,6 +2340,7 @@ name|artifacts
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 operator|+
 literal|"\""
@@ -2247,6 +2429,10 @@ name|print
 argument_list|(
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|confs
 index|[
 name|i
@@ -2254,6 +2440,7 @@ index|]
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2264,6 +2451,10 @@ name|print
 argument_list|(
 literal|" visibility=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|confs
 index|[
 name|i
@@ -2271,6 +2462,10 @@ index|]
 operator|.
 name|getVisibility
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2294,6 +2489,10 @@ name|print
 argument_list|(
 literal|" description=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|confs
 index|[
 name|i
@@ -2301,6 +2500,7 @@ index|]
 operator|.
 name|getDescription
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2355,10 +2555,15 @@ name|out
 operator|.
 name|print
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|exts
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2424,6 +2629,10 @@ name|println
 argument_list|(
 literal|"\t<info organisation=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -2431,6 +2640,7 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2441,6 +2651,10 @@ name|println
 argument_list|(
 literal|"\t\tmodule=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -2448,6 +2662,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2476,7 +2691,12 @@ name|println
 argument_list|(
 literal|"\t\tbranch=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|branch
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2506,7 +2726,12 @@ name|println
 argument_list|(
 literal|"\t\trevision=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|revision
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2518,10 +2743,15 @@ name|println
 argument_list|(
 literal|"\t\tstatus=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getStatus
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2608,6 +2838,10 @@ name|println
 argument_list|(
 literal|"\t\tnamespace=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dmd
 operator|.
 name|getNamespace
@@ -2615,6 +2849,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)

@@ -397,6 +397,20 @@ name|StringUtils
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|XMLHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -782,10 +796,15 @@ name|println
 argument_list|(
 literal|"\t\torganisation=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mrid
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -796,10 +815,15 @@ name|println
 argument_list|(
 literal|"\t\tmodule=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mrid
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -810,10 +834,15 @@ name|println
 argument_list|(
 literal|"\t\trevision=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mrid
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -834,10 +863,15 @@ name|println
 argument_list|(
 literal|"\t\tbranch=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mrid
 operator|.
 name|getBranch
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -897,10 +931,18 @@ argument_list|()
 operator|+
 literal|"=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|entry
 operator|.
 name|getValue
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -912,10 +954,15 @@ name|println
 argument_list|(
 literal|"\t\tconf=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|report
 operator|.
 name|getConfiguration
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -926,6 +973,10 @@ name|println
 argument_list|(
 literal|"\t\tconfs=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|StringUtils
 operator|.
 name|join
@@ -933,6 +984,7 @@ argument_list|(
 name|confs
 argument_list|,
 literal|", "
+argument_list|)
 argument_list|)
 operator|+
 literal|"\""
@@ -1016,24 +1068,38 @@ name|println
 argument_list|(
 literal|"\t\t<module organisation=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mid
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|mid
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
 literal|" resolver=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|report
 operator|.
 name|getResolveEngine
@@ -1045,6 +1111,7 @@ operator|.
 name|getResolverName
 argument_list|(
 name|mid
+argument_list|)
 argument_list|)
 operator|+
 literal|"\">"
@@ -1130,8 +1197,14 @@ name|append
 argument_list|(
 literal|" status=\""
 argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
+argument_list|(
+name|XMLHelper
+operator|.
+name|escape
 argument_list|(
 name|dep
 operator|.
@@ -1141,16 +1214,16 @@ operator|.
 name|getStatus
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
-literal|"\""
+literal|"\" pubdate=\""
 argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" pubdate=\""
-argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
@@ -1170,18 +1243,21 @@ argument_list|()
 argument_list|)
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
-literal|"\""
+literal|"\" resolver=\""
 argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
-literal|" resolver=\""
-argument_list|)
+name|XMLHelper
 operator|.
-name|append
+name|escape
 argument_list|(
 name|dep
 operator|.
@@ -1194,18 +1270,22 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
-literal|"\""
+literal|"\" artresolver=\""
 argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
-literal|" artresolver=\""
-argument_list|)
+name|XMLHelper
 operator|.
-name|append
+name|escape
 argument_list|(
 name|dep
 operator|.
@@ -1218,6 +1298,9 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|details
 operator|.
 name|append
 argument_list|(
@@ -1270,10 +1353,18 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|ed
 operator|.
 name|getConflictManager
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 argument_list|)
 operator|.
 name|append
@@ -1310,6 +1401,10 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dep
 operator|.
 name|getProblem
@@ -1317,6 +1412,7 @@ argument_list|()
 operator|.
 name|getMessage
 argument_list|()
+argument_list|)
 argument_list|)
 operator|.
 name|append
@@ -1348,10 +1444,15 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getHomePage
 argument_list|()
+argument_list|)
 argument_list|)
 operator|.
 name|append
@@ -1429,11 +1530,19 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|extraAttributes
 operator|.
 name|get
 argument_list|(
 name|attName
+argument_list|)
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 argument_list|)
 operator|.
@@ -1486,6 +1595,10 @@ name|println
 argument_list|(
 literal|"\t\t\t<revision name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dep
 operator|.
 name|getResolvedId
@@ -1493,6 +1606,7 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
@@ -1511,6 +1625,10 @@ literal|""
 else|:
 literal|" branch=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|dep
 operator|.
 name|getResolvedId
@@ -1518,6 +1636,7 @@ argument_list|()
 operator|.
 name|getBranch
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|)
@@ -1621,6 +1740,10 @@ name|lurl
 operator|=
 literal|" url=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|licenses
 index|[
 name|i
@@ -1628,6 +1751,7 @@ index|]
 operator|.
 name|getUrl
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 expr_stmt|;
@@ -1645,6 +1769,10 @@ name|println
 argument_list|(
 literal|"\t\t\t\t<license name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|licenses
 index|[
 name|i
@@ -1652,6 +1780,7 @@ index|]
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
@@ -1737,6 +1866,10 @@ name|println
 argument_list|(
 literal|"\t\t\t\t<evicted-by rev=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|sel
 operator|.
 name|getResolvedId
@@ -1744,6 +1877,7 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\"/>"
 argument_list|)
@@ -1853,11 +1987,19 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|callerExtraAttributes
 operator|.
 name|get
 argument_list|(
 name|attName
+argument_list|)
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 argument_list|)
 operator|.
@@ -1873,6 +2015,10 @@ name|println
 argument_list|(
 literal|"\t\t\t\t<caller organisation=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|callers
 index|[
 name|i
@@ -1883,11 +2029,16 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
 literal|" name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|callers
 index|[
 name|i
@@ -1898,11 +2049,16 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
 literal|" conf=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|toString
 argument_list|(
 name|callers
@@ -1913,11 +2069,16 @@ operator|.
 name|getCallerConfigurations
 argument_list|()
 argument_list|)
+argument_list|)
 operator|+
 literal|"\""
 operator|+
 literal|" rev=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|callers
 index|[
 name|i
@@ -1928,6 +2089,7 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 operator|+
@@ -1981,6 +2143,10 @@ name|print
 argument_list|(
 literal|"\t\t\t\t\t<artifact name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|adr
 index|[
 name|i
@@ -1988,9 +2154,14 @@ index|]
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\" type=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|adr
 index|[
 name|i
@@ -1998,9 +2169,14 @@ index|]
 operator|.
 name|getType
 argument_list|()
+argument_list|)
 operator|+
 literal|"\" ext=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|adr
 index|[
 name|i
@@ -2008,6 +2184,7 @@ index|]
 operator|.
 name|getExt
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2066,11 +2243,19 @@ name|attName
 operator|+
 literal|"=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|extraAttributes
 operator|.
 name|get
 argument_list|(
 name|attName
+argument_list|)
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 operator|+
 literal|"\""
@@ -2083,6 +2268,10 @@ name|print
 argument_list|(
 literal|" status=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|adr
 index|[
 name|i
@@ -2090,6 +2279,10 @@ index|]
 operator|.
 name|getDownloadStatus
 argument_list|()
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -2156,10 +2349,15 @@ literal|"\""
 operator|+
 literal|" location=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|origin
 operator|.
 name|getLocation
 argument_list|()
+argument_list|)
 operator|+
 literal|"\"/>"
 argument_list|)
@@ -2290,10 +2488,15 @@ expr_stmt|;
 block|}
 block|}
 return|return
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|buf
 operator|.
 name|toString
 argument_list|()
+argument_list|)
 return|;
 block|}
 block|}
