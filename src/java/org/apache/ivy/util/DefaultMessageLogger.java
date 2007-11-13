@@ -18,13 +18,13 @@ end_package
 begin_class
 specifier|public
 class|class
-name|DefaultMessageImpl
-implements|implements
-name|MessageImpl
+name|DefaultMessageLogger
+extends|extends
+name|AbstractMessageLogger
 block|{
 specifier|private
 name|int
-name|_level
+name|level
 init|=
 name|Message
 operator|.
@@ -32,13 +32,15 @@ name|MSG_INFO
 decl_stmt|;
 comment|/**      * @param level      */
 specifier|public
-name|DefaultMessageImpl
+name|DefaultMessageLogger
 parameter_list|(
 name|int
 name|level
 parameter_list|)
 block|{
-name|_level
+name|this
+operator|.
+name|level
 operator|=
 name|level
 expr_stmt|;
@@ -58,7 +60,9 @@ if|if
 condition|(
 name|level
 operator|<=
-name|_level
+name|this
+operator|.
+name|level
 condition|)
 block|{
 name|System
@@ -93,7 +97,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|progress
+name|doProgress
 parameter_list|()
 block|{
 name|System
@@ -108,7 +112,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|endProgress
+name|doEndProgress
 parameter_list|(
 name|String
 name|msg
@@ -130,7 +134,7 @@ name|getLevel
 parameter_list|()
 block|{
 return|return
-name|_level
+name|level
 return|;
 block|}
 block|}

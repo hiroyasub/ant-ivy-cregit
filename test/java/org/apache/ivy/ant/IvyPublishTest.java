@@ -127,7 +127,7 @@ name|ivy
 operator|.
 name|util
 operator|.
-name|DefaultMessageImpl
+name|DefaultMessageLogger
 import|;
 end_import
 
@@ -305,10 +305,10 @@ argument_list|)
 expr_stmt|;
 name|Message
 operator|.
-name|init
+name|setDefaultLogger
 argument_list|(
 operator|new
-name|DefaultMessageImpl
+name|DefaultMessageLogger
 argument_list|(
 literal|10
 argument_list|)

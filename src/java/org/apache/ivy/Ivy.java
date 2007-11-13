@@ -629,6 +629,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|MessageLoggerEngine
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|filter
 operator|.
 name|Filter
@@ -636,7 +650,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</li>  * Here is one typical usage:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  */
+comment|/**  *<a href="http://incubator.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *   *</p>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.<br/> To do so, it is recommended to use the  * {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method like this:  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback   *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  *   *</p>  */
 end_comment
 
 begin_class
@@ -644,6 +658,25 @@ specifier|public
 class|class
 name|Ivy
 block|{
+comment|/**      * Callback used to execute a set of Ivy related methods within an {@link IvyContext}.      *       * @see Ivy#execute(org.apache.ivy.Ivy.IvyCallback)      */
+specifier|public
+specifier|static
+interface|interface
+name|IvyCallback
+block|{
+comment|/**          * Executes Ivy related job within an {@link IvyContext}          *           * @param ivy          *            the {@link Ivy} instance to which this callback is related          * @param context          *            the {@link IvyContext} in which this callback is executed          * @return the result of this job,<code>null</code> if there is no result          */
+specifier|public
+name|Object
+name|doInIvyContext
+parameter_list|(
+name|Ivy
+name|ivy
+parameter_list|,
+name|IvyContext
+name|context
+parameter_list|)
+function_decl|;
+block|}
 specifier|private
 specifier|static
 specifier|final
@@ -900,28 +933,32 @@ specifier|private
 name|InstallEngine
 name|installEngine
 decl_stmt|;
+comment|/**      * The logger engine to use to log messages when using this Ivy instance.      */
+specifier|private
+name|MessageLoggerEngine
+name|loggerEngine
+init|=
+operator|new
+name|MessageLoggerEngine
+argument_list|()
+decl_stmt|;
 comment|/**      * The default constructor of Ivy allows to create an instance of Ivy with none of its      * dependencies (engines, settings, ...) created. If you use this constructor, it's your      * responsibility to set the dependencies of Ivy using the appropriate setters      * (setResolveEngine, ...). You can also call the bind method to set all the dependencies except      * those that you have provided using the setters. If you want to get an instance ready to use,      * prefer the use of Ivy.newInstance().      */
 specifier|public
 name|Ivy
 parameter_list|()
 block|{
 block|}
-comment|/**      * This method is used to bind this Ivy instance to required dependencies, i.e. instance of      * settings, engines, and so on. After this call Ivy is still not configured, which means that      * the settings object is still empty.      */
+comment|/**      * This method is used to bind this Ivy instance to required dependencies, i.e. instance of      * settings, engines, and so on.       *<p>      * After this call Ivy is still not configured, which means that      * the settings object is still empty.      *</p>      */
 specifier|public
 name|void
 name|bind
 parameter_list|()
 block|{
-name|IvyContext
-operator|.
-name|getContext
+name|pushContext
 argument_list|()
-operator|.
-name|setIvy
-argument_list|(
-name|this
-argument_list|)
 expr_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|settings
@@ -1143,6 +1180,109 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Executes the given callback in the context of this Ivy instance.      *<p>      * Alternatively you can use the {@link #pushContext()} and {@link #popContext()} methods, but      * this is not recommended:      *       *<pre>      * Object result = null;      * pushContext();      * try {      *     result = callback.doInIvyContext(this, IvyContext.getContext());      * } finally {      *     popContext();      * }      * doSomethingWithResult(result);      *</pre>      *       *</p>      *       * @param callback      * @return      */
+specifier|public
+name|Object
+name|execute
+parameter_list|(
+name|IvyCallback
+name|callback
+parameter_list|)
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
+return|return
+name|callback
+operator|.
+name|doInIvyContext
+argument_list|(
+name|this
+argument_list|,
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+argument_list|)
+return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Pushes a new IvyContext bound to this Ivy instance if the current context is not already      * bound to this Ivy instance. If the current context is already bound to this Ivy instance, it      * pushes the current context on the context stack, so that you can (and must) always call      * {@link #popContext()} when you're done.      *<p>      * Alternatively, you can use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method which      * takes care of everything for you.      *</p>      */
+specifier|public
+name|void
+name|pushContext
+parameter_list|()
+block|{
+if|if
+condition|(
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|peekIvy
+argument_list|()
+operator|!=
+name|this
+condition|)
+block|{
+name|IvyContext
+operator|.
+name|pushNewContext
+argument_list|()
+expr_stmt|;
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|setIvy
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|IvyContext
+operator|.
+name|pushContext
+argument_list|(
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Pops the current Ivy context.      *<p>      * You must call this method once and only once for each call to {@link #pushContext()}, when      * you're done with the your Ivy related work.      *</p>      *<p>      * Alternatively, you can use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method which      * takes care of everything for you.      *</p>      */
+specifier|public
+name|void
+name|popContext
+parameter_list|()
+block|{
+name|IvyContext
+operator|.
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// LOAD SETTINGS
 comment|// ///////////////////////////////////////////////////////////////////////
@@ -1158,6 +1298,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 name|assertBound
 argument_list|()
 expr_stmt|;
@@ -1172,6 +1317,13 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|void
 name|configure
@@ -1183,6 +1335,11 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|assertBound
 argument_list|()
@@ -1198,6 +1355,13 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|void
 name|configureDefault
@@ -1206,6 +1370,11 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|assertBound
 argument_list|()
@@ -1219,6 +1388,13 @@ name|postConfigure
 argument_list|()
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 comment|/**      * Configures Ivy with 1.4 compatible default settings      */
 specifier|public
 name|void
@@ -1228,6 +1404,11 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|assertBound
 argument_list|()
@@ -1240,6 +1421,13 @@ expr_stmt|;
 name|postConfigure
 argument_list|()
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// CHECK
@@ -1255,6 +1443,11 @@ name|String
 name|resolvername
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|checkEngine
 operator|.
@@ -1265,6 +1458,13 @@ argument_list|,
 name|resolvername
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// RESOLVE
@@ -1281,6 +1481,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|resolveEngine
 operator|.
@@ -1289,6 +1494,13 @@ argument_list|(
 name|ivySource
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|ResolveReport
@@ -1302,6 +1514,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|resolveEngine
 operator|.
@@ -1310,6 +1527,13 @@ argument_list|(
 name|ivySource
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|ResolveReport
@@ -1329,6 +1553,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|resolveEngine
 operator|.
@@ -1341,6 +1570,13 @@ argument_list|,
 name|changing
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|ResolveReport
@@ -1357,6 +1593,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|resolveEngine
 operator|.
@@ -1367,6 +1608,13 @@ argument_list|,
 name|options
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|ResolveReport
@@ -1383,6 +1631,11 @@ name|ParseException
 throws|,
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|resolveEngine
 operator|.
@@ -1393,6 +1646,13 @@ argument_list|,
 name|options
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// INSTALL
@@ -1431,6 +1691,11 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|installEngine
 operator|.
@@ -1456,6 +1721,13 @@ name|matcherName
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// RETRIEVE
 comment|// ///////////////////////////////////////////////////////////////////////
@@ -1475,6 +1747,11 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|retrieveEngine
 operator|.
@@ -1487,6 +1764,13 @@ argument_list|,
 name|options
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// DELIVER
@@ -1509,6 +1793,11 @@ name|IOException
 throws|,
 name|ParseException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 name|deliverEngine
 operator|.
 name|deliver
@@ -1528,6 +1817,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|void
 name|deliver
@@ -1546,6 +1842,11 @@ name|IOException
 throws|,
 name|ParseException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 name|deliverEngine
 operator|.
 name|deliver
@@ -1557,6 +1858,13 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *       * @param mrid      * @param revision      * @param destIvyPattern      * @param options      * @throws IOException      * @throws ParseException      */
 specifier|public
@@ -1580,6 +1888,11 @@ name|IOException
 throws|,
 name|ParseException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 name|deliverEngine
 operator|.
 name|deliver
@@ -1593,6 +1906,13 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// PUBLISH
@@ -1616,6 +1936,11 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|publishEngine
 operator|.
@@ -1631,6 +1956,13 @@ name|options
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// SORT
 comment|// ///////////////////////////////////////////////////////////////////////
@@ -1643,6 +1975,11 @@ name|Collection
 name|nodes
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|getSortEngine
 argument_list|()
@@ -1652,6 +1989,13 @@ argument_list|(
 name|nodes
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param nonMatchingVersionReporter      *            Used to report some non matching version (when a modules depends on a specific      *            revision of an other modules present in the of modules to sort with a different      *            revision.      * @return a List of sorted ModuleDescriptors      */
 specifier|public
@@ -1665,6 +2009,11 @@ name|NonMatchingVersionReporter
 name|nonMatchingVersionReporter
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|getSortEngine
 argument_list|()
@@ -1677,6 +2026,13 @@ name|nonMatchingVersionReporter
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// SEARCH
 comment|// ///////////////////////////////////////////////////////////////////////
@@ -1687,6 +2043,11 @@ parameter_list|(
 name|ModuleRevisionId
 name|mrid
 parameter_list|)
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|ResolveOptions
 name|options
@@ -1725,6 +2086,13 @@ name|options
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|ModuleEntry
 index|[]
@@ -1734,6 +2102,11 @@ name|OrganisationEntry
 name|org
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1743,6 +2116,13 @@ name|org
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|ModuleId
 index|[]
@@ -1755,6 +2135,11 @@ name|PatternMatcher
 name|matcher
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1765,6 +2150,13 @@ argument_list|,
 name|matcher
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|ModuleRevisionId
@@ -1778,6 +2170,11 @@ name|PatternMatcher
 name|matcher
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1789,6 +2186,13 @@ name|matcher
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|String
 index|[]
@@ -1798,6 +2202,11 @@ name|String
 name|org
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1806,6 +2215,13 @@ argument_list|(
 name|org
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|OrganisationEntry
@@ -1813,6 +2229,11 @@ index|[]
 name|listOrganisationEntries
 parameter_list|()
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1820,11 +2241,23 @@ name|listOrganisationEntries
 argument_list|()
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|String
 index|[]
 name|listOrganisations
 parameter_list|()
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 return|return
 name|searchEngine
@@ -1832,6 +2265,13 @@ operator|.
 name|listOrganisations
 argument_list|()
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|RevisionEntry
@@ -1842,6 +2282,11 @@ name|ModuleEntry
 name|module
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1850,6 +2295,13 @@ argument_list|(
 name|module
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|String
@@ -1863,6 +2315,11 @@ name|String
 name|module
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1873,6 +2330,13 @@ argument_list|,
 name|module
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|String
@@ -1886,6 +2350,11 @@ name|Map
 name|otherTokenValues
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 return|return
 name|searchEngine
 operator|.
@@ -1896,6 +2365,13 @@ argument_list|,
 name|otherTokenValues
 argument_list|)
 return|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// INTERRUPTIONS
@@ -2209,6 +2685,11 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
+block|{
 name|assertBound
 argument_list|()
 expr_stmt|;
@@ -2221,6 +2702,13 @@ name|name
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|String
 name|substitute
@@ -2228,6 +2716,11 @@ parameter_list|(
 name|String
 name|str
 parameter_list|)
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|assertBound
 argument_list|()
@@ -2241,6 +2734,13 @@ name|str
 argument_list|)
 return|;
 block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 specifier|public
 name|void
 name|setVariable
@@ -2251,6 +2751,11 @@ parameter_list|,
 name|String
 name|value
 parameter_list|)
+block|{
+name|pushContext
+argument_list|()
+expr_stmt|;
+try|try
 block|{
 name|assertBound
 argument_list|()
@@ -2264,6 +2769,13 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|popContext
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|// ///////////////////////////////////////////////////////////////////
 comment|// GETTERS / SETTERS
@@ -2507,6 +3019,15 @@ name|settings
 operator|=
 name|settings
 expr_stmt|;
+block|}
+specifier|public
+name|MessageLoggerEngine
+name|getLoggerEngine
+parameter_list|()
+block|{
+return|return
+name|loggerEngine
+return|;
 block|}
 block|}
 end_class

@@ -889,9 +889,6 @@ name|IvySettings
 name|settings
 parameter_list|)
 block|{
-name|ensureMessageInitialised
-argument_list|()
-expr_stmt|;
 name|String
 name|requestedConfigs
 init|=

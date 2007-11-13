@@ -195,7 +195,7 @@ parameter_list|()
 block|{
 name|IvyContext
 operator|.
-name|setContext
+name|pushContext
 argument_list|(
 name|context
 argument_list|)

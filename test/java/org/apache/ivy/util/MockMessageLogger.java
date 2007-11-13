@@ -58,9 +58,9 @@ end_import
 begin_class
 specifier|public
 class|class
-name|MockMessageImpl
-implements|implements
-name|MessageImpl
+name|MockMessageLogger
+extends|extends
+name|AbstractMessageLogger
 block|{
 specifier|private
 name|List
@@ -92,7 +92,7 @@ name|_progressCalls
 decl_stmt|;
 specifier|public
 name|void
-name|endProgress
+name|doEndProgress
 parameter_list|(
 name|String
 name|msg
@@ -131,7 +131,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|progress
+name|doProgress
 parameter_list|()
 block|{
 name|_progressCalls

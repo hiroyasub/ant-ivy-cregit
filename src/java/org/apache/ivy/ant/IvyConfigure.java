@@ -131,9 +131,6 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
-name|ensureMessageInitialised
-argument_list|()
-expr_stmt|;
 name|log
 argument_list|(
 literal|"ivy:configure is deprecated, please use the data type ivy:settings instead"
