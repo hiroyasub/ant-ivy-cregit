@@ -1260,12 +1260,9 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|setCache
+name|setCacheManager
 argument_list|(
 name|cacheManager
-operator|.
-name|getCache
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2388,12 +2385,9 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|setCache
+name|setCacheManager
 argument_list|(
 name|cacheManager
-operator|.
-name|getCache
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
