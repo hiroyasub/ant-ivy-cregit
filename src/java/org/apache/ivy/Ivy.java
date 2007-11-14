@@ -1241,6 +1241,8 @@ operator|!=
 name|this
 condition|)
 block|{
+comment|// the current Ivy context is associated with another Ivy instance, we push a new
+comment|// instance
 name|IvyContext
 operator|.
 name|pushNewContext
@@ -1259,6 +1261,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// the current Ivy context is already associated with this Ivy instance, we only push it
+comment|// for popping consistency
 name|IvyContext
 operator|.
 name|pushContext
