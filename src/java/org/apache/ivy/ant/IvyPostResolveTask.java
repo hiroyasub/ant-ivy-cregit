@@ -1395,6 +1395,14 @@ argument_list|()
 decl_stmt|;
 name|resolve
 operator|.
+name|setTaskName
+argument_list|(
+name|getTaskName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|resolve
+operator|.
 name|setProject
 argument_list|(
 name|getProject

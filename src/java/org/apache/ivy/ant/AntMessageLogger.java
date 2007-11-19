@@ -464,6 +464,17 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"AntMessageLogger:"
+operator|+
+name|projectComponent
+return|;
+block|}
 block|}
 end_class
 
