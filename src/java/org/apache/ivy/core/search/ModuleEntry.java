@@ -107,6 +107,19 @@ return|return
 name|organisationEntry
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|organisationEntry
+operator|+
+literal|"#"
+operator|+
+name|module
+return|;
+block|}
 block|}
 end_class
 

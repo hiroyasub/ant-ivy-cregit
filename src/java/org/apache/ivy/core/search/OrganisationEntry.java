@@ -87,6 +87,15 @@ return|return
 name|resolver
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|organisation
+return|;
+block|}
 block|}
 end_class
 
