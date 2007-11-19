@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
@@ -111,6 +121,24 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
+literal|"invalid organisation entries: unmatched number: expected: "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|orgNames
+argument_list|)
+operator|+
+literal|" but was "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|orgs
+argument_list|)
+argument_list|,
 name|orgNames
 operator|.
 name|length
@@ -278,6 +306,24 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
+literal|"invalid module entries: unmatched number: expected: "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|names
+argument_list|)
+operator|+
+literal|" but was "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|mods
+argument_list|)
+argument_list|,
 name|names
 operator|.
 name|length
@@ -465,6 +511,24 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
+literal|"invalid revision entries: unmatched number: expected: "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|names
+argument_list|)
+operator|+
+literal|" but was "
+operator|+
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|revs
+argument_list|)
+argument_list|,
 name|names
 operator|.
 name|length
