@@ -1076,24 +1076,6 @@ argument_list|(
 literal|"Node has problem.  Skip loading"
 argument_list|)
 expr_stmt|;
-name|handleConfiguration
-argument_list|(
-name|loaded
-argument_list|,
-name|rootModuleConf
-argument_list|,
-name|parent
-argument_list|,
-name|parentConf
-argument_list|,
-name|conf
-argument_list|,
-name|shouldBePublic
-argument_list|)
-expr_stmt|;
-return|return
-literal|false
-return|;
 block|}
 if|else if
 condition|(
@@ -1866,9 +1848,6 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-operator|!
 name|handleConfiguration
 argument_list|(
 name|loaded
@@ -1883,12 +1862,31 @@ name|conf
 argument_list|,
 name|shouldBePublic
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|hasProblem
+argument_list|()
 condition|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"problem : "
+operator|+
+name|problem
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 literal|false
 return|;
 block|}
+else|else
+block|{
 name|DependencyDescriptor
 name|dd
 init|=
@@ -1932,6 +1930,7 @@ block|}
 return|return
 name|loaded
 return|;
+block|}
 block|}
 specifier|public
 name|Collection
