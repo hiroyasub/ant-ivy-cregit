@@ -60,11 +60,11 @@ name|ArtifactInfo
 block|{
 specifier|private
 name|Resource
-name|_res
+name|res
 decl_stmt|;
 specifier|private
 name|String
-name|_rev
+name|rev
 decl_stmt|;
 specifier|public
 name|ResolvedResource
@@ -76,11 +76,15 @@ name|String
 name|rev
 parameter_list|)
 block|{
-name|_res
+name|this
+operator|.
+name|res
 operator|=
 name|res
 expr_stmt|;
-name|_rev
+name|this
+operator|.
+name|rev
 operator|=
 name|rev
 expr_stmt|;
@@ -91,7 +95,7 @@ name|getRevision
 parameter_list|()
 block|{
 return|return
-name|_rev
+name|rev
 return|;
 block|}
 specifier|public
@@ -100,7 +104,7 @@ name|getResource
 parameter_list|()
 block|{
 return|return
-name|_res
+name|res
 return|;
 block|}
 specifier|public
@@ -109,11 +113,11 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_res
+name|res
 operator|+
 literal|" ("
 operator|+
-name|_rev
+name|rev
 operator|+
 literal|")"
 return|;
