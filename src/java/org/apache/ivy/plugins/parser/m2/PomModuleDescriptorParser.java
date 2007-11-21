@@ -1792,7 +1792,7 @@ name|addDependencyConfiguration
 argument_list|(
 literal|"*"
 argument_list|,
-literal|"*"
+literal|"@"
 argument_list|)
 expr_stmt|;
 name|md
