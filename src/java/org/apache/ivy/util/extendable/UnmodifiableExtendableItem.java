@@ -55,6 +55,7 @@ implements|implements
 name|ExtendableItem
 block|{
 specifier|private
+specifier|final
 name|Map
 name|attributes
 init|=
@@ -63,6 +64,7 @@ name|HashMap
 argument_list|()
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 name|unmodifiableAttributesView
 init|=
@@ -74,6 +76,7 @@ name|attributes
 argument_list|)
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 name|stdAttributes
 init|=
@@ -82,6 +85,7 @@ name|HashMap
 argument_list|()
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 name|unmodifiableStdAttributesView
 init|=
@@ -93,6 +97,7 @@ name|stdAttributes
 argument_list|)
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 name|extraAttributes
 init|=
@@ -101,6 +106,7 @@ name|HashMap
 argument_list|()
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 name|unmodifiableExtraAttributesView
 init|=
