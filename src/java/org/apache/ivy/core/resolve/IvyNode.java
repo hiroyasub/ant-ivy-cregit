@@ -738,6 +738,19 @@ return|return
 name|hash
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"NodeConf("
+operator|+
+name|conf
+operator|+
+literal|")"
+return|;
+block|}
 block|}
 comment|// //////// CONTEXT
 specifier|private
@@ -1002,6 +1015,22 @@ name|boolean
 name|shouldBePublic
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"loadData of "
+operator|+
+name|this
+operator|.
+name|toString
+argument_list|()
+operator|+
+literal|" of rootConf="
+operator|+
+name|rootModuleConf
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1036,27 +1065,77 @@ literal|false
 decl_stmt|;
 if|if
 condition|(
-operator|!
+name|hasProblem
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Node has problem.  Skip loading"
+argument_list|)
+expr_stmt|;
+name|handleConfiguration
+argument_list|(
+name|loaded
+argument_list|,
+name|rootModuleConf
+argument_list|,
+name|parent
+argument_list|,
+name|parentConf
+argument_list|,
+name|conf
+argument_list|,
+name|shouldBePublic
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+if|else if
+condition|(
 name|isEvicted
 argument_list|(
 name|rootModuleConf
 argument_list|)
-operator|&&
-operator|(
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|rootModuleConf
+operator|+
+literal|" is evicted.  Skip loading"
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+operator|!
 name|hasConfigurationsToLoad
 argument_list|()
-operator|||
-operator|!
+operator|&&
 name|isRootModuleConfLoaded
 argument_list|(
 name|rootModuleConf
 argument_list|)
-operator|)
-operator|&&
-operator|!
-name|hasProblem
-argument_list|()
 condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|rootModuleConf
+operator|+
+literal|" is loaded and no conf to load.  Skip loading"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
 block|{
 name|markRootModuleConfLoaded
 argument_list|(
@@ -1789,31 +1868,6 @@ block|}
 block|}
 if|if
 condition|(
-name|hasProblem
-argument_list|()
-condition|)
-block|{
-return|return
-name|handleConfiguration
-argument_list|(
-name|loaded
-argument_list|,
-name|rootModuleConf
-argument_list|,
-name|parent
-argument_list|,
-name|parentConf
-argument_list|,
-name|conf
-argument_list|,
-name|shouldBePublic
-argument_list|)
-operator|&&
-name|loaded
-return|;
-block|}
-if|if
-condition|(
 operator|!
 name|handleConfiguration
 argument_list|(
@@ -2023,8 +2077,7 @@ operator|new
 name|LinkedHashSet
 argument_list|()
 decl_stmt|;
-comment|// it's important to respect dependencies
-comment|// order
+comment|// it's important to respect order
 for|for
 control|(
 name|int
@@ -3134,6 +3187,7 @@ index|]
 argument_list|)
 return|;
 block|}
+comment|//This is never called.  Could we remove it?
 specifier|public
 name|void
 name|discardConf
@@ -4270,6 +4324,26 @@ literal|0
 index|]
 return|;
 block|}
+if|if
+condition|(
+name|md
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"impossible to get artefacts when data has not been loaded. IvyNode = "
+operator|+
+name|this
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+throw|;
+block|}
 name|Set
 name|artifacts
 init|=
@@ -5221,7 +5295,12 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"impossible to get conflict manager when data has not been loaded"
+literal|"impossible to get conflict manager when data has not been loaded. IvyNode = "
+operator|+
+name|this
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -6071,9 +6150,11 @@ name|Collection
 name|resolved
 parameter_list|)
 block|{
-name|eviction
-operator|.
-name|markEvicted
+name|EvictionData
+name|evictionData
+init|=
+operator|new
+name|EvictionData
 argument_list|(
 name|rootModuleConf
 argument_list|,
@@ -6082,6 +6163,11 @@ argument_list|,
 name|conflictManager
 argument_list|,
 name|resolved
+argument_list|)
+decl_stmt|;
+name|markEvicted
+argument_list|(
+name|evictionData
 argument_list|)
 expr_stmt|;
 block|}
