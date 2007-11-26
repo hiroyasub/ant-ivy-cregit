@@ -263,7 +263,7 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
-literal|"[ org1 | mod1.2 | 2.0.0 ]:2.0 (needed by [[ apache | resolve-noconflict | 1.0 ]])"
+literal|"org1#mod1.2;2.0.0:2.0 (needed by [apache#resolve-noconflict;1.0])"
 argument_list|)
 operator|!=
 operator|-
@@ -309,7 +309,7 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
-literal|"[ org1 | mod1.2 | 2.1.0 ]:2.1 (needed by [[ apache | resolve-noconflict | 1.0 ]])"
+literal|"org1#mod1.2;2.1.0:2.1 (needed by [apache#resolve-noconflict;1.0])"
 argument_list|)
 operator|!=
 operator|-

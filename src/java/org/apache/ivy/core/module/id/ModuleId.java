@@ -247,15 +247,11 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"[ "
-operator|+
 name|organisation
 operator|+
-literal|" | "
+literal|"#"
 operator|+
 name|name
-operator|+
-literal|" ]"
 return|;
 block|}
 comment|/** {@inheritDoc} */

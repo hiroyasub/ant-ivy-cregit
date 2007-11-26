@@ -220,15 +220,35 @@ return|return
 name|getModuleId
 argument_list|()
 operator|+
-literal|" "
+literal|"!"
 operator|+
 name|getName
 argument_list|()
 operator|+
 literal|"."
 operator|+
+name|getExt
+argument_list|()
+operator|+
+operator|(
 name|getType
 argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|getExt
+argument_list|()
+argument_list|)
+condition|?
+literal|""
+else|:
+literal|"("
+operator|+
+name|getType
+argument_list|()
+operator|+
+literal|")"
+operator|)
 return|;
 block|}
 comment|/**      * @return Returns the module id.      */

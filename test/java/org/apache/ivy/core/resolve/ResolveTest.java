@@ -17147,7 +17147,7 @@ parameter_list|)
 block|{
 name|assertEquals
 argument_list|(
-literal|"[ org6 | mod6.3 | 1.0 ]->[ org6 | mod6.2 | 1.0 ]->[ org6 | mod6.3 | latest.integration ]"
+literal|"org6#mod6.3;1.0->org6#mod6.2;1.0->org6#mod6.3;latest.integration"
 argument_list|,
 name|ex
 operator|.
@@ -17251,7 +17251,7 @@ block|{
 comment|// ok
 name|assertEquals
 argument_list|(
-literal|"[ org8 | mod8.5 | NONE ]->[ org8 | mod8.6 | 2.+ ]->[ org8 | mod8.5 | 2.+ ]"
+literal|"org8#mod8.5;NONE->org8#mod8.6;2.+->org8#mod8.5;2.+"
 argument_list|,
 name|ex
 operator|.
@@ -17543,7 +17543,7 @@ parameter_list|)
 block|{
 name|assertEquals
 argument_list|(
-literal|"[ org6 | mod6.3 | 1.2 ]->[ org6 | mod6.2 | 1.1 ]->[ org6 | mod6.3 | 1.2 ]"
+literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->org6#mod6.3;1.2"
 argument_list|,
 name|ex
 operator|.
