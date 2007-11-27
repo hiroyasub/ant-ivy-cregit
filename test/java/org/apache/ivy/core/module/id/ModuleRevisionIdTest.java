@@ -85,7 +85,17 @@ argument_list|)
 expr_stmt|;
 name|testParse
 argument_list|(
+literal|"org#module#branch;working@test"
+argument_list|)
+expr_stmt|;
+name|testParse
+argument_list|(
 literal|" org#module#branch;[1.2,1.3] "
+argument_list|)
+expr_stmt|;
+name|testParse
+argument_list|(
+literal|" org#module#branch;[1.2,1.3) "
 argument_list|)
 expr_stmt|;
 name|testParseFailure

@@ -180,7 +180,7 @@ specifier|final
 name|String
 name|REV_STRICT_CHARS_PATTERN
 init|=
-literal|"[a-zA-Z0-9\\-/\\._+=,\\[\\]\\{\\}:]"
+literal|"[a-zA-Z0-9\\-/\\._+=,\\[\\]\\{\\}\\(\\):@]"
 decl_stmt|;
 specifier|private
 specifier|static
