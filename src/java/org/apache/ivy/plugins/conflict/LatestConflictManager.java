@@ -161,7 +161,7 @@ name|NoConflictResolvedYetException
 extends|extends
 name|RuntimeException
 block|{     }
-specifier|private
+specifier|protected
 specifier|static
 specifier|final
 class|class
@@ -396,9 +396,12 @@ block|}
 block|}
 try|try
 block|{
-name|ArtifactInfo
+name|IvyNodeArtifactInfo
 name|latest
 init|=
+operator|(
+name|IvyNodeArtifactInfo
+operator|)
 name|getStrategy
 argument_list|()
 operator|.
@@ -424,12 +427,7 @@ name|Collections
 operator|.
 name|singleton
 argument_list|(
-operator|(
-operator|(
-name|IvyNodeArtifactInfo
-operator|)
 name|latest
-operator|)
 operator|.
 name|getNode
 argument_list|()
@@ -456,7 +454,7 @@ literal|null
 return|;
 block|}
 block|}
-specifier|private
+specifier|protected
 name|ArtifactInfo
 index|[]
 name|toArtifactInfo

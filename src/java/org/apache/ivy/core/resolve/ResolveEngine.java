@@ -1619,7 +1619,8 @@ operator|.
 name|getRevision
 argument_list|()
 decl_stmt|;
-comment|//The evicted modules have no descritpion, so we can't put their status.
+comment|// The evicted modules have no description, so we can't put their
+comment|// status.
 name|String
 name|status
 init|=
@@ -1773,6 +1774,31 @@ expr_stmt|;
 return|return
 name|report
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|RuntimeException
+name|ex
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|error
+argument_list|(
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|sumupProblems
+argument_list|()
+expr_stmt|;
+throw|throw
+name|ex
+throw|;
 block|}
 finally|finally
 block|{
@@ -2145,6 +2171,19 @@ index|[
 name|j
 index|]
 argument_list|)
+operator|||
+name|dependencies
+index|[
+name|i
+index|]
+operator|.
+name|isBlacklisted
+argument_list|(
+name|dconfs
+index|[
+name|j
+index|]
+argument_list|)
 condition|)
 block|{
 name|report
@@ -2352,6 +2391,14 @@ operator|.
 name|getCache
 argument_list|()
 decl_stmt|;
+name|IvyContext
+name|context
+init|=
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|cacheManager
@@ -2362,10 +2409,7 @@ block|{
 comment|// ensure that a cache is configured
 name|cacheManager
 operator|=
-name|IvyContext
-operator|.
-name|getContext
-argument_list|()
+name|context
 operator|.
 name|getCacheManager
 argument_list|()
@@ -2380,10 +2424,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|IvyContext
-operator|.
-name|getContext
-argument_list|()
+name|context
 operator|.
 name|setCacheManager
 argument_list|(
@@ -2427,6 +2468,13 @@ argument_list|,
 name|options
 argument_list|)
 decl_stmt|;
+name|context
+operator|.
+name|setResolveData
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|IvyNode
 name|rootNode
 init|=
@@ -2661,6 +2709,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// go fetch !
+name|boolean
+name|fetched
+init|=
+literal|false
+decl_stmt|;
+while|while
+condition|(
+operator|!
+name|fetched
+condition|)
+block|{
+try|try
+block|{
 name|fetchDependencies
 argument_list|(
 name|root
@@ -2673,6 +2734,57 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+name|fetched
+operator|=
+literal|true
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|RestartResolveProcess
+name|restart
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"======================================================="
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"=           RESTARTING RESOLVE PROCESS"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"= "
+operator|+
+name|restart
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"======================================================="
+argument_list|)
+expr_stmt|;
+name|fetchedSet
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 comment|// clean data
 for|for
 control|(
@@ -2715,31 +2827,32 @@ block|}
 block|}
 comment|// prune and reverse sort fectched dependencies
 name|Collection
+name|nodes
+init|=
+name|data
+operator|.
+name|getNodes
+argument_list|()
+decl_stmt|;
+comment|// use a Set to avoid duplicates, linked to preserve order
+name|Collection
 name|dependencies
 init|=
 operator|new
 name|LinkedHashSet
 argument_list|(
-name|data
-operator|.
-name|getNodes
-argument_list|()
+name|nodes
 operator|.
 name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// use a Set to
-comment|// avoids duplicates
 for|for
 control|(
 name|Iterator
 name|iter
 init|=
-name|data
-operator|.
-name|getNodes
-argument_list|()
+name|nodes
 operator|.
 name|iterator
 argument_list|()
@@ -2752,7 +2865,7 @@ condition|;
 control|)
 block|{
 name|IvyNode
-name|dep
+name|node
 init|=
 operator|(
 name|IvyNode
@@ -2764,16 +2877,28 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|dep
+name|node
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|node
+operator|.
+name|isRoot
+argument_list|()
+operator|&&
+operator|!
+name|node
+operator|.
+name|isCompletelyBlacklisted
+argument_list|()
 condition|)
 block|{
 name|dependencies
 operator|.
 name|add
 argument_list|(
-name|dep
+name|node
 argument_list|)
 expr_stmt|;
 block|}
@@ -3122,6 +3247,13 @@ block|}
 block|}
 block|}
 block|}
+name|context
+operator|.
+name|setResolveData
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|IvyNode
@@ -3253,6 +3385,9 @@ name|shouldBePublic
 argument_list|)
 condition|)
 block|{
+comment|// we resolve conflict again now that we have all information loaded
+comment|// indeed in some cases conflict manager need more information than just asked
+comment|// dependency to take the decision
 name|resolveConflict
 argument_list|(
 name|node
@@ -3260,8 +3395,6 @@ argument_list|,
 name|conf
 argument_list|)
 expr_stmt|;
-comment|//We just did it. Should it be redone?
-comment|//NB:removing it break a unit test.
 if|if
 condition|(
 operator|!

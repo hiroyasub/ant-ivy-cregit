@@ -131,6 +131,40 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|DependencyDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|resolve
+operator|.
+name|ResolveData
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|settings
 operator|.
 name|IvySettings
@@ -217,6 +251,73 @@ specifier|private
 name|Thread
 name|operatingThread
 decl_stmt|;
+specifier|private
+name|ResolveData
+name|resolveData
+decl_stmt|;
+specifier|private
+name|DependencyDescriptor
+name|dd
+decl_stmt|;
+specifier|public
+name|IvyContext
+parameter_list|()
+block|{
+block|}
+specifier|public
+name|IvyContext
+parameter_list|(
+name|IvyContext
+name|ctx
+parameter_list|)
+block|{
+name|defaultIvy
+operator|=
+name|ctx
+operator|.
+name|defaultIvy
+expr_stmt|;
+name|ivy
+operator|=
+name|ctx
+operator|.
+name|ivy
+expr_stmt|;
+name|cacheManager
+operator|=
+name|ctx
+operator|.
+name|cacheManager
+expr_stmt|;
+name|contextMap
+operator|=
+operator|new
+name|HashMap
+argument_list|(
+name|ctx
+operator|.
+name|contextMap
+argument_list|)
+expr_stmt|;
+name|operatingThread
+operator|=
+name|ctx
+operator|.
+name|operatingThread
+expr_stmt|;
+name|resolveData
+operator|=
+name|ctx
+operator|.
+name|resolveData
+expr_stmt|;
+name|dd
+operator|=
+name|ctx
+operator|.
+name|dd
+expr_stmt|;
+block|}
 specifier|public
 specifier|static
 name|IvyContext
@@ -300,25 +401,45 @@ return|return
 name|cur
 return|;
 block|}
-comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finsihed.      *</p>      */
+comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      * @return the newly pushed context      */
 specifier|public
 specifier|static
-name|void
+name|IvyContext
 name|pushNewContext
 parameter_list|()
 block|{
+return|return
 name|pushContext
 argument_list|(
 operator|new
 name|IvyContext
 argument_list|()
 argument_list|)
-expr_stmt|;
+return|;
 block|}
-comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *       * @param context      *            the new context to use in this thread.      */
+comment|/**      * Creates a new IvyContext as a copy of the current one and pushes it as the current context in      * the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>     * @return the newly pushed context      */
 specifier|public
 specifier|static
-name|void
+name|IvyContext
+name|pushNewCopyContext
+parameter_list|()
+block|{
+return|return
+name|pushContext
+argument_list|(
+operator|new
+name|IvyContext
+argument_list|(
+name|getContext
+argument_list|()
+argument_list|)
+argument_list|)
+return|;
+block|}
+comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *       * @param context      *            the new context to use in this thread.     * @return the pushed context      */
+specifier|public
+specifier|static
+name|IvyContext
 name|pushContext
 parameter_list|(
 name|IvyContext
@@ -333,20 +454,27 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
+return|return
+name|context
+return|;
 block|}
-comment|/**      * Pops one context used with this thread. This is usually called after having finished a task      * for which a call to {@link #pushNewContext()} or {@link #pushContext(IvyContext)} was done      * prior to beginning the task.      */
+comment|/**      * Pops one context used with this thread. This is usually called after having finished a task      * for which a call to {@link #pushNewContext()} or {@link #pushContext(IvyContext)} was done      * prior to beginning the task.      *       * @return the popped context      */
 specifier|public
 specifier|static
-name|void
+name|IvyContext
 name|popContext
 parameter_list|()
 block|{
+return|return
+operator|(
+name|IvyContext
+operator|)
 name|getCurrentStack
 argument_list|()
 operator|.
 name|pop
 argument_list|()
-expr_stmt|;
+return|;
 block|}
 comment|/**      * Reads the first object from the list saved under given key in the first context from the      * context stack in which this key is defined. If value under key in any of the contexts form      * the stack represents non List object then a RuntimeException is thrown.      *<p>      * This methods does a similar job to {@link #peek(String)}, except that it considers the whole      * context stack and not only one instance.      *</p>      *       * @param key      *            context key for the string      * @return top object from the list (index 0) of the first context in the stack containing this      *         key or null if no key or list empty in all contexts from the context stack      * @see #peek(String)      */
 specifier|public
@@ -1109,25 +1237,54 @@ name|checkInterrupted
 argument_list|()
 expr_stmt|;
 block|}
-comment|// should be better to use context to store this kind of information, but not yet ready to do
-comment|// so...
-comment|// private WeakReference _root = new WeakReference(null);
-comment|// private String _rootModuleConf = null;
-comment|// public IvyNode getRoot() {
-comment|// return (IvyNode) _root.get();
-comment|// }
-comment|//
-comment|// public void setRoot(IvyNode root) {
-comment|// _root = new WeakReference(root);
-comment|// }
-comment|//
-comment|// public String getRootModuleConf() {
-comment|// return _rootModuleConf;
-comment|// }
-comment|//
-comment|// public void setRootModuleConf(String rootModuleConf) {
-comment|// _rootModuleConf = rootModuleConf;
-comment|// }
+specifier|public
+name|void
+name|setResolveData
+parameter_list|(
+name|ResolveData
+name|data
+parameter_list|)
+block|{
+name|this
+operator|.
+name|resolveData
+operator|=
+name|data
+expr_stmt|;
+block|}
+specifier|public
+name|ResolveData
+name|getResolveData
+parameter_list|()
+block|{
+return|return
+name|resolveData
+return|;
+block|}
+specifier|public
+name|void
+name|setDependencyDescriptor
+parameter_list|(
+name|DependencyDescriptor
+name|dd
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dd
+operator|=
+name|dd
+expr_stmt|;
+block|}
+specifier|public
+name|DependencyDescriptor
+name|getDependencyDescriptor
+parameter_list|()
+block|{
+return|return
+name|dd
+return|;
+block|}
 block|}
 end_class
 
