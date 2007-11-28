@@ -151,6 +151,22 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|resolve
+operator|.
+name|ResolveProcessException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|settings
 operator|.
 name|IvySettings
@@ -1491,6 +1507,27 @@ throw|;
 block|}
 catch|catch
 parameter_list|(
+name|ResolveProcessException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"impossible to resolve dependencies:\n\t"
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
@@ -1499,7 +1536,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"impossible to resolve dependencies: "
+literal|"impossible to resolve dependencies:\n\t"
 operator|+
 name|e
 argument_list|,

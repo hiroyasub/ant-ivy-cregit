@@ -484,7 +484,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getAllEvictingNodes
+name|getAllEvictingNodesDetails
 argument_list|()
 decl_stmt|;
 if|if

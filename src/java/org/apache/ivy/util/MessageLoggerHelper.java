@@ -68,13 +68,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"\n:: problems summary ::"
-argument_list|)
-expr_stmt|;
 name|List
 name|myWarns
 init|=
@@ -83,6 +76,57 @@ operator|.
 name|getWarns
 argument_list|()
 decl_stmt|;
+name|List
+name|myErrors
+init|=
+name|logger
+operator|.
+name|getErrors
+argument_list|()
+decl_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+comment|// new line on info to isolate error summary
+if|if
+condition|(
+operator|!
+name|myErrors
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|log
+argument_list|(
+literal|":: problems summary ::"
+argument_list|,
+name|Message
+operator|.
+name|MSG_ERR
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|logger
+operator|.
+name|log
+argument_list|(
+literal|":: problems summary ::"
+argument_list|,
+name|Message
+operator|.
+name|MSG_WARN
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|myWarns
@@ -95,9 +139,13 @@ condition|)
 block|{
 name|logger
 operator|.
-name|info
+name|log
 argument_list|(
 literal|":::: WARNINGS"
+argument_list|,
+name|Message
+operator|.
+name|MSG_WARN
 argument_list|)
 expr_stmt|;
 for|for
@@ -145,14 +193,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|List
-name|myErrors
-init|=
-name|logger
-operator|.
-name|getErrors
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|myErrors
@@ -165,9 +205,13 @@ condition|)
 block|{
 name|logger
 operator|.
-name|info
+name|log
 argument_list|(
 literal|":::: ERRORS"
+argument_list|,
+name|Message
+operator|.
+name|MSG_ERR
 argument_list|)
 expr_stmt|;
 for|for
