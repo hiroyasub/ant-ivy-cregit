@@ -412,11 +412,11 @@ name|AbstractResourceResolver
 block|{
 specifier|private
 name|Repository
-name|_repository
+name|repository
 decl_stmt|;
 specifier|private
 name|Boolean
-name|_alwaysCheckExactRevision
+name|alwaysCheckExactRevision
 init|=
 literal|null
 decl_stmt|;
@@ -431,7 +431,7 @@ name|getRepository
 parameter_list|()
 block|{
 return|return
-name|_repository
+name|repository
 return|;
 block|}
 specifier|public
@@ -442,7 +442,9 @@ name|Repository
 name|repository
 parameter_list|)
 block|{
-name|_repository
+name|this
+operator|.
+name|repository
 operator|=
 name|repository
 expr_stmt|;
@@ -464,7 +466,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_repository
+name|repository
 operator|instanceof
 name|AbstractRepository
 condition|)
@@ -473,7 +475,7 @@ operator|(
 operator|(
 name|AbstractRepository
 operator|)
-name|_repository
+name|repository
 operator|)
 operator|.
 name|setName
@@ -1007,7 +1009,7 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-name|_repository
+name|repository
 operator|.
 name|get
 argument_list|(
@@ -1208,7 +1210,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|_repository
+name|repository
 operator|.
 name|put
 argument_list|(
@@ -1324,7 +1326,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-name|_repository
+name|repository
 operator|.
 name|put
 argument_list|(
@@ -1396,7 +1398,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_repository
+name|repository
 operator|.
 name|addTransferListener
 argument_list|(
@@ -1424,7 +1426,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|_repository
+name|repository
 operator|.
 name|removeTransferListener
 argument_list|(
@@ -1499,7 +1501,7 @@ name|ResolverHelper
 operator|.
 name|listTokenValues
 argument_list|(
-name|_repository
+name|repository
 argument_list|,
 name|partiallyResolvedPattern
 argument_list|,
@@ -1582,12 +1584,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|_alwaysCheckExactRevision
+name|alwaysCheckExactRevision
 operator|==
 literal|null
 condition|)
 block|{
-name|_alwaysCheckExactRevision
+name|alwaysCheckExactRevision
 operator|=
 name|Boolean
 operator|.
@@ -1610,13 +1612,13 @@ name|isAlwaysCheckExactRevision
 parameter_list|()
 block|{
 return|return
-name|_alwaysCheckExactRevision
+name|alwaysCheckExactRevision
 operator|==
 literal|null
 condition|?
 literal|true
 else|:
-name|_alwaysCheckExactRevision
+name|alwaysCheckExactRevision
 operator|.
 name|booleanValue
 argument_list|()
@@ -1630,7 +1632,9 @@ name|boolean
 name|alwaysCheckExactRevision
 parameter_list|)
 block|{
-name|_alwaysCheckExactRevision
+name|this
+operator|.
+name|alwaysCheckExactRevision
 operator|=
 name|Boolean
 operator|.
