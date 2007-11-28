@@ -368,12 +368,28 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|/* Test data:             #A;4->{ #B;[1.0,1.5] #C;2.6 }             #B;1.3->{ }             #B;1.4->#D;1.5             #B;1.5->#D;2.0             #C;2.6->#D;1.6          */
+comment|/* Test data:             #A;5->{ #B;[1.0,1.5] #C;2.6 }             #B;1.3->{ }             #B;1.4->#D;1.5             #B;1.5->#D;2.0             #C;2.6->#D;1.6          */
 name|resolveAndAssert
 argument_list|(
 literal|"ivy-latest-compatible-5.xml"
 argument_list|,
 literal|"#B;1.3, #C;2.6, #D;1.6"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testCompatibilityResolve6
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|/* Test data:             #A;6->{ #B;[3.0,3.5] #C;4.6 }             #B;3.4->#D;2.5             #B;3.5->#D;3.0             #C;4.6->#D;2.5             #D;3.0->#B;3.5 (circular dependency)             #D;2.5->#B;3.4 (circular dependency)          */
+name|resolveAndAssert
+argument_list|(
+literal|"ivy-latest-compatible-6.xml"
+argument_list|,
+literal|"#B;3.4, #C;4.6, #D;2.5"
 argument_list|)
 expr_stmt|;
 block|}
