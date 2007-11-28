@@ -678,6 +678,53 @@ block|}
 block|}
 catch|catch
 parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"problem while listing resources in "
+operator|+
+name|root
+operator|+
+literal|" with "
+operator|+
+name|rep
+operator|+
+literal|":"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"  "
+operator|+
+name|e
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|e
 parameter_list|)
@@ -917,6 +964,53 @@ return|return
 literal|null
 return|;
 block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"problem while listing resources in "
+operator|+
+name|parent
+operator|+
+literal|" with "
+operator|+
+name|rep
+operator|+
+literal|":"
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"  "
+operator|+
+name|e
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
 block|}
 catch|catch
 parameter_list|(
