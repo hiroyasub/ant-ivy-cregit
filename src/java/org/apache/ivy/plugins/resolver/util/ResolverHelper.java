@@ -211,9 +211,15 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ResolverHelper
 block|{
+specifier|private
+name|ResolverHelper
+parameter_list|()
+block|{
+block|}
 comment|// lists all the values a token can take in a pattern, as listed by a given url lister
 specifier|public
 specifier|static
@@ -1354,7 +1360,9 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"\tonly one resource found without real listing: using and defining it as working@"
+literal|"\tonly one resource found without real listing: "
+operator|+
+literal|"using and defining it as working@"
 operator|+
 name|rep
 operator|.
