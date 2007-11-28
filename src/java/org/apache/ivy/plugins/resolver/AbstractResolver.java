@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Map
@@ -431,7 +441,7 @@ name|DependencyResolver
 implements|,
 name|HasLatestStrategy
 block|{
-comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviour should be used      */
+comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviur should be used      */
 specifier|private
 name|Boolean
 name|validate
@@ -1505,6 +1515,39 @@ argument_list|(
 name|changingPattern
 argument_list|)
 return|;
+block|}
+specifier|public
+name|void
+name|abortPublishTransaction
+parameter_list|()
+throws|throws
+name|IOException
+block|{
+comment|/* Default implementation is a no-op */
+block|}
+specifier|public
+name|void
+name|commitPublishTransaction
+parameter_list|()
+throws|throws
+name|IOException
+block|{
+comment|/* Default implementation is a no-op */
+block|}
+specifier|public
+name|void
+name|beginPublishTransaction
+parameter_list|(
+name|ModuleRevisionId
+name|module
+parameter_list|,
+name|boolean
+name|overwrite
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+comment|/* Default implementation is a no-op */
 block|}
 block|}
 end_class
