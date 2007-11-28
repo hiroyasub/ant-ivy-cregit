@@ -1007,6 +1007,10 @@ decl_stmt|;
 if|if
 condition|(
 name|data
+operator|!=
+literal|null
+operator|&&
+name|data
 operator|.
 name|getReport
 argument_list|()
