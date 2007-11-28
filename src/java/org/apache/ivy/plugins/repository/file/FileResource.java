@@ -84,11 +84,11 @@ name|Resource
 block|{
 specifier|private
 name|File
-name|_file
+name|file
 decl_stmt|;
 specifier|private
 name|FileRepository
-name|_repository
+name|repository
 decl_stmt|;
 specifier|public
 name|FileResource
@@ -100,11 +100,15 @@ name|File
 name|f
 parameter_list|)
 block|{
-name|_repository
+name|this
+operator|.
+name|repository
 operator|=
 name|repository
 expr_stmt|;
-name|_file
+name|this
+operator|.
+name|file
 operator|=
 name|f
 expr_stmt|;
@@ -115,7 +119,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 operator|.
 name|getPath
 argument_list|()
@@ -133,7 +137,7 @@ return|return
 operator|new
 name|FileResource
 argument_list|(
-name|_repository
+name|repository
 argument_list|,
 operator|new
 name|File
@@ -149,7 +153,7 @@ name|getLastModified
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 operator|.
 name|lastModified
 argument_list|()
@@ -161,7 +165,7 @@ name|getContentLength
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 operator|.
 name|length
 argument_list|()
@@ -173,7 +177,7 @@ name|exists
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 operator|.
 name|exists
 argument_list|()
@@ -195,7 +199,7 @@ name|getFile
 parameter_list|()
 block|{
 return|return
-name|_file
+name|file
 return|;
 block|}
 specifier|public
@@ -204,7 +208,7 @@ name|getRepository
 parameter_list|()
 block|{
 return|return
-name|_repository
+name|repository
 return|;
 block|}
 specifier|public
@@ -213,7 +217,7 @@ name|isLocal
 parameter_list|()
 block|{
 return|return
-name|_repository
+name|repository
 operator|.
 name|isLocal
 argument_list|()
@@ -230,7 +234,7 @@ return|return
 operator|new
 name|FileInputStream
 argument_list|(
-name|_file
+name|file
 argument_list|)
 return|;
 block|}

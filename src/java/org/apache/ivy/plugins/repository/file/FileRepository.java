@@ -146,7 +146,7 @@ name|AbstractRepository
 block|{
 specifier|private
 name|RepositoryCopyProgressListener
-name|_progress
+name|progress
 init|=
 operator|new
 name|RepositoryCopyProgressListener
@@ -156,11 +156,11 @@ argument_list|)
 decl_stmt|;
 specifier|private
 name|File
-name|_baseDir
+name|baseDir
 decl_stmt|;
 specifier|private
 name|boolean
-name|_local
+name|local
 init|=
 literal|true
 decl_stmt|;
@@ -168,7 +168,7 @@ specifier|public
 name|FileRepository
 parameter_list|()
 block|{
-name|_baseDir
+name|baseDir
 operator|=
 literal|null
 expr_stmt|;
@@ -180,7 +180,9 @@ name|File
 name|basedir
 parameter_list|)
 block|{
-name|_baseDir
+name|this
+operator|.
+name|baseDir
 operator|=
 name|basedir
 expr_stmt|;
@@ -305,7 +307,7 @@ name|IOException
 block|{
 try|try
 block|{
-name|_progress
+name|progress
 operator|.
 name|setTotalLength
 argument_list|(
@@ -330,7 +332,7 @@ name|src
 argument_list|,
 name|destination
 argument_list|,
-name|_progress
+name|progress
 argument_list|,
 name|overwrite
 argument_list|)
@@ -408,7 +410,7 @@ throw|;
 block|}
 finally|finally
 block|{
-name|_progress
+name|progress
 operator|.
 name|setTotalLength
 argument_list|(
@@ -527,7 +529,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_baseDir
+name|baseDir
 operator|!=
 literal|null
 condition|)
@@ -536,7 +538,7 @@ return|return
 operator|new
 name|File
 argument_list|(
-name|_baseDir
+name|baseDir
 argument_list|,
 name|source
 argument_list|)
@@ -559,7 +561,7 @@ name|isLocal
 parameter_list|()
 block|{
 return|return
-name|_local
+name|local
 return|;
 block|}
 specifier|public
@@ -570,7 +572,9 @@ name|boolean
 name|local
 parameter_list|)
 block|{
-name|_local
+name|this
+operator|.
+name|local
 operator|=
 name|local
 expr_stmt|;
