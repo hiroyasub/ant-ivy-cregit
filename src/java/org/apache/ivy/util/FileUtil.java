@@ -871,8 +871,8 @@ block|}
 try|try
 block|{
 name|byte
-name|buffer
 index|[]
+name|buffer
 init|=
 operator|new
 name|byte
