@@ -169,7 +169,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -424,7 +424,7 @@ operator|=
 name|date
 expr_stmt|;
 comment|// parse previous deps from previous report file if any
-name|CacheManager
+name|ResolutionCacheManager
 name|cache
 init|=
 name|options

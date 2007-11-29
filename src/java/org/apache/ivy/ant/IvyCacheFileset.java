@@ -47,7 +47,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|RepositoryCacheManager
 import|;
 end_import
 
@@ -272,7 +272,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|CacheManager
+name|RepositoryCacheManager
 name|cache
 init|=
 name|getCacheManager

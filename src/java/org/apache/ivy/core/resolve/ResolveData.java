@@ -101,7 +101,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|RepositoryCacheManager
 import|;
 end_import
 
@@ -699,7 +699,7 @@ name|options
 return|;
 block|}
 specifier|public
-name|CacheManager
+name|RepositoryCacheManager
 name|getCacheManager
 parameter_list|()
 block|{

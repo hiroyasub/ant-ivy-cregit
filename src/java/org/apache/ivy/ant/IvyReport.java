@@ -251,7 +251,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -1107,7 +1107,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|CacheManager
+name|ResolutionCacheManager
 name|cacheMgr
 init|=
 name|getIvyInstance
@@ -1445,7 +1445,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|CacheManager
+name|ResolutionCacheManager
 name|cacheMgr
 init|=
 name|getIvyInstance

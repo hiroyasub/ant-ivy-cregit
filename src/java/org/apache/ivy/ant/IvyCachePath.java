@@ -37,7 +37,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|RepositoryCacheManager
 import|;
 end_import
 
@@ -231,7 +231,7 @@ argument_list|,
 name|path
 argument_list|)
 expr_stmt|;
-name|CacheManager
+name|RepositoryCacheManager
 name|cache
 init|=
 name|getCacheManager

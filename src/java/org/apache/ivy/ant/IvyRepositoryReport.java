@@ -89,7 +89,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -636,12 +636,10 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|CacheManager
+name|ivy
 operator|.
-name|getInstance
+name|getCacheManager
 argument_list|(
-name|settings
-argument_list|,
 name|cache
 argument_list|)
 argument_list|)
@@ -655,7 +653,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|CacheManager
+name|ResolutionCacheManager
 name|cacheMgr
 init|=
 name|getIvyInstance
@@ -818,7 +816,7 @@ specifier|private
 name|void
 name|genreport
 parameter_list|(
-name|CacheManager
+name|ResolutionCacheManager
 name|cache
 parameter_list|,
 name|String
@@ -1008,7 +1006,7 @@ specifier|private
 name|void
 name|gengraph
 parameter_list|(
-name|CacheManager
+name|ResolutionCacheManager
 name|cache
 parameter_list|,
 name|String
@@ -1032,7 +1030,7 @@ name|getGraphStylePath
 argument_list|(
 name|cache
 operator|.
-name|getCache
+name|getResolutionCacheRoot
 argument_list|()
 argument_list|)
 argument_list|,
@@ -1092,7 +1090,7 @@ specifier|private
 name|void
 name|gendot
 parameter_list|(
-name|CacheManager
+name|ResolutionCacheManager
 name|cache
 parameter_list|,
 name|String
@@ -1116,7 +1114,7 @@ name|getDotStylePath
 argument_list|(
 name|cache
 operator|.
-name|getCache
+name|getResolutionCacheRoot
 argument_list|()
 argument_list|)
 argument_list|,
@@ -1176,7 +1174,7 @@ specifier|private
 name|void
 name|gen
 parameter_list|(
-name|CacheManager
+name|ResolutionCacheManager
 name|cache
 parameter_list|,
 name|String
@@ -1275,7 +1273,7 @@ name|setBasedir
 argument_list|(
 name|cache
 operator|.
-name|getCache
+name|getResolutionCacheRoot
 argument_list|()
 argument_list|)
 expr_stmt|;

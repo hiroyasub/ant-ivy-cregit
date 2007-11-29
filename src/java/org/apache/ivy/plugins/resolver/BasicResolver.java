@@ -223,7 +223,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|RepositoryCacheManager
 import|;
 end_import
 
@@ -4515,7 +4515,7 @@ name|DownloadOptions
 name|options
 parameter_list|)
 block|{
-name|CacheManager
+name|RepositoryCacheManager
 name|cacheManager
 init|=
 name|options

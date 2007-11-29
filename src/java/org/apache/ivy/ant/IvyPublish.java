@@ -1313,12 +1313,10 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|CacheManager
+name|ivy
 operator|.
-name|getInstance
+name|getCacheManager
 argument_list|(
-name|settings
-argument_list|,
 name|cache
 argument_list|)
 argument_list|)

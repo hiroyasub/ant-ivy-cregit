@@ -819,6 +819,8 @@ argument_list|)
 argument_list|,
 name|getResolveOptions
 argument_list|(
+name|ivy
+argument_list|,
 name|confs
 argument_list|,
 name|settings
@@ -896,6 +898,8 @@ argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
+name|ivy
+argument_list|,
 name|confs
 argument_list|,
 name|settings
@@ -1549,6 +1553,9 @@ specifier|private
 name|ResolveOptions
 name|getResolveOptions
 parameter_list|(
+name|Ivy
+name|ivy
+parameter_list|,
 name|String
 index|[]
 name|confs
@@ -1592,12 +1599,10 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|CacheManager
+name|ivy
 operator|.
-name|getInstance
+name|getCacheManager
 argument_list|(
-name|settings
-argument_list|,
 name|cache
 argument_list|)
 argument_list|)

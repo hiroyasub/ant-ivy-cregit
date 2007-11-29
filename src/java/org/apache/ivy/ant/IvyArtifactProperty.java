@@ -51,7 +51,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -223,7 +223,7 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-name|CacheManager
+name|ResolutionCacheManager
 name|cacheMgr
 init|=
 name|getIvyInstance

@@ -506,7 +506,7 @@ operator|.
 name|getCacheManager
 argument_list|()
 operator|.
-name|getCache
+name|getRepositoryCacheRoot
 argument_list|()
 argument_list|)
 expr_stmt|;

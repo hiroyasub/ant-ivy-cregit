@@ -177,22 +177,6 @@ name|Delete
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|util
-operator|.
-name|FileUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  * @see CacheManager  */
 end_comment
@@ -337,7 +321,17 @@ name|setDir
 argument_list|(
 name|cacheManager
 operator|.
-name|getCache
+name|getRepositoryCacheRoot
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|del
+operator|.
+name|setDir
+argument_list|(
+name|cacheManager
+operator|.
+name|getResolutionCacheRoot
 argument_list|()
 argument_list|)
 expr_stmt|;

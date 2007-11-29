@@ -982,12 +982,8 @@ argument_list|)
 operator|.
 name|setCache
 argument_list|(
-name|CacheManager
-operator|.
-name|getInstance
+name|getCacheManager
 argument_list|(
-name|settings
-argument_list|,
 name|cache
 argument_list|)
 argument_list|)
@@ -1193,20 +1189,15 @@ name|File
 name|cache
 parameter_list|)
 block|{
-comment|// TODO : reuse instance
+return|return
 name|CacheManager
-name|cacheManager
-init|=
-operator|new
-name|CacheManager
+operator|.
+name|getInstance
 argument_list|(
 name|settings
 argument_list|,
 name|cache
 argument_list|)
-decl_stmt|;
-return|return
-name|cacheManager
 return|;
 block|}
 block|}
