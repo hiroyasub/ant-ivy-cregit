@@ -295,6 +295,26 @@ throw|;
 block|}
 specifier|public
 name|void
+name|assertLogVerboseContains
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+block|{
+name|assertLogContains
+argument_list|(
+name|Message
+operator|.
+name|MSG_VERBOSE
+operator|+
+literal|" "
+operator|+
+name|message
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|assertLogInfoContains
 parameter_list|(
 name|String

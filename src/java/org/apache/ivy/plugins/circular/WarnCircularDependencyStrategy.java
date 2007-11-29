@@ -55,7 +55,7 @@ specifier|final
 class|class
 name|WarnCircularDependencyStrategy
 extends|extends
-name|AbstractCircularDependencyStrategy
+name|AbstractLogCircularDependencyStrategy
 block|{
 specifier|private
 specifier|static
@@ -87,9 +87,9 @@ literal|"warn"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|void
-name|handleCircularDependency
+name|logCircularDependency
 parameter_list|(
 name|ModuleRevisionId
 index|[]

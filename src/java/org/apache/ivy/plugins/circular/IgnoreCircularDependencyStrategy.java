@@ -55,7 +55,7 @@ specifier|final
 class|class
 name|IgnoreCircularDependencyStrategy
 extends|extends
-name|AbstractCircularDependencyStrategy
+name|AbstractLogCircularDependencyStrategy
 block|{
 specifier|private
 specifier|static
@@ -83,13 +83,13 @@ parameter_list|()
 block|{
 name|super
 argument_list|(
-literal|"ignore"
+literal|"warn"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|void
-name|handleCircularDependency
+name|logCircularDependency
 parameter_list|(
 name|ModuleRevisionId
 index|[]
