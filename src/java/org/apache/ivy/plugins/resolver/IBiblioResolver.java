@@ -358,7 +358,7 @@ name|IBiblioResolver
 parameter_list|()
 block|{
 block|}
-specifier|protected
+specifier|public
 name|ResolvedResource
 name|findIvyFileRef
 parameter_list|(

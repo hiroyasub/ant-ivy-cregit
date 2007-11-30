@@ -486,7 +486,7 @@ name|AbstractResourceResolver
 parameter_list|()
 block|{
 block|}
-specifier|protected
+specifier|public
 name|ResolvedResource
 name|findIvyFileRef
 parameter_list|(

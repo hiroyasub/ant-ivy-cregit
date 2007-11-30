@@ -223,6 +223,24 @@ name|RevisionEntry
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|resolver
+operator|.
+name|util
+operator|.
+name|ResolvedResource
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -256,6 +274,17 @@ name|data
 parameter_list|)
 throws|throws
 name|ParseException
+function_decl|;
+comment|/**      * Finds the module descriptor for the specified<tt>DependencyDescriptor</tt>.      * If this resolver can't find the module descriptor,<tt>null</tt> is returned.      *       * @param dd the dependency descriptor      * @param data the resolve data      * @return the module descriptor, or<tt>null</tt>      */
+name|ResolvedResource
+name|findIvyFileRef
+parameter_list|(
+name|DependencyDescriptor
+name|dd
+parameter_list|,
+name|ResolveData
+name|data
+parameter_list|)
 function_decl|;
 name|DownloadReport
 name|download
