@@ -352,27 +352,27 @@ literal|"*->*"
 decl_stmt|;
 specifier|private
 name|String
-name|_defaultConf
+name|defaultConf
 decl_stmt|;
 comment|// used only as defaultconf, not used for
 comment|// guesssing right side part of a mapping
 specifier|private
 name|String
-name|_defaultConfMapping
+name|defaultConfMapping
 decl_stmt|;
 comment|// same as default conf but is used
 comment|// for guesssing right side part of a mapping
 specifier|private
 name|DefaultDependencyDescriptor
-name|_defaultConfMappingDescriptor
+name|defaultConfMappingDescriptor
 decl_stmt|;
 specifier|private
 name|Resource
-name|_res
+name|res
 decl_stmt|;
 specifier|private
 name|List
-name|_errors
+name|errors
 init|=
 operator|new
 name|ArrayList
@@ -384,7 +384,7 @@ name|md
 decl_stmt|;
 specifier|private
 name|ModuleDescriptorParser
-name|_parser
+name|parser
 decl_stmt|;
 specifier|protected
 name|AbstractParser
@@ -393,7 +393,9 @@ name|ModuleDescriptorParser
 name|parser
 parameter_list|)
 block|{
-name|_parser
+name|this
+operator|.
+name|parser
 operator|=
 name|parser
 expr_stmt|;
@@ -404,7 +406,7 @@ name|getModuleDescriptorParser
 parameter_list|()
 block|{
 return|return
-name|_parser
+name|parser
 return|;
 block|}
 specifier|protected
@@ -417,7 +419,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_errors
+name|errors
 operator|.
 name|isEmpty
 argument_list|()
@@ -427,7 +429,7 @@ throw|throw
 operator|new
 name|ParseException
 argument_list|(
-name|_errors
+name|errors
 operator|.
 name|toString
 argument_list|()
@@ -445,7 +447,9 @@ name|Resource
 name|res
 parameter_list|)
 block|{
-name|_res
+name|this
+operator|.
+name|res
 operator|=
 name|res
 expr_stmt|;
@@ -455,7 +459,7 @@ operator|=
 operator|new
 name|DefaultModuleDescriptor
 argument_list|(
-name|_parser
+name|parser
 argument_list|,
 name|res
 argument_list|)
@@ -475,7 +479,7 @@ name|getResource
 parameter_list|()
 block|{
 return|return
-name|_res
+name|res
 return|;
 block|}
 specifier|protected
@@ -484,7 +488,7 @@ name|getDefaultConfMapping
 parameter_list|()
 block|{
 return|return
-name|_defaultConfMapping
+name|defaultConfMapping
 return|;
 block|}
 specifier|protected
@@ -495,7 +499,7 @@ name|String
 name|defaultConf
 parameter_list|)
 block|{
-name|_defaultConfMapping
+name|defaultConfMapping
 operator|=
 name|defaultConf
 expr_stmt|;
@@ -517,7 +521,7 @@ name|confs
 argument_list|,
 name|dd
 argument_list|,
-name|_defaultConfMapping
+name|defaultConfMapping
 operator|!=
 literal|null
 argument_list|)
@@ -1497,9 +1501,6 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|// if
-comment|// (getDefaultConfMappingDescriptor().getDependencyConfigurations(configName).length
-comment|//> 0) {
 name|configsToAdd
 operator|.
 name|add
@@ -1507,7 +1508,6 @@ argument_list|(
 name|configName
 argument_list|)
 expr_stmt|;
-comment|// } else {
 name|addExtendingConfigurations
 argument_list|(
 name|configName
@@ -1517,7 +1517,6 @@ argument_list|,
 name|useDefaultMappingToGuessRightOperande
 argument_list|)
 expr_stmt|;
-comment|// }
 block|}
 block|}
 block|}
@@ -1560,12 +1559,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_defaultConfMappingDescriptor
+name|defaultConfMappingDescriptor
 operator|==
 literal|null
 condition|)
 block|{
-name|_defaultConfMappingDescriptor
+name|defaultConfMappingDescriptor
 operator|=
 operator|new
 name|DefaultDependencyDescriptor
@@ -1586,9 +1585,9 @@ argument_list|)
 expr_stmt|;
 name|parseDepsConfs
 argument_list|(
-name|_defaultConfMapping
+name|defaultConfMapping
 argument_list|,
-name|_defaultConfMappingDescriptor
+name|defaultConfMappingDescriptor
 argument_list|,
 literal|false
 argument_list|,
@@ -1597,7 +1596,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|_defaultConfMappingDescriptor
+name|defaultConfMappingDescriptor
 return|;
 block|}
 specifier|protected
@@ -1610,12 +1609,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_res
+name|res
 operator|!=
 literal|null
 condition|)
 block|{
-name|_errors
+name|errors
 operator|.
 name|add
 argument_list|(
@@ -1623,7 +1622,7 @@ name|msg
 operator|+
 literal|" in "
 operator|+
-name|_res
+name|res
 operator|+
 literal|"\n"
 argument_list|)
@@ -1631,7 +1630,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|_errors
+name|errors
 operator|.
 name|add
 argument_list|(
@@ -1861,18 +1860,18 @@ name|getDefaultConf
 parameter_list|()
 block|{
 return|return
-name|_defaultConfMapping
+name|defaultConfMapping
 operator|!=
 literal|null
 condition|?
-name|_defaultConfMapping
+name|defaultConfMapping
 else|:
 operator|(
-name|_defaultConf
+name|defaultConf
 operator|!=
 literal|null
 condition|?
-name|_defaultConf
+name|defaultConf
 else|:
 name|DEFAULT_CONF_MAPPING
 operator|)
@@ -1886,7 +1885,9 @@ name|String
 name|defaultConf
 parameter_list|)
 block|{
-name|_defaultConf
+name|this
+operator|.
+name|defaultConf
 operator|=
 name|defaultConf
 expr_stmt|;
