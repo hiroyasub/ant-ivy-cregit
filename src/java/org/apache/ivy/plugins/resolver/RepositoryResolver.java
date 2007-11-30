@@ -1419,8 +1419,6 @@ block|{
 name|EventManager
 name|eventManager
 init|=
-name|options
-operator|.
 name|getEventManager
 argument_list|()
 decl_stmt|;

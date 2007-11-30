@@ -257,18 +257,6 @@ name|isSearched
 argument_list|()
 return|;
 block|}
-specifier|public
-name|URL
-name|getLocalMDUrl
-parameter_list|()
-block|{
-return|return
-name|_mr
-operator|.
-name|getLocalMDUrl
-argument_list|()
-return|;
-block|}
 block|}
 end_class
 

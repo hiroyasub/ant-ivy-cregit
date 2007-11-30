@@ -288,6 +288,7 @@ name|String
 name|conf
 parameter_list|)
 function_decl|;
+comment|/**      * Returns all artifacts of this module, excluding the artifact corresponding to the module      * descriptor.      *       * @return all published artifacts of this module      * @see #getMetadataArtifact()      */
 name|Artifact
 index|[]
 name|getAllArtifacts
@@ -360,6 +361,11 @@ function_decl|;
 comment|/**      * The resource being the source of this module descriptor, null if no resource corresponds to      * this module descriptor      *       * @return      */
 name|Resource
 name|getResource
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the Artifact representing this module descriptor itself.      *<p>      * Even though the module descriptor is never described as a published artifact of a module in      * the module descriptor itself, it is often useful to consider it as any other artifact of the      * module. This method allows to access to the Artifact object representing this module      * descriptor for this purpose.      *</p>      *       * @return the Artifact representing this module descriptor itself.      */
+name|Artifact
+name|getMetadataArtifact
 parameter_list|()
 function_decl|;
 comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return true if this descriptor contains any exclusion rule      */

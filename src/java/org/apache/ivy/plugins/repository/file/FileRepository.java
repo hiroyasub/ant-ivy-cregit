@@ -164,10 +164,6 @@ name|local
 init|=
 literal|true
 decl_stmt|;
-specifier|private
-name|File
-name|transactionDirectory
-decl_stmt|;
 specifier|public
 name|FileRepository
 parameter_list|()
@@ -346,7 +342,8 @@ name|IOException
 block|{
 try|try
 block|{
-name|progress
+name|getProgressListener
+argument_list|()
 operator|.
 name|setTotalLength
 argument_list|(
@@ -371,7 +368,8 @@ name|src
 argument_list|,
 name|destination
 argument_list|,
-name|progress
+name|getProgressListener
+argument_list|()
 argument_list|,
 name|overwrite
 argument_list|)
@@ -449,7 +447,8 @@ throw|;
 block|}
 finally|finally
 block|{
-name|progress
+name|getProgressListener
+argument_list|()
 operator|.
 name|setTotalLength
 argument_list|(
@@ -457,6 +456,15 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|protected
+name|RepositoryCopyProgressListener
+name|getProgressListener
+parameter_list|()
+block|{
+return|return
+name|progress
+return|;
 block|}
 specifier|public
 name|List

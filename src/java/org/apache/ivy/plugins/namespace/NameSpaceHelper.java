@@ -378,11 +378,6 @@ name|rmr
 operator|.
 name|isDownloaded
 argument_list|()
-argument_list|,
-name|rmr
-operator|.
-name|getLocalMDUrl
-argument_list|()
 argument_list|)
 return|;
 block|}

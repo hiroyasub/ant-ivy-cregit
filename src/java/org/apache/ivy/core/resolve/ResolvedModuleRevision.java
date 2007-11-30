@@ -128,11 +128,6 @@ name|boolean
 name|isSearched
 parameter_list|()
 function_decl|;
-specifier|public
-name|URL
-name|getLocalMDUrl
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 

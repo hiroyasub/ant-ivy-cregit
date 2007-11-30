@@ -143,6 +143,11 @@ name|ArtifactRevisionId
 name|getId
 parameter_list|()
 function_decl|;
+comment|/**      * Returns true if this artifact represents a module metadata artifact, false if it's a      * published artifact      *       * @return true if this artifact represents a module metadata artifact, false if it's a      *         published artifact      */
+name|boolean
+name|isMetadata
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

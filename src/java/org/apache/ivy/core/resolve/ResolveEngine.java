@@ -2063,8 +2063,6 @@ name|DownloadOptions
 argument_list|(
 name|cacheManager
 argument_list|,
-name|eventManager
-argument_list|,
 name|useOrigin
 argument_list|)
 argument_list|)
@@ -2309,8 +2307,6 @@ operator|new
 name|DownloadOptions
 argument_list|(
 name|cacheManager
-argument_list|,
-name|eventManager
 argument_list|,
 name|useOrigin
 argument_list|)

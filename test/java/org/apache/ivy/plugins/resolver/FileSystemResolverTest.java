@@ -449,36 +449,6 @@ name|FileUtil
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Project
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|taskdefs
-operator|.
-name|Delete
-import|;
-end_import
-
 begin_comment
 comment|/**  *   */
 end_comment
@@ -1061,8 +1031,6 @@ operator|new
 name|DownloadOptions
 argument_list|(
 name|cacheManager
-argument_list|,
-literal|null
 argument_list|,
 name|useOrigin
 argument_list|)

@@ -1858,6 +1858,15 @@ name|HashMap
 argument_list|()
 return|;
 block|}
+specifier|public
+name|boolean
+name|isMetadata
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 specifier|public
 specifier|static
