@@ -1170,6 +1170,7 @@ name|checkUpToDate
 init|=
 literal|true
 decl_stmt|;
+comment|// Map (ModuleIdMatcher -> ModuleSettings)
 specifier|private
 name|Map
 name|moduleSettings
@@ -1178,7 +1179,7 @@ operator|new
 name|LinkedHashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (ModuleIdMatcher -> ModuleSettings)
+comment|// Map (String conflictManagerName -> ConflictManager)
 specifier|private
 name|Map
 name|conflictsManager
@@ -1187,8 +1188,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String conflictManagerName ->
-comment|// ConflictManager)
+comment|// Map (String latestStrategyName -> LatestStrategy)
 specifier|private
 name|Map
 name|latestStrategies
@@ -1197,8 +1197,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String latestStrategyName ->
-comment|// LatestStrategy)
+comment|// Map (String namespaceName -> Namespace)
 specifier|private
 name|Map
 name|namespaces
@@ -1207,7 +1206,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String namespaceName -> Namespace)
+comment|// Map (String matcherName -> Matcher)
 specifier|private
 name|Map
 name|matchers
@@ -1216,7 +1215,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String matcherName -> Matcher)
+comment|// Map (String outputterName -> ReportOutputter)
 specifier|private
 name|Map
 name|reportOutputters
@@ -1225,7 +1224,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String outputterName -> ReportOutputter)
+comment|// Map (String matcherName -> VersionMatcher)
 specifier|private
 name|Map
 name|versionMatchers
@@ -1234,7 +1233,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String matcherName -> VersionMatcher)
+comment|// Map (String name -> CircularDependencyStrategy)
 specifier|private
 name|Map
 name|circularDependencyStrategies
@@ -1243,8 +1242,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// Map (String name ->
-comment|// CircularDependencyStrategy)
+comment|// List (Trigger)
 specifier|private
 name|List
 name|triggers
@@ -1253,7 +1251,6 @@ operator|new
 name|ArrayList
 argument_list|()
 decl_stmt|;
-comment|// List (Trigger)
 specifier|private
 name|IvyVariableContainer
 name|variableContainer
