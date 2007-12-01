@@ -395,6 +395,22 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testCompatibilityResolve7
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|/* Test data: (same as 1, but with reverse dependencies order              #A;7-> { #C;[2.0,2.5] #B;1.4 }             #B;1.4->#D;1.5             #C;2.5->#D;[1.0,1.6]          */
+name|resolveAndAssert
+argument_list|(
+literal|"ivy-latest-compatible-7.xml"
+argument_list|,
+literal|"#B;1.4, #C;2.5, #D;1.5"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|testConflict
 parameter_list|()
 throws|throws

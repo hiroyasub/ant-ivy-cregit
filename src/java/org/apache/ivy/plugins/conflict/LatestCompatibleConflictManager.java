@@ -510,16 +510,27 @@ operator|==
 literal|2
 condition|)
 block|{
-comment|// very common special case of only two modules in conflict
+comment|// very common special case of only two modules in conflict,
+comment|// let's return the second one (static)
+name|Iterator
+name|it
+init|=
+name|conflicts
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+name|it
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
 return|return
 name|Collections
 operator|.
 name|singleton
 argument_list|(
-name|conflicts
-operator|.
-name|iterator
-argument_list|()
+name|it
 operator|.
 name|next
 argument_list|()

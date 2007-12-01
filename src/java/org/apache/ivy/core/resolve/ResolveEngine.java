@@ -5046,7 +5046,7 @@ name|Collection
 name|conflicts
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 name|conflicts
