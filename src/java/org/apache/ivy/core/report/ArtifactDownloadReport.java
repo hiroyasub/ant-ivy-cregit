@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -52,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  */
+comment|/**  * Report on the download of an artifact from a repository to a local (cached) file.  *<p>  * Note that depending on cache implementation, the artifact may not be actually downloaded, but  * used directly from its original location.  *</p>  */
 end_comment
 
 begin_class
@@ -67,6 +77,10 @@ decl_stmt|;
 specifier|private
 name|ArtifactOrigin
 name|origin
+decl_stmt|;
+specifier|private
+name|File
+name|downloadedFile
 decl_stmt|;
 specifier|private
 name|DownloadStatus
@@ -336,6 +350,31 @@ name|toString
 argument_list|()
 return|;
 block|}
+block|}
+comment|/**      * Returns the file where the artifact has been downloaded, or<code>null</code> if and only      * if the download failed.      *       * @return the file where the artifact has been downloaded      */
+specifier|public
+name|File
+name|getDownloadedFile
+parameter_list|()
+block|{
+return|return
+name|downloadedFile
+return|;
+block|}
+specifier|public
+name|void
+name|setDownloadedFile
+parameter_list|(
+name|File
+name|downloadedFile
+parameter_list|)
+block|{
+name|this
+operator|.
+name|downloadedFile
+operator|=
+name|downloadedFile
+expr_stmt|;
 block|}
 block|}
 end_class

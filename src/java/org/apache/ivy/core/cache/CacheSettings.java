@@ -183,6 +183,10 @@ name|LockStrategy
 name|getDefaultLockStrategy
 parameter_list|()
 function_decl|;
+name|boolean
+name|debugLocking
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

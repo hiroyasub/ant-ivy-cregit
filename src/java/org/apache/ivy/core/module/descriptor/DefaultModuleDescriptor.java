@@ -1411,7 +1411,7 @@ decl_stmt|;
 comment|// List(ExcludeRule)
 specifier|private
 name|Artifact
-name|moduleArtifact
+name|metadataArtifact
 decl_stmt|;
 specifier|public
 name|DefaultModuleDescriptor
@@ -1550,12 +1550,12 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|moduleArtifact
+name|metadataArtifact
 operator|==
 literal|null
 condition|)
 block|{
-name|moduleArtifact
+name|metadataArtifact
 operator|=
 name|DefaultArtifact
 operator|.
@@ -1563,12 +1563,12 @@ name|newIvyArtifact
 argument_list|(
 name|resolvedRevId
 argument_list|,
-name|publicationDate
+name|resolvedPublicationDate
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|moduleArtifact
+name|metadataArtifact
 return|;
 block|}
 specifier|public
@@ -1581,7 +1581,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|moduleArtifact
+name|metadataArtifact
 operator|=
 name|moduleArtifact
 expr_stmt|;

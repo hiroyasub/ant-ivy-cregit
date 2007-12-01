@@ -419,6 +419,8 @@ name|doValidate
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -605,13 +607,10 @@ name|resolvedMrid
 argument_list|)
 expr_stmt|;
 return|return
-name|searchedRmr
-argument_list|(
 name|node
 operator|.
 name|getModuleRevision
 argument_list|()
-argument_list|)
 return|;
 block|}
 name|ResolvedModuleRevision
@@ -630,6 +629,8 @@ name|doValidate
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -654,10 +655,7 @@ name|resolvedMrid
 argument_list|)
 expr_stmt|;
 return|return
-name|searchedRmr
-argument_list|(
 name|rmr
-argument_list|)
 return|;
 block|}
 else|else
@@ -813,6 +811,13 @@ name|archiveFile
 operator|.
 name|length
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|adr
+operator|.
+name|setDownloadedFile
+argument_list|(
+name|archiveFile
 argument_list|)
 expr_stmt|;
 block|}

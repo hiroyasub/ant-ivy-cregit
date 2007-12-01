@@ -24527,6 +24527,11 @@ argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
+name|ivy
+operator|.
+name|getSettings
+argument_list|()
+argument_list|,
 operator|new
 name|String
 index|[]
