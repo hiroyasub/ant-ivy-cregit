@@ -382,6 +382,10 @@ operator|new
 name|PublishEngine
 argument_list|(
 name|settings
+argument_list|,
+operator|new
+name|EventManager
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final

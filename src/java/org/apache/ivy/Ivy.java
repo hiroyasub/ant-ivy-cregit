@@ -1116,6 +1116,8 @@ operator|new
 name|PublishEngine
 argument_list|(
 name|settings
+argument_list|,
+name|eventManager
 argument_list|)
 expr_stmt|;
 block|}
