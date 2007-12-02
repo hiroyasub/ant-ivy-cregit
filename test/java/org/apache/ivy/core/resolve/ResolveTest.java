@@ -17858,7 +17858,7 @@ parameter_list|)
 block|{
 name|assertEquals
 argument_list|(
-literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->org6#mod6.3;1.2"
+literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->..."
 argument_list|,
 name|ex
 operator|.
