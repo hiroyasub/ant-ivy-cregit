@@ -2131,7 +2131,7 @@ name|attributes
 operator|.
 name|get
 argument_list|(
-literal|"lockingStrategy"
+literal|"lockStrategy"
 argument_list|)
 decl_stmt|;
 if|if
