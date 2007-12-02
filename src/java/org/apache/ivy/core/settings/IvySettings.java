@@ -1826,14 +1826,14 @@ block|}
 name|addReportOutputter
 argument_list|(
 operator|new
-name|XmlReportOutputter
+name|LogReportOutputter
 argument_list|()
 argument_list|)
 expr_stmt|;
 name|addReportOutputter
 argument_list|(
 operator|new
-name|LogReportOutputter
+name|XmlReportOutputter
 argument_list|()
 argument_list|)
 expr_stmt|;

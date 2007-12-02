@@ -1147,16 +1147,16 @@ literal|":: install resolution report ::"
 argument_list|)
 expr_stmt|;
 comment|// output report
-name|report
+name|resolveEngine
 operator|.
-name|output
+name|outputReport
 argument_list|(
-name|settings
-operator|.
-name|getReportOutputters
-argument_list|()
+name|report
 argument_list|,
+name|getCacheManager
+argument_list|(
 name|cache
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

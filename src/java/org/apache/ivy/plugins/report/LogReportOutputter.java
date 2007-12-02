@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|File
+name|IOException
 import|;
 end_import
 
@@ -88,6 +88,22 @@ operator|.
 name|core
 operator|.
 name|IvyContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|cache
+operator|.
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -230,9 +246,11 @@ parameter_list|(
 name|ResolveReport
 name|report
 parameter_list|,
-name|File
-name|destDir
+name|ResolutionCacheManager
+name|cacheMgr
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 name|IvySettings
 name|settings
@@ -680,6 +698,7 @@ block|}
 block|}
 block|}
 block|}
+comment|//CheckStyle:MagicNumber| OFF
 name|char
 index|[]
 name|sep
@@ -850,6 +869,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| ON
 name|line
 operator|.
 name|append
@@ -1145,6 +1165,7 @@ argument_list|(
 literal|"\t"
 argument_list|)
 decl_stmt|;
+comment|//CheckStyle:MagicNumber| OFF
 name|append
 argument_list|(
 name|line
@@ -1274,6 +1295,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
+comment|//CheckStyle:MagicNumber| ON
 name|line
 operator|.
 name|append

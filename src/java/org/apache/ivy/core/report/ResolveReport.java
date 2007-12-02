@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|File
+name|IOException
 import|;
 end_import
 
@@ -104,6 +104,22 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|cache
+operator|.
+name|ResolutionCacheManager
 import|;
 end_import
 
@@ -431,9 +447,11 @@ name|ReportOutputter
 index|[]
 name|outputters
 parameter_list|,
-name|File
-name|cache
+name|ResolutionCacheManager
+name|cacheMgr
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 for|for
 control|(
@@ -461,7 +479,7 @@ name|output
 argument_list|(
 name|this
 argument_list|,
-name|cache
+name|cacheMgr
 argument_list|)
 expr_stmt|;
 block|}

@@ -672,7 +672,7 @@ name|output
 argument_list|(
 name|report
 argument_list|,
-name|cache
+name|cacheMgr
 argument_list|)
 expr_stmt|;
 if|if
