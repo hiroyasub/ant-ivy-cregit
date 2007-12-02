@@ -357,6 +357,8 @@ block|,
 literal|"circular-dependency-strategies"
 block|,
 literal|"triggers"
+block|,
+literal|"lock-strategies"
 block|}
 argument_list|)
 decl_stmt|;
