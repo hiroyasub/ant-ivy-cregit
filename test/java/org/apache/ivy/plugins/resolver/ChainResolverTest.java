@@ -340,19 +340,19 @@ name|TestCase
 block|{
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|ResolveEngine
-name|_engine
+name|engine
 decl_stmt|;
 specifier|private
 name|ResolveData
-name|_data
+name|data
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 specifier|protected
 name|void
@@ -361,18 +361,18 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_settings
+name|settings
 operator|=
 operator|new
 name|IvySettings
 argument_list|()
 expr_stmt|;
-name|_engine
+name|engine
 operator|=
 operator|new
 name|ResolveEngine
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 operator|new
 name|EventManager
@@ -381,11 +381,11 @@ argument_list|,
 operator|new
 name|SortEngine
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -393,12 +393,12 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|=
 operator|new
 name|ResolveData
 argument_list|(
-name|_engine
+name|engine
 argument_list|,
 operator|new
 name|ResolveOptions
@@ -410,23 +410,23 @@ name|CacheManager
 operator|.
 name|getInstance
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
-name|_cache
+name|cache
 argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setDefaultCache
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 block|}
@@ -457,7 +457,7 @@ name|del
 operator|.
 name|setDir
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 name|del
@@ -476,7 +476,7 @@ block|{
 operator|new
 name|XmlSettingsParser
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 operator|.
 name|parse
@@ -494,7 +494,7 @@ expr_stmt|;
 name|DependencyResolver
 name|resolver
 init|=
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -626,7 +626,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -672,7 +672,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|MockResolver
@@ -783,7 +783,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -887,7 +887,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -1096,7 +1096,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1188,7 +1188,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -1443,7 +1443,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1535,7 +1535,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -1752,7 +1752,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1873,7 +1873,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -2156,7 +2156,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -2248,7 +2248,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -2440,7 +2440,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -2576,7 +2576,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 comment|// no ivy pattern for first resolver: will only find a 'default' module
@@ -2598,7 +2598,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -2634,7 +2634,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -2658,7 +2658,7 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|addResolver
 argument_list|(
@@ -2694,7 +2694,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -2741,7 +2741,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -2948,7 +2948,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -3028,7 +3028,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 comment|// no ivy pattern for resolver: will only find a 'default' module
@@ -3050,7 +3050,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -3067,7 +3067,7 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|addResolver
 argument_list|(
@@ -3100,7 +3100,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 expr_stmt|;
 comment|// 2 ---- now we ask to resolve dependencies with a chain in return first mode, in which the
@@ -3123,7 +3123,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -3151,7 +3151,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -3179,7 +3179,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -3203,7 +3203,7 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|addResolver
 argument_list|(
@@ -3219,7 +3219,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -3266,7 +3266,7 @@ name|chain
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|chain
@@ -3384,7 +3384,7 @@ name|getDependency
 argument_list|(
 name|dd
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNotNull
