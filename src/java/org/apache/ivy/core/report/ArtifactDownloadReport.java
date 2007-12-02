@@ -70,6 +70,15 @@ specifier|public
 class|class
 name|ArtifactDownloadReport
 block|{
+comment|/**      * download details used when the download "fails" when the artifact is simply missing on the      * remote repository.      *<p>      * For historical reason the status can't be used to distinguish a real failure from a missing      * artifact by using the status, in both cases it's DownloadStatus.FAILED. The details message      * can be used for this purpose though.      *</p>      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|MISSING_ARTIFACT
+init|=
+literal|"missing artifact"
+decl_stmt|;
 specifier|private
 name|Artifact
 name|artifact
@@ -315,7 +324,7 @@ literal|"[FAILED     ] "
 operator|+
 name|artifact
 operator|+
-literal|" : "
+literal|": "
 operator|+
 name|downloadDetails
 operator|+
