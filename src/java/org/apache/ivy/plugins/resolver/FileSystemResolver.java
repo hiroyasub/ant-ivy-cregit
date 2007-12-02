@@ -562,7 +562,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"a transaction is only started and not closed!"
+literal|"a transaction is already started and not closed!"
 argument_list|)
 throw|;
 block|}
