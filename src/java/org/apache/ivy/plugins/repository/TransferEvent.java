@@ -65,8 +65,8 @@ literal|0
 decl_stmt|;
 comment|/**      * A transfer was started.      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|TRANSFER_STARTED
 init|=
@@ -74,8 +74,8 @@ literal|1
 decl_stmt|;
 comment|/**      * A transfer is completed.      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|TRANSFER_COMPLETED
 init|=
@@ -83,8 +83,8 @@ literal|2
 decl_stmt|;
 comment|/**      * A transfer is in progress.      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|TRANSFER_PROGRESS
 init|=
@@ -92,8 +92,8 @@ literal|3
 decl_stmt|;
 comment|/**      * An error occured during transfer      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|TRANSFER_ERROR
 init|=
@@ -101,8 +101,8 @@ literal|4
 decl_stmt|;
 comment|/**      * Indicates GET transfer (from the repository)      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|REQUEST_GET
 init|=
@@ -110,8 +110,8 @@ literal|5
 decl_stmt|;
 comment|/**      * Indicates PUT transfer (to the repository)      */
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|int
 name|REQUEST_PUT
 init|=
@@ -159,39 +159,39 @@ literal|"transfer-error"
 decl_stmt|;
 specifier|private
 name|Resource
-name|_resource
+name|resource
 decl_stmt|;
 specifier|private
 name|int
-name|_eventType
+name|eventType
 decl_stmt|;
 specifier|private
 name|int
-name|_requestType
+name|requestType
 decl_stmt|;
 specifier|private
 name|Exception
-name|_exception
+name|exception
 decl_stmt|;
 specifier|private
 name|File
-name|_localFile
+name|localFile
 decl_stmt|;
 specifier|private
 name|Repository
-name|_repository
+name|repository
 decl_stmt|;
 specifier|private
 name|long
-name|_length
+name|length
 decl_stmt|;
 specifier|private
 name|long
-name|_totalLength
+name|totalLength
 decl_stmt|;
 specifier|private
 name|boolean
-name|_isTotalLengthSet
+name|isTotalLengthSet
 init|=
 literal|false
 decl_stmt|;
@@ -223,7 +223,9 @@ name|eventType
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_repository
+name|this
+operator|.
+name|repository
 operator|=
 name|repository
 expr_stmt|;
@@ -231,13 +233,17 @@ name|addAttribute
 argument_list|(
 literal|"repository"
 argument_list|,
-name|_repository
+name|this
+operator|.
+name|repository
 operator|.
 name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_resource
+name|this
+operator|.
+name|resource
 operator|=
 name|resource
 expr_stmt|;
@@ -245,7 +251,9 @@ name|addAttribute
 argument_list|(
 literal|"resource"
 argument_list|,
-name|_resource
+name|this
+operator|.
+name|resource
 operator|.
 name|getName
 argument_list|()
@@ -306,7 +314,9 @@ argument_list|,
 name|requestType
 argument_list|)
 expr_stmt|;
-name|_exception
+name|this
+operator|.
+name|exception
 operator|=
 name|exception
 expr_stmt|;
@@ -341,11 +351,15 @@ argument_list|,
 name|requestType
 argument_list|)
 expr_stmt|;
-name|_length
+name|this
+operator|.
+name|length
 operator|=
 name|length
 expr_stmt|;
-name|_totalLength
+name|this
+operator|.
+name|totalLength
 operator|=
 name|length
 expr_stmt|;
@@ -394,10 +408,11 @@ case|:
 return|return
 name|TRANSFER_ERROR_NAME
 return|;
-block|}
+default|default:
 return|return
 literal|null
 return|;
+block|}
 block|}
 comment|/**      * @return Returns the resource.      */
 specifier|public
@@ -406,7 +421,7 @@ name|getResource
 parameter_list|()
 block|{
 return|return
-name|_resource
+name|resource
 return|;
 block|}
 comment|/**      * @return Returns the exception.      */
@@ -416,7 +431,7 @@ name|getException
 parameter_list|()
 block|{
 return|return
-name|_exception
+name|exception
 return|;
 block|}
 comment|/**      * Returns the request type.      *       * @return Returns the request type. The Request type is one of      *<code>TransferEvent.REQUEST_GET<code> or<code>TransferEvent.REQUEST_PUT<code>      */
@@ -426,7 +441,7 @@ name|getRequestType
 parameter_list|()
 block|{
 return|return
-name|_requestType
+name|requestType
 return|;
 block|}
 comment|/**      * Sets the request type      *       * @param requestType      *            The requestType to set. The Request type value should be either      *<code>TransferEvent.REQUEST_GET<code> or<code>TransferEvent.REQUEST_PUT<code>.      * @throws IllegalArgumentException when      */
@@ -463,7 +478,9 @@ name|requestType
 argument_list|)
 throw|;
 block|}
-name|_requestType
+name|this
+operator|.
+name|requestType
 operator|=
 name|requestType
 expr_stmt|;
@@ -475,7 +492,7 @@ name|getEventType
 parameter_list|()
 block|{
 return|return
-name|_eventType
+name|eventType
 return|;
 block|}
 comment|/**      * @param eventType      *            The eventType to set.      */
@@ -526,12 +543,12 @@ throw|;
 block|}
 name|this
 operator|.
-name|_eventType
+name|eventType
 operator|=
 name|eventType
 expr_stmt|;
 block|}
-comment|/**      * @param _resource      *            The resource to set.      */
+comment|/**      * @param resource      *            The resource to set.      */
 specifier|protected
 name|void
 name|setResource
@@ -541,7 +558,9 @@ name|Resource
 name|resource
 parameter_list|)
 block|{
-name|_resource
+name|this
+operator|.
+name|resource
 operator|=
 name|resource
 expr_stmt|;
@@ -553,7 +572,7 @@ name|getLocalFile
 parameter_list|()
 block|{
 return|return
-name|_localFile
+name|localFile
 return|;
 block|}
 comment|/**      * @param localFile      *            The local file to set.      */
@@ -565,7 +584,9 @@ name|File
 name|localFile
 parameter_list|)
 block|{
-name|_localFile
+name|this
+operator|.
+name|localFile
 operator|=
 name|localFile
 expr_stmt|;
@@ -576,7 +597,7 @@ name|getLength
 parameter_list|()
 block|{
 return|return
-name|_length
+name|length
 return|;
 block|}
 specifier|protected
@@ -587,7 +608,9 @@ name|long
 name|length
 parameter_list|)
 block|{
-name|_length
+name|this
+operator|.
+name|length
 operator|=
 name|length
 expr_stmt|;
@@ -598,7 +621,7 @@ name|getTotalLength
 parameter_list|()
 block|{
 return|return
-name|_totalLength
+name|totalLength
 return|;
 block|}
 specifier|protected
@@ -609,7 +632,9 @@ name|long
 name|totalLength
 parameter_list|)
 block|{
-name|_totalLength
+name|this
+operator|.
+name|totalLength
 operator|=
 name|totalLength
 expr_stmt|;
@@ -622,7 +647,9 @@ name|Exception
 name|exception
 parameter_list|)
 block|{
-name|_exception
+name|this
+operator|.
+name|exception
 operator|=
 name|exception
 expr_stmt|;
@@ -633,7 +660,7 @@ name|isTotalLengthSet
 parameter_list|()
 block|{
 return|return
-name|_isTotalLengthSet
+name|isTotalLengthSet
 return|;
 block|}
 specifier|public
@@ -644,7 +671,9 @@ name|boolean
 name|isTotalLengthSet
 parameter_list|)
 block|{
-name|_isTotalLengthSet
+name|this
+operator|.
+name|isTotalLengthSet
 operator|=
 name|isTotalLengthSet
 expr_stmt|;
