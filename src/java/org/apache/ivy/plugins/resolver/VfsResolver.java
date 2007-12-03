@@ -72,8 +72,9 @@ name|RepositoryResolver
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Pattern
-name|URLPattern
+name|URL_PATTERN
 init|=
 name|Pattern
 operator|.
@@ -84,6 +85,7 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|int
 name|PASSWORD_GROUP
 init|=
@@ -146,7 +148,7 @@ decl_stmt|;
 name|Matcher
 name|m
 init|=
-name|URLPattern
+name|URL_PATTERN
 operator|.
 name|matcher
 argument_list|(
