@@ -88,7 +88,7 @@ name|URLLister
 block|{
 specifier|private
 name|File
-name|_basedir
+name|basedir
 decl_stmt|;
 specifier|public
 name|FileURLLister
@@ -107,7 +107,9 @@ name|File
 name|baseDir
 parameter_list|)
 block|{
-name|_basedir
+name|this
+operator|.
+name|basedir
 operator|=
 name|baseDir
 expr_stmt|;
@@ -150,7 +152,7 @@ decl_stmt|;
 name|File
 name|file
 init|=
-name|_basedir
+name|basedir
 operator|==
 literal|null
 condition|?
@@ -163,7 +165,7 @@ else|:
 operator|new
 name|File
 argument_list|(
-name|_basedir
+name|basedir
 argument_list|,
 name|path
 argument_list|)

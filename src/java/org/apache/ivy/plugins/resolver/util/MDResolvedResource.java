@@ -60,7 +60,7 @@ name|ResolvedResource
 block|{
 specifier|private
 name|ResolvedModuleRevision
-name|_rmr
+name|rmr
 decl_stmt|;
 specifier|public
 name|MDResolvedResource
@@ -82,7 +82,9 @@ argument_list|,
 name|rev
 argument_list|)
 expr_stmt|;
-name|_rmr
+name|this
+operator|.
+name|rmr
 operator|=
 name|rmr
 expr_stmt|;
@@ -93,7 +95,7 @@ name|getResolvedModuleRevision
 parameter_list|()
 block|{
 return|return
-name|_rmr
+name|rmr
 return|;
 block|}
 block|}

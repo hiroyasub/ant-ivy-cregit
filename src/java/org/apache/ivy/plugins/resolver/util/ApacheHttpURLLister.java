@@ -74,7 +74,7 @@ name|URLLister
 block|{
 specifier|private
 name|ApacheURLLister
-name|_lister
+name|lister
 init|=
 operator|new
 name|ApacheURLLister
@@ -108,7 +108,7 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|_lister
+name|lister
 operator|.
 name|listAll
 argument_list|(

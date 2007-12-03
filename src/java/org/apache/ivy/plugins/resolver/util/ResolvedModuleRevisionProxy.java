@@ -112,10 +112,11 @@ block|{
 specifier|private
 specifier|final
 name|ResolvedModuleRevision
-name|_mr
+name|mr
 decl_stmt|;
+specifier|private
 name|DependencyResolver
-name|_resolver
+name|resolver
 decl_stmt|;
 specifier|public
 name|ResolvedModuleRevisionProxy
@@ -157,11 +158,15 @@ literal|"null resolver not allowed"
 argument_list|)
 throw|;
 block|}
-name|_mr
+name|this
+operator|.
+name|mr
 operator|=
 name|mr
 expr_stmt|;
-name|_resolver
+name|this
+operator|.
+name|resolver
 operator|=
 name|artresolver
 expr_stmt|;
@@ -172,7 +177,7 @@ name|getResolver
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|getResolver
 argument_list|()
@@ -184,7 +189,7 @@ name|getArtifactResolver
 parameter_list|()
 block|{
 return|return
-name|_resolver
+name|resolver
 return|;
 block|}
 specifier|public
@@ -193,7 +198,7 @@ name|getId
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|getId
 argument_list|()
@@ -205,7 +210,7 @@ name|getPublicationDate
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|getPublicationDate
 argument_list|()
@@ -217,7 +222,7 @@ name|getDescriptor
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|getDescriptor
 argument_list|()
@@ -229,7 +234,7 @@ name|isDownloaded
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|isDownloaded
 argument_list|()
@@ -241,7 +246,7 @@ name|isSearched
 parameter_list|()
 block|{
 return|return
-name|_mr
+name|mr
 operator|.
 name|isSearched
 argument_list|()
