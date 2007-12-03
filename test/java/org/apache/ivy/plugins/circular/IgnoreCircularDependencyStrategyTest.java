@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
+name|util
 operator|.
-name|IvyContext
+name|Message
 import|;
 end_import
 
@@ -102,16 +102,7 @@ operator|new
 name|MockMessageLogger
 argument_list|()
 expr_stmt|;
-name|IvyContext
-operator|.
-name|getContext
-argument_list|()
-operator|.
-name|getIvy
-argument_list|()
-operator|.
-name|getLoggerEngine
-argument_list|()
+name|Message
 operator|.
 name|setDefaultLogger
 argument_list|(

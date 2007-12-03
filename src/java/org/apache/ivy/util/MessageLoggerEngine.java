@@ -80,10 +80,7 @@ specifier|private
 name|MessageLogger
 name|defaultLogger
 init|=
-name|Message
-operator|.
-name|getDefaultLogger
-argument_list|()
+literal|null
 decl_stmt|;
 specifier|private
 name|List
@@ -193,7 +190,8 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|defaultLogger
+name|getDefaultLogger
+argument_list|()
 return|;
 block|}
 return|return
@@ -204,6 +202,26 @@ name|loggerStack
 operator|.
 name|peek
 argument_list|()
+return|;
+block|}
+specifier|private
+name|MessageLogger
+name|getDefaultLogger
+parameter_list|()
+block|{
+comment|// we don't store the logger returned by Message.getDefaultLogger() to always stay in sync
+comment|// as long as our default logger has not been set explicitly with setDefaultLogger()
+return|return
+name|defaultLogger
+operator|==
+literal|null
+condition|?
+name|Message
+operator|.
+name|getDefaultLogger
+argument_list|()
+else|:
+name|defaultLogger
 return|;
 block|}
 comment|// consolidated methods
@@ -321,7 +339,8 @@ name|void
 name|clearProblems
 parameter_list|()
 block|{
-name|defaultLogger
+name|getDefaultLogger
+argument_list|()
 operator|.
 name|clearProblems
 argument_list|()
@@ -384,7 +403,8 @@ name|boolean
 name|progress
 parameter_list|)
 block|{
-name|defaultLogger
+name|getDefaultLogger
+argument_list|()
 operator|.
 name|setShowProgress
 argument_list|(
@@ -436,7 +456,8 @@ parameter_list|()
 block|{
 comment|// testing the default logger is enough, all loggers should be in sync
 return|return
-name|defaultLogger
+name|getDefaultLogger
+argument_list|()
 operator|.
 name|isShowProgress
 argument_list|()

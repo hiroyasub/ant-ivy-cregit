@@ -127,6 +127,7 @@ operator|.
 name|MSG_INFO
 argument_list|)
 decl_stmt|;
+comment|/**      * Returns the current default logger.      * @return the current default logger; is never<code>null</code>.      */
 specifier|public
 specifier|static
 name|MessageLogger
@@ -137,6 +138,7 @@ return|return
 name|defaultLogger
 return|;
 block|}
+comment|/**      * Change the default logger used when no other logger is currently configured      * @param logger the new default logger, must not be<code>null</code>      */
 specifier|public
 specifier|static
 name|void
@@ -146,6 +148,15 @@ name|MessageLogger
 name|logger
 parameter_list|)
 block|{
+name|Checks
+operator|.
+name|checkNotNull
+argument_list|(
+name|logger
+argument_list|,
+literal|"logger"
+argument_list|)
+expr_stmt|;
 name|defaultLogger
 operator|=
 name|logger

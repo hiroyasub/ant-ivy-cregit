@@ -261,8 +261,7 @@ argument_list|()
 operator|.
 name|parseDescriptor
 argument_list|(
-operator|new
-name|IvySettings
+name|getSettings
 argument_list|()
 argument_list|,
 name|pomFile

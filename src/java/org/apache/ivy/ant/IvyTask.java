@@ -1419,7 +1419,23 @@ name|void
 name|prepareTask
 parameter_list|()
 block|{
-comment|// push current project on the stack in context
+comment|// push current project and Ivy on the stack in context
+name|IvyContext
+operator|.
+name|pushNewCopyContext
+argument_list|()
+expr_stmt|;
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|setIvy
+argument_list|(
+name|getIvyInstance
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|IvyContext
 operator|.
 name|getContext
@@ -1465,6 +1481,11 @@ literal|"ANT project poped from stack not equals current !. Ignoring"
 argument_list|)
 expr_stmt|;
 block|}
+name|IvyContext
+operator|.
+name|popContext
+argument_list|()
+expr_stmt|;
 block|}
 comment|/**      * Ant task execute. Calls prepareTask, doExecute, finalzeTask      */
 specifier|public

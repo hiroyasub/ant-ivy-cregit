@@ -483,13 +483,17 @@ name|getClassLoader
 argument_list|()
 condition|)
 block|{
-name|Message
+name|project
 operator|.
-name|warn
+name|log
 argument_list|(
 literal|"ivy.instance reference an ivy:settings defined in an other classloader.  "
 operator|+
 literal|"An new default one will be used in this project."
+argument_list|,
+name|Project
+operator|.
+name|MSG_WARN
 argument_list|)
 expr_stmt|;
 name|defaultInstanceObj
@@ -536,13 +540,17 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Message
+name|project
 operator|.
-name|info
+name|log
 argument_list|(
 literal|"No ivy:settings found for the default reference 'ivy.instance'.  "
 operator|+
 literal|"A default instance will be used"
+argument_list|,
+name|Project
+operator|.
+name|MSG_INFO
 argument_list|)
 expr_stmt|;
 name|IvyAntSettings
@@ -1117,8 +1125,6 @@ operator|new
 name|Properties
 argument_list|()
 decl_stmt|;
-name|Message
-operator|.
 name|verbose
 argument_list|(
 literal|"Loading "
@@ -1220,11 +1226,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|Message
-operator|.
-name|deprecated
+name|info
 argument_list|(
-literal|"'ivy.conf.file' is deprecated, use 'ivy.settings.file' instead"
+literal|"DEPRECATED: 'ivy.conf.file' is deprecated, use 'ivy.settings.file' instead"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1309,8 +1313,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|Message
-operator|.
 name|verbose
 argument_list|(
 literal|"searching settings file: trying "
@@ -1357,8 +1359,6 @@ name|booleanValue
 argument_list|()
 condition|)
 block|{
-name|Message
-operator|.
 name|info
 argument_list|(
 literal|"no settings file found, using Ivy 1.4 default..."
@@ -1378,8 +1378,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Message
-operator|.
 name|info
 argument_list|(
 literal|"no settings file found, using default..."
@@ -1398,6 +1396,60 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+block|}
+specifier|private
+name|void
+name|verbose
+parameter_list|(
+name|String
+name|msg
+parameter_list|)
+block|{
+name|log
+argument_list|(
+name|msg
+argument_list|,
+name|Project
+operator|.
+name|MSG_VERBOSE
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+name|void
+name|info
+parameter_list|(
+name|String
+name|msg
+parameter_list|)
+block|{
+name|log
+argument_list|(
+name|msg
+argument_list|,
+name|Project
+operator|.
+name|MSG_INFO
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+name|void
+name|warn
+parameter_list|(
+name|String
+name|msg
+parameter_list|)
+block|{
+name|log
+argument_list|(
+name|msg
+argument_list|,
+name|Project
+operator|.
+name|MSG_WARN
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|void
