@@ -1865,7 +1865,23 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|":: resolution report ::"
+literal|":: resolution report :: resolve "
+operator|+
+name|report
+operator|.
+name|getResolveTime
+argument_list|()
+operator|+
+literal|"ms"
+operator|+
+literal|" :: artifacts dl "
+operator|+
+name|report
+operator|.
+name|getDownloadTime
+argument_list|()
+operator|+
+literal|"ms"
 argument_list|)
 expr_stmt|;
 name|report
@@ -1978,6 +1994,11 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|long
+name|totalSize
+init|=
+literal|0
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -2111,15 +2132,12 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"\t[NOT FOUND  ] "
+literal|"\t"
 operator|+
 name|adrs
 index|[
 name|j
 index|]
-operator|.
-name|getArtifact
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -2134,6 +2152,32 @@ operator|.
 name|getArtifact
 argument_list|()
 argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|adrs
+index|[
+name|j
+index|]
+operator|.
+name|getDownloadStatus
+argument_list|()
+operator|==
+name|DownloadStatus
+operator|.
+name|SUCCESSFUL
+condition|)
+block|{
+name|totalSize
+operator|+=
+name|adrs
+index|[
+name|j
+index|]
+operator|.
+name|getSize
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -2254,6 +2298,13 @@ name|currentTimeMillis
 argument_list|()
 operator|-
 name|start
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setDownloadSize
+argument_list|(
+name|totalSize
 argument_list|)
 expr_stmt|;
 block|}

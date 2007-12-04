@@ -319,6 +319,27 @@ operator|.
 name|FAILED
 condition|)
 block|{
+if|if
+condition|(
+name|downloadDetails
+operator|==
+name|MISSING_ARTIFACT
+condition|)
+block|{
+return|return
+literal|"[NOT FOUND  ] "
+operator|+
+name|artifact
+operator|+
+literal|" ("
+operator|+
+name|downloadTimeMillis
+operator|+
+literal|"ms)"
+return|;
+block|}
+else|else
+block|{
 return|return
 literal|"[FAILED     ] "
 operator|+
@@ -334,6 +355,7 @@ name|downloadTimeMillis
 operator|+
 literal|"ms)"
 return|;
+block|}
 block|}
 if|else if
 condition|(

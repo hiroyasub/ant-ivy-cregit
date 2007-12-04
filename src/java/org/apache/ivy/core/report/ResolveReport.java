@@ -247,16 +247,27 @@ decl_stmt|;
 specifier|private
 name|List
 name|problemMessages
+init|=
+operator|new
+name|ArrayList
+argument_list|()
 decl_stmt|;
 specifier|private
 name|List
 name|dependencies
+init|=
+operator|new
+name|ArrayList
+argument_list|()
 decl_stmt|;
-comment|// the list of all dependencies resolved, ordered from the more
-comment|// dependent to the less dependent
+comment|// the list of all dependencies resolved, ordered from the more dependent to the less dependent
 specifier|private
 name|List
 name|artifacts
+init|=
+operator|new
+name|ArrayList
+argument_list|()
 decl_stmt|;
 specifier|private
 name|long
@@ -269,6 +280,10 @@ decl_stmt|;
 specifier|private
 name|String
 name|resolveId
+decl_stmt|;
+specifier|private
+name|long
+name|downloadSize
 decl_stmt|;
 specifier|public
 name|ResolveReport
@@ -1275,6 +1290,31 @@ parameter_list|()
 block|{
 return|return
 name|downloadTime
+return|;
+block|}
+specifier|public
+name|void
+name|setDownloadSize
+parameter_list|(
+name|long
+name|size
+parameter_list|)
+block|{
+name|this
+operator|.
+name|downloadSize
+operator|=
+name|size
+expr_stmt|;
+block|}
+comment|/**      * The total size of downloaded artifacts, in bytes.      *<p>      * This only includes artifacts actually downloaded to cache (DownloadStatus.SUCCESSFUL), and      * not artifacts already in cache or used at their original location.      *</p>      *       * @return The total size of downloaded artifacts, in bytes.      */
+specifier|public
+name|long
+name|getDownloadSize
+parameter_list|()
+block|{
+return|return
+name|downloadSize
 return|;
 block|}
 specifier|public
