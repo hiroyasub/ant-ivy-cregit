@@ -5212,7 +5212,7 @@ argument_list|()
 decl_stmt|;
 name|ResolverTestHelper
 operator|.
-name|assertOrganisationEntries
+name|assertOrganisationEntriesContains
 argument_list|(
 name|resolver
 argument_list|,
