@@ -3982,6 +3982,11 @@ name|i
 operator|++
 control|)
 block|{
+comment|//shouldBeFixed=false to because some of those dependencies might
+comment|//be private when they were actually extending public conf.
+comment|//Should we keep two list of confs to fetch (private&public)?
+comment|//I don't think, visibility is already checked, and a change in the
+comment|//configuration between version might anyway have worse problems.
 name|fetchDependencies
 argument_list|(
 name|dep
@@ -3991,7 +3996,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|true
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
