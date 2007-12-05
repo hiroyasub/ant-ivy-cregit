@@ -1683,7 +1683,10 @@ literal|"artifact-lock"
 argument_list|,
 operator|new
 name|ArtifactLockStrategy
+argument_list|(
+name|debugLocking
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|addConflictManager
@@ -6013,6 +6016,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|final
 name|boolean
 name|debugLocking
 parameter_list|()
