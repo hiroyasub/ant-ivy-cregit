@@ -708,7 +708,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"<optional/>"
+literal|"<optional>true</optional>"
 argument_list|)
 expr_stmt|;
 block|}
