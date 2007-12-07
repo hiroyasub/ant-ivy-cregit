@@ -197,39 +197,37 @@ name|transitive
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * @param name      * @param visibility      * @param description      * @param ext      */
+specifier|private
+name|String
+name|deprecated
+decl_stmt|;
+comment|/**      * Creates a new configuration.      *       * @param name the name of the configuration      */
 specifier|public
 name|Configuration
 parameter_list|(
 name|String
 name|name
-parameter_list|,
-name|Visibility
-name|visibility
-parameter_list|,
-name|String
-name|description
-parameter_list|,
-name|String
-index|[]
-name|ext
 parameter_list|)
 block|{
 name|this
 argument_list|(
 name|name
 argument_list|,
-name|visibility
+name|Visibility
+operator|.
+name|PUBLIC
 argument_list|,
-name|description
+literal|null
 argument_list|,
-name|ext
+literal|null
 argument_list|,
 literal|true
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @param name      * @param visibility      * @param description      * @param ext      * @param transitive      */
+comment|/**      * Creates a new configuration.      *       * @param name the name of the configuration      * @param visibility the visibility of the configuration      * @param description a description      * @param ext the configurations to extend from      * @param transitive indicates if the configuration is transitive      * @param deprecated the deprecation message      */
 specifier|public
 name|Configuration
 parameter_list|(
@@ -248,6 +246,9 @@ name|ext
 parameter_list|,
 name|boolean
 name|transitive
+parameter_list|,
+name|String
+name|deprecated
 parameter_list|)
 block|{
 if|if
@@ -364,28 +365,22 @@ name|transitive
 operator|=
 name|transitive
 expr_stmt|;
-block|}
-comment|/**      * @param name      */
-specifier|public
-name|Configuration
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
 name|this
-argument_list|(
-name|name
-argument_list|,
-name|Visibility
 operator|.
-name|PUBLIC
-argument_list|,
-literal|null
-argument_list|,
-literal|null
-argument_list|)
+name|deprecated
+operator|=
+name|deprecated
 expr_stmt|;
+block|}
+comment|/**      * Returns the deprecation message, or<tt>null</tt> if not specified.      * @return Returns the deprecation message.      */
+specifier|public
+name|String
+name|getDeprecated
+parameter_list|()
+block|{
+return|return
+name|deprecated
+return|;
 block|}
 comment|/**      * @return Returns the description. It may be null.      */
 specifier|public

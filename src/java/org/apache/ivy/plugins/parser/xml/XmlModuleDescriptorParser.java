@@ -2642,6 +2642,16 @@ operator|.
 name|booleanValue
 argument_list|()
 decl_stmt|;
+name|String
+name|deprecated
+init|=
+name|attributes
+operator|.
+name|getValue
+argument_list|(
+literal|"deprecated"
+argument_list|)
+decl_stmt|;
 name|Configuration
 name|configuration
 init|=
@@ -2691,6 +2701,8 @@ literal|","
 argument_list|)
 argument_list|,
 name|transitive
+argument_list|,
+name|deprecated
 argument_list|)
 decl_stmt|;
 name|ExtendableItemHelper
@@ -2714,6 +2726,8 @@ block|,
 literal|"transitive"
 block|,
 literal|"description"
+block|,
+literal|"deprecated"
 block|}
 argument_list|)
 expr_stmt|;
