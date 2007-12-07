@@ -2158,7 +2158,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Writes the specified<tt>Map</tt> containing the extra attributes to the      * given<tt>PrintWriter</tt>.      *       * @param extra the extra attributes, can be<tt>null</tt>      * @param out the writer to use      * @param indent the string to write before writing the attributes (if any)      */
+comment|/**      * Writes the specified<tt>Map</tt> containing the extra attributes to the      * given<tt>PrintWriter</tt>.      *       * @param extra the extra attributes, can be<tt>null</tt>      * @param out the writer to use      * @param prefix the string to write before writing the attributes (if any)      */
 specifier|private
 specifier|static
 name|void
