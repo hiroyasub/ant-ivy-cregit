@@ -2952,13 +2952,6 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|out
-operator|.
-name|print
-argument_list|(
-literal|"\t\t"
-argument_list|)
-expr_stmt|;
 name|printExtraAttributes
 argument_list|(
 name|md
@@ -2968,7 +2961,7 @@ argument_list|()
 argument_list|,
 name|out
 argument_list|,
-literal|""
+literal|"\t\t"
 argument_list|)
 expr_stmt|;
 name|out
