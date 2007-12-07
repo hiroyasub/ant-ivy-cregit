@@ -1184,6 +1184,10 @@ operator|.
 name|commitPublishTransaction
 argument_list|()
 expr_stmt|;
+name|published
+operator|=
+literal|true
+expr_stmt|;
 block|}
 finally|finally
 block|{
