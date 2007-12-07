@@ -548,6 +548,51 @@ name|fixture
 operator|.
 name|addMD
 argument_list|(
+literal|"#A;1-> { #C;[2.0,2.5] #B;1.4 }"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;1.4->#D;1.5"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;2.5->#D;[1.0,1.6]"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#D;1.5"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#D;1.6"
+argument_list|)
+operator|.
+name|init
+argument_list|()
+expr_stmt|;
+name|resolveAndAssert
+argument_list|(
+literal|"#A;1"
+argument_list|,
+literal|"#B;1.4, #C;2.5, #D;1.5"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testCompatibilityResolveCircularDependency1
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|fixture
+operator|.
+name|addMD
+argument_list|(
 literal|"#A;6->{ #B;[3.0,3.5] #C;4.6 }"
 argument_list|)
 operator|.
@@ -601,7 +646,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testCompatibilityResolve7
+name|testCompatibilityResolveCircularDependency2
 parameter_list|()
 throws|throws
 name|Exception
@@ -610,28 +655,41 @@ name|fixture
 operator|.
 name|addMD
 argument_list|(
-literal|"#A;1-> { #C;[2.0,2.5] #B;1.4 }"
+literal|"#A;1->#C;2"
 argument_list|)
 operator|.
 name|addMD
 argument_list|(
-literal|"#B;1.4->#D;1.5"
+literal|"#C;1->#B;1"
 argument_list|)
 operator|.
 name|addMD
 argument_list|(
-literal|"#C;2.5->#D;[1.0,1.6]"
+literal|"#C;2->#B;2"
 argument_list|)
 operator|.
 name|addMD
 argument_list|(
-literal|"#D;1.5"
+literal|"#C;3->#B;3"
 argument_list|)
 operator|.
 name|addMD
 argument_list|(
-literal|"#D;1.6"
+literal|"#B;1->#C;latest.integration"
 argument_list|)
+comment|// circular dependency
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;2->#C;latest.integration"
+argument_list|)
+comment|// circular dependency
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;3->#C;latest.integration"
+argument_list|)
+comment|// circular dependency
 operator|.
 name|init
 argument_list|()
@@ -640,7 +698,66 @@ name|resolveAndAssert
 argument_list|(
 literal|"#A;1"
 argument_list|,
-literal|"#B;1.4, #C;2.5, #D;1.5"
+literal|"#B;2, #C;2"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testCompatibilityResolveCircularDependency3
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// same as 2, but A depends on B
+name|fixture
+operator|.
+name|addMD
+argument_list|(
+literal|"#A;1->#B;2"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;1->#B;1"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;2->#B;2"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;3->#B;3"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;1->#C;latest.integration"
+argument_list|)
+comment|// circular dependency
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;2->#C;latest.integration"
+argument_list|)
+comment|// circular dependency
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;3->#C;latest.integration"
+argument_list|)
+comment|// circular dependency
+operator|.
+name|init
+argument_list|()
+expr_stmt|;
+name|resolveAndAssert
+argument_list|(
+literal|"#A;1"
+argument_list|,
+literal|"#B;2, #C;2"
 argument_list|)
 expr_stmt|;
 block|}

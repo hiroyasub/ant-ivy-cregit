@@ -3464,6 +3464,12 @@ name|node
 operator|.
 name|isEvicted
 argument_list|()
+operator|&&
+operator|!
+name|node
+operator|.
+name|isCircular
+argument_list|()
 condition|)
 block|{
 name|String
@@ -3524,6 +3530,12 @@ operator|!
 name|node
 operator|.
 name|isEvicted
+argument_list|()
+operator|&&
+operator|!
+name|node
+operator|.
+name|isCircular
 argument_list|()
 condition|)
 block|{
@@ -3954,16 +3966,6 @@ argument_list|()
 expr_stmt|;
 comment|// the node may have been resolved to another real one while
 comment|// resolving other deps
-if|if
-condition|(
-name|dep
-operator|.
-name|isCircular
-argument_list|()
-condition|)
-block|{
-continue|continue;
-block|}
 name|String
 index|[]
 name|confs
