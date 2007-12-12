@@ -541,7 +541,7 @@ argument_list|(
 literal|"test.xml"
 argument_list|)
 argument_list|,
-literal|true
+literal|false
 argument_list|)
 decl_stmt|;
 name|XmlModuleDescriptorWriter
