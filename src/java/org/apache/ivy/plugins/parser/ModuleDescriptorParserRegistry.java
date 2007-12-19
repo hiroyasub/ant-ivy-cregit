@@ -183,6 +183,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ModuleDescriptorParserRegistry
 extends|extends
@@ -190,6 +191,7 @@ name|AbstractModuleDescriptorParser
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|ModuleDescriptorParserRegistry
 name|INSTANCE
 init|=
@@ -209,7 +211,7 @@ return|;
 block|}
 specifier|private
 name|List
-name|_parsers
+name|parsers
 init|=
 operator|new
 name|LinkedList
@@ -219,7 +221,7 @@ specifier|private
 name|ModuleDescriptorParserRegistry
 parameter_list|()
 block|{
-name|_parsers
+name|parsers
 operator|.
 name|add
 argument_list|(
@@ -229,7 +231,7 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_parsers
+name|parsers
 operator|.
 name|add
 argument_list|(
@@ -250,7 +252,7 @@ name|parser
 parameter_list|)
 block|{
 comment|/*          * The parser is added in the front of the list of parsers. This is necessary because the          * XmlModuleDescriptorParser accepts all resources!          */
-name|_parsers
+name|parsers
 operator|.
 name|add
 argument_list|(
@@ -271,14 +273,14 @@ operator|(
 name|ModuleDescriptorParser
 index|[]
 operator|)
-name|_parsers
+name|parsers
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|ModuleDescriptorParser
 index|[
-name|_parsers
+name|parsers
 operator|.
 name|size
 argument_list|()
@@ -299,7 +301,7 @@ control|(
 name|Iterator
 name|iter
 init|=
-name|_parsers
+name|parsers
 operator|.
 name|iterator
 argument_list|()
