@@ -30,8 +30,8 @@ implements|implements
 name|Matcher
 block|{
 specifier|public
-specifier|final
 specifier|static
+specifier|final
 name|Matcher
 name|INSTANCE
 init|=

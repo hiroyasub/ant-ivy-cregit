@@ -101,7 +101,7 @@ name|Matcher
 block|{
 specifier|private
 name|Pattern
-name|_pattern
+name|pattern
 decl_stmt|;
 specifier|public
 name|RegexpMatcher
@@ -125,7 +125,7 @@ name|NullPointerException
 argument_list|()
 throw|;
 block|}
-name|_pattern
+name|pattern
 operator|=
 name|Pattern
 operator|.
@@ -157,7 +157,7 @@ argument_list|()
 throw|;
 block|}
 return|return
-name|_pattern
+name|pattern
 operator|.
 name|matcher
 argument_list|(

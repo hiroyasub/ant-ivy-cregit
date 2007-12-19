@@ -77,10 +77,16 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|MatcherHelper
 block|{
 comment|// TODO this class might be better off as MatcherUtils in util package
+specifier|private
+name|MatcherHelper
+parameter_list|()
+block|{
+block|}
 specifier|public
 specifier|static
 name|boolean

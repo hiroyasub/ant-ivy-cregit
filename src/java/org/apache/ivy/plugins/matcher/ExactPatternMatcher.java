@@ -74,9 +74,9 @@ name|ExactMatcher
 implements|implements
 name|Matcher
 block|{
-specifier|protected
+specifier|private
 name|String
-name|_expression
+name|expression
 decl_stmt|;
 specifier|public
 name|ExactMatcher
@@ -85,7 +85,9 @@ name|String
 name|expression
 parameter_list|)
 block|{
-name|_expression
+name|this
+operator|.
+name|expression
 operator|=
 name|expression
 expr_stmt|;
@@ -116,7 +118,7 @@ name|input
 operator|.
 name|equals
 argument_list|(
-name|_expression
+name|expression
 argument_list|)
 return|;
 block|}

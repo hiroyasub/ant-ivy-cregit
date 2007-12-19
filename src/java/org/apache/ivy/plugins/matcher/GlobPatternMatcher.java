@@ -150,7 +150,7 @@ name|Matcher
 block|{
 specifier|private
 name|Pattern
-name|_pattern
+name|pattern
 decl_stmt|;
 specifier|public
 name|GlobMatcher
@@ -163,7 +163,7 @@ name|PatternSyntaxException
 block|{
 try|try
 block|{
-name|_pattern
+name|pattern
 operator|=
 operator|new
 name|GlobCompiler
@@ -227,7 +227,7 @@ name|matches
 argument_list|(
 name|input
 argument_list|,
-name|_pattern
+name|pattern
 argument_list|)
 return|;
 block|}
