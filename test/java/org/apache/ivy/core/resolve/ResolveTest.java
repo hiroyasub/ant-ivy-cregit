@@ -21820,7 +21820,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"*"
+literal|"test"
 block|}
 argument_list|)
 argument_list|)
