@@ -211,22 +211,6 @@ name|Project
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|util
-operator|.
-name|FileUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  * Convert an ivy file to a pom  */
 end_comment
