@@ -27,9 +27,11 @@ name|ivy
 operator|.
 name|core
 operator|.
-name|cache
+name|module
 operator|.
-name|CacheSettings
+name|id
+operator|.
+name|ModuleId
 import|;
 end_import
 
@@ -41,13 +43,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
+name|plugins
 operator|.
-name|module
+name|parser
 operator|.
-name|id
-operator|.
-name|ModuleId
+name|ParserSettings
 import|;
 end_import
 
@@ -72,7 +72,7 @@ specifier|public
 interface|interface
 name|CheckEngineSettings
 extends|extends
-name|CacheSettings
+name|ParserSettings
 block|{
 name|boolean
 name|doValidate

@@ -49,7 +49,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|CacheManager
+name|DefaultResolutionCacheManager
 import|;
 end_import
 

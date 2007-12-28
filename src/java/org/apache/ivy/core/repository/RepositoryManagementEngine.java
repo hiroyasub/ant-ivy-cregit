@@ -107,22 +107,6 @@ name|ivy
 operator|.
 name|core
 operator|.
-name|cache
-operator|.
-name|CacheManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
 name|module
 operator|.
 name|descriptor
@@ -339,7 +323,7 @@ name|ivy
 operator|.
 name|util
 operator|.
-name|Message
+name|MemoryUtil
 import|;
 end_import
 
@@ -353,7 +337,7 @@ name|ivy
 operator|.
 name|util
 operator|.
-name|MemoryUtil
+name|Message
 import|;
 end_import
 
@@ -460,10 +444,6 @@ name|ResolveEngine
 name|resolveEngine
 decl_stmt|;
 specifier|private
-name|CacheManager
-name|cacheManager
-decl_stmt|;
-specifier|private
 name|RepositoryManagementEngineSettings
 name|settings
 decl_stmt|;
@@ -497,19 +477,6 @@ operator|.
 name|resolveEngine
 operator|=
 name|resolveEngine
-expr_stmt|;
-comment|// TODO: use a cache configured to avoid actual caching,
-comment|// when IVY-399 will be better implemented
-name|this
-operator|.
-name|cacheManager
-operator|=
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|settings
-argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Loads data from the repository.      *<p>      * This method usually takes a long time to proceed. It should never be called from event      * dispatch thread in a GUI.      *</p>      */

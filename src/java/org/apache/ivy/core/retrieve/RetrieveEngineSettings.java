@@ -35,11 +35,11 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
+name|plugins
 operator|.
-name|cache
+name|parser
 operator|.
-name|CacheSettings
+name|ParserSettings
 import|;
 end_import
 
@@ -48,7 +48,7 @@ specifier|public
 interface|interface
 name|RetrieveEngineSettings
 extends|extends
-name|CacheSettings
+name|ParserSettings
 block|{
 name|boolean
 name|isCheckUpToDate

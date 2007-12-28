@@ -178,18 +178,18 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @see CacheManager  */
+comment|/**  * @see DefaultResolutionCacheManager  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CacheManagerTest
+name|DefaultRepositoryCacheManagerTest
 extends|extends
 name|TestCase
 block|{
 specifier|private
-name|CacheManager
+name|DefaultRepositoryCacheManager
 name|cacheManager
 decl_stmt|;
 specifier|private
@@ -248,10 +248,20 @@ comment|// we want to use the file as a directory, so we delete the file itself
 name|cacheManager
 operator|=
 operator|new
-name|CacheManager
+name|DefaultRepositoryCacheManager
+argument_list|()
+expr_stmt|;
+name|cacheManager
+operator|.
+name|setSettings
 argument_list|(
 name|settings
-argument_list|,
+argument_list|)
+expr_stmt|;
+name|cacheManager
+operator|.
+name|setBasedir
+argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
@@ -322,16 +332,6 @@ argument_list|(
 name|cacheManager
 operator|.
 name|getRepositoryCacheRoot
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|del
-operator|.
-name|setDir
-argument_list|(
-name|cacheManager
-operator|.
-name|getResolutionCacheRoot
 argument_list|()
 argument_list|)
 expr_stmt|;
