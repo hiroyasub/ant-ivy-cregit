@@ -2201,7 +2201,7 @@ argument_list|)
 expr_stmt|;
 name|adr
 operator|.
-name|setDownloadedFile
+name|setLocalFile
 argument_list|(
 name|archiveFile
 argument_list|)
@@ -2315,7 +2315,7 @@ argument_list|)
 expr_stmt|;
 name|adr
 operator|.
-name|setDownloadedFile
+name|setLocalFile
 argument_list|(
 name|archiveFile
 argument_list|)
@@ -2444,7 +2444,7 @@ argument_list|)
 expr_stmt|;
 name|adr
 operator|.
-name|setDownloadedFile
+name|setLocalFile
 argument_list|(
 name|archiveFile
 argument_list|)
@@ -3138,7 +3138,7 @@ name|cachedMDURL
 operator|=
 name|report
 operator|.
-name|getDownloadedFile
+name|getLocalFile
 argument_list|()
 operator|.
 name|toURL
@@ -3159,7 +3159,7 @@ literal|"malformed url exception for original in cache file: "
 operator|+
 name|report
 operator|.
-name|getDownloadedFile
+name|getLocalFile
 argument_list|()
 operator|+
 literal|": "

@@ -491,16 +491,6 @@ argument_list|,
 operator|new
 name|ResolveOptions
 argument_list|()
-operator|.
-name|setCache
-argument_list|(
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|settings
-argument_list|)
-argument_list|)
 argument_list|)
 decl_stmt|;
 for|for

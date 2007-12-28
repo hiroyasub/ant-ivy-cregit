@@ -1281,9 +1281,12 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|data
+name|module
 operator|.
-name|getCacheManager
+name|getResolver
+argument_list|()
+operator|.
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|saveResolvers

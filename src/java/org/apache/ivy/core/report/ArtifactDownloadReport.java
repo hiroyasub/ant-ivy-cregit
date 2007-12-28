@@ -89,7 +89,7 @@ name|origin
 decl_stmt|;
 specifier|private
 name|File
-name|downloadedFile
+name|localFile
 decl_stmt|;
 specifier|private
 name|DownloadStatus
@@ -382,29 +382,29 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Returns the file where the artifact has been downloaded, or<code>null</code> if and only      * if the download failed.      *       * @return the file where the artifact has been downloaded      */
+comment|/**      * Returns the File where the artifact is available on the local filesystem,       * or<code>null</code> if and only if the artifact caching failed.      *       * @return the file where the artifact is now available on the local filesystem.      */
 specifier|public
 name|File
-name|getDownloadedFile
+name|getLocalFile
 parameter_list|()
 block|{
 return|return
-name|downloadedFile
+name|localFile
 return|;
 block|}
 specifier|public
 name|void
-name|setDownloadedFile
+name|setLocalFile
 parameter_list|(
 name|File
-name|downloadedFile
+name|localFile
 parameter_list|)
 block|{
 name|this
 operator|.
-name|downloadedFile
+name|localFile
 operator|=
-name|downloadedFile
+name|localFile
 expr_stmt|;
 block|}
 block|}

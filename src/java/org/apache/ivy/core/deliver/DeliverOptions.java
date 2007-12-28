@@ -37,22 +37,6 @@ name|ivy
 operator|.
 name|core
 operator|.
-name|cache
-operator|.
-name|CacheManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
 name|settings
 operator|.
 name|IvySettings
@@ -75,10 +59,6 @@ decl_stmt|;
 specifier|private
 name|Date
 name|pubdate
-decl_stmt|;
-specifier|private
-name|CacheManager
-name|cache
 decl_stmt|;
 specifier|private
 name|PublishingDependencyRevisionResolver
@@ -129,13 +109,6 @@ operator|new
 name|Date
 argument_list|()
 argument_list|,
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|settings
-argument_list|)
-argument_list|,
 operator|new
 name|DefaultPublishingDRResolver
 argument_list|()
@@ -167,9 +140,6 @@ parameter_list|,
 name|Date
 name|pubDate
 parameter_list|,
-name|CacheManager
-name|cache
-parameter_list|,
 name|PublishingDependencyRevisionResolver
 name|pdrResolver
 parameter_list|,
@@ -198,12 +168,6 @@ name|pubDate
 expr_stmt|;
 name|this
 operator|.
-name|cache
-operator|=
-name|cache
-expr_stmt|;
-name|this
-operator|.
 name|pdrResolver
 operator|=
 name|pdrResolver
@@ -226,33 +190,6 @@ name|confs
 operator|=
 name|confs
 expr_stmt|;
-block|}
-specifier|public
-name|CacheManager
-name|getCache
-parameter_list|()
-block|{
-return|return
-name|cache
-return|;
-block|}
-specifier|public
-name|DeliverOptions
-name|setCache
-parameter_list|(
-name|CacheManager
-name|cache
-parameter_list|)
-block|{
-name|this
-operator|.
-name|cache
-operator|=
-name|cache
-expr_stmt|;
-return|return
-name|this
-return|;
 block|}
 comment|/**      * Return the pdrResolver that will be used during deliver for each dependency to get its      * published information. This can particularly useful when the deliver is made for a release,      * and when we wish to deliver each dependency which is still in integration. The      * PublishingDependencyRevisionResolver can then do the delivering work for the dependency and      * return the new (delivered) dependency info (with the delivered revision). Note that      * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *       * @return the pdrResolver that will be used during deliver      */
 specifier|public
@@ -474,10 +411,6 @@ operator|+
 literal|" resolveDynamicRevisions="
 operator|+
 name|resolveDynamicRevisions
-operator|+
-literal|" cache="
-operator|+
-name|cache
 operator|+
 literal|" resolveId="
 operator|+

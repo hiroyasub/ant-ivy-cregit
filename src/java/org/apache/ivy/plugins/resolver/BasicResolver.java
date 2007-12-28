@@ -2300,9 +2300,7 @@ block|}
 name|RepositoryCacheManager
 name|cacheManager
 init|=
-name|data
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 decl_stmt|;
 comment|// the metadata artifact which was used to cache the original metadata file
@@ -2864,9 +2862,7 @@ name|isChanging
 argument_list|()
 decl_stmt|;
 return|return
-name|data
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|cacheModuleDescriptor
@@ -3905,9 +3901,7 @@ block|{
 name|RepositoryCacheManager
 name|cacheManager
 init|=
-name|options
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 decl_stmt|;
 name|clearArtifactAttempts

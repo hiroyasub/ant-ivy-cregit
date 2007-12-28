@@ -1405,11 +1405,6 @@ operator|new
 name|ResolveOptions
 argument_list|()
 operator|.
-name|setCache
-argument_list|(
-name|cacheManager
-argument_list|)
-operator|.
 name|setUseOrigin
 argument_list|(
 literal|true

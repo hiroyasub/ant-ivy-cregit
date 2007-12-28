@@ -197,12 +197,6 @@ block|{
 specifier|public
 specifier|abstract
 name|File
-name|getRepositoryCacheRoot
-parameter_list|()
-function_decl|;
-specifier|public
-specifier|abstract
-name|File
 name|getIvyFileInCache
 parameter_list|(
 name|ModuleRevisionId

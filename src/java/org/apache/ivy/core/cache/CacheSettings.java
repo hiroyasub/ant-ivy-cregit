@@ -116,6 +116,14 @@ name|CacheSettings
 extends|extends
 name|ParserSettings
 block|{
+name|RepositoryCacheManager
+name|getDefaultRepositoryCacheManager
+parameter_list|()
+function_decl|;
+name|ResolutionCacheManager
+name|getResolutionCacheManager
+parameter_list|()
+function_decl|;
 name|File
 name|getDefaultCache
 parameter_list|()

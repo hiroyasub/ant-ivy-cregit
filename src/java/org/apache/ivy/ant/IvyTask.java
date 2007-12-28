@@ -1539,6 +1539,20 @@ name|getTaskName
 argument_list|()
 return|;
 block|}
+comment|/**      * Informs the user that the cache attribute is not supported any more.      */
+specifier|protected
+name|void
+name|cacheAttributeNotSupported
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"cache attribute is not supported any more. See IVY-685 for details."
+argument_list|)
+throw|;
+block|}
 block|}
 end_class
 

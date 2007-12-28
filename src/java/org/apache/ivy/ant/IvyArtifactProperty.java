@@ -229,11 +229,8 @@ init|=
 name|getIvyInstance
 argument_list|()
 operator|.
-name|getCacheManager
-argument_list|(
-name|getCache
+name|getResolutionCacheManager
 argument_list|()
-argument_list|)
 decl_stmt|;
 name|String
 index|[]

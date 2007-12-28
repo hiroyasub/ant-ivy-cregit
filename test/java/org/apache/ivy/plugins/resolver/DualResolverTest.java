@@ -264,7 +264,7 @@ specifier|public
 class|class
 name|DualResolverTest
 extends|extends
-name|TestCase
+name|AbstractDependencyResolverTest
 block|{
 specifier|private
 name|IvySettings
@@ -331,18 +331,6 @@ argument_list|,
 operator|new
 name|ResolveOptions
 argument_list|()
-operator|.
-name|setCache
-argument_list|(
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|_settings
-argument_list|,
-name|_cache
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|_cache

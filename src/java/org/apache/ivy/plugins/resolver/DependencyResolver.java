@@ -67,6 +67,22 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|cache
+operator|.
+name|RepositoryCacheManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|module
 operator|.
 name|descriptor
@@ -403,6 +419,11 @@ parameter_list|(
 name|ResolverSettings
 name|settings
 parameter_list|)
+function_decl|;
+comment|/**      * Returns the {@link RepositoryCacheManager} used to manage the repository cache associated      * with this dependency resolver.      *       * @return the {@link RepositoryCacheManager} used to manage the repository cache associated      *         with this dependency resolver.      */
+name|RepositoryCacheManager
+name|getRepositoryCacheManager
+parameter_list|()
 function_decl|;
 block|}
 end_interface

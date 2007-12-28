@@ -193,6 +193,22 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|plugins
+operator|.
+name|resolver
+operator|.
+name|DependencyResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|util
 operator|.
 name|Message
@@ -2542,6 +2558,8 @@ argument_list|,
 name|artifactExt
 argument_list|)
 decl_stmt|;
+comment|// TODO cache: see how we could know which actual cache manager to use, since this
+comment|// will fail when using a resolver in a chain with a specific cache manager
 name|RepositoryCacheManager
 name|cacheManager
 init|=
@@ -2550,7 +2568,18 @@ operator|.
 name|getContext
 argument_list|()
 operator|.
-name|getCacheManager
+name|getSettings
+argument_list|()
+operator|.
+name|getResolver
+argument_list|(
+name|revId
+operator|.
+name|getModuleId
+argument_list|()
+argument_list|)
+operator|.
+name|getRepositoryCacheManager
 argument_list|()
 decl_stmt|;
 name|origin

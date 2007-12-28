@@ -182,8 +182,6 @@ literal|true
 argument_list|,
 literal|null
 argument_list|,
-name|_cache
-argument_list|,
 name|PatternMatcher
 operator|.
 name|EXACT
@@ -266,8 +264,6 @@ argument_list|,
 literal|true
 argument_list|,
 literal|null
-argument_list|,
-name|_cache
 argument_list|,
 name|PatternMatcher
 operator|.
@@ -360,8 +356,6 @@ argument_list|,
 literal|true
 argument_list|,
 literal|null
-argument_list|,
-name|_cache
 argument_list|,
 name|PatternMatcher
 operator|.
@@ -479,8 +473,6 @@ literal|true
 argument_list|,
 literal|null
 argument_list|,
-name|_cache
-argument_list|,
 name|PatternMatcher
 operator|.
 name|EXACT
@@ -587,8 +579,6 @@ argument_list|,
 literal|true
 argument_list|,
 literal|null
-argument_list|,
-name|_cache
 argument_list|,
 name|PatternMatcher
 operator|.

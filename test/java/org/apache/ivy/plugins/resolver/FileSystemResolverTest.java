@@ -69,16 +69,6 @@ end_import
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -476,7 +466,7 @@ specifier|public
 class|class
 name|FileSystemResolverTest
 extends|extends
-name|TestCase
+name|AbstractDependencyResolverTest
 block|{
 comment|//CheckStyle:MagicNumberCheck OFF
 specifier|private
@@ -601,18 +591,6 @@ argument_list|,
 operator|new
 name|ResolveOptions
 argument_list|()
-operator|.
-name|setCache
-argument_list|(
-name|CacheManager
-operator|.
-name|getInstance
-argument_list|(
-name|settings
-argument_list|,
-name|cache
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|cache
@@ -1145,8 +1123,6 @@ return|return
 operator|new
 name|DownloadOptions
 argument_list|(
-name|cacheManager
-argument_list|,
 name|useOrigin
 argument_list|)
 return|;

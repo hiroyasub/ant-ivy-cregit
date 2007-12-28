@@ -77,6 +77,22 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|cache
+operator|.
+name|CacheSettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|module
 operator|.
 name|descriptor
@@ -406,9 +422,7 @@ block|{
 name|ResolvedModuleRevision
 name|rmr
 init|=
-name|data
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|findModuleInCache
@@ -452,9 +466,7 @@ else|else
 block|{
 name|logIvyAttempt
 argument_list|(
-name|data
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|getArchiveFileInCache
@@ -497,20 +509,7 @@ block|}
 else|else
 block|{
 name|ensureConfigured
-argument_list|(
-name|data
-operator|.
-name|getSettings
 argument_list|()
-argument_list|,
-name|data
-operator|.
-name|getCacheManager
-argument_list|()
-operator|.
-name|getRepositoryCacheRoot
-argument_list|()
-argument_list|)
 expr_stmt|;
 name|ResolvedResource
 name|ivyRef
@@ -616,9 +615,7 @@ block|}
 name|ResolvedModuleRevision
 name|rmr
 init|=
-name|data
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|findModuleInCache
@@ -761,9 +758,7 @@ expr_stmt|;
 name|File
 name|archiveFile
 init|=
-name|options
-operator|.
-name|getCacheManager
+name|getRepositoryCacheManager
 argument_list|()
 operator|.
 name|getArchiveFileInCache
@@ -815,7 +810,7 @@ argument_list|)
 expr_stmt|;
 name|adr
 operator|.
-name|setDownloadedFile
+name|setLocalFile
 argument_list|(
 name|archiveFile
 argument_list|)
@@ -991,6 +986,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// TODO: we need to address new cache management
+comment|// (where repository cache is not always in default cache directory)
 name|ensureConfigured
 argument_list|(
 name|getSettings
@@ -1009,7 +1006,7 @@ specifier|private
 name|void
 name|ensureConfigured
 parameter_list|(
-name|ResolverSettings
+name|CacheSettings
 name|settings
 parameter_list|,
 name|File
