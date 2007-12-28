@@ -26,6 +26,21 @@ specifier|public
 class|class
 name|ArtifactOrigin
 block|{
+comment|/**      * ArtifactOrigin instance used when the origin is unknown.      */
+specifier|public
+specifier|static
+specifier|final
+name|ArtifactOrigin
+name|UNKNOWN
+init|=
+operator|new
+name|ArtifactOrigin
+argument_list|(
+literal|false
+argument_list|,
+literal|"UNKNOWN"
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final

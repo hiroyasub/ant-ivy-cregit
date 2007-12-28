@@ -249,6 +249,12 @@ condition|(
 name|origin
 operator|!=
 literal|null
+operator|&&
+name|origin
+operator|!=
+name|ArtifactOrigin
+operator|.
+name|UNKNOWN
 condition|)
 block|{
 name|addAttribute

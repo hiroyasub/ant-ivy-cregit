@@ -2595,7 +2595,9 @@ if|if
 condition|(
 name|origin
 operator|==
-literal|null
+name|ArtifactOrigin
+operator|.
+name|UNKNOWN
 condition|)
 block|{
 name|Message
@@ -2615,6 +2617,19 @@ return|return
 literal|null
 return|;
 block|}
+block|}
+if|if
+condition|(
+name|origin
+operator|==
+name|ArtifactOrigin
+operator|.
+name|UNKNOWN
+condition|)
+block|{
+return|return
+literal|null
+return|;
 block|}
 comment|// we assume that the original filename is the last part of the original file location
 name|String

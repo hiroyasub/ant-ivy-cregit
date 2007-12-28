@@ -279,6 +279,7 @@ name|String
 name|artifactResolverName
 parameter_list|)
 function_decl|;
+comment|/**      * Returns the artifact origin of the given artifact as saved in this cache, or      * {@link ArtifactOrigin#UNKNOWN} if the origin is unknown.      *       * @param artifact      *            the artifact for which the saved artifact origin should be returned.      * @return the artifact origin of the given artifact as saved in this cache      */
 specifier|public
 specifier|abstract
 name|ArtifactOrigin
@@ -358,8 +359,8 @@ parameter_list|,
 name|Artifact
 name|requestedMetadataArtifact
 parameter_list|,
-name|ModuleDescriptor
-name|md
+name|ResolvedModuleRevision
+name|rmr
 parameter_list|,
 name|ModuleDescriptorWriter
 name|writer

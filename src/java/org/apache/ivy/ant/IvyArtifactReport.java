@@ -1456,7 +1456,9 @@ if|if
 condition|(
 name|origin
 operator|!=
-literal|null
+name|ArtifactOrigin
+operator|.
+name|UNKNOWN
 condition|)
 block|{
 name|String

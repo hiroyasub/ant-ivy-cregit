@@ -407,6 +407,19 @@ operator|=
 name|localFile
 expr_stmt|;
 block|}
+specifier|public
+name|boolean
+name|isDownloaded
+parameter_list|()
+block|{
+return|return
+name|DownloadStatus
+operator|.
+name|SUCCESSFUL
+operator|==
+name|downloadStatus
+return|;
+block|}
 block|}
 end_class
 
