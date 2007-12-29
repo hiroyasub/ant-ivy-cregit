@@ -1863,6 +1863,9 @@ operator|.
 name|accept
 argument_list|(
 name|artifact
+operator|.
+name|getArtifact
+argument_list|()
 argument_list|)
 condition|)
 block|{
