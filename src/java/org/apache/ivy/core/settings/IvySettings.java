@@ -491,20 +491,6 @@ name|ivy
 operator|.
 name|plugins
 operator|.
-name|IvyAware
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
 name|IvySettingsAware
 import|;
 end_import
@@ -6394,16 +6380,6 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|obj
-operator|instanceof
-name|IvyAware
-condition|)
-block|{
-comment|// TODO
-comment|// ((IvyAware)obj).setIvy(this);
 block|}
 block|}
 specifier|private
