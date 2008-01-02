@@ -129,7 +129,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|RepositoryCacheManager
+name|DefaultRepositoryCacheManager
 import|;
 end_import
 
@@ -521,7 +521,7 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|RepositoryCacheManager
+name|DefaultRepositoryCacheManager
 name|getRepositoryCacheManager
 parameter_list|(
 name|Ivy
@@ -534,6 +534,9 @@ block|{
 comment|// WARN: this doesn't work if the resolver registered is a compound resolver (chain or dual)
 comment|// and a sub resolver doesn't use the same cache manager as the parent
 return|return
+operator|(
+name|DefaultRepositoryCacheManager
+operator|)
 name|ivy
 operator|.
 name|getSettings

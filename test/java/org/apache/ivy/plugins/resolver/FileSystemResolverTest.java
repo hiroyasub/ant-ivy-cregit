@@ -79,23 +79,7 @@ name|core
 operator|.
 name|cache
 operator|.
-name|DefaultResolutionCacheManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|cache
-operator|.
-name|RepositoryCacheManager
+name|DefaultRepositoryCacheManager
 import|;
 end_import
 
@@ -547,7 +531,7 @@ name|File
 name|cache
 decl_stmt|;
 specifier|private
-name|RepositoryCacheManager
+name|DefaultRepositoryCacheManager
 name|cacheManager
 decl_stmt|;
 specifier|public
@@ -623,6 +607,9 @@ argument_list|)
 expr_stmt|;
 name|cacheManager
 operator|=
+operator|(
+name|DefaultRepositoryCacheManager
+operator|)
 name|settings
 operator|.
 name|getDefaultRepositoryCacheManager
