@@ -624,8 +624,8 @@ argument_list|)
 decl_stmt|;
 specifier|final
 name|IOException
-name|ex
 index|[]
+name|ex
 init|=
 operator|new
 name|IOException

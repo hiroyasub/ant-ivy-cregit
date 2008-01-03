@@ -51,8 +51,8 @@ name|args
 parameter_list|)
 block|{
 name|String
-name|toFilter
 index|[]
+name|toFilter
 init|=
 operator|new
 name|String
@@ -90,8 +90,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
-name|filtered
 index|[]
+name|filtered
 init|=
 name|filter
 operator|.
