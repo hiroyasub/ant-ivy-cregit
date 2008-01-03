@@ -97,6 +97,12 @@ name|String
 name|resolveId
 parameter_list|)
 function_decl|;
+comment|/**      * Cleans the whole cache.      */
+specifier|public
+name|void
+name|clean
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
