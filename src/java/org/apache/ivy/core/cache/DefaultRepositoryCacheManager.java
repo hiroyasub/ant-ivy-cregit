@@ -1851,9 +1851,9 @@ expr_stmt|;
 if|if
 condition|(
 name|expectedResolver
-operator|!=
+operator|==
 literal|null
-operator|&&
+operator|||
 name|expectedResolver
 operator|.
 name|equals
@@ -2768,6 +2768,15 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|md
+operator|.
+name|isDefault
+argument_list|()
+condition|)
+block|{
 name|rmr
 operator|.
 name|getReport
@@ -2778,6 +2787,7 @@ argument_list|(
 name|originalFileInCache
 argument_list|)
 expr_stmt|;
+block|}
 name|rmr
 operator|.
 name|getReport
@@ -2962,10 +2972,7 @@ operator|.
 name|isValidate
 argument_list|()
 argument_list|,
-name|resolver
-operator|.
-name|getName
-argument_list|()
+literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -2990,7 +2997,7 @@ operator|.
 name|getResolver
 argument_list|()
 operator|!=
-name|this
+name|resolver
 condition|)
 block|{
 name|Message
