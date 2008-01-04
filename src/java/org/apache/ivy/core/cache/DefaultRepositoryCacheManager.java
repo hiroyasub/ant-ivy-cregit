@@ -1754,9 +1754,6 @@ name|depMD
 operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
-operator|.
-name|getModuleId
-argument_list|()
 argument_list|)
 expr_stmt|;
 if|if

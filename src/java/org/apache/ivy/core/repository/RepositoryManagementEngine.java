@@ -1151,9 +1151,6 @@ operator|.
 name|getResolver
 argument_list|(
 name|mrid
-operator|.
-name|getModuleId
-argument_list|()
 argument_list|)
 operator|.
 name|getDependency

@@ -3282,9 +3282,6 @@ operator|.
 name|getResolver
 argument_list|(
 name|other
-operator|.
-name|getModuleId
-argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

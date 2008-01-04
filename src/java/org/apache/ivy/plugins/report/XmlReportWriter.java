@@ -742,26 +742,6 @@ argument_list|)
 operator|+
 literal|"\""
 operator|+
-literal|" resolver=\""
-operator|+
-name|XMLHelper
-operator|.
-name|escape
-argument_list|(
-name|report
-operator|.
-name|getResolveEngine
-argument_list|()
-operator|.
-name|getSettings
-argument_list|()
-operator|.
-name|getResolverName
-argument_list|(
-name|mid
-argument_list|)
-argument_list|)
-operator|+
 literal|"\">"
 argument_list|)
 expr_stmt|;

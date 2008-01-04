@@ -545,9 +545,6 @@ operator|.
 name|getResolver
 argument_list|(
 name|id
-operator|.
-name|getModuleId
-argument_list|()
 argument_list|)
 operator|.
 name|getRepositoryCacheManager

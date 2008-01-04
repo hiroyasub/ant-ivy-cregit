@@ -598,7 +598,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getDependencyId
+name|getDependencyRevisionId
 argument_list|()
 argument_list|)
 decl_stmt|;

@@ -61,7 +61,7 @@ name|module
 operator|.
 name|id
 operator|.
-name|ModuleId
+name|ModuleRevisionId
 import|;
 end_import
 
@@ -195,7 +195,7 @@ function_decl|;
 name|DependencyResolver
 name|getResolver
 parameter_list|(
-name|ModuleId
+name|ModuleRevisionId
 name|mRevId
 parameter_list|)
 function_decl|;
