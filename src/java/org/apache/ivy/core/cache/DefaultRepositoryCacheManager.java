@@ -2115,7 +2115,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|setLock
+name|setLockStrategy
 parameter_list|(
 name|String
 name|lockStrategyName
