@@ -157,8 +157,9 @@ name|XMLHelper
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|SAXParserFactory
-name|_validatingFactory
+name|VALIDATING_FACTORY
 init|=
 name|SAXParserFactory
 operator|.
@@ -167,8 +168,9 @@ argument_list|()
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|SAXParserFactory
-name|_factory
+name|FACTORY
 init|=
 name|SAXParserFactory
 operator|.
@@ -199,20 +201,20 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|boolean
-name|_canUseSchemaValidation
+name|canUseSchemaValidation
 init|=
 literal|true
 decl_stmt|;
 static|static
 block|{
-name|_validatingFactory
+name|VALIDATING_FACTORY
 operator|.
 name|setNamespaceAware
 argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|_validatingFactory
+name|VALIDATING_FACTORY
 operator|.
 name|setValidating
 argument_list|(
@@ -239,7 +241,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|_canUseSchemaValidation
+name|canUseSchemaValidation
 operator|||
 name|schema
 operator|==
@@ -247,7 +249,7 @@ literal|null
 condition|)
 block|{
 return|return
-name|_factory
+name|FACTORY
 operator|.
 name|newSAXParser
 argument_list|()
@@ -258,7 +260,7 @@ block|{
 name|SAXParser
 name|parser
 init|=
-name|_validatingFactory
+name|VALIDATING_FACTORY
 operator|.
 name|newSAXParser
 argument_list|()
@@ -297,7 +299,9 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"WARNING: problem while setting JAXP validating property on SAXParser... XML validation will not be done: "
+literal|"WARNING: problem while setting JAXP validating property on SAXParser... "
+operator|+
+literal|"XML validation will not be done: "
 operator|+
 name|ex
 operator|.
@@ -305,12 +309,12 @@ name|getMessage
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|_canUseSchemaValidation
+name|canUseSchemaValidation
 operator|=
 literal|false
 expr_stmt|;
 return|return
-name|_factory
+name|FACTORY
 operator|.
 name|newSAXParser
 argument_list|()
@@ -421,6 +425,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
@@ -562,6 +567,7 @@ name|IOException
 name|ex
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
@@ -573,7 +579,7 @@ name|canUseSchemaValidation
 parameter_list|()
 block|{
 return|return
-name|_canUseSchemaValidation
+name|canUseSchemaValidation
 return|;
 block|}
 comment|/**      * Escapes invalid XML characters in the given character data using XML entities.      * For the moment, only the following characters are being escaped: (<), (&), (')       * and (").      *       * Remark: we don't escape the (>) character to keep the readability of the      * configuration mapping! The XML spec only requires that the (&) and (<)      * characters are being escaped inside character data.      *       * @param text the character data to escape      * @return the escaped character data      */
@@ -706,6 +712,11 @@ operator|.
 name|toString
 argument_list|()
 return|;
+block|}
+specifier|private
+name|XMLHelper
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

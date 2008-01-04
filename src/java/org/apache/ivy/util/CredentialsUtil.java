@@ -179,6 +179,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|CredentialsUtil
 block|{
@@ -190,24 +191,35 @@ name|CredentialPanel
 extends|extends
 name|JPanel
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|FIELD_LENGTH
+init|=
+literal|20
+decl_stmt|;
+specifier|private
 name|JTextField
 name|userNameField
 init|=
 operator|new
 name|JTextField
 argument_list|(
-literal|20
+name|FIELD_LENGTH
 argument_list|)
 decl_stmt|;
+specifier|private
 name|JTextField
 name|passwordField
 init|=
 operator|new
 name|JPasswordField
 argument_list|(
-literal|20
+name|FIELD_LENGTH
 argument_list|)
 decl_stmt|;
+specifier|private
 name|JCheckBox
 name|rememberDataCB
 init|=
@@ -720,6 +732,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
@@ -915,6 +928,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
@@ -922,6 +936,11 @@ block|}
 return|return
 name|c
 return|;
+block|}
+specifier|private
+name|CredentialsUtil
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

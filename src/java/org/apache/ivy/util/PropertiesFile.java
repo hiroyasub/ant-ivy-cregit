@@ -78,11 +78,11 @@ name|Properties
 block|{
 specifier|private
 name|File
-name|_file
+name|file
 decl_stmt|;
 specifier|private
 name|String
-name|_header
+name|header
 decl_stmt|;
 specifier|public
 name|PropertiesFile
@@ -94,17 +94,21 @@ name|String
 name|header
 parameter_list|)
 block|{
-name|_file
+name|this
+operator|.
+name|file
 operator|=
 name|file
 expr_stmt|;
-name|_header
+name|this
+operator|.
+name|header
 operator|=
 name|header
 expr_stmt|;
 if|if
 condition|(
-name|_file
+name|file
 operator|.
 name|exists
 argument_list|()
@@ -122,7 +126,7 @@ operator|=
 operator|new
 name|FileInputStream
 argument_list|(
-name|_file
+name|file
 argument_list|)
 expr_stmt|;
 name|load
@@ -143,7 +147,7 @@ name|warn
 argument_list|(
 literal|"exception occured while reading properties file "
 operator|+
-name|_file
+name|file
 operator|+
 literal|": "
 operator|+
@@ -176,6 +180,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
@@ -193,7 +198,7 @@ try|try
 block|{
 if|if
 condition|(
-name|_file
+name|file
 operator|.
 name|getParentFile
 argument_list|()
@@ -201,7 +206,7 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|_file
+name|file
 operator|.
 name|getParentFile
 argument_list|()
@@ -210,7 +215,7 @@ name|exists
 argument_list|()
 condition|)
 block|{
-name|_file
+name|file
 operator|.
 name|getParentFile
 argument_list|()
@@ -224,14 +229,14 @@ operator|=
 operator|new
 name|FileOutputStream
 argument_list|(
-name|_file
+name|file
 argument_list|)
 expr_stmt|;
 name|store
 argument_list|(
 name|fos
 argument_list|,
-name|_header
+name|header
 argument_list|)
 expr_stmt|;
 block|}
@@ -247,7 +252,7 @@ name|warn
 argument_list|(
 literal|"exception occured while writing properties file "
 operator|+
-name|_file
+name|file
 operator|+
 literal|": "
 operator|+
@@ -280,6 +285,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// ignored
 block|}
 block|}
 block|}
