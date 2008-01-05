@@ -740,8 +740,6 @@ name|getName
 argument_list|()
 argument_list|)
 operator|+
-literal|"\""
-operator|+
 literal|"\">"
 argument_list|)
 expr_stmt|;
