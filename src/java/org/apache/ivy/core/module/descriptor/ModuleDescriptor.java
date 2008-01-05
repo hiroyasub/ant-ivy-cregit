@@ -61,6 +61,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -408,6 +418,12 @@ specifier|public
 name|ExcludeRule
 index|[]
 name|getAllExcludeRules
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the list of xml namespaces used by extra attributes, as Map from prefix to namespace      * URIs.      *<p>      * The returned list is never<code>null</code>, it is empty when no extra attribute is used      * or if extra attributes are used without xml namespaces      *</p>      *       * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs.      */
+name|Map
+comment|/*<String,String>*/
+name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
 block|}

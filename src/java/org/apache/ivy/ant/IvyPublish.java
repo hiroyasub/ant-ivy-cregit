@@ -1771,6 +1771,16 @@ argument_list|()
 return|;
 block|}
 specifier|public
+name|Map
+name|getQualifiedExtraAttributes
+parameter_list|()
+block|{
+return|return
+name|getExtraAttributes
+argument_list|()
+return|;
+block|}
+specifier|public
 name|String
 name|getStandardAttribute
 parameter_list|(
