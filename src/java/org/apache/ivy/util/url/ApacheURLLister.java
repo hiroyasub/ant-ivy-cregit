@@ -452,6 +452,30 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+comment|// relative to current href: convert to simple relative one
+if|if
+condition|(
+name|href
+operator|.
+name|startsWith
+argument_list|(
+literal|"./"
+argument_list|)
+condition|)
+block|{
+name|href
+operator|=
+name|href
+operator|.
+name|substring
+argument_list|(
+literal|"./"
+operator|.
+name|length
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 comment|// exclude those where they do not match
 comment|// href will never be truncated, text may be truncated by apache
 comment|// may have a '.' from either the extension (.jar) or "..&gt;"
