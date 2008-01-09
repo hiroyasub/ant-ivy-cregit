@@ -3463,22 +3463,18 @@ name|substituteVariables
 argument_list|(
 name|str
 argument_list|,
-name|getVariables
-argument_list|()
+name|variableContainer
 argument_list|)
 return|;
 block|}
 comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return      */
 specifier|public
-name|Map
+name|IvyVariableContainer
 name|getVariables
 parameter_list|()
 block|{
 return|return
 name|variableContainer
-operator|.
-name|getVariables
-argument_list|()
 return|;
 block|}
 specifier|public

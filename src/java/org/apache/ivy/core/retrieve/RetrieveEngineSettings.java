@@ -19,11 +19,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Map
+name|ivy
+operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|IvyVariableContainer
 import|;
 end_import
 
@@ -54,7 +60,7 @@ name|boolean
 name|isCheckUpToDate
 parameter_list|()
 function_decl|;
-name|Map
+name|IvyVariableContainer
 name|getVariables
 parameter_list|()
 function_decl|;

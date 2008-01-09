@@ -245,7 +245,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.file"
 argument_list|)
@@ -284,7 +284,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.url"
 argument_list|)
@@ -317,7 +317,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.dir"
 argument_list|)
@@ -336,7 +336,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"myproperty"
 argument_list|)
@@ -494,7 +494,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.file"
 argument_list|)
@@ -519,7 +519,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.url"
 argument_list|)
@@ -541,7 +541,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"ivy.settings.dir"
 argument_list|)
@@ -556,7 +556,7 @@ operator|.
 name|getVariables
 argument_list|()
 operator|.
-name|get
+name|getVariable
 argument_list|(
 literal|"myproperty"
 argument_list|)

@@ -1429,6 +1429,26 @@ literal|"file"
 argument_list|)
 decl_stmt|;
 name|String
+name|environmentPrefix
+init|=
+operator|(
+name|String
+operator|)
+name|attributes
+operator|.
+name|get
+argument_list|(
+literal|"environment"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|propFilePath
+operator|!=
+literal|null
+condition|)
+block|{
+name|String
 name|override
 init|=
 operator|(
@@ -1549,6 +1569,37 @@ name|urlEx
 argument_list|)
 throw|;
 block|}
+block|}
+block|}
+if|else if
+condition|(
+name|environmentPrefix
+operator|!=
+literal|null
+condition|)
+block|{
+name|ivy
+operator|.
+name|getVariableContainer
+argument_list|()
+operator|.
+name|setEnvironmentPrefix
+argument_list|(
+name|environmentPrefix
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Didn't find a 'file' or 'environment' attribute "
+operator|+
+literal|"on the 'properties' element"
+argument_list|)
+throw|;
 block|}
 block|}
 if|else if

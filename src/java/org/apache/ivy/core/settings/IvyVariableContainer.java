@@ -17,16 +17,6 @@ name|settings
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
 begin_comment
 comment|/**  * Store and provide access to the ivy variables.  *   * @author gscokart  */
 end_comment
@@ -39,7 +29,6 @@ extends|extends
 name|Cloneable
 block|{
 specifier|public
-specifier|abstract
 name|void
 name|setVariable
 parameter_list|(
@@ -54,18 +43,20 @@ name|overwrite
 parameter_list|)
 function_decl|;
 specifier|public
-specifier|abstract
-name|Map
-name|getVariables
-parameter_list|()
-function_decl|;
-specifier|public
-specifier|abstract
 name|String
 name|getVariable
 parameter_list|(
 name|String
 name|name
+parameter_list|)
+function_decl|;
+comment|/**      * Specifies the prefix used to indicate a variable is an environment      * variable. If the prefix doesn't end with a '.', it will be added      * automatically.      *       * @param prefix the prefix to use for the environment variables      */
+specifier|public
+name|void
+name|setEnvironmentPrefix
+parameter_list|(
+name|String
+name|prefix
 parameter_list|)
 function_decl|;
 specifier|public
