@@ -59,7 +59,7 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|ModuleDescriptor
+name|DependencyDescriptor
 import|;
 end_import
 
@@ -75,9 +75,9 @@ name|core
 operator|.
 name|module
 operator|.
-name|id
+name|descriptor
 operator|.
-name|ModuleRevisionId
+name|ModuleDescriptor
 import|;
 end_import
 
@@ -191,7 +191,7 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Saves the information of which resolvers were used to resolve a module (both for metadata and      * artifact), so that this info can be loaded later (even after a jvm restart) for the use of      * {@link #findModuleInCache(ModuleRevisionId, boolean, String)}.      *       * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
+comment|/**      * Saves the information of which resolvers were used to resolve a module (both for metadata and      * artifact), so that this info can be loaded later (even after a jvm restart) for the use of      * {@link #findModuleInCache(DependencyDescriptor, CacheMetadataOptions, String)}.      *       * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
 specifier|public
 specifier|abstract
 name|void
@@ -217,17 +217,17 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-comment|/**      * Search a module descriptor in cache for a mrid      *       * @param mrid      *            the id of the module to search      * @param validate      *            true to validate ivy file found in cache before returning      * @param expectedResolver      *            the resolver with which the md in cache must have been resolved to be returned,      *            null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      *         has been found in cache      */
+comment|/**      * Search a module descriptor in cache for a mrid      *       * @param dd      *            the dependency descriptor identifying the module to search      * @param options      *            options on how caching should be handled      * @param expectedResolver      *            the resolver with which the md in cache must have been resolved to be returned,      *            null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      *         has been found in cache      */
 specifier|public
 specifier|abstract
 name|ResolvedModuleRevision
 name|findModuleInCache
 parameter_list|(
-name|ModuleRevisionId
-name|mrid
+name|DependencyDescriptor
+name|dd
 parameter_list|,
-name|boolean
-name|validate
+name|CacheMetadataOptions
+name|options
 parameter_list|,
 name|String
 name|expectedResolver
@@ -252,7 +252,7 @@ name|CacheDownloadOptions
 name|options
 parameter_list|)
 function_decl|;
-comment|/**      * Caches an original module descriptor.      *<p>      * After this call, the original module descriptor file (with no modification nor conversion)      * should be available as a local file.      *</p>      *       * @param resolver      *            the dependency resolver from which the cache request comes from      * @param orginalMetadataRef      *            a resolved resource pointing to the remote original module descriptor      * @param requestedMetadataArtifact      *            the module descriptor artifact as requested originally      * @param downloader      *            a ResourceDownloader able to download the original module descriptor resource if      *            required by this cache implementation      * @param options      *            options to apply to cache this module descriptor      * @return a {@link ResolvedModuleRevision} representing the local cached module descriptor, or      *         null if it failed      * @throws ParseException      *             if an exception occured while parsing the module descriptor      */
+comment|/**      * Caches an original module descriptor.      *<p>      * After this call, the original module descriptor file (with no modification nor conversion)      * should be available as a local file.      *</p>      *       * @param resolver      *            the dependency resolver from which the cache request comes from      * @param orginalMetadataRef      *            a resolved resource pointing to the remote original module descriptor      * @param dd      *            the dependency descriptor for which the module descriptor should be cached      * @param requestedMetadataArtifact      *            the module descriptor artifact as requested originally      * @param downloader      *            a ResourceDownloader able to download the original module descriptor resource if      *            required by this cache implementation      * @param options      *            options to apply to cache this module descriptor      * @return a {@link ResolvedModuleRevision} representing the local cached module descriptor, or      *         null if it failed      * @throws ParseException      *             if an exception occured while parsing the module descriptor      */
 specifier|public
 name|ResolvedModuleRevision
 name|cacheModuleDescriptor
@@ -262,6 +262,9 @@ name|resolver
 parameter_list|,
 name|ResolvedResource
 name|orginalMetadataRef
+parameter_list|,
+name|DependencyDescriptor
+name|dd
 parameter_list|,
 name|Artifact
 name|requestedMetadataArtifact

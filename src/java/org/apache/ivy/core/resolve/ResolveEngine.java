@@ -1330,6 +1330,18 @@ name|isValidate
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\trefresh = "
+operator|+
+name|options
+operator|.
+name|isRefresh
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
