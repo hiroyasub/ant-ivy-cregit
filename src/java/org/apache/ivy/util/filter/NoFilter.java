@@ -52,6 +52,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"NoFilter"
+return|;
+block|}
 block|}
 end_class
 

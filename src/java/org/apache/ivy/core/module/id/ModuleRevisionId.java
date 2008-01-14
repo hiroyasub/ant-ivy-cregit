@@ -176,7 +176,6 @@ name|NULL_ENCODE
 init|=
 literal|"@#:NULL:#@"
 decl_stmt|;
-specifier|private
 specifier|static
 specifier|final
 name|String
@@ -320,6 +319,9 @@ operator|+
 literal|"' expected form="
 operator|+
 name|MRID_PATTERN
+operator|.
+name|pattern
+argument_list|()
 argument_list|)
 throw|;
 block|}
