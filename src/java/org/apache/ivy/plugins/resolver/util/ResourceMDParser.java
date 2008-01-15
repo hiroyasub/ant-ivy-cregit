@@ -40,6 +40,7 @@ specifier|public
 interface|interface
 name|ResourceMDParser
 block|{
+comment|/**      * Parses the module descriptor designed by the given resource.      *       * @param resource      *            the resource at which the module descriptor is located      * @param rev      *            the revision at which the module descriptor should be      * @return the parsed module descriptor as a {@link MDResolvedResource}, or<code>null</code>      *         if parsing has failed or if the resource is not available.      */
 name|MDResolvedResource
 name|parse
 parameter_list|(
