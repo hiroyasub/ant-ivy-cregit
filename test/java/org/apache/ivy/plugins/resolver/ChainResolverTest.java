@@ -3948,9 +3948,7 @@ block|}
 argument_list|,
 operator|new
 name|DownloadOptions
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertNotNull

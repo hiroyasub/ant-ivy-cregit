@@ -3821,14 +3821,6 @@ name|downloader
 argument_list|,
 name|getCacheDownloadOptions
 argument_list|()
-operator|.
-name|setUseOrigin
-argument_list|(
-name|options
-operator|.
-name|isUseOrigin
-argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if

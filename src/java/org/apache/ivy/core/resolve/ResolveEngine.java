@@ -1698,11 +1698,6 @@ name|report
 argument_list|,
 name|options
 operator|.
-name|isUseOrigin
-argument_list|()
-argument_list|,
-name|options
-operator|.
 name|getArtifactFilter
 argument_list|()
 argument_list|)
@@ -1870,9 +1865,6 @@ parameter_list|(
 name|ResolveReport
 name|report
 parameter_list|,
-name|boolean
-name|useOrigin
-parameter_list|,
 name|Filter
 name|artifactFilter
 parameter_list|)
@@ -2032,9 +2024,7 @@ name|selectedArtifacts
 argument_list|,
 operator|new
 name|DownloadOptions
-argument_list|(
-name|useOrigin
-argument_list|)
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|ArtifactDownloadReport
@@ -2299,9 +2289,7 @@ block|}
 argument_list|,
 operator|new
 name|DownloadOptions
-argument_list|(
-name|useOrigin
-argument_list|)
+argument_list|()
 argument_list|)
 decl_stmt|;
 return|return

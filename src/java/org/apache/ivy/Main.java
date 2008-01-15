@@ -1185,7 +1185,9 @@ literal|"useOrigin"
 argument_list|,
 literal|false
 argument_list|,
-literal|"use original artifact location with local resolvers instead of copying to the cache"
+literal|"DEPRECATED: use original artifact location "
+operator|+
+literal|"with local resolvers instead of copying to the cache"
 argument_list|)
 expr_stmt|;
 name|options
@@ -1797,6 +1799,25 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|line
+operator|.
+name|hasOption
+argument_list|(
+literal|"useOrigin"
+argument_list|)
+condition|)
+block|{
+name|ivy
+operator|.
+name|getSettings
+argument_list|()
+operator|.
+name|useDeprecatedUseOrigin
+argument_list|()
+expr_stmt|;
+block|}
 name|ResolveOptions
 name|resolveOptions
 init|=
@@ -1812,16 +1833,6 @@ operator|.
 name|setValidate
 argument_list|(
 name|validate
-argument_list|)
-operator|.
-name|setUseOrigin
-argument_list|(
-name|line
-operator|.
-name|hasOption
-argument_list|(
-literal|"useOrigin"
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|ResolveReport

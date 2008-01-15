@@ -966,8 +966,6 @@ name|downloadArtifacts
 argument_list|(
 name|report
 argument_list|,
-literal|false
-argument_list|,
 name|artifactFilter
 argument_list|)
 expr_stmt|;

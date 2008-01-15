@@ -342,7 +342,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The repository management can be used to load all metadata from a repository, analyze them, and  * provide a bunch of information about the whole repository state.  *<p>  * Since loading all metadata from a repository is not a light task, this engine should only be used  * on a machine having good access to the repository (on the same filesystem being usually the best  * suited).  *</p>  *<p>  * To access information, you usually have before to call a method to init the data: {@link #load()}  * is used to load repository metadata, {@link #analyze()} is used to analyze them. These methods  * being very time consuming, they must always be called explicitly.  *</p>  *<p>  * On a large repository, this engine can be very memory consuming to use, it is not suited to be  * used in a long running process, but rather in short process loading data and taking action about  * the current state of the repository.  *</p>  *<p>  * This engine is not intended to be used concurrently with publish, the order of repository loaded  * being undeterministic and long, it could end up in having an inconsistent in memory state.  *</p>  */
+comment|/**  * The repository management can be used to load all metadata from a repository, analyze them, and  * provide a bunch of information about the whole repository state.  *<p>  * Since loading all metadata from a repository is not a light task, this engine should only be used  * on a machine having good access to the repository (on the same filesystem being usually the best  * suited).  *</p>  *<p>  * To access information, you usually have before to call a method to init the data: {@link #load()}  * is used to load repository metadata, {@link #analyze()} is used to analyze them. These methods  * being very time consuming, they must always be called explicitly.  *</p>  *<p>  * On a large repository, this engine can be very memory consuming to use, it is not suited to be  * used in a long running process, but rather in short process loading data and taking action about  * the current state of the repository.  *</p>  *<p>  * This engine is not intended to be used concurrently with publish, the order of repository loaded  * being undeterministic and long, it could end up in having an inconsistent in memory state.  *</p>  *<p>  * For better performance, we strongly suggest using this engine with cache in useOrigin mode.  *</p>  */
 end_comment
 
 begin_class
@@ -1368,11 +1368,6 @@ argument_list|,
 operator|new
 name|ResolveOptions
 argument_list|()
-operator|.
-name|setUseOrigin
-argument_list|(
-literal|true
-argument_list|)
 argument_list|)
 return|;
 block|}
