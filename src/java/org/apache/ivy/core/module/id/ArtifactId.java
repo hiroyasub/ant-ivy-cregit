@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Identifies an artifact in a module, without revision information  */
+comment|/**  * Identifies an artifact in a module, without revision information  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class

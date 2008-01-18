@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  */
+comment|/**  * Decriptor of a module. This is the Java representation of an ivy.xml  */
 end_comment
 
 begin_interface

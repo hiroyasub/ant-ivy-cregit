@@ -159,6 +159,7 @@ name|getName
 argument_list|()
 return|;
 block|}
+comment|/**      *       * @return the type of the downloaded artifact      */
 specifier|public
 name|String
 name|getType

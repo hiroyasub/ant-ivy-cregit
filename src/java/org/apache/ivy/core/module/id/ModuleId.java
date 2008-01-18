@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  */
+comment|/**  * Identifies a module, without revision information  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class
