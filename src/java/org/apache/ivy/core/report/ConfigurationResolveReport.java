@@ -83,16 +83,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashSet
 import|;
 end_import
@@ -349,7 +339,7 @@ name|Map
 name|dependencyReports
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -1018,7 +1008,7 @@ comment|/*<ModuleRevisionId>*/
 name|evicted
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 name|IvyNode
@@ -1411,7 +1401,7 @@ block|{
 name|deps
 operator|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 expr_stmt|;
 name|modulesIdsMap
@@ -1585,7 +1575,7 @@ name|Collection
 name|all
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 name|Collection
