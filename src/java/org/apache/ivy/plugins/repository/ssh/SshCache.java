@@ -1261,6 +1261,13 @@ block|{
 if|if
 condition|(
 name|passFile
+operator|!=
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|passFile
 operator|.
 name|exists
 argument_list|()
@@ -1271,6 +1278,7 @@ operator|.
 name|delete
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|IOException
 name|ex
