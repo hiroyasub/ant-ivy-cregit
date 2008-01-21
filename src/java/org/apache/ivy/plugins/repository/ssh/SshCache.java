@@ -1263,10 +1263,7 @@ condition|(
 name|passFile
 operator|!=
 literal|null
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|passFile
 operator|.
 name|exists
@@ -1278,7 +1275,6 @@ operator|.
 name|delete
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 name|IOException
 name|ex
