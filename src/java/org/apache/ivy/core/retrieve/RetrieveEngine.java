@@ -776,6 +776,26 @@ operator|.
 name|getLocalFile
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|archive
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\tno local file available for "
+operator|+
+name|artifact
+operator|+
+literal|": skipping"
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
 name|Set
 name|dest
 init|=
