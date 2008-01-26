@@ -137,8 +137,8 @@ extends|extends
 name|TestCase
 block|{
 specifier|private
-name|IvyConfigure
-name|configure
+name|IvyAntSettings
+name|antSettings
 decl_stmt|;
 specifier|protected
 name|void
@@ -163,13 +163,13 @@ argument_list|,
 literal|"myvalue"
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|=
 operator|new
-name|IvyConfigure
+name|IvyAntSettings
 argument_list|()
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|setProject
 argument_list|(
@@ -183,15 +183,7 @@ name|getIvyInstance
 parameter_list|()
 block|{
 return|return
-name|IvyAntSettings
-operator|.
-name|getDefaultInstance
-argument_list|(
-name|configure
-operator|.
-name|getProject
-argument_list|()
-argument_list|)
+name|antSettings
 operator|.
 name|getConfiguredIvyInstance
 argument_list|()
@@ -206,7 +198,7 @@ name|Exception
 block|{
 comment|// by default configure look in the current directory for an ivysettings.xml file...
 comment|// but Ivy itself has one, and we don't want to use it
-name|configure
+name|antSettings
 operator|.
 name|getProject
 argument_list|()
@@ -218,7 +210,7 @@ argument_list|,
 literal|"no/settings/will/use/default.xml"
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -288,7 +280,7 @@ name|Exception
 block|{
 comment|// by default configure look in the current directory for an ivysettings.xml file...
 comment|// but Ivy itself has one, and we don't want to use it
-name|configure
+name|antSettings
 operator|.
 name|getProject
 argument_list|()
@@ -300,7 +292,7 @@ argument_list|,
 literal|"no/settings/will/use/default.xml"
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|getProject
 argument_list|()
@@ -312,7 +304,7 @@ argument_list|,
 literal|"true"
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -359,7 +351,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|configure
+name|antSettings
 operator|.
 name|setFile
 argument_list|(
@@ -370,7 +362,7 @@ literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -378,8 +370,6 @@ expr_stmt|;
 name|Ivy
 name|ivy
 init|=
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 decl_stmt|;
@@ -565,14 +555,14 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|configure
+name|antSettings
 operator|.
 name|setUrl
 argument_list|(
 name|confUrl
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -580,8 +570,6 @@ expr_stmt|;
 name|IvySettings
 name|settings
 init|=
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 operator|.
@@ -670,14 +658,14 @@ operator|.
 name|toExternalForm
 argument_list|()
 decl_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|setUrl
 argument_list|(
 name|confUrl
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -685,8 +673,6 @@ expr_stmt|;
 name|IvySettings
 name|settings
 init|=
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 operator|.
@@ -749,22 +735,20 @@ operator|.
 name|toExternalForm
 argument_list|()
 decl_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|setUrl
 argument_list|(
 name|confUrl
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 argument_list|)
@@ -773,7 +757,7 @@ name|assertEquals
 argument_list|(
 literal|"value"
 argument_list|,
-name|configure
+name|antSettings
 operator|.
 name|getProject
 argument_list|()
@@ -786,8 +770,6 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 operator|.
@@ -800,7 +782,7 @@ operator|.
 name|getAbsolutePath
 argument_list|()
 argument_list|,
-name|configure
+name|antSettings
 operator|.
 name|getProject
 argument_list|()
@@ -834,14 +816,14 @@ operator|.
 name|toExternalForm
 argument_list|()
 decl_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|setUrl
 argument_list|(
 name|confUrl
 argument_list|)
 expr_stmt|;
-name|configure
+name|antSettings
 operator|.
 name|execute
 argument_list|()
@@ -849,8 +831,6 @@ expr_stmt|;
 name|IvySettings
 name|settings
 init|=
-name|configure
-operator|.
 name|getIvyInstance
 argument_list|()
 operator|.
