@@ -12,8 +12,6 @@ operator|.
 name|ivy
 operator|.
 name|util
-operator|.
-name|url
 package|;
 end_package
 
