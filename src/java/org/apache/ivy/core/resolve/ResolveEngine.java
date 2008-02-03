@@ -889,6 +889,15 @@ operator|==
 literal|null
 condition|)
 block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"module not found "
+operator|+
+name|mrid
+argument_list|)
+expr_stmt|;
 name|md
 operator|=
 name|DefaultModuleDescriptor
