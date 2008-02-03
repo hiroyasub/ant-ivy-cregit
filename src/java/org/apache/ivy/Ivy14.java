@@ -283,6 +283,22 @@ name|core
 operator|.
 name|resolve
 operator|.
+name|DownloadOptions
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|resolve
+operator|.
 name|IvyNode
 import|;
 end_import
@@ -861,6 +877,13 @@ name|boolean
 name|useOrigin
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"using cache and useOrigin when calling download is not supported anymore"
+argument_list|)
+expr_stmt|;
 return|return
 name|ivy
 operator|.
@@ -871,7 +894,9 @@ name|download
 argument_list|(
 name|artifact
 argument_list|,
-name|useOrigin
+operator|new
+name|DownloadOptions
+argument_list|()
 argument_list|)
 return|;
 block|}

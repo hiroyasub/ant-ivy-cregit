@@ -483,6 +483,9 @@ name|outputters
 parameter_list|,
 name|ResolutionCacheManager
 name|cacheMgr
+parameter_list|,
+name|ResolveOptions
+name|options
 parameter_list|)
 throws|throws
 name|IOException
@@ -514,6 +517,8 @@ argument_list|(
 name|this
 argument_list|,
 name|cacheMgr
+argument_list|,
+name|options
 argument_list|)
 expr_stmt|;
 block|}

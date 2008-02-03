@@ -17,10 +17,26 @@ name|resolve
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|LogOptions
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|DownloadOptions
+extends|extends
+name|LogOptions
 block|{
 specifier|public
 name|DownloadOptions

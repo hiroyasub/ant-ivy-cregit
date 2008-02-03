@@ -25,6 +25,20 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|LogOptions
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|util
 operator|.
 name|filter
@@ -57,6 +71,8 @@ begin_class
 specifier|public
 class|class
 name|RetrieveOptions
+extends|extends
+name|LogOptions
 block|{
 comment|/**      * The names of configurations to retrieve. If the array consists only of '*', then all      * configurations of the module will be retrieved.      */
 specifier|private

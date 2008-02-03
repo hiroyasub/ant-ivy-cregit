@@ -37,6 +37,20 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|LogOptions
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|module
 operator|.
 name|descriptor
@@ -117,6 +131,8 @@ begin_class
 specifier|public
 class|class
 name|ResolveOptions
+extends|extends
+name|LogOptions
 block|{
 comment|/**      * an array of configuration names to resolve - must not be null nor empty      */
 specifier|private
@@ -210,6 +226,11 @@ name|ResolveOptions
 name|options
 parameter_list|)
 block|{
+name|super
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
 name|confs
 operator|=
 name|options
