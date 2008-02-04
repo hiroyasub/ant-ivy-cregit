@@ -325,7 +325,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Indicates if the configurations use a special configuration       * * , *(private) or *(public).      * When special configurations are used, to must have the module      * descriptor in order to get the list of configurations.      * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * Indicates if the configurations use a special configuration       * * , *(private) or *(public).      * When special configurations are used, you must have the module      * descriptor in order to get the list of configurations.      * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|boolean
 name|useSpecialConfs
