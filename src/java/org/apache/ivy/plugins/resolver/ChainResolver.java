@@ -329,6 +329,20 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -714,7 +728,12 @@ name|resolver
 operator|+
 literal|": "
 operator|+
+name|StringUtils
+operator|.
+name|getStackTrace
+argument_list|(
 name|ex
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -1088,7 +1107,17 @@ name|err
 operator|.
 name|append
 argument_list|(
+literal|"\t"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|StringUtils
+operator|.
+name|getErrorMessage
+argument_list|(
 name|ex
+argument_list|)
 argument_list|)
 operator|.
 name|append
