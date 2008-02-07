@@ -3766,6 +3766,8 @@ literal|"status"
 block|,
 literal|"publication"
 block|,
+literal|"branch"
+block|,
 literal|"namespace"
 block|,
 literal|"default"
