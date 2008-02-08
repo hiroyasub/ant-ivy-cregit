@@ -4620,6 +4620,44 @@ name|isValidate
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|md
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"module descriptor parser returned a null module descriptor, "
+operator|+
+literal|"which is not allowed. "
+operator|+
+literal|"parser="
+operator|+
+name|parser
+operator|+
+literal|"; parser class="
+operator|+
+name|parser
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"; module descriptor resource="
+operator|+
+name|mdRef
+operator|.
+name|getResource
+argument_list|()
+argument_list|)
+throw|;
+block|}
 name|Message
 operator|.
 name|debug
