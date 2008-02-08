@@ -944,6 +944,11 @@ block|{
 literal|"default"
 block|}
 argument_list|)
+operator|.
+name|setValidate
+argument_list|(
+name|validate
+argument_list|)
 decl_stmt|;
 name|IvyNode
 index|[]
