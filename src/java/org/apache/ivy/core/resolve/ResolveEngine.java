@@ -5394,7 +5394,10 @@ operator|new
 name|String
 index|[]
 block|{
-name|conf
+name|node
+operator|.
+name|getParentConf
+argument_list|()
 block|}
 argument_list|)
 decl_stmt|;
