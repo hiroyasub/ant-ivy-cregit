@@ -727,6 +727,14 @@ name|moduleId
 operator|=
 name|moduleId
 expr_stmt|;
+name|IvyContext
+name|context
+init|=
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+decl_stmt|;
 name|this
 operator|.
 name|branch
@@ -734,11 +742,20 @@ operator|=
 name|branch
 operator|==
 literal|null
+comment|// we test if there's already an Ivy instance loaded, to avoid loading a default one
+comment|// just to get the default branch
 condition|?
-name|IvyContext
+operator|(
+name|context
 operator|.
-name|getContext
+name|peekIvy
 argument_list|()
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
+name|context
 operator|.
 name|getSettings
 argument_list|()
@@ -747,6 +764,7 @@ name|getDefaultBranch
 argument_list|(
 name|moduleId
 argument_list|)
+operator|)
 else|:
 name|branch
 expr_stmt|;
