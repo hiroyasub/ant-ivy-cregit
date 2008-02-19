@@ -24117,8 +24117,8 @@ block|{
 comment|// test has a dependency on test2 but there is no version listed. test has a parent of parent(2.0)
 comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list the version as
 comment|// ${pom.version}. The parent version should take precidence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency, and it's version is listed
-comment|// as 1.0 in parent2.
+comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and it's version is listed
+comment|// as 1.0 in parent2 (dependencies inherited from parent comes after).
 name|Ivy
 name|ivy
 init|=
@@ -24428,8 +24428,8 @@ block|{
 comment|// test has a dependency on test2 but there is no version listed. test has a parent of parent(2.0)
 comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list the version as
 comment|// ${pom.version}. The parent version should take precidence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency, and it's version is listed
-comment|// as 1.0 in parent2.
+comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and it's version is listed
+comment|// as 1.0 in parent2. (dependencies inherited from parent comes after)
 comment|// now run tests with dual resolver
 name|Ivy
 name|ivy
