@@ -1032,7 +1032,7 @@ name|optionsToUse
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve dependencies of a module described by an ivy file. Note: the method signature is way      * too long, we should use a class to store the settings of the resolve.      */
+comment|/**      * Resolve dependencies of a module described by an ivy file.      */
 specifier|public
 name|ResolveReport
 name|resolve

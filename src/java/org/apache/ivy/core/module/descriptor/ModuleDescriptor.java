@@ -426,6 +426,12 @@ comment|/*<String,String>*/
 name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
+comment|/**      * Returns the custom info provided in the info tag.      * All the tags except the description are given.      * The key is the name of the tag, the value is its content.      * @return      */
+name|Map
+comment|/*<String,String>*/
+name|getExtraInfo
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
