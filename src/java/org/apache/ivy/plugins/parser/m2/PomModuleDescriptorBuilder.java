@@ -984,21 +984,12 @@ name|boolean
 name|isOptional
 parameter_list|)
 block|{
-comment|//optional/test doesn't make sense
+comment|//optional doesn't make sense in the test scope
 name|dd
 operator|.
 name|addDependencyConfiguration
 argument_list|(
-literal|"runtime"
-argument_list|,
-literal|"compile(*)"
-argument_list|)
-expr_stmt|;
-name|dd
-operator|.
-name|addDependencyConfiguration
-argument_list|(
-literal|"runtime"
+literal|"test"
 argument_list|,
 literal|"runtime(*)"
 argument_list|)
@@ -1007,7 +998,7 @@ name|dd
 operator|.
 name|addDependencyConfiguration
 argument_list|(
-literal|"runtime"
+literal|"test"
 argument_list|,
 literal|"master(*)"
 argument_list|)
@@ -1037,7 +1028,7 @@ name|boolean
 name|isOptional
 parameter_list|)
 block|{
-comment|//optional/system doesn't make sense
+comment|//optional doesn't make sense in the system scope
 name|dd
 operator|.
 name|addDependencyConfiguration
