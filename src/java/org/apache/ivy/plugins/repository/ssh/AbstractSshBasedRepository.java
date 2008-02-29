@@ -395,6 +395,23 @@ block|}
 block|}
 if|if
 condition|(
+name|host
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"missing host information. host should be provided either "
+operator|+
+literal|"directly on the repository or in the connection URI"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
 name|user
 operator|==
 literal|null
