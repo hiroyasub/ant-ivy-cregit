@@ -440,48 +440,17 @@ expr_stmt|;
 comment|//setup dummy ivy and data files to test publishing.  since we're testing the engine and not the resolver,
 comment|//we don't really care whether the file actually gets published.  we just want to make sure
 comment|//that the engine calls the correct methods in the correct order, and fires required events.
-name|String
-name|resourcePath
-init|=
-name|PublishEventsTest
-operator|.
-name|class
-operator|.
-name|getResource
-argument_list|(
-literal|"ivy-1.0-dev.xml"
-argument_list|)
-operator|.
-name|getPath
-argument_list|()
-decl_stmt|;
-name|resourcePath
-operator|=
-name|URLDecoder
-operator|.
-name|decode
-argument_list|(
-name|resourcePath
-argument_list|,
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"file.encoding"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|ivyFile
 operator|=
 operator|new
 name|File
 argument_list|(
-name|resourcePath
+literal|"test/java/org/apache/ivy/core/publish/ivy-1.0-dev.xml"
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-literal|"path to ivy file found in test environment"
+literal|"path to ivy file not found in test environment"
 argument_list|,
 name|ivyFile
 operator|.
