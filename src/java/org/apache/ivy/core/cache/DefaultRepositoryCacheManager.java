@@ -616,7 +616,7 @@ specifier|final
 name|String
 name|DEFAULT_ARTIFACT_PATTERN
 init|=
-literal|"[organisation]/[module]/[type]s/[artifact]-[revision](.[ext])"
+literal|"[organisation]/[module](/[branch])/[type]s/[artifact]-[revision](.[ext])"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -624,7 +624,7 @@ specifier|final
 name|String
 name|DEFAULT_DATA_FILE_PATTERN
 init|=
-literal|"[organisation]/[module]/ivydata-[revision].properties"
+literal|"[organisation]/[module](/[branch])/ivydata-[revision].properties"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -632,7 +632,7 @@ specifier|final
 name|String
 name|DEFAULT_IVY_PATTERN
 init|=
-literal|"[organisation]/[module]/ivy-[revision].xml"
+literal|"[organisation]/[module](/[branch])/ivy-[revision].xml"
 decl_stmt|;
 specifier|private
 name|IvySettings
