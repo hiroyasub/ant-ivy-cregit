@@ -1175,6 +1175,14 @@ init|=
 literal|11
 decl_stmt|;
 specifier|private
+specifier|static
+specifier|final
+name|int
+name|EXTRA_INFO
+init|=
+literal|12
+decl_stmt|;
+specifier|private
 name|int
 name|state
 init|=
@@ -1655,6 +1663,16 @@ try|try
 block|{
 if|if
 condition|(
+name|state
+operator|==
+name|DESCRIPTION
+condition|)
+block|{
+comment|//make sure we don't interpret any tag while in description tag
+return|return;
+block|}
+if|else if
+condition|(
 literal|"ivy-module"
 operator|.
 name|equals
@@ -1774,6 +1792,43 @@ condition|(
 name|state
 operator|==
 name|INFO
+operator|&&
+literal|"ivyauthor"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+condition|)
+block|{
+comment|// nothing to do, we don't store this
+block|}
+if|else if
+condition|(
+name|state
+operator|==
+name|INFO
+operator|&&
+literal|"repository"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+condition|)
+block|{
+comment|// nothing to do, we don't store this
+block|}
+if|else if
+condition|(
+name|state
+operator|==
+name|INFO
+operator|&&
+name|isOtherNamespace
+argument_list|(
+name|qName
+argument_list|)
 condition|)
 block|{
 name|buffer
@@ -1781,6 +1836,10 @@ operator|=
 operator|new
 name|StringBuffer
 argument_list|()
+expr_stmt|;
+name|state
+operator|=
+name|EXTRA_INFO
 expr_stmt|;
 block|}
 if|else if
@@ -2061,12 +2120,16 @@ name|validate
 operator|&&
 name|state
 operator|!=
-name|INFO
+name|EXTRA_INFO
+operator|&&
+name|state
+operator|!=
+name|DESCRIPTION
 condition|)
 block|{
 name|addError
 argument_list|(
-literal|"unknwon tag "
+literal|"unknown tag "
 operator|+
 name|qName
 argument_list|)
@@ -2108,6 +2171,26 @@ name|ex
 argument_list|)
 throw|;
 block|}
+block|}
+specifier|private
+name|boolean
+name|isOtherNamespace
+parameter_list|(
+name|String
+name|qName
+parameter_list|)
+block|{
+return|return
+name|qName
+operator|.
+name|indexOf
+argument_list|(
+literal|':'
+argument_list|)
+operator|!=
+operator|-
+literal|1
+return|;
 block|}
 specifier|private
 name|void
@@ -5323,6 +5406,10 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
+operator|&&
+name|state
+operator|==
+name|DEP
 condition|)
 block|{
 if|if
@@ -5359,6 +5446,10 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
+operator|&&
+name|state
+operator|==
+name|DEPS
 condition|)
 block|{
 name|state
@@ -5389,7 +5480,7 @@ if|else if
 condition|(
 name|state
 operator|==
-name|INFO
+name|DESCRIPTION
 operator|&&
 literal|"description"
 operator|.
@@ -5408,7 +5499,7 @@ if|else if
 condition|(
 name|state
 operator|==
-name|INFO
+name|EXTRA_INFO
 condition|)
 block|{
 name|md
@@ -5432,6 +5523,10 @@ expr_stmt|;
 name|buffer
 operator|=
 literal|null
+expr_stmt|;
+name|state
+operator|=
+name|INFO
 expr_stmt|;
 block|}
 block|}
