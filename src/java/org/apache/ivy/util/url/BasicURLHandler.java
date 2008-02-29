@@ -172,6 +172,7 @@ literal|1024
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 class|class
 name|HttpStatus
 block|{
@@ -189,6 +190,11 @@ name|SC_PROXY_AUTHENTICATION_REQUIRED
 init|=
 literal|407
 decl_stmt|;
+specifier|private
+name|HttpStatus
+parameter_list|()
+block|{
+block|}
 block|}
 specifier|public
 name|BasicURLHandler
