@@ -436,10 +436,12 @@ expr_stmt|;
 name|ModuleRevisionId
 name|mrid
 init|=
-name|dd
+name|data
 operator|.
-name|getDependencyRevisionId
-argument_list|()
+name|getRequestedDependencyRevisionId
+argument_list|(
+name|dd
+argument_list|)
 decl_stmt|;
 comment|// check revision
 name|ResolvedModuleRevision
@@ -451,6 +453,8 @@ operator|.
 name|findModuleInCache
 argument_list|(
 name|dd
+argument_list|,
+name|mrid
 argument_list|,
 name|getCacheOptions
 argument_list|(
@@ -641,6 +645,11 @@ operator|.
 name|getRevision
 argument_list|()
 argument_list|)
+argument_list|,
+name|dd
+operator|.
+name|getDependencyRevisionId
+argument_list|()
 argument_list|,
 name|getCacheOptions
 argument_list|(

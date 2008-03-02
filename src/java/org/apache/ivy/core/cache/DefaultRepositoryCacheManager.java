@@ -2426,6 +2426,9 @@ parameter_list|(
 name|DependencyDescriptor
 name|dd
 parameter_list|,
+name|ModuleRevisionId
+name|requestedRevisionId
+parameter_list|,
 name|CacheMetadataOptions
 name|options
 parameter_list|,
@@ -2436,16 +2439,15 @@ block|{
 name|ModuleRevisionId
 name|mrid
 init|=
-name|dd
-operator|.
-name|getDependencyRevisionId
-argument_list|()
+name|requestedRevisionId
 decl_stmt|;
 if|if
 condition|(
 name|isCheckmodified
 argument_list|(
 name|dd
+argument_list|,
+name|requestedRevisionId
 argument_list|,
 name|options
 argument_list|)
@@ -2471,6 +2473,8 @@ condition|(
 name|isChanging
 argument_list|(
 name|dd
+argument_list|,
+name|requestedRevisionId
 argument_list|,
 name|options
 argument_list|)
@@ -4326,6 +4330,8 @@ name|isCheckmodified
 argument_list|(
 name|dd
 argument_list|,
+name|mrid
+argument_list|,
 name|options
 argument_list|)
 operator|&&
@@ -4333,6 +4339,8 @@ operator|!
 name|isChanging
 argument_list|(
 name|dd
+argument_list|,
+name|mrid
 argument_list|,
 name|options
 argument_list|)
@@ -4450,6 +4458,8 @@ condition|(
 name|isChanging
 argument_list|(
 name|dd
+argument_list|,
+name|mrid
 argument_list|,
 name|options
 argument_list|)
@@ -4879,6 +4889,8 @@ name|isChanging
 argument_list|(
 name|dd
 argument_list|,
+name|mrid
+argument_list|,
 name|options
 argument_list|)
 condition|)
@@ -5238,6 +5250,9 @@ parameter_list|(
 name|DependencyDescriptor
 name|dd
 parameter_list|,
+name|ModuleRevisionId
+name|requestedRevisionId
+parameter_list|,
 name|CacheMetadataOptions
 name|options
 parameter_list|)
@@ -5255,10 +5270,7 @@ argument_list|)
 operator|.
 name|matches
 argument_list|(
-name|dd
-operator|.
-name|getDependencyRevisionId
-argument_list|()
+name|requestedRevisionId
 operator|.
 name|getRevision
 argument_list|()
@@ -5370,6 +5382,9 @@ name|isCheckmodified
 parameter_list|(
 name|DependencyDescriptor
 name|dd
+parameter_list|,
+name|ModuleRevisionId
+name|requestedRevisionId
 parameter_list|,
 name|CacheMetadataOptions
 name|options

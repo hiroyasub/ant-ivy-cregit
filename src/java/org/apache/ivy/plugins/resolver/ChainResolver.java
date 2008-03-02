@@ -581,10 +581,12 @@ decl_stmt|;
 name|ModuleRevisionId
 name|mrid
 init|=
-name|dd
+name|data
 operator|.
-name|getDependencyRevisionId
-argument_list|()
+name|getRequestedDependencyRevisionId
+argument_list|(
+name|dd
+argument_list|)
 decl_stmt|;
 name|Message
 operator|.
@@ -604,10 +606,7 @@ name|findModuleInCache
 argument_list|(
 name|dd
 argument_list|,
-name|getCacheOptions
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|true
 argument_list|)

@@ -520,10 +520,12 @@ block|{
 name|ModuleRevisionId
 name|mrid
 init|=
-name|dd
+name|data
 operator|.
-name|getDependencyRevisionId
-argument_list|()
+name|getRequestedDependencyRevisionId
+argument_list|(
+name|dd
+argument_list|)
 decl_stmt|;
 name|mrid
 operator|=

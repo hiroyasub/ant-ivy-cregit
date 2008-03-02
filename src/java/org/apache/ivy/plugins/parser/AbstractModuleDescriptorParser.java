@@ -1123,9 +1123,6 @@ operator|+
 literal|" for "
 operator|+
 name|dd
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1204,9 +1201,6 @@ operator|+
 literal|" for "
 operator|+
 name|dd
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return

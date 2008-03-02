@@ -91,6 +91,24 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|report
 operator|.
 name|ArtifactDownloadReport
@@ -217,7 +235,7 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-comment|/**      * Search a module descriptor in cache for a mrid      *       * @param dd      *            the dependency descriptor identifying the module to search      * @param options      *            options on how caching should be handled      * @param expectedResolver      *            the resolver with which the md in cache must have been resolved to be returned,      *            null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      *         has been found in cache      */
+comment|/**      * Search a module descriptor in cache for a mrid      *       * @param dd      *            the dependency descriptor identifying the module to search      * @param requestedRevisionId      *            the requested dependency module revision id identifying the module to search      * @param options      *            options on how caching should be handled      * @param expectedResolver      *            the resolver with which the md in cache must have been resolved to be returned,      *            null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      *         has been found in cache      */
 specifier|public
 specifier|abstract
 name|ResolvedModuleRevision
@@ -225,6 +243,9 @@ name|findModuleInCache
 parameter_list|(
 name|DependencyDescriptor
 name|dd
+parameter_list|,
+name|ModuleRevisionId
+name|requestedRevisionId
 parameter_list|,
 name|CacheMetadataOptions
 name|options

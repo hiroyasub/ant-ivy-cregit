@@ -134,6 +134,41 @@ name|ResolveOptions
 extends|extends
 name|LogOptions
 block|{
+comment|/**      * Default resolve mode, using default revision constraints in dependency descriptors.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|RESOLVEMODE_DEFAULT
+init|=
+literal|"default"
+decl_stmt|;
+comment|/**      * Dynamic resolve mode, using dynamic revision constraints in dependency descriptors.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|RESOLVEMODE_DYNAMIC
+init|=
+literal|"dynamic"
+decl_stmt|;
+comment|/**      * Array of all available resolve modes.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+index|[]
+name|RESOLVEMODES
+init|=
+operator|new
+name|String
+index|[]
+block|{
+name|RESOLVEMODE_DEFAULT
+block|,
+name|RESOLVEMODE_DYNAMIC
+block|}
+decl_stmt|;
 comment|/**      * an array of configuration names to resolve - must not be null nor empty      */
 specifier|private
 name|String
@@ -204,6 +239,11 @@ init|=
 name|FilterHelper
 operator|.
 name|NO_FILTER
+decl_stmt|;
+comment|/**      * The resolve mode to use. Should be one of {@link #RESOLVEMODES}, or<code>null</code> to      * use settings configured resolve mode.      */
+specifier|private
+name|String
+name|resolveMode
 decl_stmt|;
 comment|/**      * The id used to store the resolve information.      */
 specifier|private
@@ -285,6 +325,12 @@ name|options
 operator|.
 name|outputReport
 expr_stmt|;
+name|resolveMode
+operator|=
+name|options
+operator|.
+name|resolveMode
+expr_stmt|;
 name|artifactFilter
 operator|=
 name|options
@@ -320,6 +366,34 @@ operator|.
 name|artifactFilter
 operator|=
 name|artifactFilter
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/**      * Returns the resolve mode to use, or<code>null</code> to use settings configured resolve      * mode.      *       * @return the resolve mode to use.      */
+specifier|public
+name|String
+name|getResolveMode
+parameter_list|()
+block|{
+return|return
+name|resolveMode
+return|;
+block|}
+specifier|public
+name|ResolveOptions
+name|setResolveMode
+parameter_list|(
+name|String
+name|resolveMode
+parameter_list|)
+block|{
+name|this
+operator|.
+name|resolveMode
+operator|=
+name|resolveMode
 expr_stmt|;
 return|return
 name|this

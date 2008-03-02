@@ -567,9 +567,6 @@ name|dds
 index|[
 name|i
 index|]
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 operator|+
 literal|": "
 operator|+
@@ -720,9 +717,6 @@ name|dds
 index|[
 name|i
 index|]
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 operator|+
 literal|": "
 operator|+
@@ -799,9 +793,6 @@ name|dds
 index|[
 name|i
 index|]
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 operator|+
 literal|": "
 operator|+

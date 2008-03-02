@@ -346,9 +346,6 @@ argument_list|(
 literal|"ivy resolver didn't find "
 operator|+
 name|dd
-operator|.
-name|getDependencyRevisionId
-argument_list|()
 operator|+
 literal|": trying with artifact resolver"
 argument_list|)

@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *  */
+comment|/**  * Describes a dependency from a depender to a dependee.  *<p>  * The main information this descriptor contains is the constraint on the dependency. There is  * actually two kind of dependency constraints: the default dependency constraint, which can be  * obtained with {@link #getDependencyRevisionId()}, and corresponds to the<code>rev</code>  * attribute in Ivy files. This is the constraint as it should be honored by Ivy in default resolve  * mode.  *</p><p>   * Then there is the dynamic constraint, which can either be the same as the default  * constraint, or the original dependency constraint when an Ivy file is delivered an published to a  * repository. This dynamic constraint is returned by  * {@link #getDynamicConstraintDependencyRevisionId()}, and corresponds to the  *<code>revconstraint</code> attribute in the Ivy file. In some resolve mode, this constraint can  * be used instead of the default dependency constraint when performing dependency resolution.  *</p>  */
 end_comment
 
 begin_interface
@@ -138,8 +138,14 @@ name|ModuleRevisionId
 name|getParentRevisionId
 parameter_list|()
 function_decl|;
+comment|/**      * Returns the constraint on dependency this descriptor represents.      *       * @return the constraint on dependency.      */
 name|ModuleRevisionId
 name|getDependencyRevisionId
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the dynamic constraint on dependency this descriptor represents.      *       * @return the dynamic constraint on dependency, or exact constraint if no dynamic constraint is      *         specified.      */
+name|ModuleRevisionId
+name|getDynamicConstraintDependencyRevisionId
 parameter_list|()
 function_decl|;
 name|String

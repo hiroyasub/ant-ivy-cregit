@@ -112,7 +112,7 @@ name|dependencyRevisionId
 init|=
 name|descriptor
 operator|.
-name|getDependencyRevisionId
+name|getDynamicConstraintDependencyRevisionId
 argument_list|()
 decl_stmt|;
 name|ModuleRevisionId
