@@ -101,6 +101,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ConfigurationsExample
 block|{
@@ -310,6 +311,11 @@ name|printStackTrace
 argument_list|()
 expr_stmt|;
 block|}
+block|}
+specifier|private
+name|ConfigurationsExample
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

@@ -11,6 +11,7 @@ end_package
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|FilterProvider
 block|{
@@ -90,6 +91,11 @@ return|return
 literal|null
 return|;
 block|}
+block|}
+specifier|private
+name|FilterProvider
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

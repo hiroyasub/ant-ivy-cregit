@@ -11,16 +11,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -30,20 +20,6 @@ operator|.
 name|httpclient
 operator|.
 name|HttpClient
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|httpclient
-operator|.
-name|HttpException
 import|;
 end_import
 
@@ -83,6 +59,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Hello
 block|{
@@ -216,6 +193,11 @@ operator|+
 name|clss
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Hello
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

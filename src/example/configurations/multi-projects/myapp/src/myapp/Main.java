@@ -37,6 +37,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Main
 block|{
@@ -118,6 +119,11 @@ name|filtered
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Main
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

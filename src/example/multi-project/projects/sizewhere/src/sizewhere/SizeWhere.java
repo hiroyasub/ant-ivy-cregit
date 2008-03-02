@@ -37,26 +37,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|io
 operator|.
 name|File
@@ -65,6 +45,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|SizeWhere
 block|{
@@ -105,6 +86,11 @@ name|name
 argument_list|)
 argument_list|)
 return|;
+block|}
+specifier|private
+name|SizeWhere
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

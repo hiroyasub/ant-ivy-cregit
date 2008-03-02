@@ -39,16 +39,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|io
 operator|.
 name|File
@@ -85,6 +75,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|FindFile
 block|{
@@ -179,6 +170,11 @@ block|}
 block|}
 argument_list|)
 return|;
+block|}
+specifier|private
+name|FindFile
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

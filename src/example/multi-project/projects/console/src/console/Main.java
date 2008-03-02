@@ -63,11 +63,13 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Main
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Collection
 name|QUIT_COMMANDS
 init|=
@@ -89,6 +91,7 @@ argument_list|)
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|Collection
 name|HELP_COMMANDS
 init|=
@@ -369,7 +372,9 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"\tsizewhere -dir<dir> -name<name>: compute total size of files with given name in given dir"
+literal|"\tsizewhere -dir<dir> -name<name>: "
+operator|+
+literal|"compute total size of files with given name in given dir"
 argument_list|)
 expr_stmt|;
 name|System
@@ -411,6 +416,11 @@ argument_list|(
 literal|"type ? for help"
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Main
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

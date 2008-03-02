@@ -49,6 +49,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|ListFile
 block|{
@@ -158,6 +159,11 @@ block|}
 return|return
 name|files
 return|;
+block|}
+specifier|private
+name|ListFile
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

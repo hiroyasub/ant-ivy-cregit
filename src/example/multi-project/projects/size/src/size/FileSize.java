@@ -49,6 +49,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|FileSize
 block|{
@@ -138,6 +139,11 @@ block|}
 return|return
 name|total
 return|;
+block|}
+specifier|private
+name|FileSize
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

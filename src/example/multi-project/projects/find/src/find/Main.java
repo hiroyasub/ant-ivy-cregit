@@ -153,6 +153,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Main
 block|{
@@ -400,6 +401,11 @@ name|options
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|private
+name|Main
+parameter_list|()
+block|{
 block|}
 block|}
 end_class

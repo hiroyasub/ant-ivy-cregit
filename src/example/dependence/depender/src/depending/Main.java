@@ -15,6 +15,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|final
 class|class
 name|Main
 block|{
@@ -143,6 +144,11 @@ name|message
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Main
+parameter_list|()
+block|{
 block|}
 block|}
 end_class
