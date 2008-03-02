@@ -1658,6 +1658,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+break|break;
 block|}
 block|}
 return|return

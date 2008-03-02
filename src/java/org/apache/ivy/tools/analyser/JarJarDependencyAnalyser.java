@@ -164,7 +164,7 @@ name|DependencyAnalyser
 block|{
 specifier|private
 name|File
-name|_jarjarjarLocation
+name|jarjarjarLocation
 decl_stmt|;
 specifier|public
 name|JarJarDependencyAnalyser
@@ -173,7 +173,9 @@ name|File
 name|jarjarjarLocation
 parameter_list|)
 block|{
-name|_jarjarjarLocation
+name|this
+operator|.
+name|jarjarjarLocation
 operator|=
 name|jarjarjarLocation
 expr_stmt|;
@@ -199,7 +201,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|_jarjarjarLocation
+name|jarjarjarLocation
 operator|.
 name|getAbsolutePath
 argument_list|()

@@ -4950,6 +4950,7 @@ name|inStreamCtx
 operator|!=
 literal|null
 condition|)
+block|{
 name|inSrc
 operator|.
 name|setSystemId
@@ -4960,6 +4961,7 @@ name|toExternalForm
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|XMLHelper
 operator|.
 name|parse

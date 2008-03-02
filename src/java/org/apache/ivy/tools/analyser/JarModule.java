@@ -52,11 +52,11 @@ name|JarModule
 block|{
 specifier|private
 name|ModuleRevisionId
-name|_mrid
+name|mrid
 decl_stmt|;
 specifier|private
 name|File
-name|_jar
+name|jar
 decl_stmt|;
 specifier|public
 name|JarModule
@@ -68,11 +68,15 @@ name|File
 name|jar
 parameter_list|)
 block|{
-name|_mrid
+name|this
+operator|.
+name|mrid
 operator|=
 name|mrid
 expr_stmt|;
-name|_jar
+name|this
+operator|.
+name|jar
 operator|=
 name|jar
 expr_stmt|;
@@ -83,7 +87,7 @@ name|getJar
 parameter_list|()
 block|{
 return|return
-name|_jar
+name|jar
 return|;
 block|}
 specifier|public
@@ -92,7 +96,7 @@ name|getMrid
 parameter_list|()
 block|{
 return|return
-name|_mrid
+name|mrid
 return|;
 block|}
 specifier|public
@@ -101,11 +105,11 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|_jar
+name|jar
 operator|+
 literal|" "
 operator|+
-name|_mrid
+name|mrid
 return|;
 block|}
 block|}

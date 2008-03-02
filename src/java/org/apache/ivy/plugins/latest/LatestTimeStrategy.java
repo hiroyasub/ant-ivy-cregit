@@ -36,6 +36,7 @@ name|ComparatorLatestStrategy
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Comparator
 name|COMPARATOR
 init|=
