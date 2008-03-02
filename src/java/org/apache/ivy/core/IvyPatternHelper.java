@@ -741,6 +741,7 @@ literal|null
 argument_list|)
 return|;
 block|}
+comment|// CheckStyle:ParameterNumber OFF
 specifier|public
 specifier|static
 name|String
@@ -1150,6 +1151,7 @@ name|tokens
 argument_list|)
 return|;
 block|}
+comment|// CheckStyle:ParameterNumber ON
 specifier|public
 specifier|static
 name|String
