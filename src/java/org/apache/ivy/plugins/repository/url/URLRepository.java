@@ -212,7 +212,7 @@ name|AbstractRepository
 block|{
 specifier|private
 name|RepositoryCopyProgressListener
-name|_progress
+name|progress
 init|=
 operator|new
 name|RepositoryCopyProgressListener
@@ -222,7 +222,7 @@ argument_list|)
 decl_stmt|;
 specifier|private
 name|Map
-name|_resourcesCache
+name|resourcesCache
 init|=
 operator|new
 name|HashMap
@@ -244,7 +244,7 @@ init|=
 operator|(
 name|Resource
 operator|)
-name|_resourcesCache
+name|resourcesCache
 operator|.
 name|get
 argument_list|(
@@ -270,7 +270,7 @@ name|source
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_resourcesCache
+name|resourcesCache
 operator|.
 name|put
 argument_list|(
@@ -334,7 +334,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|_progress
+name|progress
 operator|.
 name|setTotalLength
 argument_list|(
@@ -358,7 +358,7 @@ argument_list|)
 argument_list|,
 name|destination
 argument_list|,
-name|_progress
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -394,7 +394,7 @@ throw|;
 block|}
 finally|finally
 block|{
-name|_progress
+name|progress
 operator|.
 name|setTotalLength
 argument_list|(
@@ -429,7 +429,7 @@ throw|;
 block|}
 specifier|private
 name|ApacheURLLister
-name|_lister
+name|lister
 init|=
 operator|new
 name|ApacheURLLister
@@ -458,7 +458,7 @@ block|{
 name|List
 name|urls
 init|=
-name|_lister
+name|lister
 operator|.
 name|listAll
 argument_list|(

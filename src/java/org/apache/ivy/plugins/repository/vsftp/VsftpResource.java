@@ -94,7 +94,7 @@ name|LazyResource
 block|{
 specifier|private
 name|VsftpRepository
-name|_repository
+name|repository
 decl_stmt|;
 specifier|public
 name|VsftpResource
@@ -111,7 +111,9 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|_repository
+name|this
+operator|.
+name|repository
 operator|=
 name|repository
 expr_stmt|;
@@ -125,7 +127,7 @@ try|try
 block|{
 name|init
 argument_list|(
-name|_repository
+name|repository
 operator|.
 name|getInitResource
 argument_list|(
@@ -179,7 +181,7 @@ block|{
 try|try
 block|{
 return|return
-name|_repository
+name|repository
 operator|.
 name|getResource
 argument_list|(

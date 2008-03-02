@@ -285,6 +285,14 @@ extends|extends
 name|AbstractSshBasedRepository
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|int
+name|MILLIS_PER_SECOND
+init|=
+literal|1000
+decl_stmt|;
+specifier|private
 specifier|final
 class|class
 name|MyProgressMonitor
@@ -476,7 +484,7 @@ operator|.
 name|getMTime
 argument_list|()
 operator|*
-literal|1000
+name|MILLIS_PER_SECOND
 argument_list|,
 literal|false
 argument_list|)
