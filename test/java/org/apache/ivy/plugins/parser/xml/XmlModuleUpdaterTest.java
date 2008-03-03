@@ -319,18 +319,6 @@ name|SAXParseException
 import|;
 end_import
 
-begin_import
-import|import
-name|sun
-operator|.
-name|reflect
-operator|.
-name|ReflectionFactory
-operator|.
-name|GetReflectionFactoryAction
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
