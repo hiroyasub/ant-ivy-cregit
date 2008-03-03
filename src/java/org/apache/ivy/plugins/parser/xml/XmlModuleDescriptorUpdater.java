@@ -2545,6 +2545,17 @@ argument_list|)
 operator|==
 operator|-
 literal|1
+operator|&&
+operator|!
+name|rev
+operator|.
+name|equals
+argument_list|(
+name|systemMrid
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|write

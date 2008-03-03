@@ -1104,6 +1104,10 @@ name|revId
 operator|=
 name|mrid
 expr_stmt|;
+name|dynamicRevId
+operator|=
+name|mrid
+expr_stmt|;
 name|isForce
 operator|=
 name|force
