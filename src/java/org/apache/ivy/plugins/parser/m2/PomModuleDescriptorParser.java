@@ -1080,6 +1080,13 @@ argument_list|,
 name|parentModRevID
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|parentModule
+operator|!=
+literal|null
+condition|)
+block|{
 name|parentDescr
 operator|=
 name|parentModule
@@ -1087,6 +1094,25 @@ operator|.
 name|getDescriptor
 argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"impossible to load parent for "
+operator|+
+name|descriptorURL
+operator|+
+literal|"."
+operator|+
+literal|" Parent="
+operator|+
+name|parentModRevID
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|Map
 name|pomProperties
