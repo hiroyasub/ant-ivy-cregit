@@ -823,6 +823,37 @@ argument_list|,
 name|relocation
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|relocatedModule
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|ParseException
+argument_list|(
+literal|"impossible to load module "
+operator|+
+name|relocation
+operator|+
+literal|" to which "
+operator|+
+name|mdBuilder
+operator|.
+name|getModuleDescriptor
+argument_list|()
+operator|.
+name|getModuleRevisionId
+argument_list|()
+operator|+
+literal|" has been relocated"
+argument_list|,
+literal|0
+argument_list|)
+throw|;
+block|}
 name|DependencyDescriptor
 index|[]
 name|dds
