@@ -365,6 +365,10 @@ name|String
 name|getHomePage
 parameter_list|()
 function_decl|;
+name|String
+name|getDescription
+parameter_list|()
+function_decl|;
 name|long
 name|getLastModified
 parameter_list|()
