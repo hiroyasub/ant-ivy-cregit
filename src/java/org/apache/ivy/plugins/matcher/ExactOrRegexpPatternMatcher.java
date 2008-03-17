@@ -155,8 +155,12 @@ name|isExact
 parameter_list|()
 block|{
 return|return
-literal|false
+name|regexp
+operator|.
+name|isExact
+argument_list|()
 return|;
+comment|//&& exact.isExact();
 block|}
 block|}
 block|}

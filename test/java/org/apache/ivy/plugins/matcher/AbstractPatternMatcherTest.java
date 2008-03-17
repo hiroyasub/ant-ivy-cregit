@@ -44,10 +44,6 @@ name|PatternMatcher
 name|patternMatcher
 decl_stmt|;
 specifier|protected
-name|boolean
-name|exact
-decl_stmt|;
-specifier|protected
 specifier|abstract
 name|void
 name|setUp
@@ -61,9 +57,6 @@ name|setUp
 parameter_list|(
 name|PatternMatcher
 name|matcher
-parameter_list|,
-name|boolean
-name|exact
 parameter_list|)
 block|{
 name|this
@@ -71,12 +64,6 @@ operator|.
 name|patternMatcher
 operator|=
 name|matcher
-expr_stmt|;
-name|this
-operator|.
-name|exact
-operator|=
-name|exact
 expr_stmt|;
 block|}
 specifier|public
@@ -130,6 +117,7 @@ name|void
 name|testIsExact
 parameter_list|()
 block|{
+comment|// '*' is a special matcher
 name|Matcher
 name|matcher
 init|=
@@ -167,18 +155,53 @@ name|isExact
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// test some exact patterns for this matcher
+name|String
+index|[]
+name|expressions
+init|=
+name|getExactExpressions
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|expressions
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
 name|matcher
 operator|=
 name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
-literal|"some expression"
+name|expressions
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
-name|exact
+literal|"Expression '"
+operator|+
+name|expressions
+index|[
+name|i
+index|]
+operator|+
+literal|"' should be exact"
 argument_list|,
 name|matcher
 operator|.
@@ -193,9 +216,16 @@ argument_list|(
 literal|"The words aren't what they were."
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
-name|exact
+literal|"Expression '"
+operator|+
+name|expressions
+index|[
+name|i
+index|]
+operator|+
+literal|"' should be exact"
 argument_list|,
 name|matcher
 operator|.
@@ -204,6 +234,98 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|// test some inexact patterns for this matcher
+name|expressions
+operator|=
+name|getInexactExpressions
+argument_list|()
+expr_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|expressions
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|matcher
+operator|=
+name|patternMatcher
+operator|.
+name|getMatcher
+argument_list|(
+name|expressions
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+literal|"Expression '"
+operator|+
+name|expressions
+index|[
+name|i
+index|]
+operator|+
+literal|"' should be inexact"
+argument_list|,
+name|matcher
+operator|.
+name|isExact
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|matcher
+operator|.
+name|matches
+argument_list|(
+literal|"The words aren't what they were."
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+literal|"Expression '"
+operator|+
+name|expressions
+index|[
+name|i
+index|]
+operator|+
+literal|"' should be inexact"
+argument_list|,
+name|matcher
+operator|.
+name|isExact
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+specifier|protected
+specifier|abstract
+name|String
+index|[]
+name|getExactExpressions
+parameter_list|()
+function_decl|;
+specifier|protected
+specifier|abstract
+name|String
+index|[]
+name|getInexactExpressions
+parameter_list|()
+function_decl|;
 specifier|public
 name|void
 name|testNullInput
