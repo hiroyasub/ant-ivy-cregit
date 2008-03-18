@@ -21,7 +21,27 @@ name|java
 operator|.
 name|io
 operator|.
+name|BufferedReader
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileReader
 import|;
 end_import
 
@@ -32,6 +52,20 @@ operator|.
 name|framework
 operator|.
 name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|FileUtil
 import|;
 end_import
 
@@ -198,39 +232,387 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|test
+name|testSimple
 parameter_list|()
+throws|throws
+name|Exception
 block|{
+name|report
+operator|.
+name|setOrganisation
+argument_list|(
+literal|"org1"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setOutputname
+argument_list|(
+literal|"testsimple"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setTodir
+argument_list|(
+name|cache
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+name|File
+name|reportFile
+init|=
+operator|new
+name|File
+argument_list|(
+name|cache
+argument_list|,
+literal|"testsimple.xml"
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|reportFile
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|String
+name|g
+init|=
+name|FileUtil
+operator|.
+name|readEntirely
+argument_list|(
+operator|new
+name|BufferedReader
+argument_list|(
+operator|new
+name|FileReader
+argument_list|(
+name|reportFile
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
+comment|// check presence of the modules
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.1\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.2\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.3\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.4\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.5\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.6\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
-comment|// no xslt transformation is possible in the junit test on our continuous integration server for
-comment|// the moment...
-comment|// public void testGraph() throws Exception {
-comment|// _report.setOrganisation("org1");
-comment|// _report.setXml(false);
-comment|// _report.setGraph(true);
-comment|// _report.setTodir(_cache);
-comment|// _report.setOutputname("test-graph");
-comment|// _report.execute();
-comment|// File graphml = new File(_cache, "test-graph.graphml");
-comment|// assertTrue(graphml.exists());
-comment|// String g = FileUtil.readEntirely(new BufferedReader(new FileReader(graphml)));
-comment|// assertFalse(g.indexOf("caller") != -1);
-comment|// assertTrue(g.indexOf("mod1.1") != -1);
-comment|// }
-comment|//
-comment|// public void testDot() throws Exception {
-comment|// _report.setOrganisation("org1");
-comment|// _report.setXml(false);
-comment|// _report.setDot(true);
-comment|// _report.setTodir(_cache);
-comment|// _report.setOutputname("test-graph");
-comment|// _report.execute();
-comment|// File dot = new File(_cache, "test-graph.dot");
-comment|// assertTrue(dot.exists());
-comment|// String g = FileUtil.readEntirely(new BufferedReader(new FileReader(dot)));
-comment|// assertFalse(g.indexOf("caller") != -1);
-comment|// assertTrue(g.indexOf("mod1.1") != -1);
-comment|// }
+specifier|public
+name|void
+name|testBranchBeforeModule
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|report
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|setProperty
+argument_list|(
+literal|"ivy.settings.file"
+argument_list|,
+literal|"test/repositories/IVY-716/ivysettings.xml"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setOutputname
+argument_list|(
+literal|"testbranch"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setTodir
+argument_list|(
+name|cache
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+name|File
+name|reportFile
+init|=
+operator|new
+name|File
+argument_list|(
+name|cache
+argument_list|,
+literal|"testbranch.xml"
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|reportFile
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|String
+name|g
+init|=
+name|FileUtil
+operator|.
+name|readEntirely
+argument_list|(
+operator|new
+name|BufferedReader
+argument_list|(
+operator|new
+name|FileReader
+argument_list|(
+name|reportFile
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
+comment|// check presence of the modules
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"org1\" name=\"mod1.1\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+comment|// check presence of the branches
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<revision name=\"1.0\" branch=\"branch1\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<revision name=\"1.0\" branch=\"branch2\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testPatternWithoutOrganisation
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|report
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|setProperty
+argument_list|(
+literal|"ivy.settings.file"
+argument_list|,
+literal|"test/repositories/IVY-729/ivysettings.xml"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setOutputname
+argument_list|(
+literal|"test-no-org"
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setTodir
+argument_list|(
+name|cache
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+name|File
+name|reportFile
+init|=
+operator|new
+name|File
+argument_list|(
+name|cache
+argument_list|,
+literal|"test-no-org.xml"
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|reportFile
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|String
+name|g
+init|=
+name|FileUtil
+operator|.
+name|readEntirely
+argument_list|(
+operator|new
+name|BufferedReader
+argument_list|(
+operator|new
+name|FileReader
+argument_list|(
+name|reportFile
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
+comment|// check presence of the modules
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"null\" name=\"a\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"null\" name=\"b\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|g
+operator|.
+name|indexOf
+argument_list|(
+literal|"<module organisation=\"null\" name=\"c\""
+argument_list|)
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
