@@ -1190,8 +1190,6 @@ argument_list|,
 name|searchEngine
 argument_list|,
 name|resolveEngine
-argument_list|,
-name|publishEngine
 argument_list|)
 expr_stmt|;
 block|}
