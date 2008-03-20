@@ -1601,12 +1601,23 @@ literal|"You can use it especially with myconf1 and myconf2, "
 operator|+
 literal|"and myconf4 is not too bad too."
 argument_list|,
-name|convertEOL
-argument_list|(
 name|md
 operator|.
 name|getDescription
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|"\r\n"
+argument_list|,
+literal|"\n"
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|'\r'
+argument_list|,
+literal|'\n'
 argument_list|)
 argument_list|)
 expr_stmt|;

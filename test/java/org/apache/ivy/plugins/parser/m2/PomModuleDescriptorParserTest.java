@@ -3797,12 +3797,23 @@ literal|"technology that handles communication with disparate systems\n        "
 operator|+
 literal|"transparently providing a simple component interface."
 argument_list|,
-name|convertEOL
-argument_list|(
 name|md
 operator|.
 name|getDescription
 argument_list|()
+operator|.
+name|replaceAll
+argument_list|(
+literal|"\r\n"
+argument_list|,
+literal|"\n"
+argument_list|)
+operator|.
+name|replace
+argument_list|(
+literal|'\r'
+argument_list|,
+literal|'\n'
 argument_list|)
 argument_list|)
 expr_stmt|;
