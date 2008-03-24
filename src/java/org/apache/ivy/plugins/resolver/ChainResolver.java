@@ -581,12 +581,10 @@ decl_stmt|;
 name|ModuleRevisionId
 name|mrid
 init|=
-name|data
-operator|.
-name|getRequestedDependencyRevisionId
-argument_list|(
 name|dd
-argument_list|)
+operator|.
+name|getDependencyRevisionId
+argument_list|()
 decl_stmt|;
 name|Message
 operator|.

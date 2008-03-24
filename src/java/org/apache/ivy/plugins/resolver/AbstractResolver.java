@@ -1526,12 +1526,10 @@ name|findModuleInCache
 argument_list|(
 name|dd
 argument_list|,
-name|data
-operator|.
-name|getRequestedDependencyRevisionId
-argument_list|(
 name|dd
-argument_list|)
+operator|.
+name|getDependencyRevisionId
+argument_list|()
 argument_list|,
 name|getCacheOptions
 argument_list|(

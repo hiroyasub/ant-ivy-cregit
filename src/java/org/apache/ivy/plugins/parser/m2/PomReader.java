@@ -1195,7 +1195,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|PomDependencyMgt
+name|PomDependencyMgtElement
 argument_list|(
 operator|(
 name|Element
@@ -1213,6 +1213,8 @@ return|;
 block|}
 specifier|public
 class|class
+name|PomDependencyMgtElement
+implements|implements
 name|PomDependencyMgt
 block|{
 specifier|private
@@ -1220,7 +1222,7 @@ specifier|final
 name|Element
 name|depElement
 decl_stmt|;
-name|PomDependencyMgt
+name|PomDependencyMgtElement
 parameter_list|(
 name|Element
 name|depElement
@@ -1233,6 +1235,7 @@ operator|=
 name|depElement
 expr_stmt|;
 block|}
+comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getGroupId()          */
 specifier|public
 name|String
 name|getGroupId
@@ -1255,6 +1258,7 @@ name|val
 argument_list|)
 return|;
 block|}
+comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
 specifier|public
 name|String
 name|getArtifaceId
@@ -1277,6 +1281,7 @@ name|val
 argument_list|)
 return|;
 block|}
+comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getVersion()          */
 specifier|public
 name|String
 name|getVersion
@@ -1304,7 +1309,7 @@ specifier|public
 class|class
 name|PomDependencyData
 extends|extends
-name|PomDependencyMgt
+name|PomDependencyMgtElement
 block|{
 specifier|private
 specifier|final

@@ -273,6 +273,14 @@ name|DependencyDescriptor
 name|asSystem
 parameter_list|()
 function_decl|;
+comment|/**      * Clones current dependency descriptor with another revision.      *       * @param revision      *            the revision of the cloned dependency descriptor      * @return the cloned dependency descriptor      * @throws IllegalArgumentException      *             if the given {@link ModuleRevisionId} has not the same {@link ModuleId} as the      *             {@link ModuleRevisionId} of this descriptor.      */
+name|DependencyDescriptor
+name|clone
+parameter_list|(
+name|ModuleRevisionId
+name|revision
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

@@ -445,6 +445,7 @@ return|;
 block|}
 specifier|public
 name|Collection
+comment|/*<VisitNode>*/
 name|getPath
 parameter_list|()
 block|{
@@ -467,6 +468,7 @@ return|;
 block|}
 specifier|private
 name|Collection
+comment|/*<VisitNode>*/
 name|computePath
 parameter_list|()
 block|{

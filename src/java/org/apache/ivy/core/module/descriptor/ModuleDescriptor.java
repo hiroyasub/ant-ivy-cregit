@@ -231,6 +231,8 @@ extends|extends
 name|ExtendableItem
 extends|,
 name|ArtifactInfo
+extends|,
+name|DependencyDescriptorMediator
 block|{
 specifier|public
 specifier|static
@@ -347,7 +349,7 @@ name|String
 name|confName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the conflict manager to use for the given ModuleId      *       * @param id      * @return      */
+comment|/**      * Returns the conflict manager to use for the given ModuleId, or<code>null</code> if no      * specific conflict manager is associated with the given module id in this module descriptor.      *       * @param id      * @return      */
 name|ConflictManager
 name|getConflictManager
 parameter_list|(

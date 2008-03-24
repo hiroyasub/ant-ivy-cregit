@@ -518,12 +518,10 @@ name|resolveData
 parameter_list|)
 block|{
 return|return
-name|resolveData
-operator|.
-name|getRequestedDependencyRevisionId
-argument_list|(
 name|dd
-argument_list|)
+operator|.
+name|getDependencyRevisionId
+argument_list|()
 return|;
 block|}
 specifier|public
