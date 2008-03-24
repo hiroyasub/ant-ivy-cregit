@@ -2338,7 +2338,7 @@ name|ModuleDescriptor
 name|systemMd
 parameter_list|,
 name|ModuleRevisionId
-name|systemMrid
+name|dependencyConstraint
 parameter_list|,
 name|ResolvedResource
 name|ivyRef
@@ -2347,23 +2347,16 @@ name|boolean
 name|isDynamic
 parameter_list|)
 block|{
+comment|// we get the resolved module revision id from the descriptor: it may contain extra
+comment|// attributes that were not included in the dependency constraint
 name|ModuleRevisionId
 name|resolvedMrid
 init|=
-name|systemMrid
-decl_stmt|;
-if|if
-condition|(
-name|isDynamic
-condition|)
-block|{
-name|resolvedMrid
-operator|=
 name|systemMd
 operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|resolvedMrid
@@ -2385,6 +2378,27 @@ literal|0
 condition|)
 block|{
 if|if
+condition|(
+operator|!
+name|isDynamic
+condition|)
+block|{
+name|resolvedMrid
+operator|=
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
+name|resolvedMrid
+argument_list|,
+name|dependencyConstraint
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
 condition|(
 name|ivyRef
 operator|.
@@ -2437,6 +2451,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|isDynamic
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -2453,7 +2472,7 @@ argument_list|()
 operator|+
 literal|"] "
 operator|+
-name|systemMrid
+name|dependencyConstraint
 operator|.
 name|getModuleId
 argument_list|()
@@ -2471,7 +2490,7 @@ name|checkModuleDescriptorRevision
 argument_list|(
 name|systemMd
 argument_list|,
-name|systemMrid
+name|dependencyConstraint
 argument_list|)
 expr_stmt|;
 block|}
