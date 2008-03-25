@@ -2194,7 +2194,7 @@ literal|": unacceptable revision => was="
 operator|+
 name|systemMd
 operator|.
-name|getModuleRevisionId
+name|getResolvedModuleRevisionId
 argument_list|()
 operator|.
 name|getRevision
@@ -2375,6 +2375,16 @@ name|length
 argument_list|()
 operator|==
 literal|0
+operator|||
+name|resolvedMrid
+operator|.
+name|getRevision
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"working@"
+argument_list|)
 condition|)
 block|{
 if|if
