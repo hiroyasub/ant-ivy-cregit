@@ -866,21 +866,23 @@ block|{
 name|useRealNode
 argument_list|()
 expr_stmt|;
-comment|// if the revision was a dynamic one (which has now be resolved)
-comment|// we now register this node on the resolved id
+comment|// if the loaded revision is different from original one
+comment|// we now register this node on the new resolved id
+comment|// this includes two cases:
+comment|// - the id refers to a dynamic revision, which has been resolved by loadData
+comment|// - the loaded module descriptor has extra attributes in his info tag which are not
+comment|//   used when declaring the dependency
 if|if
 condition|(
-name|data
-operator|.
-name|getSettings
-argument_list|()
-operator|.
-name|getVersionMatcher
-argument_list|()
-operator|.
-name|isDynamic
-argument_list|(
+operator|!
 name|getId
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|node
+operator|.
+name|getResolvedId
 argument_list|()
 argument_list|)
 condition|)
