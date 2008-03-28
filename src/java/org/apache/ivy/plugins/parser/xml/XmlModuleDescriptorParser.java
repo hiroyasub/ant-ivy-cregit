@@ -1207,17 +1207,9 @@ specifier|private
 specifier|static
 specifier|final
 name|int
-name|ENGINE_HINTS
+name|HINTS
 init|=
 literal|13
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|int
-name|MEDIATION
-init|=
-literal|14
 decl_stmt|;
 specifier|private
 name|int
@@ -1233,6 +1225,10 @@ decl_stmt|;
 specifier|private
 name|StringBuffer
 name|buffer
+decl_stmt|;
+specifier|private
+name|String
+name|descriptorVersion
 decl_stmt|;
 specifier|public
 name|Parser
@@ -1975,6 +1971,29 @@ name|qName
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|descriptorVersion
+operator|.
+name|startsWith
+argument_list|(
+literal|"1."
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"using conflicts section is deprecated: "
+operator|+
+literal|"please use hints section instead. Ivy file URL: "
+operator|+
+name|xmlURL
+argument_list|)
+expr_stmt|;
+block|}
 name|state
 operator|=
 name|CONFLICT
@@ -1985,7 +2004,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"engine-hints"
+literal|"hints"
 operator|.
 name|equals
 argument_list|(
@@ -1995,25 +2014,7 @@ condition|)
 block|{
 name|state
 operator|=
-name|ENGINE_HINTS
-expr_stmt|;
-name|checkConfigurations
-argument_list|()
-expr_stmt|;
-block|}
-if|else if
-condition|(
-literal|"mediation"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
-condition|)
-block|{
-name|state
-operator|=
-name|MEDIATION
+name|HINTS
 expr_stmt|;
 block|}
 if|else if
@@ -2087,11 +2088,36 @@ argument_list|(
 name|qName
 argument_list|)
 operator|&&
+operator|(
+name|state
+operator|==
+name|DEPS
+operator|||
+name|state
+operator|==
+name|HINTS
+operator|)
+condition|)
+block|{
+if|if
+condition|(
 name|state
 operator|==
 name|DEPS
 condition|)
 block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"using exclude directly under dependencies is deprecated: "
+operator|+
+literal|"please use hints section. Ivy file URL: "
+operator|+
+name|xmlURL
+argument_list|)
+expr_stmt|;
+block|}
 name|state
 operator|=
 name|EXCLUDE
@@ -2179,6 +2205,19 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+operator|(
+literal|"conflict"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+operator|&&
+name|state
+operator|==
+name|HINTS
+operator|)
+operator|||
 literal|"manager"
 operator|.
 name|equals
@@ -2194,6 +2233,14 @@ block|{
 name|managerStarted
 argument_list|(
 name|attributes
+argument_list|,
+name|state
+operator|==
+name|CONFLICT
+condition|?
+literal|"name"
+else|:
+literal|"manager"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2208,7 +2255,7 @@ argument_list|)
 operator|&&
 name|state
 operator|==
-name|MEDIATION
+name|HINTS
 condition|)
 block|{
 name|mediationOverrideStarted
@@ -2321,6 +2368,9 @@ name|managerStarted
 parameter_list|(
 name|Attributes
 name|attributes
+parameter_list|,
+name|String
+name|managerAtt
 parameter_list|)
 block|{
 name|String
@@ -2391,7 +2441,7 @@ name|attributes
 operator|.
 name|getValue
 argument_list|(
-literal|"name"
+name|managerAtt
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -2505,7 +2555,7 @@ else|else
 block|{
 name|addError
 argument_list|(
-literal|"bad conflict manager: no name nor rev"
+literal|"bad conflict manager: no manager nor rev"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4474,16 +4524,15 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|String
-name|version
-init|=
+name|descriptorVersion
+operator|=
 name|attributes
 operator|.
 name|getValue
 argument_list|(
 literal|"version"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|int
 name|versionIndex
 init|=
@@ -4491,7 +4540,7 @@ name|ALLOWED_VERSIONS
 operator|.
 name|indexOf
 argument_list|(
-name|version
+name|descriptorVersion
 argument_list|)
 decl_stmt|;
 if|if
@@ -4506,7 +4555,7 @@ name|addError
 argument_list|(
 literal|"invalid version "
 operator|+
-name|version
+name|descriptorVersion
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -4515,7 +4564,7 @@ name|SAXException
 argument_list|(
 literal|"invalid version "
 operator|+
-name|version
+name|descriptorVersion
 argument_list|)
 throw|;
 block|}
@@ -5699,6 +5748,13 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+literal|"exclude"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+operator|&&
 name|state
 operator|==
 name|EXCLUDE
@@ -5757,6 +5813,25 @@ name|confAware
 operator|=
 literal|null
 expr_stmt|;
+name|state
+operator|=
+name|HINTS
+expr_stmt|;
+block|}
+if|else if
+condition|(
+literal|"hints"
+operator|.
+name|equals
+argument_list|(
+name|qName
+argument_list|)
+operator|&&
+name|state
+operator|==
+name|HINTS
+condition|)
+block|{
 name|state
 operator|=
 name|DEPS
