@@ -785,7 +785,7 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"destination file exists and overwrite == true"
+literal|"destination file exists and overwrite == false"
 argument_list|)
 throw|;
 block|}
