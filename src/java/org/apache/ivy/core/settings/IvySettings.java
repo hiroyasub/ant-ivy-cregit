@@ -5749,24 +5749,6 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the name should be ignored in listing      *       * @param name      * @return      */
-specifier|public
-name|boolean
-name|listingIgnore
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-return|return
-name|listingIgnore
-operator|.
-name|contains
-argument_list|(
-name|name
-argument_list|)
-return|;
-block|}
 comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
 specifier|public
 name|void
