@@ -1419,6 +1419,19 @@ name|void
 name|prepareTask
 parameter_list|()
 block|{
+name|getProject
+argument_list|()
+operator|.
+name|setProperty
+argument_list|(
+literal|"ivy.version"
+argument_list|,
+name|Ivy
+operator|.
+name|getIvyVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// push current project and Ivy on the stack in context
 name|IvyContext
 operator|.

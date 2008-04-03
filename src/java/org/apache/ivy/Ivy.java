@@ -873,7 +873,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the current version of Ivy, as displayed on the console when       * Ivy is initialized.      *       * @return the current version of Ivy      * @see #getIvyVersion()      */
+comment|/**      * Returns the current version of Ivy, as displayed on the console when       * Ivy is initialized.      *       * @return the current version of Ivy      */
 specifier|public
 specifier|static
 name|String
@@ -884,7 +884,7 @@ return|return
 name|IVY_VERSION
 return|;
 block|}
-comment|/**      * Returns the date at which this version of Ivy has been built.      *<p>      * May be empty if unknown.      *       * @return the date at which this version of Ivy has been built      * @see #getIvyVersion()      */
+comment|/**      * Returns the date at which this version of Ivy has been built.      *<p>      * May be empty if unknown.      *       * @return the date at which this version of Ivy has been built      */
 specifier|public
 specifier|static
 name|String
