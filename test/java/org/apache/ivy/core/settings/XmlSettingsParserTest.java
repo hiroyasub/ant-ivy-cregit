@@ -3082,6 +3082,19 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// properties defined in included file should be available to including file (IVY-780)
+name|assertEquals
+argument_list|(
+literal|"myvalue"
+argument_list|,
+name|settings
+operator|.
+name|getVariable
+argument_list|(
+literal|"ivy.test.prop"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
