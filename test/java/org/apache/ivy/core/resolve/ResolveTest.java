@@ -2068,7 +2068,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testResolveRequiresIvyFile
+name|testResolveRequiresDescriptor
 parameter_list|()
 throws|throws
 name|Exception
@@ -2107,9 +2107,11 @@ literal|"1"
 argument_list|)
 operator|)
 operator|.
-name|setAllownomd
+name|setDescriptor
 argument_list|(
-literal|false
+name|FileSystemResolver
+operator|.
+name|DESCRIPTOR_REQUIRED
 argument_list|)
 expr_stmt|;
 name|ResolveReport
