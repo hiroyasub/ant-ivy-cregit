@@ -256,6 +256,12 @@ name|createDirCommand
 init|=
 literal|"mkdir"
 decl_stmt|;
+specifier|private
+name|String
+name|publishMode
+init|=
+literal|"0600"
+decl_stmt|;
 comment|/**      * create a new resource with lazy initializing      */
 specifier|public
 name|Resource
@@ -1272,6 +1278,8 @@ argument_list|,
 name|path
 argument_list|,
 name|name
+argument_list|,
+name|publishMode
 argument_list|)
 expr_stmt|;
 block|}
@@ -1863,6 +1871,22 @@ operator|.
 name|fileSeparator
 operator|=
 name|fileSeparator
+expr_stmt|;
+block|}
+comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions      * of the published files.      */
+specifier|public
+name|void
+name|setPublishMode
+parameter_list|(
+name|String
+name|mode
+parameter_list|)
+block|{
+name|this
+operator|.
+name|publishMode
+operator|=
+name|mode
 expr_stmt|;
 block|}
 comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName()      */
