@@ -64,6 +64,11 @@ name|IvyVariableContainer
 name|getVariables
 parameter_list|()
 function_decl|;
+name|String
+index|[]
+name|getIgnorableFilenames
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

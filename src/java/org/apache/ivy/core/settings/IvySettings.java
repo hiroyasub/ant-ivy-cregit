@@ -5847,6 +5847,33 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
+comment|/**      * Returns the file names of the files that should be ignored when       * creating a file listing.      */
+specifier|public
+name|String
+index|[]
+name|getIgnorableFilenames
+parameter_list|()
+block|{
+return|return
+operator|(
+name|String
+index|[]
+operator|)
+name|listingIgnore
+operator|.
+name|toArray
+argument_list|(
+operator|new
+name|String
+index|[
+name|listingIgnore
+operator|.
+name|size
+argument_list|()
+index|]
+argument_list|)
+return|;
+block|}
 comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
 specifier|public
 name|void

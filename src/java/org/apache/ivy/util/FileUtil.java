@@ -1397,7 +1397,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory)      *              are extracted.      * @return  A collectoin containing all the files of the given directory and it's      *              subdirectories.      */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory)      *              are extracted.      * @param ignore a Collection of filenames which must be excluded from listing      * @return  A collectoin containing all the files of the given directory and it's      *              subdirectories.      */
 specifier|public
 specifier|static
 name|Collection
@@ -1405,6 +1405,9 @@ name|listAll
 parameter_list|(
 name|File
 name|dir
+parameter_list|,
+name|Collection
+name|ignore
 parameter_list|)
 block|{
 return|return
@@ -1415,6 +1418,8 @@ argument_list|,
 operator|new
 name|ArrayList
 argument_list|()
+argument_list|,
+name|ignore
 argument_list|)
 return|;
 block|}
@@ -1428,8 +1433,28 @@ name|file
 parameter_list|,
 name|Collection
 name|list
+parameter_list|,
+name|Collection
+name|ignore
 parameter_list|)
 block|{
+if|if
+condition|(
+name|ignore
+operator|.
+name|contains
+argument_list|(
+name|file
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+name|list
+return|;
+block|}
 if|if
 condition|(
 name|file
@@ -1488,6 +1513,8 @@ name|i
 index|]
 argument_list|,
 name|list
+argument_list|,
+name|ignore
 argument_list|)
 expr_stmt|;
 block|}
