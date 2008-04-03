@@ -2129,6 +2129,16 @@ index|]
 operator|.
 name|hasProblem
 argument_list|()
+operator|&&
+name|dependencies
+index|[
+name|i
+index|]
+operator|.
+name|getModuleRevision
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|DependencyResolver
