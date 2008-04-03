@@ -58,6 +58,29 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions      * of the published files.      */
+specifier|public
+name|void
+name|setPublishMode
+parameter_list|(
+name|String
+name|mode
+parameter_list|)
+block|{
+operator|(
+operator|(
+name|SshRepository
+operator|)
+name|getRepository
+argument_list|()
+operator|)
+operator|.
+name|setPublishMode
+argument_list|(
+name|mode
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * sets the path separator used on the target system. Not sure if this is used or if '/' is used      * on all implementation. default is to use '/'      *       * @param sep      *            file separator to use on the target system      */
 specifier|public
 name|void
