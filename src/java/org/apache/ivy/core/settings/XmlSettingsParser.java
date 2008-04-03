@@ -830,6 +830,11 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
+name|ivy
+operator|.
+name|validate
+argument_list|()
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
