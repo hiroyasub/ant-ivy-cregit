@@ -1204,14 +1204,6 @@ init|=
 literal|12
 decl_stmt|;
 specifier|private
-specifier|static
-specifier|final
-name|int
-name|HINTS
-init|=
-literal|13
-decl_stmt|;
-specifier|private
 name|int
 name|state
 init|=
@@ -2004,21 +1996,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-literal|"hints"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
-condition|)
-block|{
-name|state
-operator|=
-name|HINTS
-expr_stmt|;
-block|}
-if|else if
-condition|(
 literal|"artifact"
 operator|.
 name|equals
@@ -2088,36 +2065,11 @@ argument_list|(
 name|qName
 argument_list|)
 operator|&&
-operator|(
-name|state
-operator|==
-name|DEPS
-operator|||
-name|state
-operator|==
-name|HINTS
-operator|)
-condition|)
-block|{
-if|if
-condition|(
 name|state
 operator|==
 name|DEPS
 condition|)
 block|{
-name|Message
-operator|.
-name|deprecated
-argument_list|(
-literal|"using exclude directly under dependencies is deprecated: "
-operator|+
-literal|"please use hints section. Ivy file URL: "
-operator|+
-name|xmlURL
-argument_list|)
-expr_stmt|;
-block|}
 name|state
 operator|=
 name|EXCLUDE
@@ -2215,7 +2167,7 @@ argument_list|)
 operator|&&
 name|state
 operator|==
-name|HINTS
+name|DEPS
 operator|)
 operator|||
 literal|"manager"
@@ -2255,7 +2207,7 @@ argument_list|)
 operator|&&
 name|state
 operator|==
-name|HINTS
+name|DEPS
 condition|)
 block|{
 name|mediationOverrideStarted
@@ -5813,25 +5765,6 @@ name|confAware
 operator|=
 literal|null
 expr_stmt|;
-name|state
-operator|=
-name|HINTS
-expr_stmt|;
-block|}
-if|else if
-condition|(
-literal|"hints"
-operator|.
-name|equals
-argument_list|(
-name|qName
-argument_list|)
-operator|&&
-name|state
-operator|==
-name|HINTS
-condition|)
-block|{
 name|state
 operator|=
 name|DEPS

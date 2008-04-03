@@ -25,6 +25,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -60,6 +70,20 @@ operator|.
 name|regex
 operator|.
 name|Pattern
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|IvyPatternHelper
 import|;
 end_import
 
@@ -178,6 +202,15 @@ specifier|private
 name|int
 name|hash
 decl_stmt|;
+specifier|private
+name|Map
+comment|/*<String, String>*/
+name|attributes
+init|=
+operator|new
+name|HashMap
+argument_list|()
+decl_stmt|;
 comment|/**      * Constructor.      * @param  organisation  The organisation which creates the module.      * @param  name  The name of the module.      */
 specifier|public
 name|ModuleId
@@ -215,6 +248,28 @@ operator|.
 name|name
 operator|=
 name|name
+expr_stmt|;
+name|attributes
+operator|.
+name|put
+argument_list|(
+name|IvyPatternHelper
+operator|.
+name|ORGANISATION_KEY
+argument_list|,
+name|organisation
+argument_list|)
+expr_stmt|;
+name|attributes
+operator|.
+name|put
+argument_list|(
+name|IvyPatternHelper
+operator|.
+name|MODULE_KEY
+argument_list|,
+name|name
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns the name of the module.      * @return  The name of the module.      */
@@ -449,6 +504,16 @@ name|ENCODE_SEPARATOR
 operator|+
 name|getName
 argument_list|()
+return|;
+block|}
+comment|/**      * Returns a Map of all attributes of this module id.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too).       *       * @return A Map instance containing all the attributes and their values.      */
+specifier|public
+name|Map
+name|getAttributes
+parameter_list|()
+block|{
+return|return
+name|attributes
 return|;
 block|}
 comment|/**      * Returns a ModuleId        * @param  encoded        * @return  The new ModuleId.      * @throws  IllegalArgumentException  If the given String could not be decoded.      */
