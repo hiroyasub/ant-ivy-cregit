@@ -1798,6 +1798,25 @@ name|toString
 argument_list|()
 return|;
 block|}
+specifier|public
+name|boolean
+name|isConfRequiredByMergedUsageOnly
+parameter_list|(
+name|String
+name|conf
+parameter_list|)
+block|{
+return|return
+name|node
+operator|.
+name|isConfRequiredByMergedUsageOnly
+argument_list|(
+name|rootModuleConf
+argument_list|,
+name|conf
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

@@ -2422,6 +2422,32 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|isConfRequiredByMergedUsageOnly
+argument_list|(
+name|rootModuleConf
+argument_list|,
+name|conf
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"configuration required by evicted revision is not available in "
+operator|+
+literal|"selected revision. skipping "
+operator|+
+name|conf
+operator|+
+literal|" in "
+operator|+
+name|this
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 operator|!
 name|conf
 operator|.
@@ -2523,6 +2549,34 @@ argument_list|(
 name|conf
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|isConfRequiredByMergedUsageOnly
+argument_list|(
+name|rootModuleConf
+argument_list|,
+name|conf
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"configuration required by evicted revision is not visible in "
+operator|+
+literal|"selected revision. skipping "
+operator|+
+name|conf
+operator|+
+literal|" in "
+operator|+
+name|this
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|problem
 operator|=
 operator|new
@@ -2545,6 +2599,7 @@ operator|+
 name|parentConf
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|false
 return|;
@@ -3197,6 +3252,41 @@ operator|.
 name|size
 argument_list|()
 index|]
+argument_list|)
+return|;
+block|}
+specifier|protected
+name|boolean
+name|isConfRequiredByMergedUsageOnly
+parameter_list|(
+name|String
+name|rootModuleConf
+parameter_list|,
+name|String
+name|conf
+parameter_list|)
+block|{
+name|Set
+name|confs
+init|=
+name|usage
+operator|.
+name|getConfigurations
+argument_list|(
+name|rootModuleConf
+argument_list|)
+decl_stmt|;
+return|return
+name|confs
+operator|==
+literal|null
+operator|||
+operator|!
+name|confs
+operator|.
+name|contains
+argument_list|(
+name|conf
 argument_list|)
 return|;
 block|}

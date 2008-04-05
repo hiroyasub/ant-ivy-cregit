@@ -3977,6 +3977,17 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|node
+operator|.
+name|isConfRequiredByMergedUsageOnly
+argument_list|(
+name|conf
+argument_list|)
+condition|)
+block|{
 name|Message
 operator|.
 name|warn
@@ -4020,6 +4031,7 @@ name|getResolvedId
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return;
 block|}
