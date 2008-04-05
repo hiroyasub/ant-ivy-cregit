@@ -56,6 +56,12 @@ name|DependencyArtifactDescriptor
 extends|extends
 name|ExtendableItem
 block|{
+comment|/**      * Returns the dependency descriptor in which this dependency artifact descriptor is declared.      *       * @return the dependency descriptor in which this dependency artifact descriptor is declared.      */
+specifier|public
+name|DependencyDescriptor
+name|getDependencyDescriptor
+parameter_list|()
+function_decl|;
 comment|/**      * Returns the name of the artifact asked      *       * @return      */
 specifier|public
 name|String

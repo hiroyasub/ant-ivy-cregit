@@ -4917,6 +4917,8 @@ operator|=
 operator|new
 name|DefaultDependencyArtifactDescriptor
 argument_list|(
+name|dd
+argument_list|,
 name|name
 argument_list|,
 name|type

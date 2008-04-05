@@ -700,6 +700,10 @@ name|getFailedArtifactsReports
 parameter_list|()
 block|{
 return|return
+name|ConfigurationResolveReport
+operator|.
+name|filterOutMergedArtifacts
+argument_list|(
 name|getArtifactsReports
 argument_list|(
 name|DownloadStatus
@@ -707,6 +711,7 @@ operator|.
 name|FAILED
 argument_list|,
 literal|true
+argument_list|)
 argument_list|)
 return|;
 block|}

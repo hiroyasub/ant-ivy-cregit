@@ -1481,6 +1481,8 @@ operator|new
 name|DefaultDependencyArtifactDescriptor
 argument_list|(
 name|dd
+argument_list|,
+name|dd
 operator|.
 name|getDependencyId
 argument_list|()

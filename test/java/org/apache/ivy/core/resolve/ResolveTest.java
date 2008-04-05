@@ -6820,6 +6820,98 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testResolveConflictsWithArtifacts
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// test case for IVY-537
+comment|// #mod2.6;0.12 -> {#mod1.6;1.0.4 #mod2.5;0.6.2 }
+comment|// #mod1.6;1.0.4 -> #mod1.3;3.0 artifacts A and B
+comment|// #mod2.5;0.6.2 -> #mod1.3;3.1 artifact C
+comment|// #mod1.3;3.1 has only A and C artifacts, not B.
+comment|// Both A and C should be downloaded, and a message should tell that B was not available.
+name|ResolveReport
+name|report
+init|=
+name|ivy
+operator|.
+name|resolve
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.12.xml"
+argument_list|)
+operator|.
+name|toURL
+argument_list|()
+argument_list|,
+name|getResolveOptions
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+literal|"*"
+block|}
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertFalse
+argument_list|(
+name|report
+operator|.
+name|hasError
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// dependencies
+name|assertTrue
+argument_list|(
+name|getArchiveFileInCache
+argument_list|(
+literal|"org1"
+argument_list|,
+literal|"mod1.3"
+argument_list|,
+literal|"3.1"
+argument_list|,
+literal|"mod1.3-A"
+argument_list|,
+literal|"jar"
+argument_list|,
+literal|"jar"
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|getArchiveFileInCache
+argument_list|(
+literal|"org1"
+argument_list|,
+literal|"mod1.3"
+argument_list|,
+literal|"3.1"
+argument_list|,
+literal|"mod1.3-C"
+argument_list|,
+literal|"jar"
+argument_list|,
+literal|"jar"
+argument_list|)
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|testResolveSeveralDefaultWithArtifactsAndConfs
 parameter_list|()
 throws|throws
@@ -15499,7 +15591,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod4.1 v 4.6 (conf compile, test extends compile) depends on
+comment|// mod4.1 v 4.6 (conf compile, runtime extends compile, test extends runtime) depends on
 comment|// - mod1.2 v 1+ and forces it in conf compile
 comment|// - mod3.1 v 1.2 in conf test which depends on mod1.2 v 2+
 name|ResolveReport
