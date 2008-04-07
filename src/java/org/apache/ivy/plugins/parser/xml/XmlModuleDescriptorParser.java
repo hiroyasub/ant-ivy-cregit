@@ -2278,11 +2278,13 @@ operator|)
 name|ex
 throw|;
 block|}
-throw|throw
+name|SAXException
+name|sax
+init|=
 operator|new
 name|SAXException
 argument_list|(
-literal|"problem occured while parsing ivy file. message: "
+literal|"Problem occured while parsing ivy file: "
 operator|+
 name|ex
 operator|.
@@ -2291,6 +2293,16 @@ argument_list|()
 argument_list|,
 name|ex
 argument_list|)
+decl_stmt|;
+name|sax
+operator|.
+name|initCause
+argument_list|(
+name|ex
+argument_list|)
+expr_stmt|;
+throw|throw
+name|sax
 throw|;
 block|}
 block|}
