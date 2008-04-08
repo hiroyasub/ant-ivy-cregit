@@ -23906,6 +23906,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -24100,6 +24103,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -24262,6 +24268,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -24422,6 +24431,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -24582,6 +24594,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -24752,6 +24767,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -24925,6 +24943,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -25075,6 +25096,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -26116,6 +26140,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -26229,6 +26256,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURL
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
