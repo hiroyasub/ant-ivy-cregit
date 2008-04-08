@@ -258,7 +258,7 @@ literal|"mkdir"
 decl_stmt|;
 specifier|private
 name|String
-name|publishMode
+name|publishPermissions
 init|=
 literal|"0600"
 decl_stmt|;
@@ -1279,7 +1279,7 @@ name|path
 argument_list|,
 name|name
 argument_list|,
-name|publishMode
+name|publishPermissions
 argument_list|)
 expr_stmt|;
 block|}
@@ -1876,17 +1876,17 @@ block|}
 comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions      * of the published files.      */
 specifier|public
 name|void
-name|setPublishMode
+name|setPublishPermissions
 parameter_list|(
 name|String
-name|mode
+name|permissions
 parameter_list|)
 block|{
 name|this
 operator|.
-name|publishMode
+name|publishPermissions
 operator|=
-name|mode
+name|permissions
 expr_stmt|;
 block|}
 comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName()      */

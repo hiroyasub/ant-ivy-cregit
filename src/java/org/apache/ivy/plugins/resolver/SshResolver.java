@@ -61,10 +61,10 @@ block|}
 comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions      * of the published files.      */
 specifier|public
 name|void
-name|setPublishMode
+name|setPublishPermissions
 parameter_list|(
 name|String
-name|mode
+name|permissions
 parameter_list|)
 block|{
 operator|(
@@ -75,9 +75,9 @@ name|getRepository
 argument_list|()
 operator|)
 operator|.
-name|setPublishMode
+name|setPublishPermissions
 argument_list|(
-name|mode
+name|permissions
 argument_list|)
 expr_stmt|;
 block|}
