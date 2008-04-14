@@ -2364,6 +2364,25 @@ throw|;
 block|}
 else|else
 block|{
+try|try
+block|{
+comment|//First asume that it is an absolute URL
+name|settingsURL
+operator|=
+operator|new
+name|URL
+argument_list|(
+name|propFilePath
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|MalformedURLException
+name|e
+parameter_list|)
+block|{
+comment|//If that fail, it may be because it is a relative one.
 name|settingsURL
 operator|=
 operator|new
@@ -2376,6 +2395,7 @@ argument_list|,
 name|propFilePath
 argument_list|)
 expr_stmt|;
+block|}
 name|Message
 operator|.
 name|verbose
