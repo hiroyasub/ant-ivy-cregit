@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -157,6 +167,15 @@ name|substitute
 parameter_list|(
 name|String
 name|value
+parameter_list|)
+function_decl|;
+name|Map
+comment|/*<String, String>*/
+name|substitute
+parameter_list|(
+name|Map
+comment|/*<String, String>*/
+name|strings
 parameter_list|)
 function_decl|;
 name|ResolutionCacheManager

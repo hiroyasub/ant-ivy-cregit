@@ -2386,6 +2386,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|settings
+argument_list|,
 name|attributes
 argument_list|,
 name|XmlModuleDescriptorParser
@@ -3405,6 +3407,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|settings
+argument_list|,
 name|attributes
 argument_list|,
 operator|new

@@ -3136,6 +3136,8 @@ name|ExtendableItemHelper
 operator|.
 name|fillExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|configuration
 argument_list|,
 name|attributes
@@ -3572,6 +3574,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 name|DEPENDENCY_REGULAR_ATTRIBUTES
@@ -3816,6 +3820,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 operator|new
@@ -4236,6 +4242,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 operator|new
@@ -4906,6 +4914,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 operator|new
@@ -5055,6 +5065,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 operator|new
@@ -5188,6 +5200,8 @@ name|ExtendableItemHelper
 operator|.
 name|getExtraAttributes
 argument_list|(
+name|ivy
+argument_list|,
 name|attributes
 argument_list|,
 operator|new
