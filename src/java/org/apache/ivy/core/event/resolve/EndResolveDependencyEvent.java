@@ -192,6 +192,24 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// now that we have loaded the dependency descriptor, we can put the extra attributes
+comment|// contained in the descriptor too
+name|addAttributes
+argument_list|(
+name|this
+operator|.
+name|module
+operator|.
+name|getDescriptor
+argument_list|()
+operator|.
+name|getResolvedModuleRevisionId
+argument_list|()
+operator|.
+name|getExtraAttributes
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|addAttribute
 argument_list|(
 literal|"resolved"
