@@ -167,6 +167,30 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testUnnecessaryDefaultIvyInstance
+parameter_list|()
+block|{
+name|executeTarget
+argument_list|(
+literal|"testUnnecessaryDefaultIvyInstance"
+argument_list|)
+expr_stmt|;
+name|assertNull
+argument_list|(
+literal|"Default ivy.instance settings shouldn't have been loaded"
+argument_list|,
+name|getProject
+argument_list|()
+operator|.
+name|getReference
+argument_list|(
+literal|"ivy.instance"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

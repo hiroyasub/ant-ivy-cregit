@@ -1577,6 +1577,14 @@ name|getLog
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|resolve
+operator|.
+name|setSettingsRef
+argument_list|(
+name|getSettingsRef
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|resolve
 return|;
