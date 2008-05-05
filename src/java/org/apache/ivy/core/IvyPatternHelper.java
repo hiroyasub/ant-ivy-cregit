@@ -382,6 +382,11 @@ argument_list|()
 argument_list|,
 name|moduleRevision
 operator|.
+name|getBranch
+argument_list|()
+argument_list|,
+name|moduleRevision
+operator|.
 name|getRevision
 argument_list|()
 argument_list|,
@@ -390,6 +395,8 @@ argument_list|,
 literal|"ivy"
 argument_list|,
 literal|"xml"
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,
