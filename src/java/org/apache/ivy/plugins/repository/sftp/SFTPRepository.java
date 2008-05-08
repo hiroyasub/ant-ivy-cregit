@@ -284,10 +284,12 @@ name|SFTPRepository
 extends|extends
 name|AbstractSshBasedRepository
 block|{
+comment|// this must be a long to ensure the multiplication done below uses longs
+comment|// instead of ints which are not big enough to hold the result
 specifier|private
 specifier|static
 specifier|final
-name|int
+name|long
 name|MILLIS_PER_SECOND
 init|=
 literal|1000
