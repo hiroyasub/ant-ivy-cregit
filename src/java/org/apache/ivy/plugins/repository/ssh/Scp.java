@@ -1940,7 +1940,7 @@ block|}
 name|String
 name|cmd
 init|=
-literal|"scp -t "
+literal|"scp -tp "
 decl_stmt|;
 if|if
 condition|(
