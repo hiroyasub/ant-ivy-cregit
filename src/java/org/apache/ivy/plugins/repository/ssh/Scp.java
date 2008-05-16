@@ -1204,11 +1204,28 @@ name|length
 argument_list|()
 decl_stmt|;
 name|String
+name|cMode
+init|=
+name|mode
+decl_stmt|;
+if|if
+condition|(
+name|cMode
+operator|==
+literal|null
+condition|)
+block|{
+name|cMode
+operator|=
+literal|"0600"
+expr_stmt|;
+block|}
+name|String
 name|cline
 init|=
 literal|"C"
 operator|+
-name|mode
+name|cMode
 operator|+
 literal|" "
 operator|+
@@ -1940,8 +1957,22 @@ block|}
 name|String
 name|cmd
 init|=
-literal|"scp -tp "
+literal|"scp -t "
 decl_stmt|;
+if|if
+condition|(
+name|mode
+operator|!=
+literal|null
+condition|)
+block|{
+name|cmd
+operator|=
+name|cmd
+operator|+
+literal|"-p "
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|remoteTargetDir

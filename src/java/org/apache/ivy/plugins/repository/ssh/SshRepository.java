@@ -260,7 +260,7 @@ specifier|private
 name|String
 name|publishPermissions
 init|=
-literal|"0600"
+literal|null
 decl_stmt|;
 comment|/**      * create a new resource with lazy initializing      */
 specifier|public
