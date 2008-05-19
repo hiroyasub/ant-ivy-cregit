@@ -1340,7 +1340,7 @@ name|equals
 argument_list|(
 name|plugin
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|)
 condition|)
@@ -1427,7 +1427,7 @@ argument_list|()
 argument_list|,
 name|dep
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|)
 operator|+
@@ -1492,7 +1492,7 @@ argument_list|()
 argument_list|,
 name|dep
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|,
 name|version
@@ -1767,7 +1767,7 @@ argument_list|()
 argument_list|,
 name|dep
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1799,7 +1799,7 @@ argument_list|()
 argument_list|,
 name|dep
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|)
 argument_list|,
@@ -1840,7 +1840,7 @@ name|EXTRA_INFO_DELIMITER
 operator|+
 name|plugin
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 operator|+
 name|EXTRA_INFO_DELIMITER
@@ -2081,7 +2081,7 @@ return|;
 block|}
 specifier|public
 name|String
-name|getArtifaceId
+name|getArtifactId
 parameter_list|()
 block|{
 return|return
@@ -2118,7 +2118,7 @@ argument_list|()
 argument_list|,
 name|dep
 operator|.
-name|getArtifaceId
+name|getArtifactId
 argument_list|()
 argument_list|)
 decl_stmt|;

@@ -1277,7 +1277,7 @@ block|}
 comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
 specifier|public
 name|String
-name|getArtifaceId
+name|getArtifactId
 parameter_list|()
 block|{
 name|String
@@ -1493,7 +1493,7 @@ return|;
 block|}
 specifier|public
 name|String
-name|getArtifaceId
+name|getArtifactId
 parameter_list|()
 block|{
 name|String

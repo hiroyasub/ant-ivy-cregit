@@ -81,7 +81,7 @@ return|;
 block|}
 specifier|public
 name|String
-name|getArtifaceId
+name|getArtifactId
 parameter_list|()
 block|{
 return|return

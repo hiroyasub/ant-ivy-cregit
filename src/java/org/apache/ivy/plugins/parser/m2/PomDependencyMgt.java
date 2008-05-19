@@ -33,7 +33,7 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|String
-name|getArtifaceId
+name|getArtifactId
 parameter_list|()
 function_decl|;
 specifier|public
