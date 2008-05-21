@@ -42,6 +42,12 @@ name|String
 name|getVersion
 parameter_list|()
 function_decl|;
+specifier|public
+specifier|abstract
+name|String
+name|getScope
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
