@@ -1877,12 +1877,6 @@ name|remoteTargetName
 operator|==
 literal|null
 operator|)
-operator|||
-operator|(
-name|mode
-operator|==
-literal|null
-operator|)
 condition|)
 block|{
 throw|throw
@@ -1893,6 +1887,13 @@ literal|"Null argument."
 argument_list|)
 throw|;
 block|}
+if|if
+condition|(
+name|mode
+operator|!=
+literal|null
+condition|)
+block|{
 if|if
 condition|(
 name|mode
@@ -1952,6 +1953,7 @@ argument_list|(
 literal|"Invalid mode."
 argument_list|)
 throw|;
+block|}
 block|}
 block|}
 name|String
