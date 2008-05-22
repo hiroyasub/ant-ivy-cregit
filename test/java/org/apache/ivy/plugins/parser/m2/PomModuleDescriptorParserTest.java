@@ -3844,7 +3844,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"test-dependencieMgt.pom"
+literal|"test-dependencyMgt.pom"
 argument_list|)
 argument_list|,
 literal|false
@@ -4140,7 +4140,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"test-dependencieMgt.pom"
+literal|"test-dependencyMgt.pom"
 argument_list|)
 argument_list|,
 literal|false
@@ -4195,7 +4195,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"test-parentDependencieMgt.pom"
+literal|"test-parentDependencyMgt.pom"
 argument_list|)
 argument_list|,
 literal|false
