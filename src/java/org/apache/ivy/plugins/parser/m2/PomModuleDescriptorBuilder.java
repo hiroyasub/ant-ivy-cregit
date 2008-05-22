@@ -1398,17 +1398,6 @@ operator|.
 name|getScope
 argument_list|()
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"*** scope = "
-operator|+
-name|scope
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
