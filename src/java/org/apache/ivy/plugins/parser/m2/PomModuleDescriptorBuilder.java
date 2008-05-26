@@ -1588,6 +1588,52 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|(
+name|dep
+operator|.
+name|getClassifier
+argument_list|()
+operator|!=
+literal|null
+operator|)
+operator|||
+operator|(
+name|dep
+operator|.
+name|getType
+argument_list|()
+operator|!=
+literal|null
+operator|)
+condition|)
+block|{
+name|String
+name|type
+init|=
+literal|"jar"
+decl_stmt|;
+if|if
+condition|(
+name|dep
+operator|.
+name|getType
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|type
+operator|=
+name|dep
+operator|.
+name|getType
+argument_list|()
+expr_stmt|;
+block|}
+comment|// we deal with classifiers by setting an extra attribute and forcing the
+comment|// dependency to assume such an artifact is published
+if|if
+condition|(
 name|dep
 operator|.
 name|getClassifier
@@ -1596,8 +1642,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// we deal with classifiers by setting an extra attribute and forcing the
-comment|// dependency to assume such an artifact is published
 name|extraAtt
 operator|.
 name|put
@@ -1610,6 +1654,7 @@ name|getClassifier
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|DefaultDependencyArtifactDescriptor
 name|depArtifact
 init|=
@@ -1626,9 +1671,9 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|"jar"
+name|type
 argument_list|,
-literal|"jar"
+name|type
 argument_list|,
 literal|null
 argument_list|,
