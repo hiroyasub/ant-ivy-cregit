@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This describes a rule of exclusion. It is used to resctrict the artifacts asked for a dependency,  * by excluding a whole module or some artifacts of a dependency.  */
+comment|/**  * This describes a rule of exclusion. It is used to restrict the artifacts asked for a dependency,  * by excluding a whole module or some artifacts of a dependency.  */
 end_comment
 
 begin_interface
