@@ -381,7 +381,7 @@ specifier|final
 name|String
 name|REPORT_ENCODING
 init|=
-literal|"ISO-8859-1"
+literal|"UTF-8"
 decl_stmt|;
 specifier|public
 name|void
