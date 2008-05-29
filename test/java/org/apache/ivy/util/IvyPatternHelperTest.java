@@ -279,6 +279,41 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testSpecialCharsInsidePattern
+parameter_list|()
+block|{
+name|String
+name|pattern
+init|=
+literal|"[organization]/[module]/build/archives (x86)/[type]s/[artifact]-[revision].[ext]"
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|"apache/Test/build/archives (x86)/jars/test-1.0.jar"
+argument_list|,
+name|IvyPatternHelper
+operator|.
+name|substitute
+argument_list|(
+name|pattern
+argument_list|,
+literal|"apache"
+argument_list|,
+literal|"Test"
+argument_list|,
+literal|"1.0"
+argument_list|,
+literal|"test"
+argument_list|,
+literal|"jar"
+argument_list|,
+literal|"jar"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
