@@ -302,6 +302,7 @@ name|ResolveData
 name|data
 parameter_list|)
 function_decl|;
+comment|/**      * Download artifacts with specified DownloadOptions.      *<p>      * The resolver will always make a best effort, and do not stop when an artifact is not      * available. It rather continue to attempt to download other requested artifacts, and report      * what has been done in the returned DownloadReport.      *</p>      *<p>      * The returned DownloadReport is never<code>null</code>, and always contain an      * {@link ArtifactDownloadReport} for each requested Artifact.      *</p>      *       * @param artifacts      *            an array of artifacts to download      * @param options      *            options to apply for this download      * @return a DownloadReport with details about each Artifact download.      */
 name|DownloadReport
 name|download
 parameter_list|(
