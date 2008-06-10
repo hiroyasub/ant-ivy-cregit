@@ -1042,6 +1042,16 @@ operator|+
 name|getName
 argument_list|()
 operator|+
+literal|" ("
+operator|+
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|")"
+operator|+
 literal|" when trying to download "
 operator|+
 name|artifact
