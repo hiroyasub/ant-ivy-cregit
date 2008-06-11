@@ -1153,6 +1153,12 @@ return|;
 block|}
 finally|finally
 block|{
+comment|// IVY-834: log the problems if there were any...
+name|Message
+operator|.
+name|sumupProblems
+argument_list|()
+expr_stmt|;
 name|resolveEngine
 operator|.
 name|setDictatorResolver
