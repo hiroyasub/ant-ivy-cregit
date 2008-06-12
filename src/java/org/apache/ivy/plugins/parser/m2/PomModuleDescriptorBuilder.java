@@ -3114,7 +3114,7 @@ name|Collections
 operator|.
 name|singletonMap
 argument_list|(
-literal|"classifier"
+literal|"m:classifier"
 argument_list|,
 literal|"sources"
 argument_list|)
@@ -3147,7 +3147,7 @@ name|Collections
 operator|.
 name|singletonMap
 argument_list|(
-literal|"classifier"
+literal|"m:classifier"
 argument_list|,
 literal|"javadoc"
 argument_list|)
