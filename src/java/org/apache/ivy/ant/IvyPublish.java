@@ -1776,7 +1776,8 @@ name|getQualifiedExtraAttributes
 parameter_list|()
 block|{
 return|return
-name|getExtraAttributes
+operator|new
+name|HashMap
 argument_list|()
 return|;
 block|}

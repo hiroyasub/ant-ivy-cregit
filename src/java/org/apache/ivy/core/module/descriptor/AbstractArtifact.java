@@ -139,14 +139,14 @@ name|getType
 argument_list|()
 argument_list|)
 operator|&&
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|equals
 argument_list|(
 name|art
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 return|;
@@ -237,7 +237,7 @@ name|hash
 operator|*
 literal|17
 operator|+
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|hashCode

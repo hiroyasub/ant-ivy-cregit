@@ -4929,7 +4929,7 @@ argument_list|()
 argument_list|,
 name|dad
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 argument_list|)
@@ -5031,7 +5031,7 @@ name|HashMap
 argument_list|(
 name|dad
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 decl_stmt|;

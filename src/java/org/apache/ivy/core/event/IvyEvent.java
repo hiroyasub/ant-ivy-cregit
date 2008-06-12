@@ -239,6 +239,14 @@ name|addAttributes
 argument_list|(
 name|mrid
 operator|.
+name|getQualifiedExtraAttributes
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|addAttributes
+argument_list|(
+name|mrid
+operator|.
 name|getExtraAttributes
 argument_list|()
 argument_list|)

@@ -564,7 +564,7 @@ name|rev
 argument_list|,
 name|mrid
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1041,12 +1041,12 @@ block|{
 return|return
 name|other
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 return|;
@@ -1120,7 +1120,7 @@ name|hash
 operator|*
 literal|13
 operator|+
-name|getAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|hashCode

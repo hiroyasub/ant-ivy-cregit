@@ -447,7 +447,7 @@ argument_list|()
 argument_list|,
 name|artifact
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 return|;

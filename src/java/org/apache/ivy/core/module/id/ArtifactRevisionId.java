@@ -328,14 +328,14 @@ name|getModuleRevisionId
 argument_list|()
 argument_list|)
 operator|&&
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|equals
 argument_list|(
 name|arid
 operator|.
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 return|;
@@ -374,7 +374,7 @@ literal|37
 expr_stmt|;
 name|hash
 operator|+=
-name|getExtraAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 operator|.
 name|hashCode
