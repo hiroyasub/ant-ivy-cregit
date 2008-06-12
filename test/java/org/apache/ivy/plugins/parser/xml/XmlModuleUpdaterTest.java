@@ -393,6 +393,8 @@ literal|"yourorg"
 argument_list|,
 literal|"yourmodule6"
 argument_list|,
+literal|"trunk"
+argument_list|,
 literal|"latest.integration"
 argument_list|)
 argument_list|,
@@ -600,6 +602,8 @@ argument_list|(
 literal|"yourorg"
 argument_list|,
 literal|"yourmodule6"
+argument_list|,
+literal|"trunk"
 argument_list|,
 literal|"latest.integration"
 argument_list|)
