@@ -973,6 +973,11 @@ specifier|final
 name|URL
 name|relativePathCtx
 decl_stmt|;
+specifier|private
+specifier|final
+name|UpdateOptions
+name|options
+decl_stmt|;
 specifier|public
 name|UpdaterHandler
 parameter_list|(
@@ -987,6 +992,12 @@ name|UpdateOptions
 name|options
 parameter_list|)
 block|{
+name|this
+operator|.
+name|options
+operator|=
+name|options
+expr_stmt|;
 name|this
 operator|.
 name|settings
@@ -2825,6 +2836,11 @@ block|}
 block|}
 if|if
 condition|(
+name|options
+operator|.
+name|isUpdateBranch
+argument_list|()
+operator|&&
 name|systemMrid
 operator|.
 name|getBranch

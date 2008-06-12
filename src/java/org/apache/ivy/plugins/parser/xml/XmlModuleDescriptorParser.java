@@ -976,6 +976,11 @@ name|getResolvedPublicationDate
 argument_list|()
 argument_list|)
 operator|.
+name|setUpdateBranch
+argument_list|(
+literal|false
+argument_list|)
+operator|.
 name|setNamespace
 argument_list|(
 name|ns
