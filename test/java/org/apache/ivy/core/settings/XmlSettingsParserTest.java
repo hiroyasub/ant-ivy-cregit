@@ -1496,9 +1496,9 @@ argument_list|(
 operator|new
 name|ModuleId
 argument_list|(
-literal|"foo"
+literal|"apache"
 argument_list|,
-literal|"bar"
+literal|"ivy"
 argument_list|)
 argument_list|)
 argument_list|)
