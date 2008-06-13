@@ -6905,7 +6905,7 @@ name|CacheUtil
 operator|.
 name|checkCachePattern
 argument_list|(
-name|defaultCacheIvyPattern
+name|defaultCacheArtifactPattern
 argument_list|)
 expr_stmt|;
 name|this
