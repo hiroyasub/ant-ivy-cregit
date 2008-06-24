@@ -157,6 +157,20 @@ name|ResolvedResource
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|FileUtil
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents one entry in the cache of a {@link PackagerResolver}.  */
 end_comment
@@ -754,9 +768,9 @@ operator|=
 literal|false
 expr_stmt|;
 return|return
-name|PackagerResolver
+name|FileUtil
 operator|.
-name|deleteRecursive
+name|forceDelete
 argument_list|(
 name|this
 operator|.
