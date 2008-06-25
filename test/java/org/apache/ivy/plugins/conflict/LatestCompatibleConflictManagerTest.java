@@ -358,11 +358,6 @@ argument_list|)
 operator|.
 name|addMD
 argument_list|(
-literal|"#B;2.5-> { #D;2.0 }"
-argument_list|)
-operator|.
-name|addMD
-argument_list|(
 literal|"#C;3.4-> { #D;[1.0,1.6] #E;1.0 }"
 argument_list|)
 operator|.
@@ -622,16 +617,6 @@ argument_list|(
 literal|"#D;2.5->#B;3.4"
 argument_list|)
 comment|// circular dependency
-operator|.
-name|addMD
-argument_list|(
-literal|"#D;2.5"
-argument_list|)
-operator|.
-name|addMD
-argument_list|(
-literal|"#D;3.0"
-argument_list|)
 operator|.
 name|init
 argument_list|()
