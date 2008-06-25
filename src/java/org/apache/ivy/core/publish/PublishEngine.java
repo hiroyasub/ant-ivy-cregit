@@ -133,6 +133,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Set
 import|;
 end_import
@@ -1142,7 +1152,7 @@ name|Set
 name|artifactsSet
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 name|String
@@ -1511,6 +1521,24 @@ literal|" file does not exist"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|options
+operator|.
+name|isHaltOnMissing
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"missing artifact "
+operator|+
+name|artifact
+argument_list|)
+throw|;
+block|}
 name|missing
 operator|.
 name|add
@@ -1593,6 +1621,24 @@ operator|+
 literal|" file does not exist"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|options
+operator|.
+name|isHaltOnMissing
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"missing ivy artifact "
+operator|+
+name|artifact
+argument_list|)
+throw|;
+block|}
 name|missing
 operator|.
 name|add
