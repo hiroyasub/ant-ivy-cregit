@@ -419,6 +419,11 @@ if|if
 condition|(
 operator|!
 name|overwrite
+operator|&&
+name|destination
+operator|.
+name|exists
+argument_list|()
 condition|)
 block|{
 throw|throw
@@ -433,7 +438,7 @@ literal|" to "
 operator|+
 name|destination
 operator|+
-literal|": destination probably already exists and overwrite is false"
+literal|": destination already exists and overwrite is false"
 argument_list|)
 throw|;
 block|}
