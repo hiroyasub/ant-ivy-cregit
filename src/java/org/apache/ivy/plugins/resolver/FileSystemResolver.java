@@ -511,6 +511,26 @@ literal|"no current transaction!"
 argument_list|)
 throw|;
 block|}
+if|if
+condition|(
+name|transactionDestDir
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"impossible to commit transaction: transaction destination directory "
+operator|+
+literal|"already exists: "
+operator|+
+name|transactionDestDir
+argument_list|)
+throw|;
+block|}
 try|try
 block|{
 name|getFileRepository
@@ -664,6 +684,27 @@ argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|transactionDestDir
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+name|unsupportedTransaction
+argument_list|(
+literal|"transaction destination directory already exists: "
+operator|+
+name|transactionDestDir
+argument_list|)
+expr_stmt|;
+name|closeTransaction
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
 name|Message
 operator|.
 name|verbose
@@ -677,6 +718,7 @@ operator|+
 name|transactionDestDir
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
