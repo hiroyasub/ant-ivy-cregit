@@ -202,8 +202,6 @@ specifier|final
 name|String
 name|OPEN_EXC_PATTERN
 init|=
-literal|"["
-operator|+
 literal|"\\"
 operator|+
 name|OPEN_EXC
@@ -211,8 +209,6 @@ operator|+
 literal|"\\"
 operator|+
 name|OPEN_EXC_MAVEN
-operator|+
-literal|"]"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -230,8 +226,6 @@ specifier|final
 name|String
 name|CLOSE_EXC_PATTERN
 init|=
-literal|"["
-operator|+
 literal|"\\"
 operator|+
 name|CLOSE_EXC
@@ -239,8 +233,6 @@ operator|+
 literal|"\\"
 operator|+
 name|CLOSE_EXC_MAVEN
-operator|+
-literal|"]"
 decl_stmt|;
 specifier|private
 specifier|static
