@@ -222,7 +222,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"(.*\\[revision\\])([/\\\\][^/\\\\]+)"
+literal|"(.*[/\\\\]\\[revision\\])([/\\\\].+)"
 argument_list|)
 decl_stmt|;
 comment|/**      * Transactional mode.      *       * auto: use transaction if possible, only log verbose message if not      * true: always use transaction, fail if not supported      * false: never use transactions      */
@@ -528,6 +528,8 @@ operator|+
 literal|"already exists: "
 operator|+
 name|transactionDestDir
+operator|+
+literal|"\npossible cause: usage of identifying tokens after the revision token"
 argument_list|)
 throw|;
 block|}
@@ -697,6 +699,8 @@ argument_list|(
 literal|"transaction destination directory already exists: "
 operator|+
 name|transactionDestDir
+operator|+
+literal|"\npossible cause: usage of identifying tokens after the revision token"
 argument_list|)
 expr_stmt|;
 name|closeTransaction
@@ -713,7 +717,7 @@ literal|"\tstarting transaction: publish during transaction will be done in \n\t
 operator|+
 name|transactionTempDir
 operator|+
-literal|"\n\t\tand on commit moved to \n\t\t"
+literal|"\n\tand on commit moved to \n\t\t"
 operator|+
 name|transactionDestDir
 argument_list|)
@@ -923,7 +927,7 @@ condition|)
 block|{
 name|unsupportedTransaction
 argument_list|(
-literal|"ivy pattern does not use revision as last directory"
+literal|"ivy pattern does not use revision as a directory"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1008,7 +1012,7 @@ condition|)
 block|{
 name|unsupportedTransaction
 argument_list|(
-literal|"ivy pattern does not use revision as last directory"
+literal|"artifact pattern does not use revision as a directory"
 argument_list|)
 expr_stmt|;
 return|return;
