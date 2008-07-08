@@ -89,6 +89,10 @@ name|String
 index|[]
 name|confs
 decl_stmt|;
+specifier|private
+name|String
+name|pubBranch
+decl_stmt|;
 comment|/**      * Returns an instance of DeliverOptions with options corresponding to default values taken from      * the given settings.      *       * @param settings      *            The settings to use to get default option values      * @return a DeliverOptions instance ready to be used or customized      */
 specifier|public
 specifier|static
@@ -390,6 +394,35 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Returns the branch with which the Ivy file should be delivered, or<code>null</code> if      * branch info shouldn't be changed.      *       * @return the branch with which the Ivy file should be delivered      */
+specifier|public
+name|String
+name|getPubBranch
+parameter_list|()
+block|{
+return|return
+name|pubBranch
+return|;
+block|}
+comment|/**      * Sets the branch with which the Ivy file should be delivered.      *       * @param pubBranch      *            the branch with which the Ivy file should be delivered      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+specifier|public
+name|DeliverOptions
+name|setPubBranch
+parameter_list|(
+name|String
+name|pubBranch
+parameter_list|)
+block|{
+name|this
+operator|.
+name|pubBranch
+operator|=
+name|pubBranch
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 specifier|public
 name|String
 name|toString
@@ -415,6 +448,10 @@ operator|+
 literal|" resolveId="
 operator|+
 name|resolveId
+operator|+
+literal|" pubBranch="
+operator|+
+name|pubBranch
 return|;
 block|}
 block|}
