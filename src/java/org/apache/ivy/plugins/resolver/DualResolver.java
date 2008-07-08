@@ -390,6 +390,11 @@ name|mr
 operator|.
 name|getReport
 argument_list|()
+argument_list|,
+name|mr
+operator|.
+name|isForce
+argument_list|()
 argument_list|)
 return|;
 block|}
