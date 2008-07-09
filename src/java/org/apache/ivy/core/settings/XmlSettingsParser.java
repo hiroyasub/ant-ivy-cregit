@@ -3019,11 +3019,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|configurator
-operator|.
-name|isTopLevelMacroRecord
-argument_list|()
-operator|&&
 name|name
 operator|.
 name|indexOf
@@ -3124,6 +3119,13 @@ operator|.
 name|equals
 argument_list|(
 name|currentConfiguratorTag
+argument_list|)
+operator|||
+literal|"resolver"
+operator|.
+name|equals
+argument_list|(
+name|qName
 argument_list|)
 condition|)
 block|{
