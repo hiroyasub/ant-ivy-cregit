@@ -3561,10 +3561,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|systemMid
-operator|.
-name|getBranch
-argument_list|()
+name|branch
 operator|!=
 literal|null
 condition|)
