@@ -727,6 +727,15 @@ name|rootModuleConf
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|report
+operator|.
+name|updateDependency
+argument_list|(
+name|mrid
+argument_list|,
+name|node
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void

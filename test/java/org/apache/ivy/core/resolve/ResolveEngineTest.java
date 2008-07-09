@@ -267,17 +267,6 @@ name|hasError
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|report
-operator|.
-name|getModuleIds
-argument_list|()
-operator|.
-name|isEmpty
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 specifier|private
 name|void
