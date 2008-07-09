@@ -4231,6 +4231,21 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|dep
+operator|.
+name|isEvicted
+argument_list|()
+operator|&&
+operator|!
+name|dep
+operator|.
+name|hasProblem
+argument_list|()
+condition|)
+block|{
 comment|// if there are still confs to fetch (usually because they have
 comment|// been updated when evicting another module), we fetch them now
 name|confs
@@ -4274,6 +4289,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|markDependenciesFetched

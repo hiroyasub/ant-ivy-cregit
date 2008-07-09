@@ -840,6 +840,9 @@ name|conf
 parameter_list|,
 name|boolean
 name|shouldBePublic
+parameter_list|,
+name|IvyNodeUsage
+name|usage
 parameter_list|)
 block|{
 name|Message
@@ -1330,6 +1333,8 @@ argument_list|,
 name|conf
 argument_list|,
 name|shouldBePublic
+argument_list|,
+name|usage
 argument_list|)
 condition|)
 block|{
@@ -1556,6 +1561,8 @@ argument_list|,
 name|conf
 argument_list|,
 name|shouldBePublic
+argument_list|,
+name|usage
 argument_list|)
 expr_stmt|;
 if|if
@@ -1726,6 +1733,8 @@ argument_list|,
 name|conf
 argument_list|,
 name|shouldBePublic
+argument_list|,
+name|usage
 argument_list|)
 expr_stmt|;
 name|DependencyDescriptor
@@ -1736,27 +1745,24 @@ argument_list|(
 name|parent
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|dd
-operator|!=
-literal|null
-condition|)
-block|{
 name|resolved
 operator|.
 name|usage
 operator|.
-name|addUsage
+name|updateDataFrom
 argument_list|(
+name|getAllUsages
+argument_list|()
+argument_list|,
 name|rootModuleConf
-argument_list|,
-name|dd
-argument_list|,
-name|parentConf
 argument_list|)
 expr_stmt|;
-block|}
+name|usage
+operator|=
+name|resolved
+operator|.
+name|usage
+expr_stmt|;
 name|data
 operator|.
 name|replaceNode
@@ -2114,6 +2120,17 @@ comment|// dependency already tried to be resolved, but unsuccessfully
 comment|// nothing special to do
 block|}
 block|}
+name|String
+index|[]
+name|confsArray
+init|=
+name|resolveSpecialConfigurations
+argument_list|(
+name|dependencyConfigurations
+argument_list|,
+name|depNode
+argument_list|)
+decl_stmt|;
 name|Collection
 name|confs
 init|=
@@ -2121,12 +2138,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-name|resolveSpecialConfigurations
-argument_list|(
-name|dependencyConfigurations
-argument_list|,
-name|depNode
-argument_list|)
+name|confsArray
 argument_list|)
 decl_stmt|;
 name|depNode
@@ -2134,6 +2146,19 @@ operator|.
 name|updateConfsToFetch
 argument_list|(
 name|confs
+argument_list|)
+expr_stmt|;
+name|depNode
+operator|.
+name|addRootModuleConfigurations
+argument_list|(
+name|depNode
+operator|.
+name|usage
+argument_list|,
+name|rootModuleConf
+argument_list|,
+name|confsArray
 argument_list|)
 expr_stmt|;
 name|depNode
@@ -2317,6 +2342,9 @@ name|conf
 parameter_list|,
 name|boolean
 name|shouldBePublic
+parameter_list|,
+name|IvyNodeUsage
+name|usage
 parameter_list|)
 block|{
 if|if
@@ -2335,6 +2363,15 @@ argument_list|(
 name|conf
 argument_list|)
 decl_stmt|;
+name|addRootModuleConfigurations
+argument_list|(
+name|usage
+argument_list|,
+name|rootModuleConf
+argument_list|,
+name|confs
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|int
@@ -2391,7 +2428,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|verbose
+name|info
 argument_list|(
 literal|"configuration required by evicted revision is not available in "
 operator|+
@@ -2424,22 +2461,22 @@ operator|=
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"configuration(s) not found in "
+literal|"configuration not found in "
 operator|+
 name|this
 operator|+
-literal|": "
+literal|": '"
 operator|+
 name|conf
 operator|+
-literal|". Missing configuration: "
+literal|"'. Missing configuration: '"
 operator|+
 name|confs
 index|[
 name|i
 index|]
 operator|+
-literal|". It was required from "
+literal|"'. It was required from "
 operator|+
 name|parent
 operator|+
@@ -2456,18 +2493,18 @@ operator|=
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"configuration(s) not found in "
+literal|"configuration not found in "
 operator|+
 name|this
 operator|+
-literal|": "
+literal|": '"
 operator|+
 name|confs
 index|[
 name|i
 index|]
 operator|+
-literal|". It was required from "
+literal|"'. It was required from "
 operator|+
 name|parent
 operator|+
@@ -2520,7 +2557,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|verbose
+name|info
 argument_list|(
 literal|"configuration required by evicted revision is not visible in "
 operator|+
@@ -2545,11 +2582,11 @@ literal|"configuration not public in "
 operator|+
 name|this
 operator|+
-literal|": "
+literal|": '"
 operator|+
 name|c
 operator|+
-literal|". It was required from "
+literal|"'. It was required from "
 operator|+
 name|parent
 operator|+
@@ -2562,6 +2599,7 @@ block|}
 return|return
 literal|false
 return|;
+block|}
 block|}
 if|if
 condition|(
@@ -2592,14 +2630,6 @@ operator|.
 name|remove
 argument_list|(
 name|conf
-argument_list|)
-expr_stmt|;
-block|}
-name|addRootModuleConfigurations
-argument_list|(
-name|rootModuleConf
-argument_list|,
-name|confs
 argument_list|)
 expr_stmt|;
 block|}
@@ -3379,6 +3409,9 @@ specifier|private
 name|void
 name|addRootModuleConfigurations
 parameter_list|(
+name|IvyNodeUsage
+name|usage
+parameter_list|,
 name|String
 name|rootModuleConf
 parameter_list|,
@@ -3422,6 +3455,16 @@ name|i
 operator|++
 control|)
 block|{
+name|depConfs
+operator|.
+name|add
+argument_list|(
+name|dependencyConfs
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
 name|Configuration
 name|conf
 init|=
@@ -3451,43 +3494,14 @@ operator|.
 name|getExtends
 argument_list|()
 decl_stmt|;
+comment|// recursive add of extended
 name|addRootModuleConfigurations
 argument_list|(
+name|usage
+argument_list|,
 name|rootModuleConf
 argument_list|,
 name|exts
-argument_list|)
-expr_stmt|;
-comment|// recursive add of extended
-comment|// configurations
-name|depConfs
-operator|.
-name|add
-argument_list|(
-name|conf
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|Message
-operator|.
-name|warn
-argument_list|(
-literal|"unknown configuration in "
-operator|+
-name|getId
-argument_list|()
-operator|+
-literal|": "
-operator|+
-name|dependencyConfs
-index|[
-name|i
-index|]
 argument_list|)
 expr_stmt|;
 block|}
@@ -4018,7 +4032,8 @@ name|updateDataFrom
 argument_list|(
 name|node
 operator|.
-name|usage
+name|getAllUsages
+argument_list|()
 argument_list|,
 name|rootModuleConf
 argument_list|)
@@ -4078,7 +4093,8 @@ name|updateDataFrom
 argument_list|(
 name|node
 operator|.
-name|usage
+name|getAllUsages
+argument_list|()
 argument_list|,
 name|rootModuleConf
 argument_list|)
@@ -4099,6 +4115,40 @@ operator|.
 name|confsToFetch
 argument_list|)
 expr_stmt|;
+block|}
+specifier|private
+name|Collection
+comment|/*<IvyNodeUsage>*/
+name|getAllUsages
+parameter_list|()
+block|{
+name|Collection
+name|usages
+init|=
+operator|new
+name|ArrayList
+argument_list|()
+decl_stmt|;
+name|usages
+operator|.
+name|add
+argument_list|(
+name|usage
+argument_list|)
+expr_stmt|;
+name|usages
+operator|.
+name|addAll
+argument_list|(
+name|mergedUsages
+operator|.
+name|values
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|usages
+return|;
 block|}
 comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *       * @return      */
 specifier|public
@@ -5903,52 +5953,6 @@ operator|.
 name|getRootModuleConf
 argument_list|()
 decl_stmt|;
-name|usage
-operator|.
-name|removeRootModuleConf
-argument_list|(
-name|rootModuleConf
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|Iterator
-name|iterator
-init|=
-name|mergedUsages
-operator|.
-name|values
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|iterator
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
-name|IvyNodeUsage
-name|usage
-init|=
-operator|(
-name|IvyNodeUsage
-operator|)
-name|iterator
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-name|usage
-operator|.
-name|removeRootModuleConf
-argument_list|(
-name|rootModuleConf
-argument_list|)
-expr_stmt|;
-block|}
 comment|// bug 105: update selected data with evicted one
 if|if
 condition|(
@@ -6701,6 +6705,15 @@ name|getBlacklistData
 argument_list|(
 name|rootModuleConf
 argument_list|)
+return|;
+block|}
+specifier|public
+name|IvyNodeUsage
+name|getMainUsage
+parameter_list|()
+block|{
+return|return
+name|usage
 return|;
 block|}
 block|}
