@@ -939,7 +939,7 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-comment|//delete the datafile.  the publish should fail, but all events should still be fired,
+comment|//delete the datafile.  the publish should fail
 comment|//and the ivy artifact should still publish successfully.
 name|assertTrue
 argument_list|(
@@ -1027,7 +1027,7 @@ name|assertEquals
 argument_list|(
 literal|"pre-publish trigger fired and passed all tests"
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 name|preTriggers
 argument_list|)
@@ -1036,7 +1036,7 @@ name|assertEquals
 argument_list|(
 literal|"post-publish trigger fired and passed all tests"
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 name|postTriggers
 argument_list|)
@@ -1054,7 +1054,7 @@ name|assertEquals
 argument_list|(
 literal|"publish of all expected artifacts has been attempted"
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|expectedPublications
 operator|.
