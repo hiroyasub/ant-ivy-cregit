@@ -1396,7 +1396,7 @@ name|artifact
 argument_list|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|put
 parameter_list|(
@@ -1470,7 +1470,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|protected
 name|void
 name|putChecksum
 parameter_list|(
