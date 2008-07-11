@@ -1333,11 +1333,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|IvyAntSettings
+name|IvyConfigure
 name|settings
 init|=
 operator|new
-name|IvyAntSettings
+name|IvyConfigure
 argument_list|()
 decl_stmt|;
 name|settings
@@ -1353,7 +1353,12 @@ name|execute
 argument_list|()
 expr_stmt|;
 comment|// change the default branch to use
-name|settings
+name|IvyAntSettings
+operator|.
+name|getDefaultInstance
+argument_list|(
+name|project
+argument_list|)
 operator|.
 name|getConfiguredIvyInstance
 argument_list|()

@@ -137,11 +137,11 @@ argument_list|(
 name|p
 argument_list|)
 expr_stmt|;
-name|IvyAntSettings
+name|IvyConfigure
 name|settings
 init|=
 operator|new
-name|IvyAntSettings
+name|IvyConfigure
 argument_list|()
 decl_stmt|;
 name|settings
