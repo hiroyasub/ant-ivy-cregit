@@ -835,9 +835,6 @@ name|packager
 operator|.
 name|getResource
 argument_list|()
-operator|.
-name|openStream
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
