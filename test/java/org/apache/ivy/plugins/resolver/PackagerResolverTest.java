@@ -49,6 +49,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Locale
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -668,6 +678,26 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|Locale
+name|oldLocale
+init|=
+name|Locale
+operator|.
+name|getDefault
+argument_list|()
+decl_stmt|;
+try|try
+block|{
+comment|// set the locale to UK as workaround for SUN bug 6240963
+name|Locale
+operator|.
+name|setDefault
+argument_list|(
+name|Locale
+operator|.
+name|UK
+argument_list|)
+expr_stmt|;
 comment|// Create and configure resolver
 name|PackagerResolver
 name|resolver
@@ -1165,6 +1195,17 @@ name|getDownloadStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|Locale
+operator|.
+name|setDefault
+argument_list|(
+name|oldLocale
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
