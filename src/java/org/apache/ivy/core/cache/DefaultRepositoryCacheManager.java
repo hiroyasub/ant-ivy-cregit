@@ -616,7 +616,7 @@ specifier|final
 name|String
 name|DEFAULT_ARTIFACT_PATTERN
 init|=
-literal|"[organisation]/[module](/[branch])/[type]s/[artifact]-[revision](.[ext])"
+literal|"[organisation]/[module](/[branch])/[type]s/[artifact]-[revision](-[classifier])(.[ext])"
 decl_stmt|;
 specifier|private
 specifier|static
