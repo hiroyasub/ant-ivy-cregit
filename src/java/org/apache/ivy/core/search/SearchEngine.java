@@ -388,9 +388,7 @@ block|{
 name|token
 block|}
 argument_list|,
-operator|new
-name|HashMap
-argument_list|()
+name|otherTokenValues
 argument_list|)
 decl_stmt|;
 for|for
