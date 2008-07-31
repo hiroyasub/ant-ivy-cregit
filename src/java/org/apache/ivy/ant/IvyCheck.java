@@ -247,6 +247,9 @@ name|check
 argument_list|(
 name|file
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -367,6 +370,9 @@ operator|.
 name|check
 argument_list|(
 name|file
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

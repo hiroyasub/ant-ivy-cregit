@@ -1804,6 +1804,9 @@ name|resolve
 argument_list|(
 name|ivyfile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -3166,6 +3169,9 @@ name|add
 argument_list|(
 name|file
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -3315,6 +3321,9 @@ argument_list|(
 name|artifact
 operator|.
 name|getLocalFile
+argument_list|()
+operator|.
+name|toURI
 argument_list|()
 operator|.
 name|toURL

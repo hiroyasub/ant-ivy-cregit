@@ -660,6 +660,9 @@ name|settings
 argument_list|,
 name|file
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,

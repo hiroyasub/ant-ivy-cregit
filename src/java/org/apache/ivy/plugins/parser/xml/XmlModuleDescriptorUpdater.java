@@ -834,6 +834,9 @@ operator|.
 name|getFile
 argument_list|()
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 expr_stmt|;
@@ -3000,6 +3003,9 @@ name|File
 argument_list|(
 name|fileName
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

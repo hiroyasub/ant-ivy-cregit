@@ -797,6 +797,9 @@ name|resolve
 argument_list|(
 name|ivySource
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)

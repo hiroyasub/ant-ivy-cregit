@@ -768,6 +768,9 @@ name|ivyFileURL
 operator|=
 name|ivyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 expr_stmt|;
@@ -980,6 +983,9 @@ argument_list|(
 name|settings
 argument_list|,
 name|ivyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

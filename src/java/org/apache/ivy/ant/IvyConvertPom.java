@@ -250,6 +250,9 @@ argument_list|()
 argument_list|,
 name|pomFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -265,6 +268,9 @@ name|toIvyFile
 argument_list|(
 name|pomFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.
@@ -275,6 +281,9 @@ operator|new
 name|URLResource
 argument_list|(
 name|pomFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

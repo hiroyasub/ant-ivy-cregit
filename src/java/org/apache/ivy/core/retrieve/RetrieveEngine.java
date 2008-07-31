@@ -1448,6 +1448,9 @@ name|ivySource
 init|=
 name|ivyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 decl_stmt|;

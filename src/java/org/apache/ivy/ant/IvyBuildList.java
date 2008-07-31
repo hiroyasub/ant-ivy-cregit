@@ -1033,6 +1033,9 @@ name|settings
 argument_list|,
 name|ivyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,

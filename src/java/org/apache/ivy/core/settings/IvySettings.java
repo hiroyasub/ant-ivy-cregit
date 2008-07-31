@@ -2418,6 +2418,9 @@ name|parse
 argument_list|(
 name|settingsFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -2859,6 +2862,9 @@ argument_list|(
 literal|"ivy.settings.url"
 argument_list|,
 name|settingsFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
