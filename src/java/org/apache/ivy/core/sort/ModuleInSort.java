@@ -662,7 +662,7 @@ name|accept
 argument_list|(
 name|descriptor
 operator|.
-name|getDynamicConstraintDependencyRevisionId
+name|getDependencyRevisionId
 argument_list|()
 argument_list|,
 name|md
