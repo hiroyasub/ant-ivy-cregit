@@ -1365,9 +1365,42 @@ parameter_list|)
 block|{
 name|String
 name|ext
-init|=
-name|packaging
 decl_stmt|;
+if|if
+condition|(
+literal|"pom"
+operator|.
+name|equals
+argument_list|(
+name|packaging
+argument_list|)
+condition|)
+block|{
+comment|// no artifact defined!
+return|return;
+block|}
+if|else if
+condition|(
+literal|"ejb"
+operator|.
+name|equals
+argument_list|(
+name|packaging
+argument_list|)
+condition|)
+block|{
+name|ext
+operator|=
+literal|"jar"
+expr_stmt|;
+block|}
+else|else
+block|{
+name|ext
+operator|=
+name|packaging
+expr_stmt|;
+block|}
 comment|// TODO: we should refactor the following code into something more configurable
 comment|// if 'packaging == bundle' and if we use the 'maven-bundle-plugin', the
 comment|// type must be 'jar'
@@ -1460,7 +1493,7 @@ argument_list|()
 argument_list|,
 name|artifactId
 argument_list|,
-name|ext
+name|packaging
 argument_list|,
 name|ext
 argument_list|)
