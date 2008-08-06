@@ -513,6 +513,9 @@ argument_list|(
 literal|"test/repositories/ivysettings.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.
