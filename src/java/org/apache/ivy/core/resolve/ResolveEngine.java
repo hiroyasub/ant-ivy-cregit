@@ -4644,12 +4644,9 @@ return|;
 block|}
 block|}
 comment|// compute conflicts
-name|Collection
+name|Set
 name|resolvedNodes
 init|=
-operator|new
-name|HashSet
-argument_list|(
 name|ancestor
 operator|.
 name|getNode
@@ -4666,7 +4663,6 @@ name|node
 operator|.
 name|getRootModuleConf
 argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|resolvedNodes
