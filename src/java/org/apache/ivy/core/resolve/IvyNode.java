@@ -1737,14 +1737,6 @@ argument_list|,
 name|usage
 argument_list|)
 expr_stmt|;
-name|DependencyDescriptor
-name|dd
-init|=
-name|getDependencyDescriptor
-argument_list|(
-name|parent
-argument_list|)
-decl_stmt|;
 name|resolved
 operator|.
 name|usage
