@@ -1444,6 +1444,20 @@ name|getArtifactFilter
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|options
+operator|.
+name|getCheckIfChanged
+argument_list|()
+condition|)
+block|{
+name|report
+operator|.
+name|checkIfChanged
+argument_list|()
+expr_stmt|;
+block|}
 comment|// produce resolved ivy file and ivy properties in cache
 name|ResolutionCacheManager
 name|cacheManager
