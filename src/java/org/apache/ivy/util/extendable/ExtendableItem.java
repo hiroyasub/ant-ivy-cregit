@@ -40,14 +40,6 @@ name|String
 name|attName
 parameter_list|)
 function_decl|;
-comment|/**      * Gets the value of a standard attribute Can be used only to access the value of a standard      * attribute (like organisation, revision), not an extra one      *       * @param attName      *            the name of the standard attribute to get      * @return the value of the attribute, null if the attribute doesn't exist      */
-name|String
-name|getStandardAttribute
-parameter_list|(
-name|String
-name|attName
-parameter_list|)
-function_decl|;
 comment|/**      * Gets the value of an extra attribute Can be used only to access the value of an extra      * attribute, not a standard one (like organisation, revision)      *       * @param attName      *            the name of the extra attribute to get. This name can be either qualified or      *            unqualified.      * @return the value of the attribute, null if the attribute doesn't exist      */
 name|String
 name|getExtraAttribute
@@ -59,11 +51,6 @@ function_decl|;
 comment|/**      * Returns a Map of all attributes of this extendable item, including standard and extra ones.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too). Extra attributes are included in unqualified form only.      *       * @return A Map instance containing all the attributes and their values.      */
 name|Map
 name|getAttributes
-parameter_list|()
-function_decl|;
-comment|/**      * Returns a Map of all standard attributes of this extendable item. The Map keys are attribute      * names as Strings, and values are corresponding attribute values (as String too)      *       * @return A Map instance containing all the standard attributes and their values.      */
-name|Map
-name|getStandardAttributes
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a Map of all extra attributes of this extendable item. The Map keys are      *<b>unqualified</b> attribute names as Strings, and values are corresponding attribute values      * (as String too)      *       * @return A Map instance containing all the extra attributes and their values.      * @see #getQualifiedExtraAttributes()      */
