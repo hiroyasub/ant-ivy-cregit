@@ -5878,8 +5878,9 @@ block|}
 comment|// /////////////////////////////////////////////////////////////////////////////
 comment|// EVICTION MANAGEMENT
 comment|// /////////////////////////////////////////////////////////////////////////////
+comment|/** A copy of the set of resolved nodes (real nodes) */
 specifier|public
-name|Collection
+name|Set
 name|getResolvedNodes
 parameter_list|(
 name|ModuleId

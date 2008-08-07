@@ -602,8 +602,9 @@ operator|=
 name|node
 expr_stmt|;
 block|}
+comment|/**      * @return A copy of the set of resolved nodes (real nodes)      */
 specifier|public
-name|Collection
+name|Set
 name|getResolvedNodes
 parameter_list|(
 name|ModuleId

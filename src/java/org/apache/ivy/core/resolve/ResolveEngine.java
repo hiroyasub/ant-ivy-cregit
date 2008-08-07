@@ -4522,6 +4522,14 @@ return|return
 literal|true
 return|;
 block|}
+name|boolean
+name|debugConflictResolution
+init|=
+name|settings
+operator|.
+name|debugConflictResolution
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|checkConflictSolvedSelected
@@ -4579,10 +4587,7 @@ block|{
 comment|// node has been previously evicted in an ancestor: we mark it as evicted
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -4609,10 +4614,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -4745,10 +4747,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -4804,10 +4803,7 @@ return|;
 block|}
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -4903,10 +4899,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -5065,10 +5058,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
@@ -5198,10 +5188,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|settings
-operator|.
 name|debugConflictResolution
-argument_list|()
 condition|)
 block|{
 name|Message
