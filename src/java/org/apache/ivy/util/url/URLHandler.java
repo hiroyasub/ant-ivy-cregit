@@ -283,6 +283,22 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
+specifier|public
+name|void
+name|upload
+parameter_list|(
+name|File
+name|src
+parameter_list|,
+name|URL
+name|dest
+parameter_list|,
+name|CopyProgressListener
+name|l
+parameter_list|)
+throws|throws
+name|IOException
+function_decl|;
 block|}
 end_interface
 
