@@ -75,6 +75,18 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|Ivy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|util
 operator|.
 name|CopyProgressListener
@@ -220,6 +232,20 @@ name|url
 operator|.
 name|openConnection
 argument_list|()
+expr_stmt|;
+name|con
+operator|.
+name|setRequestProperty
+argument_list|(
+literal|"User-Agent"
+argument_list|,
+literal|"Apache Ivy/"
+operator|+
+name|Ivy
+operator|.
+name|getIvyVersion
+argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -526,6 +552,20 @@ operator|.
 name|openConnection
 argument_list|()
 expr_stmt|;
+name|conn
+operator|.
+name|setRequestProperty
+argument_list|(
+literal|"User-Agent"
+argument_list|,
+literal|"Apache Ivy/"
+operator|+
+name|Ivy
+operator|.
+name|getIvyVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|inStream
 operator|=
 name|conn
@@ -643,6 +683,20 @@ name|src
 operator|.
 name|openConnection
 argument_list|()
+expr_stmt|;
+name|srcConn
+operator|.
+name|setRequestProperty
+argument_list|(
+literal|"User-Agent"
+argument_list|,
+literal|"Apache Ivy/"
+operator|+
+name|Ivy
+operator|.
+name|getIvyVersion
+argument_list|()
+argument_list|)
 expr_stmt|;
 name|int
 name|contentLength
@@ -817,7 +871,12 @@ name|setRequestProperty
 argument_list|(
 literal|"User-Agent"
 argument_list|,
-literal|"Apache Ivy"
+literal|"Apache Ivy/"
+operator|+
+name|Ivy
+operator|.
+name|getIvyVersion
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|conn
