@@ -3490,7 +3490,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      */
+comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      *         If the input str doesn't use any variable, the same object is returned      */
 specifier|public
 name|String
 name|substitute
