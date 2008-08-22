@@ -297,6 +297,14 @@ literal|"exactly two resolvers must be added: ivy(1) and artifact(2) one"
 argument_list|)
 throw|;
 block|}
+name|ResolvedModuleRevision
+name|resolved
+init|=
+name|data
+operator|.
+name|getCurrentResolvedModuleRevision
+argument_list|()
+decl_stmt|;
 name|data
 operator|=
 operator|new
@@ -370,6 +378,18 @@ block|}
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|mr
+operator|==
+name|resolved
+condition|)
+block|{
+comment|// nothing has actually been resolved here, we don't need to touch the returned rmr
+return|return
+name|mr
+return|;
+block|}
 return|return
 operator|new
 name|ResolvedModuleRevision

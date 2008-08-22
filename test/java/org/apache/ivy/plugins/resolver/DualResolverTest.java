@@ -620,6 +620,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"ivy"
 argument_list|,
 literal|true
@@ -645,6 +647,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"artifact"
 argument_list|,
 literal|false
@@ -775,6 +779,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"ivy"
 argument_list|,
 literal|false
@@ -800,6 +806,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"artifact"
 argument_list|,
 literal|true
@@ -939,6 +947,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"ivy"
 argument_list|,
 literal|false
@@ -964,6 +974,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|_settings
+argument_list|,
 literal|"artifact"
 argument_list|,
 literal|false

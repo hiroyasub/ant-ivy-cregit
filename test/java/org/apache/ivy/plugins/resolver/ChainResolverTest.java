@@ -781,6 +781,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|false
@@ -792,6 +794,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|true
@@ -803,6 +807,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
@@ -984,9 +990,9 @@ argument_list|(
 name|settings
 argument_list|)
 expr_stmt|;
-name|chain
+name|settings
 operator|.
-name|setLatestStrategy
+name|setDefaultLatestStrategy
 argument_list|(
 operator|new
 name|LatestTimeStrategy
@@ -1005,6 +1011,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|true
@@ -1027,6 +1035,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|false
@@ -1038,6 +1048,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
@@ -1061,6 +1073,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|false
@@ -1072,6 +1086,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|true
@@ -1094,6 +1110,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"6"
 argument_list|,
 literal|true
@@ -1116,6 +1134,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"7"
 argument_list|,
 literal|false
@@ -1306,6 +1326,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|true
@@ -1339,6 +1361,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|false
@@ -1350,6 +1374,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
@@ -1383,6 +1409,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|false
@@ -1394,6 +1422,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|true
@@ -1430,6 +1460,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"6"
 argument_list|,
 literal|true
@@ -1463,6 +1495,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"7"
 argument_list|,
 literal|false
@@ -1653,6 +1687,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|false
@@ -1664,6 +1700,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|true
@@ -1703,6 +1741,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|false
@@ -1714,6 +1754,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|false
@@ -1725,6 +1767,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|true
@@ -1761,6 +1805,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"6"
 argument_list|,
 literal|false
@@ -1772,6 +1818,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"7"
 argument_list|,
 literal|false
@@ -1991,6 +2039,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|true
@@ -2024,6 +2074,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|true
@@ -2063,6 +2115,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
@@ -2096,6 +2150,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|false
@@ -2107,6 +2163,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|true
@@ -2143,6 +2201,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"6"
 argument_list|,
 literal|true
@@ -2176,6 +2236,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"7"
 argument_list|,
 literal|false
@@ -2366,6 +2428,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|false
@@ -2377,6 +2441,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|true
@@ -2413,6 +2479,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|false
@@ -2424,6 +2492,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|true
@@ -2460,6 +2530,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|false
@@ -2881,6 +2953,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|true
@@ -2989,6 +3063,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|true
@@ -3011,6 +3087,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|false
@@ -3022,6 +3100,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
@@ -3045,6 +3125,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"4"
 argument_list|,
 literal|false
@@ -3056,6 +3138,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"5"
 argument_list|,
 literal|true
@@ -3078,6 +3162,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"6"
 argument_list|,
 literal|true
@@ -3100,6 +3186,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"7"
 argument_list|,
 literal|false
@@ -3640,6 +3728,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"1"
 argument_list|,
 literal|false
@@ -3651,6 +3741,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"2"
 argument_list|,
 literal|true
@@ -3662,6 +3754,8 @@ name|MockResolver
 operator|.
 name|buildMockResolver
 argument_list|(
+name|settings
+argument_list|,
 literal|"3"
 argument_list|,
 literal|true
