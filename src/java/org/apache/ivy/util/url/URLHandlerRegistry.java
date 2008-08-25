@@ -95,6 +95,15 @@ argument_list|(
 literal|"org.apache.commons.httpclient.HttpClient"
 argument_list|)
 expr_stmt|;
+comment|// temporary fix for IVY-880: only use HttpClientHandler when
+comment|// http-client-3.x is available
+name|Class
+operator|.
+name|forName
+argument_list|(
+literal|"org.apache.commons.httpclient.params.HttpClientParams"
+argument_list|)
+expr_stmt|;
 name|Class
 name|handler
 init|=
