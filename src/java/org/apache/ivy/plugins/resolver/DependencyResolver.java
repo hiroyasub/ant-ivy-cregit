@@ -249,6 +249,22 @@ name|ivy
 operator|.
 name|plugins
 operator|.
+name|namespace
+operator|.
+name|Namespace
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
 name|resolver
 operator|.
 name|util
@@ -377,7 +393,7 @@ comment|// listing methods, enable to know what is available from this resolver
 comment|// the listing methods must only list entries directly
 comment|// available from them, no recursion is needed as long as sub resolvers
 comment|// are registered in ivy too.
-comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      */
+comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      *<p>      * Note that listing does not take into account namespaces, and return raw       * information without any namespace transformation. The caller is responsible for calling       * namespace transformation with the Namespace returned by {@link #getNamespace()}.      *</p>      */
 name|String
 index|[]
 name|listTokenValues
@@ -421,6 +437,11 @@ parameter_list|(
 name|ModuleEntry
 name|module
 parameter_list|)
+function_decl|;
+comment|/**      * Returns the namespace associated with this resolver.      * @return the namespace associated with this resolver.      */
+name|Namespace
+name|getNamespace
+parameter_list|()
 function_decl|;
 name|void
 name|dumpSettings
