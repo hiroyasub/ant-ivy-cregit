@@ -349,7 +349,7 @@ name|Set
 name|entries
 init|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|()
 decl_stmt|;
 for|for
