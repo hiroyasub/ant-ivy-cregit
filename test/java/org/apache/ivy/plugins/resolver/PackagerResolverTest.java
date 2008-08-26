@@ -804,7 +804,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|System
+name|resolver
 operator|.
 name|setProperty
 argument_list|(
