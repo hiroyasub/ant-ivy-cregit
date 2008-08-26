@@ -123,7 +123,7 @@ name|plugins
 operator|.
 name|circular
 operator|.
-name|CircularDependencyException
+name|CircularDependencyStrategy
 import|;
 end_import
 
@@ -139,7 +139,7 @@ name|plugins
 operator|.
 name|circular
 operator|.
-name|CircularDependencyStrategy
+name|IgnoreCircularDependencyStrategy
 import|;
 end_import
 
@@ -156,6 +156,20 @@ operator|.
 name|version
 operator|.
 name|VersionMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|Checks
 import|;
 end_import
 
@@ -203,9 +217,10 @@ name|sortNodes
 parameter_list|(
 name|Collection
 name|nodes
+parameter_list|,
+name|SortOptions
+name|options
 parameter_list|)
-throws|throws
-name|CircularDependencyException
 block|{
 comment|/*          * here we want to use the sort algorithm which work on module descriptors : so we first put          * dependencies on a map from descriptors to dependency, then we sort the keySet (i.e. a          * collection of descriptors), then we replace in the sorted list each descriptor by the          * corresponding dependency          */
 name|Map
@@ -331,9 +346,7 @@ operator|.
 name|keySet
 argument_list|()
 argument_list|,
-operator|new
-name|SilentNonMatchingVersionReporter
-argument_list|()
+name|options
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -432,7 +445,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param nonMatchingVersionReporter      *            Used to report some non matching version (when a modules depends on a specific      *            revision of an other modules present in the of modules to sort with a different      *            revision.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
 specifier|public
 name|List
 name|sortModuleDescriptors
@@ -440,27 +453,19 @@ parameter_list|(
 name|Collection
 name|moduleDescriptors
 parameter_list|,
-name|NonMatchingVersionReporter
-name|nonMatchingVersionReporter
+name|SortOptions
+name|options
 parameter_list|)
-throws|throws
-name|CircularDependencyException
 block|{
-if|if
-condition|(
-name|nonMatchingVersionReporter
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|NullPointerException
+name|Checks
+operator|.
+name|checkNotNull
 argument_list|(
-literal|"nonMatchingVersionReporter can not be null"
+name|options
+argument_list|,
+literal|"options"
 argument_list|)
-throw|;
-block|}
+expr_stmt|;
 name|ModuleDescriptorSorter
 name|sorter
 init|=
@@ -472,9 +477,22 @@ argument_list|,
 name|getVersionMatcher
 argument_list|()
 argument_list|,
-name|nonMatchingVersionReporter
+name|options
+operator|.
+name|getNonMatchingVersionReporter
+argument_list|()
 argument_list|,
+name|options
+operator|.
+name|isUseCircularDependencyStrategy
+argument_list|()
+condition|?
 name|getCircularStrategy
+argument_list|()
+else|:
+name|IgnoreCircularDependencyStrategy
+operator|.
+name|getInstance
 argument_list|()
 argument_list|)
 decl_stmt|;

@@ -569,7 +569,7 @@ name|core
 operator|.
 name|sort
 operator|.
-name|NonMatchingVersionReporter
+name|SortEngine
 import|;
 end_import
 
@@ -585,7 +585,7 @@ name|core
 operator|.
 name|sort
 operator|.
-name|SortEngine
+name|SortOptions
 import|;
 end_import
 
@@ -2127,6 +2127,9 @@ name|sortNodes
 parameter_list|(
 name|Collection
 name|nodes
+parameter_list|,
+name|SortOptions
+name|options
 parameter_list|)
 block|{
 name|pushContext
@@ -2141,6 +2144,8 @@ operator|.
 name|sortNodes
 argument_list|(
 name|nodes
+argument_list|,
+name|options
 argument_list|)
 return|;
 block|}
@@ -2151,7 +2156,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param nonMatchingVersionReporter      *            Used to report some non matching version (when a modules depends on a specific      *            revision of an other modules present in the of modules to sort with a different      *            revision.      * @return a List of sorted ModuleDescriptors      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
 specifier|public
 name|List
 name|sortModuleDescriptors
@@ -2159,8 +2164,8 @@ parameter_list|(
 name|Collection
 name|moduleDescriptors
 parameter_list|,
-name|NonMatchingVersionReporter
-name|nonMatchingVersionReporter
+name|SortOptions
+name|options
 parameter_list|)
 block|{
 name|pushContext
@@ -2176,7 +2181,7 @@ name|sortModuleDescriptors
 argument_list|(
 name|moduleDescriptors
 argument_list|,
-name|nonMatchingVersionReporter
+name|options
 argument_list|)
 return|;
 block|}

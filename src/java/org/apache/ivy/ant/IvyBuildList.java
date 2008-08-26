@@ -239,7 +239,7 @@ name|core
 operator|.
 name|sort
 operator|.
-name|WarningNonMatchingVersionReporter
+name|SortOptions
 import|;
 end_import
 
@@ -1241,13 +1241,6 @@ name|leafModuleDescriptors
 argument_list|)
 expr_stmt|;
 block|}
-name|WarningNonMatchingVersionReporter
-name|nonMatchingVersionReporter
-init|=
-operator|new
-name|WarningNonMatchingVersionReporter
-argument_list|()
-decl_stmt|;
 name|List
 name|sortedModules
 init|=
@@ -1257,7 +1250,9 @@ name|sortModuleDescriptors
 argument_list|(
 name|mds
 argument_list|,
-name|nonMatchingVersionReporter
+name|SortOptions
+operator|.
+name|DEFAULT
 argument_list|)
 decl_stmt|;
 if|if
