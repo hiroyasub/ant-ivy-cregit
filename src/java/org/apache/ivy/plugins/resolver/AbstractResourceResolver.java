@@ -2852,12 +2852,14 @@ if|if
 condition|(
 name|tokenValues
 operator|.
-name|containsKey
+name|get
 argument_list|(
 name|IvyPatternHelper
 operator|.
 name|ORGANISATION_KEY
 argument_list|)
+operator|instanceof
+name|String
 condition|)
 block|{
 name|tokenValues
