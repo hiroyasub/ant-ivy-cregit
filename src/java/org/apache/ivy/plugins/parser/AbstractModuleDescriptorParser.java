@@ -529,7 +529,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|protected
+specifier|public
 name|void
 name|setResource
 parameter_list|(
