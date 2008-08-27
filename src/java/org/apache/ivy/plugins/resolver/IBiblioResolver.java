@@ -1835,7 +1835,29 @@ name|isUseMavenMetadata
 argument_list|()
 condition|)
 block|{
-comment|/*              * we substitute tokens with no token at all with the m2 per module pattern, to remove              * optional tokens as it has been done in the given pattern which itself has gone              * through a partial substitute tokens              */
+if|if
+condition|(
+operator|(
+operator|(
+name|String
+operator|)
+name|getIvyPatterns
+argument_list|()
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|)
+operator|.
+name|endsWith
+argument_list|(
+name|M2_PER_MODULE_PATTERN
+argument_list|)
+condition|)
+block|{
+comment|// now we must use metadata if available
+comment|/*                  * we substitute tokens with ext token only in the m2 per module pattern, to match                  * has has been done in the given pattern                  */
 name|String
 name|partiallyResolvedM2PerModulePattern
 init|=
@@ -1847,7 +1869,14 @@ name|M2_PER_MODULE_PATTERN
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|singletonMap
+argument_list|(
+name|IvyPatternHelper
+operator|.
+name|EXT_KEY
+argument_list|,
+literal|"xml"
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -1860,7 +1889,7 @@ name|partiallyResolvedM2PerModulePattern
 argument_list|)
 condition|)
 block|{
-comment|/*                  * the given pattern already contain resolved org and module, we just have to                  * replace the per module pattern at the end by 'maven-metadata.xml' to have the                  * maven metadata file location                  */
+comment|/*                      * the given pattern already contain resolved org and module, we just have to                      * replace the per module pattern at the end by 'maven-metadata.xml' to have the                      * maven metadata file location                      */
 name|String
 name|metadataLocation
 init|=
@@ -1916,6 +1945,18 @@ name|size
 argument_list|()
 index|]
 argument_list|)
+return|;
+block|}
+block|}
+else|else
+block|{
+comment|/*                      * this is probably because the given pattern has been substituted with jar ext,                      * if this resolver has optional module descriptors. But since we have to use                      * maven metadata, we don't care about this case, maven metadata has already                      * been used when looking for revisions with the pattern substituted with                      * ext=xml for the "ivy" pattern.                      */
+return|return
+operator|new
+name|String
+index|[
+literal|0
+index|]
 return|;
 block|}
 block|}
