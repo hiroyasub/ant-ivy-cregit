@@ -449,7 +449,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|AbstractResourceResolver
+name|AbstractPatternsBasedResolver
 extends|extends
 name|BasicResolver
 block|{
@@ -524,7 +524,7 @@ init|=
 literal|false
 decl_stmt|;
 specifier|public
-name|AbstractResourceResolver
+name|AbstractPatternsBasedResolver
 parameter_list|()
 block|{
 block|}

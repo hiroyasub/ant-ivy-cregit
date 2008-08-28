@@ -462,7 +462,7 @@ specifier|public
 class|class
 name|RepositoryResolver
 extends|extends
-name|AbstractResourceResolver
+name|AbstractPatternsBasedResolver
 block|{
 specifier|private
 name|Repository
