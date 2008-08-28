@@ -225,7 +225,7 @@ name|String
 name|artifactResolverName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the artifact origin of the given artifact as saved in this cache, or      * {@link ArtifactOrigin#UNKNOWN} if the origin is unknown.      *       * @param artifact      *            the artifact for which the saved artifact origin should be returned.      * @return the artifact origin of the given artifact as saved in this cache      */
+comment|/**      * Returns the artifact origin of the given artifact as saved in this cache.      *<p>      * If the origin is unknown, the returned ArtifactOrigin instance will return true when       * {@link ArtifactOrigin#isUnknown(ArtifactOrigin)} is called.      *       * @param artifact      *            the artifact for which the saved artifact origin should be returned.      * @return the artifact origin of the given artifact as saved in this cache      */
 specifier|public
 specifier|abstract
 name|ArtifactOrigin

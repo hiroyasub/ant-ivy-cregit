@@ -69,6 +69,22 @@ name|core
 operator|.
 name|cache
 operator|.
+name|ArtifactOrigin
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|cache
+operator|.
 name|RepositoryCacheManager
 import|;
 end_import
@@ -124,6 +140,22 @@ operator|.
 name|id
 operator|.
 name|ModuleRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|report
+operator|.
+name|ArtifactDownloadReport
 import|;
 end_import
 
@@ -318,13 +350,24 @@ name|ResolveData
 name|data
 parameter_list|)
 function_decl|;
-comment|/**      * Download artifacts with specified DownloadOptions.      *<p>      * The resolver will always make a best effort, and do not stop when an artifact is not      * available. It rather continue to attempt to download other requested artifacts, and report      * what has been done in the returned DownloadReport.      *</p>      *<p>      * The returned DownloadReport is never<code>null</code>, and always contain an      * {@link ArtifactDownloadReport} for each requested Artifact.      *</p>      *       * @param artifacts      *            an array of artifacts to download      * @param options      *            options to apply for this download      * @return a DownloadReport with details about each Artifact download.      */
+comment|/**      * Download artifacts with specified DownloadOptions.      *<p>      * The resolver will always make a best effort, and do not stop when an artifact is not      * available. It rather continue to attempt to download other requested artifacts, and report      * what has been done in the returned DownloadReport.      *</p>      *<p>      * The returned DownloadReport is never<code>null</code>, and always contain an      * {@link ArtifactDownloadReport} for each requested Artifact.      *</p>      *       * @param artifacts      *            an array of artifacts to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a DownloadReport with details about each Artifact download.      */
 name|DownloadReport
 name|download
 parameter_list|(
 name|Artifact
 index|[]
 name|artifacts
+parameter_list|,
+name|DownloadOptions
+name|options
+parameter_list|)
+function_decl|;
+comment|/**      * Download an artifact according to the given DownloadOptions.      *<p>      * This methods is an alternative to {@link #download(Artifact[], DownloadOptions)}, which      * locates and downloads a set of artifacts. This method uses an {@link ArtifactOrigin}, and as      * such is only used to materialize an already located Artifact.      *</p>      *       * @param artifact      *            the location of the artifact to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a report detailing how the download has gone, is never<code>null</code>.      */
+name|ArtifactDownloadReport
+name|download
+parameter_list|(
+name|ArtifactOrigin
+name|artifact
 parameter_list|,
 name|DownloadOptions
 name|options
@@ -338,8 +381,8 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-comment|/**      * Locates the given artifact and returns a String identifying its location if it can be located      * by this resolver and if it actually exists, or<code>null</code> in other cases.      *       * @param artifact      *            the artifact which should be located      * @return a String identifying the artifact location, or<code>null</code> if it can't be      *         located or doesn't exist.      */
-name|String
+comment|/**      * Locates the given artifact and returns its location if it can be located by this resolver and      * if it actually exists, or<code>null</code> in other cases.      *       * @param artifact      *            the artifact which should be located      * @return the artifact location, or<code>null</code> if it can't be located by this resolver      *         or doesn't exist.      */
+name|ArtifactOrigin
 name|locate
 parameter_list|(
 name|Artifact

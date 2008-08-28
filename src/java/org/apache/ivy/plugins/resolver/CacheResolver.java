@@ -811,6 +811,11 @@ init|=
 operator|new
 name|ArtifactOrigin
 argument_list|(
+name|artifacts
+index|[
+name|i
+index|]
+argument_list|,
 literal|true
 argument_list|,
 name|artifactRef
@@ -910,7 +915,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|String
+name|ArtifactOrigin
 name|locate
 parameter_list|(
 name|Artifact

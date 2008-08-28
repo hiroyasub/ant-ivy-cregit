@@ -1100,6 +1100,25 @@ name|found
 return|;
 block|}
 block|}
+specifier|protected
+name|Resource
+name|getResource
+parameter_list|(
+name|String
+name|source
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+return|return
+name|repository
+operator|.
+name|getResource
+argument_list|(
+name|source
+argument_list|)
+return|;
+block|}
 comment|/**      * List all revisions as resolved resources for the given artifact in the given repository using      * the given pattern, and using the given mrid except its revision.      *       * @param repository      *            the repository in which revisions should be located      * @param mrid      *            the module revision id to look for (except revision)      * @param pattern      *            the pattern to use to locate the revisions      * @param artifact      *            the artifact to find      * @return an array of ResolvedResource, all pointing to a different revision of the given      *         Artifact.      */
 specifier|protected
 name|ResolvedResource
