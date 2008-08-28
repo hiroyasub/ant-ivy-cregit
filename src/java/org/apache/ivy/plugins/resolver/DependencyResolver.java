@@ -330,8 +330,17 @@ name|DownloadOptions
 name|options
 parameter_list|)
 function_decl|;
+comment|/**      * Returns<code>true</code> if the given artifact can be located by this resolver and      * actually exist.      *       * @param artifact      *            the artifact which should be tested.      * @return<code>true</code> if the given artifact can be located by this resolver and      *         actually exist.      */
 name|boolean
 name|exists
+parameter_list|(
+name|Artifact
+name|artifact
+parameter_list|)
+function_decl|;
+comment|/**      * Locates the given artifact and returns a String identifying its location if it can be located      * by this resolver and if it actually exists, or<code>null</code> in other cases.      *       * @param artifact      *            the artifact which should be located      * @return a String identifying the artifact location, or<code>null</code> if it can't be      *         located or doesn't exist.      */
+name|String
+name|locate
 parameter_list|(
 name|Artifact
 name|artifact
