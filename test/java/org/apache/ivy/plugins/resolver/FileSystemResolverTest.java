@@ -1098,7 +1098,7 @@ decl_stmt|;
 comment|// check that the found ivy file is the one from the first pattern!
 name|assertEquals
 argument_list|(
-literal|"test/repositories/multi-ivypattern/ivy1/ivy-1.0.xml"
+literal|"./test/repositories/multi-ivypattern/ivy1/ivy-1.0.xml"
 argument_list|,
 name|ivyRef
 operator|.

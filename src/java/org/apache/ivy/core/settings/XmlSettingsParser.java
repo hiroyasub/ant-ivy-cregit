@@ -712,6 +712,13 @@ operator|new
 name|Configurator
 argument_list|()
 expr_stmt|;
+name|configurator
+operator|.
+name|setFileResolver
+argument_list|(
+name|ivy
+argument_list|)
+expr_stmt|;
 comment|// put every type definition from ivy to configurator
 name|Map
 name|typeDefs
@@ -1710,8 +1717,7 @@ name|ivy
 operator|.
 name|setDefaultCache
 argument_list|(
-operator|new
-name|File
+name|resolveFile
 argument_list|(
 name|cache
 argument_list|)
@@ -1976,8 +1982,7 @@ name|ivy
 operator|.
 name|setDefaultCache
 argument_list|(
-operator|new
-name|File
+name|resolveFile
 argument_list|(
 name|cache
 argument_list|)
@@ -2459,8 +2464,7 @@ name|ivy
 operator|.
 name|setSettingsVariables
 argument_list|(
-operator|new
-name|File
+name|resolveFile
 argument_list|(
 name|propFilePath
 argument_list|)
@@ -2997,8 +3001,7 @@ else|else
 block|{
 name|url
 operator|=
-operator|new
-name|File
+name|resolveFile
 argument_list|(
 name|file
 argument_list|)
@@ -3768,6 +3771,23 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|private
+name|File
+name|resolveFile
+parameter_list|(
+name|String
+name|filePath
+parameter_list|)
+block|{
+return|return
+name|ivy
+operator|.
+name|resolveFile
+argument_list|(
+name|filePath
+argument_list|)
+return|;
 block|}
 block|}
 end_class

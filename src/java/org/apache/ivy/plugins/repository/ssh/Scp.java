@@ -1837,7 +1837,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * Copy a local file to a remote site, uses the specified mode when creating the file on the      * remote side.      *       * @param localFile      *            Path and name of local file.      * @param remoteTargetDir      *            Remote target directory where the file has to end up (optional)      * @param remoteTargetName      *            file name to use on the target system      * @param mode      *            a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
+comment|/**      * Copy a local file to a remote site, uses the specified mode when creating the file on the      * remote side.      *       * @param localFile      *            Path and name of local file. Must be absolute.      * @param remoteTargetDir      *            Remote target directory where the file has to end up (optional)      * @param remoteTargetName      *            file name to use on the target system      * @param mode      *            a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|put
@@ -2070,7 +2070,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Download a file from the remote server to a local file.      *       * @param remoteFile      *            Path and name of the remote file.      * @param localTarget      *            Local file where to store the data.      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
+comment|/**      * Download a file from the remote server to a local file.      *       * @param remoteFile      *            Path and name of the remote file.      * @param localTarget      *            Local file where to store the data. Must be absolute.      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
 specifier|public
 name|void
 name|get

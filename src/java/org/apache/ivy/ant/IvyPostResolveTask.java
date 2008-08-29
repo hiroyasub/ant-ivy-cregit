@@ -477,8 +477,10 @@ condition|)
 block|{
 name|file
 operator|=
-operator|new
-name|File
+name|getProject
+argument_list|()
+operator|.
+name|resolveFile
 argument_list|(
 name|fileName
 argument_list|)

@@ -396,12 +396,12 @@ operator|=
 name|msg
 expr_stmt|;
 block|}
-comment|/**      * File to write to.      * @param file the file to write to, if not set, echo to      *             standard Ivy logging      */
+comment|/**      * File to write to.      * @param file the file to write to, if not set, echo to standard Ivy logging      */
 specifier|public
 name|void
 name|setFile
 parameter_list|(
-name|String
+name|File
 name|file
 parameter_list|)
 block|{
@@ -409,14 +409,10 @@ name|this
 operator|.
 name|file
 operator|=
-operator|new
-name|File
-argument_list|(
 name|file
-argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If true, append to existing file.      * @param append if true, append to existing file, default      *               is false.      */
+comment|/**      * If true, append to existing file.      * @param append if true, append to existing file, default is false.      */
 specifier|public
 name|void
 name|setAppend

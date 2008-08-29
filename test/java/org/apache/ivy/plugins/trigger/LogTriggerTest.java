@@ -327,9 +327,6 @@ operator|.
 name|setFile
 argument_list|(
 name|f
-operator|.
-name|getPath
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|trigger
@@ -417,9 +414,6 @@ operator|.
 name|setFile
 argument_list|(
 name|f
-operator|.
-name|getPath
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|trigger

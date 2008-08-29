@@ -655,8 +655,9 @@ condition|)
 block|{
 name|ivyFile
 operator|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
@@ -1483,8 +1484,9 @@ decl_stmt|;
 name|File
 name|artifactFile
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
@@ -1577,8 +1579,9 @@ name|info
 argument_list|(
 literal|"\t"
 operator|+
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
@@ -1644,8 +1647,9 @@ decl_stmt|;
 name|File
 name|artifactFile
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.

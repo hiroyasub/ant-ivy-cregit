@@ -757,8 +757,9 @@ decl_stmt|;
 name|File
 name|fileRetrieveRoot
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
@@ -777,8 +778,9 @@ literal|null
 condition|?
 literal|null
 else|:
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
@@ -932,8 +934,9 @@ expr_stmt|;
 name|File
 name|destFile
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 operator|(
 name|String
@@ -2100,8 +2103,9 @@ block|}
 name|String
 name|copyDest
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|destFileName
 argument_list|)

@@ -4951,6 +4951,9 @@ name|cache
 argument_list|,
 literal|"repo1/mod1.1/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|getCanonicalFile
+argument_list|()
 argument_list|,
 name|cacheMgr1
 operator|.
@@ -4958,6 +4961,9 @@ name|getIvyFileInCache
 argument_list|(
 name|depMrid
 argument_list|)
+operator|.
+name|getCanonicalFile
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertFalse
@@ -4995,6 +5001,9 @@ name|cache
 argument_list|,
 literal|"repo2/mod1.1-1.0/mod1.1.jar"
 argument_list|)
+operator|.
+name|getCanonicalFile
+argument_list|()
 argument_list|,
 name|cacheMgr2
 operator|.
@@ -5002,6 +5011,9 @@ name|getArchiveFileInCache
 argument_list|(
 name|depArtifact
 argument_list|)
+operator|.
+name|getCanonicalFile
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

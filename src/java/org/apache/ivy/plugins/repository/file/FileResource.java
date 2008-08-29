@@ -139,8 +139,9 @@ name|FileResource
 argument_list|(
 name|repository
 argument_list|,
-operator|new
-name|File
+name|repository
+operator|.
+name|getFile
 argument_list|(
 name|cloneName
 argument_list|)

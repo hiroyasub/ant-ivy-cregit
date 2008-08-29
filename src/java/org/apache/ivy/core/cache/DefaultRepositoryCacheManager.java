@@ -1785,8 +1785,9 @@ block|{
 name|File
 name|original
 init|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|origin
 operator|.
@@ -1845,8 +1846,9 @@ argument_list|()
 condition|)
 block|{
 return|return
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|origin
 operator|.

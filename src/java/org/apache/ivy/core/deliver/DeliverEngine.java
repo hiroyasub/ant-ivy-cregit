@@ -1113,8 +1113,9 @@ name|update
 argument_list|(
 name|ivyFileURL
 argument_list|,
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|publishedIvy
 argument_list|)

@@ -480,6 +480,9 @@ name|File
 argument_list|(
 literal|"build/cache"
 argument_list|)
+operator|.
+name|getAbsoluteFile
+argument_list|()
 argument_list|,
 name|settings
 operator|.
@@ -668,6 +671,9 @@ name|File
 argument_list|(
 literal|"build/cache"
 argument_list|)
+operator|.
+name|getAbsoluteFile
+argument_list|()
 argument_list|,
 name|settings
 operator|.

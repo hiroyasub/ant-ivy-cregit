@@ -1037,6 +1037,17 @@ argument_list|(
 name|ivyAntVariableContainer
 argument_list|)
 decl_stmt|;
+name|settings
+operator|.
+name|setBaseDir
+argument_list|(
+name|getProject
+argument_list|()
+operator|.
+name|getBaseDir
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file

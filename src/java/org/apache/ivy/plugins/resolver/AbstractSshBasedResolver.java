@@ -107,7 +107,7 @@ specifier|public
 name|void
 name|setKeyFile
 parameter_list|(
-name|String
+name|File
 name|filePath
 parameter_list|)
 block|{
@@ -116,11 +116,7 @@ argument_list|()
 operator|.
 name|setKeyFile
 argument_list|(
-operator|new
-name|File
-argument_list|(
 name|filePath
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -129,7 +125,7 @@ specifier|public
 name|void
 name|setPassfile
 parameter_list|(
-name|String
+name|File
 name|passfile
 parameter_list|)
 block|{
@@ -139,16 +135,6 @@ operator|.
 name|setPassFile
 argument_list|(
 name|passfile
-operator|==
-literal|null
-condition|?
-literal|null
-else|:
-operator|new
-name|File
-argument_list|(
-name|passfile
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|passfileSet

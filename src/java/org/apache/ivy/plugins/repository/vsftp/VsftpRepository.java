@@ -732,8 +732,12 @@ name|destDir
 operator|==
 literal|null
 condition|?
-operator|new
-name|File
+name|ivy
+operator|.
+name|getSettings
+argument_list|()
+operator|.
+name|resolveFile
 argument_list|(
 name|srcName
 argument_list|)

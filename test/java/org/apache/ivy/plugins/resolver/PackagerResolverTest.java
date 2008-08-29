@@ -775,9 +775,6 @@ operator|.
 name|setBuildRoot
 argument_list|(
 name|_builddir
-operator|.
-name|getAbsolutePath
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -785,9 +782,6 @@ operator|.
 name|setResourceCache
 argument_list|(
 name|_cachedir
-operator|.
-name|getAbsolutePath
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|resolver

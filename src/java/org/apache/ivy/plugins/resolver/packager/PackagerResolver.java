@@ -409,7 +409,7 @@ specifier|public
 name|void
 name|setBuildRoot
 parameter_list|(
-name|String
+name|File
 name|buildRoot
 parameter_list|)
 block|{
@@ -417,19 +417,25 @@ name|this
 operator|.
 name|buildRoot
 operator|=
-operator|new
-name|File
-argument_list|(
 name|buildRoot
-argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * Returns root directory under which builds take place.       */
+specifier|public
+name|File
+name|getBuildRoot
+parameter_list|()
+block|{
+return|return
+name|buildRoot
+return|;
 block|}
 comment|/**      * Set resource cache directory.      */
 specifier|public
 name|void
 name|setResourceCache
 parameter_list|(
-name|String
+name|File
 name|resourceCache
 parameter_list|)
 block|{
@@ -438,17 +444,17 @@ operator|.
 name|resourceCache
 operator|=
 name|resourceCache
-operator|!=
-literal|null
-condition|?
-operator|new
-name|File
-argument_list|(
-name|resourceCache
-argument_list|)
-else|:
-literal|null
 expr_stmt|;
+block|}
+comment|/**      * Get resource cache directory.      */
+specifier|public
+name|File
+name|getResourceCache
+parameter_list|()
+block|{
+return|return
+name|resourceCache
+return|;
 block|}
 comment|/**      * Set base resource override URL pattern.      */
 specifier|public

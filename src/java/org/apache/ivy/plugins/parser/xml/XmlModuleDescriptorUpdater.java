@@ -2998,8 +2998,9 @@ else|else
 block|{
 name|url
 operator|=
-operator|new
-name|File
+name|settings
+operator|.
+name|resolveFile
 argument_list|(
 name|fileName
 argument_list|)

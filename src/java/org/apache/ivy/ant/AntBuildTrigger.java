@@ -613,8 +613,15 @@ name|event
 parameter_list|)
 block|{
 return|return
-operator|new
-name|File
+name|IvyContext
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|getSettings
+argument_list|()
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.

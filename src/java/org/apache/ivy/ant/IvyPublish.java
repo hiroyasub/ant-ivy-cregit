@@ -1096,8 +1096,10 @@ block|{
 name|File
 name|ivyFile
 init|=
-operator|new
-name|File
+name|getProject
+argument_list|()
+operator|.
+name|resolveFile
 argument_list|(
 name|IvyPatternHelper
 operator|.
