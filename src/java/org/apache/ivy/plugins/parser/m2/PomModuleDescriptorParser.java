@@ -1671,6 +1671,19 @@ name|ParserSettings
 name|ivySettings
 parameter_list|)
 block|{
+if|if
+condition|(
+name|mdBuilder
+operator|.
+name|getMainArtifact
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+comment|// no main artifact in pom, we don't need to search for meta artifacts
+return|return;
+block|}
 name|ModuleDescriptor
 name|md
 init|=
