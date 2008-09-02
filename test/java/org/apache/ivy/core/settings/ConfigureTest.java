@@ -360,7 +360,7 @@ argument_list|(
 literal|"test/java/org/apache/ivy/core/settings"
 argument_list|)
 operator|.
-name|toString
+name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;

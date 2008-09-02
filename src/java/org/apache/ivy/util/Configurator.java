@@ -3600,6 +3600,15 @@ operator|.
 name|resolveFile
 argument_list|(
 name|value
+argument_list|,
+name|od
+operator|.
+name|getObjectName
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|attributeName
 argument_list|)
 expr_stmt|;
 block|}
@@ -4064,6 +4073,15 @@ argument_list|()
 operator|.
 name|getClass
 argument_list|()
+operator|+
+literal|": "
+operator|+
+name|StringUtils
+operator|.
+name|getErrorMessage
+argument_list|(
+name|ex
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|iae

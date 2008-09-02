@@ -1030,6 +1030,9 @@ argument_list|,
 literal|"default"
 argument_list|)
 argument_list|)
+operator|.
+name|getCanonicalFile
+argument_list|()
 decl_stmt|;
 name|file
 operator|.
@@ -1044,11 +1047,14 @@ operator|.
 name|createNewFile
 argument_list|()
 expr_stmt|;
-name|file
+name|ivy
 operator|.
-name|setLastModified
+name|getSettings
+argument_list|()
+operator|.
+name|setCheckUpToDate
 argument_list|(
-literal|10000
+literal|false
 argument_list|)
 expr_stmt|;
 name|ivy

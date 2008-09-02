@@ -288,7 +288,14 @@ name|setProperty
 argument_list|(
 literal|"ivy.local.default.root"
 argument_list|,
+operator|new
+name|File
+argument_list|(
 literal|"test/repositories/norev"
+argument_list|)
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|project

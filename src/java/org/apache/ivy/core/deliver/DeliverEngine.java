@@ -1036,9 +1036,13 @@ block|}
 comment|// 4) copy the source resolved ivy to the destination specified,
 comment|// updating status, revision and dependency revisions obtained by
 comment|// PublishingDependencyRevisionResolver
-name|String
+name|File
 name|publishedIvy
 init|=
+name|settings
+operator|.
+name|resolveFile
+argument_list|(
 name|IvyPatternHelper
 operator|.
 name|substitute
@@ -1049,6 +1053,7 @@ name|md
 operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|Message
@@ -1113,12 +1118,7 @@ name|update
 argument_list|(
 name|ivyFileURL
 argument_list|,
-name|settings
-operator|.
-name|resolveFile
-argument_list|(
 name|publishedIvy
-argument_list|)
 argument_list|,
 operator|new
 name|UpdateOptions
