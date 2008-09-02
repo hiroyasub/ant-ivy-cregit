@@ -208,13 +208,6 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|source
-operator|=
-name|encode
-argument_list|(
-name|source
-argument_list|)
-expr_stmt|;
 name|Resource
 name|res
 init|=
@@ -259,30 +252,6 @@ expr_stmt|;
 block|}
 return|return
 name|res
-return|;
-block|}
-specifier|private
-specifier|static
-name|String
-name|encode
-parameter_list|(
-name|String
-name|source
-parameter_list|)
-block|{
-comment|// TODO: add some more URL encodings here
-return|return
-name|source
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|replaceAll
-argument_list|(
-literal|" "
-argument_list|,
-literal|"%20"
-argument_list|)
 return|;
 block|}
 specifier|public
