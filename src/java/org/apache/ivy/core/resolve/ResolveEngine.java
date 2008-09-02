@@ -5651,6 +5651,7 @@ argument_list|)
 return|;
 block|}
 block|}
+comment|/**      * Compute possible conflicts for a node, in the context of an ancestor (a node which has a      * dependency - direct or indirect - on the node for which conflicts should be computed.      *       * @param node      *            the node for which conflicts should be computed      * @param ancestor      *            the ancestor in which conflicts should be computed      * @param conf      *            the configuration of the node in which conflicts should be computed      * @param toevict      *            a collection of nodes which have been evicted during conflict resolution at lower      *            level. It may be empty if no conflict resolution has occured for this node yet, or      *            if no node has been evicted.      * @param selectedNodes      *            a collection of nodes selected during previous conflict resolution for the given      *            node and ancestor. This collection is updated by this call, removing nodes which      *            should be evicted.      * @return a collection of IvyNode which may be in conflict with the given node in the given      *         ancestor. This collection always contain at least the given node.      */
 specifier|private
 name|Collection
 name|computeConflicts
@@ -5668,7 +5669,7 @@ name|Collection
 name|toevict
 parameter_list|,
 name|Collection
-name|resolvedNodes
+name|selectedNodes
 parameter_list|)
 block|{
 name|Collection
@@ -5688,18 +5689,41 @@ name|getNode
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|/*          * We first try to remove all evicted nodes from the collection of selected nodes to update          * this collection. If the collection changes, it means that it contained evicted nodes, and          * thus is not up to date. In this case we need to compute selected nodes again. Another          * case where we need to deeply compute selected nodes is when selectedNodes is empty (not          * computed yet) and we aren't in the context of the direct parent of the node.          */
 if|if
 condition|(
-name|resolvedNodes
+name|selectedNodes
 operator|.
 name|removeAll
 argument_list|(
 name|toevict
 argument_list|)
+operator|||
+operator|(
+name|selectedNodes
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
+operator|!
+name|node
+operator|.
+name|getParent
+argument_list|()
+operator|.
+name|getNode
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|ancestor
+operator|.
+name|getNode
+argument_list|()
+argument_list|)
+operator|)
 condition|)
 block|{
-comment|// parent.resolved(node.mid) is not up to date:
-comment|// recompute resolved from all sub nodes
 name|Collection
 name|deps
 init|=
@@ -5717,8 +5741,16 @@ argument_list|()
 argument_list|,
 name|ancestor
 operator|.
-name|getRequiredConfigurations
+name|getNode
 argument_list|()
+operator|.
+name|getConfigurations
+argument_list|(
+name|node
+operator|.
+name|getRootModuleConf
+argument_list|()
+argument_list|)
 argument_list|)
 decl_stmt|;
 for|for
@@ -5797,13 +5829,13 @@ block|}
 block|}
 if|else if
 condition|(
-name|resolvedNodes
+name|selectedNodes
 operator|.
 name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|//Conflict must only be computed per root configuration at this step.
+comment|/*              * No selected nodes at all yet, and we are in the context of the direct parent              * (otherwise previous block would have been reached). We can compute conflicts based on              * the parent direct dependencies in current root module conf.              */
 name|Collection
 name|parentDepIvyNodes
 init|=
@@ -5893,7 +5925,7 @@ name|conflicts
 operator|.
 name|addAll
 argument_list|(
-name|resolvedNodes
+name|selectedNodes
 argument_list|)
 expr_stmt|;
 block|}

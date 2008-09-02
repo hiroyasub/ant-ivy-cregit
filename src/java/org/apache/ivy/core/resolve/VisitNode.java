@@ -79,6 +79,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -1058,7 +1068,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node. The given node must      * also have been already visited.      *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
+comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node.       *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
 name|VisitNode
 name|gotoNode
 parameter_list|(
@@ -1117,29 +1127,12 @@ decl_stmt|;
 if|if
 condition|(
 name|visitData
-operator|==
+operator|!=
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"You can't use gotoNode with a node which has not been visited yet.\n"
-operator|+
-literal|"Given node id="
-operator|+
-name|node
-operator|.
-name|getId
-argument_list|()
-argument_list|)
-throw|;
-block|}
-for|for
-control|(
-name|Iterator
-name|iter
+name|List
+name|visitNodes
 init|=
 name|visitData
 operator|.
@@ -1147,6 +1140,13 @@ name|getVisitNodes
 argument_list|(
 name|rootModuleConf
 argument_list|)
+decl_stmt|;
+for|for
+control|(
+name|Iterator
+name|iter
+init|=
+name|visitNodes
 operator|.
 name|iterator
 argument_list|()
@@ -1223,6 +1223,7 @@ expr_stmt|;
 return|return
 name|vnode
 return|;
+block|}
 block|}
 block|}
 comment|// the node has not yet been visited from the current parent, we create a new visit node
