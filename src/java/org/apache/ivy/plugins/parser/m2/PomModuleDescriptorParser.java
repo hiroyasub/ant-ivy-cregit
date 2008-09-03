@@ -763,6 +763,16 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|mdBuilder
+operator|.
+name|setLicenses
+argument_list|(
+name|domReader
+operator|.
+name|getLicenses
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ModuleRevisionId
 name|relocation
 init|=
