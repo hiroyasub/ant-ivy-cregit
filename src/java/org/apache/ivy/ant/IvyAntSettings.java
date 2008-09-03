@@ -1193,12 +1193,12 @@ literal|"file: "
 operator|+
 name|file
 else|:
-literal|"url :"
+literal|"url: "
 operator|+
 name|url
 operator|)
 operator|+
-literal|" :"
+literal|" : "
 operator|+
 name|e
 argument_list|,
@@ -1227,12 +1227,12 @@ literal|"file: "
 operator|+
 name|file
 else|:
-literal|"url :"
+literal|"url: "
 operator|+
 name|url
 operator|)
 operator|+
-literal|" :"
+literal|" : "
 operator|+
 name|e
 argument_list|,
