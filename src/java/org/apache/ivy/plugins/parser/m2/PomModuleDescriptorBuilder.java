@@ -2167,7 +2167,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"maven.plugins"
+literal|"m:maven.plugins"
 argument_list|)
 decl_stmt|;
 if|if

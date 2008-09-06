@@ -4791,6 +4791,16 @@ argument_list|(
 name|md
 argument_list|)
 expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"1.0"
+argument_list|,
+name|md
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|DependencyDescriptor
 index|[]
 name|dds
