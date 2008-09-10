@@ -892,6 +892,21 @@ name|confUrl
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setUrl
+parameter_list|(
+name|URL
+name|url
+parameter_list|)
+block|{
+name|this
+operator|.
+name|url
+operator|=
+name|url
+expr_stmt|;
+block|}
 comment|/*      * This is usually not necessary to define a reference in Ant, but it's the only      * way to know the id of the settings, which we use to set ant properties.      */
 specifier|public
 name|void

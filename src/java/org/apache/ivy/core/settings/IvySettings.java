@@ -2458,9 +2458,6 @@ name|getDefaultIvyUserDir
 argument_list|()
 expr_stmt|;
 block|}
-name|getDefaultCache
-argument_list|()
-expr_stmt|;
 name|loadDefaultProperties
 argument_list|()
 expr_stmt|;
@@ -2613,9 +2610,6 @@ name|getDefaultIvyUserDir
 argument_list|()
 expr_stmt|;
 block|}
-name|getDefaultCache
-argument_list|()
-expr_stmt|;
 name|loadDefaultProperties
 argument_list|()
 expr_stmt|;
