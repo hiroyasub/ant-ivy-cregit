@@ -1479,6 +1479,25 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|line
+operator|.
+name|hasOption
+argument_list|(
+literal|"cache"
+argument_list|)
+condition|)
+block|{
+comment|//override default cache path with user supplied cache path
+name|settings
+operator|.
+name|setDefaultCache
+argument_list|(
+name|cache
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 operator|!
 name|cache
 operator|.
