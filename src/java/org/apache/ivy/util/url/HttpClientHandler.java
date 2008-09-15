@@ -33,6 +33,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|FileInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|IOException
 import|;
 end_import
@@ -44,26 +54,6 @@ operator|.
 name|io
 operator|.
 name|InputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|FileInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|HttpURLConnection
 import|;
 end_import
 
@@ -295,7 +285,7 @@ name|httpclient
 operator|.
 name|methods
 operator|.
-name|PutMethod
+name|InputStreamRequestEntity
 import|;
 end_import
 
@@ -311,23 +301,7 @@ name|httpclient
 operator|.
 name|methods
 operator|.
-name|InputStreamRequestEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|httpclient
-operator|.
-name|params
-operator|.
-name|HttpMethodParams
+name|PutMethod
 import|;
 end_import
 

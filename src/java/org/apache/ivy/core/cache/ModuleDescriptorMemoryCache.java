@@ -498,14 +498,17 @@ specifier|static
 class|class
 name|CacheEntry
 block|{
+specifier|private
 specifier|final
 name|ModuleDescriptor
 name|md
 decl_stmt|;
+specifier|private
 specifier|final
 name|boolean
 name|validated
 decl_stmt|;
+specifier|private
 specifier|final
 name|ParserSettingsMonitor
 name|parserSettingsMonitor

@@ -224,7 +224,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Keep traces of the usage of a ParserSettings in order to check afterwards that  * the relevant settings didn't changed.  * A ParserSettingsMonitor provide a ParserSettings that must be used in place of the  * orignal one.  * The current implementation consider that a settings changed iff one of the used variable has changed.  */
+comment|/**  * Keep traces of the usage of a ParserSettings in order to check afterwards that the relevant  * settings didn't changed.  *<p>  * A ParserSettingsMonitor provide a ParserSettings that must be used in place of the orignal one.  *</p>  *<p>  * The current implementation consider that a settings changed iff one of the used variable has  * changed.  *</p>  */
 end_comment
 
 begin_class

@@ -41,16 +41,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
-operator|.
-name|MalformedURLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|text
 operator|.
 name|ParseException
@@ -3173,8 +3163,6 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|MalformedURLException
 block|{
 name|ModuleDescriptorMemoryCache
 name|cache
@@ -3226,8 +3214,6 @@ throws|throws
 name|ParseException
 throws|,
 name|IOException
-throws|,
-name|MalformedURLException
 block|{
 name|ModuleDescriptorMemoryCache
 name|cache
