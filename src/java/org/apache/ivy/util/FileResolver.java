@@ -55,7 +55,7 @@ return|return
 operator|new
 name|File
 argument_list|(
-name|filename
+name|path
 argument_list|)
 return|;
 block|}
