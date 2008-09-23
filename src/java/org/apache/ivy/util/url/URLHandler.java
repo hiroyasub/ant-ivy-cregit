@@ -80,6 +80,24 @@ specifier|public
 interface|interface
 name|URLHandler
 block|{
+comment|/**      * Using the slower REQUEST method for getting the basic URL infos. Use this when getting errors      * behind a problematic/special proxy or firewall chain.      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|REQUEST_METHOD_GET
+init|=
+literal|1
+decl_stmt|;
+comment|/**      * Using the faster HEAD method for getting the basic URL infos. Works for most common networks.      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|REQUEST_METHOD_HEAD
+init|=
+literal|2
+decl_stmt|;
 specifier|public
 specifier|static
 class|class
@@ -298,6 +316,14 @@ name|l
 parameter_list|)
 throws|throws
 name|IOException
+function_decl|;
+specifier|public
+name|void
+name|setRequestMethod
+parameter_list|(
+name|int
+name|requestMethod
+parameter_list|)
 function_decl|;
 block|}
 end_interface

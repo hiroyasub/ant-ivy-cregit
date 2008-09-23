@@ -226,7 +226,7 @@ name|prefix
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|protected
 name|String
 name|substitute
 parameter_list|(

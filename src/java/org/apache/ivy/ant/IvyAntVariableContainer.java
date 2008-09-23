@@ -266,7 +266,10 @@ name|put
 argument_list|(
 name|varName
 argument_list|,
+name|substitute
+argument_list|(
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -384,6 +384,16 @@ name|HttpURLConnection
 operator|)
 name|con
 decl_stmt|;
+if|if
+condition|(
+name|getRequestMethod
+argument_list|()
+operator|==
+name|URLHandler
+operator|.
+name|REQUEST_METHOD_HEAD
+condition|)
+block|{
 name|httpCon
 operator|.
 name|setRequestMethod
@@ -391,6 +401,7 @@ argument_list|(
 literal|"HEAD"
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|checkStatusCode
