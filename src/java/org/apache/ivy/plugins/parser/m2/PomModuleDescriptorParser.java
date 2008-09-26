@@ -681,6 +681,8 @@ argument_list|(
 name|this
 argument_list|,
 name|res
+argument_list|,
+name|ivySettings
 argument_list|)
 decl_stmt|;
 try|try
