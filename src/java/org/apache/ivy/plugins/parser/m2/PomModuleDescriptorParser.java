@@ -876,6 +876,13 @@ name|parentModRevID
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|parentDescr
+operator|!=
+literal|null
+condition|)
+block|{
 name|Map
 name|parentPomProps
 init|=
@@ -945,6 +952,7 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|String
