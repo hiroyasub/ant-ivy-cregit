@@ -568,6 +568,11 @@ name|get
 argument_list|)
 condition|)
 block|{
+name|get
+operator|.
+name|releaseConnection
+argument_list|()
+expr_stmt|;
 throw|throw
 operator|new
 name|IOException
@@ -616,6 +621,8 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 comment|// We can only figure the content we got is want we want if the status is success.
 if|if
 condition|(
@@ -666,11 +673,15 @@ name|get
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
 name|get
 operator|.
 name|releaseConnection
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
@@ -793,6 +804,11 @@ block|{
 comment|/* ignored */
 block|}
 block|}
+name|put
+operator|.
+name|releaseConnection
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 specifier|public
