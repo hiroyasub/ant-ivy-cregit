@@ -2768,6 +2768,13 @@ name|mrid
 operator|.
 name|getOrganisation
 argument_list|()
+operator|==
+literal|null
+operator|||
+name|mrid
+operator|.
+name|getOrganisation
+argument_list|()
 operator|.
 name|indexOf
 argument_list|(
