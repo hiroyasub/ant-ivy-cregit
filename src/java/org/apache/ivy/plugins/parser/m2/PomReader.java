@@ -2665,6 +2665,15 @@ name|FilterInputStream
 block|{
 specifier|private
 specifier|static
+specifier|final
+name|int
+name|MARK
+init|=
+literal|10000
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|String
 name|DOCTYPE
 init|=
@@ -2719,7 +2728,7 @@ name|in
 operator|.
 name|mark
 argument_list|(
-literal|10000
+name|MARK
 argument_list|)
 expr_stmt|;
 name|int
