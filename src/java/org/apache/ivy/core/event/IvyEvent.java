@@ -235,6 +235,16 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|addAttribute
+argument_list|(
+literal|"branch"
+argument_list|,
+name|mrid
+operator|.
+name|getBranch
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|addAttributes
 argument_list|(
 name|mrid
