@@ -447,6 +447,13 @@ argument_list|(
 name|key
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|value
+operator|!=
+literal|null
+condition|)
+block|{
 name|Property
 name|p
 init|=
@@ -477,6 +484,7 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|Message
 operator|.
