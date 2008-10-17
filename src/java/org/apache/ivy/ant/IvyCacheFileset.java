@@ -424,7 +424,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base the parent directory to which the file must be evaluated.      * @param file the file for which the path should be returned      * @returnthe path of the file relative to the given base directory.      */
+comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base the parent directory to which the file must be evaluated.      * @param file the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
 specifier|private
 name|String
 name|getPath
@@ -436,6 +436,42 @@ name|File
 name|file
 parameter_list|)
 block|{
+name|String
+name|absoluteBasePath
+init|=
+name|base
+operator|.
+name|getAbsolutePath
+argument_list|()
+decl_stmt|;
+name|int
+name|beginIndex
+init|=
+name|absoluteBasePath
+operator|.
+name|length
+argument_list|()
+decl_stmt|;
+comment|// checks if the basePath ends with the file separator (which can for instance
+comment|// happen if the basePath is the root on unix)
+if|if
+condition|(
+operator|!
+name|absoluteBasePath
+operator|.
+name|endsWith
+argument_list|(
+name|File
+operator|.
+name|separator
+argument_list|)
+condition|)
+block|{
+name|beginIndex
+operator|++
+expr_stmt|;
+comment|// skip the seperator char as well
+block|}
 return|return
 name|file
 operator|.
@@ -444,15 +480,7 @@ argument_list|()
 operator|.
 name|substring
 argument_list|(
-name|base
-operator|.
-name|getAbsolutePath
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|+
-literal|1
+name|beginIndex
 argument_list|)
 return|;
 block|}
