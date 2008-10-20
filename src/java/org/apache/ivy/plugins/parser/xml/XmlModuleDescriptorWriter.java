@@ -3710,10 +3710,15 @@ name|print
 argument_list|(
 literal|"name=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|license
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 operator|+
 literal|"\" "
 argument_list|)
@@ -3735,10 +3740,15 @@ name|print
 argument_list|(
 literal|"url=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|license
 operator|.
 name|getUrl
 argument_list|()
+argument_list|)
 operator|+
 literal|"\" "
 argument_list|)
@@ -3792,10 +3802,15 @@ name|print
 argument_list|(
 literal|" homepage=\""
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getHomePage
 argument_list|()
+argument_list|)
 operator|+
 literal|"\""
 argument_list|)
@@ -3837,10 +3852,15 @@ name|println
 argument_list|(
 literal|"\t\t"
 operator|+
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|md
 operator|.
 name|getDescription
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|out
