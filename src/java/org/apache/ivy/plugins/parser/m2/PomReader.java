@@ -1253,15 +1253,35 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|name
-operator|!=
+operator|==
 literal|null
-operator|||
+operator|)
+operator|&&
+operator|(
 name|url
-operator|!=
+operator|==
+literal|null
+operator|)
+condition|)
+block|{
+comment|// move to next license
+continue|continue;
+block|}
+if|if
+condition|(
+name|name
+operator|==
 literal|null
 condition|)
 block|{
+comment|// The license name is required in Ivy but not in a POM!
+name|name
+operator|=
+literal|"Unknown License"
+expr_stmt|;
+block|}
 name|lics
 operator|.
 name|add
@@ -1275,7 +1295,6 @@ name|url
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return
