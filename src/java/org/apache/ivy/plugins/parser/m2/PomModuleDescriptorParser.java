@@ -860,11 +860,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Message
-operator|.
-name|warn
+throw|throw
+operator|new
+name|IOException
 argument_list|(
-literal|"impossible to load parent for "
+literal|"Impossible to load parent for "
 operator|+
 name|descriptorURL
 operator|+
@@ -874,7 +874,7 @@ literal|" Parent="
 operator|+
 name|parentModRevID
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 if|if
 condition|(
