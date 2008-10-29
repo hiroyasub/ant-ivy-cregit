@@ -407,6 +407,19 @@ operator|.
 name|trim
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|href
+operator|.
+name|startsWith
+argument_list|(
+literal|"../"
+argument_list|)
+condition|)
+block|{
+comment|// we are only interested in sub-URLs, not parent URLs, so skip this one
+continue|continue;
+block|}
 comment|// absolute href: convert to relative one
 if|if
 condition|(

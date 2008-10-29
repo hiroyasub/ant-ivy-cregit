@@ -701,6 +701,14 @@ argument_list|)
 expr_stmt|;
 name|resolve
 operator|.
+name|setTransitive
+argument_list|(
+name|isTransitive
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|resolve
+operator|.
 name|execute
 argument_list|()
 expr_stmt|;
