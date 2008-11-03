@@ -384,6 +384,11 @@ name|node
 operator|.
 name|isCompletelyEvicted
 argument_list|()
+operator|||
+name|node
+operator|.
+name|hasProblem
+argument_list|()
 condition|)
 block|{
 continue|continue;
