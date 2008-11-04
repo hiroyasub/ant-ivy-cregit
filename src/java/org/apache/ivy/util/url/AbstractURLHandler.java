@@ -465,7 +465,7 @@ name|uriString
 init|=
 name|uri
 operator|.
-name|toString
+name|toASCIIString
 argument_list|()
 decl_stmt|;
 comment|// manually escape the '+' character
