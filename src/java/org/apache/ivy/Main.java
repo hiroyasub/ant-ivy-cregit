@@ -1018,6 +1018,23 @@ name|create
 argument_list|()
 argument_list|)
 operator|.
+name|addOption
+argument_list|(
+operator|new
+name|OptionBuilder
+argument_list|(
+literal|"overwrite"
+argument_list|)
+operator|.
+name|description
+argument_list|(
+literal|"overwrite files in the repository if they exist"
+argument_list|)
+operator|.
+name|create
+argument_list|()
+argument_list|)
+operator|.
 name|addCategory
 argument_list|(
 literal|"http auth options"
@@ -2164,6 +2181,16 @@ literal|"deliverto"
 argument_list|,
 literal|"ivy-[revision].xml"
 argument_list|)
+argument_list|)
+argument_list|)
+operator|.
+name|setOverwrite
+argument_list|(
+name|line
+operator|.
+name|hasOption
+argument_list|(
+literal|"overwrite"
 argument_list|)
 argument_list|)
 argument_list|)
