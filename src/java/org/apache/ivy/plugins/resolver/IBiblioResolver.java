@@ -1520,6 +1520,15 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+specifier|protected
+name|String
+name|getModuleDescriptorExtension
+parameter_list|()
+block|{
+return|return
+literal|"pom"
+return|;
+block|}
 specifier|private
 name|String
 name|getWholePattern
@@ -1903,7 +1912,7 @@ name|IvyPatternHelper
 operator|.
 name|EXT_KEY
 argument_list|,
-literal|"xml"
+literal|"pom"
 argument_list|)
 argument_list|)
 decl_stmt|;
