@@ -5575,6 +5575,27 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+if|if
+condition|(
+operator|!
+name|ChecksumHelper
+operator|.
+name|isKnownAlgorithm
+argument_list|(
+name|algorithm
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Unknown checksum algorithm: "
+operator|+
+name|algorithm
+argument_list|)
+throw|;
+block|}
 name|Resource
 name|csRes
 init|=
