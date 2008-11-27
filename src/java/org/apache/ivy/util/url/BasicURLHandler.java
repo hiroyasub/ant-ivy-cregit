@@ -568,12 +568,7 @@ name|verbose
 argument_list|(
 literal|"CLIENT ERROR: "
 operator|+
-operator|(
-operator|(
-name|HttpURLConnection
-operator|)
 name|con
-operator|)
 operator|.
 name|getResponseMessage
 argument_list|()
@@ -605,12 +600,7 @@ name|error
 argument_list|(
 literal|"SERVER ERROR: "
 operator|+
-operator|(
-operator|(
-name|HttpURLConnection
-operator|)
 name|con
-operator|)
 operator|.
 name|getResponseMessage
 argument_list|()
