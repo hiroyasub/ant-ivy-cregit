@@ -2700,6 +2700,24 @@ block|}
 if|else if
 condition|(
 name|ivyRef
+operator|==
+literal|null
+condition|)
+block|{
+name|resolvedMrid
+operator|=
+name|systemMd
+operator|.
+name|getMetadataArtifact
+argument_list|()
+operator|.
+name|getModuleRevisionId
+argument_list|()
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|ivyRef
 operator|.
 name|getRevision
 argument_list|()
