@@ -293,6 +293,12 @@ name|preserve
 decl_stmt|;
 specifier|private
 name|boolean
+name|restricted
+init|=
+literal|true
+decl_stmt|;
+specifier|private
+name|boolean
 name|verbose
 decl_stmt|;
 specifier|private
@@ -515,6 +521,22 @@ operator|.
 name|preserve
 operator|=
 name|preserve
+expr_stmt|;
+block|}
+comment|/**      * Set whether to enable restricted mode. Default is true.      */
+specifier|public
+name|void
+name|setRestricted
+parameter_list|(
+name|boolean
+name|restricted
+parameter_list|)
+block|{
+name|this
+operator|.
+name|restricted
+operator|=
+name|restricted
 expr_stmt|;
 block|}
 comment|/**      * Set whether to run ant with the -verbose flag. Default is false.      */
@@ -872,6 +894,10 @@ argument_list|,
 name|this
 operator|.
 name|preserve
+argument_list|,
+name|this
+operator|.
+name|restricted
 argument_list|,
 name|this
 operator|.
