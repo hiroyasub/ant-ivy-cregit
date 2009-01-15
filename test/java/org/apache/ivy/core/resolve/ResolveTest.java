@@ -21703,7 +21703,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"test/repositories/ivy-999/ivysettings.xml"
+literal|"test/repositories/IVY-999/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
