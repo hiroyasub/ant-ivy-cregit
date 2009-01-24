@@ -691,6 +691,18 @@ return|return
 literal|null
 return|;
 block|}
+specifier|protected
+name|void
+name|saveModuleRevisionIfNeeded
+parameter_list|(
+name|DependencyDescriptor
+name|dd
+parameter_list|,
+name|ResolvedModuleRevision
+name|newModuleFound
+parameter_list|)
+block|{
+block|}
 block|}
 end_class
 
