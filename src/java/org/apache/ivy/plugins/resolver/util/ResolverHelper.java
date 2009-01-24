@@ -1232,18 +1232,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|res
 operator|!=
 literal|null
-operator|)
-operator|&&
-name|res
-operator|.
-name|exists
-argument_list|()
 condition|)
 block|{
+comment|// we do not test if the resource actually exist here, it would cause
+comment|// a lot of checks which are not always necessary depending on the usage
+comment|// which is done of the returned ResolvedResource array
 name|ret
 operator|.
 name|add
