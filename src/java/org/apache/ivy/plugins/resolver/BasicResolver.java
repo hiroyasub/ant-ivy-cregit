@@ -1345,6 +1345,8 @@ expr_stmt|;
 return|return
 name|checkLatest
 argument_list|(
+name|systemDd
+argument_list|,
 name|checkForcedResolvedModuleRevision
 argument_list|(
 name|rmr
@@ -1670,6 +1672,8 @@ block|{
 return|return
 name|checkLatest
 argument_list|(
+name|systemDd
+argument_list|,
 name|checkForcedResolvedModuleRevision
 argument_list|(
 name|rmr
@@ -1866,6 +1870,8 @@ expr_stmt|;
 return|return
 name|checkLatest
 argument_list|(
+name|systemDd
+argument_list|,
 name|checkForcedResolvedModuleRevision
 argument_list|(
 name|rmr

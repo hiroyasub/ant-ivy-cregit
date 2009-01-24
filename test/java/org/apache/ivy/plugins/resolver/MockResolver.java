@@ -526,6 +526,8 @@ expr_stmt|;
 return|return
 name|checkLatest
 argument_list|(
+name|dd
+argument_list|,
 name|rmr
 argument_list|,
 name|data

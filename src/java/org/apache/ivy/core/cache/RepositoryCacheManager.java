@@ -326,6 +326,18 @@ name|void
 name|clean
 parameter_list|()
 function_decl|;
+comment|/**      * Caches a dynamic revision constraint resolution.      *       * @param dynamicMrid the dynamic module revision id      * @param revision the resolved revision      */
+specifier|public
+name|void
+name|saveResolvedRevision
+parameter_list|(
+name|ModuleRevisionId
+name|dynamicMrid
+parameter_list|,
+name|String
+name|revision
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
