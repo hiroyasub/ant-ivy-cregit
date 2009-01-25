@@ -113,6 +113,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|security
+operator|.
+name|AccessControlException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|text
 operator|.
 name|ParseException
@@ -2057,6 +2067,8 @@ name|void
 name|addSystemProperties
 parameter_list|()
 block|{
+try|try
+block|{
 name|addAllVariables
 argument_list|(
 name|System
@@ -2065,6 +2077,30 @@ name|getProperties
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|AccessControlException
+name|ex
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"access denied to getting all system properties: they won't be available as Ivy variables."
+operator|+
+literal|"\nset "
+operator|+
+name|ex
+operator|.
+name|getPermission
+argument_list|()
+operator|+
+literal|" permission if you want to access them"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      */
 specifier|public
