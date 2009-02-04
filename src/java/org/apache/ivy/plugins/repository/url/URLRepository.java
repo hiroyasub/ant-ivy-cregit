@@ -443,13 +443,21 @@ if|if
 condition|(
 operator|!
 name|overwrite
+operator|&&
+name|getResource
+argument_list|(
+name|destination
+argument_list|)
+operator|.
+name|exists
+argument_list|()
 condition|)
 block|{
 throw|throw
 operator|new
-name|UnsupportedOperationException
+name|IOException
 argument_list|(
-literal|"URL repository do not support append operations at the moment"
+literal|"destination file exists and overwrite == false"
 argument_list|)
 throw|;
 block|}
