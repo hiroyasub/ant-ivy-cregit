@@ -1405,6 +1405,22 @@ name|settings
 operator|.
 name|logResolvedRevision
 argument_list|()
+operator|&&
+name|LogOptions
+operator|.
+name|LOG_DEFAULT
+operator|.
+name|equals
+argument_list|(
+name|getData
+argument_list|()
+operator|.
+name|getOptions
+argument_list|()
+operator|.
+name|getLog
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|Message
@@ -1774,6 +1790,22 @@ name|settings
 operator|.
 name|logResolvedRevision
 argument_list|()
+operator|&&
+name|LogOptions
+operator|.
+name|LOG_DEFAULT
+operator|.
+name|equals
+argument_list|(
+name|getData
+argument_list|()
+operator|.
+name|getOptions
+argument_list|()
+operator|.
+name|getLog
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|Message
@@ -2420,7 +2452,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|info
+name|verbose
 argument_list|(
 literal|"configuration required by evicted revision is not available in "
 operator|+
@@ -2549,7 +2581,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|info
+name|verbose
 argument_list|(
 literal|"configuration required by evicted revision is not visible in "
 operator|+
