@@ -222,6 +222,16 @@ argument_list|()
 operator|+
 literal|"!"
 operator|+
+name|getShortDescription
+argument_list|()
+return|;
+block|}
+specifier|public
+name|String
+name|getShortDescription
+parameter_list|()
+block|{
+return|return
 name|getName
 argument_list|()
 operator|+

@@ -1977,13 +1977,28 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Configuration '"
+literal|"Cannot add artifact '"
+operator|+
+name|artifact
+operator|.
+name|getId
+argument_list|()
+operator|.
+name|getArtifactId
+argument_list|()
+operator|.
+name|getShortDescription
+argument_list|()
+operator|+
+literal|"' to configuration '"
 operator|+
 name|conf
 operator|+
-literal|"' doesn't exist in module "
+literal|"' of module "
 operator|+
 name|revId
+operator|+
+literal|" because this configuration doesn't exist!"
 argument_list|)
 throw|;
 block|}
