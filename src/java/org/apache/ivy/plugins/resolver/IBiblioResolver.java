@@ -752,6 +752,9 @@ name|endsWith
 argument_list|(
 literal|"SNAPSHOT"
 argument_list|)
+operator|&&
+name|isM2compatible
+argument_list|()
 condition|)
 block|{
 name|rres
@@ -1004,6 +1007,17 @@ name|ModuleRevisionId
 name|mrid
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|isM2compatible
+argument_list|()
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|String
 name|pattern
 init|=
