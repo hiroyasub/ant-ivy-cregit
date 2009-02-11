@@ -2402,13 +2402,22 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Configuration '"
+literal|"Cannot add dependency '"
+operator|+
+name|revId
+operator|+
+literal|"' to configuration '"
 operator|+
 name|masterConf
 operator|+
-literal|"' does not exist in module "
+literal|"' of module "
 operator|+
 name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
+operator|+
+literal|" because this configuration doesn't exist!"
 argument_list|)
 throw|;
 block|}
