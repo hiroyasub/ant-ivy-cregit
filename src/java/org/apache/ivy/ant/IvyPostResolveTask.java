@@ -1573,8 +1573,11 @@ name|resolve
 operator|.
 name|setValidate
 argument_list|(
-name|isValidate
+name|doValidate
+argument_list|(
+name|getSettings
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|resolve
