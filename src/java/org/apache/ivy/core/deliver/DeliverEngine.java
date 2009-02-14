@@ -1163,6 +1163,14 @@ name|getPubdate
 argument_list|()
 argument_list|)
 operator|.
+name|setGenerateRevConstraint
+argument_list|(
+name|options
+operator|.
+name|isGenerateRevConstraint
+argument_list|()
+argument_list|)
+operator|.
 name|setConfsToExclude
 argument_list|(
 operator|(

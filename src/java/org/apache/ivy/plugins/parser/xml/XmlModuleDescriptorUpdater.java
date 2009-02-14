@@ -975,6 +975,11 @@ name|boolean
 name|replaceInclude
 decl_stmt|;
 specifier|private
+specifier|final
+name|boolean
+name|generateRevConstraint
+decl_stmt|;
+specifier|private
 name|boolean
 name|inHeader
 init|=
@@ -1082,6 +1087,15 @@ operator|=
 name|options
 operator|.
 name|isReplaceInclude
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|generateRevConstraint
+operator|=
+name|options
+operator|.
+name|isGenerateRevConstraint
 argument_list|()
 expr_stmt|;
 name|this
@@ -2581,6 +2595,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|generateRevConstraint
+operator|&&
 name|attributes
 operator|.
 name|getIndex

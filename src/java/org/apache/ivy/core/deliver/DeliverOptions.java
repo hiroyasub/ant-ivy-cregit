@@ -93,6 +93,13 @@ specifier|private
 name|String
 name|pubBranch
 decl_stmt|;
+comment|/**      * True to indicate that the revConstraint attribute should be generated if      * applicable, false to never generate the revConstraint attribute.      */
+specifier|private
+name|boolean
+name|generateRevConstraint
+init|=
+literal|true
+decl_stmt|;
 comment|/**      * Returns an instance of DeliverOptions with options corresponding to default values taken from      * the given settings.      *       * @param settings      *            The settings to use to get default option values      * @return a DeliverOptions instance ready to be used or customized      */
 specifier|public
 specifier|static
@@ -418,6 +425,33 @@ operator|.
 name|pubBranch
 operator|=
 name|pubBranch
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
+name|boolean
+name|isGenerateRevConstraint
+parameter_list|()
+block|{
+return|return
+name|generateRevConstraint
+return|;
+block|}
+specifier|public
+name|DeliverOptions
+name|setGenerateRevConstraint
+parameter_list|(
+name|boolean
+name|generateRevConstraint
+parameter_list|)
+block|{
+name|this
+operator|.
+name|generateRevConstraint
+operator|=
+name|generateRevConstraint
 expr_stmt|;
 return|return
 name|this
