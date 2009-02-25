@@ -1019,7 +1019,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-comment|// ingnored
+comment|// ignored
 block|}
 block|}
 block|}
