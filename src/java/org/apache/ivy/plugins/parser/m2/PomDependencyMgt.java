@@ -19,6 +19,16 @@ name|m2
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
@@ -46,6 +56,12 @@ specifier|public
 specifier|abstract
 name|String
 name|getScope
+parameter_list|()
+function_decl|;
+specifier|public
+name|List
+comment|/*<ModuleId>*/
+name|getExcludedModules
 parameter_list|()
 function_decl|;
 block|}
