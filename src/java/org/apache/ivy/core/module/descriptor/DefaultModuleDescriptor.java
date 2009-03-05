@@ -883,7 +883,13 @@ operator|.
 name|getUrl
 argument_list|()
 argument_list|,
-literal|null
+name|artifacts
+index|[
+name|i
+index|]
+operator|.
+name|getExtraAttributes
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
