@@ -2347,8 +2347,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// conflicts battle is resolved by a sort using a conflict resolving policy
-comment|// comparator
-comment|// which consider as greater a winning artifact
+comment|// comparator which consider as greater a winning artifact
 name|Collections
 operator|.
 name|sort
@@ -2360,21 +2359,10 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// after the sort, the winning artifact is the greatest one, i.e. the last one
-name|Message
-operator|.
-name|info
-argument_list|(
-literal|"\tconflict on "
-operator|+
-name|copyDest
-operator|+
-literal|" in "
-operator|+
-name|conflictsConfs
-operator|+
-literal|": "
-operator|+
-operator|(
+comment|// we fail if different artifacts of the same module are mapped to the same file
+name|ArtifactDownloadReport
+name|winner
+init|=
 operator|(
 name|ArtifactDownloadReport
 operator|)
@@ -2389,13 +2377,97 @@ argument_list|()
 operator|-
 literal|1
 argument_list|)
-operator|)
+decl_stmt|;
+name|ModuleRevisionId
+name|winnerMD
+init|=
+name|winner
 operator|.
 name|getArtifact
 argument_list|()
 operator|.
 name|getModuleRevisionId
 argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+name|artifactsList
+operator|.
+name|size
+argument_list|()
+operator|-
+literal|2
+init|;
+name|i
+operator|>=
+literal|0
+condition|;
+name|i
+operator|--
+control|)
+block|{
+name|ArtifactDownloadReport
+name|current
+init|=
+operator|(
+name|ArtifactDownloadReport
+operator|)
+name|artifactsList
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|winnerMD
+operator|.
+name|equals
+argument_list|(
+name|current
+operator|.
+name|getArtifact
+argument_list|()
+operator|.
+name|getModuleRevisionId
+argument_list|()
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Multiple artifacts of the module "
+operator|+
+name|winnerMD
+operator|+
+literal|" are retrieved to the same file! Update the retrieve pattern "
+operator|+
+literal|" to fix this error."
+argument_list|)
+throw|;
+block|}
+block|}
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"\tconflict on "
+operator|+
+name|copyDest
+operator|+
+literal|" in "
+operator|+
+name|conflictsConfs
+operator|+
+literal|": "
+operator|+
+name|winnerMD
 operator|.
 name|getRevision
 argument_list|()
