@@ -280,7 +280,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy findmodules"
+literal|"no organisation provided for ivy findrevision task"
 argument_list|)
 throw|;
 block|}
@@ -295,7 +295,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy findmodules"
+literal|"no module name provided for ivy findrevision task"
 argument_list|)
 throw|;
 block|}
@@ -310,7 +310,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no revision provided for ivy findmodules"
+literal|"no revision provided for ivy findrevision task"
 argument_list|)
 throw|;
 block|}

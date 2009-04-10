@@ -562,7 +562,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy findmodules"
+literal|"no organisation provided for ivy buildnumber task"
 argument_list|)
 throw|;
 block|}
@@ -577,7 +577,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy findmodules"
+literal|"no module name provided for ivy buildnumber task"
 argument_list|)
 throw|;
 block|}

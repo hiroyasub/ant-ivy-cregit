@@ -338,7 +338,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no organisation provided for ivy findmodules"
+literal|"no organisation provided for ivy listmodules task"
 argument_list|)
 throw|;
 block|}
@@ -353,7 +353,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no module name provided for ivy findmodules"
+literal|"no module name provided for ivy listmodules task"
 argument_list|)
 throw|;
 block|}
@@ -368,7 +368,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no revision provided for ivy findmodules"
+literal|"no revision provided for ivy listmodules task"
 argument_list|)
 throw|;
 block|}
@@ -383,7 +383,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no property provided for ivy findmodules"
+literal|"no property provided for ivy listmodules task"
 argument_list|)
 throw|;
 block|}
@@ -398,7 +398,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"no value provided for ivy findmodules"
+literal|"no value provided for ivy listmodules task"
 argument_list|)
 throw|;
 block|}
