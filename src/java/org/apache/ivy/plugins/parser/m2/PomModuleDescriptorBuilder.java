@@ -1914,6 +1914,26 @@ name|getType
 argument_list|()
 expr_stmt|;
 block|}
+name|String
+name|ext
+init|=
+name|type
+decl_stmt|;
+if|if
+condition|(
+name|JAR_PACKAGINGS
+operator|.
+name|contains
+argument_list|(
+name|type
+argument_list|)
+condition|)
+block|{
+name|ext
+operator|=
+literal|"jar"
+expr_stmt|;
+block|}
 comment|// we deal with classifiers by setting an extra attribute and forcing the
 comment|// dependency to assume such an artifact is published
 if|if
@@ -1957,7 +1977,7 @@ argument_list|()
 argument_list|,
 name|type
 argument_list|,
-name|type
+name|ext
 argument_list|,
 literal|null
 argument_list|,
