@@ -1919,7 +1919,33 @@ name|ext
 init|=
 name|type
 decl_stmt|;
+comment|// if type is 'test-jar', the extension is 'jar' and the classifier is 'tests'
+comment|// Cfr. http://maven.apache.org/guides/mini/guide-attached-tests.html
 if|if
+condition|(
+literal|"test-jar"
+operator|.
+name|equals
+argument_list|(
+name|type
+argument_list|)
+condition|)
+block|{
+name|ext
+operator|=
+literal|"jar"
+expr_stmt|;
+name|extraAtt
+operator|.
+name|put
+argument_list|(
+literal|"m:classifier"
+argument_list|,
+literal|"tests"
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
 condition|(
 name|JAR_PACKAGINGS
 operator|.
