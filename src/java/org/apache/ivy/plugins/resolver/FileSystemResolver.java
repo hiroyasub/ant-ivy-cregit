@@ -472,19 +472,10 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|isTransactionStarted
 argument_list|()
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"no current transaction!"
-argument_list|)
-throw|;
-block|}
 try|try
 block|{
 name|getFileRepository
@@ -509,6 +500,17 @@ finally|finally
 block|{
 name|closeTransaction
 argument_list|()
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|Message
+operator|.
+name|info
+argument_list|(
+literal|"\tpublish aborted: nothing was started"
+argument_list|)
 expr_stmt|;
 block|}
 block|}
