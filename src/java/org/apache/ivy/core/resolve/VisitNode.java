@@ -754,6 +754,7 @@ operator|.
 name|isTransitive
 argument_list|()
 operator|&&
+operator|(
 name|node
 operator|.
 name|getDependencyDescriptor
@@ -764,6 +765,14 @@ argument_list|)
 operator|.
 name|isTransitive
 argument_list|()
+operator|||
+name|node
+operator|.
+name|hasAnyMergedUsageWithTransitiveDependency
+argument_list|(
+name|rootModuleConf
+argument_list|)
+operator|)
 operator|&&
 name|isParentConfTransitive
 argument_list|()
