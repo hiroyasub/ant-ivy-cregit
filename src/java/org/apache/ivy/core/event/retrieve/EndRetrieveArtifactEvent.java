@@ -58,7 +58,7 @@ specifier|final
 name|String
 name|NAME
 init|=
-literal|"pre-retrieve-artifact"
+literal|"post-retrieve-artifact"
 decl_stmt|;
 specifier|public
 name|EndRetrieveArtifactEvent
