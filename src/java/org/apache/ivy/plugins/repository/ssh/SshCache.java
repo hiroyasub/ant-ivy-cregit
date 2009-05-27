@@ -1270,6 +1270,13 @@ argument_list|)
 expr_stmt|;
 name|session
 operator|.
+name|setDaemonThread
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|session
+operator|.
 name|connect
 argument_list|()
 expr_stmt|;
