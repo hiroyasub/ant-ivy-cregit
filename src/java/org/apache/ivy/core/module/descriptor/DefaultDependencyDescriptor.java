@@ -742,6 +742,7 @@ name|dynamicRevId
 decl_stmt|;
 specifier|private
 name|Map
+comment|/*<String,List<String>>*/
 name|confs
 init|=
 operator|new

@@ -687,7 +687,7 @@ name|HasLatestStrategy
 implements|,
 name|Validatable
 block|{
-comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behaviur should be used      */
+comment|/**      * True if parsed ivy files should be validated against xsd, false if they should not, null if      * default behavior should be used      */
 specifier|private
 name|Boolean
 name|validate

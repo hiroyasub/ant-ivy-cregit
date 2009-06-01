@@ -457,6 +457,7 @@ name|Map
 name|otherTokenValues
 parameter_list|)
 function_decl|;
+comment|/**      * Same as {@link #listTokenValues(String, Map)} but more generic.      *       * @param tokens      *            the tokens of the query      * @param criteria      *            the token which have values      * @return the list of token values (Map<Strin, String>[]), must not be<code>null</code>      */
 name|Map
 index|[]
 name|listTokenValues

@@ -404,7 +404,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * This method is similar to getResource, except that the returned resource is fully initialised      * (resolved in the sftp repository), and that the given string is a full remote path      *       * @param path      *            the full remote path in the repository of the resource      * @return a fully initialised resource, able to answer to all its methods without needing any      *         further connection      */
+comment|/**      * This method is similar to getResource, except that the returned resource is fully initialized      * (resolved in the sftp repository), and that the given string is a full remote path      *       * @param path      *            the full remote path in the repository of the resource      * @return a fully initialized resource, able to answer to all its methods without needing any      *         further connection      */
 specifier|public
 name|Resource
 name|resolveResource

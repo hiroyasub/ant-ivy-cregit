@@ -274,6 +274,7 @@ decl_stmt|;
 comment|/**      * the list of all dependencies resolved, ordered from the more dependent to the less dependent      */
 specifier|private
 name|List
+comment|/*<IvyNode>*/
 name|dependencies
 init|=
 operator|new
@@ -282,6 +283,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|List
+comment|/*<Artifact>*/
 name|artifacts
 init|=
 operator|new

@@ -360,6 +360,7 @@ name|options
 decl_stmt|;
 specifier|private
 name|Map
+comment|/*<IvyNode, List<ArtifactDownloadReport>>*/
 name|dependencyReports
 init|=
 operator|new
@@ -368,6 +369,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
+comment|/*<ModuleRevisionId, IvyNode>*/
 name|dependencies
 init|=
 operator|new
@@ -381,6 +383,7 @@ name|resolveEngine
 decl_stmt|;
 specifier|private
 name|Map
+comment|/*<ModuleId, Collection<IvyNode>>*/
 name|modulesIdsMap
 init|=
 operator|new

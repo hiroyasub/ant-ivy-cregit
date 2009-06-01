@@ -159,6 +159,7 @@ name|ext
 decl_stmt|;
 specifier|private
 name|List
+comment|/*<String>*/
 name|confs
 init|=
 operator|new

@@ -87,6 +87,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|List
+comment|/*<NamespaceRule>*/
 name|rules
 init|=
 operator|new
