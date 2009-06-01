@@ -2225,6 +2225,8 @@ name|this
 argument_list|,
 name|conf
 argument_list|,
+name|requestedConf
+argument_list|,
 name|dependencyConfigurations
 argument_list|,
 name|dd
@@ -5735,6 +5737,9 @@ name|String
 name|callerConf
 parameter_list|,
 name|String
+name|requestedConf
+parameter_list|,
+name|String
 index|[]
 name|dependencyConfs
 parameter_list|,
@@ -5751,6 +5756,8 @@ argument_list|,
 name|callerNode
 argument_list|,
 name|callerConf
+argument_list|,
+name|requestedConf
 argument_list|,
 name|dependencyConfs
 argument_list|,
