@@ -567,7 +567,9 @@ expr_stmt|;
 name|settings
 operator|.
 name|createIvyEngine
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 expr_stmt|;
 block|}
 specifier|private

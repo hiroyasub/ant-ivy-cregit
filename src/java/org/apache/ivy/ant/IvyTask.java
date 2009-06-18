@@ -439,8 +439,7 @@ name|IvyAntSettings
 operator|.
 name|getDefaultInstance
 argument_list|(
-name|getProject
-argument_list|()
+name|this
 argument_list|)
 expr_stmt|;
 block|}
@@ -455,7 +454,9 @@ name|antIvyEngine
 operator|)
 operator|.
 name|getConfiguredIvyInstance
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 decl_stmt|;
 name|AntMessageLogger
 operator|.
