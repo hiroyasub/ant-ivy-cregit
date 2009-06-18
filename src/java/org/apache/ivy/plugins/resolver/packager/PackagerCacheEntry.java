@@ -1178,6 +1178,8 @@ name|mr
 operator|.
 name|getAttributes
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|int
