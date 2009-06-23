@@ -1324,6 +1324,17 @@ argument_list|(
 name|rootModuleConf
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|dependersSet
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 for|for
 control|(
 name|Iterator
