@@ -1540,11 +1540,13 @@ name|IvyAntSettings
 operator|.
 name|getDefaultInstance
 argument_list|(
-name|project
+name|settings
 argument_list|)
 operator|.
 name|getConfiguredIvyInstance
-argument_list|()
+argument_list|(
+name|settings
+argument_list|)
 operator|.
 name|getSettings
 argument_list|()
