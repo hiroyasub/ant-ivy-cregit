@@ -6280,15 +6280,30 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
+comment|// the dynamicRevId can contain a null branch, so make sure this
+comment|// has been replaced by the default branch (if any!)
 return|return
 name|dd
 operator|.
 name|clone
 argument_list|(
+name|ModuleRevisionId
+operator|.
+name|newInstance
+argument_list|(
 name|dd
 operator|.
 name|getDynamicConstraintDependencyRevisionId
 argument_list|()
+argument_list|,
+name|dd
+operator|.
+name|getDynamicConstraintDependencyRevisionId
+argument_list|()
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}
