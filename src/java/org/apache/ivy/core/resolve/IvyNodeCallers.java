@@ -336,6 +336,13 @@ argument_list|(
 name|callerConf
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|conf
+operator|!=
+literal|null
+condition|)
+block|{
 name|String
 index|[]
 name|confExtends
@@ -379,6 +386,7 @@ argument_list|,
 name|dependencyConfs
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
