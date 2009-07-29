@@ -340,10 +340,15 @@ throws|throws
 name|IOException
 block|{
 return|return
-name|url
+name|URLHandlerRegistry
+operator|.
+name|getDefault
+argument_list|()
 operator|.
 name|openStream
-argument_list|()
+argument_list|(
+name|url
+argument_list|)
 return|;
 block|}
 block|}
