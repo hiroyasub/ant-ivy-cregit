@@ -1765,7 +1765,7 @@ operator|.
 name|getState
 argument_list|()
 operator|.
-name|setProxyCredentials
+name|setCredentials
 argument_list|(
 operator|new
 name|AuthScope
