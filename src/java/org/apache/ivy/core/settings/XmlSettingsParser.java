@@ -3097,7 +3097,15 @@ name|FileNotFoundException
 name|e
 parameter_list|)
 block|{
-comment|// ignore...
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Unable to find property file: "
+operator|+
+name|propFilePath
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 if|else if
