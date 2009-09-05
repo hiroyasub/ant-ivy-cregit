@@ -431,7 +431,7 @@ name|xml
 operator|.
 name|sax
 operator|.
-name|SAXException
+name|InputSource
 import|;
 end_import
 
@@ -443,7 +443,7 @@ name|xml
 operator|.
 name|sax
 operator|.
-name|InputSource
+name|SAXException
 import|;
 end_import
 
