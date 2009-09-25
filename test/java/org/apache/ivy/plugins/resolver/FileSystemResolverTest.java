@@ -2488,7 +2488,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// no need to update new artifact timestamp cause it isn't used
-comment|// should get the new version even if checkModified is false, beacause we ask a
+comment|// should get the new version even if checkModified is false, because we ask a
 comment|// latest.integration
 name|resolver
 operator|.
