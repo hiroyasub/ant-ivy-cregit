@@ -2444,6 +2444,9 @@ operator|.
 name|equals
 argument_list|(
 name|response
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 condition|)
 block|{
