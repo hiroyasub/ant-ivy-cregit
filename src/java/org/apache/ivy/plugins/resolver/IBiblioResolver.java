@@ -1663,6 +1663,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|setIvyPatterns
+argument_list|(
+name|Collections
+operator|.
+name|EMPTY_LIST
+argument_list|)
+expr_stmt|;
+block|}
 name|setArtifactPatterns
 argument_list|(
 name|Collections
