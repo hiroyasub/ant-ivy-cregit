@@ -145,7 +145,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"exception occured while reading properties file "
+literal|"exception occurred while reading properties file "
 operator|+
 name|file
 operator|+
@@ -250,7 +250,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"exception occured while writing properties file "
+literal|"exception occurred while writing properties file "
 operator|+
 name|file
 operator|+

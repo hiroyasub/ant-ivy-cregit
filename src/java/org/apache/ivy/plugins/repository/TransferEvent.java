@@ -90,7 +90,7 @@ name|TRANSFER_PROGRESS
 init|=
 literal|3
 decl_stmt|;
-comment|/**      * An error occured during transfer      */
+comment|/**      * An error occurred during transfer      */
 specifier|public
 specifier|static
 specifier|final

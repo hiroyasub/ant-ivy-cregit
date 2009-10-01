@@ -699,7 +699,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"error occured while saving password file "
+literal|"error occurred while saving password file "
 operator|+
 name|passfile
 operator|+
@@ -895,7 +895,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"error occured while loading password file "
+literal|"error occurred while loading password file "
 operator|+
 name|passfile
 operator|+

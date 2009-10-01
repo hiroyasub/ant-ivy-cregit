@@ -165,7 +165,7 @@ name|err
 operator|.
 name|println
 argument_list|(
-literal|"an error occured while registering "
+literal|"an error occurred while registering "
 operator|+
 name|module
 operator|+

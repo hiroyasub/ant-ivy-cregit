@@ -789,7 +789,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"problem occured while resolving "
+literal|"problem occurred while resolving "
 operator|+
 name|dd
 operator|+
@@ -993,7 +993,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"several problems occured while resolving "
+literal|"several problems occurred while resolving "
 operator|+
 name|dd
 operator|+

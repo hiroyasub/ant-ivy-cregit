@@ -1036,7 +1036,7 @@ init|=
 operator|new
 name|ParseException
 argument_list|(
-literal|"exception occured while parsing "
+literal|"exception occurred while parsing "
 operator|+
 name|res
 argument_list|,
@@ -2224,7 +2224,7 @@ init|=
 operator|new
 name|SAXException
 argument_list|(
-literal|"Problem occured while parsing ivy file: "
+literal|"Problem occurred while parsing ivy file: "
 operator|+
 name|ex
 operator|.

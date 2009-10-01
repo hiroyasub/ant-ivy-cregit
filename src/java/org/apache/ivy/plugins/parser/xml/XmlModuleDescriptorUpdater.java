@@ -3758,7 +3758,7 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"exception occured while importing configurations: "
+literal|"exception occurred while importing configurations: "
 operator|+
 name|e
 operator|.
