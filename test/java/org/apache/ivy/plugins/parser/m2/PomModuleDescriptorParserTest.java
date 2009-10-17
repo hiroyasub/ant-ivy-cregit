@@ -1134,7 +1134,7 @@ name|newInstance
 argument_list|(
 literal|"org.apache"
 argument_list|,
-literal|"test"
+literal|"test-ejb-type"
 argument_list|,
 literal|"1.0"
 argument_list|)
