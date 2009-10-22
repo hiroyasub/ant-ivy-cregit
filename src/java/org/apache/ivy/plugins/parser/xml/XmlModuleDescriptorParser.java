@@ -1219,6 +1219,8 @@ block|,
 literal|"1.4"
 block|,
 literal|"2.0"
+block|,
+literal|"2.1"
 block|}
 argument_list|)
 decl_stmt|;
@@ -2944,7 +2946,7 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"setting default conf from imported configurations file: "
+literal|"setting default conf mapping from imported configurations file: "
 operator|+
 name|parser
 operator|.
@@ -2957,6 +2959,37 @@ argument_list|(
 name|parser
 operator|.
 name|getDefaultConfMapping
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|parser
+operator|.
+name|getDefaultConf
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"setting default conf from imported configurations file: "
+operator|+
+name|parser
+operator|.
+name|getDefaultConf
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|setDefaultConf
+argument_list|(
+name|parser
+operator|.
+name|getDefaultConf
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -4255,6 +4288,21 @@ operator|.
 name|getValue
 argument_list|(
 literal|"defaultconfmapping"
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|setDefaultConf
+argument_list|(
+name|settings
+operator|.
+name|substitute
+argument_list|(
+name|attributes
+operator|.
+name|getValue
+argument_list|(
+literal|"defaultconf"
 argument_list|)
 argument_list|)
 argument_list|)
