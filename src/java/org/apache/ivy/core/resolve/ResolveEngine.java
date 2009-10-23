@@ -745,6 +745,22 @@ name|Filter
 import|;
 end_import
 
+begin_import
+import|import
+name|sun
+operator|.
+name|security
+operator|.
+name|krb5
+operator|.
+name|internal
+operator|.
+name|ccache
+operator|.
+name|ar
+import|;
+end_import
+
 begin_comment
 comment|/**  * The resolve engine which is the core of the dependency resolution mechanism used in Ivy. It  * features several resolve methods, some very simple, like {@link #resolve(File)} and  * {@link #resolve(URL)} which allow to simply resolve dependencies of a single module descriptor,  * or more complete one, like the {@link #resolve(ModuleDescriptor, ResolveOptions)} which allows to  * provide options to the resolution engine.  *   * @see ResolveOptions  */
 end_comment
@@ -2152,51 +2168,326 @@ name|totalSize
 init|=
 literal|0
 decl_stmt|;
-for|for
-control|(
-name|int
-name|i
+name|List
+name|deps
 init|=
-literal|0
-init|;
-name|i
-operator|<
-name|dependencies
+name|Collections
 operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|checkInterrupted
+name|synchronizedList
+argument_list|(
+operator|new
+name|ArrayList
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|dependencies
+argument_list|)
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|DownloadThread
+name|t1
+init|=
+operator|new
+name|DownloadThread
+argument_list|(
+name|deps
+argument_list|,
+name|report
+argument_list|,
+name|artifactFilter
+argument_list|,
+name|options
+argument_list|)
+decl_stmt|;
+name|DownloadThread
+name|t2
+init|=
+operator|new
+name|DownloadThread
+argument_list|(
+name|deps
+argument_list|,
+name|report
+argument_list|,
+name|artifactFilter
+argument_list|,
+name|options
+argument_list|)
+decl_stmt|;
+name|DownloadThread
+name|t3
+init|=
+operator|new
+name|DownloadThread
+argument_list|(
+name|deps
+argument_list|,
+name|report
+argument_list|,
+name|artifactFilter
+argument_list|,
+name|options
+argument_list|)
+decl_stmt|;
+name|DownloadThread
+name|t4
+init|=
+operator|new
+name|DownloadThread
+argument_list|(
+name|deps
+argument_list|,
+name|report
+argument_list|,
+name|artifactFilter
+argument_list|,
+name|options
+argument_list|)
+decl_stmt|;
+name|DownloadThread
+name|t5
+init|=
+operator|new
+name|DownloadThread
+argument_list|(
+name|deps
+argument_list|,
+name|report
+argument_list|,
+name|artifactFilter
+argument_list|,
+name|options
+argument_list|)
+decl_stmt|;
+name|t1
+operator|.
+name|start
 argument_list|()
 expr_stmt|;
-comment|// download artifacts required in all asked configurations
+name|t2
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+name|t3
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+name|t4
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+name|t5
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+while|while
+condition|(
+name|t1
+operator|.
+name|isAlive
+argument_list|()
+operator|||
+name|t2
+operator|.
+name|isAlive
+argument_list|()
+operator|||
+name|t3
+operator|.
+name|isAlive
+argument_list|()
+operator|||
+name|t4
+operator|.
+name|isAlive
+argument_list|()
+operator|||
+name|t5
+operator|.
+name|isAlive
+argument_list|()
+condition|)
+block|{
+comment|// wait for all threads to finish
+block|}
+comment|//        for (int i = 0; i< dependencies.length; i++) {
+comment|//            checkInterrupted();
+comment|//            // download artifacts required in all asked configurations
+comment|//            if (!dependencies[i].isCompletelyEvicted()&& !dependencies[i].hasProblem()
+comment|//&& dependencies[i].getModuleRevision() != null) {
+comment|//                DependencyResolver resolver = dependencies[i].getModuleRevision()
+comment|//                        .getArtifactResolver();
+comment|//                Artifact[] selectedArtifacts = dependencies[i].getSelectedArtifacts(artifactFilter);
+comment|//                DownloadReport dReport = resolver.download(selectedArtifacts, options);
+comment|//                ArtifactDownloadReport[] adrs = dReport.getArtifactsReports();
+comment|//                for (int j = 0; j< adrs.length; j++) {
+comment|//                    if (adrs[j].getDownloadStatus() == DownloadStatus.FAILED) {
+comment|//                        if (adrs[j].getArtifact().getExtraAttribute("ivy:merged") != null) {
+comment|//                            Message.warn("\tmerged artifact not found: " + adrs[j].getArtifact()
+comment|//                                + ". It was required in "
+comment|//                                + adrs[j].getArtifact().getExtraAttribute("ivy:merged"));
+comment|//                        } else {
+comment|//                            Message.warn("\t" + adrs[j]);
+comment|//                            resolver.reportFailure(adrs[j].getArtifact());
+comment|//                        }
+comment|//                    } else if (adrs[j].getDownloadStatus() == DownloadStatus.SUCCESSFUL) {
+comment|//                        totalSize += adrs[j].getSize();
+comment|//                    }
+comment|//                }
+comment|//                // update concerned reports
+comment|//                String[] dconfs = dependencies[i].getRootModuleConfigurations();
+comment|//                for (int j = 0; j< dconfs.length; j++) {
+comment|//                    // the report itself is responsible to take into account only
+comment|//                    // artifacts required in its corresponding configuration
+comment|//                    // (as described by the Dependency object)
+comment|//                    if (dependencies[i].isEvicted(dconfs[j])
+comment|//                            || dependencies[i].isBlacklisted(dconfs[j])) {
+comment|//                        report.getConfigurationReport(dconfs[j]).addDependency(dependencies[i]);
+comment|//                    } else {
+comment|//                        report.getConfigurationReport(dconfs[j]).addDependency(dependencies[i],
+comment|//                            dReport);
+comment|//                    }
+comment|//                }
+comment|//            }
+comment|//        }
+name|report
+operator|.
+name|setDownloadTime
+argument_list|(
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+operator|-
+name|start
+argument_list|)
+expr_stmt|;
+name|report
+operator|.
+name|setDownloadSize
+argument_list|(
+name|totalSize
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+specifier|static
+class|class
+name|DownloadThread
+extends|extends
+name|Thread
+block|{
+specifier|private
+name|List
+name|artifactsToDownload
+decl_stmt|;
+specifier|private
+name|ResolveReport
+name|report
+decl_stmt|;
+specifier|private
+name|Filter
+name|artifactFilter
+decl_stmt|;
+specifier|private
+name|DownloadOptions
+name|options
+decl_stmt|;
+specifier|private
+name|boolean
+name|finished
+decl_stmt|;
+specifier|public
+name|DownloadThread
+parameter_list|(
+name|List
+name|artifactsToDownload
+parameter_list|,
+name|ResolveReport
+name|report
+parameter_list|,
+name|Filter
+name|artifactFilter
+parameter_list|,
+name|DownloadOptions
+name|options
+parameter_list|)
+block|{
+name|this
+operator|.
+name|artifactsToDownload
+operator|=
+name|artifactsToDownload
+expr_stmt|;
+name|this
+operator|.
+name|report
+operator|=
+name|report
+expr_stmt|;
+name|this
+operator|.
+name|artifactFilter
+operator|=
+name|artifactFilter
+expr_stmt|;
+name|this
+operator|.
+name|options
+operator|=
+name|options
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|run
+parameter_list|()
+block|{
+while|while
+condition|(
+operator|!
+name|artifactsToDownload
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|IvyNode
+name|dependency
+init|=
+operator|(
+name|IvyNode
+operator|)
+name|artifactsToDownload
+operator|.
+name|remove
+argument_list|(
+literal|0
+argument_list|)
+decl_stmt|;
+comment|//                System.out.println(Thread.currentThread() + "downloading " + dependency);
 if|if
 condition|(
 operator|!
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|isCompletelyEvicted
 argument_list|()
 operator|&&
 operator|!
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|hasProblem
 argument_list|()
 operator|&&
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|getModuleRevision
 argument_list|()
@@ -2204,13 +2495,26 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|+
+literal|"downloading "
+operator|+
+name|dependency
+argument_list|)
+expr_stmt|;
 name|DependencyResolver
 name|resolver
 init|=
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|getModuleRevision
 argument_list|()
@@ -2222,10 +2526,7 @@ name|Artifact
 index|[]
 name|selectedArtifacts
 init|=
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|getSelectedArtifacts
 argument_list|(
@@ -2270,6 +2571,18 @@ name|j
 operator|++
 control|)
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+name|adrs
+index|[
+name|j
+index|]
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|adrs
@@ -2378,16 +2691,7 @@ operator|.
 name|SUCCESSFUL
 condition|)
 block|{
-name|totalSize
-operator|+=
-name|adrs
-index|[
-name|j
-index|]
-operator|.
-name|getSize
-argument_list|()
-expr_stmt|;
+comment|//                            totalSize += adrs[j].getSize();
 block|}
 block|}
 comment|// update concerned reports
@@ -2395,10 +2699,7 @@ name|String
 index|[]
 name|dconfs
 init|=
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|getRootModuleConfigurations
 argument_list|()
@@ -2425,10 +2726,7 @@ comment|// artifacts required in its corresponding configuration
 comment|// (as described by the Dependency object)
 if|if
 condition|(
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|isEvicted
 argument_list|(
@@ -2438,10 +2736,7 @@ name|j
 index|]
 argument_list|)
 operator|||
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 operator|.
 name|isBlacklisted
 argument_list|(
@@ -2464,10 +2759,7 @@ argument_list|)
 operator|.
 name|addDependency
 argument_list|(
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 argument_list|)
 expr_stmt|;
 block|}
@@ -2485,10 +2777,7 @@ argument_list|)
 operator|.
 name|addDependency
 argument_list|(
-name|dependencies
-index|[
-name|i
-index|]
+name|dependency
 argument_list|,
 name|dReport
 argument_list|)
@@ -2497,25 +2786,7 @@ block|}
 block|}
 block|}
 block|}
-name|report
-operator|.
-name|setDownloadTime
-argument_list|(
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-operator|-
-name|start
-argument_list|)
-expr_stmt|;
-name|report
-operator|.
-name|setDownloadSize
-argument_list|(
-name|totalSize
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 comment|/**      * Download an artifact to the cache. Not used internally, useful especially for IDE plugins      * needing to download artifact one by one (for source or javadoc artifact, for instance).      *<p>      * Downloaded artifact file can be accessed using {@link ArtifactDownloadReport#getLocalFile()}.      *</p>      *<p>      * It is possible to track the progression of the download using classical ivy progress      * monitoring feature (see addTransferListener).      *</p>      *       * @param artifact      *            the artifact to download      * @return a report concerning the download      * @see #download(ArtifactOrigin, DownloadOptions)      */
 specifier|public
