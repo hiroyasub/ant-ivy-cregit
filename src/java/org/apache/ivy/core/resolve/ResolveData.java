@@ -966,6 +966,24 @@ name|DependencyDescriptor
 name|dd
 parameter_list|)
 block|{
+name|DependencyDescriptor
+name|originalDD
+init|=
+name|dd
+decl_stmt|;
+name|dd
+operator|=
+name|getEngine
+argument_list|()
+operator|.
+name|mediate
+argument_list|(
+name|dd
+argument_list|,
+name|getOptions
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|VisitNode
 name|current
 init|=
@@ -980,11 +998,6 @@ literal|null
 condition|)
 block|{
 comment|// mediating dd through dependers stack
-name|DependencyDescriptor
-name|originalDD
-init|=
-name|dd
-decl_stmt|;
 name|List
 name|dependers
 init|=
@@ -1073,6 +1086,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 if|if
 condition|(
 name|originalDD
@@ -1094,18 +1108,8 @@ name|dd
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 return|return
-name|getEngine
-argument_list|()
-operator|.
-name|mediate
-argument_list|(
 name|dd
-argument_list|,
-name|getOptions
-argument_list|()
-argument_list|)
 return|;
 block|}
 comment|/**      * Sets the last {@link ResolvedModuleRevision} which has been currently resolved.      *<p>      * This can be used especially in dependency resolvers, to know if another dependency resolver      * has already resolved the requested dependency, to take a decision if the resolver should try      * to resolve it by itself or not. Indeed, the dependency resolver is responsible for taking      * this decision, even when included in a chain. The chain responsibility is only to set this      * current resolved module revision to enable the resolver to take the decision.      *</p>      *       * @param mr      *            the last {@link ResolvedModuleRevision} which has been currently resolved.      */
