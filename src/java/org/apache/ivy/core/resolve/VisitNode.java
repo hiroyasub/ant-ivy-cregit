@@ -239,20 +239,6 @@ name|Checks
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|Message
-import|;
-end_import
-
 begin_comment
 comment|/**  * A visit node is an object used to represent one visit from one parent on an {@link IvyNode} of  * the dependency graph. During dependency resolution, the {@link ResolveEngine} visits nodes of the  * depency graph following the dependencies, thus the same node can be visited several times, if it  * is requested from several module. In this case you will have one VisitNode per parent and per  * root module configuration. Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li>  * the node from which the visit is occuring  *<li>parentConf</li>  * the configuration of the parent in which this node is visited  *<li>rootModuleConf</li>  * the configuration of the root module which is currently resolved  *</ul>  */
 end_comment
@@ -951,31 +937,6 @@ block|{
 name|useRealNode
 argument_list|()
 expr_stmt|;
-comment|// check if the real node is blacklisted -> if so, skip further loading
-if|if
-condition|(
-name|getRealNode
-argument_list|()
-operator|.
-name|isBlacklisted
-argument_list|(
-name|rootModuleConf
-argument_list|)
-condition|)
-block|{
-name|Message
-operator|.
-name|debug
-argument_list|(
-name|rootModuleConf
-operator|+
-literal|" is blacklisted. Skip loading"
-argument_list|)
-expr_stmt|;
-return|return
-literal|false
-return|;
-block|}
 comment|// if the loaded revision is different from original one
 comment|// we now register this node on the new resolved id
 comment|// this includes two cases:
