@@ -2772,6 +2772,37 @@ return|;
 block|}
 else|else
 block|{
+comment|// it could be that pattern is something like "lib/([optional]/)[module]"
+comment|// we don't want the '(' in the result
+name|int
+name|optionalIndex
+init|=
+name|pattern
+operator|.
+name|indexOf
+argument_list|(
+literal|'('
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|optionalIndex
+operator|>=
+literal|0
+condition|)
+block|{
+name|index
+operator|=
+name|Math
+operator|.
+name|min
+argument_list|(
+name|index
+argument_list|,
+name|optionalIndex
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|pattern
 operator|.
