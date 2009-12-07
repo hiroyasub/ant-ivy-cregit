@@ -6548,6 +6548,8 @@ operator|new
 name|String
 index|[]
 block|{
+literal|"0.9"
+block|,
 literal|"1.0"
 block|,
 literal|"1.1"
