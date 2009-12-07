@@ -93,7 +93,14 @@ argument_list|()
 operator|==
 literal|null
 condition|?
-literal|true
+operator|(
+name|art
+operator|.
+name|getPublicationDate
+argument_list|()
+operator|==
+literal|null
+operator|)
 else|:
 name|getPublicationDate
 argument_list|()
