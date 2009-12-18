@@ -988,7 +988,7 @@ argument_list|,
 name|artifact
 argument_list|)
 expr_stmt|;
-name|writeCacheLocation
+name|writeCacheLocationIfPresent
 argument_list|(
 name|cache
 argument_list|,
@@ -1603,7 +1603,7 @@ block|}
 block|}
 specifier|private
 name|void
-name|writeCacheLocation
+name|writeCacheLocationIfPresent
 parameter_list|(
 name|RepositoryCacheManager
 name|cache
@@ -1625,6 +1625,13 @@ operator|.
 name|getLocalFile
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|archiveInCache
+operator|!=
+literal|null
+condition|)
+block|{
 name|saxHandler
 operator|.
 name|startElement
@@ -1683,6 +1690,7 @@ argument_list|,
 literal|"cache-location"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|void
