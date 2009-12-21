@@ -1228,26 +1228,8 @@ condition|(
 name|con
 operator|!=
 literal|null
-operator|&&
-literal|"sun.net.www.protocol.file.FileURLConnection"
-operator|.
-name|equals
-argument_list|(
-name|con
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
 condition|)
 block|{
-comment|// ugly fix for a sun jre bug:
-comment|// http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4257700
-comment|//
-comment|// getting header info on the fileurlconnection opens the connection,
-comment|// which opens a file input stream without closing it.
 try|try
 block|{
 name|con
