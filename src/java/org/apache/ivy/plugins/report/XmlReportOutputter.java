@@ -381,7 +381,7 @@ name|XmlReportOutputter
 operator|.
 name|class
 operator|.
-name|getResource
+name|getResourceAsStream
 argument_list|(
 literal|"ivy-report.xsl"
 argument_list|)
@@ -409,7 +409,7 @@ name|XmlReportOutputter
 operator|.
 name|class
 operator|.
-name|getResource
+name|getResourceAsStream
 argument_list|(
 literal|"ivy-report.css"
 argument_list|)
