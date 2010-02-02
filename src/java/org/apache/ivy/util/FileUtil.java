@@ -459,6 +459,7 @@ name|error
 argument_list|)
 throw|;
 block|}
+comment|// check if the creation of the symbolic link was successful
 if|if
 condition|(
 operator|!
@@ -472,11 +473,45 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"error symlinking "
+literal|"error symlinking: "
 operator|+
 name|dest
 operator|+
 literal|" doesn't exists"
+argument_list|)
+throw|;
+block|}
+comment|// check if the result is a true symbolic link
+if|if
+condition|(
+name|dest
+operator|.
+name|getAbsolutePath
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|dest
+operator|.
+name|getCanonicalPath
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|overwrite
+operator|=
+literal|true
+expr_stmt|;
+comment|// just make sure we do overwrite the invalid symlink!
+throw|throw
+operator|new
+name|IOException
+argument_list|(
+literal|"error symlinking: "
+operator|+
+name|dest
+operator|+
+literal|" isn't a symlink"
 argument_list|)
 throw|;
 block|}
