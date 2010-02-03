@@ -498,11 +498,12 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|overwrite
-operator|=
-literal|true
+name|dest
+operator|.
+name|delete
+argument_list|()
 expr_stmt|;
-comment|// just make sure we do overwrite the invalid symlink!
+comment|// just make sure we do delete the invalid symlink!
 throw|throw
 operator|new
 name|IOException
