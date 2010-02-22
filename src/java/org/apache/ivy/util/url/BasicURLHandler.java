@@ -229,29 +229,6 @@ block|{
 block|}
 block|}
 specifier|public
-name|BasicURLHandler
-parameter_list|()
-block|{
-name|Message
-operator|.
-name|debug
-argument_list|(
-literal|"installing "
-operator|+
-name|IvyAuthenticator
-operator|.
-name|INSTANCE
-operator|.
-name|getClass
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|// do not remove,
-comment|// ensure
-comment|// IvyAuthenticator
-comment|// class loading!
-block|}
-specifier|public
 name|URLInfo
 name|getURLInfo
 parameter_list|(
@@ -279,6 +256,12 @@ name|int
 name|timeout
 parameter_list|)
 block|{
+comment|// Install the IvyAuthenticator
+name|IvyAuthenticator
+operator|.
+name|install
+argument_list|()
+expr_stmt|;
 name|URLConnection
 name|con
 init|=
@@ -625,6 +608,12 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// Install the IvyAuthenticator
+name|IvyAuthenticator
+operator|.
+name|install
+argument_list|()
+expr_stmt|;
 name|URLConnection
 name|conn
 init|=
@@ -793,6 +782,12 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// Install the IvyAuthenticator
+name|IvyAuthenticator
+operator|.
+name|install
+argument_list|()
+expr_stmt|;
 name|URLConnection
 name|srcConn
 init|=
@@ -972,6 +967,12 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// Install the IvyAuthenticator
+name|IvyAuthenticator
+operator|.
+name|install
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
