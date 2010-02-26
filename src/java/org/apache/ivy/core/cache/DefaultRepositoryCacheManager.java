@@ -2681,6 +2681,11 @@ return|return
 literal|null
 return|;
 block|}
+name|boolean
+name|unlock
+init|=
+literal|true
+decl_stmt|;
 try|try
 block|{
 if|if
@@ -2726,6 +2731,13 @@ operator|+
 name|resolvedRevision
 argument_list|)
 expr_stmt|;
+comment|// we have found another module in the cache, make sure we unlock
+comment|// the original module
+name|unlockMetadataArtifact
+argument_list|(
+name|mrid
+argument_list|)
+expr_stmt|;
 name|mrid
 operator|=
 name|ModuleRevisionId
@@ -2737,6 +2749,34 @@ argument_list|,
 name|resolvedRevision
 argument_list|)
 expr_stmt|;
+comment|// don't forget to request a lock on the new module!
+if|if
+condition|(
+operator|!
+name|lockMetadataArtifact
+argument_list|(
+name|mrid
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|error
+argument_list|(
+literal|"impossible to acquire lock for "
+operator|+
+name|mrid
+argument_list|)
+expr_stmt|;
+comment|// we couldn't lock the new module, so no need to unlock it
+name|unlock
+operator|=
+literal|false
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 block|}
 else|else
 block|{
@@ -3107,11 +3147,17 @@ block|}
 block|}
 finally|finally
 block|{
+if|if
+condition|(
+name|unlock
+condition|)
+block|{
 name|unlockMetadataArtifact
 argument_list|(
 name|mrid
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 literal|null
