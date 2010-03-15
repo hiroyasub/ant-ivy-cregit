@@ -793,7 +793,7 @@ name|BuildException
 argument_list|(
 literal|"no conf provided for ivy report task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'conf' or"
+literal|"It can either be set explicitely via the attribute 'conf' or "
 operator|+
 literal|"via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
 argument_list|)
