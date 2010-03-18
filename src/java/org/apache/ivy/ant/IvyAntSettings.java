@@ -1155,6 +1155,13 @@ argument_list|(
 name|settings
 argument_list|)
 decl_stmt|;
+try|try
+block|{
+name|ivy
+operator|.
+name|pushContext
+argument_list|()
+expr_stmt|;
 name|ivy
 operator|.
 name|getLoggerEngine
@@ -1174,8 +1181,6 @@ operator|.
 name|showInfo
 argument_list|()
 expr_stmt|;
-try|try
-block|{
 name|configureURLHandler
 argument_list|()
 expr_stmt|;
@@ -1328,6 +1333,11 @@ name|getLoggerEngine
 argument_list|()
 operator|.
 name|popLogger
+argument_list|()
+expr_stmt|;
+name|ivy
+operator|.
+name|popContext
 argument_list|()
 expr_stmt|;
 block|}
