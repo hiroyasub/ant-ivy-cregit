@@ -497,22 +497,6 @@ name|plugins
 operator|.
 name|conflict
 operator|.
-name|LatestCompatibleConflictManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|conflict
-operator|.
 name|StrictConflictException
 import|;
 end_import
@@ -36464,9 +36448,6 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|ResolveReport
-name|report
-init|=
 name|ivy
 operator|.
 name|resolve
@@ -36500,7 +36481,7 @@ argument_list|(
 literal|false
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|fail
 argument_list|(
 literal|"No StrictConflictException has been thrown"
