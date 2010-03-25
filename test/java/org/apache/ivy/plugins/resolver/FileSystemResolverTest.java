@@ -3018,7 +3018,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// no need to update new artifact timestamp cause it isn't used
-comment|// should not get the new version: checkmodified is false and edpendency is not told to be a
+comment|// should not get the new version: checkmodified is false and dependency is not told to be a
 comment|// changing one
 name|resolver
 operator|.
