@@ -4322,14 +4322,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// now we can actually resolve this configuration dependencies
-name|DependencyDescriptor
-name|dd
-init|=
-name|node
-operator|.
-name|getDependencyDescriptor
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -4343,16 +4335,10 @@ argument_list|,
 name|conf
 argument_list|)
 operator|&&
-operator|(
-name|dd
-operator|==
-literal|null
-operator|||
 name|node
 operator|.
 name|isTransitive
 argument_list|()
-operator|)
 condition|)
 block|{
 name|Collection
