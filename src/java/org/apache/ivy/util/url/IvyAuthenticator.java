@@ -137,6 +137,13 @@ argument_list|(
 literal|"theAuthenticator"
 argument_list|)
 decl_stmt|;
+name|f
+operator|.
+name|setAccessible
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|original
 operator|=
 operator|(
@@ -160,7 +167,12 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"Error occured while getting the original authenticator!"
+literal|"Error occured while getting the original authenticator: "
+operator|+
+name|t
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
