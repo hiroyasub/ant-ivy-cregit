@@ -1426,6 +1426,26 @@ name|downloadOptions
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// assert that the file A.jar is extracted from the archive
+name|File
+name|jar
+init|=
+operator|new
+name|File
+argument_list|(
+name|_builddir
+argument_list|,
+literal|"org/A/1.0/artifacts/jars/A.jar"
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|jar
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// assert that the file README is not extracted from the archive
 name|File
 name|readme
@@ -1680,6 +1700,26 @@ name|artifact
 block|}
 argument_list|,
 name|downloadOptions
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// assert that the file B.jar is extracted from the archive
+name|File
+name|jar
+init|=
+operator|new
+name|File
+argument_list|(
+name|_builddir
+argument_list|,
+literal|"org/B/1.0/artifacts/jars/B.jar"
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|jar
+operator|.
+name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
