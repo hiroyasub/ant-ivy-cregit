@@ -115,6 +115,8 @@ interface|interface
 name|DependencyDescriptor
 extends|extends
 name|ExtendableItem
+extends|,
+name|InheritableItem
 block|{
 name|ModuleId
 name|getDependencyId

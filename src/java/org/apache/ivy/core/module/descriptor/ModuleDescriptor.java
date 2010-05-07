@@ -290,6 +290,12 @@ name|ModuleRevisionId
 name|revId
 parameter_list|)
 function_decl|;
+comment|/**      * Get the list of parent descriptors imported via an&lt;extends&gt; element.      * Only directly imported descriptors are included; the parent's parents are      * not included.      */
+name|ExtendsDescriptor
+index|[]
+name|getInheritedDescriptors
+parameter_list|()
+function_decl|;
 comment|/**      * This method update the resolved publication date      *       * @param publicationDate      */
 name|void
 name|setResolvedPublicationDate

@@ -100,6 +100,13 @@ name|generateRevConstraint
 init|=
 literal|true
 decl_stmt|;
+comment|/** true to merge parent descriptor elements into delivered child descriptor */
+specifier|private
+name|boolean
+name|merge
+init|=
+literal|true
+decl_stmt|;
 comment|/**      * Returns an instance of DeliverOptions with options corresponding to default values taken from      * the given settings.      *       * @param settings      *            The settings to use to get default option values      * @return a DeliverOptions instance ready to be used or customized      */
 specifier|public
 specifier|static
@@ -458,6 +465,33 @@ name|this
 return|;
 block|}
 specifier|public
+name|boolean
+name|isMerge
+parameter_list|()
+block|{
+return|return
+name|merge
+return|;
+block|}
+specifier|public
+name|DeliverOptions
+name|setMerge
+parameter_list|(
+name|boolean
+name|merge
+parameter_list|)
+block|{
+name|this
+operator|.
+name|merge
+operator|=
+name|merge
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
 name|String
 name|toString
 parameter_list|()
@@ -478,6 +512,10 @@ operator|+
 literal|" resolveDynamicRevisions="
 operator|+
 name|resolveDynamicRevisions
+operator|+
+literal|" merge="
+operator|+
+name|merge
 operator|+
 literal|" resolveId="
 operator|+
