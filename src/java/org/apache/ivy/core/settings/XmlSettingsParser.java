@@ -1936,6 +1936,19 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|Message
+operator|.
+name|deprecated
+argument_list|(
+literal|"'checkUpToDate' is deprecated, "
+operator|+
+literal|"use the 'overwriteMode' on the 'ivy:retrieve' task instead ("
+operator|+
+name|settings
+operator|+
+literal|")"
+argument_list|)
+expr_stmt|;
 name|ivy
 operator|.
 name|setCheckUpToDate
@@ -2303,7 +2316,7 @@ name|deprecated
 argument_list|(
 literal|"'checkUpToDate' is deprecated, "
 operator|+
-literal|"use 'caches[@checkUpToDate]' instead ("
+literal|"use the 'overwriteMode' on the 'ivy:retrieve' task instead ("
 operator|+
 name|settings
 operator|+
