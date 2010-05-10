@@ -715,7 +715,11 @@ literal|"bad ivy file in cache for "
 operator|+
 name|mrid
 operator|+
-literal|": please clean and resolve again"
+literal|": please clean '"
+operator|+
+name|ivyFile
+operator|+
+literal|"' and resolve again"
 argument_list|,
 name|e
 argument_list|)
@@ -1221,7 +1225,11 @@ literal|"bad ivy file in cache for "
 operator|+
 name|mrid
 operator|+
-literal|": please clean and resolve again"
+literal|": please clean '"
+operator|+
+name|ivyFile
+operator|+
+literal|"' and resolve again"
 argument_list|,
 name|ex
 argument_list|)
