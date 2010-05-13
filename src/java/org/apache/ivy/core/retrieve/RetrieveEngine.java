@@ -2763,7 +2763,7 @@ if|if
 condition|(
 name|RetrieveOptions
 operator|.
-name|OVERWRITEMODE_NEWER
+name|OVERWRITEMODE_DIFFERENT
 operator|.
 name|equals
 argument_list|(
@@ -2776,7 +2776,7 @@ name|source
 operator|.
 name|lastModified
 argument_list|()
-operator|!=
+operator|==
 name|target
 operator|.
 name|lastModified
