@@ -167,7 +167,7 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"Error occured while getting the original authenticator: "
+literal|"Error occurred while getting the original authenticator: "
 operator|+
 name|t
 operator|.
