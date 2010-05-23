@@ -536,10 +536,6 @@ operator|.
 name|getProperty
 argument_list|(
 literal|"http.auth.ntlm.domain"
-argument_list|,
-name|AuthScope
-operator|.
-name|ANY_REALM
 argument_list|)
 expr_stmt|;
 comment|// no equivalent for realm in jdk proxy support ?
@@ -1744,7 +1740,9 @@ name|proxyHost
 argument_list|,
 name|proxyPort
 argument_list|,
-name|proxyRealm
+name|AuthScope
+operator|.
+name|ANY_REALM
 argument_list|)
 argument_list|,
 operator|new
