@@ -69,7 +69,7 @@ extends|extends
 name|TestCase
 block|{
 name|VersionMatcher
-name|_vm
+name|vm
 init|=
 operator|new
 name|VersionRangeMatcher
@@ -81,11 +81,6 @@ name|LatestRevisionStrategy
 argument_list|()
 argument_list|)
 decl_stmt|;
-specifier|public
-name|VersionRangeMatcherTest
-parameter_list|()
-block|{
-block|}
 specifier|public
 name|void
 name|testMavenExcludeParenthesis
@@ -914,7 +909,7 @@ name|assertEquals
 argument_list|(
 name|b
 argument_list|,
-name|_vm
+name|vm
 operator|.
 name|isDynamic
 argument_list|(
@@ -950,7 +945,7 @@ name|assertEquals
 argument_list|(
 name|b
 argument_list|,
-name|_vm
+name|vm
 operator|.
 name|accept
 argument_list|(
