@@ -959,6 +959,11 @@ name|getInputStream
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|contentLength
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 block|}
 else|else
 block|{
