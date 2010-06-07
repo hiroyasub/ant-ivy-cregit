@@ -253,10 +253,6 @@ name|String
 name|filename
 parameter_list|)
 function_decl|;
-name|File
-name|getBaseDir
-parameter_list|()
-function_decl|;
 name|String
 name|getDefaultBranch
 parameter_list|(
