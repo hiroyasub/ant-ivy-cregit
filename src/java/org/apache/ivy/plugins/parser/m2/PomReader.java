@@ -83,16 +83,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
-operator|.
-name|URL
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -599,9 +589,6 @@ decl_stmt|;
 specifier|public
 name|PomReader
 parameter_list|(
-name|URL
-name|descriptorURL
-parameter_list|,
 name|Resource
 name|res
 parameter_list|)
@@ -616,7 +603,7 @@ init|=
 operator|new
 name|AddDTDFilterInputStream
 argument_list|(
-name|descriptorURL
+name|res
 operator|.
 name|openStream
 argument_list|()

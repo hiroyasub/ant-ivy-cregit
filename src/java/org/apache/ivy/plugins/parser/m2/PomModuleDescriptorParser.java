@@ -731,8 +731,6 @@ init|=
 operator|new
 name|PomReader
 argument_list|(
-name|descriptorURL
-argument_list|,
 name|res
 argument_list|)
 decl_stmt|;
@@ -940,7 +938,10 @@ name|IOException
 argument_list|(
 literal|"Impossible to load parent for "
 operator|+
-name|descriptorURL
+name|res
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|"."
 operator|+
@@ -1705,7 +1706,10 @@ name|IOException
 argument_list|(
 literal|"Impossible to import module for "
 operator|+
-name|descriptorURL
+name|res
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|"."
 operator|+
