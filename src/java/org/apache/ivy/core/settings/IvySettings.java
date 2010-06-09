@@ -7340,6 +7340,17 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|public
+name|Namespace
+name|getContextNamespace
+parameter_list|()
+block|{
+return|return
+name|Namespace
+operator|.
+name|SYSTEM_NAMESPACE
+return|;
+block|}
 block|}
 end_class
 

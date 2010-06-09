@@ -736,7 +736,7 @@ name|parser
 operator|.
 name|parseDescriptor
 argument_list|(
-name|getSettings
+name|getParserSettings
 argument_list|()
 argument_list|,
 name|temp
