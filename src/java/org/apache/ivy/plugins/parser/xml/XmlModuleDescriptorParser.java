@@ -3259,10 +3259,9 @@ operator|instanceof
 name|DefaultModuleDescriptor
 condition|)
 block|{
-name|descriptor
-operator|.
-name|setNamespace
-argument_list|(
+name|Namespace
+name|parentNamespace
+init|=
 operator|(
 operator|(
 name|DefaultModuleDescriptor
@@ -3272,6 +3271,12 @@ operator|)
 operator|.
 name|getNamespace
 argument_list|()
+decl_stmt|;
+name|descriptor
+operator|.
+name|setNamespace
+argument_list|(
+name|parentNamespace
 argument_list|)
 expr_stmt|;
 block|}
