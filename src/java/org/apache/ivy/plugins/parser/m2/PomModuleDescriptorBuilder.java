@@ -1309,6 +1309,16 @@ specifier|private
 name|ParserSettings
 name|parserSettings
 decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|WRONG_NUMBER_OF_PARTS_MSG
+init|=
+literal|"what seemed to be a dependency "
+operator|+
+literal|"management extra info exclusion had the wrong number of parts (should have 2) "
+decl_stmt|;
 specifier|public
 name|PomModuleDescriptorBuilder
 parameter_list|(
@@ -3097,9 +3107,7 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"what seemed to be a dependency management extra info exclusion "
-operator|+
-literal|"had the wrong number of parts (should have 2) "
+name|WRONG_NUMBER_OF_PARTS_MSG
 operator|+
 name|exclusion_parts
 operator|.
