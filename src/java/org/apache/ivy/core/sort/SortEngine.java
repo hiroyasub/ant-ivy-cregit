@@ -472,6 +472,8 @@ parameter_list|,
 name|SortOptions
 name|options
 parameter_list|)
+throws|throws
+name|CircularDependencyException
 block|{
 name|Checks
 operator|.
