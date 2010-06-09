@@ -1067,7 +1067,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
-name|stdAtts
+name|STD_ATTS
 init|=
 name|Arrays
 operator|.
@@ -1098,7 +1098,7 @@ specifier|private
 specifier|static
 specifier|final
 name|List
-name|moduleElements
+name|MODULE_ELEMENTS
 init|=
 name|Arrays
 operator|.
@@ -1127,7 +1127,7 @@ specifier|final
 name|int
 name|CONFIGURATIONS_POSITION
 init|=
-name|moduleElements
+name|MODULE_ELEMENTS
 operator|.
 name|indexOf
 argument_list|(
@@ -1141,7 +1141,7 @@ specifier|final
 name|int
 name|DEPENDENCIES_POSITION
 init|=
-name|moduleElements
+name|MODULE_ELEMENTS
 operator|.
 name|indexOf
 argument_list|(
@@ -1153,7 +1153,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
-name|infoElements
+name|INFO_ELEMENTS
 init|=
 name|Arrays
 operator|.
@@ -2287,7 +2287,7 @@ block|}
 if|else if
 condition|(
 operator|!
-name|infoElements
+name|INFO_ELEMENTS
 operator|.
 name|contains
 argument_list|(
@@ -4700,7 +4700,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|stdAtts
+name|STD_ATTS
 operator|.
 name|contains
 argument_list|(
@@ -6566,12 +6566,12 @@ name|moduleElement
 operator|==
 literal|null
 condition|?
-name|moduleElements
+name|MODULE_ELEMENTS
 operator|.
 name|size
 argument_list|()
 else|:
-name|moduleElements
+name|MODULE_ELEMENTS
 operator|.
 name|indexOf
 argument_list|(
