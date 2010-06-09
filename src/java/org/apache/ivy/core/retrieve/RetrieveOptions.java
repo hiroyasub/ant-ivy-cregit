@@ -76,6 +76,7 @@ name|LogOptions
 block|{
 specifier|public
 specifier|static
+specifier|final
 name|String
 name|OVERWRITEMODE_NEVER
 init|=
@@ -83,6 +84,7 @@ literal|"never"
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|String
 name|OVERWRITEMODE_ALWAYS
 init|=
@@ -90,6 +92,7 @@ literal|"always"
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|String
 name|OVERWRITEMODE_NEWER
 init|=
@@ -97,6 +100,7 @@ literal|"newer"
 decl_stmt|;
 specifier|public
 specifier|static
+specifier|final
 name|String
 name|OVERWRITEMODE_DIFFERENT
 init|=
