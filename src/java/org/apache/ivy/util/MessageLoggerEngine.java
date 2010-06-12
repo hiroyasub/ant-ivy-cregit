@@ -176,7 +176,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns the current logger, or the default one if there is no logger in the stack      * @return the current logger, or the default one if there is no logger in the stack      */
-specifier|private
+specifier|public
 name|MessageLogger
 name|peekLogger
 parameter_list|()
