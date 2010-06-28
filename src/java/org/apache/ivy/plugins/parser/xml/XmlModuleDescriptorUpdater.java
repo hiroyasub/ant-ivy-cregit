@@ -1192,6 +1192,11 @@ name|resolvedRevisions
 decl_stmt|;
 specifier|private
 specifier|final
+name|Map
+name|resolvedBranches
+decl_stmt|;
+specifier|private
+specifier|final
 name|String
 name|status
 decl_stmt|;
@@ -1283,6 +1288,15 @@ operator|=
 name|options
 operator|.
 name|getResolvedRevisions
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|resolvedBranches
+operator|=
+name|options
+operator|.
+name|getResolvedBranches
 argument_list|()
 expr_stmt|;
 name|this
@@ -3505,6 +3519,19 @@ argument_list|(
 name|localMrid
 argument_list|)
 decl_stmt|;
+name|String
+name|newBranch
+init|=
+operator|(
+name|String
+operator|)
+name|resolvedBranches
+operator|.
+name|get
+argument_list|(
+name|systemMrid
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|int
@@ -3731,6 +3758,34 @@ name|attName
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|newBranch
+operator|!=
+literal|null
+condition|)
+block|{
+name|write
+argument_list|(
+literal|" branch=\""
+operator|+
+name|newBranch
+operator|+
+literal|"\""
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+operator|!
+name|resolvedBranches
+operator|.
+name|containsKey
+argument_list|(
+name|systemMrid
+argument_list|)
+condition|)
+block|{
 name|write
 argument_list|(
 literal|" branch=\""
@@ -3743,6 +3798,12 @@ operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|// if resolvedBranches contains the systemMrid, but the new branch is null,
+comment|// the branch attribute will be removed altogether
+block|}
 block|}
 if|else if
 condition|(
@@ -3875,6 +3936,50 @@ block|}
 block|}
 if|if
 condition|(
+name|attributes
+operator|.
+name|getIndex
+argument_list|(
+literal|"branch"
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+if|if
+condition|(
+name|newBranch
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// erase an existing branch attribute if its new value is blank
+if|if
+condition|(
+operator|!
+name|newBranch
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+literal|""
+argument_list|)
+condition|)
+name|write
+argument_list|(
+literal|" branch=\""
+operator|+
+name|newBranch
+operator|+
+literal|"\""
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 name|options
 operator|.
 name|isUpdateBranch
@@ -3886,16 +3991,6 @@ name|getBranch
 argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|attributes
-operator|.
-name|getIndex
-argument_list|(
-literal|"branch"
-argument_list|)
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 comment|// this dependency is on a specific branch, we set it explicitly in the updated file
@@ -3911,6 +4006,7 @@ operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|private
