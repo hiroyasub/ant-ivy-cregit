@@ -3839,7 +3839,7 @@ name|out
 operator|.
 name|print
 argument_list|(
-literal|" extendTypes=\""
+literal|" extendType=\""
 operator|+
 name|StringUtils
 operator|.
