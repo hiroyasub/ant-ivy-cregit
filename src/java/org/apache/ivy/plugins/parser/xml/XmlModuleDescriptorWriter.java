@@ -3382,6 +3382,23 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+name|conf
+operator|.
+name|isTransitive
+argument_list|()
+condition|)
+block|{
+name|out
+operator|.
+name|println
+argument_list|(
+literal|" transitive=\"false\""
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|conf
 operator|.
 name|getDeprecated
