@@ -93,6 +93,13 @@ specifier|private
 name|Authenticator
 name|original
 decl_stmt|;
+specifier|private
+specifier|static
+name|boolean
+name|securityWarningLogged
+init|=
+literal|false
+decl_stmt|;
 comment|/**      * Private c'tor to prevent instantiation.      */
 specifier|private
 name|IvyAuthenticator
@@ -186,6 +193,8 @@ name|IvyAuthenticator
 operator|)
 condition|)
 block|{
+try|try
+block|{
 name|Authenticator
 operator|.
 name|setDefault
@@ -197,6 +206,34 @@ name|original
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SecurityException
+name|e
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|securityWarningLogged
+condition|)
+block|{
+name|securityWarningLogged
+operator|=
+literal|true
+expr_stmt|;
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"Not enough permissions to set the IvyAuthenticator. "
+operator|+
+literal|"HTTP(S) authentication will be disabled!"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 comment|// API ******************************************************************
