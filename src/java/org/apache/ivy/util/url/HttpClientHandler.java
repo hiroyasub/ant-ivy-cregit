@@ -890,6 +890,11 @@ operator|new
 name|InputStreamRequestEntity
 argument_list|(
 name|fileStream
+argument_list|,
+name|src
+operator|.
+name|length
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
