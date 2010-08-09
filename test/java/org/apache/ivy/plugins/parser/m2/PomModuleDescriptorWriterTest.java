@@ -1312,6 +1312,11 @@ name|setLicenseHeader
 argument_list|(
 name|LICENSE
 argument_list|)
+operator|.
+name|setPrintIvyInfo
+argument_list|(
+literal|false
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -1319,14 +1324,6 @@ name|void
 name|setUp
 parameter_list|()
 block|{
-comment|// don't add ivy version to se static files for comparison
-name|PomModuleDescriptorWriter
-operator|.
-name|setAddIvyVersion
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|_dest
