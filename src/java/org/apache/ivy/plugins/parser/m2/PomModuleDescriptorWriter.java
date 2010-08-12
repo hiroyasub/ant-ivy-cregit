@@ -269,7 +269,7 @@ block|{
 block|{
 name|put
 argument_list|(
-literal|"compile, runtime"
+literal|"compile"
 argument_list|,
 literal|"compile"
 argument_list|)
