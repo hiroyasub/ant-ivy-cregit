@@ -705,6 +705,8 @@ block|,
 literal|"lock-strategies"
 block|,
 literal|"caches"
+block|,
+literal|"signers"
 block|}
 argument_list|)
 decl_stmt|;
