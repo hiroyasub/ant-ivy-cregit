@@ -2985,6 +2985,17 @@ name|length
 expr_stmt|;
 block|}
 block|}
+else|else
+block|{
+name|prefix
+operator|=
+operator|new
+name|byte
+index|[
+literal|0
+index|]
+expr_stmt|;
+block|}
 name|this
 operator|.
 name|in
