@@ -917,6 +917,38 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+name|copy
+argument_list|(
+name|src
+argument_list|,
+name|dest
+argument_list|,
+name|l
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+specifier|static
+name|void
+name|copy
+parameter_list|(
+name|InputStream
+name|src
+parameter_list|,
+name|OutputStream
+name|dest
+parameter_list|,
+name|CopyProgressListener
+name|l
+parameter_list|,
+name|boolean
+name|autoClose
+parameter_list|)
+throws|throws
+name|IOException
+block|{
 name|CopyProgressEvent
 name|evt
 init|=
@@ -1083,6 +1115,11 @@ block|{
 comment|// ignore
 block|}
 comment|// close the streams
+if|if
+condition|(
+name|autoClose
+condition|)
+block|{
 name|src
 operator|.
 name|close
@@ -1093,9 +1130,15 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 finally|finally
 block|{
+if|if
+condition|(
+name|autoClose
+condition|)
+block|{
 try|try
 block|{
 name|src
@@ -1127,6 +1170,7 @@ name|ex
 parameter_list|)
 block|{
 comment|// ignore
+block|}
 block|}
 block|}
 if|if
