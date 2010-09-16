@@ -2240,6 +2240,46 @@ name|DependencyDescriptor
 name|descriptor
 parameter_list|)
 block|{
+comment|// Some POMs depend on theirselfves through their parent pom, don't add this dependency
+comment|// since Ivy doesn't allow this!
+comment|// Example: http://repo2.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
+name|ModuleId
+name|dependencyId
+init|=
+name|descriptor
+operator|.
+name|getDependencyId
+argument_list|()
+decl_stmt|;
+name|ModuleRevisionId
+name|mRevId
+init|=
+name|ivyModuleDescriptor
+operator|.
+name|getModuleRevisionId
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|mRevId
+operator|!=
+literal|null
+operator|)
+operator|&&
+name|mRevId
+operator|.
+name|getModuleId
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|dependencyId
+argument_list|)
+condition|)
+block|{
+return|return;
+block|}
 name|ivyModuleDescriptor
 operator|.
 name|addDependency
