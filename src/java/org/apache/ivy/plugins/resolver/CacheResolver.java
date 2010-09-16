@@ -726,6 +726,9 @@ name|DownloadOptions
 name|options
 parameter_list|)
 block|{
+name|ensureConfigured
+argument_list|()
+expr_stmt|;
 name|clearArtifactAttempts
 argument_list|()
 expr_stmt|;
