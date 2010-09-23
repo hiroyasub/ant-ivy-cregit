@@ -592,6 +592,43 @@ block|{
 continue|continue;
 block|}
 block|}
+if|else if
+condition|(
+name|text
+operator|.
+name|endsWith
+argument_list|(
+literal|"..&gt;"
+argument_list|)
+condition|)
+block|{
+comment|// text is probably truncated, we can only check if the href starts with text
+if|if
+condition|(
+operator|!
+name|href
+operator|.
+name|startsWith
+argument_list|(
+name|text
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+name|text
+operator|.
+name|length
+argument_list|()
+operator|-
+literal|6
+argument_list|)
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
+block|}
 else|else
 block|{
 comment|// text is not truncated, so it must match the url after stripping optional
