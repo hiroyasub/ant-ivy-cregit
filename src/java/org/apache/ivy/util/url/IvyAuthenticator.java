@@ -470,7 +470,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Checks if the current authentication request is for the proxy server.      * This functionality is not availaible in JDK1.4, so we check this in a      * very dirty way which is probably not very portable, but will work for      * the SUN 1.4 JDKs.      *       * @return      */
+comment|/**      * Checks if the current authentication request is for the proxy server.      * This functionality is not available in JDK1.4, so we check this in a      * very dirty way which is probably not very portable, but will work for      * the SUN 1.4 JDKs.      *       * @return      */
 specifier|private
 name|boolean
 name|isProxyAuthentication
