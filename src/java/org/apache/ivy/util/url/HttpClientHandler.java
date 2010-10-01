@@ -864,9 +864,7 @@ name|HttpClient
 name|client
 init|=
 name|getClient
-argument_list|(
-name|dest
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|PutMethod
 name|put
@@ -1521,9 +1519,7 @@ name|HttpClient
 name|client
 init|=
 name|getClient
-argument_list|(
-name|url
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|client
 operator|.
@@ -1594,9 +1590,7 @@ name|HttpClient
 name|client
 init|=
 name|getClient
-argument_list|(
-name|url
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|client
 operator|.
@@ -1644,10 +1638,7 @@ block|}
 specifier|private
 name|HttpClient
 name|getClient
-parameter_list|(
-name|URL
-name|url
-parameter_list|)
+parameter_list|()
 block|{
 if|if
 condition|(
