@@ -1250,24 +1250,9 @@ operator|.
 name|getContext
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|options
-operator|.
-name|isUseCacheOnly
-argument_list|()
-condition|)
-block|{
-name|setDictatorResolver
-argument_list|(
-operator|new
-name|CacheResolver
-argument_list|(
-name|settings
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+comment|//        if (options.isUseCacheOnly()) {
+comment|//            setDictatorResolver(new CacheResolver(settings));
+comment|//        }
 try|try
 block|{
 name|String
