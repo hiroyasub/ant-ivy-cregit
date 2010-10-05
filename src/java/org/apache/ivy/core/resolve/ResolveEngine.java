@@ -1250,9 +1250,6 @@ operator|.
 name|getContext
 argument_list|()
 decl_stmt|;
-comment|//        if (options.isUseCacheOnly()) {
-comment|//            setDictatorResolver(new CacheResolver(settings));
-comment|//        }
 try|try
 block|{
 name|String
