@@ -5725,6 +5725,10 @@ expr_stmt|;
 block|}
 name|write
 argument_list|(
+name|XMLHelper
+operator|.
+name|escape
+argument_list|(
 name|String
 operator|.
 name|valueOf
@@ -5734,6 +5738,7 @@ argument_list|,
 name|start
 argument_list|,
 name|length
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
