@@ -989,6 +989,13 @@ name|getSettings
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|rule
+operator|.
+name|addConfiguration
+argument_list|(
+literal|"default"
+argument_list|)
+expr_stmt|;
 name|md
 operator|.
 name|addExcludeRule
