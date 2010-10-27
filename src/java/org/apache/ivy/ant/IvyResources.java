@@ -1158,7 +1158,7 @@ argument_list|)
 throw|;
 block|}
 name|List
-comment|/*<> */
+comment|/*<FileResource> */
 name|resources
 init|=
 operator|new
