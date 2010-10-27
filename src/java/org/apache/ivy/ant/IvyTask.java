@@ -1075,6 +1075,7 @@ literal|"yyyyMMddHHmmss"
 argument_list|)
 decl_stmt|;
 specifier|protected
+specifier|static
 name|Date
 name|getPubDate
 parameter_list|(

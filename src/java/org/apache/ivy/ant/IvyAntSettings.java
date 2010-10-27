@@ -245,7 +245,7 @@ name|tools
 operator|.
 name|ant
 operator|.
-name|Task
+name|ProjectComponent
 import|;
 end_import
 
@@ -483,7 +483,7 @@ specifier|static
 name|IvyAntSettings
 name|getDefaultInstance
 parameter_list|(
-name|Task
+name|ProjectComponent
 name|task
 parameter_list|)
 block|{
@@ -1019,7 +1019,7 @@ specifier|public
 name|Ivy
 name|getConfiguredIvyInstance
 parameter_list|(
-name|Task
+name|ProjectComponent
 name|task
 parameter_list|)
 block|{
@@ -1044,7 +1044,7 @@ name|void
 name|createIvyEngine
 parameter_list|(
 specifier|final
-name|Task
+name|ProjectComponent
 name|task
 parameter_list|)
 block|{
@@ -1333,7 +1333,7 @@ specifier|protected
 name|Properties
 name|getDefaultProperties
 parameter_list|(
-name|Task
+name|ProjectComponent
 name|task
 parameter_list|)
 block|{
@@ -1429,7 +1429,7 @@ parameter_list|(
 name|IvyVariableContainer
 name|variableContainer
 parameter_list|,
-name|Task
+name|ProjectComponent
 name|task
 parameter_list|)
 block|{
