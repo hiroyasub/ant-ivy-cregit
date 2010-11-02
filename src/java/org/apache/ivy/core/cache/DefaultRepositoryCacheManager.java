@@ -3506,6 +3506,14 @@ return|return
 name|resolvedRevision
 return|;
 block|}
+if|if
+condition|(
+name|options
+operator|.
+name|isCheckTTL
+argument_list|()
+condition|)
+block|{
 name|long
 name|expiration
 init|=
@@ -3551,6 +3559,7 @@ expr_stmt|;
 return|return
 literal|null
 return|;
+block|}
 block|}
 return|return
 name|resolvedRevision
