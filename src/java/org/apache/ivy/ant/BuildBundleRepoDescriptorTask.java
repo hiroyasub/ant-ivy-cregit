@@ -11,8 +11,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|osgi
-operator|.
 name|ant
 package|;
 end_package
