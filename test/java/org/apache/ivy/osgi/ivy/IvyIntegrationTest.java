@@ -230,7 +230,7 @@ return|return
 operator|new
 name|File
 argument_list|(
-literal|"java/test-ivy/"
+literal|"test/test-ivy/"
 operator|+
 name|resource
 argument_list|)

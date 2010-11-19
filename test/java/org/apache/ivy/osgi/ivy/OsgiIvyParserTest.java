@@ -179,7 +179,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-ivy/include/ivysettings.xml"
+literal|"test/test-ivy/include/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -192,7 +192,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-ivy/include/ivy.xml"
+literal|"test/test-ivy/include/ivy.xml"
 argument_list|)
 operator|.
 name|toURL
@@ -250,7 +250,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-ivy/include/ivy-result.xml"
+literal|"test/test-ivy/include/ivy-result.xml"
 argument_list|)
 operator|.
 name|toURL

@@ -132,7 +132,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-obr/obr.xml"
+literal|"test/test-obr/obr.xml"
 argument_list|)
 argument_list|)
 argument_list|)

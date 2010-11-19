@@ -276,7 +276,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/bundlerepo"
+literal|"test/test-repo/bundlerepo"
 argument_list|)
 argument_list|,
 literal|""
@@ -306,7 +306,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"java/test-repo/bundlerepo/repo.xml"
+literal|"test/test-repo/bundlerepo/repo.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -337,7 +337,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/bundlerepo"
+literal|"test/test-repo/bundlerepo"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -366,7 +366,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"java/test-repo/bundlerepo/repo.xml"
+literal|"test/test-repo/bundlerepo/repo.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -405,7 +405,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/ivyrepo"
+literal|"test/test-repo/ivyrepo"
 argument_list|)
 decl_stmt|;
 name|fileSystemResolver
@@ -474,7 +474,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"java/test-repo/ivyrepo/repo.xml"
+literal|"test/test-repo/ivyrepo/repo.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -506,7 +506,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/bundlerepo"
+literal|"test/test-repo/bundlerepo"
 argument_list|)
 argument_list|,
 literal|""

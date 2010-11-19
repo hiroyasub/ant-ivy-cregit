@@ -648,7 +648,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/bundlerepo/repo.xml"
+literal|"test/test-repo/bundlerepo/repo.xml"
 argument_list|)
 operator|.
 name|getAbsolutePath
@@ -689,7 +689,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/bundlerepo/repo.xml"
+literal|"test/test-repo/bundlerepo/repo.xml"
 argument_list|)
 operator|.
 name|toURI
@@ -740,7 +740,7 @@ name|resolver
 operator|.
 name|setRepoXmlFile
 argument_list|(
-literal|"java/test-repo/ivyrepo/repo.xml"
+literal|"test/test-repo/ivyrepo/repo.xml"
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -777,7 +777,7 @@ init|=
 operator|new
 name|File
 argument_list|(
-literal|"java/test-repo/ivyrepo"
+literal|"test/test-repo/ivyrepo"
 argument_list|)
 decl_stmt|;
 name|FileSystemResolver
@@ -1680,7 +1680,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"java/test-repo/bundlerepo/"
+literal|"test/test-repo/bundlerepo/"
 operator|+
 name|jarName
 argument_list|)
@@ -1857,7 +1857,7 @@ argument_list|(
 operator|new
 name|FileInputStream
 argument_list|(
-literal|"java/test-repo/bundlerepo/"
+literal|"test/test-repo/bundlerepo/"
 operator|+
 name|jarName
 argument_list|)

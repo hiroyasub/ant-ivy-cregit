@@ -76,7 +76,7 @@ init|=
 operator|new
 name|JarEntryResource
 argument_list|(
-literal|"java/test-bundles/jars/com.acme.alpha-1.0.0.20080101.jar!META-INF/MANIFEST.MF"
+literal|"test/test-bundles/jars/com.acme.alpha-1.0.0.20080101.jar!META-INF/MANIFEST.MF"
 argument_list|)
 decl_stmt|;
 name|assertNotNull

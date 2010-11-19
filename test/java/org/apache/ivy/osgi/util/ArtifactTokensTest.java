@@ -43,7 +43,7 @@ specifier|final
 name|String
 name|repoResource
 init|=
-literal|"java/test-ivy/osgi/eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.0.1.v200808121010"
+literal|"test/test-ivy/osgi/eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.0.1.v200808121010"
 decl_stmt|;
 specifier|final
 name|ArtifactTokens
@@ -57,7 +57,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"java/test-ivy/osgi/eclipse/plugins/"
+literal|"test/test-ivy/osgi/eclipse/plugins/"
 argument_list|,
 name|tokens
 operator|.
@@ -114,7 +114,7 @@ specifier|final
 name|String
 name|repoResource
 init|=
-literal|"java/test-ivy/osgi/eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.0.1"
+literal|"test/test-ivy/osgi/eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.0.1"
 decl_stmt|;
 specifier|final
 name|ArtifactTokens
@@ -128,7 +128,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"java/test-ivy/osgi/eclipse/plugins/"
+literal|"test/test-ivy/osgi/eclipse/plugins/"
 argument_list|,
 name|tokens
 operator|.
@@ -185,7 +185,7 @@ specifier|final
 name|String
 name|repoResource
 init|=
-literal|"java/test-ivy/osgi/eclipse/plugins/org.myorg.module.one_3.21.100.v20070530"
+literal|"test/test-ivy/osgi/eclipse/plugins/org.myorg.module.one_3.21.100.v20070530"
 decl_stmt|;
 specifier|final
 name|ArtifactTokens
@@ -199,7 +199,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"java/test-ivy/osgi/eclipse/plugins/"
+literal|"test/test-ivy/osgi/eclipse/plugins/"
 argument_list|,
 name|tokens
 operator|.
@@ -256,10 +256,10 @@ specifier|final
 name|String
 name|repoResource
 init|=
-literal|"java/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721-2100-e33.jar"
+literal|"test/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721-2100-e33.jar"
 decl_stmt|;
 comment|// String repoResource =
-comment|// "java/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721.jar";
+comment|// "test/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721.jar";
 specifier|final
 name|ArtifactTokens
 name|tokens
@@ -272,7 +272,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"java/test-ivy/osgi/eclipse/plugins/"
+literal|"test/test-ivy/osgi/eclipse/plugins/"
 argument_list|,
 name|tokens
 operator|.
@@ -329,7 +329,7 @@ specifier|final
 name|String
 name|repoResource
 init|=
-literal|"java/test-ivy/osgi/eclipse/plugins/fake"
+literal|"test/test-ivy/osgi/eclipse/plugins/fake"
 decl_stmt|;
 specifier|final
 name|ArtifactTokens
