@@ -44,16 +44,12 @@ name|ExecutionEnvironmentProfile
 block|{
 specifier|private
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|pkgNames
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -110,9 +106,7 @@ block|}
 block|}
 specifier|public
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|getPkgNames
 parameter_list|()
 block|{
@@ -120,8 +114,6 @@ return|return
 name|pkgNames
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|hashCode
@@ -184,8 +176,6 @@ return|return
 name|result
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|equals

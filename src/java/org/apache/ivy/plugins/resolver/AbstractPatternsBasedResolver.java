@@ -548,7 +548,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-specifier|protected
+specifier|public
 name|ResolvedResource
 name|findArtifactRef
 parameter_list|(

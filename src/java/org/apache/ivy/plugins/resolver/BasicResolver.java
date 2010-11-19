@@ -5997,7 +5997,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|protected
+specifier|public
 specifier|abstract
 name|ResolvedResource
 name|findArtifactRef

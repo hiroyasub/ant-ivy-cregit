@@ -18,52 +18,12 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|util
-operator|.
-name|Version
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|junit
 operator|.
-name|Test
+name|framework
+operator|.
+name|TestCase
 import|;
 end_import
 
@@ -71,9 +31,9 @@ begin_class
 specifier|public
 class|class
 name|VersionTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testParsing
@@ -195,8 +155,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testCompareTo

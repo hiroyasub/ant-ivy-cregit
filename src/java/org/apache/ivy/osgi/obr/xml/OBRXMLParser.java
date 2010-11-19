@@ -469,12 +469,7 @@ class|class
 name|RepositoryHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|DelegetingHandler
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
+comment|/*<DelegetingHandler<?>> */
 block|{
 name|BundleRepo
 name|repo
@@ -497,8 +492,6 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -576,9 +569,7 @@ class|class
 name|ResourceHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|RepositoryHandler
-argument_list|>
+comment|/*<RepositoryHandler> */
 block|{
 name|BundleInfo
 name|bundleInfo
@@ -634,8 +625,6 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -797,8 +786,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -815,8 +802,13 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
+operator|(
+operator|(
+name|RepositoryHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|repo
 operator|.
@@ -833,9 +825,7 @@ class|class
 name|ResourceDescriptionHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 specifier|public
 name|ResourceDescriptionHandler
@@ -857,8 +847,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -875,8 +863,13 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 operator|.
@@ -897,9 +890,7 @@ class|class
 name|ResourceDocumentationHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 specifier|public
 name|ResourceDocumentationHandler
@@ -921,8 +912,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -939,8 +928,13 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 operator|.
@@ -961,9 +955,7 @@ class|class
 name|ResourceLicenseHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 specifier|public
 name|ResourceLicenseHandler
@@ -985,8 +977,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -1003,8 +993,13 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 operator|.
@@ -1025,9 +1020,7 @@ class|class
 name|ResourceSizeHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 specifier|public
 name|ResourceSizeHandler
@@ -1049,8 +1042,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -1078,8 +1069,13 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 operator|.
@@ -1106,8 +1102,13 @@ name|this
 argument_list|,
 literal|"Invalid size for the bundle"
 operator|+
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 operator|.
@@ -1130,9 +1131,7 @@ class|class
 name|CapabilityHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 name|Capability
 name|capability
@@ -1158,8 +1157,6 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1205,8 +1202,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -1229,8 +1224,13 @@ name|CapabilityAdapter
 operator|.
 name|adapt
 argument_list|(
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 argument_list|,
@@ -1265,9 +1265,7 @@ class|class
 name|CapabilityPropertyHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|CapabilityHandler
-argument_list|>
+comment|/*<CapabilityHandler> */
 block|{
 specifier|public
 name|CapabilityPropertyHandler
@@ -1284,8 +1282,6 @@ name|capabilityHandler
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1319,8 +1315,13 @@ name|this
 argument_list|,
 literal|"Capability property with no name on a capability "
 operator|+
+operator|(
+operator|(
+name|CapabilityHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|capability
 operator|.
@@ -1353,8 +1354,13 @@ name|this
 argument_list|,
 literal|"Capability property with no value on a capability "
 operator|+
+operator|(
+operator|(
+name|CapabilityHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|capability
 operator|.
@@ -1374,8 +1380,13 @@ argument_list|(
 name|CAPABILITY_PROPERTY_TYPE
 argument_list|)
 decl_stmt|;
+operator|(
+operator|(
+name|CapabilityHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|capability
 operator|.
@@ -1396,9 +1407,7 @@ class|class
 name|RequireHandler
 extends|extends
 name|DelegetingHandler
-argument_list|<
-name|ResourceHandler
-argument_list|>
+comment|/*<ResourceHandler> */
 block|{
 specifier|private
 name|Requirement
@@ -1419,8 +1428,6 @@ name|resourceHandler
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1685,8 +1692,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|doEndElement
@@ -1709,8 +1714,13 @@ name|RequirementAdapter
 operator|.
 name|adapt
 argument_list|(
+operator|(
+operator|(
+name|ResourceHandler
+operator|)
 name|getParent
 argument_list|()
+operator|)
 operator|.
 name|bundleInfo
 argument_list|,
@@ -1804,7 +1814,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|true
+name|Boolean
+operator|.
+name|TRUE
 return|;
 block|}
 if|else if
@@ -1818,7 +1830,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 else|else
@@ -1842,9 +1856,7 @@ name|void
 name|skipResourceOnError
 parameter_list|(
 name|DelegetingHandler
-argument_list|<
-name|?
-argument_list|>
+comment|/*<?> */
 name|handler
 parameter_list|,
 name|String
@@ -1852,9 +1864,7 @@ name|message
 parameter_list|)
 block|{
 name|DelegetingHandler
-argument_list|<
-name|?
-argument_list|>
+comment|/*<?> */
 name|resourceHandler
 init|=
 name|handler
@@ -1917,9 +1927,7 @@ name|void
 name|printError
 parameter_list|(
 name|DelegetingHandler
-argument_list|<
-name|?
-argument_list|>
+comment|/*<?> */
 name|handler
 parameter_list|,
 name|String
@@ -1948,9 +1956,7 @@ name|void
 name|printWarning
 parameter_list|(
 name|DelegetingHandler
-argument_list|<
-name|?
-argument_list|>
+comment|/*<?> */
 name|handler
 parameter_list|,
 name|String

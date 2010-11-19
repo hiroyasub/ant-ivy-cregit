@@ -694,7 +694,7 @@ literal|null
 return|;
 block|}
 block|}
-specifier|protected
+specifier|public
 name|ResolvedResource
 name|findArtifactRef
 parameter_list|(

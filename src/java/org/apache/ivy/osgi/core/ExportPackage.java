@@ -63,16 +63,12 @@ block|{
 specifier|private
 specifier|final
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|uses
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -113,8 +109,6 @@ name|pkg
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Version
 name|getVersion
@@ -140,9 +134,7 @@ return|;
 block|}
 specifier|public
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|getUses
 parameter_list|()
 block|{
@@ -150,8 +142,6 @@ return|return
 name|uses
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|hashCode
@@ -196,8 +186,6 @@ return|return
 name|result
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|equals

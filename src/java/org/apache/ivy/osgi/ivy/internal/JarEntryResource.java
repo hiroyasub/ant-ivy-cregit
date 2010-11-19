@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A resource decorator that handles extracting jar file entries using the bang(!) notation to separate the internal  * entry name.  *   * @author alex@radeski.net  */
+comment|/**  * A resource decorator that handles extracting jar file entries using the bang(!) notation to  * separate the internal entry name.  */
 end_comment
 
 begin_class
@@ -221,8 +221,6 @@ operator|=
 name|entryName
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString

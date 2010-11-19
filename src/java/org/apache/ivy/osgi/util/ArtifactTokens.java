@@ -60,9 +60,7 @@ specifier|public
 specifier|static
 specifier|final
 name|Comparator
-argument_list|<
-name|ArtifactTokens
-argument_list|>
+comment|/*<ArtifactTokens> */
 name|ORDER_BY_VERSION_ASC
 init|=
 operator|new
@@ -75,9 +73,7 @@ specifier|public
 specifier|static
 specifier|final
 name|Comparator
-argument_list|<
-name|ArtifactTokens
-argument_list|>
+comment|/*<ArtifactTokens> */
 name|ORDER_BY_VERSION_DESC
 init|=
 operator|new
@@ -231,8 +227,6 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString
@@ -270,20 +264,21 @@ name|toDetailString
 parameter_list|()
 block|{
 return|return
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"prefix=%s, module=%s, version=%s, isJar=%s"
-argument_list|,
+literal|"prefix="
+operator|+
 name|prefix
-argument_list|,
+operator|+
+literal|", module="
+operator|+
 name|module
-argument_list|,
+operator|+
+literal|", version="
+operator|+
 name|version
-argument_list|,
+operator|+
+literal|", isJar="
+operator|+
 name|isJar
-argument_list|)
 return|;
 block|}
 specifier|public
@@ -317,9 +312,7 @@ class|class
 name|OrderByVersion
 implements|implements
 name|Comparator
-argument_list|<
-name|ArtifactTokens
-argument_list|>
+comment|/*<ArtifactTokens> */
 block|{
 specifier|private
 specifier|final
@@ -339,6 +332,32 @@ name|ascending
 operator|=
 name|ascending
 expr_stmt|;
+block|}
+specifier|public
+name|int
+name|compare
+parameter_list|(
+name|Object
+name|o1
+parameter_list|,
+name|Object
+name|o2
+parameter_list|)
+block|{
+return|return
+name|compare
+argument_list|(
+operator|(
+name|ArtifactTokens
+operator|)
+name|o1
+argument_list|,
+operator|(
+name|ArtifactTokens
+operator|)
+name|o2
+argument_list|)
+return|;
 block|}
 specifier|public
 name|int

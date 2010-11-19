@@ -17,18 +17,6 @@ name|util
 package|;
 end_package
 
-begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|Integer
-operator|.
-name|parseInt
-import|;
-end_import
-
 begin_comment
 comment|/**  * Provides OSGi version support.  */
 end_comment
@@ -39,9 +27,7 @@ class|class
 name|Version
 implements|implements
 name|Comparable
-argument_list|<
-name|Version
-argument_list|>
+comment|/*<Version> */
 block|{
 specifier|private
 specifier|final
@@ -116,6 +102,8 @@ argument_list|)
 decl_stmt|;
 name|major
 operator|=
+name|Integer
+operator|.
 name|parseInt
 argument_list|(
 name|tmp
@@ -132,6 +120,8 @@ name|length
 operator|>=
 literal|2
 condition|?
+name|Integer
+operator|.
 name|parseInt
 argument_list|(
 name|tmp
@@ -150,6 +140,8 @@ name|length
 operator|>=
 literal|3
 condition|?
+name|Integer
+operator|.
 name|parseInt
 argument_list|(
 name|tmp
@@ -217,8 +209,6 @@ operator|=
 name|qualifier
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString
@@ -241,8 +231,6 @@ name|qualifier
 operator|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|hashCode
@@ -308,8 +296,6 @@ return|return
 name|result
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|equals
@@ -583,6 +569,24 @@ return|;
 block|}
 return|return
 literal|0
+return|;
+block|}
+specifier|public
+name|int
+name|compareTo
+parameter_list|(
+name|Object
+name|obj
+parameter_list|)
+block|{
+return|return
+name|compareTo
+argument_list|(
+operator|(
+name|Version
+operator|)
+name|obj
+argument_list|)
 return|;
 block|}
 specifier|public

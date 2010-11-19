@@ -83,6 +83,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Set
 import|;
 end_import
@@ -232,11 +242,6 @@ name|toURL
 argument_list|()
 return|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|void
 name|testAcmeResolveAlpha
@@ -281,8 +286,10 @@ argument_list|,
 literal|"1.0+"
 argument_list|)
 decl_stmt|;
-comment|// final ModuleRevisionId mrid = new ModuleRevisionId(new ModuleId("com.acme", "delta"), "4+");
-comment|// final ModuleRevisionId mrid = new ModuleRevisionId(new ModuleId("com.acme", "echo"), "5+");
+comment|// final ModuleRevisionId mrid = new ModuleRevisionId(new ModuleId("com.acme", "delta"),
+comment|// "4+");
+comment|// final ModuleRevisionId mrid = new ModuleRevisionId(new ModuleId("com.acme", "echo"),
+comment|// "5+");
 specifier|final
 name|ResolveOptions
 name|options
@@ -353,16 +360,12 @@ block|}
 decl_stmt|;
 specifier|final
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|nodeNames
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|(
 name|Arrays
 operator|.
@@ -372,23 +375,42 @@ name|names
 argument_list|)
 argument_list|)
 decl_stmt|;
-for|for
-control|(
-name|IvyNode
-name|node
-range|:
+name|Iterator
+name|itNode
+init|=
+operator|(
 operator|(
 name|Collection
-argument_list|<
-name|IvyNode
-argument_list|>
+comment|/*<IvyNode> */
 operator|)
 name|report
 operator|.
 name|getDependencies
 argument_list|()
-control|)
+operator|)
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|itNode
+operator|.
+name|hasNext
+argument_list|()
+condition|)
 block|{
+name|IvyNode
+name|node
+init|=
+operator|(
+name|IvyNode
+operator|)
+name|itNode
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
 name|assertTrue
 argument_list|(
 literal|" Contains: "

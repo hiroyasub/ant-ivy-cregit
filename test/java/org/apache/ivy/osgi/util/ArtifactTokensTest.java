@@ -18,76 +18,12 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|util
-operator|.
-name|ArtifactTokens
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|junit
 operator|.
-name|Test
+name|framework
+operator|.
+name|TestCase
 import|;
 end_import
 
@@ -95,9 +31,9 @@ begin_class
 specifier|public
 class|class
 name|ArtifactTokensTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testGoodMatching
@@ -169,8 +105,6 @@ name|isJar
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testGoodMatching2
@@ -242,8 +176,6 @@ name|isJar
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testGoodMatching3
@@ -315,8 +247,6 @@ name|isJar
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testGoodMatching4
@@ -328,7 +258,8 @@ name|repoResource
 init|=
 literal|"java/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721-2100-e33.jar"
 decl_stmt|;
-comment|// String repoResource = "java/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721.jar";
+comment|// String repoResource =
+comment|// "java/test-ivy/osgi/eclipse/plugins/org.eclipse.mylyn.tasks.ui_3.0.1.v20080721.jar";
 specifier|final
 name|ArtifactTokens
 name|tokens
@@ -389,8 +320,6 @@ name|isJar
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testBadMatching

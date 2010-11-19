@@ -195,16 +195,40 @@ argument_list|(
 literal|"[_\\-\\+]"
 argument_list|)
 decl_stmt|;
-comment|/**      * Compares two ModuleRevisionId by their revision. Revisions are compared using an algorithm inspired by PHP      * version_compare one.      */
+comment|/**      * Compares two ModuleRevisionId by their revision. Revisions are compared using an algorithm      * inspired by PHP version_compare one.      */
 specifier|final
 class|class
 name|MridComparator
 implements|implements
 name|Comparator
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 block|{
+specifier|public
+name|int
+name|compare
+parameter_list|(
+name|Object
+name|o1
+parameter_list|,
+name|Object
+name|o2
+parameter_list|)
+block|{
+return|return
+name|compare
+argument_list|(
+operator|(
+name|ModuleRevisionId
+operator|)
+name|o1
+argument_list|,
+operator|(
+name|ModuleRevisionId
+operator|)
+name|o2
+argument_list|)
+return|;
+block|}
 specifier|public
 name|int
 name|compare
@@ -505,11 +529,7 @@ return|;
 block|}
 comment|// both are strings, we compare them taking into account special meaning
 name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 name|meanings
 init|=
 name|getSpecialMeanings
@@ -518,6 +538,9 @@ decl_stmt|;
 name|Integer
 name|sm1
 init|=
+operator|(
+name|Integer
+operator|)
 name|meanings
 operator|.
 name|get
@@ -538,6 +561,9 @@ decl_stmt|;
 name|Integer
 name|sm2
 init|=
+operator|(
+name|Integer
+operator|)
 name|meanings
 operator|.
 name|get
@@ -722,16 +748,40 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Compares two ArtifactInfo by their revision. Revisions are compared using an algorithm inspired by PHP      * version_compare one, unless a dynamic revision is given, in which case the version matcher is used to perform the      * comparison.      */
+comment|/**      * Compares two ArtifactInfo by their revision. Revisions are compared using an algorithm      * inspired by PHP version_compare one, unless a dynamic revision is given, in which case the      * version matcher is used to perform the comparison.      */
 specifier|final
 class|class
 name|ArtifactInfoComparator
 implements|implements
 name|Comparator
-argument_list|<
-name|ArtifactInfo
-argument_list|>
+comment|/*<ArtifactInfo> */
 block|{
+specifier|public
+name|int
+name|compare
+parameter_list|(
+name|Object
+name|o1
+parameter_list|,
+name|Object
+name|o2
+parameter_list|)
+block|{
+return|return
+name|compare
+argument_list|(
+operator|(
+name|ArtifactInfo
+operator|)
+name|o1
+argument_list|,
+operator|(
+name|ArtifactInfo
+operator|)
+name|o2
+argument_list|)
+return|;
+block|}
 specifier|public
 name|int
 name|compare
@@ -759,7 +809,7 @@ operator|.
 name|getRevision
 argument_list|()
 decl_stmt|;
-comment|/*              * The revisions can still be not resolved, so we use the current version matcher to know if one revision is              * dynamic, and in this case if it should be considered greater or lower than the other one. Note that if              * the version matcher compare method returns 0, it's because it's not possible to know which revision is              * greater. In this case we consider the dynamic one to be greater, because most of the time it will then be              * actually resolved and a real comparison will occur.              */
+comment|/*              * The revisions can still be not resolved, so we use the current version matcher to              * know if one revision is dynamic, and in this case if it should be considered greater              * or lower than the other one. Note that if the version matcher compare method returns              * 0, it's because it's not possible to know which revision is greater. In this case we              * consider the dynamic one to be greater, because most of the time it will then be              * actually resolved and a real comparison will occur.              */
 name|VersionMatcher
 name|vmatcher
 init|=
@@ -986,11 +1036,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 name|DEFAULT_SPECIAL_MEANINGS
 decl_stmt|;
 static|static
@@ -999,11 +1045,7 @@ name|DEFAULT_SPECIAL_MEANINGS
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 argument_list|()
 expr_stmt|;
 name|DEFAULT_SPECIAL_MEANINGS
@@ -1050,9 +1092,7 @@ block|}
 specifier|private
 specifier|final
 name|Comparator
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 name|mridComparator
 init|=
 operator|new
@@ -1062,9 +1102,7 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|Comparator
-argument_list|<
-name|ArtifactInfo
-argument_list|>
+comment|/*<ArtifactInfo> */
 name|artifactInfoComparator
 init|=
 operator|new
@@ -1073,11 +1111,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 name|specialMeanings
 init|=
 literal|null
@@ -1143,11 +1177,7 @@ block|}
 specifier|public
 specifier|synchronized
 name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 name|getSpecialMeanings
 parameter_list|()
 block|{
@@ -1162,11 +1192,7 @@ name|specialMeanings
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+comment|/*<String, Integer> */
 argument_list|()
 expr_stmt|;
 if|if

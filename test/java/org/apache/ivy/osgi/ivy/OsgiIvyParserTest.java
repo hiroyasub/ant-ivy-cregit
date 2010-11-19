@@ -18,54 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertArrayEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -107,6 +59,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -136,22 +98,6 @@ operator|.
 name|settings
 operator|.
 name|IvySettings
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|ivy
-operator|.
-name|OsgiIvyParser
 import|;
 end_import
 
@@ -205,23 +151,13 @@ name|URLResource
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|OsgiIvyParserTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testSimple
@@ -432,18 +368,26 @@ argument_list|)
 expr_stmt|;
 name|assertArrayEquals
 argument_list|(
+operator|(
+name|Object
+index|[]
+operator|)
 name|resultMd
 operator|.
 name|getLicenses
 argument_list|()
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 name|includingMd
 operator|.
 name|getLicenses
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertSetEquals
+name|assertArrayEquals
 argument_list|(
 name|resultMd
 operator|.
@@ -458,11 +402,19 @@ argument_list|)
 expr_stmt|;
 name|assertArrayEquals
 argument_list|(
+operator|(
+name|Object
+index|[]
+operator|)
 name|resultMd
 operator|.
 name|getAllArtifacts
 argument_list|()
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 name|includingMd
 operator|.
 name|getAllArtifacts
@@ -533,6 +485,10 @@ argument_list|)
 expr_stmt|;
 name|assertArrayEquals
 argument_list|(
+operator|(
+name|Object
+index|[]
+operator|)
 name|resultMd
 operator|.
 name|getDependencies
@@ -544,6 +500,10 @@ operator|.
 name|getModuleConfigurations
 argument_list|()
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 name|includingMd
 operator|.
 name|getDependencies
@@ -560,19 +520,17 @@ block|}
 block|}
 specifier|private
 specifier|static
-parameter_list|<
-name|T1
-parameter_list|,
-name|T2
-parameter_list|>
+comment|/*<T1,T2> */
 name|void
-name|assertSetEquals
+name|assertArrayEquals
 parameter_list|(
-name|T1
+name|Object
+comment|/* T1 */
 index|[]
 name|expected
 parameter_list|,
-name|T2
+name|Object
+comment|/* T2 */
 index|[]
 name|actual
 parameter_list|)
@@ -597,24 +555,16 @@ expr_stmt|;
 block|}
 specifier|private
 specifier|static
-parameter_list|<
-name|T1
-parameter_list|,
-name|T2
-parameter_list|>
+comment|/*<T1,T2> */
 name|void
 name|assertSetEquals
 parameter_list|(
 name|List
-argument_list|<
-name|T1
-argument_list|>
+comment|/*<T1> */
 name|expected
 parameter_list|,
 name|List
-argument_list|<
-name|T2
-argument_list|>
+comment|/*<T2> */
 name|actual
 parameter_list|)
 block|{
@@ -622,18 +572,14 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|T1
-argument_list|>
+comment|/*<T1> */
 argument_list|(
 name|expected
 argument_list|)
 argument_list|,
 operator|new
 name|HashSet
-argument_list|<
-name|T2
-argument_list|>
+comment|/*<T2> */
 argument_list|(
 name|actual
 argument_list|)

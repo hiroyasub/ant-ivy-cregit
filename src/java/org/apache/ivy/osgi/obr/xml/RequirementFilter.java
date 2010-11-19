@@ -25,8 +25,6 @@ specifier|abstract
 class|class
 name|RequirementFilter
 block|{
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString

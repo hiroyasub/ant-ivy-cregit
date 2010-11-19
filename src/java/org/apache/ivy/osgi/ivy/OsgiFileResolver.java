@@ -18,18 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|String
-operator|.
-name|format
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -328,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An OSGi file system resolver.  *   * @author alex@radeski.net  */
+comment|/**  * An OSGi file system resolver.  */
 end_comment
 
 begin_class
@@ -359,9 +347,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
-specifier|protected
+specifier|public
 name|ResolvedResource
 name|findArtifactRef
 parameter_list|(
@@ -376,14 +362,13 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-name|format
-argument_list|(
-literal|"\tfind artifact ref: artifact=%s, date=%s"
-argument_list|,
+literal|"\tfind artifact ref: artifact="
+operator|+
 name|artifact
-argument_list|,
+operator|+
+literal|", date="
+operator|+
 name|date
-argument_list|)
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -425,14 +410,13 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-name|format
-argument_list|(
-literal|"\t\tfind artifact ref: mrid=%s, resource=%s"
-argument_list|,
+literal|"\t\tfind artifact ref: mrid="
+operator|+
 name|newMrid
-argument_list|,
+operator|+
+literal|", resource="
+operator|+
 name|resolvedResource
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -586,13 +570,6 @@ return|return
 name|resolvedResource
 return|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
-annotation|@
-name|Override
 specifier|public
 name|ResolvedResource
 name|findIvyFileRef
@@ -619,14 +596,13 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-name|format
-argument_list|(
-literal|"\tfind ivy file ref: dd=%s, data=%s"
-argument_list|,
+literal|"\tfind ivy file ref: dd="
+operator|+
 name|dd
-argument_list|,
+operator|+
+literal|", data="
+operator|+
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -806,33 +782,15 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-name|format
-argument_list|(
-literal|"\tfind ivy file ref: resource=%s"
-argument_list|,
+literal|"\tfind ivy file ref: resource="
+operator|+
 name|bundleResolvedResource
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|resolvedResource
 return|;
 block|}
-comment|//    protected ModuleRevisionId modifyModuleRevisionId(final ModuleRevisionId oldMrid) {
-comment|//        String revision = oldMrid.getRevision();
-comment|//        try {
-comment|//            VersionRange versionRange = new VersionRange(oldMrid.getRevision());
-comment|//            revision = versionRange.toIvyRevision();
-comment|//        } catch (ParseException nfe) {
-comment|//            // Do nothing as we fallback to default behaviour
-comment|//        }
-comment|//        final ModuleRevisionId newMrid = ModuleRevisionId.newInstance(oldMrid.getOrganisation(),
-comment|//                oldMrid.getName(),
-comment|//                oldMrid.getBranch(),
-comment|//                revision,
-comment|//                oldMrid.getExtraAttributes());
-comment|//        return newMrid;
-comment|//    }
 block|}
 end_class
 

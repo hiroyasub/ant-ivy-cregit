@@ -397,12 +397,22 @@ block|}
 name|Integer
 name|minor
 init|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
 literal|0
+argument_list|)
 decl_stmt|;
 name|Integer
 name|patch
 init|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
 literal|0
+argument_list|)
 decl_stmt|;
 name|String
 name|qualififer
@@ -429,7 +439,12 @@ condition|)
 block|{
 name|minor
 operator|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
 literal|0
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
@@ -452,7 +467,12 @@ condition|)
 block|{
 name|patch
 operator|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
 literal|0
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
@@ -474,10 +494,19 @@ operator|new
 name|Version
 argument_list|(
 name|major
+operator|.
+name|intValue
+argument_list|()
 argument_list|,
 name|minor
+operator|.
+name|intValue
+argument_list|()
 argument_list|,
 name|patch
+operator|.
+name|intValue
+argument_list|()
 argument_list|,
 name|qualififer
 argument_list|)
@@ -542,6 +571,10 @@ literal|'9'
 case|:
 name|n
 operator|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
 operator|(
 name|n
 operator|==
@@ -550,6 +583,9 @@ condition|?
 literal|0
 else|:
 name|n
+operator|.
+name|intValue
+argument_list|()
 operator|*
 literal|10
 operator|)
@@ -557,6 +593,7 @@ operator|+
 name|c
 operator|-
 literal|'0'
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
@@ -819,8 +856,6 @@ operator|=
 name|endVersion
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString
@@ -847,6 +882,9 @@ condition|?
 literal|""
 else|:
 name|endVersion
+operator|.
+name|toString
+argument_list|()
 operator|)
 operator|+
 operator|(
@@ -1126,8 +1164,6 @@ return|return
 literal|true
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|hashCode
@@ -1218,8 +1254,6 @@ return|return
 name|result
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|equals

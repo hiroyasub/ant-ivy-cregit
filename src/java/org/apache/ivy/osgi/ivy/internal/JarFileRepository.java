@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A file repository that handles extracting jar file entries using the bang(!) notation to separate the internal  * entry name.  *   * @author alex@radeski.net  */
+comment|/**  * A file repository that handles extracting jar file entries using the bang(!) notation to separate  * the internal entry name.  */
 end_comment
 
 begin_class
@@ -93,8 +93,6 @@ operator|new
 name|RepositoryJarHandler
 argument_list|()
 decl_stmt|;
-annotation|@
-name|Override
 specifier|public
 name|void
 name|get
@@ -141,8 +139,6 @@ name|destination
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Resource
 name|getResource

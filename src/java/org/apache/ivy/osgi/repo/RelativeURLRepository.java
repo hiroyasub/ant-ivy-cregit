@@ -152,24 +152,14 @@ expr_stmt|;
 block|}
 specifier|private
 name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Resource
-argument_list|>
+comment|/*<String, Resource> */
 name|resourcesCache
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Resource
-argument_list|>
+comment|/*<String, Resource> */
 argument_list|()
 decl_stmt|;
-annotation|@
-name|Override
 specifier|public
 name|Resource
 name|getResource
@@ -190,6 +180,9 @@ expr_stmt|;
 name|Resource
 name|res
 init|=
+operator|(
+name|Resource
+operator|)
 name|resourcesCache
 operator|.
 name|get

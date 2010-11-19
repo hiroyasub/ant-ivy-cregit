@@ -46,16 +46,12 @@ name|Capability
 block|{
 specifier|private
 name|List
-argument_list|<
-name|CapabilityProperty
-argument_list|>
+comment|/*<CapabilityProperty> */
 name|properties
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|CapabilityProperty
-argument_list|>
+comment|/*<CapabilityProperty> */
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -117,9 +113,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
-argument_list|<
-name|CapabilityProperty
-argument_list|>
+comment|/*<CapabilityProperty> */
 name|getProperties
 parameter_list|()
 block|{

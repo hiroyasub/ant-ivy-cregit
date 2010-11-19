@@ -227,22 +227,6 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|ManifestAndLocation
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|repo
-operator|.
 name|ResolverManifestIterable
 import|;
 end_import
@@ -516,8 +500,6 @@ operator|=
 name|quiet
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|void
 name|prepareTask
@@ -537,8 +519,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|doExecute
@@ -562,9 +542,7 @@ argument_list|)
 throw|;
 block|}
 name|Iterable
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 name|it
 decl_stmt|;
 if|if

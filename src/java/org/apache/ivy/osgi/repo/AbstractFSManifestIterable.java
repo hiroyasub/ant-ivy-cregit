@@ -142,15 +142,11 @@ class|class
 name|AbstractFSManifestIterable
 implements|implements
 name|Iterable
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 block|{
 specifier|public
 name|Iterator
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 name|iterator
 parameter_list|()
 block|{
@@ -163,9 +159,7 @@ block|}
 specifier|abstract
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listBundleFiles
 parameter_list|(
 name|String
@@ -177,9 +171,7 @@ function_decl|;
 specifier|abstract
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listDirs
 parameter_list|(
 name|String
@@ -215,9 +207,7 @@ class|class
 name|FSManifestIterator
 implements|implements
 name|Iterator
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 block|{
 specifier|private
 name|ManifestAndLocation
@@ -225,33 +215,21 @@ name|next
 init|=
 literal|null
 decl_stmt|;
-comment|/**          * Stack of list of directories. An iterator in the stack represents the current directory being lookup. The          * first element in the stack is the root directory. The next element in the stack is an iterator on the          * children on the root. The last iterator in the stack points to {@link #currentDir}.          */
+comment|/**          * Stack of list of directories. An iterator in the stack represents the current directory          * being lookup. The first element in the stack is the root directory. The next element in          * the stack is an iterator on the children on the root. The last iterator in the stack          * points to {@link #currentDir}.          */
 specifier|private
 name|Stack
-argument_list|<
-name|Iterator
-argument_list|<
-name|String
-argument_list|>
-argument_list|>
+comment|/*<Iterator<String>> */
 name|dirs
 init|=
 operator|new
 name|Stack
-argument_list|<
-name|Iterator
-argument_list|<
-name|String
-argument_list|>
-argument_list|>
+comment|/*<Iterator<String>> */
 argument_list|()
 decl_stmt|;
 comment|/**          * The bundles files being lookup.          */
 specifier|private
 name|Iterator
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|bundleCandidates
 init|=
 literal|null
@@ -281,7 +259,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Deep first tree lookup for the directories and the bundles are searched on each found directory.          */
+comment|/**          * Deep first tree lookup for the directories and the bundles are searched on each found          * directory.          */
 specifier|public
 name|boolean
 name|hasNext
@@ -305,10 +283,15 @@ block|{
 comment|// so get the next one
 if|if
 condition|(
+operator|(
+operator|(
+name|Iterator
+operator|)
 name|dirs
 operator|.
 name|peek
 argument_list|()
+operator|)
 operator|.
 name|hasNext
 argument_list|()
@@ -316,10 +299,18 @@ condition|)
 block|{
 name|currentDir
 operator|=
+operator|(
+name|String
+operator|)
+operator|(
+operator|(
+name|Iterator
+operator|)
 name|dirs
 operator|.
 name|peek
 argument_list|()
+operator|)
 operator|.
 name|next
 argument_list|()
@@ -400,6 +391,9 @@ block|{
 name|String
 name|bundleCandidate
 init|=
+operator|(
+name|String
+operator|)
 name|bundleCandidates
 operator|.
 name|next
@@ -553,9 +547,7 @@ name|add
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
+comment|/*<String> */
 name|emptyList
 argument_list|()
 operator|.
@@ -575,7 +567,7 @@ literal|true
 return|;
 block|}
 specifier|public
-name|ManifestAndLocation
+name|Object
 name|next
 parameter_list|()
 block|{

@@ -39,6 +39,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -87,7 +97,9 @@ name|obr
 operator|.
 name|filter
 operator|.
-name|RequirementFilterParser
+name|CompareFilter
+operator|.
+name|Operator
 import|;
 end_import
 
@@ -105,9 +117,7 @@ name|obr
 operator|.
 name|filter
 operator|.
-name|CompareFilter
-operator|.
-name|Operator
+name|RequirementFilterParser
 import|;
 end_import
 
@@ -129,23 +139,13 @@ name|RequirementFilter
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|RequirementFilterTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testParser
@@ -240,7 +240,12 @@ init|=
 operator|new
 name|AndFilter
 argument_list|(
+operator|new
+name|RequirementFilter
+index|[]
+block|{
 name|foodorbarge0dot0
+block|}
 argument_list|)
 decl_stmt|;
 name|checkParse
@@ -256,11 +261,16 @@ init|=
 operator|new
 name|AndFilter
 argument_list|(
+operator|new
+name|RequirementFilter
+index|[]
+block|{
 name|cgt2
-argument_list|,
+block|,
 name|twoeqd
-argument_list|,
+block|,
 name|foodorbarge0dot0
+block|}
 argument_list|)
 decl_stmt|;
 name|checkParse

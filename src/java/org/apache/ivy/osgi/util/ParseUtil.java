@@ -46,13 +46,8 @@ specifier|public
 class|class
 name|ParseUtil
 block|{
-comment|/**      * Parses delimited string and returns an array containing the tokens. This parser obeys quotes, so the delimiter      * character will be ignored if it is inside of a quote. This method assumes that the quote character is not      * included in the set of delimiter characters.      *       * @param value the delimited string to parse.      * @param delim the characters delimiting the tokens.      * @return an array of string tokens or null if there were no tokens.      */
+comment|/**      * Parses delimited string and returns an array containing the tokens. This parser obeys quotes,      * so the delimiter character will be ignored if it is inside of a quote. This method assumes      * that the quote character is not included in the set of delimiter characters.      *       * @param value      *            the delimited string to parse.      * @param delim      *            the characters delimiting the tokens.      * @return an array of string tokens or null if there were no tokens.      */
 comment|// method largely inspired by Apache Felix 1.0.4 ManifestParser method
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 specifier|static
 name|String

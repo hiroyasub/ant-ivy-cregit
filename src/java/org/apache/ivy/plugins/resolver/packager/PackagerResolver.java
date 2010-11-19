@@ -717,7 +717,7 @@ throw|;
 block|}
 block|}
 comment|// @Override
-specifier|protected
+specifier|public
 specifier|synchronized
 name|ResolvedResource
 name|findArtifactRef

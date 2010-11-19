@@ -128,8 +128,6 @@ operator|=
 name|repo
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|InputStream
 name|getInputStream
@@ -152,13 +150,9 @@ name|openStream
 argument_list|()
 return|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listBundleFiles
 parameter_list|(
 name|String
@@ -181,13 +175,9 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listDirs
 parameter_list|(
 name|String
@@ -212,9 +202,7 @@ return|;
 block|}
 specifier|private
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|asList
 parameter_list|(
 name|String
@@ -229,17 +217,13 @@ literal|null
 condition|?
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
+comment|/*<String> */
 name|emptyList
 argument_list|()
 else|:
 name|Arrays
 operator|.
-expr|<
-name|String
-operator|>
+comment|/*<String> */
 name|asList
 argument_list|(
 name|array

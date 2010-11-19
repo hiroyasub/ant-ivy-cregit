@@ -341,22 +341,6 @@ name|plugins
 operator|.
 name|resolver
 operator|.
-name|BasicResolverWrapper
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|plugins
-operator|.
-name|resolver
-operator|.
 name|util
 operator|.
 name|ResolvedResource
@@ -383,14 +367,13 @@ class|class
 name|ResolverManifestIterable
 implements|implements
 name|Iterable
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 block|{
-comment|// We should support the interface DependencyResolver, but the API is not convenient to get references to artifact
+comment|// We should support the interface DependencyResolver, but the API is not convenient to get
+comment|// references to artifact
 specifier|private
 specifier|final
-name|BasicResolverWrapper
+name|BasicResolver
 name|resolver
 decl_stmt|;
 specifier|public
@@ -404,18 +387,12 @@ name|this
 operator|.
 name|resolver
 operator|=
-operator|new
-name|BasicResolverWrapper
-argument_list|(
 name|resolver
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
 name|Iterator
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 name|iterator
 parameter_list|()
 block|{
@@ -429,9 +406,7 @@ class|class
 name|ResolverManifestIterator
 implements|implements
 name|Iterator
-argument_list|<
-name|ManifestAndLocation
-argument_list|>
+comment|/*<ManifestAndLocation> */
 block|{
 specifier|private
 name|OrganisationEntry
@@ -1006,7 +981,7 @@ literal|true
 return|;
 block|}
 specifier|public
-name|ManifestAndLocation
+name|Object
 name|next
 parameter_list|()
 block|{

@@ -18,18 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|java
-operator|.
-name|lang
-operator|.
-name|ClassLoader
-operator|.
-name|getSystemResource
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -251,22 +239,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|osgi
-operator|.
-name|ivy
-operator|.
-name|OsgiManifestParser
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|plugins
 operator|.
 name|parser
@@ -324,10 +296,6 @@ operator|.
 name|FileUtil
 import|;
 end_import
-
-begin_comment
-comment|/**  * @author jerome@benois.fr  */
-end_comment
 
 begin_class
 specifier|public
@@ -830,29 +798,48 @@ name|dds
 argument_list|)
 expr_stmt|;
 name|Set
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 name|actual
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 argument_list|()
 decl_stmt|;
-for|for
-control|(
 name|DependencyDescriptor
-name|dd
-range|:
+index|[]
+name|deps
+init|=
 name|md
 operator|.
 name|getDependencies
 argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|deps
+operator|.
+name|length
+condition|;
+name|i
+operator|++
 control|)
 block|{
+name|DependencyDescriptor
+name|dd
+init|=
+name|deps
+index|[
+name|i
+index|]
+decl_stmt|;
 name|actual
 operator|.
 name|add
@@ -865,16 +852,12 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Set
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 name|expected
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+comment|/*<ModuleRevisionId> */
 argument_list|()
 decl_stmt|;
 name|expected
@@ -1098,6 +1081,8 @@ argument_list|(
 operator|new
 name|InputStreamReader
 argument_list|(
+name|ClassLoader
+operator|.
 name|getSystemResource
 argument_list|(
 name|resource

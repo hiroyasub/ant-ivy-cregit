@@ -121,8 +121,6 @@ return|return
 name|version
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString
@@ -144,8 +142,6 @@ name|version
 operator|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|int
 name|hashCode
@@ -208,8 +204,6 @@ return|return
 name|result
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|equals

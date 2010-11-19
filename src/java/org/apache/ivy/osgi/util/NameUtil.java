@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides a bundle name conversion utility.  *   * @author alex@radeski.net  */
+comment|/**  * Provides a bundle name conversion utility.  */
 end_comment
 
 begin_class
@@ -109,16 +109,12 @@ block|}
 specifier|private
 specifier|final
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|tlds
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|()
 decl_stmt|;
 specifier|private

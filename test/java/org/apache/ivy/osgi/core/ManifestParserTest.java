@@ -18,42 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -75,49 +39,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|core
-operator|.
-name|BundleInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|core
-operator|.
-name|BundleRequirement
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|core
-operator|.
-name|ManifestParser
+name|TestCase
 import|;
 end_import
 
@@ -137,23 +63,13 @@ name|VersionRange
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|ManifestParserTest
+extends|extends
+name|TestCase
 block|{
-annotation|@
-name|Test
 specifier|public
 name|void
 name|testParseManifest
@@ -245,16 +161,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Set
-argument_list|<
-name|BundleRequirement
-argument_list|>
+comment|/*<BundleRequirement> */
 name|expectedRequires
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|BundleRequirement
-argument_list|>
+comment|/*<BundleRequirement> */
 argument_list|()
 decl_stmt|;
 name|expectedRequires
@@ -460,9 +372,7 @@ name|expectedRequires
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|BundleRequirement
-argument_list|>
+comment|/*<BundleRequirement> */
 argument_list|()
 expr_stmt|;
 name|expectedRequires

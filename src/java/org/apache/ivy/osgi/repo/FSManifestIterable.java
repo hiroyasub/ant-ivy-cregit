@@ -139,36 +139,37 @@ specifier|public
 specifier|static
 specifier|final
 name|Set
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|NON_BUNDLE_DIRS
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|(
 name|Arrays
 operator|.
 name|asList
 argument_list|(
+operator|new
+name|String
+index|[]
+block|{
 literal|"source"
-argument_list|,
+block|,
 literal|"sources"
-argument_list|,
+block|,
 literal|"javadoc"
-argument_list|,
+block|,
 literal|"javadocs"
-argument_list|,
+block|,
 literal|"doc"
-argument_list|,
+block|,
 literal|"docs"
+block|}
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/**      * Default directory filter that doesn't select .svn directories, neither the directories that match      * {@link #NON_BUNDLE_DIRS}.      */
+comment|/**      * Default directory filter that doesn't select .svn directories, neither the directories that      * match {@link #NON_BUNDLE_DIRS}.      */
 specifier|public
 specifier|static
 specifier|final
@@ -339,8 +340,6 @@ operator|=
 name|bundleFilter
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|String
 name|createBundleLocation
@@ -355,8 +354,6 @@ operator|+
 name|location
 return|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|InputStream
 name|getInputStream
@@ -381,13 +378,9 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listBundleFiles
 parameter_list|(
 name|String
@@ -456,9 +449,7 @@ return|;
 block|}
 specifier|private
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|fileArray2pathList
 parameter_list|(
 name|File
@@ -467,16 +458,12 @@ name|files
 parameter_list|)
 block|{
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|list
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 argument_list|(
 name|files
 operator|.
@@ -528,13 +515,9 @@ return|return
 name|list
 return|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|List
-argument_list|<
-name|String
-argument_list|>
+comment|/*<String> */
 name|listDirs
 parameter_list|(
 name|String
