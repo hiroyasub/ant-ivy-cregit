@@ -37,10 +37,6 @@ name|List
 import|;
 end_import
 
-begin_comment
-comment|/**  * @author jerome@benois.fr  */
-end_comment
-
 begin_class
 specifier|public
 class|class

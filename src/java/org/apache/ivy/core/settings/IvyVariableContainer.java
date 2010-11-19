@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Store and provide access to the ivy variables.  *   * @author gscokart  */
+comment|/**  * Store and provide access to the ivy variables.  */
 end_comment
 
 begin_interface

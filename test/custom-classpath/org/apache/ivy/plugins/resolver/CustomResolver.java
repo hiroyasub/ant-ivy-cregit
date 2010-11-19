@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This custom resolver is only used to test custom classpath, and has absolutely  * no interest in itself  *   * @author Xavier Hanin  *  */
+comment|/**  * This custom resolver is only used to test custom classpath, and has absolutely  * no interest in itself  *   */
 end_comment
 
 begin_class
