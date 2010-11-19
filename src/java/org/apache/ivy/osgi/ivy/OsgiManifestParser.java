@@ -467,9 +467,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|util
+name|plugins
 operator|.
-name|Message
+name|repository
+operator|.
+name|file
+operator|.
+name|FileResource
 import|;
 end_import
 
@@ -479,20 +483,16 @@ name|org
 operator|.
 name|apache
 operator|.
-name|tools
+name|ivy
 operator|.
-name|ant
+name|util
 operator|.
-name|types
-operator|.
-name|resources
-operator|.
-name|FileResource
+name|Message
 import|;
 end_import
 
 begin_comment
-comment|/**  * An parser for OSGi Manifest descriptor.  *   * @author jerome@benois.fr  * @author alex@radeski.net  */
+comment|/**  * An parser for OSGi Manifest descriptor.  */
 end_comment
 
 begin_class
@@ -847,6 +847,9 @@ name|FileResource
 operator|)
 name|res
 operator|)
+operator|.
+name|getFile
+argument_list|()
 operator|.
 name|isDirectory
 argument_list|()
