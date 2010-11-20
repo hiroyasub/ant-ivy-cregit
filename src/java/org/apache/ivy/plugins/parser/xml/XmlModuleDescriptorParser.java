@@ -2525,6 +2525,7 @@ name|sax
 throw|;
 block|}
 block|}
+comment|/**          * Default parent location to check (for dev ONLY)           * @return a relative path to a parent module descriptor          */
 specifier|protected
 name|String
 name|getDefaultParentLocation
@@ -2534,6 +2535,7 @@ return|return
 literal|"../ivy.xml"
 return|;
 block|}
+comment|/**          * Handle extends elements.          * It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          * @param attributes           * @throws ParseException           */
 specifier|protected
 name|void
 name|extendsStarted
@@ -2573,6 +2575,20 @@ name|getValue
 argument_list|(
 literal|"revision"
 argument_list|)
+operator|!=
+literal|null
+condition|?
+name|attributes
+operator|.
+name|getValue
+argument_list|(
+literal|"revision"
+argument_list|)
+else|:
+name|Ivy
+operator|.
+name|getWorkingRevision
+argument_list|()
 decl_stmt|;
 name|String
 name|location
@@ -2641,27 +2657,8 @@ literal|","
 argument_list|)
 argument_list|)
 decl_stmt|;
-try|try
-block|{
-name|Message
-operator|.
-name|debug
-argument_list|(
-literal|"Trying to parse included ivy file :"
-operator|+
-name|location
-argument_list|)
-expr_stmt|;
-name|parent
-operator|=
-name|parseOtherIvyFileOnFileSystem
-argument_list|(
-name|location
-argument_list|)
-expr_stmt|;
-comment|//verify that the parsed descriptor is the correct parent module.
 name|ModuleId
-name|expected
+name|parentMid
 init|=
 operator|new
 name|ModuleId
@@ -2671,6 +2668,28 @@ argument_list|,
 name|parentModule
 argument_list|)
 decl_stmt|;
+name|ModuleRevisionId
+name|parentMrid
+init|=
+operator|new
+name|ModuleRevisionId
+argument_list|(
+name|parentMid
+argument_list|,
+name|parentRevision
+argument_list|)
+decl_stmt|;
+comment|//check on filesystem based on location attribute (for dev ONLY)
+try|try
+block|{
+name|parent
+operator|=
+name|parseOtherIvyFileOnFileSystem
+argument_list|(
+name|location
+argument_list|)
+expr_stmt|;
+comment|//verify that the parsed descriptor is the correct parent module.
 name|ModuleId
 name|pid
 init|=
@@ -2685,7 +2704,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|expected
+name|parentMid
 operator|.
 name|equals
 argument_list|(
@@ -2703,7 +2722,7 @@ name|location
 operator|+
 literal|"; expected "
 operator|+
-name|expected
+name|parentMrid
 operator|+
 literal|" but found "
 operator|+
@@ -2762,8 +2781,23 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// if the included ivy file is not found on file system, tries to resolve using
-comment|// repositories
+comment|// if not found on file system, check in the cache
+if|if
+condition|(
+name|parent
+operator|==
+literal|null
+condition|)
+block|{
+name|parent
+operator|=
+name|parseOtherIvyFileInCache
+argument_list|(
+name|parentMrid
+argument_list|)
+expr_stmt|;
+block|}
+comment|// if not found, tries to resolve using repositories
 if|if
 condition|(
 name|parent
@@ -2773,32 +2807,11 @@ condition|)
 block|{
 try|try
 block|{
-name|Message
-operator|.
-name|debug
-argument_list|(
-literal|"Trying to parse included ivy file by asking repository for module :"
-operator|+
-name|parentOrganisation
-operator|+
-literal|"#"
-operator|+
-name|parentModule
-operator|+
-literal|";"
-operator|+
-name|parentRevision
-argument_list|)
-expr_stmt|;
 name|parent
 operator|=
 name|parseOtherIvyFile
 argument_list|(
-name|parentOrganisation
-argument_list|,
-name|parentModule
-argument_list|,
-name|parentRevision
+name|parentMrid
 argument_list|)
 expr_stmt|;
 block|}
@@ -2814,19 +2827,15 @@ name|warn
 argument_list|(
 literal|"Unable to parse included ivy file for "
 operator|+
-name|parentOrganisation
-operator|+
-literal|"#"
-operator|+
-name|parentModule
-operator|+
-literal|";"
-operator|+
-name|parentRevision
+name|parentMrid
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// if still not found throw an exception
 if|if
 condition|(
 name|parent
@@ -2840,15 +2849,10 @@ name|ParseException
 argument_list|(
 literal|"Unable to parse included ivy file for "
 operator|+
-name|parentOrganisation
-operator|+
-literal|"#"
-operator|+
-name|parentModule
-operator|+
-literal|";"
-operator|+
-name|parentRevision
+name|parentMrid
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 literal|0
 argument_list|)
@@ -2928,15 +2932,10 @@ name|ParseException
 argument_list|(
 literal|"Unable to create cache file for "
 operator|+
-name|parentOrganisation
-operator|+
-literal|"#"
-operator|+
-name|parentModule
-operator|+
-literal|";"
-operator|+
-name|parentRevision
+name|parentMrid
+operator|.
+name|toString
+argument_list|()
 operator|+
 literal|" Reason:"
 operator|+
@@ -2961,15 +2960,10 @@ name|ParseException
 argument_list|(
 literal|"Unable to create cache file for "
 operator|+
-name|parentOrganisation
-operator|+
-literal|"#"
-operator|+
-name|parentModule
-operator|+
-literal|";"
-operator|+
-name|parentRevision
+name|parentMrid
+operator|.
+name|toString
+argument_list|()
 operator|+
 literal|" Reason :"
 operator|+
@@ -3041,6 +3035,7 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**          * Merge current module with a given module descriptor and specify what should be inherited through extendTypes argument          * @param extendTypes specify what should be inherited          * @param parent a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeWithOtherModuleDescriptor
@@ -3151,6 +3146,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**          * Merge everything from a given parent          * @param parent a given parent module desciptor          */
 specifier|protected
 name|void
 name|mergeAll
@@ -3199,6 +3195,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**          * Explain how to inherit metadatas related to info element          * @param parent a given parent module decriptor          */
 specifier|protected
 name|void
 name|mergeInfo
@@ -3431,6 +3428,7 @@ return|return
 name|dup
 return|;
 block|}
+comment|/**          * Describes how to merge configurations elements          * @param sourceMrid the source module revision id          * @param configurations array of configurations to be inherited           */
 specifier|protected
 name|void
 name|mergeConfigurations
@@ -3502,6 +3500,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**          * Describes how dependencies should be inherited          * @param dependencies array of dependencies to inherit          */
 specifier|protected
 name|void
 name|mergeDependencies
@@ -3566,6 +3565,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**          * Describes how to merge description          * @param description description going to be inherited          */
 specifier|protected
 name|void
 name|mergeDescription
@@ -3610,6 +3610,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**          * Describes how to parse another ivy file on filesystem           * @param location a given location          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor} was found          * @throws ParseException          * @throws IOException          */
 specifier|protected
 name|ModuleDescriptor
 name|parseOtherIvyFileOnFileSystem
@@ -3657,6 +3658,10 @@ name|url
 operator|.
 name|toString
 argument_list|()
+operator|+
+literal|" location was "
+operator|+
+name|location
 argument_list|)
 expr_stmt|;
 name|URLResource
@@ -3700,139 +3705,29 @@ return|return
 name|parent
 return|;
 block|}
+comment|/**          * Describe how to parse a {@link ModuleDescriptor} by asking repositories          * @param parentMrid a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor} was found          * @throws ParseException          */
 specifier|protected
 name|ModuleDescriptor
 name|parseOtherIvyFile
 parameter_list|(
-name|String
-name|parentOrganisation
-parameter_list|,
-name|String
-name|parentModule
-parameter_list|,
-name|String
-name|parentRevision
+name|ModuleRevisionId
+name|parentMrid
 parameter_list|)
 throws|throws
 name|ParseException
-block|{
-name|ModuleId
-name|parentModuleId
-init|=
-operator|new
-name|ModuleId
-argument_list|(
-name|parentOrganisation
-argument_list|,
-name|parentModule
-argument_list|)
-decl_stmt|;
-name|ModuleRevisionId
-name|parentMrid
-init|=
-operator|new
-name|ModuleRevisionId
-argument_list|(
-name|parentModuleId
-argument_list|,
-name|parentRevision
-argument_list|)
-decl_stmt|;
-comment|// try to load parent module in cache
-name|File
-name|cacheFile
-init|=
-name|settings
-operator|.
-name|getResolutionCacheManager
-argument_list|()
-operator|.
-name|getResolvedIvyFileInCache
-argument_list|(
-name|ModuleRevisionId
-operator|.
-name|newInstance
-argument_list|(
-name|parentMrid
-argument_list|,
-name|Ivy
-operator|.
-name|getWorkingRevision
-argument_list|()
-argument_list|)
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|cacheFile
-operator|.
-name|exists
-argument_list|()
-operator|&&
-name|cacheFile
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|ModuleDescriptor
-name|md
-decl_stmt|;
-try|try
 block|{
 name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"Trying to load included ivy file from cache"
-argument_list|)
-expr_stmt|;
-name|URL
-name|parentUrl
-init|=
-name|cacheFile
-operator|.
-name|toURI
-argument_list|()
-operator|.
-name|toURL
-argument_list|()
-decl_stmt|;
-name|md
-operator|=
-name|parseOtherIvyFileOnFileSystem
-argument_list|(
-name|parentUrl
+literal|"Trying to parse included ivy file by asking repository for module :"
+operator|+
+name|parentMrid
 operator|.
 name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-return|return
-name|md
-return|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// do nothing
-name|Message
-operator|.
-name|error
-argument_list|(
-name|e
-operator|.
-name|getLocalizedMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 name|DependencyDescriptor
 name|dd
 init|=
@@ -3982,6 +3877,111 @@ name|getDescriptor
 argument_list|()
 return|;
 block|}
+block|}
+comment|/**          * Describes how to parse ivy file from cache          * @param parentMrid a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor} was found          * @throws ParseException          */
+specifier|protected
+name|ModuleDescriptor
+name|parseOtherIvyFileInCache
+parameter_list|(
+name|ModuleRevisionId
+name|parentMrid
+parameter_list|)
+throws|throws
+name|ParseException
+block|{
+comment|// try to load parent module in cache
+name|File
+name|cacheFile
+init|=
+name|settings
+operator|.
+name|getResolutionCacheManager
+argument_list|()
+operator|.
+name|getResolvedIvyFileInCache
+argument_list|(
+name|parentMrid
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|cacheFile
+operator|.
+name|exists
+argument_list|()
+operator|&&
+name|cacheFile
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|ModuleDescriptor
+name|md
+decl_stmt|;
+try|try
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Trying to load included ivy file from cache "
+operator|+
+name|cacheFile
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|URL
+name|parentUrl
+init|=
+name|cacheFile
+operator|.
+name|toURI
+argument_list|()
+operator|.
+name|toURL
+argument_list|()
+decl_stmt|;
+name|md
+operator|=
+name|parseOtherIvyFileOnFileSystem
+argument_list|(
+name|parentUrl
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|md
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+comment|// do nothing
+name|Message
+operator|.
+name|error
+argument_list|(
+name|e
+operator|.
+name|getLocalizedMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+return|return
+literal|null
+return|;
 block|}
 specifier|protected
 name|void
