@@ -2096,9 +2096,15 @@ try|try
 block|{
 name|addAllVariables
 argument_list|(
+operator|(
+name|Map
+operator|)
 name|System
 operator|.
 name|getProperties
+argument_list|()
+operator|.
+name|clone
 argument_list|()
 argument_list|)
 expr_stmt|;
