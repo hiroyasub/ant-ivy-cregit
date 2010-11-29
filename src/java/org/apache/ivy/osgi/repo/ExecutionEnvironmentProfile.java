@@ -308,6 +308,19 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|name
+operator|+
+literal|":"
+operator|+
+name|pkgNames
+return|;
+block|}
 block|}
 end_class
 

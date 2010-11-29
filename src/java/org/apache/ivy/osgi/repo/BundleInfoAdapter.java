@@ -323,7 +323,7 @@ name|osgi
 operator|.
 name|core
 operator|.
-name|ExportPackage
+name|ExecutionEnvironmentProfileProvider
 import|;
 end_import
 
@@ -337,11 +337,9 @@ name|ivy
 operator|.
 name|osgi
 operator|.
-name|repo
+name|core
 operator|.
-name|osgi
-operator|.
-name|ExecutionEnvironmentProfileProvider
+name|ExportPackage
 import|;
 end_import
 

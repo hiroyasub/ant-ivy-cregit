@@ -461,11 +461,9 @@ name|ivy
 operator|.
 name|osgi
 operator|.
-name|obr
+name|core
 operator|.
-name|xml
-operator|.
-name|OBRXMLParser
+name|ExecutionEnvironmentProfileProvider
 import|;
 end_import
 
@@ -479,11 +477,11 @@ name|ivy
 operator|.
 name|osgi
 operator|.
-name|repo
+name|obr
 operator|.
-name|osgi
+name|xml
 operator|.
-name|ExecutionEnvironmentProfileProvider
+name|OBRXMLParser
 import|;
 end_import
 
