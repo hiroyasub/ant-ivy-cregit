@@ -89,9 +89,6 @@ argument_list|(
 name|getClass
 argument_list|()
 operator|.
-name|getClassLoader
-argument_list|()
-operator|.
 name|getResourceAsStream
 argument_list|(
 literal|"com.acme.alpha-1.0.0.20080101.jar"
@@ -290,9 +287,6 @@ operator|.
 name|parseJarManifest
 argument_list|(
 name|getClass
-argument_list|()
-operator|.
-name|getClassLoader
 argument_list|()
 operator|.
 name|getResourceAsStream
