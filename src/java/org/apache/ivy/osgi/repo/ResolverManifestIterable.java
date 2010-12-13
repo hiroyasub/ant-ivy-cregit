@@ -839,7 +839,7 @@ name|resource
 init|=
 name|resolver
 operator|.
-name|findArtifactRef
+name|doFindArtifactRef
 argument_list|(
 name|artifact
 argument_list|,
