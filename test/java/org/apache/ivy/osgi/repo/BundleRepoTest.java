@@ -339,6 +339,9 @@ name|File
 argument_list|(
 literal|"test/test-repo/bundlerepo"
 argument_list|)
+operator|.
+name|getAbsoluteFile
+argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;

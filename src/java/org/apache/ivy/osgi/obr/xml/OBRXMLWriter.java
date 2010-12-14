@@ -892,7 +892,7 @@ name|itRequirement
 init|=
 name|bundleInfo
 operator|.
-name|getCapabilities
+name|getRequirements
 argument_list|()
 operator|.
 name|iterator
