@@ -1421,6 +1421,10 @@ specifier|private
 name|Requirement
 name|requirement
 decl_stmt|;
+specifier|private
+name|RequirementFilter
+name|filter
+decl_stmt|;
 specifier|public
 name|RequireHandler
 parameter_list|(
@@ -1482,11 +1486,10 @@ argument_list|(
 name|REQUIRE_FILTER
 argument_list|)
 decl_stmt|;
-name|RequirementFilter
 name|filter
-init|=
+operator|=
 literal|null
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|filterText
@@ -1748,10 +1751,16 @@ name|this
 argument_list|,
 literal|"Unsupported requirement filter: "
 operator|+
+name|filter
+operator|+
+literal|" ("
+operator|+
 name|e
 operator|.
 name|getMessage
 argument_list|()
+operator|+
+literal|")"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1918,6 +1927,13 @@ operator|+
 name|bundleInfo
 operator|.
 name|getSymbolicName
+argument_list|()
+operator|+
+literal|"/"
+operator|+
+name|bundleInfo
+operator|.
+name|getVersion
 argument_list|()
 operator|+
 literal|" is then ignored."
