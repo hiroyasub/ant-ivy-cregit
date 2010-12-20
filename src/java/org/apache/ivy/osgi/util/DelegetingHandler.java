@@ -411,14 +411,14 @@ argument_list|()
 decl_stmt|;
 name|subHandler
 operator|.
-name|reset
+name|stopDelegating
 argument_list|()
 expr_stmt|;
 block|}
 block|}
 specifier|protected
 name|void
-name|reset
+name|stopDelegating
 parameter_list|()
 block|{
 name|parent
@@ -475,7 +475,7 @@ argument_list|()
 decl_stmt|;
 name|subHandler
 operator|.
-name|reset
+name|stopDelegating
 argument_list|()
 expr_stmt|;
 block|}
@@ -597,6 +597,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// we are already delegating, let's continue
 name|delegate
 operator|.
 name|startElement
@@ -619,31 +620,22 @@ operator|!
 name|started
 condition|)
 block|{
+comment|// first time called ?
+comment|// just for the root, check the expected element name
+comment|// not need to check the delegated as the mapping is already taking care of it
 if|if
 condition|(
+name|parent
+operator|==
+literal|null
+operator|&&
+operator|!
 name|localName
 operator|.
 name|equals
 argument_list|(
 name|tagName
 argument_list|)
-condition|)
-block|{
-name|handleAttributes
-argument_list|(
-name|atts
-argument_list|)
-expr_stmt|;
-name|started
-operator|=
-literal|true
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|parent
-operator|==
-literal|null
 condition|)
 block|{
 comment|// we are at the root and the saxed element doesn't match
@@ -663,6 +655,15 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+name|handleAttributes
+argument_list|(
+name|atts
+argument_list|)
+expr_stmt|;
+name|started
+operator|=
+literal|true
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -671,19 +672,12 @@ condition|(
 name|skip
 condition|)
 block|{
+comment|// we con't care anymore about that part of the xml tree
 return|return;
 block|}
-if|if
-condition|(
-name|mapping
-operator|!=
-literal|null
-condition|)
-block|{
-name|DelegetingHandler
-comment|/*<?> */
-name|delegetingHandler
-init|=
+comment|// time now to delegate for a new element
+name|delegate
+operator|=
 operator|(
 name|DelegetingHandler
 operator|)
@@ -693,20 +687,7 @@ name|get
 argument_list|(
 name|localName
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|delegetingHandler
-operator|!=
-literal|null
-condition|)
-block|{
-name|delegate
-operator|=
-name|delegetingHandler
 expr_stmt|;
-block|}
-block|}
 if|if
 condition|(
 name|delegate
@@ -723,20 +704,6 @@ argument_list|,
 name|localName
 argument_list|,
 name|n
-argument_list|,
-name|atts
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|doStartElement
-argument_list|(
-name|uri
-argument_list|,
-name|localName
-argument_list|,
-name|localName
 argument_list|,
 name|atts
 argument_list|)
@@ -804,6 +771,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// we are already delegating, let's continue
 name|delegate
 operator|.
 name|endElement
@@ -848,7 +816,8 @@ name|localName
 argument_list|)
 condition|)
 block|{
-name|reset
+comment|// the current element is closed, let's tell the parent to stop delegating
+name|stopDelegating
 argument_list|()
 expr_stmt|;
 block|}
