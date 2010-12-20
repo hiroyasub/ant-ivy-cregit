@@ -627,6 +627,7 @@ end_import
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|BundleRepoResolver
 extends|extends
@@ -812,28 +813,25 @@ block|{
 if|if
 condition|(
 name|repoDescriptor
-operator|!=
+operator|==
 literal|null
 operator|||
 name|repository
-operator|!=
+operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"The osgi repository resolver "
-operator|+
-name|getName
+name|init
 argument_list|()
-operator|+
-literal|" wasn't correctly configured, see previous error in the logs"
-argument_list|)
-throw|;
+expr_stmt|;
 block|}
 block|}
+specifier|abstract
+specifier|protected
+name|void
+name|init
+parameter_list|()
+function_decl|;
 specifier|public
 name|Repository
 name|getRepository
@@ -967,7 +965,7 @@ name|osgiAtt
 init|=
 name|mrid
 operator|.
-name|getAttribute
+name|getExtraAttribute
 argument_list|(
 name|BundleInfoAdapter
 operator|.
@@ -1773,7 +1771,7 @@ name|osgiAtt
 init|=
 name|mrid
 operator|.
-name|getAttribute
+name|getExtraAttribute
 argument_list|(
 name|BundleInfoAdapter
 operator|.

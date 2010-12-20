@@ -224,7 +224,7 @@ expr_stmt|;
 block|}
 specifier|protected
 name|void
-name|ensureInit
+name|init
 parameter_list|()
 block|{
 if|if
