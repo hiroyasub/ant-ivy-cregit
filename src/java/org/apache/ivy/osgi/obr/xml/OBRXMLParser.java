@@ -528,6 +528,13 @@ argument_list|(
 name|REPOSITORY_LASTMODIFIED
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|lastModified
+operator|!=
+literal|null
+condition|)
+block|{
 try|try
 block|{
 name|repo
@@ -560,6 +567,7 @@ operator|+
 literal|". It will be ignored."
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
