@@ -25,16 +25,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|BufferedInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|BufferedReader
 import|;
 end_import
@@ -7299,13 +7289,17 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 specifier|final
-name|BufferedInputStream
+name|BufferedReader
 name|in
 init|=
 operator|new
-name|BufferedInputStream
+name|BufferedReader
+argument_list|(
+operator|new
+name|InputStreamReader
 argument_list|(
 name|inStream
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|in
@@ -7315,7 +7309,7 @@ argument_list|(
 name|MAX_HEADER_LENGTH
 argument_list|)
 expr_stmt|;
-comment|// assume the header is never larger than 10000 bytes.
+comment|// assume the header is never larger than 10000 characters.
 name|copyHeader
 argument_list|(
 name|in
@@ -7412,14 +7406,14 @@ name|ise
 throw|;
 block|}
 block|}
-comment|/**      * Copy xml header from src url ivy file to given printwriter In fact, copies everything before      *<ivy-module to out, except if<ivy-module is not found, in which case nothing is copied. The      * prolog<?xml version="..." encoding="...."?> is also replaced by<?xml version="1.0"      * encoding="UTF-8"?> if it was present.      *       * @param in      * @param out      * @throws IOException      */
+comment|/**      * Copy xml header from src url ivy file to given printwriter In fact, copies everything before      *<ivy-module to out, except if<ivy-module is not found, in which case nothing is copied. The      * prolog<?xml version="..." encoding="...."?> is also replaced by<?xml version="1.0"      * encoding="UTF-8"?> if it was present.      */
 specifier|private
 specifier|static
 name|void
 name|copyHeader
 parameter_list|(
-name|InputStream
-name|in
+name|BufferedReader
+name|r
 parameter_list|,
 name|PrintWriter
 name|out
@@ -7427,19 +7421,6 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|BufferedReader
-name|r
-init|=
-operator|new
-name|BufferedReader
-argument_list|(
-operator|new
-name|InputStreamReader
-argument_list|(
-name|in
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|String
 name|line
 init|=
