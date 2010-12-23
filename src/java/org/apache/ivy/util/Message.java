@@ -192,7 +192,7 @@ condition|)
 block|{
 name|info
 argument_list|(
-literal|":: Ivy "
+literal|":: Apache Ivy "
 operator|+
 name|Ivy
 operator|.

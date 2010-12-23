@@ -1606,7 +1606,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"Ivy "
+literal|"Apache Ivy "
 operator|+
 name|Ivy
 operator|.
