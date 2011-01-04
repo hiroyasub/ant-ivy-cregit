@@ -431,7 +431,7 @@ specifier|static
 name|void
 name|writeManifests
 parameter_list|(
-name|Iterable
+name|Iterator
 comment|/*<ManifestAndLocation> */
 name|it
 parameter_list|,
@@ -496,17 +496,9 @@ name|nbRejected
 init|=
 literal|0
 decl_stmt|;
-name|Iterator
-name|iterator
-init|=
-name|it
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
 while|while
 condition|(
-name|iterator
+name|it
 operator|.
 name|hasNext
 argument_list|()
@@ -518,7 +510,7 @@ init|=
 operator|(
 name|ManifestAndLocation
 operator|)
-name|iterator
+name|it
 operator|.
 name|next
 argument_list|()
@@ -663,7 +655,7 @@ specifier|static
 name|void
 name|writeBundles
 parameter_list|(
-name|Iterable
+name|Iterator
 comment|/*<BundleInfo> */
 name|it
 parameter_list|,
@@ -702,17 +694,9 @@ argument_list|,
 name|atts
 argument_list|)
 expr_stmt|;
-name|Iterator
-name|iterator
-init|=
-name|it
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
 while|while
 condition|(
-name|iterator
+name|it
 operator|.
 name|hasNext
 argument_list|()
@@ -724,7 +708,7 @@ init|=
 operator|(
 name|BundleInfo
 operator|)
-name|iterator
+name|it
 operator|.
 name|next
 argument_list|()
@@ -1105,11 +1089,11 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|StringBuilder
+name|StringBuffer
 name|builder
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1542,11 +1526,11 @@ name|BundleRequirement
 name|requirement
 parameter_list|)
 block|{
-name|StringBuilder
+name|StringBuffer
 name|filter
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|VersionRange
@@ -1640,7 +1624,7 @@ specifier|static
 name|void
 name|appendVersion
 parameter_list|(
-name|StringBuilder
+name|StringBuffer
 name|filter
 parameter_list|,
 name|VersionRange

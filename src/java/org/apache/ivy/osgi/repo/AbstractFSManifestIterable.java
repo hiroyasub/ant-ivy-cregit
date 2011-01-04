@@ -140,10 +140,8 @@ specifier|public
 specifier|abstract
 class|class
 name|AbstractFSManifestIterable
-implements|implements
-name|Iterable
-comment|/*<ManifestAndLocation> */
 block|{
+comment|//implements Iterable/*<ManifestAndLocation> */{
 specifier|public
 name|Iterator
 comment|/*<ManifestAndLocation> */
@@ -547,9 +545,7 @@ name|add
 argument_list|(
 name|Collections
 operator|.
-comment|/*<String> */
-name|emptyList
-argument_list|()
+name|EMPTY_LIST
 operator|.
 name|iterator
 argument_list|()

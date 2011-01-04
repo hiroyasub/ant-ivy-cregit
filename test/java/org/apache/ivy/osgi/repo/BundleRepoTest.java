@@ -294,6 +294,9 @@ operator|.
 name|populate
 argument_list|(
 name|it
+operator|.
+name|iterator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|BundleRepo
@@ -357,6 +360,9 @@ operator|.
 name|populate
 argument_list|(
 name|it
+operator|.
+name|iterator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|BundleRepo
@@ -465,6 +471,9 @@ operator|.
 name|populate
 argument_list|(
 name|it
+operator|.
+name|iterator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|BundleRepo
@@ -527,6 +536,9 @@ operator|.
 name|populate
 argument_list|(
 name|it
+operator|.
+name|iterator
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SAXTransformerFactory
@@ -604,6 +616,9 @@ argument_list|(
 name|repo
 operator|.
 name|getBundles
+argument_list|()
+operator|.
+name|iterator
 argument_list|()
 argument_list|,
 name|hd

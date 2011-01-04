@@ -199,7 +199,7 @@ block|}
 specifier|public
 name|BundleRepo
 parameter_list|(
-name|Iterable
+name|Iterator
 comment|/*<ManifestAndLocation> */
 name|it
 parameter_list|)
@@ -262,22 +262,14 @@ specifier|public
 name|void
 name|populate
 parameter_list|(
-name|Iterable
+name|Iterator
 comment|/*<ManifestAndLocation> */
 name|it
 parameter_list|)
 block|{
-name|Iterator
-name|iterator
-init|=
-name|it
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
 while|while
 condition|(
-name|iterator
+name|it
 operator|.
 name|hasNext
 argument_list|()
@@ -289,7 +281,7 @@ init|=
 operator|(
 name|ManifestAndLocation
 operator|)
-name|iterator
+name|it
 operator|.
 name|next
 argument_list|()

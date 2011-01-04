@@ -381,10 +381,8 @@ begin_class
 specifier|public
 class|class
 name|ResolverManifestIterable
-implements|implements
-name|Iterable
-comment|/*<ManifestAndLocation> */
 block|{
+comment|//implements Iterable/*<ManifestAndLocation> */{
 comment|// We should support the interface DependencyResolver, but the API is not convenient to get
 comment|// references to artifact
 specifier|private

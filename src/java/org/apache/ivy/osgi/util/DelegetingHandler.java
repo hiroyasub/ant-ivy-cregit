@@ -131,11 +131,27 @@ name|SAXParseException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|xml
+operator|.
+name|sax
+operator|.
+name|helpers
+operator|.
+name|DefaultHandler
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|DelegetingHandler
 comment|/*<P extends DelegetingHandler<?>> */
+extends|extends
+name|DefaultHandler
 implements|implements
 name|DTDHandler
 implements|,
@@ -184,11 +200,11 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
-name|StringBuilder
+name|StringBuffer
 name|charBuffer
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -630,7 +646,7 @@ operator|==
 literal|null
 operator|&&
 operator|!
-name|localName
+name|n
 operator|.
 name|equals
 argument_list|(
@@ -645,7 +661,7 @@ name|SAXException
 argument_list|(
 literal|"The root element of the parsed document '"
 operator|+
-name|localName
+name|n
 operator|+
 literal|"' didn't matched the expected one: '"
 operator|+
@@ -685,7 +701,7 @@ name|mapping
 operator|.
 name|get
 argument_list|(
-name|localName
+name|n
 argument_list|)
 expr_stmt|;
 if|if
@@ -812,7 +828,7 @@ name|tagName
 operator|.
 name|equals
 argument_list|(
-name|localName
+name|n
 argument_list|)
 condition|)
 block|{

@@ -67,6 +67,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|xml
@@ -539,7 +549,7 @@ literal|"No output file specified: use the attribute 'out'"
 argument_list|)
 throw|;
 block|}
-name|Iterable
+name|Iterator
 comment|/*<ManifestAndLocation> */
 name|it
 decl_stmt|;
@@ -661,7 +671,7 @@ operator|.
 name|getClass
 argument_list|()
 operator|.
-name|getCanonicalName
+name|getName
 argument_list|()
 operator|+
 literal|"' is not supported."
@@ -678,6 +688,9 @@ name|BasicResolver
 operator|)
 name|resolver
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -730,6 +743,9 @@ name|baseDir
 argument_list|,
 name|basePath
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -779,7 +795,7 @@ operator|.
 name|getClass
 argument_list|()
 operator|.
-name|getCanonicalName
+name|getName
 argument_list|()
 operator|+
 literal|"' is not supported."
@@ -815,6 +831,9 @@ name|File
 operator|.
 name|separator
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
 expr_stmt|;
 block|}
 else|else

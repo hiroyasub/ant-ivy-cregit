@@ -217,9 +217,7 @@ literal|null
 condition|?
 name|Collections
 operator|.
-comment|/*<String> */
-name|emptyList
-argument_list|()
+name|EMPTY_LIST
 else|:
 name|Arrays
 operator|.
