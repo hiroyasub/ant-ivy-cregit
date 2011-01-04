@@ -141,7 +141,7 @@ specifier|public
 name|void
 name|append
 parameter_list|(
-name|StringBuilder
+name|StringBuffer
 name|builder
 parameter_list|)
 block|{

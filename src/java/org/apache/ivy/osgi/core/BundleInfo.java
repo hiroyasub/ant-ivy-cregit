@@ -177,8 +177,7 @@ name|executionEnvironments
 init|=
 name|Collections
 operator|.
-name|emptyList
-argument_list|()
+name|EMPTY_LIST
 decl_stmt|;
 specifier|private
 name|String
@@ -228,11 +227,11 @@ name|String
 name|toString
 parameter_list|()
 block|{
-name|StringBuilder
+name|StringBuffer
 name|builder
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|builder

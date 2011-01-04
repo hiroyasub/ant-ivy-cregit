@@ -218,8 +218,7 @@ block|{
 return|return
 name|Collections
 operator|.
-name|emptyList
-argument_list|()
+name|EMPTY_LIST
 return|;
 block|}
 name|List
@@ -307,11 +306,11 @@ name|length
 decl_stmt|;
 comment|/**          * buffer          */
 specifier|private
-name|StringBuilder
+name|StringBuffer
 name|buffer
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 comment|/**          * position in the source          */

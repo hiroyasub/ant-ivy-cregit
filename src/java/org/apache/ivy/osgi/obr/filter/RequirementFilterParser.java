@@ -336,11 +336,11 @@ name|String
 name|parseCompareValue
 parameter_list|()
 block|{
-name|StringBuilder
+name|StringBuffer
 name|builder
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 do|do

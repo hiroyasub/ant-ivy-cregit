@@ -30,11 +30,11 @@ name|String
 name|toString
 parameter_list|()
 block|{
-name|StringBuilder
+name|StringBuffer
 name|builder
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|append
@@ -54,7 +54,7 @@ specifier|abstract
 name|void
 name|append
 parameter_list|(
-name|StringBuilder
+name|StringBuffer
 name|builder
 parameter_list|)
 function_decl|;

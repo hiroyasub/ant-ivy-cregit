@@ -3197,9 +3197,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|tokenSet
@@ -3243,9 +3241,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|values
@@ -3440,9 +3436,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|Set
@@ -3629,9 +3623,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|Version
@@ -3657,9 +3649,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|BundleCapabilityAndLocation
@@ -3723,9 +3713,7 @@ block|{
 return|return
 name|Collections
 operator|.
-comment|/*<Map<String, String>> */
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|Set
