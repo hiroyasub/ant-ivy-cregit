@@ -646,7 +646,7 @@ operator|==
 literal|null
 operator|&&
 operator|!
-name|n
+name|localName
 operator|.
 name|equals
 argument_list|(
@@ -661,7 +661,7 @@ name|SAXException
 argument_list|(
 literal|"The root element of the parsed document '"
 operator|+
-name|n
+name|localName
 operator|+
 literal|"' didn't matched the expected one: '"
 operator|+
@@ -701,7 +701,7 @@ name|mapping
 operator|.
 name|get
 argument_list|(
-name|n
+name|localName
 argument_list|)
 expr_stmt|;
 if|if
@@ -828,7 +828,7 @@ name|tagName
 operator|.
 name|equals
 argument_list|(
-name|n
+name|localName
 argument_list|)
 condition|)
 block|{
