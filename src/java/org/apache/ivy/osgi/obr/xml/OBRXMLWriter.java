@@ -1550,9 +1550,12 @@ name|RequireHandler
 operator|.
 name|OPTIONAL
 argument_list|,
-name|OBRXMLParser
+name|Boolean
 operator|.
 name|TRUE
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
