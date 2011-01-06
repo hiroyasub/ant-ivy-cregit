@@ -13,7 +13,7 @@ name|ivy
 operator|.
 name|osgi
 operator|.
-name|repo
+name|core
 package|;
 end_package
 

@@ -449,7 +449,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|BundleRepoResolver
+name|RepoDescriptorBasedResolver
 operator|.
 name|RequirementStrategy
 import|;
@@ -1837,7 +1837,7 @@ literal|"resolve failed "
 operator|+
 name|resolveReport
 operator|.
-name|getProblemMessages
+name|getAllProblemMessages
 argument_list|()
 argument_list|,
 name|resolveReport

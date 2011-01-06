@@ -87,7 +87,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|BundleRepo
+name|BundleRepoDescriptor
 import|;
 end_import
 
@@ -119,7 +119,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|BundleRepo
+name|BundleRepoDescriptor
 name|repo
 init|=
 name|OBRXMLParser
@@ -150,7 +150,7 @@ name|println
 argument_list|(
 name|repo
 operator|.
-name|getBundles
+name|getModules
 argument_list|()
 operator|.
 name|size

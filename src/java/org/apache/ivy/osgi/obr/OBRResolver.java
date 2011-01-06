@@ -215,7 +215,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|BundleRepoResolver
+name|RelativeURLRepository
 import|;
 end_import
 
@@ -231,7 +231,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|RelativeURLRepository
+name|RepoDescriptorBasedResolver
 import|;
 end_import
 
@@ -368,7 +368,7 @@ specifier|public
 class|class
 name|OBRResolver
 extends|extends
-name|BundleRepoResolver
+name|RepoDescriptorBasedResolver
 block|{
 specifier|private
 name|String

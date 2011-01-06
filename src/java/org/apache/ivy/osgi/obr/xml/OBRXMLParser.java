@@ -87,6 +87,22 @@ name|ivy
 operator|.
 name|osgi
 operator|.
+name|core
+operator|.
+name|ExecutionEnvironmentProfileProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|osgi
+operator|.
 name|obr
 operator|.
 name|filter
@@ -107,7 +123,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|BundleRepo
+name|BundleRepoDescriptor
 import|;
 end_import
 
@@ -375,7 +391,7 @@ literal|"false"
 decl_stmt|;
 specifier|public
 specifier|static
-name|BundleRepo
+name|BundleRepoDescriptor
 name|parse
 parameter_list|(
 name|InputStream
@@ -456,7 +472,7 @@ extends|extends
 name|DelegetingHandler
 comment|/*<DelegetingHandler<?>> */
 block|{
-name|BundleRepo
+name|BundleRepoDescriptor
 name|repo
 decl_stmt|;
 specifier|public
@@ -488,8 +504,13 @@ block|{
 name|repo
 operator|=
 operator|new
-name|BundleRepo
+name|BundleRepoDescriptor
+argument_list|(
+name|ExecutionEnvironmentProfileProvider
+operator|.
+name|getInstance
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|repo
 operator|.

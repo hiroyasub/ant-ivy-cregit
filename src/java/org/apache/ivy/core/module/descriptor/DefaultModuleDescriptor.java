@@ -1660,10 +1660,10 @@ operator|new
 name|ArrayList
 argument_list|()
 decl_stmt|;
-comment|//List(ExtendsDescriptor)
+comment|// List(ExtendsDescriptor)
 specifier|private
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|extraAttributesNamespaces
 init|=
 operator|new
@@ -1672,7 +1672,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|extraInfo
 init|=
 operator|new
@@ -2540,7 +2540,7 @@ argument_list|)
 decl_stmt|;
 comment|// this is a conf group, let's search for its members
 name|Map
-comment|/*<String,Configuration>*/
+comment|/*<String,Configuration> */
 name|members
 init|=
 operator|new
@@ -2643,7 +2643,7 @@ literal|null
 return|;
 block|}
 name|Map
-comment|/*<String,Configuration>*/
+comment|/*<String,Configuration> */
 name|intersectedConfs
 init|=
 operator|new
@@ -2811,7 +2811,7 @@ name|getIntersectedConfigurationNames
 argument_list|()
 decl_stmt|;
 name|Set
-comment|/*<Artifact>*/
+comment|/*<Artifact> */
 name|intersectedArtifacts
 init|=
 operator|new
@@ -2933,7 +2933,7 @@ name|getMembersConfigurationNames
 argument_list|()
 decl_stmt|;
 name|Set
-comment|/*<Artifact>*/
+comment|/*<Artifact> */
 name|groupArtifacts
 init|=
 operator|new
@@ -3049,7 +3049,7 @@ block|}
 block|}
 specifier|private
 name|Collection
-comment|/*<Artifact>*/
+comment|/*<Artifact> */
 name|getArtifactsIncludingExtending
 parameter_list|(
 name|String
@@ -3070,7 +3070,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Set
-comment|/*<Artifact>*/
+comment|/*<Artifact> */
 name|artifacts
 init|=
 operator|new
@@ -3374,6 +3374,142 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|int
+name|hashCode
+parameter_list|()
+block|{
+specifier|final
+name|int
+name|prime
+init|=
+literal|31
+decl_stmt|;
+name|int
+name|result
+init|=
+literal|1
+decl_stmt|;
+name|result
+operator|=
+name|prime
+operator|*
+name|result
+operator|+
+operator|(
+operator|(
+name|revId
+operator|==
+literal|null
+operator|)
+condition|?
+literal|0
+else|:
+name|revId
+operator|.
+name|hashCode
+argument_list|()
+operator|)
+expr_stmt|;
+return|return
+name|result
+return|;
+block|}
+specifier|public
+name|boolean
+name|equals
+parameter_list|(
+name|Object
+name|obj
+parameter_list|)
+block|{
+if|if
+condition|(
+name|this
+operator|==
+name|obj
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+if|if
+condition|(
+name|obj
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+if|if
+condition|(
+name|getClass
+argument_list|()
+operator|!=
+name|obj
+operator|.
+name|getClass
+argument_list|()
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+name|DefaultModuleDescriptor
+name|other
+init|=
+operator|(
+name|DefaultModuleDescriptor
+operator|)
+name|obj
+decl_stmt|;
+if|if
+condition|(
+name|revId
+operator|==
+literal|null
+condition|)
+block|{
+if|if
+condition|(
+name|other
+operator|.
+name|revId
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+block|}
+if|else if
+condition|(
+operator|!
+name|revId
+operator|.
+name|equals
+argument_list|(
+name|other
+operator|.
+name|revId
+argument_list|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+return|return
+literal|true
+return|;
+block|}
+specifier|public
 name|String
 name|toString
 parameter_list|()
@@ -3567,7 +3703,7 @@ return|;
 block|}
 specifier|public
 name|ModuleRules
-comment|/*<DependencyDescriptorMediator>*/
+comment|/*<DependencyDescriptorMediator> */
 name|getAllDependencyDescriptorMediators
 parameter_list|()
 block|{
@@ -3771,7 +3907,7 @@ operator|=
 name|ns
 expr_stmt|;
 block|}
-comment|/**      * Throws an exception if the module descriptor is inconsistent       * For the moment, only extended configurations existence and cycles are checked      */
+comment|/**      * Throws an exception if the module descriptor is inconsistent For the moment, only extended      * configurations existence and cycles are checked      */
 specifier|public
 name|void
 name|check
