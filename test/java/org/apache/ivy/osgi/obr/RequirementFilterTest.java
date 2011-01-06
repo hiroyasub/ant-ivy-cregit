@@ -280,6 +280,27 @@ argument_list|,
 literal|"(&(c>2)(2=d)(foo.bar>=0.0))"
 argument_list|)
 expr_stmt|;
+name|RequirementFilter
+name|spaceAfterAnd
+init|=
+operator|new
+name|AndFilter
+argument_list|(
+operator|new
+name|RequirementFilter
+index|[]
+block|{
+name|twoeqd
+block|}
+argument_list|)
+decl_stmt|;
+name|checkParse
+argument_list|(
+name|spaceAfterAnd
+argument_list|,
+literal|"(& (2=d))"
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|void

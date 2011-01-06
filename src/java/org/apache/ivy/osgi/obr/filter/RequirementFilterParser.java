@@ -559,6 +559,9 @@ name|ParseException
 block|{
 do|do
 block|{
+name|skipWhiteSpace
+argument_list|()
+expr_stmt|;
 name|readNext
 argument_list|()
 expr_stmt|;
@@ -610,7 +613,7 @@ throw|throw
 operator|new
 name|ParseException
 argument_list|(
-literal|"Expecting at least on sub filter"
+literal|"Expecting at least one sub filter"
 argument_list|,
 name|pos
 argument_list|)
