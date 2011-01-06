@@ -149,7 +149,6 @@ begin_class
 specifier|public
 class|class
 name|DelegetingHandler
-comment|/*<P extends DelegetingHandler<?>> */
 extends|extends
 name|DefaultHandler
 implements|implements
@@ -167,19 +166,28 @@ init|=
 literal|null
 decl_stmt|;
 specifier|private
-comment|/* P */
 name|DelegetingHandler
+comment|/*<?> */
 name|parent
 decl_stmt|;
 specifier|private
 specifier|final
 name|Map
 comment|/*<String, DelegetingHandler<?>> */
-name|mapping
+name|saxHandlerMapping
 init|=
 operator|new
 name|HashMap
-comment|/*                                                                                *<String,                                                                                * DelegetingHandler                                                                                *<?>>                                                                                */
+argument_list|()
+decl_stmt|;
+specifier|private
+specifier|final
+name|Map
+comment|/*<String, ChildElementHandler<?>> */
+name|childHandlerMapping
+init|=
+operator|new
+name|HashMap
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -222,10 +230,6 @@ name|DelegetingHandler
 parameter_list|(
 name|String
 name|name
-parameter_list|,
-comment|/* P */
-name|DelegetingHandler
-name|parent
 parameter_list|)
 block|{
 name|this
@@ -234,37 +238,54 @@ name|tagName
 operator|=
 name|name
 expr_stmt|;
-name|this
-operator|.
-name|parent
-operator|=
-name|parent
-expr_stmt|;
-if|if
-condition|(
-name|parent
-operator|!=
-literal|null
-condition|)
-block|{
-name|parent
-operator|.
-name|mapping
-operator|.
-name|put
-argument_list|(
-name|name
-argument_list|,
-name|this
-argument_list|)
-expr_stmt|;
-block|}
 name|charBuffer
 operator|.
 name|setLength
 argument_list|(
 literal|0
 argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|addChild
+parameter_list|(
+name|DelegetingHandler
+name|saxHandler
+parameter_list|,
+name|ChildElementHandler
+name|elementHandler
+parameter_list|)
+block|{
+name|saxHandlerMapping
+operator|.
+name|put
+argument_list|(
+name|saxHandler
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|saxHandler
+argument_list|)
+expr_stmt|;
+name|childHandlerMapping
+operator|.
+name|put
+argument_list|(
+name|saxHandler
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|elementHandler
+argument_list|)
+expr_stmt|;
+name|saxHandler
+operator|.
+name|parent
+operator|=
+name|this
 expr_stmt|;
 block|}
 specifier|public
@@ -277,7 +298,6 @@ name|tagName
 return|;
 block|}
 specifier|public
-comment|/* P */
 name|DelegetingHandler
 name|getParent
 parameter_list|()
@@ -339,7 +359,7 @@ expr_stmt|;
 name|Iterator
 name|itHandler
 init|=
-name|mapping
+name|saxHandlerMapping
 operator|.
 name|values
 argument_list|()
@@ -397,7 +417,7 @@ expr_stmt|;
 name|Iterator
 name|itHandler
 init|=
-name|mapping
+name|saxHandlerMapping
 operator|.
 name|values
 argument_list|()
@@ -461,7 +481,7 @@ expr_stmt|;
 name|Iterator
 name|itHandler
 init|=
-name|mapping
+name|saxHandlerMapping
 operator|.
 name|values
 argument_list|()
@@ -697,7 +717,7 @@ operator|=
 operator|(
 name|DelegetingHandler
 operator|)
-name|mapping
+name|saxHandlerMapping
 operator|.
 name|get
 argument_list|(
@@ -787,6 +807,11 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|DelegetingHandler
+name|savedDelegate
+init|=
+name|delegate
+decl_stmt|;
 comment|// we are already delegating, let's continue
 name|delegate
 operator|.
@@ -799,6 +824,43 @@ argument_list|,
 name|n
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|delegate
+operator|==
+literal|null
+condition|)
+block|{
+comment|// we just stopped delegating, it means that the child has ended
+name|ChildElementHandler
+name|childHandler
+init|=
+operator|(
+name|ChildElementHandler
+operator|)
+name|childHandlerMapping
+operator|.
+name|get
+argument_list|(
+name|localName
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|childHandler
+operator|!=
+literal|null
+condition|)
+block|{
+name|childHandler
+operator|.
+name|childHanlded
+argument_list|(
+name|savedDelegate
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 else|else
 block|{
@@ -857,6 +919,22 @@ throws|throws
 name|SAXException
 block|{
 comment|// by default do nothing
+block|}
+specifier|public
+specifier|static
+interface|interface
+name|ChildElementHandler
+comment|/*<DH extends DelegatingHandler> */
+block|{
+specifier|public
+name|void
+name|childHanlded
+parameter_list|(
+comment|/* DH */
+name|DelegetingHandler
+name|child
+parameter_list|)
+function_decl|;
 block|}
 specifier|public
 specifier|final
