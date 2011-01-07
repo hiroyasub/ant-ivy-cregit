@@ -348,6 +348,12 @@ name|Attributes
 name|atts
 parameter_list|)
 block|{
+name|updatesite
+operator|=
+operator|new
+name|UpdateSite
+argument_list|()
+expr_stmt|;
 name|String
 name|url
 init|=
