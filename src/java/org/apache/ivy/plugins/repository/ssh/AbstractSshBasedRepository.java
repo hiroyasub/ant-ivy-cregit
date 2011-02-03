@@ -628,14 +628,23 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"The uri is in the wrong format."
+literal|"The uri '"
+operator|+
+name|source
+operator|+
+literal|"' is in the wrong format."
 argument_list|)
 expr_stmt|;
 name|Message
 operator|.
 name|error
 argument_list|(
-literal|"Please use scheme://user:pass@hostname/path/to/repository"
+literal|"Please use "
+operator|+
+name|getRepositoryScheme
+argument_list|()
+operator|+
+literal|"://user:pass@hostname/path/to/repository"
 argument_list|)
 expr_stmt|;
 return|return

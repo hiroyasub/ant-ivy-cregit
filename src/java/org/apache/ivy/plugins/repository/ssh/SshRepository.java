@@ -862,10 +862,32 @@ block|}
 catch|catch
 parameter_list|(
 name|URISyntaxException
-name|e1
+name|e
 parameter_list|)
 block|{
-comment|// failed earlier
+name|IOException
+name|ioe
+init|=
+operator|new
+name|IOException
+argument_list|(
+literal|"The uri '"
+operator|+
+name|parent
+operator|+
+literal|"' is not valid!"
+argument_list|)
+decl_stmt|;
+name|ioe
+operator|.
+name|initCause
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+throw|throw
+name|ioe
+throw|;
 block|}
 name|String
 name|fullCmd
@@ -1125,8 +1147,6 @@ argument_list|(
 name|destination
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|URI
 name|destinationUri
 init|=
@@ -1149,8 +1169,32 @@ name|URISyntaxException
 name|e
 parameter_list|)
 block|{
-comment|// failed earlier in getSession()
+name|IOException
+name|ioe
+init|=
+operator|new
+name|IOException
+argument_list|(
+literal|"The uri '"
+operator|+
+name|destination
+operator|+
+literal|"' is not valid!"
+argument_list|)
+decl_stmt|;
+name|ioe
+operator|.
+name|initCause
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+throw|throw
+name|ioe
+throw|;
 block|}
+try|try
+block|{
 name|String
 name|filePath
 init|=
@@ -1664,8 +1708,6 @@ argument_list|(
 name|source
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|URI
 name|sourceUri
 init|=
@@ -1688,26 +1730,32 @@ name|URISyntaxException
 name|e
 parameter_list|)
 block|{
-comment|// fails earlier
-block|}
-if|if
-condition|(
-name|sourceUri
-operator|==
-literal|null
-condition|)
-block|{
-name|Message
-operator|.
-name|error
+name|IOException
+name|ioe
+init|=
+operator|new
+name|IOException
 argument_list|(
-literal|"could not parse URI "
+literal|"The uri '"
 operator|+
 name|source
+operator|+
+literal|"' is not valid!"
+argument_list|)
+decl_stmt|;
+name|ioe
+operator|.
+name|initCause
+argument_list|(
+name|e
 argument_list|)
 expr_stmt|;
-return|return;
+throw|throw
+name|ioe
+throw|;
 block|}
+try|try
+block|{
 name|Scp
 name|myCopy
 init|=
