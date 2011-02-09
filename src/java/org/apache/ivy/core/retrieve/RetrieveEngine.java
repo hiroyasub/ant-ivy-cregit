@@ -1165,6 +1165,8 @@ operator|.
 name|addCopiedFile
 argument_list|(
 name|destFile
+argument_list|,
+name|artifact
 argument_list|)
 expr_stmt|;
 block|}
@@ -1186,6 +1188,8 @@ operator|.
 name|addUpToDateFile
 argument_list|(
 name|destFile
+argument_list|,
+name|artifact
 argument_list|)
 expr_stmt|;
 block|}
