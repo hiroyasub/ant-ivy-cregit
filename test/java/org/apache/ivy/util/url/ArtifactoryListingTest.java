@@ -90,7 +90,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|2
+literal|5
 argument_list|,
 name|content
 operator|.
