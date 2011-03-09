@@ -549,6 +549,11 @@ argument_list|(
 name|project
 argument_list|)
 decl_stmt|;
+name|directoryScanner
+operator|.
+name|scan
+argument_list|()
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|0
