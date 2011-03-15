@@ -219,6 +219,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|FileUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|Message
 import|;
 end_import
@@ -1315,6 +1329,9 @@ name|IvyPattern
 name|p
 parameter_list|)
 block|{
+name|File
+name|file
+init|=
 name|Checks
 operator|.
 name|checkAbsolute
@@ -1325,6 +1342,16 @@ name|getPattern
 argument_list|()
 argument_list|,
 literal|"ivy pattern"
+argument_list|)
+decl_stmt|;
+name|p
+operator|.
+name|setPattern
+argument_list|(
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|super
@@ -1343,6 +1370,9 @@ name|String
 name|pattern
 parameter_list|)
 block|{
+name|File
+name|file
+init|=
 name|Checks
 operator|.
 name|checkAbsolute
@@ -1351,12 +1381,15 @@ name|pattern
 argument_list|,
 literal|"ivy pattern"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|super
 operator|.
 name|addIvyPattern
 argument_list|(
-name|pattern
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1368,6 +1401,9 @@ name|IvyPattern
 name|p
 parameter_list|)
 block|{
+name|File
+name|file
+init|=
 name|Checks
 operator|.
 name|checkAbsolute
@@ -1378,6 +1414,16 @@ name|getPattern
 argument_list|()
 argument_list|,
 literal|"artifact pattern"
+argument_list|)
+decl_stmt|;
+name|p
+operator|.
+name|setPattern
+argument_list|(
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|super
@@ -1396,6 +1442,9 @@ name|String
 name|pattern
 parameter_list|)
 block|{
+name|File
+name|file
+init|=
 name|Checks
 operator|.
 name|checkAbsolute
@@ -1404,12 +1453,15 @@ name|pattern
 argument_list|,
 literal|"artifact pattern"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|super
 operator|.
 name|addArtifactPattern
 argument_list|(
-name|pattern
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
