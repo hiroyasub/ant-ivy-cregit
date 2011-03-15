@@ -1164,19 +1164,6 @@ comment|// else to do
 block|}
 else|else
 block|{
-if|if
-condition|(
-name|callerNode
-operator|==
-literal|null
-condition|)
-block|{
-comment|// we have reached the root without finding a way to change the blacklist a
-comment|// caller in a particular path, this is a strict conflict
-return|return
-literal|null
-return|;
-block|}
 name|callerStack
 operator|.
 name|push
