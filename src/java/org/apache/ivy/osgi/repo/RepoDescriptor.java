@@ -227,6 +227,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|Set
+comment|/*<ModuleDescriptor> */
 name|getModules
 parameter_list|()
 block|{
