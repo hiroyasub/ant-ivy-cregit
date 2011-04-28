@@ -2829,7 +2829,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its module descriptor.This method requires appropriate configuration      * of the ivy instance, especially resolvers.      *       * @param md      *            the descriptor of the module for which we want to get dependencies - must not be      *            null      * @param options      *            the resolve options to use to resolve the dependencies      * @param report      *            a resolve report to fill during resolution - may be null      * @return an array of the resolved Dependencies      */
+comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its module descriptor. This method requires appropriate configuration      * of the ivy instance, especially resolvers.      *<p>      * The<code>IvyNode</code>s are ordered from the most dependent to the less dependent, so that      * an IvyNode is always found in the list after all IvyNode depending directly on it.      *       * @param md      *            the descriptor of the module for which we want to get dependencies - must not be      *            null      * @param options      *            the resolve options to use to resolve the dependencies      * @param report      *            a resolve report to fill during resolution - may be null      * @return an array of the resolved Dependencies      */
 specifier|public
 name|IvyNode
 index|[]
