@@ -8820,10 +8820,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Ivy
-operator|.
-name|getWorkingRevision
-argument_list|()
+literal|"myrev"
 argument_list|,
 name|md
 operator|.
@@ -10924,10 +10921,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Ivy
-operator|.
-name|getWorkingRevision
-argument_list|()
+literal|"myrev"
 argument_list|,
 name|md
 operator|.

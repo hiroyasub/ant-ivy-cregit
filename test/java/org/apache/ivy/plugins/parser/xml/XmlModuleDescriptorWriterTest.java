@@ -954,16 +954,6 @@ literal|"\r\n?"
 argument_list|,
 literal|"\n"
 argument_list|)
-operator|.
-name|replaceAll
-argument_list|(
-literal|"working@localhost"
-argument_list|,
-name|Ivy
-operator|.
-name|getWorkingRevision
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
