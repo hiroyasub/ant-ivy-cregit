@@ -116,10 +116,6 @@ index|[]
 block|{
 literal|"http://repo1.maven.org/maven/REPOSITORY-V1.txt"
 block|,
-literal|"http://mirrors.sunsite.dk/maven"
-block|,
-literal|"http://public.planetmirror.com/pub/maven"
-block|,
 literal|"http://www.ibiblio.org/maven"
 block|}
 decl_stmt|;
@@ -132,10 +128,6 @@ name|String
 index|[]
 block|{
 literal|"http://repo1.maven.org/maven"
-block|,
-literal|"http://mirrors.sunsite.dk/maven"
-block|,
-literal|"http://public.planetmirror.com/pub/maven"
 block|,
 literal|"http://www.ibiblio.org/maven"
 block|}
