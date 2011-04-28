@@ -502,6 +502,7 @@ return|return
 name|root
 return|;
 block|}
+comment|/**      * Get an ordered collection with the nodes from the root to this node      *       * @return      */
 specifier|public
 name|Collection
 comment|/*<VisitNode>*/

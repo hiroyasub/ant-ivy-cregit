@@ -1494,8 +1494,6 @@ name|parent
 argument_list|,
 name|parentConf
 argument_list|)
-argument_list|,
-name|this
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1969,8 +1967,10 @@ return|return
 name|deps
 return|;
 block|}
+comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *       * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return      */
 specifier|public
 name|Collection
+comment|/*<IvyNode>*/
 name|getDependencies
 parameter_list|(
 name|String
@@ -2008,6 +2008,7 @@ name|getDependencies
 argument_list|()
 decl_stmt|;
 name|Map
+comment|/*<ModuleRevisionId, IvyNode> */
 name|dependencies
 init|=
 operator|new
@@ -2108,6 +2109,7 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
+comment|// check if not already loaded here
 name|IvyNode
 name|depNode
 init|=
@@ -2128,6 +2130,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// check if not already loaded during the resolve session
 name|depNode
 operator|=
 name|data
@@ -2185,11 +2188,11 @@ name|String
 index|[]
 name|confsArray
 init|=
+name|depNode
+operator|.
 name|resolveSpecialConfigurations
 argument_list|(
 name|dependencyConfigurations
-argument_list|,
-name|depNode
 argument_list|)
 decl_stmt|;
 name|Collection
@@ -2822,9 +2825,6 @@ parameter_list|(
 name|String
 index|[]
 name|dependencyConfigurations
-parameter_list|,
-name|IvyNode
-name|node
 parameter_list|)
 block|{
 if|if
@@ -2845,12 +2845,6 @@ argument_list|(
 literal|"*"
 argument_list|)
 operator|&&
-name|node
-operator|!=
-literal|null
-operator|&&
-name|node
-operator|.
 name|isLoaded
 argument_list|()
 condition|)
@@ -2874,8 +2868,6 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|node
-operator|.
 name|getDescriptor
 argument_list|()
 operator|.
@@ -2914,8 +2906,6 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-name|node
-operator|.
 name|getDescriptor
 argument_list|()
 operator|.
@@ -3829,8 +3819,6 @@ index|[]
 block|{
 name|conf
 block|}
-argument_list|,
-name|this
 argument_list|)
 return|;
 block|}

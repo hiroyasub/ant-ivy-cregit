@@ -5839,15 +5839,21 @@ name|getNode
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*          * We first try to remove all evicted nodes from the collection of selected nodes to update          * this collection. If the collection changes, it means that it contained evicted nodes, and          * thus is not up to date. In this case we need to compute selected nodes again. Another          * case where we need to deeply compute selected nodes is when selectedNodes is empty (not          * computed yet) and we aren't in the context of the direct parent of the node.          */
-if|if
-condition|(
+comment|/*          * We first try to remove all evicted nodes from the collection of selected nodes to update          * this collection. If the collection changes, it means that it contained evicted nodes, and          * thus is not up to date.          */
+name|boolean
+name|evictedInSelected
+init|=
 name|selectedNodes
 operator|.
 name|removeAll
 argument_list|(
 name|toevict
 argument_list|)
+decl_stmt|;
+comment|/*          * Another case where we need to deeply compute selected nodes is when selectedNodes is          * empty (not computed yet) and we aren't in the context of the direct parent of the node.          */
+if|if
+condition|(
+name|evictedInSelected
 operator|||
 operator|(
 name|selectedNodes
@@ -5874,6 +5880,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
+comment|// In this case we need to compute selected nodes again.
 name|Collection
 name|deps
 init|=
