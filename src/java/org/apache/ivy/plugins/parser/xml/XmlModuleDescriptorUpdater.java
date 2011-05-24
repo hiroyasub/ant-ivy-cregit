@@ -641,14 +641,6 @@ specifier|final
 class|class
 name|XmlModuleDescriptorUpdater
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|int
-name|MAX_HEADER_LENGTH
-init|=
-literal|10000
-decl_stmt|;
 comment|//CheckStyle:StaticVariableName| OFF
 comment|//LINE_SEPARATOR is actually a constant, but we have to modify it for the tests
 specifier|public
