@@ -2240,7 +2240,7 @@ name|DependencyDescriptor
 name|descriptor
 parameter_list|)
 block|{
-comment|// Some POMs depend on theirselfves through their parent pom, don't add this dependency
+comment|// Some POMs depend on themselves through their parent pom, don't add this dependency
 comment|// since Ivy doesn't allow this!
 comment|// Example: http://repo2.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
 name|ModuleId
