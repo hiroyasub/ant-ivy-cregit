@@ -31594,6 +31594,14 @@ argument_list|(
 name|ivyNode
 argument_list|)
 expr_stmt|;
+comment|//      Bad assertions based on IVY-1301 bug, corrected below:
+comment|//        mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
+comment|//        assertEquals(mrid, ivyNode.getId());
+comment|//        // dependencies
+comment|//        assertTrue(getIvyFileInCache(
+comment|//            ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
+comment|//        assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
+comment|//            "test2", "jar", "jar").exists());
 name|mrid
 operator|=
 name|ModuleRevisionId
@@ -31604,7 +31612,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -31630,7 +31638,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|)
 argument_list|)
 operator|.
@@ -31648,7 +31656,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|,
 literal|"test2"
 argument_list|,
@@ -32258,6 +32266,14 @@ argument_list|(
 name|ivyNode
 argument_list|)
 expr_stmt|;
+comment|//      Bad assertions based on IVY-1301 bug, corrected below:
+comment|//        mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
+comment|//        assertEquals(mrid, ivyNode.getId());
+comment|//        // dependencies
+comment|//        assertTrue(getIvyFileInCache(
+comment|//            ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
+comment|//        assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
+comment|//            "test2", "jar", "jar").exists());
 name|mrid
 operator|=
 name|ModuleRevisionId
@@ -32268,7 +32284,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -32294,7 +32310,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|)
 argument_list|)
 operator|.
@@ -32312,7 +32328,7 @@ literal|"org.apache.dm"
 argument_list|,
 literal|"test2"
 argument_list|,
-literal|"2.0"
+literal|"1.0"
 argument_list|,
 literal|"test2"
 argument_list|,
