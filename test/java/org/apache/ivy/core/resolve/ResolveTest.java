@@ -26320,7 +26320,7 @@ argument_list|(
 literal|"compile"
 argument_list|)
 decl_stmt|;
-name|runtimeReport
+name|compileReport
 operator|.
 name|getModuleRevisionIds
 argument_list|()
@@ -26335,7 +26335,7 @@ literal|"multiple-same-deps#mod31;1.0"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|runtimeReport
+name|compileReport
 operator|.
 name|getModuleRevisionIds
 argument_list|()
@@ -26350,7 +26350,7 @@ literal|"multiple-same-deps#mod32;1.0"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|runtimeReport
+name|compileReport
 operator|.
 name|getModuleRevisionIds
 argument_list|()
