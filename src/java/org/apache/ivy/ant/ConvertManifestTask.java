@@ -441,6 +441,8 @@ name|BundleInfoAdapter
 operator|.
 name|toModuleDescriptor
 argument_list|(
+literal|null
+argument_list|,
 name|bundleInfo
 argument_list|,
 name|profileProvider

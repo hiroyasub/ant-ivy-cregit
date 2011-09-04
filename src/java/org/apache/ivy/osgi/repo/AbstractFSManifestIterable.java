@@ -51,6 +51,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collections
@@ -141,7 +151,8 @@ specifier|abstract
 class|class
 name|AbstractFSManifestIterable
 block|{
-comment|//implements Iterable/*<ManifestAndLocation> */{
+comment|// implements Iterable/*<ManifestAndLocation>
+comment|// */{
 specifier|public
 name|Iterator
 comment|/*<ManifestAndLocation> */
@@ -189,18 +200,17 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
+specifier|abstract
 specifier|protected
-name|String
-name|createBundleLocation
+name|URI
+name|buildBundleURI
 parameter_list|(
 name|String
 name|location
 parameter_list|)
-block|{
-return|return
-name|location
-return|;
-block|}
+throws|throws
+name|IOException
+function_decl|;
 class|class
 name|FSManifestIterator
 implements|implements
@@ -437,7 +447,7 @@ name|ManifestAndLocation
 argument_list|(
 name|manifest
 argument_list|,
-name|createBundleLocation
+name|buildBundleURI
 argument_list|(
 name|bundleCandidate
 argument_list|)

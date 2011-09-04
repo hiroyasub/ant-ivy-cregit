@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collections
@@ -196,7 +206,7 @@ name|Integer
 name|size
 decl_stmt|;
 specifier|private
-name|String
+name|URI
 name|uri
 decl_stmt|;
 specifier|public
@@ -355,7 +365,7 @@ specifier|public
 name|void
 name|setUri
 parameter_list|(
-name|String
+name|URI
 name|uri
 parameter_list|)
 block|{
@@ -367,7 +377,7 @@ name|uri
 expr_stmt|;
 block|}
 specifier|public
-name|String
+name|URI
 name|getUri
 parameter_list|()
 block|{

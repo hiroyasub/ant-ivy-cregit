@@ -638,7 +638,7 @@ name|setUri
 argument_list|(
 name|manifestAndLocation
 operator|.
-name|getLocation
+name|getUri
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -669,7 +669,7 @@ literal|"Rejected "
 operator|+
 name|manifestAndLocation
 operator|.
-name|getLocation
+name|getUri
 argument_list|()
 operator|+
 literal|": "
@@ -912,6 +912,9 @@ argument_list|,
 name|bundleInfo
 operator|.
 name|getUri
+argument_list|()
+operator|.
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;

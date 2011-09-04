@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|jar
@@ -39,11 +49,11 @@ specifier|final
 name|Manifest
 name|manifest
 decl_stmt|;
-comment|/**      * location of the jar relative to the repository URL      */
+comment|/**      * location of the jar      */
 specifier|private
 specifier|final
-name|String
-name|location
+name|URI
+name|uri
 decl_stmt|;
 specifier|public
 name|ManifestAndLocation
@@ -51,8 +61,8 @@ parameter_list|(
 name|Manifest
 name|manifest
 parameter_list|,
-name|String
-name|location
+name|URI
+name|uri
 parameter_list|)
 block|{
 name|this
@@ -63,18 +73,18 @@ name|manifest
 expr_stmt|;
 name|this
 operator|.
-name|location
+name|uri
 operator|=
-name|location
+name|uri
 expr_stmt|;
 block|}
 specifier|public
-name|String
-name|getLocation
+name|URI
+name|getUri
 parameter_list|()
 block|{
 return|return
-name|location
+name|uri
 return|;
 block|}
 specifier|public

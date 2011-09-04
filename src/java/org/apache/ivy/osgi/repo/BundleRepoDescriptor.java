@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|text
 operator|.
 name|ParseException
@@ -117,12 +127,17 @@ decl_stmt|;
 specifier|public
 name|BundleRepoDescriptor
 parameter_list|(
+name|URI
+name|baseUri
+parameter_list|,
 name|ExecutionEnvironmentProfileProvider
 name|profileProvider
 parameter_list|)
 block|{
 name|super
 argument_list|(
+name|baseUri
+argument_list|,
 name|profileProvider
 argument_list|)
 expr_stmt|;
@@ -224,7 +239,7 @@ name|setUri
 argument_list|(
 name|manifestAndLocation
 operator|.
-name|getLocation
+name|getUri
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -248,7 +263,7 @@ literal|"Rejected "
 operator|+
 name|manifestAndLocation
 operator|.
-name|getLocation
+name|getUri
 argument_list|()
 operator|+
 literal|": "

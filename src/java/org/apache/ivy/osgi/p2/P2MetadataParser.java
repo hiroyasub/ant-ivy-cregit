@@ -1369,21 +1369,7 @@ name|VERSION
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|boolean
-name|singleton
-init|=
-name|Boolean
-operator|.
-name|getBoolean
-argument_list|(
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|SINGLETON
-argument_list|)
-argument_list|)
-decl_stmt|;
+comment|// Boolean singleton = Boolean.valueOf(atts.getValue(SINGLETON));
 name|bundleInfo
 operator|=
 operator|new

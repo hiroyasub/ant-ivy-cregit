@@ -526,13 +526,6 @@ name|started
 operator|=
 literal|false
 expr_stmt|;
-name|charBuffer
-operator|.
-name|setLength
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
 name|Iterator
 name|itHandler
 init|=
@@ -750,6 +743,14 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
+comment|// reset the char buffer
+name|charBuffer
+operator|.
+name|setLength
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|delegate
