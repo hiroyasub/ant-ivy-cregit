@@ -916,6 +916,8 @@ block|,
 literal|"bundle"
 block|,
 literal|"maven-plugin"
+block|,
+literal|"eclipse-plugin"
 block|}
 argument_list|)
 decl_stmt|;
