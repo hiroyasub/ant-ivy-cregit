@@ -181,8 +181,9 @@ name|boolean
 name|isLocal
 parameter_list|()
 block|{
+comment|// not local as it is not a directly accessible file
 return|return
-literal|true
+literal|false
 return|;
 block|}
 specifier|public
@@ -217,6 +218,23 @@ name|getInputStream
 argument_list|(
 name|entry
 argument_list|)
+return|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|jarFile
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"!"
+operator|+
+name|getName
+argument_list|()
 return|;
 block|}
 block|}
