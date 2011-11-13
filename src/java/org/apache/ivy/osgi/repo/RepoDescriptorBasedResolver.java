@@ -604,7 +604,7 @@ name|noambiguity
 decl_stmt|;
 specifier|public
 name|void
-name|setImportPackageStrategy
+name|setRequirementStrategy
 parameter_list|(
 name|RequirementStrategy
 name|importPackageStrategy
@@ -619,13 +619,13 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|setImportPackageStrategy
+name|setRequirementStrategy
 parameter_list|(
 name|String
 name|strategy
 parameter_list|)
 block|{
-name|setImportPackageStrategy
+name|setRequirementStrategy
 argument_list|(
 name|RequirementStrategy
 operator|.

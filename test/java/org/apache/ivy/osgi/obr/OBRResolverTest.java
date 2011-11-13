@@ -1598,7 +1598,7 @@ literal|"org.apache.ivy.osgi.testbundle.importing.ambiguity_3.2.1.jar"
 decl_stmt|;
 name|bundleResolver
 operator|.
-name|setImportPackageStrategy
+name|setRequirementStrategy
 argument_list|(
 name|RequirementStrategy
 operator|.
@@ -1643,7 +1643,7 @@ literal|"org.apache.ivy.osgi.testbundle.importing.ambiguity_3.2.1.jar"
 decl_stmt|;
 name|bundleResolver
 operator|.
-name|setImportPackageStrategy
+name|setRequirementStrategy
 argument_list|(
 name|RequirementStrategy
 operator|.
@@ -1672,7 +1672,7 @@ literal|"org.apache.ivy.osgi.testbundle.require.ambiguity_1.1.1.jar"
 decl_stmt|;
 name|bundleResolver
 operator|.
-name|setImportPackageStrategy
+name|setRequirementStrategy
 argument_list|(
 name|RequirementStrategy
 operator|.
