@@ -53,7 +53,27 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -226,6 +246,7 @@ name|bundleInfo
 parameter_list|)
 block|{
 comment|// before transforming it and adding it into the repo, let's add the artifacts
+comment|// and if no artifact, then no bundle
 name|Map
 comment|/*<Version, String> */
 name|urlPatternsByVersion
@@ -280,17 +301,6 @@ name|urlPattern
 operator|.
 name|replaceAll
 argument_list|(
-literal|"\\$\\{repoUrl\\}"
-argument_list|,
-name|repoUrl
-argument_list|)
-decl_stmt|;
-name|url
-operator|=
-name|url
-operator|.
-name|replaceAll
-argument_list|(
 literal|"\\$\\{id\\}"
 argument_list|,
 name|bundleInfo
@@ -298,7 +308,7 @@ operator|.
 name|getSymbolicName
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|url
 operator|=
 name|url
@@ -348,8 +358,6 @@ name|e
 argument_list|)
 throw|;
 block|}
-block|}
-block|}
 name|super
 operator|.
 name|addBundle
@@ -357,6 +365,8 @@ argument_list|(
 name|bundleInfo
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 specifier|public
 name|void

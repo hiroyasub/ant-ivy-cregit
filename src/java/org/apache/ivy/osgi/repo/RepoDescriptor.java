@@ -481,11 +481,26 @@ condition|)
 block|{
 name|Message
 operator|.
-name|warn
+name|debug
 argument_list|(
-literal|"The repo did already contains "
+literal|"Duplicate module in the repo "
+operator|+
+name|baseUri
+operator|+
+literal|" for "
+operator|+
+name|type
+operator|+
+literal|" "
+operator|+
+name|value
+operator|+
+literal|": "
 operator|+
 name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
