@@ -918,6 +918,10 @@ block|,
 literal|"maven-plugin"
 block|,
 literal|"eclipse-plugin"
+block|,
+literal|"jbi-component"
+block|,
+literal|"jbi-shared-library"
 block|}
 argument_list|)
 decl_stmt|;
