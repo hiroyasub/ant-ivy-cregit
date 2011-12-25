@@ -1341,6 +1341,15 @@ argument_list|,
 literal|"ivy-report.xsl"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|style
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
 name|FileUtil
 operator|.
 name|copy
@@ -1359,6 +1368,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|style
 return|;
