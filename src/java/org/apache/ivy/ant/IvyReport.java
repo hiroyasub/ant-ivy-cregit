@@ -1350,6 +1350,18 @@ name|exists
 argument_list|()
 condition|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"copying ivy-report.xsl to "
+operator|+
+name|style
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|FileUtil
 operator|.
 name|copy
