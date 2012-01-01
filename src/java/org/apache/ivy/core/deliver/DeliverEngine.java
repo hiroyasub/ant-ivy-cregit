@@ -649,7 +649,10 @@ name|ModuleRevisionId
 operator|.
 name|newInstance
 argument_list|(
-name|mrid
+name|md
+operator|.
+name|getModuleRevisionId
+argument_list|()
 argument_list|,
 name|options
 operator|.
