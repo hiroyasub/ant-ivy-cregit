@@ -4490,6 +4490,7 @@ argument_list|()
 condition|)
 block|{
 name|Collection
+comment|/*<VisitNode>*/
 name|dependencies
 init|=
 name|node

@@ -697,7 +697,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|// this map contains all the module ids calling this one (including transitively) as keys
+comment|// this map contains all the module ids calling this one (including transitively) as keys.
 comment|// the mapped nodes (values) correspond to a direct caller from which the transitive caller
 comment|// comes
 specifier|private

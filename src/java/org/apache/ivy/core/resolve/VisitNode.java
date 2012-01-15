@@ -1044,6 +1044,7 @@ return|;
 block|}
 specifier|public
 name|Collection
+comment|/*<VisitNode>*/
 name|getDependencies
 parameter_list|(
 name|String
@@ -1051,6 +1052,7 @@ name|conf
 parameter_list|)
 block|{
 name|Collection
+comment|/*<IvyNode>*/
 name|deps
 init|=
 name|node
@@ -1065,6 +1067,7 @@ name|requestedConf
 argument_list|)
 decl_stmt|;
 name|Collection
+comment|/*<VisitNode>*/
 name|ret
 init|=
 operator|new
