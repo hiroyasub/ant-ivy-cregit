@@ -197,7 +197,7 @@ operator|!
 operator|(
 name|obj
 operator|instanceof
-name|MultiOperatorFilter
+name|UniOperatorFilter
 operator|)
 condition|)
 block|{
