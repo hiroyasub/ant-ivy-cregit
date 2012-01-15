@@ -145,14 +145,38 @@ name|Message
 import|;
 end_import
 
+begin_comment
+comment|// T is the type of the resource "path"
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract
 class|class
 name|AbstractFSManifestIterable
+comment|/*<T> implements Iterable/*<ManifestAndLocation> */
 block|{
-comment|// implements Iterable/*<ManifestAndLocation>
-comment|// */{
+specifier|private
+specifier|final
+name|Object
+comment|/* T */
+name|root
+decl_stmt|;
+specifier|public
+name|AbstractFSManifestIterable
+parameter_list|(
+name|Object
+comment|/* T */
+name|root
+parameter_list|)
+block|{
+name|this
+operator|.
+name|root
+operator|=
+name|root
+expr_stmt|;
+block|}
 specifier|public
 name|Iterator
 comment|/*<ManifestAndLocation> */
@@ -162,16 +186,19 @@ block|{
 return|return
 operator|new
 name|FSManifestIterator
-argument_list|()
+argument_list|(
+name|root
+argument_list|)
 return|;
 block|}
 specifier|abstract
 specifier|protected
 name|List
-comment|/*<String> */
+comment|/*<T> */
 name|listBundleFiles
 parameter_list|(
-name|String
+name|Object
+comment|/* T */
 name|dir
 parameter_list|)
 throws|throws
@@ -180,10 +207,11 @@ function_decl|;
 specifier|abstract
 specifier|protected
 name|List
-comment|/*<String> */
+comment|/*<T> */
 name|listDirs
 parameter_list|(
-name|String
+name|Object
+comment|/* T */
 name|dir
 parameter_list|)
 throws|throws
@@ -194,7 +222,8 @@ specifier|protected
 name|InputStream
 name|getInputStream
 parameter_list|(
-name|String
+name|Object
+comment|/* T */
 name|f
 parameter_list|)
 throws|throws
@@ -205,7 +234,8 @@ specifier|protected
 name|URI
 name|buildBundleURI
 parameter_list|(
-name|String
+name|Object
+comment|/* T */
 name|location
 parameter_list|)
 throws|throws
@@ -226,30 +256,35 @@ decl_stmt|;
 comment|/**          * Stack of list of directories. An iterator in the stack represents the current directory          * being lookup. The first element in the stack is the root directory. The next element in          * the stack is an iterator on the children on the root. The last iterator in the stack          * points to {@link #currentDir}.          */
 specifier|private
 name|Stack
-comment|/*<Iterator<String>> */
+comment|/*<Iterator<T>> */
 name|dirs
 init|=
 operator|new
 name|Stack
-comment|/*<Iterator<String>> */
+comment|/*<Iterator<T>> */
 argument_list|()
 decl_stmt|;
 comment|/**          * The bundles files being lookup.          */
 specifier|private
 name|Iterator
-comment|/*<String> */
+comment|/*<T> */
 name|bundleCandidates
 init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|String
+name|Object
+comment|/* T */
 name|currentDir
 init|=
 literal|null
 decl_stmt|;
 name|FSManifestIterator
-parameter_list|()
+parameter_list|(
+name|Object
+comment|/* T */
+name|root
+parameter_list|)
 block|{
 name|dirs
 operator|.
@@ -259,7 +294,7 @@ name|Collections
 operator|.
 name|singleton
 argument_list|(
-literal|""
+name|root
 argument_list|)
 operator|.
 name|iterator
@@ -307,9 +342,6 @@ condition|)
 block|{
 name|currentDir
 operator|=
-operator|(
-name|String
-operator|)
 operator|(
 operator|(
 name|Iterator
@@ -396,12 +428,10 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|String
+name|Object
+comment|/* T */
 name|bundleCandidate
 init|=
-operator|(
-name|String
-operator|)
 name|bundleCandidates
 operator|.
 name|next

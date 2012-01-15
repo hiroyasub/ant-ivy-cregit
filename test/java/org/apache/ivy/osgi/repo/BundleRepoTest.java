@@ -310,8 +310,6 @@ operator|new
 name|FSManifestIterable
 argument_list|(
 name|bundlerepo
-argument_list|,
-literal|""
 argument_list|)
 decl_stmt|;
 name|BundleRepoDescriptor
@@ -598,8 +596,6 @@ operator|new
 name|FSManifestIterable
 argument_list|(
 name|bundlerepo
-argument_list|,
-literal|""
 argument_list|)
 decl_stmt|;
 name|BundleRepoDescriptor

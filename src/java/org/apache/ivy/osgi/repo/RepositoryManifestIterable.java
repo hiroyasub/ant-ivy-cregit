@@ -127,6 +127,7 @@ class|class
 name|RepositoryManifestIterable
 extends|extends
 name|AbstractFSManifestIterable
+comment|/*<String> */
 block|{
 specifier|private
 specifier|final
@@ -141,6 +142,11 @@ name|Repository
 name|repo
 parameter_list|)
 block|{
+name|super
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|repo
@@ -152,7 +158,8 @@ specifier|protected
 name|URI
 name|buildBundleURI
 parameter_list|(
-name|String
+name|Object
+comment|/* String */
 name|location
 parameter_list|)
 throws|throws
@@ -168,6 +175,9 @@ name|repo
 operator|.
 name|getResource
 argument_list|(
+operator|(
+name|String
+operator|)
 name|location
 argument_list|)
 operator|.
@@ -197,7 +207,8 @@ specifier|protected
 name|InputStream
 name|getInputStream
 parameter_list|(
-name|String
+name|Object
+comment|/* String */
 name|f
 parameter_list|)
 throws|throws
@@ -208,6 +219,9 @@ name|repo
 operator|.
 name|getResource
 argument_list|(
+operator|(
+name|String
+operator|)
 name|f
 argument_list|)
 operator|.
@@ -220,7 +234,8 @@ name|List
 comment|/*<String> */
 name|listBundleFiles
 parameter_list|(
-name|String
+name|Object
+comment|/* String */
 name|dir
 parameter_list|)
 throws|throws
@@ -235,6 +250,9 @@ name|listAll
 argument_list|(
 name|repo
 argument_list|,
+operator|(
+name|String
+operator|)
 name|dir
 argument_list|)
 argument_list|)
@@ -245,7 +263,8 @@ name|List
 comment|/*<String> */
 name|listDirs
 parameter_list|(
-name|String
+name|Object
+comment|/* String */
 name|dir
 parameter_list|)
 throws|throws
@@ -260,6 +279,9 @@ name|listAll
 argument_list|(
 name|repo
 argument_list|,
+operator|(
+name|String
+operator|)
 name|dir
 argument_list|)
 argument_list|)
