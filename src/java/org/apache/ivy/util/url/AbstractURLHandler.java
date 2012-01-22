@@ -662,6 +662,13 @@ name|equals
 argument_list|(
 name|encoding
 argument_list|)
+operator|||
+literal|"x-gzip"
+operator|.
+name|equals
+argument_list|(
+name|encoding
+argument_list|)
 condition|)
 block|{
 name|result
