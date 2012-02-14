@@ -1505,7 +1505,7 @@ name|conf
 argument_list|,
 name|mRevId
 operator|.
-name|getAttributes
+name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|,
 literal|null
