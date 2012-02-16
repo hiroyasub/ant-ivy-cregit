@@ -523,6 +523,9 @@ name|uriString
 init|=
 name|uri
 operator|.
+name|normalize
+argument_list|()
+operator|.
 name|toASCIIString
 argument_list|()
 decl_stmt|;
