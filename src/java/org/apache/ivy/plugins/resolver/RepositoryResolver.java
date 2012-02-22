@@ -1423,7 +1423,12 @@ literal|" to "
 operator|+
 name|hidePassword
 argument_list|(
+name|repository
+operator|.
+name|standardize
+argument_list|(
 name|dest
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
