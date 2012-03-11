@@ -716,7 +716,7 @@ argument_list|,
 name|latestNode
 argument_list|)
 expr_stmt|;
-comment|// if we arrive here, we haven' managed to blacklist all paths to the latest
+comment|// if we arrive here, we haven't managed to blacklist all paths to the latest
 comment|// node, we try with the oldest
 name|blackListIncompatibleCallerAndRestartResolveIfPossible
 argument_list|(
