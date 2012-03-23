@@ -2468,18 +2468,6 @@ name|getDownloadStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// test to ask to download again, should use cache
-comment|// report = resolver.download(new Artifact[] {artifact}, _data.getIvy(), _cache);
-comment|// assertNotNull(report);
-comment|//
-comment|// assertEquals(1, report.getArtifactsReports().length);
-comment|//
-comment|// ar = report.getArtifactReport(artifact);
-comment|// assertNotNull(ar);
-comment|//
-comment|// assertEquals(artifact, ar.getArtifact());
-comment|// assertEquals(DownloadStatus.NO, ar.getDownloadStatus());
-comment|//
 block|}
 block|}
 end_class
