@@ -816,8 +816,6 @@ argument_list|,
 name|evicted
 argument_list|,
 name|callerStack
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 if|if
@@ -1009,9 +1007,6 @@ name|blacklisted
 parameter_list|,
 name|VersionMatcher
 name|versionMatcher
-parameter_list|,
-name|boolean
-name|dynamicCaller
 parameter_list|)
 block|{
 if|if
@@ -1066,8 +1061,6 @@ argument_list|,
 name|evictedNode
 argument_list|,
 name|callerStack
-argument_list|,
-name|dynamicCaller
 argument_list|)
 decl_stmt|;
 name|callerStack
@@ -1123,9 +1116,6 @@ parameter_list|,
 name|Stack
 comment|/*<IvyNode>*/
 name|callerStack
-parameter_list|,
-name|boolean
-name|dynamicCaller
 parameter_list|)
 block|{
 name|Collection
@@ -1285,8 +1275,6 @@ argument_list|,
 name|blacklisted
 argument_list|,
 name|versionMatcher
-argument_list|,
-literal|true
 argument_list|)
 condition|)
 block|{
@@ -1315,8 +1303,6 @@ argument_list|,
 name|blacklisted
 argument_list|,
 name|versionMatcher
-argument_list|,
-literal|false
 argument_list|)
 condition|)
 block|{
@@ -1327,9 +1313,6 @@ block|}
 block|}
 if|if
 condition|(
-operator|!
-name|dynamicCaller
-operator|&&
 name|blacklisted
 operator|.
 name|isEmpty

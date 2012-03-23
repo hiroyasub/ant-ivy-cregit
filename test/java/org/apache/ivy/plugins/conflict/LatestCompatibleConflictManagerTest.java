@@ -817,6 +817,82 @@ block|{
 comment|// this is expected
 block|}
 block|}
+specifier|public
+name|void
+name|testDynamicRootConflict
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+try|try
+block|{
+name|fixture
+operator|.
+name|addMD
+argument_list|(
+literal|"#A;conflict-> {#B;[1.2,2.0[ #C;pCC.main.+ #D;[1.5,1.7[ }"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;1.0.0->#D;[1.6.1,2.0["
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;1.1.0->#D;[1.6.1,2.0["
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#B;pCC.main.0.0->#D;[1.6.1,2.0["
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;1.0.0-> {#B;[1.0,2.0[ #D;[1.6.0,1.7[ }"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;1.1.0-> {#B;[1.1,2.0[ #D;[1.6.0,1.7[ }"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#C;pCC.main.1.9-> {#B;pCC.main.+ #D;[1.6.0,1.7[ }"
+argument_list|)
+operator|.
+name|addMD
+argument_list|(
+literal|"#D;1.6.1"
+argument_list|)
+operator|.
+name|init
+argument_list|()
+expr_stmt|;
+name|fixture
+operator|.
+name|resolve
+argument_list|(
+literal|"#A;conflict"
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"Resolve should have failed with a conflict"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|StrictConflictException
+name|e
+parameter_list|)
+block|{
+comment|// this is expected }
+block|}
+block|}
 specifier|private
 name|void
 name|resolveAndAssert
