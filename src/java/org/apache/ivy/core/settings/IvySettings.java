@@ -571,7 +571,7 @@ name|osgi
 operator|.
 name|core
 operator|.
-name|OsgiRevisionStrategy
+name|OsgiLatestStrategy
 import|;
 end_import
 
@@ -1861,11 +1861,11 @@ operator|new
 name|LatestTimeStrategy
 argument_list|()
 decl_stmt|;
-name|OsgiRevisionStrategy
-name|osgiRevisionStrategy
+name|OsgiLatestStrategy
+name|osgiLatestStrategy
 init|=
 operator|new
-name|OsgiRevisionStrategy
+name|OsgiLatestStrategy
 argument_list|()
 decl_stmt|;
 name|addLatestStrategy
@@ -1893,7 +1893,7 @@ name|addLatestStrategy
 argument_list|(
 literal|"latest-osgi"
 argument_list|,
-name|osgiRevisionStrategy
+name|osgiLatestStrategy
 argument_list|)
 expr_stmt|;
 name|addLockStrategy

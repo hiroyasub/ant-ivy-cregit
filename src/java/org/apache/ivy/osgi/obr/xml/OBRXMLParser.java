@@ -971,7 +971,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|NumberFormatException
+name|ParseException
 name|e
 parameter_list|)
 block|{

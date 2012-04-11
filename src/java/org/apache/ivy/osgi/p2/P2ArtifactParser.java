@@ -886,6 +886,8 @@ parameter_list|(
 name|Attributes
 name|atts
 parameter_list|)
+throws|throws
+name|SAXException
 block|{
 name|String
 name|id
@@ -899,7 +901,11 @@ argument_list|)
 decl_stmt|;
 name|Version
 name|version
-init|=
+decl_stmt|;
+try|try
+block|{
+name|version
+operator|=
 operator|new
 name|Version
 argument_list|(
@@ -910,7 +916,42 @@ argument_list|(
 name|VERSION
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|ParseException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|SAXException
+argument_list|(
+literal|"Incorrect version attribute on artifact '"
+operator|+
+name|id
+operator|+
+literal|"': "
+operator|+
+name|atts
+operator|.
+name|getValue
+argument_list|(
+name|VERSION
+argument_list|)
+operator|+
+literal|" ("
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+operator|+
+literal|")"
+argument_list|)
+throw|;
+block|}
 name|String
 name|classifier
 init|=

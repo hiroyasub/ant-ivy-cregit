@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|text
+operator|.
+name|ParseException
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
@@ -38,6 +48,8 @@ specifier|public
 name|void
 name|testParsing
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Version
 name|v
@@ -159,6 +171,8 @@ specifier|public
 name|void
 name|testCompareTo
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|assertTrue
 argument_list|(
