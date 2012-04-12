@@ -460,6 +460,8 @@ name|BundleInfoAdapter
 operator|.
 name|toModuleDescriptor
 argument_list|(
+name|this
+argument_list|,
 literal|null
 argument_list|,
 name|bundleInfo

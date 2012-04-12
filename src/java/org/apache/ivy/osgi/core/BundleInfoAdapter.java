@@ -375,6 +375,22 @@ name|PatternMatcher
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|parser
+operator|.
+name|ModuleDescriptorParser
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -490,12 +506,15 @@ name|EXTRA_INFO_EXPORT_PREFIX
 init|=
 literal|"_osgi_export_"
 decl_stmt|;
-comment|/**      *       * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @param bundle      * @param profileProvider      * @return      * @throws ProfileNotFoundException      */
+comment|/**      *       * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @param bundle      * @param profileProvider      * @param parser       * @return      * @throws ProfileNotFoundException      */
 specifier|public
 specifier|static
 name|DefaultModuleDescriptor
 name|toModuleDescriptor
 parameter_list|(
+name|ModuleDescriptorParser
+name|parser
+parameter_list|,
 name|URI
 name|baseUri
 parameter_list|,
@@ -514,7 +533,7 @@ init|=
 operator|new
 name|DefaultModuleDescriptor
 argument_list|(
-literal|null
+name|parser
 argument_list|,
 literal|null
 argument_list|)
