@@ -185,7 +185,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|RepoDescriptorBasedResolver
+name|AbstractOSGiResolver
 import|;
 end_import
 
@@ -240,7 +240,7 @@ specifier|public
 class|class
 name|OBRResolver
 extends|extends
-name|RepoDescriptorBasedResolver
+name|AbstractOSGiResolver
 block|{
 specifier|private
 name|String

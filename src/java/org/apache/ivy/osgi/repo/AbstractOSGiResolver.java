@@ -587,7 +587,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|RepoDescriptorBasedResolver
+name|AbstractOSGiResolver
 extends|extends
 name|BasicResolver
 block|{
@@ -2210,8 +2210,7 @@ block|{
 return|return
 name|Collections
 operator|.
-name|emptyList
-argument_list|()
+name|EMPTY_LIST
 return|;
 block|}
 name|String
@@ -3002,8 +3001,7 @@ block|{
 return|return
 name|Collections
 operator|.
-name|emptySet
-argument_list|()
+name|EMPTY_SET
 return|;
 block|}
 name|values

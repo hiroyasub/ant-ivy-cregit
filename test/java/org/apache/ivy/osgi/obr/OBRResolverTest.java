@@ -433,7 +433,7 @@ name|osgi
 operator|.
 name|repo
 operator|.
-name|RepoDescriptorBasedResolver
+name|AbstractOSGiResolver
 operator|.
 name|RequirementStrategy
 import|;
