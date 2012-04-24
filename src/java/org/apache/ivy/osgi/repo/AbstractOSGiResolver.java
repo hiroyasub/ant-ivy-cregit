@@ -2026,6 +2026,18 @@ operator|.
 name|getUrl
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|url
+operator|==
+literal|null
+condition|)
+block|{
+comment|// not an artifact resolved by this resolver
+return|return
+literal|null
+return|;
+block|}
 name|Message
 operator|.
 name|verbose
