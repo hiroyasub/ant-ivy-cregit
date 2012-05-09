@@ -641,6 +641,26 @@ name|defaultInstanceObj
 return|;
 block|}
 block|}
+comment|/*      * Keep this for backwards compatibility!      */
+specifier|public
+specifier|static
+name|IvyAntSettings
+name|getDefaultInstance
+parameter_list|(
+name|Task
+name|task
+parameter_list|)
+block|{
+return|return
+name|getDefaultInstance
+argument_list|(
+operator|(
+name|ProjectComponent
+operator|)
+name|task
+argument_list|)
+return|;
+block|}
 specifier|public
 name|File
 name|getFile
