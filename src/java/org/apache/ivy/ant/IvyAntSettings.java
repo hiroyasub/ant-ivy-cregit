@@ -1074,6 +1074,25 @@ return|return
 name|ivyEngine
 return|;
 block|}
+comment|/*      * Keep this for backwards compatibility!      */
+specifier|public
+name|Ivy
+name|getConfiguredIvyInstance
+parameter_list|(
+name|Task
+name|task
+parameter_list|)
+block|{
+return|return
+name|getConfiguredIvyInstance
+argument_list|(
+operator|(
+name|ProjectComponent
+operator|)
+name|task
+argument_list|)
+return|;
+block|}
 name|void
 name|createIvyEngine
 parameter_list|(
