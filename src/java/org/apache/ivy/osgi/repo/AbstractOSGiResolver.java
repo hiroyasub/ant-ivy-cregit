@@ -1189,6 +1189,13 @@ condition|(
 name|node
 operator|!=
 literal|null
+operator|&&
+name|node
+operator|.
+name|getDescriptor
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 comment|// already resolved import, no need to go further

@@ -259,6 +259,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|Message
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|XMLHelper
 import|;
 end_import
@@ -1628,6 +1642,30 @@ operator|==
 literal|null
 condition|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Unsupported provided capability "
+operator|+
+operator|(
+operator|(
+name|ProvidedHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|namespace
+operator|+
+literal|" "
+operator|+
+name|name
+operator|+
+literal|" "
+operator|+
+name|version
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|BundleCapability
@@ -1928,6 +1966,40 @@ operator|.
 name|namespace
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|type
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Unsupported required capability "
+operator|+
+operator|(
+operator|(
+name|RequiredHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|namespace
+operator|+
+literal|" "
+operator|+
+name|name
+operator|+
+literal|" "
+operator|+
+name|range
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|requirements
 operator|.
 name|add
@@ -1945,6 +2017,7 @@ literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 argument_list|)

@@ -353,6 +353,9 @@ name|void
 name|addArtifactUrl
 parameter_list|(
 name|String
+name|classifier
+parameter_list|,
+name|String
 name|id
 parameter_list|,
 name|Version
@@ -362,6 +365,20 @@ name|String
 name|url
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|classifier
+operator|.
+name|equals
+argument_list|(
+literal|"osgi.bundle"
+argument_list|)
+condition|)
+block|{
+comment|// we only support OSGi bundle, no Eclipse feature or anything else
+return|return;
+block|}
 name|Map
 comment|/*<Version, String> */
 name|byVersion

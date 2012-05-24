@@ -785,6 +785,11 @@ name|addArtifactUrl
 argument_list|(
 name|a
 operator|.
+name|getClassifier
+argument_list|()
+argument_list|,
+name|a
+operator|.
 name|getId
 argument_list|()
 argument_list|,
