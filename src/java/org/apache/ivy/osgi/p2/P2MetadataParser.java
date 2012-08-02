@@ -193,6 +193,22 @@ name|ivy
 operator|.
 name|osgi
 operator|.
+name|core
+operator|.
+name|ManifestParser
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|osgi
+operator|.
 name|p2
 operator|.
 name|PropertiesParser
@@ -301,6 +317,18 @@ name|SAXException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|xml
+operator|.
+name|sax
+operator|.
+name|SAXParseException
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -380,6 +408,11 @@ name|e
 argument_list|)
 throw|;
 block|}
+name|p2Descriptor
+operator|.
+name|finish
+argument_list|()
+expr_stmt|;
 block|}
 specifier|static
 class|class
@@ -1142,6 +1175,39 @@ name|DelegetingHandler
 name|child
 parameter_list|)
 block|{
+name|String
+name|eclipseType
+init|=
+operator|(
+operator|(
+name|ProvidesHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|eclipseType
+decl_stmt|;
+if|if
+condition|(
+literal|"source"
+operator|.
+name|equals
+argument_list|(
+name|eclipseType
+argument_list|)
+condition|)
+block|{
+comment|// this is some source of some bundle
+name|bundleInfo
+operator|.
+name|setSource
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+comment|// we need to parse the manifest in the toupointData to figure out the
+comment|// targeted bundle
+block|}
 name|Iterator
 name|it
 init|=
@@ -1334,22 +1400,10 @@ comment|// addChild(new TouchpointHandler(), new ChildElementHandler() {
 comment|// public void childHanlded(DelegetingHandler child) {
 comment|// }
 comment|// });
-comment|// addChild(new TouchpointDataHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
-comment|// addChild(new LicensesHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
-comment|// addChild(new CopyrightHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
 name|addChild
 argument_list|(
 operator|new
-name|ChangesHandler
+name|TouchpointDataHandler
 argument_list|()
 argument_list|,
 operator|new
@@ -1363,11 +1417,244 @@ parameter_list|(
 name|DelegetingHandler
 name|child
 parameter_list|)
+throws|throws
+name|SAXParseException
 block|{
+if|if
+condition|(
+operator|!
+name|bundleInfo
+operator|.
+name|isSource
+argument_list|()
+condition|)
+block|{
+comment|// we only care about parsing the manifest if it is a source
+return|return;
+block|}
+name|String
+name|manifest
+init|=
+operator|(
+operator|(
+name|TouchpointDataHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|manifest
+decl_stmt|;
+if|if
+condition|(
+name|manifest
+operator|!=
+literal|null
+condition|)
+block|{
+try|try
+block|{
+comment|// Eclipse may have serialized a little bit weirdly
+name|manifest
+operator|=
+name|ManifestParser
+operator|.
+name|formatLines
+argument_list|(
+name|manifest
+operator|.
+name|trim
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|BundleInfo
+name|embeddedInfo
+init|=
+name|ManifestParser
+operator|.
+name|parseManifest
+argument_list|(
+name|manifest
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|embeddedInfo
+operator|.
+name|isSource
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|SAXParseException
+argument_list|(
+literal|"Expecting an embedded manifest declaring being a source"
+argument_list|,
+name|child
+operator|.
+name|getLocator
+argument_list|()
+argument_list|)
+throw|;
+block|}
+name|String
+name|symbolicNameTarget
+init|=
+name|embeddedInfo
+operator|.
+name|getSymbolicNameTarget
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|symbolicNameTarget
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|SAXParseException
+argument_list|(
+literal|"Expecting a symbolic name in the source header of the embedded manifest"
+argument_list|,
+name|child
+operator|.
+name|getLocator
+argument_list|()
+argument_list|)
+throw|;
+block|}
+name|Version
+name|versionTarget
+init|=
+name|embeddedInfo
+operator|.
+name|getVersionTarget
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|versionTarget
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|SAXParseException
+argument_list|(
+literal|"Expecting a version in the source header of the embedded manifest"
+argument_list|,
+name|child
+operator|.
+name|getLocator
+argument_list|()
+argument_list|)
+throw|;
+block|}
+name|bundleInfo
+operator|.
+name|setSymbolicNameTarget
+argument_list|(
+name|symbolicNameTarget
+argument_list|)
+expr_stmt|;
+name|bundleInfo
+operator|.
+name|setVersionTarget
+argument_list|(
+name|versionTarget
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+comment|// now way, we are in ram
+name|SAXParseException
+name|spe
+init|=
+operator|new
+name|SAXParseException
+argument_list|(
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|child
+operator|.
+name|getLocator
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|spe
+operator|.
+name|initCause
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+throw|throw
+name|spe
+throw|;
+block|}
+catch|catch
+parameter_list|(
+name|ParseException
+name|e
+parameter_list|)
+block|{
+name|SAXParseException
+name|spe
+init|=
+operator|new
+name|SAXParseException
+argument_list|(
+name|e
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|child
+operator|.
+name|getLocator
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|spe
+operator|.
+name|initCause
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+throw|throw
+name|spe
+throw|;
+block|}
+block|}
 block|}
 block|}
 argument_list|)
 expr_stmt|;
+comment|// addChild(new LicensesHandler(), new ChildElementHandler() {
+comment|// public void childHanlded(DelegetingHandler child) {
+comment|// }
+comment|// });
+comment|// addChild(new CopyrightHandler(), new ChildElementHandler() {
+comment|// public void childHanlded(DelegetingHandler child) {
+comment|// }
+comment|// });
+comment|// addChild(new ChangesHandler(), new ChildElementHandler() {
+comment|// public void childHanlded(DelegetingHandler child) {
+comment|// }
+comment|// });
 block|}
 specifier|protected
 name|void
@@ -1569,6 +1856,9 @@ decl_stmt|;
 name|List
 name|capabilities
 decl_stmt|;
+name|String
+name|eclipseType
+decl_stmt|;
 specifier|public
 name|ProvidesHandler
 parameter_list|()
@@ -1621,10 +1911,8 @@ operator|.
 name|version
 decl_stmt|;
 name|String
-name|type
+name|namespace
 init|=
-name|namespace2Type
-argument_list|(
 operator|(
 operator|(
 name|ProvidedHandler
@@ -1632,6 +1920,37 @@ operator|)
 name|child
 operator|)
 operator|.
+name|namespace
+decl_stmt|;
+if|if
+condition|(
+name|namespace
+operator|.
+name|equals
+argument_list|(
+literal|"org.eclipse.equinox.p2.eclipse.type"
+argument_list|)
+condition|)
+block|{
+name|eclipseType
+operator|=
+operator|(
+operator|(
+name|ProvidedHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|name
+expr_stmt|;
+block|}
+else|else
+block|{
+name|String
+name|type
+init|=
+name|namespace2Type
+argument_list|(
 name|namespace
 argument_list|)
 decl_stmt|;
@@ -1713,6 +2032,7 @@ argument_list|(
 name|capability
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 argument_list|)
@@ -2546,64 +2866,228 @@ comment|// String version = atts.getValue(VERSION);
 comment|// }
 comment|//
 comment|// }
-comment|//
-comment|// static class TouchpointDataHandler extends DelegetingHandler {
-comment|//
-comment|// private static final String TOUCHPOINTDATA = "touchpointData";
-comment|//
+specifier|static
+class|class
+name|TouchpointDataHandler
+extends|extends
+name|DelegetingHandler
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|TOUCHPOINTDATA
+init|=
+literal|"touchpointData"
+decl_stmt|;
 comment|// private static final String SIZE = "size";
-comment|//
-comment|// public TouchpointDataHandler() {
-comment|// super(TOUCHPOINTDATA);
-comment|// addChild(new InstructionsHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
-comment|// }
-comment|//
-comment|// protected void handleAttributes(Attributes atts) {
+name|String
+name|manifest
+decl_stmt|;
+specifier|public
+name|TouchpointDataHandler
+parameter_list|()
+block|{
+name|super
+argument_list|(
+name|TOUCHPOINTDATA
+argument_list|)
+expr_stmt|;
+name|addChild
+argument_list|(
+operator|new
+name|InstructionsHandler
+argument_list|()
+argument_list|,
+operator|new
+name|ChildElementHandler
+argument_list|()
+block|{
+specifier|public
+name|void
+name|childHanlded
+parameter_list|(
+name|DelegetingHandler
+name|child
+parameter_list|)
+block|{
+name|manifest
+operator|=
+operator|(
+operator|(
+name|InstructionsHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|manifest
+expr_stmt|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|handleAttributes
+parameter_list|(
+name|Attributes
+name|atts
+parameter_list|)
+block|{
 comment|// String size = atts.getValue(SIZE);
-comment|// }
-comment|//
-comment|// }
-comment|//
-comment|// static class InstructionsHandler extends DelegetingHandler {
-comment|//
-comment|// private static final String INSTRUCTIONS = "instructions";
-comment|//
+block|}
+block|}
+specifier|static
+class|class
+name|InstructionsHandler
+extends|extends
+name|DelegetingHandler
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|INSTRUCTIONS
+init|=
+literal|"instructions"
+decl_stmt|;
 comment|// private static final String SIZE = "size";
-comment|//
-comment|// public InstructionsHandler() {
-comment|// super(INSTRUCTIONS);
-comment|// addChild(new InstructionHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
-comment|// }
-comment|//
-comment|// protected void handleAttributes(Attributes atts) {
+name|String
+name|manifest
+decl_stmt|;
+specifier|public
+name|InstructionsHandler
+parameter_list|()
+block|{
+name|super
+argument_list|(
+name|INSTRUCTIONS
+argument_list|)
+expr_stmt|;
+name|addChild
+argument_list|(
+operator|new
+name|InstructionHandler
+argument_list|()
+argument_list|,
+operator|new
+name|ChildElementHandler
+argument_list|()
+block|{
+specifier|public
+name|void
+name|childHanlded
+parameter_list|(
+name|DelegetingHandler
+name|child
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|(
+operator|(
+name|InstructionHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|key
+operator|.
+name|equals
+argument_list|(
+literal|"manifest"
+argument_list|)
+condition|)
+block|{
+name|manifest
+operator|=
+operator|(
+operator|(
+name|InstructionHandler
+operator|)
+name|child
+operator|)
+operator|.
+name|getBufferedChars
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|handleAttributes
+parameter_list|(
+name|Attributes
+name|atts
+parameter_list|)
+block|{
 comment|// String size = atts.getValue(SIZE);
-comment|// }
-comment|//
-comment|// }
-comment|//
-comment|// static class InstructionHandler extends DelegetingHandler {
-comment|//
-comment|// private static final String INSTRUCTION = "instruction";
-comment|//
-comment|// private static final String KEY = "key";
-comment|//
-comment|// public InstructionHandler() {
-comment|// super(INSTRUCTION);
-comment|// setBufferingChar(true);
-comment|// }
-comment|//
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String size = atts.getValue(KEY);
-comment|// }
-comment|//
-comment|// }
-comment|//
+block|}
+block|}
+specifier|static
+class|class
+name|InstructionHandler
+extends|extends
+name|DelegetingHandler
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|INSTRUCTION
+init|=
+literal|"instruction"
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|KEY
+init|=
+literal|"key"
+decl_stmt|;
+name|String
+name|key
+decl_stmt|;
+specifier|public
+name|InstructionHandler
+parameter_list|()
+block|{
+name|super
+argument_list|(
+name|INSTRUCTION
+argument_list|)
+expr_stmt|;
+name|setBufferingChar
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|handleAttributes
+parameter_list|(
+name|Attributes
+name|atts
+parameter_list|)
+block|{
+name|key
+operator|=
+name|atts
+operator|.
+name|getValue
+argument_list|(
+name|KEY
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|// static class LicensesHandler extends DelegetingHandler {
 comment|//
 comment|// private static final String LICENSES = "licenses";

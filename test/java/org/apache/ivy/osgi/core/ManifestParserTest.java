@@ -463,6 +463,78 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testFormatLines
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|assertEquals
+argument_list|(
+literal|"foo bar\n"
+argument_list|,
+name|ManifestParser
+operator|.
+name|formatLines
+argument_list|(
+literal|"foo bar"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012\n"
+argument_list|,
+name|ManifestParser
+operator|.
+name|formatLines
+argument_list|(
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012\n 3\n"
+argument_list|,
+name|ManifestParser
+operator|.
+name|formatLines
+argument_list|(
+literal|"1234567890123456789012345678901234567890123456789012345678901234567890123"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"foo bar\n"
+operator|+
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012\n"
+operator|+
+literal|" 12345678901234567890123456789012345678901234567890123456789012345678901\n"
+operator|+
+literal|" 21234\n"
+operator|+
+literal|"foo bar\n"
+argument_list|,
+name|ManifestParser
+operator|.
+name|formatLines
+argument_list|(
+literal|"foo bar\n"
+operator|+
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012"
+operator|+
+literal|"123456789012345678901234567890123456789012345678901234567890123456789012"
+operator|+
+literal|"1234\n"
+operator|+
+literal|"foo bar\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
