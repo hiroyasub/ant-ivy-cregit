@@ -121,7 +121,7 @@ name|String
 name|name
 decl_stmt|;
 specifier|private
-name|Long
+name|String
 name|lastModified
 decl_stmt|;
 specifier|public
@@ -170,7 +170,7 @@ specifier|public
 name|void
 name|setLastModified
 parameter_list|(
-name|Long
+name|String
 name|lastModified
 parameter_list|)
 block|{
@@ -182,7 +182,7 @@ name|lastModified
 expr_stmt|;
 block|}
 specifier|public
-name|Long
+name|String
 name|getLastModified
 parameter_list|()
 block|{
