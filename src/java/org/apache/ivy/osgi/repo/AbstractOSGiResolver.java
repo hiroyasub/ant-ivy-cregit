@@ -1324,7 +1324,14 @@ name|DefaultModuleDescriptor
 argument_list|(
 name|capabilityRev
 argument_list|,
-literal|"release"
+name|getSettings
+argument_list|()
+operator|.
+name|getStatusManager
+argument_list|()
+operator|.
+name|getDefaultStatus
+argument_list|()
 argument_list|,
 operator|new
 name|Date
