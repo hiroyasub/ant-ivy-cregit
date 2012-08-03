@@ -408,11 +408,6 @@ name|e
 argument_list|)
 throw|;
 block|}
-name|p2Descriptor
-operator|.
-name|finish
-argument_list|()
-expr_stmt|;
 block|}
 specifier|static
 class|class

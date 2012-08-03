@@ -713,6 +713,11 @@ return|return
 literal|null
 return|;
 block|}
+name|p2Descriptor
+operator|.
+name|finish
+argument_list|()
+expr_stmt|;
 return|return
 name|p2Descriptor
 return|;
