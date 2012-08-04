@@ -275,6 +275,39 @@ name|isSource
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+name|bundleInfo
+operator|.
+name|getSymbolicNameTarget
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|bundleInfo
+operator|.
+name|getVersionTarget
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"The source bundle "
+operator|+
+name|bundleInfo
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" did declare its target. Ignoring it"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|Map
 comment|/*<String, URI>*/
 name|byVersion
@@ -326,6 +359,29 @@ argument_list|(
 name|bundleInfo
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|sourceUri
+operator|==
+literal|null
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"The source bundle "
+operator|+
+name|bundleInfo
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|" has no actual artifact. Ignoring it"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|URI
 name|old
 init|=
@@ -356,7 +412,7 @@ condition|)
 block|{
 name|Message
 operator|.
-name|debug
+name|verbose
 argument_list|(
 literal|"Duplicate source for the bundle "
 operator|+

@@ -487,38 +487,12 @@ operator|.
 name|getMainAttributes
 argument_list|()
 decl_stmt|;
-name|String
-name|manifestVersion
-init|=
-name|mainAttributes
-operator|.
-name|getValue
-argument_list|(
-name|BUNDLE_MANIFEST_VERSION
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|manifestVersion
-operator|==
-literal|null
-condition|)
-block|{
-comment|// non OSGi manifest
-throw|throw
-operator|new
-name|ParseException
-argument_list|(
-literal|"No "
-operator|+
-name|BUNDLE_MANIFEST_VERSION
-operator|+
-literal|" in the manifest"
-argument_list|,
-literal|0
-argument_list|)
-throw|;
-block|}
+comment|// Eclipse source bundle doesn't have it. Disable it until proven actually useful
+comment|// String manifestVersion = mainAttributes.getValue(BUNDLE_MANIFEST_VERSION);
+comment|// if (manifestVersion == null) {
+comment|// // non OSGi manifest
+comment|// throw new ParseException("No " + BUNDLE_MANIFEST_VERSION + " in the manifest", 0);
+comment|// }
 name|String
 name|symbolicName
 init|=
