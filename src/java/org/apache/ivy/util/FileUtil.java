@@ -510,7 +510,7 @@ literal|"executing \"sh\" of:\n\t"
 operator|+
 name|commands
 operator|.
-name|replace
+name|replaceAll
 argument_list|(
 literal|"\n"
 argument_list|,
