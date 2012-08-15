@@ -268,6 +268,14 @@ name|makeSymlinks
 expr_stmt|;
 name|this
 operator|.
+name|makeSymlinksInMass
+operator|=
+name|options
+operator|.
+name|makeSymlinksInMass
+expr_stmt|;
+name|this
+operator|.
 name|resolveId
 operator|=
 name|options
