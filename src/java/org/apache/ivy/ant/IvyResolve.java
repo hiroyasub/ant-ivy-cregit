@@ -1874,6 +1874,13 @@ argument_list|,
 name|parentRevision
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|parentBranch
+operator|!=
+literal|null
+condition|)
+block|{
 name|getProject
 argument_list|()
 operator|.
@@ -1901,6 +1908,7 @@ argument_list|,
 name|parentBranch
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|getProject
 argument_list|()
