@@ -1677,6 +1677,13 @@ name|equals
 argument_list|(
 literal|"FreeBSD"
 argument_list|)
+operator|||
+name|os
+operator|.
+name|equals
+argument_list|(
+literal|"Mac OS X"
+argument_list|)
 condition|)
 block|{
 comment|// these OS should support symnlink, so check that the file is actually a symlink.
