@@ -617,6 +617,8 @@ operator|==
 literal|null
 condition|)
 block|{
+name|branch
+operator|=
 name|settings
 operator|.
 name|getDefaultBranch
