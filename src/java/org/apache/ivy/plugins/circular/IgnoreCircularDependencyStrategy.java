@@ -83,7 +83,7 @@ parameter_list|()
 block|{
 name|super
 argument_list|(
-literal|"warn"
+literal|"ignore"
 argument_list|)
 expr_stmt|;
 block|}
