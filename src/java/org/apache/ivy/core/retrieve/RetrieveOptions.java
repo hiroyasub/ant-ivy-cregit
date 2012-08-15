@@ -169,6 +169,13 @@ name|makeSymlinks
 init|=
 literal|false
 decl_stmt|;
+comment|/**      * True if symbolic links should be created all at once, instead of one at a time. Works only on      * OS supporting with both "sh" (a shell) and "ln" (the link command).      */
+specifier|private
+name|boolean
+name|makeSymlinksInMass
+init|=
+literal|false
+decl_stmt|;
 comment|/**      * The id used to store the resolve information.      */
 specifier|private
 name|String
@@ -429,6 +436,15 @@ name|makeSymlinks
 return|;
 block|}
 specifier|public
+name|boolean
+name|isMakeSymlinksInMass
+parameter_list|()
+block|{
+return|return
+name|makeSymlinksInMass
+return|;
+block|}
+specifier|public
 name|RetrieveOptions
 name|setMakeSymlinks
 parameter_list|(
@@ -441,6 +457,24 @@ operator|.
 name|makeSymlinks
 operator|=
 name|makeSymlinks
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
+name|RetrieveOptions
+name|setMakeSymlinksInMass
+parameter_list|(
+name|boolean
+name|makeSymlinksInMass
+parameter_list|)
+block|{
+name|this
+operator|.
+name|makeSymlinksInMass
+operator|=
+name|makeSymlinksInMass
 expr_stmt|;
 return|return
 name|this

@@ -836,6 +836,12 @@ block|}
 try|try
 block|{
 name|Map
+comment|/*<File, File>*/
+name|destToSrcMap
+init|=
+literal|null
+decl_stmt|;
+name|Map
 name|artifactsToCopy
 init|=
 name|determineArtifactsToCopy
@@ -909,6 +915,23 @@ name|HashSet
 argument_list|()
 decl_stmt|;
 comment|// same for ivy files
+if|if
+condition|(
+name|options
+operator|.
+name|isMakeSymlinksInMass
+argument_list|()
+condition|)
+block|{
+comment|// The HashMap is of "destToSrc" because src could go two places, but dest can only
+comment|// come from one
+name|destToSrcMap
+operator|=
+operator|new
+name|HashMap
+argument_list|()
+expr_stmt|;
+block|}
 comment|// do retrieve
 name|long
 name|totalCopiedSize
@@ -1074,6 +1097,17 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// There is no unitary event for the mass sym linking.
+comment|// skip the event declaration.
+if|if
+condition|(
+operator|!
+name|options
+operator|.
+name|isMakeSymlinksInMass
+argument_list|()
+condition|)
+block|{
 name|this
 operator|.
 name|eventManager
@@ -1090,7 +1124,41 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 if|if
+condition|(
+name|options
+operator|.
+name|isMakeSymlinksInMass
+argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|FileUtil
+operator|.
+name|prepareCopy
+argument_list|(
+name|archive
+argument_list|,
+name|destFile
+argument_list|,
+literal|true
+argument_list|)
+condition|)
+block|{
+name|destToSrcMap
+operator|.
+name|put
+argument_list|(
+name|destFile
+argument_list|,
+name|archive
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|else if
 condition|(
 name|options
 operator|.
@@ -1137,6 +1205,17 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// There is no unitary event for the mass sym linking.
+comment|// skip the event declaration.
+if|if
+condition|(
+operator|!
+name|options
+operator|.
+name|isMakeSymlinksInMass
+argument_list|()
+condition|)
+block|{
 name|this
 operator|.
 name|eventManager
@@ -1152,6 +1231,7 @@ name|destFile
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|totalCopiedSize
 operator|+=
@@ -1239,6 +1319,38 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+if|if
+condition|(
+name|options
+operator|.
+name|isMakeSymlinksInMass
+argument_list|()
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"\tMass symlinking "
+operator|+
+name|destToSrcMap
+operator|.
+name|size
+argument_list|()
+operator|+
+literal|" files"
+argument_list|)
+expr_stmt|;
+name|FileUtil
+operator|.
+name|symlinkInMass
+argument_list|(
+name|destToSrcMap
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(

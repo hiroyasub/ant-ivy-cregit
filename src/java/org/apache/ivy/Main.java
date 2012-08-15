@@ -2297,6 +2297,16 @@ argument_list|(
 literal|"symlink"
 argument_list|)
 argument_list|)
+operator|.
+name|setMakeSymlinksInMass
+argument_list|(
+name|line
+operator|.
+name|hasOption
+argument_list|(
+literal|"symlinkmass"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

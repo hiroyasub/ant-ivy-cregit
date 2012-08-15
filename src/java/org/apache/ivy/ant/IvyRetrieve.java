@@ -277,6 +277,12 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
+name|boolean
+name|symlinkmass
+init|=
+literal|false
+decl_stmt|;
+specifier|private
 name|String
 name|overwriteMode
 init|=
@@ -503,6 +509,11 @@ operator|.
 name|setMakeSymlinks
 argument_list|(
 name|symlink
+argument_list|)
+operator|.
+name|setMakeSymlinksInMass
+argument_list|(
+name|symlinkmass
 argument_list|)
 operator|.
 name|setResolveId
@@ -848,6 +859,22 @@ operator|.
 name|symlink
 operator|=
 name|symlink
+expr_stmt|;
+block|}
+comment|/**      * Option to create symlinks in one mass action, instead of separately.      */
+specifier|public
+name|void
+name|setSymlinkmass
+parameter_list|(
+name|boolean
+name|symlinkmass
+parameter_list|)
+block|{
+name|this
+operator|.
+name|symlinkmass
+operator|=
+name|symlinkmass
 expr_stmt|;
 block|}
 specifier|public
