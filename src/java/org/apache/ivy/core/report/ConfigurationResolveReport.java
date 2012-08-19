@@ -1383,6 +1383,7 @@ block|}
 comment|/**      * gives all the modules ids concerned by this report, from the most dependent to the least one      *       * @return a list of ModuleId      */
 specifier|public
 name|List
+comment|/*<ModuleId> */
 name|getModuleIds
 parameter_list|()
 block|{
@@ -1524,6 +1525,7 @@ return|;
 block|}
 specifier|public
 name|Collection
+comment|/*<IvyNode> */
 name|getNodes
 parameter_list|(
 name|ModuleId
