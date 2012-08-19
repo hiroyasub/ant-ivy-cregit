@@ -23,6 +23,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|lang
+operator|.
+name|ref
+operator|.
+name|WeakReference
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|HashMap
@@ -109,7 +121,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
-comment|/*<ModuleId, ModuleId>*/
+comment|/*<ModuleId, WeakReference<ModuleId>>*/
 name|CACHE
 init|=
 operator|new
@@ -145,7 +157,6 @@ block|}
 comment|/**      * Returns an intern instance of a ModuleId equals to the given ModuleId if any, or the given      * ModuleId.      *<p>      * This is useful to reduce the number of instances of ModuleId kept in memory, and thus reduce      * memory footprint.      *</p>      *       * @param moduleId      *            the module id to return      * @return a unit instance of the given module id.      */
 specifier|public
 specifier|static
-specifier|synchronized
 name|ModuleId
 name|intern
 parameter_list|(
@@ -156,8 +167,18 @@ block|{
 name|ModuleId
 name|r
 init|=
+literal|null
+decl_stmt|;
+synchronized|synchronized
+init|(
+name|CACHE
+init|)
+block|{
+name|WeakReference
+name|ref
+init|=
 operator|(
-name|ModuleId
+name|WeakReference
 operator|)
 name|CACHE
 operator|.
@@ -166,6 +187,24 @@ argument_list|(
 name|moduleId
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|ref
+operator|!=
+literal|null
+condition|)
+block|{
+name|r
+operator|=
+operator|(
+name|ModuleId
+operator|)
+name|ref
+operator|.
+name|get
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|r
@@ -183,9 +222,14 @@ name|put
 argument_list|(
 name|r
 argument_list|,
+operator|new
+name|WeakReference
+argument_list|(
 name|r
 argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|r
