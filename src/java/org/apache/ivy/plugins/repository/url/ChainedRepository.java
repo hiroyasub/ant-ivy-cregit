@@ -250,6 +250,8 @@ block|{
 name|logFailed
 argument_list|(
 name|repository
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -346,6 +348,8 @@ block|{
 name|logFailed
 argument_list|(
 name|repository
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -455,6 +459,8 @@ block|{
 name|logFailed
 argument_list|(
 name|repository
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -500,6 +506,9 @@ name|logFailed
 parameter_list|(
 name|Repository
 name|repository
+parameter_list|,
+name|Exception
+name|e
 parameter_list|)
 block|{
 name|Message
@@ -514,8 +523,20 @@ operator|+
 literal|": "
 operator|+
 name|repository
+operator|.
+name|getName
+argument_list|()
 operator|+
-literal|" is not available. Trying the next one in the mirror list..."
+literal|" is not available"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"Trying the next one in the mirror list..."
 argument_list|)
 expr_stmt|;
 block|}

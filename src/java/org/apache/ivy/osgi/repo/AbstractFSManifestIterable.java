@@ -381,12 +381,8 @@ argument_list|(
 literal|"Unlistable dir: "
 operator|+
 name|currentDir
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|e
-operator|+
-literal|")"
 argument_list|)
 expr_stmt|;
 name|currentDir
@@ -510,12 +506,8 @@ argument_list|(
 literal|"Jar file just removed: "
 operator|+
 name|bundleCandidate
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|e
-operator|+
-literal|")"
 argument_list|)
 expr_stmt|;
 block|}
@@ -532,12 +524,8 @@ argument_list|(
 literal|"Unreadable jar: "
 operator|+
 name|bundleCandidate
-operator|+
-literal|" ("
-operator|+
+argument_list|,
 name|e
-operator|+
-literal|")"
 argument_list|)
 expr_stmt|;
 block|}

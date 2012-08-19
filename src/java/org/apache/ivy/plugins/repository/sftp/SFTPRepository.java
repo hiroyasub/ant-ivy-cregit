@@ -528,12 +528,11 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"reolving resource error: "
+literal|"Error while resolving resource "
 operator|+
+name|path
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// silent fail, return unexisting resource

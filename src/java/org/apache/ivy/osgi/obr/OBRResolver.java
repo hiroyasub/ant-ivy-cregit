@@ -694,6 +694,8 @@ name|getMessage
 argument_list|()
 operator|+
 literal|")"
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -724,6 +726,8 @@ name|getMessage
 argument_list|()
 operator|+
 literal|")"
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}
@@ -754,6 +758,8 @@ name|getMessage
 argument_list|()
 operator|+
 literal|")"
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

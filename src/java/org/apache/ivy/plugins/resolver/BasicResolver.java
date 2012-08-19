@@ -3488,12 +3488,9 @@ literal|"Failed to parse the file '"
 operator|+
 name|resource
 operator|+
-literal|"': "
-operator|+
+literal|"'"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -5602,6 +5599,13 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;

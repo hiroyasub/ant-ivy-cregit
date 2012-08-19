@@ -148,13 +148,8 @@ argument_list|(
 literal|"exception occurred while reading properties file "
 operator|+
 name|file
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -253,13 +248,8 @@ argument_list|(
 literal|"exception occurred while writing properties file "
 operator|+
 name|file
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

@@ -1233,12 +1233,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to access maven metadata file, ignored: "
-operator|+
+literal|"impossible to access maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1252,12 +1249,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to parse maven metadata file, ignored: "
-operator|+
+literal|"impossible to parse maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1271,12 +1265,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to parse maven metadata file, ignored: "
-operator|+
+literal|"impossible to parse maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2218,13 +2209,8 @@ argument_list|(
 literal|"impossible to get resource from name listed by maven-metadata.xml:"
 operator|+
 name|rres
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2482,12 +2468,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to access maven metadata file, ignored: "
-operator|+
+literal|"impossible to access maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2501,12 +2484,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to parse maven metadata file, ignored: "
-operator|+
+literal|"impossible to parse maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2520,12 +2500,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"impossible to parse maven metadata file, ignored: "
-operator|+
+literal|"impossible to parse maven metadata file, ignored"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

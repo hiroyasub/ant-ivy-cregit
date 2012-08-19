@@ -708,30 +708,8 @@ operator|+
 literal|" with "
 operator|+
 name|rep
-operator|+
-literal|":"
-argument_list|)
-expr_stmt|;
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"  "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -755,30 +733,8 @@ operator|+
 literal|" with "
 operator|+
 name|rep
-operator|+
-literal|":"
-argument_list|)
-expr_stmt|;
-name|Message
-operator|.
-name|warn
-argument_list|(
-literal|"  "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -997,30 +953,8 @@ operator|+
 literal|" with "
 operator|+
 name|rep
-operator|+
-literal|":"
-argument_list|)
-expr_stmt|;
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"  "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -1044,30 +978,8 @@ operator|+
 literal|" with "
 operator|+
 name|rep
-operator|+
-literal|":"
-argument_list|)
-expr_stmt|;
-name|Message
-operator|.
-name|warn
-argument_list|(
-literal|"  "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -1268,13 +1180,8 @@ argument_list|(
 literal|"impossible to get resource from name listed by repository: "
 operator|+
 name|rres
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1416,13 +1323,8 @@ argument_list|(
 literal|"\timpossible to get resource from name listed by repository: "
 operator|+
 name|partiallyResolvedPattern
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2003,20 +1905,8 @@ argument_list|(
 literal|"problem while listing files in "
 operator|+
 name|root
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -2251,20 +2141,8 @@ argument_list|(
 literal|"problem while listing directories in "
 operator|+
 name|root
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|+
-literal|" "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return

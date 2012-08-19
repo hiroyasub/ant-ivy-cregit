@@ -253,11 +253,12 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-comment|// TODO Auto-generated catch block
-name|e
+name|Message
 operator|.
-name|printStackTrace
-argument_list|()
+name|debug
+argument_list|(
+name|e
+argument_list|)
 expr_stmt|;
 block|}
 block|}

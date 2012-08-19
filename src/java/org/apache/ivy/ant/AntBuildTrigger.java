@@ -526,12 +526,6 @@ operator|+
 name|target
 argument_list|)
 expr_stmt|;
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-comment|// TODO: remove when finished debugging
 throw|throw
 name|e
 throw|;

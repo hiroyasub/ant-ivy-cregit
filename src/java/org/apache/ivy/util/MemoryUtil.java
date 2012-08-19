@@ -150,21 +150,16 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|System
+name|Message
 operator|.
-name|out
-operator|.
-name|println
+name|warn
 argument_list|(
-literal|"WARNING:couldn't instantiate"
+literal|"Couldn't instantiate "
 operator|+
 name|clazz
-argument_list|)
-expr_stmt|;
+argument_list|,
 name|e
-operator|.
-name|printStackTrace
-argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -280,10 +275,12 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|e
+name|Message
 operator|.
-name|printStackTrace
-argument_list|()
+name|debug
+argument_list|(
+name|e
+argument_list|)
 expr_stmt|;
 block|}
 block|}

@@ -3358,9 +3358,7 @@ argument_list|(
 literal|"impossible to parse server response: "
 operator|+
 name|responseLine
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|ex
 argument_list|)
 expr_stmt|;

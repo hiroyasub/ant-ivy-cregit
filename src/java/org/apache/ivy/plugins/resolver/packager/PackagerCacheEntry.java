@@ -915,15 +915,6 @@ name|BuildException
 name|e
 parameter_list|)
 block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|(
-name|System
-operator|.
-name|out
-argument_list|)
-expr_stmt|;
 name|Message
 operator|.
 name|verbose

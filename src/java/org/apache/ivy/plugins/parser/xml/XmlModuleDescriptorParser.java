@@ -2804,13 +2804,8 @@ argument_list|(
 literal|"Unable to parse included ivy file "
 operator|+
 name|location
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2848,6 +2843,8 @@ name|parentMrid
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}

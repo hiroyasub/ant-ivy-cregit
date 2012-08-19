@@ -317,6 +317,13 @@ parameter_list|)
 block|{
 name|Message
 operator|.
+name|debug
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
 name|verbose
 argument_list|(
 name|e
@@ -446,6 +453,13 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 name|Message
 operator|.
 name|verbose
@@ -622,10 +636,12 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-name|e
-operator|.
-name|getLocalizedMessage
+literal|"Fail to check the existance of the resource "
+operator|+
+name|getName
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 return|return

@@ -1193,12 +1193,9 @@ name|Message
 operator|.
 name|warn
 argument_list|(
-literal|"unable to parse content.xml file on ivyrep: "
-operator|+
+literal|"unable to parse content.xml file on ivyrep"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

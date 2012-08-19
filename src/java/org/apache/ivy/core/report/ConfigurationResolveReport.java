@@ -566,12 +566,9 @@ name|previousReportFile
 operator|.
 name|getAbsolutePath
 argument_list|()
-argument_list|)
-expr_stmt|;
+argument_list|,
 name|e
-operator|.
-name|printStackTrace
-argument_list|()
+argument_list|)
 expr_stmt|;
 name|hasChanged
 operator|=

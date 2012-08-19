@@ -2056,6 +2056,13 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 return|return
 literal|false
 return|;

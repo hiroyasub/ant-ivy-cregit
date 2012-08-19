@@ -356,20 +356,15 @@ name|SAXNotRecognizedException
 name|ex
 parameter_list|)
 block|{
-name|System
+name|Message
 operator|.
-name|err
-operator|.
-name|println
+name|warn
 argument_list|(
-literal|"WARNING: problem while setting JAXP validating property on SAXParser... "
+literal|"problem while setting JAXP validating property on SAXParser... "
 operator|+
-literal|"XML validation will not be done: "
-operator|+
+literal|"XML validation will not be done"
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|canUseSchemaValidation
@@ -663,18 +658,13 @@ name|SAXException
 name|ex
 parameter_list|)
 block|{
-name|System
+name|Message
 operator|.
-name|err
-operator|.
-name|println
+name|warn
 argument_list|(
-literal|"WARNING: problem while setting the lexical handler property on SAXParser: "
-operator|+
+literal|"problem while setting the lexical handler property on SAXParser"
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// continue without the lexical handler
@@ -912,11 +902,6 @@ name|SAXException
 name|e
 parameter_list|)
 block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
 throw|throw
 name|e
 throw|;

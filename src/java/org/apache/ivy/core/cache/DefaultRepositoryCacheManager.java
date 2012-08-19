@@ -3420,13 +3420,8 @@ argument_list|(
 literal|"\tproblem while parsing cached ivy file for: "
 operator|+
 name|mrid
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -4531,6 +4526,13 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|ex
+argument_list|)
+expr_stmt|;
 name|adr
 operator|.
 name|setDownloadStatus
@@ -5088,6 +5090,13 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|ex
+argument_list|)
+expr_stmt|;
 name|origin
 operator|.
 name|setExist
@@ -5520,17 +5529,18 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Message
-operator|.
-name|warn
-argument_list|(
-literal|"impossible to put metadata file in cache: "
-operator|+
-operator|(
+name|String
+name|metadataRef
+decl_stmt|;
+if|if
+condition|(
 name|orginalMetadataRef
 operator|==
 literal|null
-condition|?
+condition|)
+block|{
+name|metadataRef
+operator|=
 name|String
 operator|.
 name|valueOf
@@ -5540,31 +5550,29 @@ operator|.
 name|getResolvedModuleRevisionId
 argument_list|()
 argument_list|)
-else|:
+expr_stmt|;
+block|}
+else|else
+block|{
+name|metadataRef
+operator|=
 name|String
 operator|.
 name|valueOf
 argument_list|(
 name|orginalMetadataRef
 argument_list|)
-operator|)
+expr_stmt|;
+block|}
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"impossible to put metadata file in cache: "
 operator|+
-literal|". "
-operator|+
+name|metadataRef
+argument_list|,
 name|e
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|": "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6599,13 +6607,8 @@ name|mdRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return

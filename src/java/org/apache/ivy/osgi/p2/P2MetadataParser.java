@@ -832,8 +832,6 @@ argument_list|(
 name|NAME
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|String
 name|uriAtt
 init|=
@@ -845,7 +843,7 @@ name|URI
 argument_list|)
 decl_stmt|;
 name|String
-name|url
+name|urlAtt
 init|=
 name|atts
 operator|.
@@ -856,10 +854,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|uri
+name|uriAtt
 operator|!=
 literal|null
 condition|)
+block|{
+try|try
 block|{
 name|uri
 operator|=
@@ -870,22 +870,56 @@ name|uriAtt
 argument_list|)
 expr_stmt|;
 block|}
-if|else if
+catch|catch
+parameter_list|(
+name|URISyntaxException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|SAXParseException
+argument_list|(
+literal|"Invalid uri attribute "
+operator|+
+name|uriAtt
+operator|+
+literal|"("
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
+operator|+
+literal|")"
+argument_list|,
+name|getLocator
+argument_list|()
+argument_list|)
+throw|;
+block|}
+block|}
+if|if
 condition|(
-name|url
+name|uri
+operator|!=
+literal|null
+operator|&&
+name|urlAtt
 operator|!=
 literal|null
 condition|)
+block|{
+try|try
 block|{
 name|uri
 operator|=
 operator|new
 name|URI
 argument_list|(
-name|url
+name|urlAtt
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
@@ -893,12 +927,28 @@ name|URISyntaxException
 name|e
 parameter_list|)
 block|{
-comment|// TODO Auto-generated catch block
+throw|throw
+operator|new
+name|SAXParseException
+argument_list|(
+literal|"Invalid url attribute "
+operator|+
+name|urlAtt
+operator|+
+literal|"("
+operator|+
 name|e
 operator|.
-name|printStackTrace
+name|getMessage
 argument_list|()
-expr_stmt|;
+operator|+
+literal|")"
+argument_list|,
+name|getLocator
+argument_list|()
+argument_list|)
+throw|;
+block|}
 block|}
 block|}
 block|}
@@ -1542,12 +1592,9 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" could not be parsed: "
-operator|+
+literal|" could not be parsed"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1569,12 +1616,9 @@ operator|.
 name|getSymbolicName
 argument_list|()
 operator|+
-literal|" is ill formed: "
-operator|+
+literal|" is ill formed"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return;

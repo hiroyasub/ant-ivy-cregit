@@ -702,9 +702,7 @@ argument_list|(
 literal|"error occurred while saving password file "
 operator|+
 name|passfile
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
@@ -898,9 +896,7 @@ argument_list|(
 literal|"error occurred while loading password file "
 operator|+
 name|passfile
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;

@@ -353,6 +353,8 @@ operator|new
 name|BuildException
 argument_list|(
 literal|"Enable to load the default environment profiles"
+argument_list|,
+name|e
 argument_list|)
 throw|;
 block|}

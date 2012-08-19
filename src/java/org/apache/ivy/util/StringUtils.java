@@ -21,7 +21,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|ByteArrayOutputStream
+name|PrintWriter
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|StringWriter
 import|;
 end_import
 
@@ -262,7 +262,7 @@ specifier|static
 name|String
 name|getStackTrace
 parameter_list|(
-name|Exception
+name|Throwable
 name|e
 parameter_list|)
 block|{
@@ -277,11 +277,11 @@ return|return
 literal|""
 return|;
 block|}
-name|ByteArrayOutputStream
-name|baos
+name|StringWriter
+name|sw
 init|=
 operator|new
-name|ByteArrayOutputStream
+name|StringWriter
 argument_list|()
 decl_stmt|;
 name|PrintWriter
@@ -290,7 +290,9 @@ init|=
 operator|new
 name|PrintWriter
 argument_list|(
-name|baos
+name|sw
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|e
@@ -300,30 +302,14 @@ argument_list|(
 name|printWriter
 argument_list|)
 expr_stmt|;
-name|printWriter
-operator|.
-name|flush
-argument_list|()
-expr_stmt|;
-name|String
-name|stackTrace
-init|=
-operator|new
-name|String
-argument_list|(
-name|baos
-operator|.
-name|toByteArray
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|printWriter
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 return|return
-name|stackTrace
+name|sw
+operator|.
+name|getBuffer
+argument_list|()
+operator|.
+name|toString
+argument_list|()
 return|;
 block|}
 comment|/**      * Joins the given object array in one string, each separated by the given separator.       *       * Example:      *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param  objs  The array of objects (<code>toString()</code> is used).      * @param  sep  The separator to use.      * @return  The concatinated string.      */

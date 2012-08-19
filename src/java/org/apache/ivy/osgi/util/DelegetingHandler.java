@@ -618,6 +618,8 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -1893,6 +1895,35 @@ block|}
 comment|// //////////////////////
 comment|// Functions related to error handling
 comment|// //////////////////////
+specifier|protected
+name|void
+name|log
+parameter_list|(
+name|int
+name|logLevel
+parameter_list|,
+name|String
+name|message
+parameter_list|,
+name|Throwable
+name|t
+parameter_list|)
+block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|t
+argument_list|)
+expr_stmt|;
+name|log
+argument_list|(
+name|logLevel
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+block|}
 specifier|protected
 name|void
 name|log

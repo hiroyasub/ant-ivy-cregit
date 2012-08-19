@@ -697,15 +697,8 @@ operator|+
 literal|" with "
 operator|+
 name|resolver
-operator|+
-literal|": "
-operator|+
-name|StringUtils
-operator|.
-name|getStackTrace
-argument_list|(
+argument_list|,
 name|ex
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors

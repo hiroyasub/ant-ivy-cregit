@@ -133,6 +133,20 @@ name|URLLister
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|Message
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -412,6 +426,13 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+name|Message
+operator|.
+name|debug
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 comment|// TODO: handle exception
 block|}
 return|return

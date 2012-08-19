@@ -2234,6 +2234,13 @@ parameter_list|)
 block|{
 name|Message
 operator|.
+name|debug
+argument_list|(
+name|ex
+argument_list|)
+expr_stmt|;
+name|Message
+operator|.
 name|error
 argument_list|(
 name|ex

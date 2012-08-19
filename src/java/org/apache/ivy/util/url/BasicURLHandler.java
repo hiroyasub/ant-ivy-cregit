@@ -492,16 +492,11 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"Server access Error: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|" url="
+literal|"Server access error at url "
 operator|+
 name|url
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}

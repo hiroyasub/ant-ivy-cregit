@@ -1795,13 +1795,8 @@ index|]
 operator|.
 name|trim
 argument_list|()
-operator|+
-literal|": "
-operator|+
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1836,6 +1831,8 @@ operator|.
 name|warn
 argument_list|(
 literal|"impossible to load default type defs"
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -2050,7 +2047,9 @@ name|info
 argument_list|(
 literal|"impossible to define glob matcher: "
 operator|+
-literal|"org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found."
+literal|"org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found"
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}
@@ -2247,12 +2246,9 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"unable to use remote repository configuration: "
-operator|+
+literal|"unable to use remote repository configuration"
+argument_list|,
 name|ex
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|props
@@ -2304,12 +2300,9 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"unable to use internal repository configuration: "
-operator|+
+literal|"unable to use internal repository configuration"
+argument_list|,
 name|e
-operator|.
-name|getMessage
-argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
