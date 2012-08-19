@@ -924,6 +924,8 @@ block|,
 literal|"jbi-shared-library"
 block|,
 literal|"orbit"
+block|,
+literal|"hk2-jar"
 block|}
 argument_list|)
 decl_stmt|;
