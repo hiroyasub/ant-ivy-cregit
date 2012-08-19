@@ -922,6 +922,8 @@ block|,
 literal|"jbi-component"
 block|,
 literal|"jbi-shared-library"
+block|,
+literal|"orbit"
 block|}
 argument_list|)
 decl_stmt|;
@@ -1677,6 +1679,21 @@ block|{
 name|ext
 operator|=
 literal|"jar"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+literal|"pear"
+operator|.
+name|equals
+argument_list|(
+name|packaging
+argument_list|)
+condition|)
+block|{
+name|ext
+operator|=
+literal|"phar"
 expr_stmt|;
 block|}
 else|else
