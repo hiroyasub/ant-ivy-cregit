@@ -145,6 +145,7 @@ block|}
 comment|/**      * Returns an intern instance of a ModuleId equals to the given ModuleId if any, or the given      * ModuleId.      *<p>      * This is useful to reduce the number of instances of ModuleId kept in memory, and thus reduce      * memory footprint.      *</p>      *       * @param moduleId      *            the module id to return      * @return a unit instance of the given module id.      */
 specifier|public
 specifier|static
+specifier|synchronized
 name|ModuleId
 name|intern
 parameter_list|(
