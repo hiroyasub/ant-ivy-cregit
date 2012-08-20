@@ -83,6 +83,20 @@ name|org
 operator|.
 name|apache
 operator|.
+name|commons
+operator|.
+name|lang
+operator|.
+name|SystemUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|ivy
 operator|.
 name|Ivy
@@ -1467,6 +1481,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|SystemUtils
+operator|.
+name|IS_OS_WINDOWS
+condition|)
+block|{
+return|return;
+block|}
 comment|// mod1.1 depends on mod1.2
 name|ResolveReport
 name|report
