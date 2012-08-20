@@ -249,18 +249,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|core
 operator|.
 name|module
@@ -508,6 +496,20 @@ operator|.
 name|util
 operator|.
 name|Checks
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|DateUtil
 import|;
 end_import
 
@@ -5032,9 +5034,7 @@ name|write
 argument_list|(
 literal|" publication=\""
 operator|+
-name|Ivy
-operator|.
-name|DATE_FORMAT
+name|DateUtil
 operator|.
 name|format
 argument_list|(

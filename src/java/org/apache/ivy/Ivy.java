@@ -711,6 +711,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|DateUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|HostUtil
 import|;
 end_import
@@ -779,6 +793,7 @@ name|KILO
 init|=
 literal|1024
 decl_stmt|;
+comment|/**      * @deprecated Use the {@link DateUtil} utility class instead.      */
 specifier|public
 specifier|static
 specifier|final
@@ -788,7 +803,9 @@ init|=
 operator|new
 name|SimpleDateFormat
 argument_list|(
-literal|"yyyyMMddHHmmss"
+name|DateUtil
+operator|.
+name|DATE_FORMAT_PATTERN
 argument_list|)
 decl_stmt|;
 comment|/**      * the current version of Ivy, as displayed on the console when       * Ivy is initialized      */
