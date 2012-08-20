@@ -3775,6 +3775,18 @@ name|exists
 argument_list|()
 condition|)
 block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Parent module doesn't exist on the filesystem: "
+operator|+
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;
