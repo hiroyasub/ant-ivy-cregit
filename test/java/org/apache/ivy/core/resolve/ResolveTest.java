@@ -35344,7 +35344,13 @@ argument_list|(
 literal|"test/repositories/external-artifacts"
 argument_list|)
 operator|.
-name|toString
+name|toURI
+argument_list|()
+operator|.
+name|toURL
+argument_list|()
+operator|.
+name|toExternalForm
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -38797,7 +38803,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testCompressed
+name|testUncompress
 parameter_list|()
 throws|throws
 name|Exception
@@ -38924,6 +38930,13 @@ operator|.
 name|listFiles
 argument_list|()
 decl_stmt|;
+name|Arrays
+operator|.
+name|sort
+argument_list|(
+name|jarContents
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 operator|new
