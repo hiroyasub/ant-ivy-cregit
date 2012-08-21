@@ -823,6 +823,13 @@ argument_list|,
 name|exportedPkgNames
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|baseUri
+operator|!=
+literal|null
+condition|)
+block|{
 name|String
 name|compression
 init|=
@@ -916,6 +923,7 @@ argument_list|,
 name|artifact
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
