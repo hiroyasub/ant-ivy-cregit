@@ -851,7 +851,7 @@ argument_list|()
 decl_stmt|;
 name|options
 operator|.
-name|setExpandCompressed
+name|setUncompress
 argument_list|(
 literal|true
 argument_list|)
@@ -1038,7 +1038,7 @@ argument_list|()
 decl_stmt|;
 name|options
 operator|.
-name|setExpandCompressed
+name|setUncompress
 argument_list|(
 literal|true
 argument_list|)

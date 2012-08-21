@@ -2324,11 +2324,11 @@ argument_list|()
 decl_stmt|;
 name|cacheDownloadOptions
 operator|.
-name|setExpandCompressed
+name|setUncompress
 argument_list|(
 name|options
 operator|.
-name|isExpandCompressed
+name|isUncompress
 argument_list|()
 argument_list|)
 expr_stmt|;

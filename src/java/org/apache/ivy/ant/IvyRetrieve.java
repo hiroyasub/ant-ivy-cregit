@@ -522,9 +522,9 @@ name|getResolveId
 argument_list|()
 argument_list|)
 operator|.
-name|setUncompressed
+name|setUncompress
 argument_list|(
-name|isUncompressed
+name|isUncompress
 argument_list|()
 argument_list|)
 operator|.

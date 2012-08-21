@@ -1408,7 +1408,7 @@ argument_list|)
 expr_stmt|;
 name|path
 operator|.
-name|setUncompressed
+name|setUncompress
 argument_list|(
 literal|true
 argument_list|)
@@ -1502,7 +1502,7 @@ argument_list|)
 expr_stmt|;
 name|path
 operator|.
-name|setUncompressed
+name|setUncompress
 argument_list|(
 literal|true
 argument_list|)
@@ -1699,7 +1699,7 @@ argument_list|)
 expr_stmt|;
 name|path
 operator|.
-name|setUncompressed
+name|setUncompress
 argument_list|(
 literal|true
 argument_list|)

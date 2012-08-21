@@ -982,7 +982,7 @@ if|if
 condition|(
 name|options
 operator|.
-name|isUncompressed
+name|isUncompress
 argument_list|()
 operator|&&
 name|artifact
@@ -2356,7 +2356,7 @@ if|if
 condition|(
 name|options
 operator|.
-name|isUncompressed
+name|isUncompress
 argument_list|()
 operator|&&
 name|adr

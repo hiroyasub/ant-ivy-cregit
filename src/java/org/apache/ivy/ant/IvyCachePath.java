@@ -325,7 +325,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|isUncompressed
+name|isUncompress
 argument_list|()
 operator|&&
 name|a

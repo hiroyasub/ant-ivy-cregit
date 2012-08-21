@@ -4634,7 +4634,7 @@ if|if
 condition|(
 name|options
 operator|.
-name|isExpandCompressed
+name|isUncompress
 argument_list|()
 operator|&&
 name|adr
@@ -4647,7 +4647,7 @@ operator|.
 name|FAILED
 condition|)
 block|{
-name|expandCompressedArtifact
+name|uncompressArtifact
 argument_list|(
 name|artifact
 argument_list|,
@@ -4693,7 +4693,7 @@ block|}
 block|}
 specifier|private
 name|void
-name|expandCompressedArtifact
+name|uncompressArtifact
 parameter_list|(
 name|Artifact
 name|artifact
