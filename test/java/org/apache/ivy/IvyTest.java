@@ -264,9 +264,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -351,6 +348,9 @@ argument_list|(
 literal|"test/repositories/norev/ivysettings.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -366,9 +366,6 @@ name|File
 argument_list|(
 literal|"test/repositories/norev/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -430,9 +427,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(

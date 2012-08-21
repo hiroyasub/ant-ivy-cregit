@@ -2152,6 +2152,9 @@ argument_list|()
 argument_list|,
 name|dest
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,

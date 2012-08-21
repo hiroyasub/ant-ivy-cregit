@@ -346,6 +346,9 @@ argument_list|(
 literal|"test/test-p2/sources"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.
@@ -389,6 +392,9 @@ name|File
 argument_list|(
 literal|"test/test-p2/zipped"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

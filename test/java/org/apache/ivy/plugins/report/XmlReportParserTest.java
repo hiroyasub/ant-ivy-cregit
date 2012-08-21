@@ -271,9 +271,6 @@ name|File
 argument_list|(
 literal|"test/java/org/apache/ivy/plugins/report/ivy-with-info.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(

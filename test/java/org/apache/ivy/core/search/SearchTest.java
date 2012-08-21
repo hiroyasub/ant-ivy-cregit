@@ -221,6 +221,9 @@ argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -326,6 +329,9 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

@@ -929,6 +929,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -1111,6 +1114,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1333,6 +1339,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1561,6 +1570,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -1722,6 +1734,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -1838,6 +1853,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -2038,6 +2056,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -2231,6 +2252,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -2416,6 +2440,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -2733,6 +2760,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -3304,6 +3334,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -3457,6 +3490,9 @@ name|IvySettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

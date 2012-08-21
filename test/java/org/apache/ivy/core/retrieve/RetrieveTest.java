@@ -1514,6 +1514,9 @@ argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,

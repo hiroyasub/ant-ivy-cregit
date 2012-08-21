@@ -264,9 +264,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/special-encoding-root-ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -353,7 +350,7 @@ decl_stmt|;
 name|String
 name|expectedOrg
 init|=
-literal|"organisation=\"spécial\""
+literal|"organisation=\"spï¿½cial\""
 decl_stmt|;
 name|assertTrue
 argument_list|(
@@ -454,9 +451,6 @@ name|File
 argument_list|(
 literal|"test/java/org/apache/ivy/plugins/report/ivy-635.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -555,9 +549,6 @@ name|File
 argument_list|(
 literal|"test/java/org/apache/ivy/plugins/report/ivy-with-info.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(

@@ -2511,6 +2511,9 @@ argument_list|(
 literal|"test/repositories/1/apache/resolve-simple/ivys/ivy-1.2.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -3151,6 +3154,9 @@ argument_list|(
 literal|"test/repositories/1/apache/resolve-simple/ivys/ivy-1.2.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -3660,6 +3666,9 @@ argument_list|()
 argument_list|,
 name|dest
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -3932,6 +3941,9 @@ argument_list|(
 literal|"test/repositories/1/apache/resolve-latest/ivys/ivy-1.3.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -4135,6 +4147,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/apache/resolve-latest/ivys/ivy-1.3.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -4345,6 +4360,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/apache/resolve-latest/ivys/ivy-1.3.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

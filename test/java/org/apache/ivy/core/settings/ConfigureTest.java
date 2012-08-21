@@ -281,6 +281,9 @@ argument_list|(
 literal|"test/java/org/apache/ivy/core/settings"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.

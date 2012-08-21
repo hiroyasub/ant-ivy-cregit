@@ -361,6 +361,9 @@ operator|)
 name|location
 operator|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.

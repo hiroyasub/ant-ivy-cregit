@@ -808,9 +808,6 @@ name|File
 argument_list|(
 literal|"build/test/perf/mod0/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(

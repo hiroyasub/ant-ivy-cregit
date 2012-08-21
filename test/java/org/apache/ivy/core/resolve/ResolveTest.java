@@ -940,9 +940,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod15.2/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -1157,9 +1154,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod15.4/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -1374,9 +1368,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -1555,9 +1546,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -1708,9 +1696,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -1884,9 +1869,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2015,9 +1997,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2074,9 +2053,6 @@ name|File
 argument_list|(
 literal|"test/repositories/xml-entities/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -2091,9 +2067,6 @@ name|File
 argument_list|(
 literal|"test/repositories/xml-entities/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2162,9 +2135,6 @@ name|File
 argument_list|(
 literal|"test/repositories/norev/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -2179,9 +2149,6 @@ name|File
 argument_list|(
 literal|"test/repositories/norev/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2231,9 +2198,6 @@ name|File
 argument_list|(
 literal|"test/repositories/norev/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -2248,9 +2212,6 @@ name|File
 argument_list|(
 literal|"test/repositories/norev/ivy-latest.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2297,9 +2258,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2352,9 +2310,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-258/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -2369,9 +2324,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-258/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2423,9 +2375,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-258/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2479,9 +2428,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-448/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -2496,9 +2442,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-448/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2590,9 +2533,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/IVY-465/M1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -2735,9 +2675,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3020,9 +2957,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3084,9 +3018,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3263,9 +3194,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3310,9 +3238,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3493,9 +3418,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3578,9 +3500,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3735,9 +3654,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3820,9 +3736,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -3978,9 +3891,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4059,9 +3969,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4144,9 +4051,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4278,9 +4182,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4371,9 +4272,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4541,9 +4439,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4596,9 +4491,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4677,9 +4569,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4811,9 +4700,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4866,9 +4752,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -4939,9 +4822,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -5182,7 +5062,7 @@ name|cache
 argument_list|)
 expr_stmt|;
 comment|// ResolveReport report = ivy.resolve(new
-comment|// File("test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml").toURL(),
+comment|// File("test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"),
 comment|// getResolveOptions(new String[] {"*"}));
 comment|// // should have an error, the conf is bad and the dependency should not be found
 comment|// assertTrue(report.hasError());
@@ -5269,9 +5149,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -5364,9 +5241,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -5638,9 +5512,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -5873,9 +5744,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6107,9 +5975,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6315,9 +6180,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.8.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6564,9 +6426,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6650,9 +6509,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6798,9 +6654,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -6929,9 +6782,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -7060,9 +6910,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -7246,9 +7093,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.2/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -7484,9 +7328,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -7731,9 +7572,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.2/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -7881,9 +7719,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.2/ivys/ivy-0.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -8174,9 +8009,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org6/mod6.2/ivys/ivy-0.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -8548,9 +8380,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.6/ivys/ivy-1.0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -8640,9 +8469,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.12.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -8745,9 +8571,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-283/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -8915,9 +8738,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-283/ivy-d.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -9205,9 +9025,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.8.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -9379,9 +9196,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.8.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -9553,9 +9367,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -9727,9 +9538,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -9901,9 +9709,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.5.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10082,9 +9887,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10256,9 +10058,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10429,9 +10228,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10605,9 +10401,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10711,9 +10504,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -10885,9 +10675,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.6.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11058,9 +10845,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.6.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11232,9 +11016,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.6.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11406,9 +11187,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.3/ivys/ivy-0.6.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11580,9 +11358,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11752,9 +11527,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -11925,9 +11697,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12104,9 +11873,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12430,9 +12196,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12538,9 +12301,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12608,9 +12368,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12684,9 +12441,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12792,9 +12546,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12862,9 +12613,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -12938,9 +12686,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13046,9 +12791,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13116,9 +12858,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.3.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13196,9 +12935,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13396,9 +13132,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.7.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13607,9 +13340,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -13822,9 +13552,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -14244,9 +13971,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.14.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -14648,9 +14372,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-264/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -14804,9 +14525,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org20/mod20.4/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -14920,9 +14638,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod17.1/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -14971,9 +14686,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod7.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -15189,9 +14901,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.13.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -15460,9 +15169,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.1/ivys/ivy-0.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -15678,9 +15384,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -15982,9 +15685,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -16266,9 +15966,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.4.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -16437,9 +16134,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -16515,9 +16209,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -16878,9 +16569,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.1/ivy-1.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17249,9 +16937,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/IVY-644/M1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17298,9 +16983,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17515,9 +17197,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.9.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17670,9 +17349,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.10.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17780,9 +17456,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.11.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -17912,9 +17585,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.12.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -18033,9 +17703,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -18185,9 +17852,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.5.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -18400,9 +18064,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -18617,9 +18278,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod4.1/ivy-4.7.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19045,9 +18703,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.1/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19220,9 +18875,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.1/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19346,9 +18998,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.1/ivy-1.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19430,9 +19079,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19584,9 +19230,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-2.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -19900,9 +19543,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod14.4/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -20104,9 +19744,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod14.4/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -20325,9 +19962,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -20618,9 +20252,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.5/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -20812,9 +20443,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org9/mod9.2/ivys/ivy-1.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -20882,9 +20510,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21049,9 +20674,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21178,9 +20800,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/5/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21266,9 +20885,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/6/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21385,9 +21001,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21503,9 +21116,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21620,9 +21230,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21664,9 +21271,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org9/mod9.2/ivys/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -21764,9 +21368,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org9/mod9.2/ivys/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22060,9 +21661,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-729/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22104,9 +21702,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22151,9 +21746,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22198,9 +21790,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22245,9 +21834,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22304,9 +21890,6 @@ name|File
 argument_list|(
 literal|"test/repositories/circular/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22351,9 +21934,6 @@ name|File
 argument_list|(
 literal|"test/repositories/circular/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22413,9 +21993,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22493,9 +22070,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22572,9 +22146,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22651,9 +22222,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod6.3/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -22726,9 +22294,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod11.1/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -23514,12 +23079,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-1236/ivy.xml"
 argument_list|)
-operator|.
-name|toURI
-argument_list|()
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -23670,12 +23229,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-1233/ivy.xml"
 argument_list|)
-operator|.
-name|toURI
-argument_list|()
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -23821,12 +23374,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-1333/ivy.xml"
 argument_list|)
-operator|.
-name|toURI
-argument_list|()
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -23990,12 +23537,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-1347/childone/childtwo/ivy.xml"
 argument_list|)
-operator|.
-name|toURI
-argument_list|()
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24228,9 +23769,6 @@ name|File
 argument_list|(
 literal|"test/repositories/badfile/ivys/ivy-badorg.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24290,9 +23828,6 @@ name|File
 argument_list|(
 literal|"test/repositories/badfile/ivys/ivy-badmodule.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24352,9 +23887,6 @@ name|File
 argument_list|(
 literal|"test/repositories/badfile/ivys/ivy-badbranch.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24414,9 +23946,6 @@ name|File
 argument_list|(
 literal|"test/repositories/badfile/ivys/ivy-badrevision.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24476,9 +24005,6 @@ name|File
 argument_list|(
 literal|"test/repositories/badfile/ivys/ivy-badxml.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24549,9 +24075,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.4/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24726,9 +24249,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.7/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -24912,9 +24432,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.4/ivys/ivy-0.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25030,9 +24547,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod8.2/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25083,9 +24597,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod8.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25157,9 +24668,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod8.4/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25231,9 +24739,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod8.4/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25330,9 +24835,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/1/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25495,9 +24997,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/2/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25660,9 +25159,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/3/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25825,9 +25321,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/4/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -25990,9 +25483,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/5/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -26155,9 +25645,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/6/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -26322,9 +25809,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-84/tests/7/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -26473,9 +25957,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org9/mod9.2/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -26644,9 +26125,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/multiple-same-deps/mod1/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -26854,9 +26332,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.5/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27045,9 +26520,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.6.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27122,9 +26594,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.7.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27199,9 +26668,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.8.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27278,9 +26744,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.9.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27384,9 +26847,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.10.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27530,9 +26990,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.11.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27677,9 +27134,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.13.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27760,9 +27214,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.6/ivys/ivy-0.13.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27840,9 +27291,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.2/ivy-2.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -27918,9 +27366,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-3.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -28038,9 +27483,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-3.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -28284,9 +27726,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-3.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -28531,9 +27970,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-3.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -28862,9 +28298,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod5.2/ivy-3.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29189,9 +28622,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.2/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29243,9 +28673,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.2/ivy-1.1.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29318,9 +28745,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.2/ivy-1.2.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29396,9 +28820,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod10.2/ivy-1.3.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29486,9 +28907,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -29503,9 +28921,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test3/1.0/test3-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29682,9 +29097,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -29699,9 +29111,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test3/1.1/test3-1.1.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -29882,9 +29291,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -30022,9 +29428,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -30046,9 +29449,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/relocated/test3/1.0/test3-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -30187,9 +29587,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -30211,9 +29608,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/relocated/test3full/1.1/test3full-1.1.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -30350,9 +29744,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -30374,9 +29765,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/relocated/test3/1.1/test3-1.1.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -30513,9 +29901,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -30539,9 +29924,6 @@ literal|"test/repositories/m2/org/relocated/testRelocationUser/1.0/"
 operator|+
 literal|"testRelocationUser-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -30686,9 +30068,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ivy
@@ -30712,9 +30091,6 @@ literal|"test/repositories/m2/org/relocated/testRelocationUser/1.1/"
 operator|+
 literal|"testRelocationUser-1.1.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -30862,9 +30238,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -30879,9 +30252,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test-classifier/1.0/test-classifier-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -31038,9 +30408,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -31055,9 +30422,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test-classifier/2.0/test-classifier-2.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -31212,9 +30576,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -31382,9 +30743,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -31551,9 +30909,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -31772,9 +31127,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -31789,9 +31141,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test-version/1.0/test-version-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -31954,9 +31303,6 @@ name|File
 argument_list|(
 literal|"test/repositories/parentPom/org/apache/dm/test/1.0/test-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -32626,9 +31972,6 @@ name|File
 argument_list|(
 literal|"test/repositories/parentPom/org/apache/dm/test/1.0/test-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -32948,9 +32291,6 @@ name|File
 argument_list|(
 literal|"test/repositories/parentPom/org/apache/dm/test/2.0/test-2.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -33184,9 +32524,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -33201,9 +32538,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test4/1.0/test4-1.0.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -33300,9 +32634,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/ivysettings.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|ResolveReport
@@ -33317,9 +32648,6 @@ name|File
 argument_list|(
 literal|"test/repositories/m2/org/apache/test4/1.1/test4-1.1.pom"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -33538,6 +32866,9 @@ name|getSettings
 argument_list|()
 argument_list|,
 name|ivyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -34127,9 +33458,6 @@ name|File
 argument_list|(
 literal|"test/repositories/multirevisions/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -34193,9 +33521,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod12.2/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -34340,9 +33665,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod12.2/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -34472,9 +33794,6 @@ name|File
 argument_list|(
 literal|"test/repositories/2/mod13.3/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35391,9 +34710,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/1/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35476,9 +34792,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/2/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35561,9 +34874,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/1/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35646,9 +34956,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/3/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35750,9 +35057,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/3/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35867,9 +35171,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/4/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -35953,9 +35254,6 @@ name|File
 argument_list|(
 literal|"test/repositories/branches/bar/bar1/trunk/4/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -36046,9 +35344,6 @@ argument_list|(
 literal|"test/repositories/external-artifacts"
 argument_list|)
 operator|.
-name|toURL
-argument_list|()
-operator|.
 name|toString
 argument_list|()
 argument_list|)
@@ -36076,9 +35371,6 @@ name|File
 argument_list|(
 literal|"test/repositories/external-artifacts/ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -36347,9 +35639,6 @@ name|File
 argument_list|(
 literal|"test/repositories/1/orgConflictAndPrivateConf/root/ivys/ivy-1.0.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|getResolveOptions
 argument_list|(
@@ -37382,6 +36671,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -37584,6 +36876,9 @@ name|getSettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -38082,6 +37377,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -38198,6 +37496,9 @@ name|getSettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -38316,6 +37617,9 @@ argument_list|()
 argument_list|,
 name|deliveredIvyFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -38432,6 +37736,9 @@ name|getSettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -38587,9 +37894,6 @@ literal|"test/repositories/IVY-1159/"
 operator|+
 name|modCIvyFile
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|opts
 argument_list|)
@@ -38799,9 +38103,6 @@ name|File
 argument_list|(
 literal|"test/repositories/IVY-1300/assembly-ivy.xml"
 argument_list|)
-operator|.
-name|toURL
-argument_list|()
 argument_list|,
 name|opts
 argument_list|)
@@ -38991,6 +38292,9 @@ name|getSettings
 argument_list|()
 argument_list|,
 name|deliveredIvyFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

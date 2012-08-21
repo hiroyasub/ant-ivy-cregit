@@ -613,7 +613,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/ivy.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -635,7 +635,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/packager.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -685,7 +685,7 @@ argument_list|(
 literal|"test/repositories/packager/website"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1139,7 +1139,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/ivy.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1161,7 +1161,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/packager.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1211,7 +1211,7 @@ argument_list|(
 literal|"test/repositories/IVY-1179/website"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1412,7 +1412,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/ivy.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1434,7 +1434,7 @@ argument_list|,
 literal|"[organisation]/[module]/[revision]/packager.xml"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL
@@ -1484,7 +1484,7 @@ argument_list|(
 literal|"test/repositories/IVY-1179/website"
 argument_list|)
 operator|.
-name|getAbsoluteFile
+name|toURI
 argument_list|()
 operator|.
 name|toURL

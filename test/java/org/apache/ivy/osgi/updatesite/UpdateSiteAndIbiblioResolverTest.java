@@ -330,6 +330,9 @@ argument_list|(
 literal|"test/test-p2/ivyde-repo"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.

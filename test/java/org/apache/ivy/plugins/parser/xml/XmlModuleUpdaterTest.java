@@ -621,6 +621,9 @@ operator|+
 literal|"test-with-comments.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
@@ -1360,6 +1363,9 @@ operator|+
 literal|"test-configurations-import4.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
@@ -1428,6 +1434,9 @@ literal|"test/java/org/apache/ivy/plugins/parser/xml/"
 operator|+
 literal|"test-update-excludedconfs1.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1607,6 +1616,9 @@ operator|+
 literal|"test-update-excludedconfs2.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
@@ -1685,6 +1697,9 @@ literal|"test/java/org/apache/ivy/plugins/parser/xml/"
 operator|+
 literal|"test-update-excludedconfs3.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1890,6 +1905,9 @@ operator|+
 literal|"test-update-excludedconfs4.xml"
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
@@ -2075,6 +2093,9 @@ literal|"test/java/org/apache/ivy/plugins/parser/xml/"
 operator|+
 literal|"test-update-excludedconfs5.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
