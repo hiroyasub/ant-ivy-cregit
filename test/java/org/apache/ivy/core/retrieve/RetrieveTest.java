@@ -2210,7 +2210,7 @@ expr_stmt|;
 name|String
 name|pattern
 init|=
-literal|"build/test/retrieve/[organization]/[module]/[conf]/[artifact]-[revision](.[ext])"
+literal|"build/test/retrieve/[organization]/[module]/[conf]/[type]s/[artifact]-[revision](.[ext])"
 decl_stmt|;
 name|RetrieveOptions
 name|options
@@ -2239,14 +2239,13 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|// NB
 name|File
 name|dest
 init|=
 operator|new
 name|File
 argument_list|(
-literal|"build/test/retrieve/compression/module2/default/module2-1.0"
+literal|"build/test/retrieve/compression/module2/default/jars/module2-1.0"
 argument_list|)
 decl_stmt|;
 name|assertTrue

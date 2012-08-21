@@ -467,6 +467,11 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
+name|artifact
+operator|.
+name|getType
+argument_list|()
+operator|+
 literal|"_uncompressed"
 argument_list|,
 literal|""
