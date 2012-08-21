@@ -350,7 +350,7 @@ decl_stmt|;
 name|String
 name|expectedOrg
 init|=
-literal|"organisation=\"spï¿½cial\""
+literal|"organisation=\"sp\u00E9cial\""
 decl_stmt|;
 name|assertTrue
 argument_list|(
