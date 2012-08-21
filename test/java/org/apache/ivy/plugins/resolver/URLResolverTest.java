@@ -1018,7 +1018,6 @@ argument_list|(
 name|settings
 argument_list|)
 expr_stmt|;
-comment|//        String rootpath = new File("test/repositories/1").toURI().toURL().toExternalForm();
 name|String
 name|rootpath
 init|=
@@ -1028,15 +1027,22 @@ argument_list|(
 literal|"test/repositories/1"
 argument_list|)
 operator|.
-name|getAbsolutePath
+name|getAbsoluteFile
+argument_list|()
+operator|.
+name|toURI
+argument_list|()
+operator|.
+name|toURL
+argument_list|()
+operator|.
+name|toExternalForm
 argument_list|()
 decl_stmt|;
 name|resolver
 operator|.
 name|addIvyPattern
 argument_list|(
-literal|"file:"
-operator|+
 name|rootpath
 operator|+
 literal|"/[organisation]/[module]/ivys/ivy-[revision].xml"
@@ -1046,8 +1052,6 @@ name|resolver
 operator|.
 name|addArtifactPattern
 argument_list|(
-literal|"file:"
-operator|+
 name|rootpath
 operator|+
 literal|"/[organisation]/[module]/[type]s/[artifact]-[revision].[type]"
