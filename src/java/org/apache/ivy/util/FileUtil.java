@@ -286,7 +286,7 @@ name|Pattern
 operator|.
 name|compile
 argument_list|(
-literal|"[\\w-./\\\\:~ ]+"
+literal|"[\\w-./\\\\:~ %\\(\\)]+"
 argument_list|)
 decl_stmt|;
 specifier|public
