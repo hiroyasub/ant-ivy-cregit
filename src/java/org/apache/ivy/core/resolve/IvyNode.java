@@ -1861,6 +1861,9 @@ parameter_list|,
 name|String
 index|[]
 name|confs
+parameter_list|,
+name|String
+name|requestedConf
 parameter_list|)
 block|{
 if|if
@@ -1955,10 +1958,7 @@ index|[
 name|i
 index|]
 argument_list|,
-name|confs
-index|[
-name|i
-index|]
+name|requestedConf
 argument_list|)
 argument_list|)
 expr_stmt|;
