@@ -6748,6 +6748,11 @@ name|getDefaultResolutionCacheBasedir
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|init
+argument_list|(
+name|resolutionCacheManager
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|resolutionCacheManager

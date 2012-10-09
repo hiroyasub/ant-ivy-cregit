@@ -1519,29 +1519,15 @@ operator|.
 name|getResolutionCacheManager
 argument_list|()
 decl_stmt|;
-name|File
-name|ivyFileInCache
-init|=
 name|cacheManager
 operator|.
-name|getResolvedIvyFileInCache
+name|saveResolvedModuleDescriptor
 argument_list|(
 name|md
-operator|.
-name|getResolvedModuleRevisionId
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|md
-operator|.
-name|toIvyFile
-argument_list|(
-name|ivyFileInCache
 argument_list|)
 expr_stmt|;
 comment|// we store the resolved dependencies revisions and statuses per asked dependency
-comment|// revision id,
-comment|// for direct dependencies only.
+comment|// revision id, for direct dependencies only.
 comment|// this is used by the deliver task to resolve dynamic revisions to static ones
 name|File
 name|ivyPropertiesInCache
@@ -2105,9 +2091,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"\tresolved ivy file produced in "
-operator|+
-name|ivyFileInCache
+literal|"\tresolved ivy file produced in cache"
 argument_list|)
 expr_stmt|;
 name|report

@@ -58,6 +58,11 @@ name|ModuleRevisionId
 name|getResolvedParentRevisionId
 parameter_list|()
 function_decl|;
+specifier|public
+name|ModuleDescriptor
+name|getParentMd
+parameter_list|()
+function_decl|;
 comment|/**      * If there is an explicit path to check for the parent descriptor, return it.      * Otherwise returns null.      */
 specifier|public
 name|String
@@ -99,6 +104,11 @@ comment|/** @return true if parent dependencies are inherited */
 specifier|public
 name|boolean
 name|areDependenciesInherited
+parameter_list|()
+function_decl|;
+specifier|public
+name|boolean
+name|isLocal
 parameter_list|()
 function_decl|;
 block|}
