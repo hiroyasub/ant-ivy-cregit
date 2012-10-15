@@ -1708,7 +1708,7 @@ init|=
 name|getCache
 argument_list|()
 operator|.
-name|getResolveModuleDescriptor
+name|getResolvedModuleDescriptor
 argument_list|(
 name|mrid
 argument_list|)

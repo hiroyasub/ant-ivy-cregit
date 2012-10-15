@@ -765,7 +765,7 @@ return|;
 block|}
 specifier|public
 name|ModuleDescriptor
-name|getResolveModuleDescriptor
+name|getResolvedModuleDescriptor
 parameter_list|(
 name|ModuleRevisionId
 name|mrid

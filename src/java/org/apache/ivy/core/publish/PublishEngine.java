@@ -1072,7 +1072,7 @@ name|md
 operator|=
 name|cacheManager
 operator|.
-name|getResolveModuleDescriptor
+name|getResolvedModuleDescriptor
 argument_list|(
 name|mrid
 argument_list|)

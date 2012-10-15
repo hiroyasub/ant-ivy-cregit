@@ -126,7 +126,7 @@ name|resolveId
 parameter_list|)
 function_decl|;
 name|ModuleDescriptor
-name|getResolveModuleDescriptor
+name|getResolvedModuleDescriptor
 parameter_list|(
 name|ModuleRevisionId
 name|mrid
