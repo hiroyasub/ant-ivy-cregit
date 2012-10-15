@@ -527,6 +527,13 @@ name|charSet
 init|=
 literal|null
 decl_stmt|;
+if|if
+condition|(
+name|contentType
+operator|!=
+literal|null
+condition|)
+block|{
 name|String
 index|[]
 name|elements
@@ -591,6 +598,7 @@ name|length
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
