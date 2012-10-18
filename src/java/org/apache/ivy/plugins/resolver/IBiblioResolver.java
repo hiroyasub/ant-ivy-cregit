@@ -2146,6 +2146,16 @@ argument_list|,
 name|rev
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|rev
+operator|.
+name|endsWith
+argument_list|(
+literal|"SNAPSHOT"
+argument_list|)
+condition|)
+block|{
 name|String
 name|snapshotVersion
 init|=
@@ -2174,6 +2184,7 @@ operator|+
 name|snapshotVersion
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|String
 name|resolvedPattern
