@@ -607,11 +607,11 @@ name|int
 name|logLevel
 decl_stmt|;
 specifier|private
-name|StringBuilder
+name|StringBuffer
 name|buildLog
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 comment|/**          * Constructs a test listener which will ignore log events above the given level.          */

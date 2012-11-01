@@ -344,11 +344,11 @@ condition|)
 block|{
 continue|continue;
 block|}
-name|StringBuilder
+name|StringBuffer
 name|sb
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 if|if
