@@ -2935,12 +2935,7 @@ name|DefaultExtendsDescriptor
 argument_list|(
 name|parent
 argument_list|,
-name|attributes
-operator|.
-name|getValue
-argument_list|(
-literal|"location"
-argument_list|)
+name|location
 argument_list|,
 operator|(
 name|String
