@@ -700,6 +700,13 @@ name|createNewFile
 argument_list|()
 condition|)
 block|{
+name|DeleteOnExitHook
+operator|.
+name|add
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 literal|true
 return|;
@@ -764,6 +771,13 @@ name|file
 operator|.
 name|delete
 argument_list|()
+expr_stmt|;
+name|DeleteOnExitHook
+operator|.
+name|remove
+argument_list|(
+name|file
+argument_list|)
 expr_stmt|;
 block|}
 block|}
