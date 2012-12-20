@@ -2146,6 +2146,11 @@ argument_list|,
 name|rev
 argument_list|)
 decl_stmt|;
+name|String
+name|patternForRev
+init|=
+name|pattern
+decl_stmt|;
 if|if
 condition|(
 name|rev
@@ -2171,7 +2176,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|pattern
+name|patternForRev
 operator|=
 name|pattern
 operator|.
@@ -2193,7 +2198,7 @@ name|IvyPatternHelper
 operator|.
 name|substitute
 argument_list|(
-name|pattern
+name|patternForRev
 argument_list|,
 name|historicalMrid
 argument_list|,
