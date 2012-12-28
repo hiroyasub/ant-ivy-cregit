@@ -830,6 +830,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// TODO handle:
+comment|// Eclipse-BundleShape ::= ( 'jar' | 'dir' )
 name|String
 name|compression
 init|=
