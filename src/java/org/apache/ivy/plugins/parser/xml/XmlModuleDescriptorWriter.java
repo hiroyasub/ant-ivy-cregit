@@ -3393,7 +3393,7 @@ condition|)
 block|{
 name|out
 operator|.
-name|println
+name|print
 argument_list|(
 literal|" transitive=\"false\""
 argument_list|)
