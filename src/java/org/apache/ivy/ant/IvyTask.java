@@ -19,26 +19,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|DateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|text
-operator|.
-name|SimpleDateFormat
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Date
@@ -128,6 +108,20 @@ operator|.
 name|settings
 operator|.
 name|IvySettings
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|DateUtil
 import|;
 end_import
 
@@ -1062,18 +1056,6 @@ literal|", "
 argument_list|)
 return|;
 block|}
-specifier|private
-specifier|static
-specifier|final
-name|DateFormat
-name|DATE_FORMAT
-init|=
-operator|new
-name|SimpleDateFormat
-argument_list|(
-literal|"yyyyMMddHHmmss"
-argument_list|)
-decl_stmt|;
 specifier|protected
 specifier|static
 name|Date
@@ -1119,7 +1101,7 @@ block|}
 try|try
 block|{
 return|return
-name|DATE_FORMAT
+name|DateUtil
 operator|.
 name|parse
 argument_list|(
@@ -1137,9 +1119,17 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"publication date provided in bad format. should be yyyyMMddHHmmss and not "
+literal|"Publication date provided in bad format. Should be '"
+operator|+
+name|DateUtil
+operator|.
+name|DATE_FORMAT_PATTERN
+operator|+
+literal|"' and not '"
 operator|+
 name|date
+operator|+
+literal|"'!"
 argument_list|)
 throw|;
 block|}
