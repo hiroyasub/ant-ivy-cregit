@@ -235,7 +235,7 @@ throws|throws
 name|Exception
 block|{
 comment|// depends on org="org1" name="mod1.1" rev="1.0"
-comment|// has transitive dependecy on org="org1" name="mod1.2" rev="2.0"
+comment|// has transitive dependency on org="org1" name="mod1.2" rev="2.0"
 name|dependencyUpdateChecker
 operator|.
 name|setFile
@@ -245,6 +245,80 @@ name|File
 argument_list|(
 literal|"test/java/org/apache/ivy/ant/ivy-simple3.xml"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|dependencyUpdateChecker
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"resolve-simple"
+argument_list|,
+name|getIvy
+argument_list|()
+operator|.
+name|getVariable
+argument_list|(
+literal|"ivy.module"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"1.0"
+argument_list|,
+name|getIvy
+argument_list|()
+operator|.
+name|getVariable
+argument_list|(
+literal|"ivy.revision"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertLogContaining
+argument_list|(
+literal|"Dependencies updates available :"
+argument_list|)
+expr_stmt|;
+name|assertLogContaining
+argument_list|(
+literal|"org1#mod1.1\t1.0 -> 2.0"
+argument_list|)
+expr_stmt|;
+name|assertLogNotContaining
+argument_list|(
+literal|"org1#mod1.2 (transitive)\t2.0 -> 2.1"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testSimpleAndShowTransitiveDependencies
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|// depends on org="org1" name="mod1.1" rev="1.0"
+comment|// has transitive dependency on org="org1" name="mod1.2" rev="2.0"
+name|dependencyUpdateChecker
+operator|.
+name|setFile
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/java/org/apache/ivy/ant/ivy-simple3.xml"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dependencyUpdateChecker
+operator|.
+name|setShowTransitive
+argument_list|(
+literal|true
 argument_list|)
 expr_stmt|;
 name|dependencyUpdateChecker
