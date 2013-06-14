@@ -648,11 +648,11 @@ argument_list|)
 operator|==
 literal|null
 decl_stmt|;
-name|StringBuilder
+name|StringBuffer
 name|sb
 init|=
 operator|new
-name|StringBuilder
+name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|sb
