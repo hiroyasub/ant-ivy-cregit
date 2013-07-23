@@ -83,6 +83,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Iterator
 import|;
 end_import
@@ -341,6 +351,14 @@ specifier|final
 name|P2Descriptor
 name|p2Descriptor
 decl_stmt|;
+specifier|private
+name|int
+name|logLevel
+init|=
+name|Message
+operator|.
+name|MSG_INFO
+decl_stmt|;
 specifier|public
 name|P2MetadataParser
 parameter_list|(
@@ -353,6 +371,21 @@ operator|.
 name|p2Descriptor
 operator|=
 name|p2Descriptor
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setLogLevel
+parameter_list|(
+name|int
+name|logLevel
+parameter_list|)
+block|{
+name|this
+operator|.
+name|logLevel
+operator|=
+name|logLevel
 expr_stmt|;
 block|}
 specifier|public
@@ -409,12 +442,19 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|static
 class|class
 name|RepositoryHandler
 extends|extends
 name|DelegetingHandler
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|P2_TIMESTAMP
+init|=
+literal|"p2.timestamp"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -449,7 +489,19 @@ name|addChild
 argument_list|(
 operator|new
 name|PropertiesHandler
-argument_list|()
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+name|P2_TIMESTAMP
+block|}
+argument_list|)
+argument_list|)
 argument_list|,
 operator|new
 name|ChildElementHandler
@@ -485,7 +537,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-literal|"p2.timestamp"
+name|P2_TIMESTAMP
 argument_list|)
 decl_stmt|;
 if|if
@@ -602,7 +654,6 @@ comment|// String description = atts.getValue(DESCRIPTION);
 comment|// String provider = atts.getValue(PROVIDER);
 comment|// }
 block|}
-specifier|static
 class|class
 name|ReferencesHandler
 extends|extends
@@ -709,7 +760,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|RepositoryReferenceHandler
 extends|extends
@@ -952,7 +1002,6 @@ block|}
 block|}
 block|}
 block|}
-specifier|static
 class|class
 name|UnitsHandler
 extends|extends
@@ -1078,12 +1127,19 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|UnitHandler
 extends|extends
 name|DelegetingHandler
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|CATEGORY_PROPERTY
+init|=
+literal|"org.eclipse.equinox.p2.type.category"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -1129,7 +1185,19 @@ name|addChild
 argument_list|(
 operator|new
 name|PropertiesHandler
-argument_list|()
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+operator|new
+name|String
+index|[]
+block|{
+name|CATEGORY_PROPERTY
+block|}
+argument_list|)
+argument_list|)
 argument_list|,
 operator|new
 name|ChildElementHandler
@@ -1165,7 +1233,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-literal|"org.eclipse.equinox.p2.type.category"
+name|CATEGORY_PROPERTY
 argument_list|)
 decl_stmt|;
 if|if
@@ -1611,6 +1679,15 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_VERBOSE
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -1627,6 +1704,7 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 catch|catch
@@ -1634,6 +1712,15 @@ parameter_list|(
 name|ParseException
 name|e
 parameter_list|)
+block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_VERBOSE
+condition|)
 block|{
 name|Message
 operator|.
@@ -1651,6 +1738,7 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 if|if
@@ -1660,6 +1748,15 @@ name|embeddedInfo
 operator|.
 name|isSource
 argument_list|()
+condition|)
+block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_VERBOSE
 condition|)
 block|{
 name|Message
@@ -1676,6 +1773,7 @@ operator|+
 literal|" is not declaring being a source."
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 name|String
@@ -1693,6 +1791,15 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_VERBOSE
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -1707,6 +1814,7 @@ operator|+
 literal|" is not declaring a target symbolic name."
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 name|Version
@@ -1724,6 +1832,15 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_VERBOSE
+condition|)
+block|{
 name|Message
 operator|.
 name|verbose
@@ -1738,6 +1855,7 @@ operator|+
 literal|" is not declaring a target version."
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 name|bundleInfo
@@ -1947,7 +2065,6 @@ return|return
 literal|null
 return|;
 block|}
-specifier|static
 class|class
 name|ProvidesHandler
 extends|extends
@@ -2077,6 +2194,15 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_DEBUG
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -2101,6 +2227,7 @@ operator|+
 name|version
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 name|BundleCapability
@@ -2315,7 +2442,6 @@ throw|;
 block|}
 block|}
 block|}
-specifier|static
 specifier|abstract
 class|class
 name|AbstractRequirementHandler
@@ -2409,6 +2535,15 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|>=
+name|Message
+operator|.
+name|MSG_DEBUG
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -2433,6 +2568,7 @@ operator|+
 name|range
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -2508,7 +2644,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|RequiresHandler
 extends|extends
@@ -2533,7 +2668,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|RequiredHandler
 extends|extends
@@ -2739,7 +2873,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|HostRequirementsHandler
 extends|extends
@@ -2764,7 +2897,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|MetaRequirementsHandler
 extends|extends
@@ -2789,7 +2921,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|ArtifactsHandler
 extends|extends
@@ -2893,7 +3024,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|ArtifactHandler
 extends|extends
@@ -3054,7 +3184,6 @@ comment|// String version = atts.getValue(VERSION);
 comment|// }
 comment|//
 comment|// }
-specifier|static
 class|class
 name|TouchpointDataHandler
 extends|extends
@@ -3140,7 +3269,6 @@ block|{
 comment|// String size = atts.getValue(SIZE);
 block|}
 block|}
-specifier|static
 class|class
 name|InstructionsHandler
 extends|extends
@@ -3282,7 +3410,6 @@ block|{
 comment|// String size = atts.getValue(SIZE);
 block|}
 block|}
-specifier|static
 class|class
 name|InstructionHandler
 extends|extends
@@ -3399,7 +3526,6 @@ comment|// String url = atts.getValue(URL);
 comment|// }
 comment|//
 comment|// }
-specifier|static
 class|class
 name|ChangesHandler
 extends|extends
@@ -3457,7 +3583,6 @@ block|{
 comment|// int size = Integer.parseInt(atts.getValue(SIZE));
 block|}
 block|}
-specifier|static
 class|class
 name|ChangeHandler
 extends|extends
@@ -3482,7 +3607,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|FromHandler
 extends|extends
@@ -3507,7 +3631,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|ToHandler
 extends|extends
@@ -3532,7 +3655,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|PatchScopeHandler
 extends|extends
@@ -3590,7 +3712,6 @@ block|{
 comment|// int size = Integer.parseInt(atts.getValue(SIZE));
 block|}
 block|}
-specifier|static
 class|class
 name|ScopeHandler
 extends|extends
@@ -3637,7 +3758,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
 class|class
 name|LifeCycleHandler
 extends|extends

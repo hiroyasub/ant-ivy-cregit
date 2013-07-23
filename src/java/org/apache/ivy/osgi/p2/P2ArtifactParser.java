@@ -768,6 +768,31 @@ name|getClassifier
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|url
+operator|.
+name|startsWith
+argument_list|(
+literal|"${repoUrl}"
+argument_list|)
+condition|)
+block|{
+comment|// try to avoid costly regexp
+name|url
+operator|=
+name|repoUrl
+operator|+
+name|url
+operator|.
+name|substring
+argument_list|(
+literal|10
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|url
 operator|=
 name|url
@@ -779,6 +804,7 @@ argument_list|,
 name|repoUrl
 argument_list|)
 expr_stmt|;
+block|}
 name|p2Descriptor
 operator|.
 name|addArtifactUrl
@@ -861,28 +887,10 @@ argument_list|(
 name|ARTIFACT
 argument_list|)
 expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|PropertiesHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
+comment|// addChild(new PropertiesHandler(), new ChildElementHandler() {
+comment|// public void childHanlded(DelegetingHandler child) {
+comment|// }
+comment|// });
 block|}
 specifier|protected
 name|void

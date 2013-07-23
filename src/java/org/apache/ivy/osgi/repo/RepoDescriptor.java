@@ -33,6 +33,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -63,6 +83,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -74,42 +104,6 @@ operator|.
 name|util
 operator|.
 name|Set
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
-name|DefaultModuleDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
-name|ModuleDescriptor
 import|;
 end_import
 
@@ -157,39 +151,7 @@ name|osgi
 operator|.
 name|core
 operator|.
-name|BundleInfoAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|core
-operator|.
 name|ExecutionEnvironmentProfileProvider
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
-name|core
-operator|.
-name|OSGiManifestParser
 import|;
 end_import
 
@@ -216,7 +178,7 @@ specifier|private
 specifier|final
 name|Map
 comment|/*<String, Map<String, Set<ModuleDescriptor>>> */
-name|moduleByCapbilities
+name|moduleByCapabilities
 init|=
 operator|new
 name|HashMap
@@ -224,12 +186,12 @@ argument_list|()
 decl_stmt|;
 specifier|private
 specifier|final
-name|Set
+name|List
 comment|/*<ModuleDescriptor> */
 name|modules
 init|=
 operator|new
-name|HashSet
+name|ArrayList
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -241,6 +203,14 @@ specifier|private
 specifier|final
 name|URI
 name|baseUri
+decl_stmt|;
+specifier|private
+name|int
+name|logLevel
+init|=
+name|Message
+operator|.
+name|MSG_INFO
 decl_stmt|;
 specifier|public
 name|RepoDescriptor
@@ -266,6 +236,30 @@ name|profileProvider
 expr_stmt|;
 block|}
 specifier|public
+name|void
+name|setLogLevel
+parameter_list|(
+name|int
+name|logLevel
+parameter_list|)
+block|{
+name|this
+operator|.
+name|logLevel
+operator|=
+name|logLevel
+expr_stmt|;
+block|}
+specifier|public
+name|int
+name|getLogLevel
+parameter_list|()
+block|{
+return|return
+name|logLevel
+return|;
+block|}
+specifier|public
 name|URI
 name|getBaseUri
 parameter_list|()
@@ -275,28 +269,34 @@ name|baseUri
 return|;
 block|}
 specifier|public
-name|Set
-comment|/*<ModuleDescriptor> */
+name|Iterator
+comment|/*<ModuleDescriptorWrapper> */
 name|getModules
 parameter_list|()
 block|{
 return|return
 name|modules
-return|;
-block|}
-specifier|public
-name|Map
-comment|/*<String, Map<String, Set<ModuleDescriptor>>> */
-name|getModuleByCapbilities
-parameter_list|()
-block|{
-return|return
-name|moduleByCapbilities
+operator|.
+name|iterator
+argument_list|()
 return|;
 block|}
 specifier|public
 name|Set
-comment|/*<ModuleDescriptor> */
+comment|/*<String> */
+name|getCapabilities
+parameter_list|()
+block|{
+return|return
+name|moduleByCapabilities
+operator|.
+name|keySet
+argument_list|()
+return|;
+block|}
+specifier|public
+name|Set
+comment|/*<ModuleDescriptorWrapper> */
 name|findModule
 parameter_list|(
 name|String
@@ -307,13 +307,13 @@ name|value
 parameter_list|)
 block|{
 name|Map
-comment|/*<String, Set<ModuleDescriptor>> */
+comment|/*<String, Set<ModuleDescriptorWrapper>> */
 name|modules
 init|=
 operator|(
 name|Map
 operator|)
-name|moduleByCapbilities
+name|moduleByCapabilities
 operator|.
 name|get
 argument_list|(
@@ -353,13 +353,13 @@ name|capabilityName
 parameter_list|)
 block|{
 name|Map
-comment|/*<String, Set<ModuleDescriptor>> */
+comment|/*<String, Set<ModuleDescriptorWrapper>> */
 name|modules
 init|=
 operator|(
 name|Map
 operator|)
-name|moduleByCapbilities
+name|moduleByCapabilities
 operator|.
 name|get
 argument_list|(
@@ -374,13 +374,12 @@ literal|null
 condition|)
 block|{
 return|return
-literal|null
+name|Collections
+operator|.
+name|EMPTY_SET
 return|;
 block|}
 return|return
-operator|(
-name|Set
-operator|)
 name|modules
 operator|.
 name|keySet
@@ -397,7 +396,7 @@ parameter_list|,
 name|String
 name|value
 parameter_list|,
-name|ModuleDescriptor
+name|ModuleDescriptorWrapper
 name|md
 parameter_list|)
 block|{
@@ -409,13 +408,13 @@ name|md
 argument_list|)
 expr_stmt|;
 name|Map
-comment|/*<String, Set<ModuleDescriptor>> */
+comment|/*<String, Set<ModuleDescriptorWrapper>> */
 name|map
 init|=
 operator|(
 name|Map
 operator|)
-name|moduleByCapbilities
+name|moduleByCapabilities
 operator|.
 name|get
 argument_list|(
@@ -433,10 +432,10 @@ name|map
 operator|=
 operator|new
 name|HashMap
-comment|/*<String, Set<ModuleDescriptor>> */
+comment|/*<String, Set<ModuleDescriptorWrapper>> */
 argument_list|()
 expr_stmt|;
-name|moduleByCapbilities
+name|moduleByCapabilities
 operator|.
 name|put
 argument_list|(
@@ -447,7 +446,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Set
-comment|/*<ModuleDescriptor> */
+comment|/*<ModuleDescriptorWrapper> */
 name|bundleReferences
 init|=
 operator|(
@@ -471,7 +470,7 @@ name|bundleReferences
 operator|=
 operator|new
 name|HashSet
-comment|/*<ModuleDescriptor> */
+comment|/*<ModuleDescriptorWrapper> */
 argument_list|()
 expr_stmt|;
 name|map
@@ -495,6 +494,15 @@ name|md
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|logLevel
+operator|<=
+name|Message
+operator|.
+name|MSG_DEBUG
+condition|)
+block|{
 name|Message
 operator|.
 name|debug
@@ -515,10 +523,24 @@ literal|": "
 operator|+
 name|md
 operator|.
-name|getModuleRevisionId
+name|getBundleInfo
+argument_list|()
+operator|.
+name|getSymbolicName
+argument_list|()
+operator|+
+literal|"#"
+operator|+
+name|md
+operator|.
+name|getBundleInfo
+argument_list|()
+operator|.
+name|getVersion
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public
@@ -529,21 +551,15 @@ name|BundleInfo
 name|bundleInfo
 parameter_list|)
 block|{
-name|DefaultModuleDescriptor
+name|ModuleDescriptorWrapper
 name|md
 init|=
-name|BundleInfoAdapter
-operator|.
-name|toModuleDescriptor
+operator|new
+name|ModuleDescriptorWrapper
 argument_list|(
-name|OSGiManifestParser
-operator|.
-name|getInstance
-argument_list|()
+name|bundleInfo
 argument_list|,
 name|baseUri
-argument_list|,
-name|bundleInfo
 argument_list|,
 name|profileProvider
 argument_list|)

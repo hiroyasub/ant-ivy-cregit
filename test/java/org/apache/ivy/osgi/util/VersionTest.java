@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
 name|junit
 operator|.
 name|framework
@@ -68,7 +58,7 @@ literal|"1.0.0"
 argument_list|,
 name|v
 operator|.
-name|numbersAsString
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -96,7 +86,7 @@ literal|"1.2.0"
 argument_list|,
 name|v
 operator|.
-name|numbersAsString
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -124,7 +114,7 @@ literal|"1.2.3"
 argument_list|,
 name|v
 operator|.
-name|numbersAsString
+name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
