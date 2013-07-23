@@ -33,16 +33,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collections
 import|;
 end_import
@@ -74,16 +64,6 @@ operator|.
 name|util
 operator|.
 name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -186,12 +166,12 @@ argument_list|()
 decl_stmt|;
 specifier|private
 specifier|final
-name|List
+name|Set
 comment|/*<ModuleDescriptor> */
 name|modules
 init|=
 operator|new
-name|ArrayList
+name|HashSet
 argument_list|()
 decl_stmt|;
 specifier|private
