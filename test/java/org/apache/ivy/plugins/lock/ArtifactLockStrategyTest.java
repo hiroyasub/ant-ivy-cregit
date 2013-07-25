@@ -569,8 +569,10 @@ operator|.
 name|setLockStrategy
 argument_list|(
 operator|new
-name|ArtifactLockStrategy
-argument_list|()
+name|CreateFileLockStrategy
+argument_list|(
+literal|false
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
