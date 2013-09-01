@@ -299,7 +299,13 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
+operator|new
+name|ParseException
+argument_list|(
 literal|"Ill formed OSGi version"
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -328,7 +334,13 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
+operator|new
+name|ParseException
+argument_list|(
 literal|"Major part of an OSGi version should be an integer"
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -365,7 +377,13 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
+operator|new
+name|ParseException
+argument_list|(
 literal|"Minor part of an OSGi version should be an integer"
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 throw|;
 block|}
@@ -402,7 +420,13 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
+operator|new
+name|ParseException
+argument_list|(
 literal|"Patch part of an OSGi version should be an integer"
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 throw|;
 block|}
