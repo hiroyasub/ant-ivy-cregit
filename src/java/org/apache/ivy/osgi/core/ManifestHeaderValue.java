@@ -549,12 +549,6 @@ name|start
 init|=
 literal|false
 decl_stmt|;
-comment|// true if the value/parameter parsing is ended, then only white spaces are allowed
-name|boolean
-name|end
-init|=
-literal|false
-decl_stmt|;
 do|do
 block|{
 switch|switch
@@ -610,29 +604,16 @@ condition|(
 name|start
 condition|)
 block|{
-name|end
-operator|=
-literal|true
+name|buffer
+operator|.
+name|append
+argument_list|(
+name|c
+argument_list|)
 expr_stmt|;
 block|}
 break|break;
 default|default:
-if|if
-condition|(
-name|end
-condition|)
-block|{
-name|error
-argument_list|(
-literal|"Expecting the end of a value or of an parameter name"
-argument_list|)
-expr_stmt|;
-comment|// try to recover: restart the parsing of the value or parameter
-name|end
-operator|=
-literal|false
-expr_stmt|;
-block|}
 name|start
 operator|=
 literal|true

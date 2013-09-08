@@ -568,6 +568,33 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
+name|void
+name|testSpaceInValue
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|ManifestHeaderValue
+name|value
+init|=
+operator|new
+name|ManifestHeaderValue
+argument_list|(
+literal|"glassfish javax.servlet.3.1.0.b33"
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|"glassfish javax.servlet.3.1.0.b33"
+argument_list|,
+name|value
+operator|.
+name|getSingleValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
