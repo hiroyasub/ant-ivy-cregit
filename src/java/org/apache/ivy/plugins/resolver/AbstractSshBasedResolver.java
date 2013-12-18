@@ -120,6 +120,24 @@ name|filePath
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Determines whether a local SSH agent may be used for authentication      *      * @param allowedAgentUse      *            true if an agent may be used if available      */
+specifier|public
+name|void
+name|setAllowedAgentUse
+parameter_list|(
+name|boolean
+name|allowedAgentUse
+parameter_list|)
+block|{
+name|getSshBasedRepository
+argument_list|()
+operator|.
+name|setAllowedAgentUse
+argument_list|(
+name|allowedAgentUse
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Optional password file. If set the repository will use it as an encypted property file, to      * load username and passwd entries, and to store them if the user choose to do so. Defaults to      * user.dir/.ivy/[host].sftp.passwd, set it to null to disable this feature.      */
 specifier|public
 name|void

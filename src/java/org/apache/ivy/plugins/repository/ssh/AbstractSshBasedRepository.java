@@ -200,6 +200,12 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+specifier|private
+name|boolean
+name|allowedAgentUse
+init|=
+literal|false
+decl_stmt|;
 specifier|public
 name|AbstractSshBasedRepository
 parameter_list|()
@@ -481,6 +487,9 @@ name|getKeyFilePassword
 argument_list|()
 argument_list|,
 name|getPassFile
+argument_list|()
+argument_list|,
+name|isAllowedAgentUse
 argument_list|()
 argument_list|)
 return|;
@@ -1030,6 +1039,32 @@ block|{
 return|return
 name|passFile
 return|;
+block|}
+comment|/**      * @return allowedAgentUse      *            Whether use of a local SSH agent for authentication is allowed      */
+specifier|public
+name|boolean
+name|isAllowedAgentUse
+parameter_list|()
+block|{
+return|return
+name|allowedAgentUse
+return|;
+block|}
+comment|/**      * @param allowedAgentUse      *            Whether use of a local SSH agent for authentication is allowed      */
+specifier|public
+name|void
+name|setAllowedAgentUse
+parameter_list|(
+name|boolean
+name|allowedAgentUse
+parameter_list|)
+block|{
+name|this
+operator|.
+name|allowedAgentUse
+operator|=
+name|allowedAgentUse
+expr_stmt|;
 block|}
 specifier|protected
 specifier|abstract
