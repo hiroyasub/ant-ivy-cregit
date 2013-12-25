@@ -1035,7 +1035,7 @@ name|newInstance
 argument_list|(
 name|BundleInfo
 operator|.
-name|BUNDLE_TYPE
+name|PACKAGE_TYPE
 argument_list|,
 name|pkg
 argument_list|)
@@ -2070,6 +2070,21 @@ argument_list|)
 condition|)
 block|{
 comment|// don't declare package exported by the current bundle
+continue|continue;
+block|}
+if|if
+condition|(
+name|BundleInfo
+operator|.
+name|EXECUTION_ENVIRONMENT_TYPE
+operator|.
+name|equals
+argument_list|(
+name|type
+argument_list|)
+condition|)
+block|{
+comment|// execution environment are handled elsewhere
 continue|continue;
 block|}
 name|ModuleRevisionId

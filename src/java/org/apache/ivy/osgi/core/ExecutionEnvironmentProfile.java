@@ -44,12 +44,16 @@ name|ExecutionEnvironmentProfile
 block|{
 specifier|private
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|pkgNames
 init|=
 operator|new
 name|TreeSet
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -106,7 +110,9 @@ block|}
 block|}
 specifier|public
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|getPkgNames
 parameter_list|()
 block|{
