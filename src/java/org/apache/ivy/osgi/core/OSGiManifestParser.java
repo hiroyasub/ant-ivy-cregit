@@ -305,6 +305,11 @@ block|}
 specifier|private
 name|ExecutionEnvironmentProfileProvider
 name|profileProvider
+init|=
+name|ExecutionEnvironmentProfileProvider
+operator|.
+name|getInstance
+argument_list|()
 decl_stmt|;
 specifier|public
 name|void
