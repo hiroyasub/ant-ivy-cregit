@@ -239,6 +239,21 @@ return|return
 name|location
 return|;
 block|}
+specifier|public
+name|void
+name|setLocation
+parameter_list|(
+name|String
+name|location
+parameter_list|)
+block|{
+name|this
+operator|.
+name|location
+operator|=
+name|location
+expr_stmt|;
+block|}
 comment|/**      * Return the artifact that this location is pointing at.      *       * @return the artifact that this location is pointing at.      */
 specifier|public
 name|Artifact

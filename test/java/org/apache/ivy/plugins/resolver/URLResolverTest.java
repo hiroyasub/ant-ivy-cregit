@@ -2464,7 +2464,7 @@ name|assertEquals
 argument_list|(
 name|DownloadStatus
 operator|.
-name|SUCCESSFUL
+name|NO
 argument_list|,
 name|ar
 operator|.
