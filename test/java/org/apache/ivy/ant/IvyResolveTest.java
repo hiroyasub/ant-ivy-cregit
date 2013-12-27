@@ -348,9 +348,10 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+comment|/* disabled: Ivy is not thread-safe, and this usage is not supported at this time */
 specifier|public
 name|void
-name|testIVY1454
+name|disabledIVY1454
 parameter_list|()
 throws|throws
 name|Exception
