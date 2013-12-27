@@ -2145,6 +2145,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|private
+specifier|synchronized
 name|void
 name|addSystemProperties
 parameter_list|()
@@ -2192,6 +2193,7 @@ block|}
 block|}
 comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      */
 specifier|public
+specifier|synchronized
 name|void
 name|configureRepositories
 parameter_list|(
@@ -2373,6 +2375,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|typeDefs
 parameter_list|(
@@ -2391,6 +2394,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|typeDefs
 parameter_list|(
@@ -2437,6 +2441,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|typeDefs
 parameter_list|(
@@ -2453,6 +2458,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|typeDefs
 parameter_list|(
@@ -2511,6 +2517,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|load
 parameter_list|(
@@ -2663,6 +2670,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|load
 parameter_list|(
@@ -2779,6 +2787,7 @@ expr_stmt|;
 block|}
 comment|/**      * Default initialization of settings, useful when you don't want to load your settings from a      * settings file or URL, but prefer to set them manually. By calling this method you will still      * have the basic initialization done when loading settings.      *       * @throws IOException      */
 specifier|public
+specifier|synchronized
 name|void
 name|defaultInit
 parameter_list|()
@@ -2841,6 +2850,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadDefault
 parameter_list|()
@@ -2857,6 +2867,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadDefault14
 parameter_list|()
@@ -2983,6 +2994,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setSettingsVariables
 parameter_list|(
@@ -3136,6 +3148,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setSettingsVariables
 parameter_list|(
@@ -3426,6 +3439,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadProperties
 parameter_list|(
@@ -3444,6 +3458,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadProperties
 parameter_list|(
@@ -3468,6 +3483,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadProperties
 parameter_list|(
@@ -3486,6 +3502,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|loadProperties
 parameter_list|(
@@ -3576,6 +3593,7 @@ block|}
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setVariable
 parameter_list|(
@@ -3597,6 +3615,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setVariable
 parameter_list|(
@@ -3625,6 +3644,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setVariable
 parameter_list|(
@@ -3731,6 +3751,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addAllVariables
 parameter_list|(
@@ -3747,6 +3768,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addAllVariables
 parameter_list|(
@@ -3814,6 +3836,7 @@ block|}
 block|}
 comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      *         If the input str doesn't use any variable, the same object is returned      */
 specifier|public
+specifier|synchronized
 name|String
 name|substitute
 parameter_list|(
@@ -3834,6 +3857,7 @@ return|;
 block|}
 comment|/**      * Substitute variables in the given map values by their value found in the current set of      * variables      *       * @param strings      *            the map of strings in which substitution should be made      * @return a new map of strings in which all current ivy variables in values have been      *         substituted by their value      */
 specifier|public
+specifier|synchronized
 name|Map
 comment|/*<String, String>*/
 name|substitute
@@ -3913,6 +3937,7 @@ return|;
 block|}
 comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return      */
 specifier|public
+specifier|synchronized
 name|IvyVariableContainer
 name|getVariables
 parameter_list|()
@@ -3922,6 +3947,7 @@ name|variableContainer
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Class
 name|typeDef
 parameter_list|(
@@ -3944,6 +3970,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Class
 name|typeDef
 parameter_list|(
@@ -4131,6 +4158,7 @@ name|classloader
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addClasspathURL
 parameter_list|(
@@ -4151,6 +4179,7 @@ literal|null
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|Map
 name|getTypeDefs
 parameter_list|()
@@ -4160,6 +4189,7 @@ name|typeDefs
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Class
 name|getTypeDef
 parameter_list|(
@@ -4181,6 +4211,7 @@ return|;
 block|}
 comment|// methods which match ivy conf method signature specs
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -4195,6 +4226,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -4214,6 +4246,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -4228,6 +4261,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addSignatureGenerator
 parameter_list|(
@@ -4254,6 +4288,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|SignatureGenerator
 name|getSignatureGenerator
 parameter_list|(
@@ -4274,6 +4309,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addResolver
 parameter_list|(
@@ -4430,6 +4466,7 @@ block|}
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultCache
 parameter_list|(
@@ -4493,6 +4530,7 @@ block|}
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultResolver
 parameter_list|(
@@ -4568,6 +4606,7 @@ block|}
 block|}
 comment|/**      * regular expressions as explained in Pattern class may be used in attributes      */
 specifier|public
+specifier|synchronized
 name|void
 name|addModuleConfiguration
 parameter_list|(
@@ -4623,6 +4662,7 @@ expr_stmt|;
 block|}
 comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved      * with respect to the settings's base directory.      *      * @param fileName The name of the file to resolve.      *                 Must not be<code>null</code>.      *      * @return the resolved File.      *      */
 specifier|public
+specifier|synchronized
 name|File
 name|resolveFile
 parameter_list|(
@@ -4642,6 +4682,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setBaseDir
 parameter_list|(
@@ -4686,6 +4727,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|File
 name|getBaseDir
 parameter_list|()
@@ -4695,6 +4737,7 @@ name|baseDir
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|File
 name|getDefaultIvyUserDir
 parameter_list|()
@@ -4775,6 +4818,7 @@ name|defaultUserDir
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultIvyUserDir
 parameter_list|(
@@ -4814,6 +4858,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|File
 name|getDefaultCache
 parameter_list|()
@@ -4882,6 +4927,7 @@ name|defaultCache
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultRepositoryCacheBasedir
 parameter_list|(
@@ -4935,6 +4981,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultResolutionCacheBasedir
 parameter_list|(
@@ -4978,6 +5025,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|File
 name|getDefaultRepositoryCacheBasedir
 parameter_list|()
@@ -5017,6 +5065,7 @@ return|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|File
 name|getDefaultResolutionCacheBasedir
 parameter_list|()
@@ -5056,6 +5105,7 @@ return|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDictatorResolver
 parameter_list|(
@@ -5069,6 +5119,7 @@ name|resolver
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|DependencyResolver
 name|getResolver
 parameter_list|(
@@ -5103,6 +5154,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|hasResolver
 parameter_list|(
@@ -5120,6 +5172,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|DependencyResolver
 name|getResolver
 parameter_list|(
@@ -5173,6 +5226,7 @@ name|resolver
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|DependencyResolver
 name|getDefaultResolver
 parameter_list|()
@@ -5213,6 +5267,7 @@ name|defaultResolver
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getResolverName
 parameter_list|(
@@ -5275,6 +5330,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getDefaultBranch
 parameter_list|(
@@ -5338,6 +5394,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getDefaultBranch
 parameter_list|()
@@ -5347,6 +5404,7 @@ name|defaultBranch
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultBranch
 parameter_list|(
@@ -5362,6 +5420,7 @@ name|defaultBranch
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|ConflictManager
 name|getConflictManager
 parameter_list|(
@@ -5461,6 +5520,7 @@ return|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getResolveMode
 parameter_list|(
@@ -5524,6 +5584,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getDefaultResolveMode
 parameter_list|()
@@ -5533,6 +5594,7 @@ name|defaultResolveMode
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultResolveMode
 parameter_list|(
@@ -5548,6 +5610,7 @@ name|defaultResolveMode
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5567,6 +5630,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|ConflictManager
 name|getConflictManager
 parameter_list|(
@@ -5602,6 +5666,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConflictManager
 parameter_list|(
@@ -5628,6 +5693,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5647,6 +5713,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|LatestStrategy
 name|getLatestStrategy
 parameter_list|(
@@ -5682,6 +5749,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addLatestStrategy
 parameter_list|(
@@ -5708,6 +5776,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5727,6 +5796,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|LockStrategy
 name|getLockStrategy
 parameter_list|(
@@ -5762,6 +5832,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addLockStrategy
 parameter_list|(
@@ -5788,6 +5859,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5802,6 +5874,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|Namespace
 name|getNamespace
 parameter_list|(
@@ -5837,6 +5910,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|final
 name|Namespace
 name|getSystemNamespace
 parameter_list|()
@@ -5848,6 +5922,7 @@ name|SYSTEM_NAMESPACE
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addNamespace
 parameter_list|(
@@ -5874,6 +5949,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5888,6 +5964,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|PatternMatcher
 name|getMatcher
 parameter_list|(
@@ -5908,6 +5985,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addMatcher
 parameter_list|(
@@ -5934,6 +6012,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -5948,6 +6027,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|RepositoryCacheManager
 name|getRepositoryCacheManager
 parameter_list|(
@@ -5968,6 +6048,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addRepositoryCacheManager
 parameter_list|(
@@ -5994,6 +6075,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|RepositoryCacheManager
 index|[]
 name|getRepositoryCacheManagers
@@ -6023,6 +6105,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -6037,6 +6120,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|ReportOutputter
 name|getReportOutputter
 parameter_list|(
@@ -6057,6 +6141,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addReportOutputter
 parameter_list|(
@@ -6083,6 +6168,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|ReportOutputter
 index|[]
 name|getReportOutputters
@@ -6112,6 +6198,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -6126,6 +6213,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|VersionMatcher
 name|getVersionMatcher
 parameter_list|(
@@ -6146,6 +6234,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addVersionMatcher
 parameter_list|(
@@ -6216,6 +6305,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+specifier|synchronized
 name|VersionMatcher
 index|[]
 name|getVersionMatchers
@@ -6245,6 +6335,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|VersionMatcher
 name|getVersionMatcher
 parameter_list|()
@@ -6265,6 +6356,7 @@ name|versionMatcher
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|configureDefaultVersionMatcher
 parameter_list|()
@@ -6292,6 +6384,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|CircularDependencyStrategy
 name|getCircularDependencyStrategy
 parameter_list|()
@@ -6316,6 +6409,7 @@ name|circularDependencyStrategy
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|CircularDependencyStrategy
 name|getCircularDependencyStrategy
 parameter_list|(
@@ -6351,6 +6445,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setCircularDependencyStrategy
 parameter_list|(
@@ -6364,6 +6459,7 @@ name|strategy
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -6429,6 +6525,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|StatusManager
 name|getStatusManager
 parameter_list|()
@@ -6469,6 +6566,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns the file names of the files that should be ignored when       * creating a file listing.      */
 specifier|public
+specifier|synchronized
 name|String
 index|[]
 name|getIgnorableFilenames
@@ -6496,6 +6594,7 @@ return|;
 block|}
 comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
 specifier|public
+specifier|synchronized
 name|void
 name|filterIgnore
 parameter_list|(
@@ -6512,6 +6611,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|isCheckUpToDate
 parameter_list|()
@@ -6521,6 +6621,7 @@ name|checkUpToDate
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setCheckUpToDate
 parameter_list|(
@@ -6536,6 +6637,7 @@ name|checkUpToDate
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|doValidate
 parameter_list|()
@@ -6545,6 +6647,7 @@ name|validate
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setValidate
 parameter_list|(
@@ -6560,6 +6663,7 @@ name|validate
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getVariable
 parameter_list|(
@@ -6577,6 +6681,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|ConflictManager
 name|getDefaultConflictManager
 parameter_list|()
@@ -6615,6 +6720,7 @@ name|defaultConflictManager
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultConflictManager
 parameter_list|(
@@ -6630,6 +6736,7 @@ name|defaultConflictManager
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|LatestStrategy
 name|getDefaultLatestStrategy
 parameter_list|()
@@ -6653,6 +6760,7 @@ name|defaultLatestStrategy
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultLatestStrategy
 parameter_list|(
@@ -6668,6 +6776,7 @@ name|defaultLatestStrategy
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|LockStrategy
 name|getDefaultLockStrategy
 parameter_list|()
@@ -6691,6 +6800,7 @@ name|defaultLockStrategy
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultLockStrategy
 parameter_list|(
@@ -6706,6 +6816,7 @@ name|defaultLockStrategy
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|RepositoryCacheManager
 name|getDefaultRepositoryCacheManager
 parameter_list|()
@@ -6741,6 +6852,7 @@ name|defaultRepositoryCacheManager
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultRepositoryCacheManager
 parameter_list|(
@@ -6756,6 +6868,7 @@ name|cache
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|ResolutionCacheManager
 name|getResolutionCacheManager
 parameter_list|()
@@ -6787,6 +6900,7 @@ name|resolutionCacheManager
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setResolutionCacheManager
 parameter_list|(
@@ -6802,6 +6916,7 @@ name|resolutionCacheManager
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addTrigger
 parameter_list|(
@@ -6823,6 +6938,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|List
 name|getTriggers
 parameter_list|()
@@ -6832,6 +6948,7 @@ name|triggers
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|addConfigured
 parameter_list|(
@@ -6846,6 +6963,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|isUseRemoteConfig
 parameter_list|()
@@ -6855,6 +6973,7 @@ name|useRemoteConfig
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setUseRemoteConfig
 parameter_list|(
@@ -6870,6 +6989,7 @@ name|useRemoteConfig
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|logModulesInUse
 parameter_list|()
@@ -6899,6 +7019,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|logModuleWhenFound
 parameter_list|()
@@ -6928,6 +7049,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|logResolvedRevision
 parameter_list|()
@@ -6957,6 +7079,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|debugConflictResolution
 parameter_list|()
@@ -7006,7 +7129,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-specifier|final
+specifier|synchronized
 name|boolean
 name|debugLocking
 parameter_list|()
@@ -7056,6 +7179,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|dumpMemoryUsage
 parameter_list|()
@@ -7105,6 +7229,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|logNotConvertedExclusionRule
 parameter_list|()
@@ -7114,6 +7239,7 @@ name|logNotConvertedExclusionRule
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setLogNotConvertedExclusionRule
 parameter_list|(
@@ -7332,6 +7458,7 @@ return|;
 block|}
 block|}
 specifier|public
+specifier|final
 name|long
 name|getInterruptTimeout
 parameter_list|()
@@ -7341,6 +7468,7 @@ name|INTERUPT_TIMEOUT
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Collection
 name|getResolvers
 parameter_list|()
@@ -7353,6 +7481,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Collection
 name|getResolverNames
 parameter_list|()
@@ -7365,6 +7494,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|Collection
 name|getMatcherNames
 parameter_list|()
@@ -7377,6 +7507,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|IvyVariableContainer
 name|getVariableContainer
 parameter_list|()
@@ -7387,6 +7518,7 @@ return|;
 block|}
 comment|/**      * Use a different variable container.      *       * @param variables      */
 specifier|public
+specifier|synchronized
 name|void
 name|setVariableContainer
 parameter_list|(
@@ -7400,6 +7532,7 @@ name|variables
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|RelativeUrlResolver
 name|getRelativeUrlResolver
 parameter_list|()
@@ -7411,6 +7544,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultCacheIvyPattern
 parameter_list|(
@@ -7433,6 +7567,7 @@ name|defaultCacheIvyPattern
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getDefaultCacheIvyPattern
 parameter_list|()
@@ -7442,6 +7577,7 @@ name|defaultCacheIvyPattern
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultCacheArtifactPattern
 parameter_list|(
@@ -7464,6 +7600,7 @@ name|defaultCacheArtifactPattern
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|String
 name|getDefaultCacheArtifactPattern
 parameter_list|()
@@ -7473,6 +7610,7 @@ name|defaultCacheArtifactPattern
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|setDefaultUseOrigin
 parameter_list|(
@@ -7486,6 +7624,7 @@ name|useOrigin
 expr_stmt|;
 block|}
 specifier|public
+specifier|synchronized
 name|boolean
 name|isDefaultUseOrigin
 parameter_list|()
@@ -7495,6 +7634,7 @@ name|defaultUseOrigin
 return|;
 block|}
 specifier|public
+specifier|synchronized
 name|void
 name|useDeprecatedUseOrigin
 parameter_list|()
@@ -7516,6 +7656,7 @@ expr_stmt|;
 block|}
 comment|/**      * Validates the settings, throwing an {@link IllegalStateException} if the current state is not      * valid.      *       * @throws IllegalStateException      *             if the settings is not valid.      */
 specifier|public
+specifier|synchronized
 name|void
 name|validate
 parameter_list|()
