@@ -65,16 +65,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -103,7 +93,7 @@ name|osgi
 operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -228,7 +218,7 @@ specifier|static
 class|class
 name|FeatureHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -370,13 +360,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|DescriptionHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|DescriptionHandler
 name|child
 parameter_list|)
 block|{
@@ -405,13 +398,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|LicenseHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|LicenseHandler
 name|child
 parameter_list|)
 block|{
@@ -440,13 +436,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|CopyrightHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|CopyrightHandler
 name|child
 parameter_list|)
 block|{
@@ -475,13 +474,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|PluginHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|PluginHandler
 name|child
 parameter_list|)
 block|{
@@ -489,12 +491,7 @@ name|feature
 operator|.
 name|addPlugin
 argument_list|(
-operator|(
-operator|(
-name|PluginHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|plugin
 argument_list|)
@@ -511,50 +508,34 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|RequiresHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|RequiresHandler
 name|child
 parameter_list|)
 block|{
-name|Iterator
-name|itRequire
-init|=
-operator|(
-operator|(
-name|RequiresHandler
-operator|)
+for|for
+control|(
+name|Require
+name|require
+range|:
 name|child
-operator|)
 operator|.
 name|requires
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|itRequire
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|feature
 operator|.
 name|addRequire
 argument_list|(
-operator|(
-name|Require
-operator|)
-name|itRequire
-operator|.
-name|next
-argument_list|()
+name|require
 argument_list|)
 expr_stmt|;
 block|}
@@ -562,28 +543,10 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|UrlHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
+comment|//            addChild(new UrlHandler(), new ChildElementHandler<UrlHandler>() {
+comment|//                public void childHanlded(UrlHandler child) {
+comment|//                }
+comment|//            });
 block|}
 specifier|protected
 name|void
@@ -823,11 +786,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|PluginHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1023,11 +987,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|DescriptionHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1037,14 +1002,7 @@ name|DESCRIPTION
 init|=
 literal|"description"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
+comment|//        private static final String URL = "url";
 specifier|public
 name|DescriptionHandler
 parameter_list|()
@@ -1070,23 +1028,15 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
+comment|//            String url = atts.getValue(URL);
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|LicenseHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1096,14 +1046,7 @@ name|LICENSE
 init|=
 literal|"license"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
+comment|//        private static final String URL = "url";
 specifier|public
 name|LicenseHandler
 parameter_list|()
@@ -1129,23 +1072,15 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
+comment|//            String url = atts.getValue(URL);
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|CopyrightHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1155,14 +1090,7 @@ name|COPYRIGHT
 init|=
 literal|"copyright"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
+comment|//        private static final String URL = "url";
 specifier|public
 name|CopyrightHandler
 parameter_list|()
@@ -1188,23 +1116,14 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
+comment|//            String url = atts.getValue(URL);
 block|}
 block|}
 specifier|static
 class|class
 name|RequiresHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1215,10 +1134,16 @@ init|=
 literal|"requires"
 decl_stmt|;
 name|List
+argument_list|<
+name|Require
+argument_list|>
 name|requires
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Require
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -1238,13 +1163,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ImportHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ImportHandler
 name|child
 parameter_list|)
 block|{
@@ -1252,12 +1180,7 @@ name|requires
 operator|.
 name|add
 argument_list|(
-operator|(
-operator|(
-name|ImportHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|require
 argument_list|)
@@ -1268,11 +1191,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|ImportHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 name|Require
 name|require
@@ -1450,435 +1374,107 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
-class|class
-name|IncludesHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|INCLUDES
-init|=
-literal|"includes"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|FILTER
-init|=
-literal|"filter"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|OPTIONAL
-init|=
-literal|"optional"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|VERSION
-init|=
-literal|"version"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|ID
-init|=
-literal|"id"
-decl_stmt|;
-specifier|public
-name|IncludesHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|INCLUDES
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|String
-name|id
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|ID
-argument_list|)
-decl_stmt|;
-name|String
-name|version
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|VERSION
-argument_list|)
-decl_stmt|;
-name|String
-name|optional
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|OPTIONAL
-argument_list|)
-decl_stmt|;
-name|String
-name|filter
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|FILTER
-argument_list|)
-decl_stmt|;
-block|}
-block|}
-specifier|static
-class|class
-name|InstallHandlerHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|INSTALL_HANDLER
-init|=
-literal|"install-handler"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|LIBRARY
-init|=
-literal|"library"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|HANDLER
-init|=
-literal|"handler"
-decl_stmt|;
-specifier|public
-name|InstallHandlerHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|INSTALL_HANDLER
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|String
-name|handler
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|HANDLER
-argument_list|)
-decl_stmt|;
-name|String
-name|library
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|LIBRARY
-argument_list|)
-decl_stmt|;
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
-block|}
-block|}
-specifier|static
-class|class
-name|UrlHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|public
-name|UrlHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|URL
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|UpdateHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|DiscoveryHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-specifier|static
-class|class
-name|UpdateHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|UPDATE
-init|=
-literal|"update"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|LABEL
-init|=
-literal|"label"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|public
-name|UpdateHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|UPDATE
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|String
-name|label
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|LABEL
-argument_list|)
-decl_stmt|;
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
-block|}
-block|}
-specifier|static
-class|class
-name|DiscoveryHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|DISCOVERY
-init|=
-literal|"discovery"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|LABEL
-init|=
-literal|"label"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|TYPE
-init|=
-literal|"type"
-decl_stmt|;
-specifier|public
-name|DiscoveryHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|DISCOVERY
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|String
-name|type
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|TYPE
-argument_list|)
-decl_stmt|;
-name|String
-name|label
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|LABEL
-argument_list|)
-decl_stmt|;
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
-block|}
-block|}
+comment|//    private static class IncludesHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String INCLUDES = "includes";
+comment|//
+comment|//        private static final String FILTER = "filter";
+comment|//
+comment|//        private static final String OPTIONAL = "optional";
+comment|//
+comment|//        private static final String VERSION = "version";
+comment|//
+comment|//        private static final String ID = "id";
+comment|//
+comment|//        public IncludesHandler() {
+comment|//            super(INCLUDES);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            String id = atts.getValue(ID);
+comment|//            String version = atts.getValue(VERSION);
+comment|//            String optional = atts.getValue(OPTIONAL);
+comment|//            String filter = atts.getValue(FILTER);
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private static class InstallHandlerHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String INSTALL_HANDLER = "install-handler";
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        private static final String LIBRARY = "library";
+comment|//
+comment|//        private static final String HANDLER = "handler";
+comment|//
+comment|//        public InstallHandlerHandler() {
+comment|//            super(INSTALL_HANDLER);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            String handler = atts.getValue(HANDLER);
+comment|//            String library = atts.getValue(LIBRARY);
+comment|//            String url = atts.getValue(URL);
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private static class UrlHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        public UrlHandler() {
+comment|//            super(URL);
+comment|//            addChild(new UpdateHandler(), new ChildElementHandler<UpdateHandler>() {
+comment|//                public void childHanlded(UpdateHandler child) {
+comment|//                }
+comment|//            });
+comment|//            addChild(new DiscoveryHandler(), new ChildElementHandler<DiscoveryHandler>() {
+comment|//                public void childHanlded(DiscoveryHandler child) {
+comment|//                }
+comment|//            });
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private static class UpdateHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String UPDATE = "update";
+comment|//
+comment|//        private static final String LABEL = "label";
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        public UpdateHandler() {
+comment|//            super(UPDATE);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            String label = atts.getValue(LABEL);
+comment|//            String url = atts.getValue(URL);
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private static class DiscoveryHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String DISCOVERY = "discovery";
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        private static final String LABEL = "label";
+comment|//
+comment|//        private static final String TYPE = "type";
+comment|//
+comment|//        public DiscoveryHandler() {
+comment|//            super(DISCOVERY);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            String type = atts.getValue(TYPE);
+comment|//            String label = atts.getValue(LABEL);
+comment|//            String url = atts.getValue(URL);
+comment|//        }
+comment|//
+comment|//    }
 block|}
 end_class
 

@@ -391,8 +391,12 @@ begin_class
 specifier|public
 class|class
 name|ResolverManifestIterable
+implements|implements
+name|Iterable
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
-comment|//implements Iterable/*<ManifestAndLocation> */{
 comment|// We should support the interface DependencyResolver, but the API is not convenient to get
 comment|// references to artifact
 specifier|private
@@ -416,7 +420,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
@@ -430,7 +436,9 @@ class|class
 name|ResolverManifestIterator
 implements|implements
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
 specifier|private
 name|OrganisationEntry
@@ -1005,7 +1013,7 @@ literal|true
 return|;
 block|}
 specifier|public
-name|Object
+name|ManifestAndLocation
 name|next
 parameter_list|()
 block|{

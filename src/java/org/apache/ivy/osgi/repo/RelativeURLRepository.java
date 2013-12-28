@@ -172,12 +172,20 @@ expr_stmt|;
 block|}
 specifier|private
 name|Map
-comment|/*<String, Resource> */
+argument_list|<
+name|String
+argument_list|,
+name|Resource
+argument_list|>
 name|resourcesCache
 init|=
 operator|new
 name|HashMap
-comment|/*<String, Resource> */
+argument_list|<
+name|String
+argument_list|,
+name|Resource
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public

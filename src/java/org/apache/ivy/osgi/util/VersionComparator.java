@@ -33,13 +33,17 @@ class|class
 name|VersionComparator
 implements|implements
 name|Comparator
-comment|/*<Version> */
+argument_list|<
+name|Version
+argument_list|>
 block|{
 specifier|public
 specifier|static
 specifier|final
 name|Comparator
-comment|/*<Version> */
+argument_list|<
+name|Version
+argument_list|>
 name|ASCENDING
 init|=
 operator|new
@@ -52,7 +56,9 @@ specifier|public
 specifier|static
 specifier|final
 name|Comparator
-comment|/*<Version> */
+argument_list|<
+name|Version
+argument_list|>
 name|DESCENDING
 init|=
 operator|new
@@ -79,32 +85,6 @@ name|reverse
 operator|=
 name|reverse
 expr_stmt|;
-block|}
-specifier|public
-name|int
-name|compare
-parameter_list|(
-name|Object
-name|o1
-parameter_list|,
-name|Object
-name|o2
-parameter_list|)
-block|{
-return|return
-name|compare
-argument_list|(
-operator|(
-name|Version
-operator|)
-name|o1
-argument_list|,
-operator|(
-name|Version
-operator|)
-name|o1
-argument_list|)
-return|;
 block|}
 specifier|public
 name|int

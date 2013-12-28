@@ -114,7 +114,7 @@ specifier|public
 class|class
 name|BundleRepoDescriptor
 extends|extends
-name|RepoDescriptor
+name|EditableRepoDescriptor
 block|{
 specifier|private
 name|String
@@ -195,7 +195,9 @@ name|void
 name|populate
 parameter_list|(
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 name|it
 parameter_list|)
 block|{
@@ -210,9 +212,6 @@ block|{
 name|ManifestAndLocation
 name|manifestAndLocation
 init|=
-operator|(
-name|ManifestAndLocation
-operator|)
 name|it
 operator|.
 name|next

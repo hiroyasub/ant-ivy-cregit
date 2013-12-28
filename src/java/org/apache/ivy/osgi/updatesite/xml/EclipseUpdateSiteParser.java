@@ -103,7 +103,7 @@ name|osgi
 operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -224,11 +224,12 @@ operator|.
 name|updatesite
 return|;
 block|}
+specifier|private
 specifier|static
 class|class
 name|SiteHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -303,13 +304,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|FeatureHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|FeatureHandler
 name|child
 parameter_list|)
 block|{
@@ -317,12 +321,7 @@ name|updatesite
 operator|.
 name|addFeature
 argument_list|(
-operator|(
-operator|(
-name|FeatureHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|feature
 argument_list|)
@@ -587,68 +586,27 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|static
-class|class
-name|DescriptionHandler
-extends|extends
-name|DelegetingHandler
-block|{
+comment|//    private static class DescriptionHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String DESCRIPTION = "description";
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        public DescriptionHandler() {
+comment|//            super(DESCRIPTION);
+comment|//            setBufferingChar(true);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String url = atts.getValue(URL);
+comment|//        }
+comment|//    }
 specifier|private
-specifier|static
-specifier|final
-name|String
-name|DESCRIPTION
-init|=
-literal|"description"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|public
-name|DescriptionHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|DESCRIPTION
-argument_list|)
-expr_stmt|;
-name|setBufferingChar
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-block|{
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
-block|}
-block|}
 specifier|static
 class|class
 name|FeatureHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -759,13 +717,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|CategoryHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|CategoryHandler
 name|child
 parameter_list|)
 block|{
@@ -773,12 +734,7 @@ name|feature
 operator|.
 name|addCategory
 argument_list|(
-operator|(
-operator|(
-name|CategoryHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|name
 argument_list|)
@@ -975,11 +931,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|CategoryHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1031,233 +988,60 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|static
-class|class
-name|ArchiveHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|ARCHIVE
-init|=
-literal|"archive"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|URL
-init|=
-literal|"url"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|PATH
-init|=
-literal|"path"
-decl_stmt|;
-specifier|private
-name|Archive
-name|archive
-decl_stmt|;
-specifier|public
-name|ArchiveHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|ARCHIVE
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|archive
-operator|=
-operator|new
-name|Archive
-argument_list|()
-expr_stmt|;
-name|String
-name|path
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|PATH
-argument_list|)
-decl_stmt|;
-name|archive
-operator|.
-name|setPath
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-name|String
-name|url
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|URL
-argument_list|)
-decl_stmt|;
-name|archive
-operator|.
-name|setURL
-argument_list|(
-name|url
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-specifier|static
-class|class
-name|CategoryDefHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CATEGORY_DEF
-init|=
-literal|"category-def"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|NAME
-init|=
-literal|"name"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|LABEL
-init|=
-literal|"label"
-decl_stmt|;
-specifier|private
-name|CategoryDef
-name|categoryDef
-decl_stmt|;
-specifier|public
-name|CategoryDefHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|CATEGORY_DEF
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|DescriptionHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-name|categoryDef
-operator|.
-name|setDescription
-argument_list|(
-name|child
-operator|.
-name|getBufferedChars
-argument_list|()
-operator|.
-name|trim
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-name|categoryDef
-operator|=
-operator|new
-name|CategoryDef
-argument_list|()
-expr_stmt|;
-name|String
-name|name
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|NAME
-argument_list|)
-decl_stmt|;
-name|categoryDef
-operator|.
-name|setName
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|String
-name|label
-init|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|LABEL
-argument_list|)
-decl_stmt|;
-name|categoryDef
-operator|.
-name|setLabel
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|//    private static class ArchiveHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String ARCHIVE = "archive";
+comment|//
+comment|//        private static final String URL = "url";
+comment|//
+comment|//        private static final String PATH = "path";
+comment|//
+comment|//        private Archive archive;
+comment|//
+comment|//        public ArchiveHandler() {
+comment|//            super(ARCHIVE);
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            archive = new Archive();
+comment|//
+comment|//            String path = atts.getValue(PATH);
+comment|//            archive.setPath(path);
+comment|//
+comment|//            String url = atts.getValue(URL);
+comment|//            archive.setURL(url);
+comment|//
+comment|//        }
+comment|//    }
+comment|//    private static class CategoryDefHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String CATEGORY_DEF = "category-def";
+comment|//
+comment|//        private static final String NAME = "name";
+comment|//
+comment|//        private static final String LABEL = "label";
+comment|//
+comment|//        private CategoryDef categoryDef;
+comment|//
+comment|//        public CategoryDefHandler() {
+comment|//            super(CATEGORY_DEF);
+comment|//            addChild(new DescriptionHandler(), new ChildElementHandler<DescriptionHandler>() {
+comment|//                public void childHanlded(DescriptionHandler child) {
+comment|//                    categoryDef.setDescription(child.getBufferedChars().trim());
+comment|//                }
+comment|//            });
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
+comment|//            categoryDef = new CategoryDef();
+comment|//
+comment|//            String name = atts.getValue(NAME);
+comment|//            categoryDef.setName(name);
+comment|//
+comment|//            String label = atts.getValue(LABEL);
+comment|//            categoryDef.setLabel(label);
+comment|//        }
+comment|//    }
 block|}
 end_class
 

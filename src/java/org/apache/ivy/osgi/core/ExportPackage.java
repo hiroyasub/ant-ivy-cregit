@@ -63,12 +63,16 @@ block|{
 specifier|private
 specifier|final
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|uses
 init|=
 operator|new
 name|HashSet
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -134,7 +138,9 @@ return|;
 block|}
 specifier|public
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|getUses
 parameter_list|()
 block|{

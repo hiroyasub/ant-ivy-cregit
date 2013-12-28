@@ -72,11 +72,16 @@ name|digestUri
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<EclipseFeature> */
+argument_list|<
+name|EclipseFeature
+argument_list|>
 name|features
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|EclipseFeature
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -175,6 +180,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|EclipseFeature
+argument_list|>
 name|getFeatures
 parameter_list|()
 block|{

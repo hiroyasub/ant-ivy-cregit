@@ -698,9 +698,6 @@ operator|.
 name|writeManifests
 argument_list|(
 name|it
-operator|.
-name|iterator
-argument_list|()
 argument_list|,
 name|hd
 argument_list|,

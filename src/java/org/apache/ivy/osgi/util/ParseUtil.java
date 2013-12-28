@@ -71,10 +71,16 @@ expr_stmt|;
 block|}
 specifier|final
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|final

@@ -153,7 +153,9 @@ class|class
 name|RepositoryManifestIterable
 extends|extends
 name|AbstractFSManifestIterable
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 block|{
 specifier|private
 specifier|final
@@ -184,8 +186,7 @@ specifier|protected
 name|URI
 name|buildBundleURI
 parameter_list|(
-name|Object
-comment|/* String */
+name|String
 name|location
 parameter_list|)
 throws|throws
@@ -243,8 +244,7 @@ specifier|protected
 name|InputStream
 name|getInputStream
 parameter_list|(
-name|Object
-comment|/* String */
+name|String
 name|f
 parameter_list|)
 throws|throws
@@ -267,11 +267,12 @@ return|;
 block|}
 specifier|protected
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|listBundleFiles
 parameter_list|(
-name|Object
-comment|/* String */
+name|String
 name|dir
 parameter_list|)
 throws|throws
@@ -296,11 +297,12 @@ return|;
 block|}
 specifier|protected
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|listDirs
 parameter_list|(
-name|Object
-comment|/* String */
+name|String
 name|dir
 parameter_list|)
 throws|throws
@@ -325,7 +327,9 @@ return|;
 block|}
 specifier|private
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|asList
 parameter_list|(
 name|String
@@ -340,11 +344,17 @@ literal|null
 condition|?
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|String
+operator|>
+name|emptyList
+argument_list|()
 else|:
 name|Arrays
 operator|.
-comment|/*<String> */
+expr|<
+name|String
+operator|>
 name|asList
 argument_list|(
 name|array

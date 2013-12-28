@@ -145,19 +145,27 @@ begin_class
 specifier|public
 class|class
 name|ArtifactReportManifestIterable
-comment|/* implements Iterable<ManifestAndLocation> */
+implements|implements
+name|Iterable
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
 specifier|private
 specifier|final
 name|List
-comment|/*<ArtifactDownloadReport> */
+argument_list|<
+name|ArtifactDownloadReport
+argument_list|>
 name|artifactReports
 decl_stmt|;
 specifier|public
 name|ArtifactReportManifestIterable
 parameter_list|(
 name|List
-comment|/*<ArtifactDownloadReport> */
+argument_list|<
+name|ArtifactDownloadReport
+argument_list|>
 name|artifactReports
 parameter_list|)
 block|{
@@ -170,7 +178,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
@@ -184,7 +194,9 @@ class|class
 name|ArtifactReportManifestIterator
 implements|implements
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
 specifier|private
 name|ManifestAndLocation
@@ -194,6 +206,9 @@ literal|null
 decl_stmt|;
 specifier|private
 name|Iterator
+argument_list|<
+name|ArtifactDownloadReport
+argument_list|>
 name|it
 decl_stmt|;
 specifier|public
@@ -385,7 +400,7 @@ literal|true
 return|;
 block|}
 specifier|public
-name|Object
+name|ManifestAndLocation
 name|next
 parameter_list|()
 block|{

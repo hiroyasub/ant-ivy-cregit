@@ -154,19 +154,24 @@ specifier|public
 specifier|abstract
 class|class
 name|AbstractFSManifestIterable
-comment|/*<T> implements Iterable/*<ManifestAndLocation> */
+parameter_list|<
+name|T
+parameter_list|>
+implements|implements
+name|Iterable
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
 specifier|private
 specifier|final
-name|Object
-comment|/* T */
+name|T
 name|root
 decl_stmt|;
 specifier|public
 name|AbstractFSManifestIterable
 parameter_list|(
-name|Object
-comment|/* T */
+name|T
 name|root
 parameter_list|)
 block|{
@@ -179,7 +184,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
@@ -192,11 +199,12 @@ block|}
 specifier|abstract
 specifier|protected
 name|List
-comment|/*<T> */
+argument_list|<
+name|T
+argument_list|>
 name|listBundleFiles
 parameter_list|(
-name|Object
-comment|/* T */
+name|T
 name|dir
 parameter_list|)
 throws|throws
@@ -205,11 +213,12 @@ function_decl|;
 specifier|abstract
 specifier|protected
 name|List
-comment|/*<T> */
+argument_list|<
+name|T
+argument_list|>
 name|listDirs
 parameter_list|(
-name|Object
-comment|/* T */
+name|T
 name|dir
 parameter_list|)
 throws|throws
@@ -220,8 +229,7 @@ specifier|protected
 name|InputStream
 name|getInputStream
 parameter_list|(
-name|Object
-comment|/* T */
+name|T
 name|f
 parameter_list|)
 throws|throws
@@ -232,8 +240,7 @@ specifier|protected
 name|URI
 name|buildBundleURI
 parameter_list|(
-name|Object
-comment|/* T */
+name|T
 name|location
 parameter_list|)
 throws|throws
@@ -243,7 +250,9 @@ class|class
 name|FSManifestIterator
 implements|implements
 name|Iterator
-comment|/*<ManifestAndLocation> */
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 block|{
 specifier|private
 name|ManifestAndLocation
@@ -254,25 +263,36 @@ decl_stmt|;
 comment|/**          * Stack of list of directories. An iterator in the stack represents the current directory          * being lookup. The first element in the stack is the root directory. The next element in          * the stack is an iterator on the children on the root. The last iterator in the stack          * points to {@link #currentDir}.          */
 specifier|private
 name|Stack
-comment|/*<Iterator<T>> */
+argument_list|<
+name|Iterator
+argument_list|<
+name|T
+argument_list|>
+argument_list|>
 name|dirs
 init|=
 operator|new
 name|Stack
-comment|/*<Iterator<T>> */
+argument_list|<
+name|Iterator
+argument_list|<
+name|T
+argument_list|>
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**          * The bundles files being lookup.          */
 specifier|private
 name|Iterator
-comment|/*<T> */
+argument_list|<
+name|T
+argument_list|>
 name|bundleCandidates
 init|=
 literal|null
 decl_stmt|;
 specifier|private
-name|Object
-comment|/* T */
+name|T
 name|currentDir
 init|=
 literal|null
@@ -286,6 +306,9 @@ name|add
 argument_list|(
 name|Collections
 operator|.
+expr|<
+name|T
+operator|>
 name|singleton
 argument_list|(
 name|root
@@ -320,15 +343,10 @@ block|{
 comment|// so get the next one
 if|if
 condition|(
-operator|(
-operator|(
-name|Iterator
-operator|)
 name|dirs
 operator|.
 name|peek
 argument_list|()
-operator|)
 operator|.
 name|hasNext
 argument_list|()
@@ -336,15 +354,10 @@ condition|)
 block|{
 name|currentDir
 operator|=
-operator|(
-operator|(
-name|Iterator
-operator|)
 name|dirs
 operator|.
 name|peek
 argument_list|()
-operator|)
 operator|.
 name|next
 argument_list|()
@@ -418,8 +431,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Object
-comment|/* T */
+name|T
 name|bundleCandidate
 init|=
 name|bundleCandidates
@@ -598,7 +610,11 @@ name|add
 argument_list|(
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|T
+operator|>
+name|emptyList
+argument_list|()
 operator|.
 name|iterator
 argument_list|()
@@ -616,7 +632,7 @@ literal|true
 return|;
 block|}
 specifier|public
-name|Object
+name|ManifestAndLocation
 name|next
 parameter_list|()
 block|{

@@ -233,6 +233,22 @@ name|osgi
 operator|.
 name|repo
 operator|.
+name|ManifestAndLocation
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|osgi
+operator|.
+name|repo
+operator|.
 name|ResolverManifestIterable
 import|;
 end_import
@@ -512,8 +528,10 @@ literal|"No output file specified: use the attribute 'out'"
 argument_list|)
 throw|;
 block|}
-name|Iterator
-comment|/*<ManifestAndLocation> */
+name|Iterable
+argument_list|<
+name|ManifestAndLocation
+argument_list|>
 name|it
 decl_stmt|;
 if|if
@@ -634,9 +652,6 @@ name|BasicResolver
 operator|)
 name|resolver
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -687,9 +702,6 @@ name|FSManifestIterable
 argument_list|(
 name|baseDir
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
 expr_stmt|;
 block|}
 if|else if
@@ -766,9 +778,6 @@ name|FSManifestIterable
 argument_list|(
 name|basedir
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
 expr_stmt|;
 block|}
 else|else
@@ -786,9 +795,6 @@ argument_list|(
 name|getArtifactReports
 argument_list|()
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch

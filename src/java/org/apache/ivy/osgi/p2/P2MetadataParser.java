@@ -83,37 +83,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
 import|;
 end_import
 
@@ -239,7 +209,7 @@ name|osgi
 operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -442,10 +412,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+specifier|private
 class|class
 name|RepositoryHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -463,15 +434,15 @@ name|REPOSITORY
 init|=
 literal|"repository"
 decl_stmt|;
-comment|// private static final String NAME = "name";
+comment|//        private static final String NAME = "name";
 comment|//
-comment|// private static final String TYPE = "type";
+comment|//        private static final String TYPE = "type";
 comment|//
-comment|// private static final String VERSION = "version";
+comment|//        private static final String VERSION = "version";
 comment|//
-comment|// private static final String DESCRIPTION = "description";
+comment|//        private static final String DESCRIPTION = "description";
 comment|//
-comment|// private static final String PROVIDER = "provider";
+comment|//        private static final String PROVIDER = "provider";
 specifier|public
 name|RepositoryHandler
 parameter_list|(
@@ -490,49 +461,29 @@ argument_list|(
 operator|new
 name|PropertiesHandler
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 name|P2_TIMESTAMP
-block|}
-argument_list|)
 argument_list|)
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|PropertiesHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|PropertiesHandler
 name|child
 parameter_list|)
 block|{
-name|Map
-name|properties
-init|=
-operator|(
-operator|(
-name|PropertiesHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|properties
-decl_stmt|;
 name|String
 name|timestamp
 init|=
-operator|(
-name|String
-operator|)
+name|child
+operator|.
 name|properties
 operator|.
 name|get
@@ -572,50 +523,34 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|UnitsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|UnitsHandler
 name|child
 parameter_list|)
 block|{
-name|Iterator
-name|it
-init|=
-operator|(
-operator|(
-name|UnitsHandler
-operator|)
+for|for
+control|(
+name|BundleInfo
+name|bundle
+range|:
 name|child
-operator|)
 operator|.
 name|bundles
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|p2Descriptor
 operator|.
 name|addBundle
 argument_list|(
-operator|(
-name|BundleInfo
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|bundle
 argument_list|)
 expr_stmt|;
 block|}
@@ -631,13 +566,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ReferencesHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ReferencesHandler
 name|child
 parameter_list|)
 block|{
@@ -646,18 +584,19 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String name = atts.getValue(NAME);
-comment|// String type = atts.getValue(TYPE);
-comment|// String version = atts.getValue(VERSION);
-comment|// String description = atts.getValue(DESCRIPTION);
-comment|// String provider = atts.getValue(PROVIDER);
-comment|// }
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String name = atts.getValue(NAME);
+comment|//            String type = atts.getValue(TYPE);
+comment|//            String version = atts.getValue(VERSION);
+comment|//            String description = atts.getValue(DESCRIPTION);
+comment|//            String provider = atts.getValue(PROVIDER);
+comment|//        }
 block|}
+specifier|private
 class|class
 name|ReferencesHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -676,7 +615,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
-comment|/*<URI> */
+argument_list|<
+name|URI
+argument_list|>
 name|repositoryUris
 decl_stmt|;
 specifier|public
@@ -696,13 +637,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|RepositoryReferenceHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|RepositoryReferenceHandler
 name|child
 parameter_list|)
 block|{
@@ -710,12 +654,7 @@ name|repositoryUris
 operator|.
 name|add
 argument_list|(
-operator|(
-operator|(
-name|RepositoryReferenceHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|uri
 argument_list|)
@@ -754,16 +693,20 @@ name|repositoryUris
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|URI
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|RepositoryReferenceHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -773,30 +716,11 @@ name|REPOSITORY
 init|=
 literal|"repository"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|TYPE
-init|=
-literal|"type"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|OPTIONS
-init|=
-literal|"options"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|NAME
-init|=
-literal|"name"
-decl_stmt|;
+comment|//        private static final String TYPE = "type";
+comment|//
+comment|//        private static final String OPTIONS = "options";
+comment|//
+comment|//        private static final String NAME = "name";
 specifier|private
 specifier|static
 specifier|final
@@ -823,15 +747,11 @@ name|REPOSITORY
 argument_list|)
 expr_stmt|;
 block|}
-name|int
-name|type
-decl_stmt|;
-name|int
-name|options
-decl_stmt|;
-name|String
-name|name
-decl_stmt|;
+comment|//        int type;
+comment|//
+comment|//        int options;
+comment|//
+comment|//        String name;
 name|URI
 name|uri
 decl_stmt|;
@@ -845,43 +765,9 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|type
-operator|=
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|TYPE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|options
-operator|=
-name|Integer
-operator|.
-name|parseInt
-argument_list|(
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|OPTIONS
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|name
-operator|=
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|NAME
-argument_list|)
-expr_stmt|;
+comment|//            type = Integer.parseInt(atts.getValue(TYPE));
+comment|//            options = Integer.parseInt(atts.getValue(OPTIONS));
+comment|//            name = atts.getValue(NAME);
 name|String
 name|uriAtt
 init|=
@@ -1002,10 +888,11 @@ block|}
 block|}
 block|}
 block|}
+specifier|private
 class|class
 name|UnitsHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1024,6 +911,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
+argument_list|<
+name|BundleInfo
+argument_list|>
 name|bundles
 decl_stmt|;
 specifier|public
@@ -1043,35 +933,30 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|UnitHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|UnitHandler
 name|child
 parameter_list|)
 block|{
-name|BundleInfo
-name|bundleInfo
-init|=
-operator|(
-operator|(
-name|UnitHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|bundleInfo
-decl_stmt|;
 if|if
 condition|(
+name|child
+operator|.
 name|bundleInfo
 operator|!=
 literal|null
 operator|&&
 operator|!
+name|child
+operator|.
 name|bundleInfo
 operator|.
 name|getCapabilities
@@ -1085,6 +970,8 @@ name|bundles
 operator|.
 name|add
 argument_list|(
+name|child
+operator|.
 name|bundleInfo
 argument_list|)
 expr_stmt|;
@@ -1121,6 +1008,9 @@ name|bundles
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|BundleInfo
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
@@ -1130,7 +1020,7 @@ block|}
 class|class
 name|UnitHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -1186,49 +1076,29 @@ argument_list|(
 operator|new
 name|PropertiesHandler
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 name|CATEGORY_PROPERTY
-block|}
-argument_list|)
 argument_list|)
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|PropertiesHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|PropertiesHandler
 name|child
 parameter_list|)
 block|{
-name|Map
-name|properties
-init|=
-operator|(
-operator|(
-name|PropertiesHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|properties
-decl_stmt|;
 name|String
 name|category
 init|=
-operator|(
-name|String
-operator|)
+name|child
+operator|.
 name|properties
 operator|.
 name|get
@@ -1279,34 +1149,27 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ProvidesHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ProvidesHandler
 name|child
 parameter_list|)
 block|{
-name|String
-name|eclipseType
-init|=
-operator|(
-operator|(
-name|ProvidesHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|eclipseType
-decl_stmt|;
 if|if
 condition|(
 literal|"source"
 operator|.
 name|equals
 argument_list|(
+name|child
+operator|.
 name|eclipseType
 argument_list|)
 condition|)
@@ -1372,40 +1235,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|Iterator
-name|it
-init|=
-operator|(
-operator|(
-name|ProvidesHandler
-operator|)
+for|for
+control|(
+name|BundleCapability
+name|capability
+range|:
 name|child
-operator|)
 operator|.
 name|capabilities
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|bundleInfo
 operator|.
 name|addCapability
 argument_list|(
-operator|(
-name|BundleCapability
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|capability
 argument_list|)
 expr_stmt|;
 block|}
@@ -1421,13 +1265,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|FilterHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|FilterHandler
 name|child
 parameter_list|)
 block|{
@@ -1443,50 +1290,34 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|RequiresHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|RequiresHandler
 name|child
 parameter_list|)
 block|{
-name|Iterator
-name|it
-init|=
-operator|(
-operator|(
-name|RequiresHandler
-operator|)
+for|for
+control|(
+name|BundleRequirement
+name|requirement
+range|:
 name|child
-operator|)
 operator|.
 name|requirements
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|bundleInfo
 operator|.
 name|addRequirement
 argument_list|(
-operator|(
-name|BundleRequirement
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|requirement
 argument_list|)
 expr_stmt|;
 block|}
@@ -1502,13 +1333,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|HostRequirementsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|HostRequirementsHandler
 name|child
 parameter_list|)
 block|{
@@ -1524,13 +1358,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|MetaRequirementsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|MetaRequirementsHandler
 name|child
 parameter_list|)
 block|{
@@ -1546,13 +1383,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ArtifactsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ArtifactsHandler
 name|child
 parameter_list|)
 block|{
@@ -1572,32 +1412,25 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|TouchpointDataHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|TouchpointDataHandler
 name|child
 parameter_list|)
 throws|throws
 name|SAXParseException
 block|{
-name|Boolean
-name|zipped
-init|=
-operator|(
-operator|(
-name|TouchpointDataHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|zipped
-decl_stmt|;
 if|if
 condition|(
+name|child
+operator|.
 name|zipped
 operator|!=
 literal|null
@@ -1607,6 +1440,8 @@ name|bundleInfo
 operator|.
 name|setHasInnerClasspath
 argument_list|(
+name|child
+operator|.
 name|zipped
 operator|.
 name|booleanValue
@@ -1626,38 +1461,31 @@ block|{
 comment|// we only care about parsing the manifest if it is a source
 return|return;
 block|}
-name|String
-name|manifest
-init|=
-operator|(
-operator|(
-name|TouchpointDataHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|manifest
-decl_stmt|;
 if|if
 condition|(
+name|child
+operator|.
 name|manifest
 operator|!=
 literal|null
 condition|)
 block|{
 comment|// Eclipse may have serialized a little bit weirdly
+name|String
 name|manifest
-operator|=
+init|=
 name|ManifestParser
 operator|.
 name|formatLines
 argument_list|(
+name|child
+operator|.
 name|manifest
 operator|.
 name|trim
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|BundleInfo
 name|embeddedInfo
 decl_stmt|;
@@ -1990,11 +1818,12 @@ comment|// String severity = atts.getValue(SEVERITY);
 comment|// }
 comment|//
 comment|// }
+specifier|private
 specifier|static
 class|class
 name|FilterHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2065,10 +1894,11 @@ return|return
 literal|null
 return|;
 block|}
+specifier|private
 class|class
 name|ProvidesHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2087,6 +1917,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
+argument_list|<
+name|BundleCapability
+argument_list|>
 name|capabilities
 decl_stmt|;
 name|String
@@ -2109,54 +1942,23 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ProvidedHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ProvidedHandler
 name|child
 parameter_list|)
 block|{
-name|String
-name|name
-init|=
-operator|(
-operator|(
-name|ProvidedHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|name
-decl_stmt|;
-name|Version
-name|version
-init|=
-operator|(
-operator|(
-name|ProvidedHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|version
-decl_stmt|;
-name|String
-name|namespace
-init|=
-operator|(
-operator|(
-name|ProvidedHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|namespace
-decl_stmt|;
 if|if
 condition|(
+name|child
+operator|.
 name|namespace
 operator|.
 name|equals
@@ -2184,6 +1986,8 @@ name|type
 init|=
 name|namespace2Type
 argument_list|(
+name|child
+operator|.
 name|namespace
 argument_list|)
 decl_stmt|;
@@ -2209,21 +2013,20 @@ name|debug
 argument_list|(
 literal|"Unsupported provided capability "
 operator|+
-operator|(
-operator|(
-name|ProvidedHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|namespace
 operator|+
 literal|" "
 operator|+
+name|child
+operator|.
 name|name
 operator|+
 literal|" "
 operator|+
+name|child
+operator|.
 name|version
 argument_list|)
 expr_stmt|;
@@ -2247,8 +2050,12 @@ operator|=
 operator|new
 name|ExportPackage
 argument_list|(
+name|child
+operator|.
 name|name
 argument_list|,
+name|child
+operator|.
 name|version
 argument_list|)
 expr_stmt|;
@@ -2262,8 +2069,12 @@ name|BundleCapability
 argument_list|(
 name|type
 argument_list|,
+name|child
+operator|.
 name|name
 argument_list|,
+name|child
+operator|.
 name|version
 argument_list|)
 expr_stmt|;
@@ -2308,17 +2119,21 @@ name|capabilities
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|BundleCapability
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|ProvidedHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2446,7 +2261,7 @@ specifier|abstract
 class|class
 name|AbstractRequirementHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2457,6 +2272,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
+argument_list|<
+name|BundleRequirement
+argument_list|>
 name|requirements
 decl_stmt|;
 specifier|public
@@ -2479,37 +2297,30 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|RequiredHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|RequiredHandler
 name|child
 parameter_list|)
 block|{
 name|String
 name|name
 init|=
-operator|(
-operator|(
-name|RequiredHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|name
 decl_stmt|;
 name|VersionRange
 name|range
 init|=
-operator|(
-operator|(
-name|RequiredHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|range
 decl_stmt|;
@@ -2575,12 +2386,7 @@ block|{
 name|String
 name|resolution
 init|=
-operator|(
-operator|(
-name|RequiredHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|optional
 condition|?
@@ -2638,12 +2444,16 @@ name|requirements
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|BundleRequirement
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|RequiresHandler
 extends|extends
@@ -2668,10 +2478,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|RequiredHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2713,14 +2524,7 @@ name|OPTIONAL
 init|=
 literal|"optional"
 decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|GREEDY
-init|=
-literal|"greedy"
-decl_stmt|;
+comment|//        private static final String GREEDY = "greedy";
 name|String
 name|namespace
 decl_stmt|;
@@ -2730,12 +2534,9 @@ decl_stmt|;
 name|VersionRange
 name|range
 decl_stmt|;
-name|String
-name|filter
-decl_stmt|;
-name|boolean
-name|greedy
-decl_stmt|;
+comment|//        String filter;
+comment|//
+comment|//        boolean greedy;
 name|boolean
 name|optional
 decl_stmt|;
@@ -2748,38 +2549,11 @@ argument_list|(
 name|REQUIRED
 argument_list|)
 expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|FilterHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-name|filter
-operator|=
-name|child
-operator|.
-name|getBufferedChars
-argument_list|()
-operator|.
-name|trim
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-argument_list|)
-expr_stmt|;
+comment|//            addChild(new FilterHandler(), new ChildElementHandler<FilterHandler>() {
+comment|//                public void childHanlded(FilterHandler child) {
+comment|//                    filter = child.getBufferedChars().trim();
+comment|//                }
+comment|//            });
 block|}
 specifier|protected
 name|void
@@ -2839,22 +2613,7 @@ name|e
 argument_list|)
 throw|;
 block|}
-name|greedy
-operator|=
-name|getOptionalBooleanAttribute
-argument_list|(
-name|atts
-argument_list|,
-name|GREEDY
-argument_list|,
-name|Boolean
-operator|.
-name|TRUE
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
-expr_stmt|;
+comment|//            greedy = getOptionalBooleanAttribute(atts, GREEDY, Boolean.TRUE).booleanValue();
 name|optional
 operator|=
 name|getOptionalBooleanAttribute
@@ -2873,6 +2632,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|HostRequirementsHandler
 extends|extends
@@ -2897,6 +2657,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|MetaRequirementsHandler
 extends|extends
@@ -2921,10 +2682,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|ArtifactsHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -2943,6 +2705,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
+argument_list|<
+name|P2Artifact
+argument_list|>
 name|artifacts
 decl_stmt|;
 specifier|public
@@ -2962,13 +2727,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ArtifactHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ArtifactHandler
 name|child
 parameter_list|)
 block|{
@@ -2976,12 +2744,7 @@ name|artifacts
 operator|.
 name|add
 argument_list|(
-operator|(
-operator|(
-name|ArtifactHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|artifact
 argument_list|)
@@ -3018,17 +2781,20 @@ name|artifacts
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|P2Artifact
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 class|class
 name|ArtifactHandler
 extends|extends
-name|DelegetingHandler
-comment|/*<ArtifactsHandler> */
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -3165,29 +2931,29 @@ throw|;
 block|}
 block|}
 block|}
+comment|//    private static class TouchpointHandler extends DelegetingHandler {
 comment|//
-comment|// static class TouchpointHandler extends DelegetingHandler {
+comment|//        private static final String TOUCHPOINT = "touchpoint";
 comment|//
-comment|// private static final String TOUCHPOINT = "touchpoint";
+comment|//        private static final String ID = "id";
 comment|//
-comment|// private static final String ID = "id";
+comment|//        private static final String VERSION = "version";
 comment|//
-comment|// private static final String VERSION = "version";
+comment|//        public TouchpointHandler() {
+comment|//            super(TOUCHPOINT);
+comment|//        }
 comment|//
-comment|// public TouchpointHandler() {
-comment|// super(TOUCHPOINT);
-comment|// }
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String id = atts.getValue(ID);
+comment|//            String version = atts.getValue(VERSION);
+comment|//        }
 comment|//
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String id = atts.getValue(ID);
-comment|// String version = atts.getValue(VERSION);
-comment|// }
-comment|//
-comment|// }
+comment|//    }
+specifier|private
 class|class
 name|TouchpointDataHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -3221,35 +2987,28 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|InstructionsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|InstructionsHandler
 name|child
 parameter_list|)
 block|{
 name|manifest
 operator|=
-operator|(
-operator|(
-name|InstructionsHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|manifest
 expr_stmt|;
 name|zipped
 operator|=
-operator|(
-operator|(
-name|InstructionsHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|zipped
 expr_stmt|;
@@ -3269,10 +3028,11 @@ block|{
 comment|// String size = atts.getValue(SIZE);
 block|}
 block|}
+specifier|private
 class|class
 name|InstructionsHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -3306,13 +3066,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|InstructionHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|InstructionHandler
 name|child
 parameter_list|)
 block|{
@@ -3327,12 +3090,7 @@ expr_stmt|;
 name|String
 name|buffer
 init|=
-operator|(
-operator|(
-name|InstructionHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|getBufferedChars
 argument_list|()
@@ -3340,24 +3098,14 @@ operator|.
 name|trim
 argument_list|()
 decl_stmt|;
-name|String
-name|key
-init|=
-operator|(
-operator|(
-name|InstructionHandler
-operator|)
-name|child
-operator|)
-operator|.
-name|key
-decl_stmt|;
 if|if
 condition|(
 literal|"manifest"
 operator|.
 name|equals
 argument_list|(
+name|child
+operator|.
 name|key
 argument_list|)
 condition|)
@@ -3373,6 +3121,8 @@ literal|"zipped"
 operator|.
 name|equals
 argument_list|(
+name|child
+operator|.
 name|key
 argument_list|)
 operator|&&
@@ -3410,10 +3160,11 @@ block|{
 comment|// String size = atts.getValue(SIZE);
 block|}
 block|}
+specifier|private
 class|class
 name|InstructionHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -3468,320 +3219,144 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// static class LicensesHandler extends DelegetingHandler {
+comment|//    private static class LicensesHandler extends DelegetingHandler {
 comment|//
-comment|// private static final String LICENSES = "licenses";
+comment|//        private static final String LICENSES = "licenses";
 comment|//
-comment|// private static final String SIZE = "size";
+comment|//        private static final String SIZE = "size";
 comment|//
-comment|// public LicensesHandler() {
-comment|// super(LICENSES);
-comment|// addChild(new LicenseHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
-comment|// }
-comment|// });
-comment|// }
+comment|//        public LicensesHandler() {
+comment|//            super(LICENSES);
+comment|//            addChild(new LicenseHandler(), new ChildElementHandler() {
+comment|//                public void childHanlded(DelegetingHandler child) {
+comment|//                }
+comment|//            });
+comment|//        }
 comment|//
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String size = atts.getValue(SIZE);
-comment|// }
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String size = atts.getValue(SIZE);
+comment|//        }
 comment|//
-comment|// }
+comment|//    }
+comment|//    private static class LicenseHandler extends DelegetingHandler {
 comment|//
-comment|// static class LicenseHandler extends DelegetingHandler {
+comment|//        private static final String LICENSE = "license";
 comment|//
-comment|// private static final String LICENSE = "license";
+comment|//        private static final String URI = "uri";
 comment|//
-comment|// private static final String URI = "uri";
+comment|//        private static final String URL = "url";
 comment|//
-comment|// private static final String URL = "url";
+comment|//        public LicenseHandler() {
+comment|//            super(LICENSE);
+comment|//            setBufferingChar(true);
+comment|//        }
 comment|//
-comment|// public LicenseHandler() {
-comment|// super(LICENSE);
-comment|// setBufferingChar(true);
-comment|// }
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String uri = atts.getValue(URI);
+comment|//            String url = atts.getValue(URL);
+comment|//        }
 comment|//
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String uri = atts.getValue(URI);
-comment|// String url = atts.getValue(URL);
-comment|// }
+comment|//    }
+comment|//    private static class CopyrightHandler extends DelegetingHandler {
 comment|//
-comment|// }
+comment|//        private static final String COPYRIGHT = "copyright";
 comment|//
-comment|// static class CopyrightHandler extends DelegetingHandler {
+comment|//        private static final String URI = "uri";
 comment|//
-comment|// private static final String COPYRIGHT = "copyright";
+comment|//        private static final String URL = "url";
 comment|//
-comment|// private static final String URI = "uri";
+comment|//        public CopyrightHandler() {
+comment|//            super(COPYRIGHT);
+comment|//        }
 comment|//
-comment|// private static final String URL = "url";
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            String uri = atts.getValue(URI);
+comment|//            String url = atts.getValue(URL);
+comment|//        }
 comment|//
-comment|// public CopyrightHandler() {
-comment|// super(COPYRIGHT);
-comment|// }
+comment|//    }
+comment|//    private class ChangesHandler extends DelegetingHandler {
 comment|//
-comment|// protected void handleAttributes(Attributes atts) {
-comment|// String uri = atts.getValue(URI);
-comment|// String url = atts.getValue(URL);
-comment|// }
+comment|//        private static final String CHANGES = "changes";
 comment|//
-comment|// }
-class|class
-name|ChangesHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CHANGES
-init|=
-literal|"changes"
-decl_stmt|;
-comment|// private static final String SIZE = "size";
-specifier|public
-name|ChangesHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|CHANGES
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|ChangeHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-block|{
-comment|// int size = Integer.parseInt(atts.getValue(SIZE));
-block|}
-block|}
-class|class
-name|ChangeHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CHANGE
-init|=
-literal|"change"
-decl_stmt|;
-specifier|public
-name|ChangeHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|CHANGE
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-class|class
-name|FromHandler
-extends|extends
-name|AbstractRequirementHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|FROM
-init|=
-literal|"from"
-decl_stmt|;
-specifier|public
-name|FromHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|FROM
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-class|class
-name|ToHandler
-extends|extends
-name|AbstractRequirementHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|TO
-init|=
-literal|"to"
-decl_stmt|;
-specifier|public
-name|ToHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|TO
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-class|class
-name|PatchScopeHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|PATCH_SCOPE
-init|=
-literal|"patchScope"
-decl_stmt|;
-comment|// private static final String SIZE = "size";
-specifier|public
-name|PatchScopeHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|PATCH_SCOPE
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|PatchScopeHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|handleAttributes
-parameter_list|(
-name|Attributes
-name|atts
-parameter_list|)
-block|{
-comment|// int size = Integer.parseInt(atts.getValue(SIZE));
-block|}
-block|}
-class|class
-name|ScopeHandler
-extends|extends
-name|DelegetingHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|SCOPE
-init|=
-literal|"scope"
-decl_stmt|;
-specifier|public
-name|ScopeHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|SCOPE
-argument_list|)
-expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|RequiresHandler
-argument_list|()
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|DelegetingHandler
-name|child
-parameter_list|)
-block|{
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-class|class
-name|LifeCycleHandler
-extends|extends
-name|AbstractRequirementHandler
-block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|LIFE_CYCLE
-init|=
-literal|"lifeCycle"
-decl_stmt|;
-specifier|public
-name|LifeCycleHandler
-parameter_list|()
-block|{
-name|super
-argument_list|(
-name|LIFE_CYCLE
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|//        private static final String SIZE = "size";
+comment|//
+comment|//        public ChangesHandler() {
+comment|//            super(CHANGES);
+comment|//            addChild(new ChangeHandler(), new ChildElementHandler<ChangeHandler>() {
+comment|//                public void childHanlded(ChangeHandler child) {
+comment|//                }
+comment|//            });
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            int size = Integer.parseInt(atts.getValue(SIZE));
+comment|//        }
+comment|//    }
+comment|//    private class ChangeHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String CHANGE = "change";
+comment|//
+comment|//        public ChangeHandler() {
+comment|//            super(CHANGE);
+comment|//        }
+comment|//    }
+comment|//    private class FromHandler extends AbstractRequirementHandler {
+comment|//
+comment|//        private static final String FROM = "from";
+comment|//
+comment|//        public FromHandler() {
+comment|//            super(FROM);
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private class ToHandler extends AbstractRequirementHandler {
+comment|//
+comment|//        private static final String TO = "to";
+comment|//
+comment|//        public ToHandler() {
+comment|//            super(TO);
+comment|//        }
+comment|//
+comment|//    }
+comment|//    private class PatchScopeHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String PATCH_SCOPE = "patchScope";
+comment|//
+comment|//        private static final String SIZE = "size";
+comment|//
+comment|//        public PatchScopeHandler() {
+comment|//            super(PATCH_SCOPE);
+comment|//            addChild(new PatchScopeHandler(), new ChildElementHandler<PatchScopeHandler>() {
+comment|//                public void childHanlded(PatchScopeHandler child) {
+comment|//                }
+comment|//            });
+comment|//        }
+comment|//
+comment|//        protected void handleAttributes(Attributes atts) {
+comment|//            int size = Integer.parseInt(atts.getValue(SIZE));
+comment|//        }
+comment|//    }
+comment|//    private class ScopeHandler extends DelegetingHandler {
+comment|//
+comment|//        private static final String SCOPE = "scope";
+comment|//
+comment|//        public ScopeHandler() {
+comment|//            super(SCOPE);
+comment|//            addChild(new RequiresHandler(), new ChildElementHandler<RequiresHandler>() {
+comment|//                public void childHanlded(RequiresHandler child) {
+comment|//                }
+comment|//            });
+comment|//        }
+comment|//    }
+comment|//    private  class LifeCycleHandler extends AbstractRequirementHandler {
+comment|//
+comment|//        private static final String LIFE_CYCLE = "lifeCycle";
+comment|//
+comment|//        public LifeCycleHandler() {
+comment|//            super(LIFE_CYCLE);
+comment|//        }
+comment|//    }
 block|}
 end_class
 

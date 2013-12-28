@@ -37,7 +37,9 @@ class|class
 name|Version
 implements|implements
 name|Comparable
-comment|/*<Version> */
+argument_list|<
+name|Version
+argument_list|>
 block|{
 specifier|private
 name|int
@@ -870,24 +872,6 @@ return|;
 block|}
 return|return
 literal|0
-return|;
-block|}
-specifier|public
-name|int
-name|compareTo
-parameter_list|(
-name|Object
-name|obj
-parameter_list|)
-block|{
-return|return
-name|compareTo
-argument_list|(
-operator|(
-name|Version
-operator|)
-name|obj
-argument_list|)
 return|;
 block|}
 specifier|public

@@ -125,7 +125,7 @@ name|osgi
 operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -227,7 +227,7 @@ specifier|static
 class|class
 name|DigestHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -277,13 +277,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|FeatureHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|FeatureHandler
 name|child
 parameter_list|)
 block|{
@@ -291,12 +294,7 @@ name|repoDescriptor
 operator|.
 name|addFeature
 argument_list|(
-operator|(
-operator|(
-name|FeatureHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|feature
 argument_list|)

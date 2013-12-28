@@ -111,7 +111,7 @@ name|osgi
 operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -162,15 +162,23 @@ name|XMLInputParser
 block|{
 specifier|private
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|childLocations
 init|=
 operator|new
 name|LinkedHashSet
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|getChildLocations
 parameter_list|()
 block|{
@@ -239,11 +247,12 @@ name|childLocations
 argument_list|)
 expr_stmt|;
 block|}
+specifier|private
 specifier|static
 class|class
 name|RepositoryHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -259,7 +268,9 @@ comment|// private static final String TYPE = "type";
 comment|//
 comment|// private static final String VERSION = "version";
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|childLocations
 decl_stmt|;
 specifier|public
@@ -279,24 +290,22 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ChildrenHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ChildrenHandler
 name|child
 parameter_list|)
 block|{
 name|childLocations
 operator|=
-operator|(
-operator|(
-name|ChildrenHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|childLocations
 expr_stmt|;
@@ -311,11 +320,12 @@ comment|// String type = atts.getValue(TYPE);
 comment|// String version = atts.getValue(VERSION);
 comment|// }
 block|}
+specifier|private
 specifier|static
 class|class
 name|ChildrenHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -334,7 +344,9 @@ init|=
 literal|"size"
 decl_stmt|;
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|childLocations
 decl_stmt|;
 specifier|public
@@ -354,13 +366,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ChildHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ChildHandler
 name|child
 parameter_list|)
 block|{
@@ -368,12 +383,7 @@ name|childLocations
 operator|.
 name|add
 argument_list|(
-operator|(
-operator|(
-name|ChildHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|location
 argument_list|)
@@ -410,17 +420,21 @@ name|childLocations
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|ChildHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static

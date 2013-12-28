@@ -63,16 +63,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -111,27 +101,9 @@ name|ivy
 operator|.
 name|osgi
 operator|.
-name|p2
-operator|.
-name|PropertiesParser
-operator|.
-name|PropertiesHandler
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|osgi
-operator|.
 name|util
 operator|.
-name|DelegetingHandler
+name|DelegatingHandler
 import|;
 end_import
 
@@ -285,11 +257,12 @@ argument_list|)
 throw|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|RepositoryHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -306,11 +279,20 @@ comment|//
 comment|// private static final String VERSION = "version";
 specifier|private
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|patternsByClassifier
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -329,8 +311,8 @@ argument_list|(
 name|REPOSITORY
 argument_list|)
 expr_stmt|;
-comment|// addChild(new PropertiesHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// addChild(new PropertiesHandler(), new ChildElementHandler<PropertiesHandler>() {
+comment|// public void childHanlded(PropertiesHandler child) {
 comment|// }
 comment|// });
 name|addChild
@@ -341,59 +323,40 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|MappingsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|MappingsHandler
 name|child
 parameter_list|)
 block|{
-name|Iterator
-name|it
-init|=
-operator|(
-operator|(
-name|MappingsHandler
-operator|)
+for|for
+control|(
+name|Entry
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|entry
+range|:
 name|child
-operator|)
 operator|.
 name|outputByFilter
 operator|.
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Entry
-name|entry
-init|=
-operator|(
-name|Entry
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|String
 name|filter
 init|=
-operator|(
-name|String
-operator|)
 name|entry
 operator|.
 name|getKey
@@ -473,13 +436,16 @@ argument_list|)
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ArtifactsHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ArtifactsHandler
 name|child
 parameter_list|)
 block|{
@@ -495,11 +461,12 @@ comment|// String type = atts.getValue(TYPE);
 comment|// String version = atts.getValue(VERSION);
 comment|// }
 block|}
+specifier|private
 specifier|static
 class|class
 name|MappingsHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -518,7 +485,11 @@ init|=
 literal|"size"
 decl_stmt|;
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|outputByFilter
 decl_stmt|;
 specifier|public
@@ -538,13 +509,16 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|RuleHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|RuleHandler
 name|child
 parameter_list|)
 block|{
@@ -552,21 +526,11 @@ name|outputByFilter
 operator|.
 name|put
 argument_list|(
-operator|(
-operator|(
-name|RuleHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|filter
 argument_list|,
-operator|(
-operator|(
-name|RuleHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|output
 argument_list|)
@@ -603,17 +567,23 @@ name|outputByFilter
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|RuleHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -685,11 +655,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|private
 specifier|static
 class|class
 name|ArtifactsHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -709,7 +680,11 @@ name|p2Descriptor
 parameter_list|,
 specifier|final
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|patternsByClassifier
 parameter_list|,
 specifier|final
@@ -730,34 +705,29 @@ argument_list|()
 argument_list|,
 operator|new
 name|ChildElementHandler
+argument_list|<
+name|ArtifactHandler
+argument_list|>
 argument_list|()
 block|{
 specifier|public
 name|void
 name|childHanlded
 parameter_list|(
-name|DelegetingHandler
+name|ArtifactHandler
 name|child
 parameter_list|)
 block|{
 name|P2Artifact
 name|a
 init|=
-operator|(
-operator|(
-name|ArtifactHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|p2Artifact
 decl_stmt|;
 name|String
 name|url
 init|=
-operator|(
-name|String
-operator|)
 name|patternsByClassifier
 operator|.
 name|get
@@ -837,11 +807,12 @@ comment|// int size = Integer.parseInt(atts.getValue(SIZE));
 comment|// artifacts = new ArrayList(size);
 comment|// }
 block|}
+specifier|private
 specifier|static
 class|class
 name|ArtifactHandler
 extends|extends
-name|DelegetingHandler
+name|DelegatingHandler
 block|{
 specifier|private
 specifier|static
@@ -887,8 +858,8 @@ argument_list|(
 name|ARTIFACT
 argument_list|)
 expr_stmt|;
-comment|// addChild(new PropertiesHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// addChild(new PropertiesHandler(), new ChildElementHandler<PropertiesHandler>() {
+comment|// public void childHanlded(PropertiesHandler child) {
 comment|// }
 comment|// });
 block|}

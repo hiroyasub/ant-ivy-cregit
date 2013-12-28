@@ -153,40 +153,41 @@ class|class
 name|FSManifestIterable
 extends|extends
 name|AbstractFSManifestIterable
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 block|{
 comment|/**      * List of directory name that usually contains jars but are not bundles      */
 specifier|public
 specifier|static
 specifier|final
 name|Set
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|NON_BUNDLE_DIRS
 init|=
 operator|new
 name|HashSet
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 literal|"source"
-block|,
+argument_list|,
 literal|"sources"
-block|,
+argument_list|,
 literal|"javadoc"
-block|,
+argument_list|,
 literal|"javadocs"
-block|,
+argument_list|,
 literal|"doc"
-block|,
+argument_list|,
 literal|"docs"
-block|}
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -343,8 +344,7 @@ specifier|protected
 name|URI
 name|buildBundleURI
 parameter_list|(
-name|Object
-comment|/* File */
+name|File
 name|location
 parameter_list|)
 block|{
@@ -354,12 +354,7 @@ return|return
 operator|new
 name|URI
 argument_list|(
-operator|(
-operator|(
-name|File
-operator|)
 name|location
-operator|)
 operator|.
 name|toURI
 argument_list|()
@@ -409,8 +404,7 @@ specifier|protected
 name|InputStream
 name|getInputStream
 parameter_list|(
-name|Object
-comment|/* File */
+name|File
 name|f
 parameter_list|)
 throws|throws
@@ -429,11 +423,12 @@ return|;
 block|}
 specifier|protected
 name|List
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|listBundleFiles
 parameter_list|(
-name|Object
-comment|/* File */
+name|File
 name|dir
 parameter_list|)
 block|{
@@ -442,12 +437,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|(
-operator|(
-name|File
-operator|)
 name|dir
-operator|)
 operator|.
 name|listFiles
 argument_list|(
@@ -500,11 +490,12 @@ return|;
 block|}
 specifier|protected
 name|List
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|listDirs
 parameter_list|(
-name|Object
-comment|/* File */
+name|File
 name|dir
 parameter_list|)
 block|{
@@ -513,12 +504,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|(
-operator|(
-name|File
-operator|)
 name|dir
-operator|)
 operator|.
 name|listFiles
 argument_list|(

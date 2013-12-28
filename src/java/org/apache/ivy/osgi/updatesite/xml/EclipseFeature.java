@@ -70,20 +70,30 @@ name|version
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<EclipsePlugin> */
+argument_list|<
+name|EclipsePlugin
+argument_list|>
 name|plugins
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|EclipsePlugin
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<Require> */
+argument_list|<
+name|Require
+argument_list|>
 name|requires
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Require
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -333,6 +343,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|EclipsePlugin
+argument_list|>
 name|getPlugins
 parameter_list|()
 block|{
@@ -358,6 +371,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|Require
+argument_list|>
 name|getRequires
 parameter_list|()
 block|{
