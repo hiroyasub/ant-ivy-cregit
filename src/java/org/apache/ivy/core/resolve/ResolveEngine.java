@@ -2138,16 +2138,6 @@ name|getLog
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|downloadOptions
-operator|.
-name|setUncompress
-argument_list|(
-name|options
-operator|.
-name|isUncompress
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|downloadArtifacts
 argument_list|(
 name|report

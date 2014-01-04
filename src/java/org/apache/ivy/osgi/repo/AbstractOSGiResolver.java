@@ -937,7 +937,7 @@ argument_list|(
 name|getRepoDescriptor
 argument_list|()
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|osgiType
 argument_list|,
@@ -2311,7 +2311,7 @@ init|=
 name|getRepoDescriptor
 argument_list|()
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|osgiType
 argument_list|,
@@ -2433,7 +2433,7 @@ argument_list|(
 name|getRepoDescriptor
 argument_list|()
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|osgiType
 argument_list|,
@@ -3244,7 +3244,7 @@ init|=
 name|getRepoDescriptor
 argument_list|()
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|osgiType
 argument_list|,
@@ -3441,7 +3441,7 @@ init|=
 name|getRepoDescriptor
 argument_list|()
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|osgiType
 argument_list|,

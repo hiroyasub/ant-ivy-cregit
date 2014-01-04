@@ -175,12 +175,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Set
-comment|/*<BundleRequirement> */
+argument_list|<
+name|BundleRequirement
+argument_list|>
 name|expectedRequires
 init|=
 operator|new
 name|HashSet
-comment|/*<BundleRequirement> */
+argument_list|<
+name|BundleRequirement
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|expectedRequires
@@ -384,7 +388,9 @@ name|expectedRequires
 operator|=
 operator|new
 name|HashSet
-comment|/*<BundleRequirement> */
+argument_list|<
+name|BundleRequirement
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|expectedRequires
@@ -519,7 +525,9 @@ argument_list|()
 expr_stmt|;
 block|}
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|cp
 init|=
 name|bundleInfo

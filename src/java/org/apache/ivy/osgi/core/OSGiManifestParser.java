@@ -431,8 +431,13 @@ try|try
 block|{
 name|bundleInfo
 operator|.
-name|setUri
+name|addArtifact
 argument_list|(
+operator|new
+name|BundleArtifact
+argument_list|(
+literal|false
+argument_list|,
 operator|new
 name|URI
 argument_list|(
@@ -440,6 +445,9 @@ name|res
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

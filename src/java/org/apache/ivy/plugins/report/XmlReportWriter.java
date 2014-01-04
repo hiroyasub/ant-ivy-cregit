@@ -2598,7 +2598,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getUncompressedLocalDir
+name|getUnpackedLocalFile
 argument_list|()
 operator|!=
 literal|null
@@ -2608,7 +2608,7 @@ name|out
 operator|.
 name|print
 argument_list|(
-literal|" uncompressedDir=\""
+literal|" unpackedFile=\""
 operator|+
 name|XMLHelper
 operator|.
@@ -2619,7 +2619,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getUncompressedLocalDir
+name|getUnpackedLocalFile
 argument_list|()
 operator|.
 name|getAbsolutePath

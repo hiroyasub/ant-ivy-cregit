@@ -418,14 +418,7 @@ name|RepositoryHandler
 extends|extends
 name|DelegatingHandler
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|P2_TIMESTAMP
-init|=
-literal|"p2.timestamp"
-decl_stmt|;
+comment|//        private static final String P2_TIMESTAMP = "p2.timestamp";
 specifier|private
 specifier|static
 specifier|final
@@ -456,65 +449,15 @@ argument_list|(
 name|REPOSITORY
 argument_list|)
 expr_stmt|;
-name|addChild
-argument_list|(
-operator|new
-name|PropertiesHandler
-argument_list|(
-name|P2_TIMESTAMP
-argument_list|)
-argument_list|,
-operator|new
-name|ChildElementHandler
-argument_list|<
-name|PropertiesHandler
-argument_list|>
-argument_list|()
-block|{
-specifier|public
-name|void
-name|childHanlded
-parameter_list|(
-name|PropertiesHandler
-name|child
-parameter_list|)
-block|{
-name|String
-name|timestamp
-init|=
-name|child
-operator|.
-name|properties
-operator|.
-name|get
-argument_list|(
-name|P2_TIMESTAMP
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|timestamp
-operator|!=
-literal|null
-condition|)
-block|{
-name|p2Descriptor
-operator|.
-name|setTimestamp
-argument_list|(
-name|Long
-operator|.
-name|parseLong
-argument_list|(
-name|timestamp
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-argument_list|)
-expr_stmt|;
+comment|//            addChild(new PropertiesHandler(P2_TIMESTAMP),
+comment|//                new ChildElementHandler<PropertiesHandler>() {
+comment|//                    public void childHanlded(PropertiesHandler child) {
+comment|//                        String timestamp = child.properties.get(P2_TIMESTAMP);
+comment|//                        if (timestamp != null) {
+comment|//                            p2Descriptor.setTimestamp(Long.parseLong(timestamp));
+comment|//                        }
+comment|//                    }
+comment|//                });
 name|addChild
 argument_list|(
 operator|new

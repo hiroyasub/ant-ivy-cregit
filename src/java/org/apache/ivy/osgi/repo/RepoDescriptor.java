@@ -67,7 +67,7 @@ name|Set
 argument_list|<
 name|ModuleDescriptorWrapper
 argument_list|>
-name|findModule
+name|findModules
 parameter_list|(
 name|String
 name|requirement

@@ -325,12 +325,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|isUncompress
-argument_list|()
-operator|&&
 name|a
 operator|.
-name|getUncompressedLocalDir
+name|getUnpackedLocalFile
 argument_list|()
 operator|!=
 literal|null
@@ -340,7 +337,7 @@ name|f
 operator|=
 name|a
 operator|.
-name|getUncompressedLocalDir
+name|getUnpackedLocalFile
 argument_list|()
 expr_stmt|;
 block|}

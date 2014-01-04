@@ -19,6 +19,22 @@ name|xml
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|osgi
+operator|.
+name|filter
+operator|.
+name|OSGiFilter
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -35,7 +51,7 @@ name|optional
 decl_stmt|;
 specifier|private
 specifier|final
-name|RequirementFilter
+name|OSGiFilter
 name|filter
 decl_stmt|;
 specifier|private
@@ -50,7 +66,7 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
-name|RequirementFilter
+name|OSGiFilter
 name|filter
 parameter_list|)
 block|{
@@ -77,7 +93,7 @@ name|name
 return|;
 block|}
 specifier|public
-name|RequirementFilter
+name|OSGiFilter
 name|getFilter
 parameter_list|()
 block|{

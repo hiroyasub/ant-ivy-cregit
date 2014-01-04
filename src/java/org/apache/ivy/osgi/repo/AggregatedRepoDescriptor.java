@@ -333,7 +333,7 @@ name|Set
 argument_list|<
 name|ModuleDescriptorWrapper
 argument_list|>
-name|findModule
+name|findModules
 parameter_list|(
 name|String
 name|requirement
@@ -371,7 +371,7 @@ name|modules
 init|=
 name|repo
 operator|.
-name|findModule
+name|findModules
 argument_list|(
 name|requirement
 argument_list|,

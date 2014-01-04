@@ -1172,7 +1172,7 @@ name|attributes
 operator|.
 name|getValue
 argument_list|(
-literal|"uncompressedDir"
+literal|"unpackedFile"
 argument_list|)
 operator|!=
 literal|null
@@ -1180,7 +1180,7 @@ condition|)
 block|{
 name|aReport
 operator|.
-name|setUncompressedLocalDir
+name|setUnpackedLocalFile
 argument_list|(
 operator|new
 name|File
@@ -1189,7 +1189,7 @@ name|attributes
 operator|.
 name|getValue
 argument_list|(
-literal|"uncompressedDir"
+literal|"unpackedFile"
 argument_list|)
 argument_list|)
 argument_list|)

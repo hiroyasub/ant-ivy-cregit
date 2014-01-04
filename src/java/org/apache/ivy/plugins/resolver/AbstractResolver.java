@@ -2324,16 +2324,6 @@ argument_list|()
 decl_stmt|;
 name|cacheDownloadOptions
 operator|.
-name|setUncompress
-argument_list|(
-name|options
-operator|.
-name|isUncompress
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|cacheDownloadOptions
-operator|.
 name|setListener
 argument_list|(
 name|getDownloadListener

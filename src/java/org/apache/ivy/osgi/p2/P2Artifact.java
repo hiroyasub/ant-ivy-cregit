@@ -109,6 +109,27 @@ return|return
 name|version
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|id
+operator|+
+literal|"@"
+operator|+
+name|version
+operator|+
+literal|" ("
+operator|+
+name|classifier
+operator|+
+literal|")"
+return|;
+block|}
 block|}
 end_class
 

@@ -522,12 +522,6 @@ name|getResolveId
 argument_list|()
 argument_list|)
 operator|.
-name|setUncompress
-argument_list|(
-name|isUncompress
-argument_list|()
-argument_list|)
-operator|.
 name|setMapper
 argument_list|(
 name|mapper
