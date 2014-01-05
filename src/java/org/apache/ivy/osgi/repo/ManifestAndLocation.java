@@ -55,6 +55,12 @@ specifier|final
 name|URI
 name|uri
 decl_stmt|;
+comment|/**      * location of the source jar      */
+specifier|private
+specifier|final
+name|URI
+name|sourceURI
+decl_stmt|;
 specifier|public
 name|ManifestAndLocation
 parameter_list|(
@@ -63,6 +69,9 @@ name|manifest
 parameter_list|,
 name|URI
 name|uri
+parameter_list|,
+name|URI
+name|sourceURI
 parameter_list|)
 block|{
 name|this
@@ -76,6 +85,12 @@ operator|.
 name|uri
 operator|=
 name|uri
+expr_stmt|;
+name|this
+operator|.
+name|sourceURI
+operator|=
+name|sourceURI
 expr_stmt|;
 block|}
 specifier|public
@@ -94,6 +109,15 @@ parameter_list|()
 block|{
 return|return
 name|manifest
+return|;
+block|}
+specifier|public
+name|URI
+name|getSourceURI
+parameter_list|()
+block|{
+return|return
+name|sourceURI
 return|;
 block|}
 block|}

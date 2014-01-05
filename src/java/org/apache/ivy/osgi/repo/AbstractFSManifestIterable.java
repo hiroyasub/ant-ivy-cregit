@@ -483,6 +483,8 @@ name|buildBundleURI
 argument_list|(
 name|bundleCandidate
 argument_list|)
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
