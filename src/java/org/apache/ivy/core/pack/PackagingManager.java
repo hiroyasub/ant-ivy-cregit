@@ -123,20 +123,6 @@ name|IvySettingsAware
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|Message
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -444,18 +430,6 @@ argument_list|(
 literal|","
 argument_list|)
 decl_stmt|;
-name|Message
-operator|.
-name|info
-argument_list|(
-literal|"\tUnpacking "
-operator|+
-name|artifact
-operator|.
-name|getId
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|InputStream
 name|in
 init|=
