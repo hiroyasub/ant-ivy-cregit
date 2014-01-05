@@ -425,6 +425,9 @@ block|}
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getProblems
 parameter_list|()
 block|{
