@@ -65,7 +65,35 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|ExtraInfoHolder
 import|;
 end_import
 
@@ -464,9 +492,19 @@ name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the custom info provided in the info tag.      * All the tags except the description are given.      * The key is the name of the tag, the value is its content.      * @return      */
+annotation|@
+name|Deprecated
 name|Map
 comment|/*<String,String>*/
 name|getExtraInfo
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a list of extras infos (tag name, attributes and content).      * All the tags except the description are given.      * @return      */
+name|List
+argument_list|<
+name|ExtraInfoHolder
+argument_list|>
+name|getExtraInfos
 parameter_list|()
 function_decl|;
 block|}
