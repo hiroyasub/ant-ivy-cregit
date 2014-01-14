@@ -201,10 +201,6 @@ name|IvyListener
 index|[]
 name|listeners
 init|=
-operator|(
-name|IvyListener
-index|[]
-operator|)
 name|this
 operator|.
 name|listeners

@@ -275,9 +275,6 @@ block|{
 name|Object
 name|element
 init|=
-operator|(
-name|Object
-operator|)
 name|iter
 operator|.
 name|next

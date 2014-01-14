@@ -1246,10 +1246,6 @@ expr_stmt|;
 block|}
 block|}
 return|return
-operator|(
-name|IvyNode
-index|[]
-operator|)
 name|downloaded
 operator|.
 name|toArray
@@ -1832,9 +1828,6 @@ block|{
 name|ArtifactDownloadReport
 name|adr
 init|=
-operator|(
-name|ArtifactDownloadReport
-operator|)
 name|iterator
 operator|.
 name|next

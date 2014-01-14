@@ -2132,17 +2132,6 @@ operator|.
 name|Credentials
 name|c
 init|=
-operator|(
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|Credentials
-operator|)
 name|CredentialsStore
 operator|.
 name|INSTANCE

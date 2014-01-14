@@ -428,9 +428,6 @@ block|{
 name|ModuleDescriptor
 name|md
 init|=
-operator|(
-name|ModuleDescriptor
-operator|)
 name|list
 operator|.
 name|get

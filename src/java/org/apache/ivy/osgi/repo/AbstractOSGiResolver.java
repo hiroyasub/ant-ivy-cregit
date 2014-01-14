@@ -2660,9 +2660,6 @@ block|{
 name|ModuleDescriptor
 name|md
 init|=
-operator|(
-name|ModuleDescriptor
-operator|)
 name|itModules
 operator|.
 name|next
@@ -2755,10 +2752,6 @@ name|criteria
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
-name|Map
-index|[]
-operator|)
 name|listTokenValues
 operator|.
 name|toArray

@@ -239,9 +239,6 @@ argument_list|,
 operator|new
 name|File
 argument_list|(
-operator|(
-name|String
-operator|)
 name|settings
 operator|.
 name|getVariables
@@ -280,10 +277,6 @@ operator|.
 name|toUpperCase
 argument_list|()
 argument_list|,
-operator|(
-operator|(
-name|String
-operator|)
 name|settings
 operator|.
 name|getVariables
@@ -293,7 +286,6 @@ name|getVariable
 argument_list|(
 literal|"ivy.settings.url"
 argument_list|)
-operator|)
 operator|.
 name|toUpperCase
 argument_list|()
@@ -313,10 +305,6 @@ operator|.
 name|toUpperCase
 argument_list|()
 argument_list|,
-operator|(
-operator|(
-name|String
-operator|)
 name|settings
 operator|.
 name|getVariables
@@ -326,7 +314,6 @@ name|getVariable
 argument_list|(
 literal|"ivy.settings.dir"
 argument_list|)
-operator|)
 operator|.
 name|toUpperCase
 argument_list|()

@@ -208,9 +208,6 @@ expr_stmt|;
 name|Resource
 name|res
 init|=
-operator|(
-name|Resource
-operator|)
 name|resourcesCache
 operator|.
 name|get

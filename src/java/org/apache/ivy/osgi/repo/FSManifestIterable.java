@@ -414,9 +414,6 @@ return|return
 operator|new
 name|FileInputStream
 argument_list|(
-operator|(
-name|File
-operator|)
 name|f
 argument_list|)
 return|;

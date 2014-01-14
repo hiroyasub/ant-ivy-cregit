@@ -806,9 +806,6 @@ name|append
 argument_list|(
 name|CHARS
 index|[
-operator|(
-name|int
-operator|)
 name|ch
 index|]
 argument_list|)
@@ -835,9 +832,6 @@ name|append
 argument_list|(
 name|CHARS
 index|[
-operator|(
-name|int
-operator|)
 name|ch
 index|]
 argument_list|)

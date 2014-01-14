@@ -196,9 +196,6 @@ name|profile
 parameter_list|)
 block|{
 return|return
-operator|(
-name|ExecutionEnvironmentProfile
-operator|)
 name|profileList
 operator|.
 name|get
@@ -436,9 +433,6 @@ block|{
 name|ExecutionEnvironmentProfile
 name|extendedProfile
 init|=
-operator|(
-name|ExecutionEnvironmentProfile
-operator|)
 name|profiles
 operator|.
 name|get

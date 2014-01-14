@@ -765,9 +765,6 @@ block|{
 name|String
 name|vExport
 init|=
-operator|(
-name|String
-operator|)
 name|exportElement
 operator|.
 name|getAttributes
@@ -849,9 +846,6 @@ decl_stmt|;
 name|String
 name|uses
 init|=
-operator|(
-name|String
-operator|)
 name|exportElement
 operator|.
 name|getDirectives
@@ -974,9 +968,6 @@ decl_stmt|;
 name|ManifestHeaderElement
 name|element
 init|=
-operator|(
-name|ManifestHeaderElement
-operator|)
 name|eclipseSourceBundleValue
 operator|.
 name|getElements
@@ -991,9 +982,6 @@ decl_stmt|;
 name|String
 name|symbolicNameTarget
 init|=
-operator|(
-name|String
-operator|)
 name|element
 operator|.
 name|getValues
@@ -1015,9 +1003,6 @@ expr_stmt|;
 name|String
 name|v
 init|=
-operator|(
-name|String
-operator|)
 name|element
 operator|.
 name|getAttributes
@@ -1288,9 +1273,6 @@ block|{
 name|String
 name|attVersion
 init|=
-operator|(
-name|String
-operator|)
 name|element
 operator|.
 name|getAttributes

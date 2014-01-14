@@ -837,9 +837,6 @@ block|}
 comment|// time now to delegate for a new element
 name|delegate
 operator|=
-operator|(
-name|DelegatingHandler
-operator|)
 name|saxHandlerMapping
 operator|.
 name|get

@@ -7803,9 +7803,6 @@ block|{
 name|Object
 name|object
 init|=
-operator|(
-name|Object
-operator|)
 name|iterator
 operator|.
 name|next

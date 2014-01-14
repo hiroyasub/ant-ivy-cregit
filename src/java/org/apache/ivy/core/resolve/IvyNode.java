@@ -4166,9 +4166,6 @@ block|{
 name|IvyNode
 name|parent
 init|=
-operator|(
-name|IvyNode
-operator|)
 name|node
 operator|.
 name|getDirectCallerFor

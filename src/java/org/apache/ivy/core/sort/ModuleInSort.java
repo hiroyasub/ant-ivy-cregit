@@ -434,10 +434,6 @@ name|ModuleRevisionId
 index|[]
 name|mrids
 init|=
-operator|(
-name|ModuleRevisionId
-index|[]
-operator|)
 name|elemOfLoop
 operator|.
 name|toArray

@@ -548,10 +548,6 @@ decl_stmt|;
 name|ModuleDescriptor
 name|md
 init|=
-operator|(
-operator|(
-name|ModuleDescriptorWrapper
-operator|)
 name|site
 operator|.
 name|getModules
@@ -559,7 +555,6 @@ argument_list|()
 operator|.
 name|next
 argument_list|()
-operator|)
 operator|.
 name|getModuleDescriptor
 argument_list|()

@@ -436,10 +436,6 @@ name|put
 argument_list|(
 name|callerConf
 argument_list|,
-operator|(
-name|String
-index|[]
-operator|)
 name|newDepConfs
 operator|.
 name|toArray

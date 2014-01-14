@@ -766,9 +766,6 @@ block|}
 name|MetadataArtifactDownloadReport
 name|madr
 init|=
-operator|(
-name|MetadataArtifactDownloadReport
-operator|)
 name|metadataReports
 operator|.
 name|get
@@ -1235,9 +1232,6 @@ block|}
 name|ArtifactDownloadReport
 name|aReport
 init|=
-operator|(
-name|ArtifactDownloadReport
-operator|)
 name|revisionArtifacts
 operator|.
 name|get
@@ -1946,10 +1940,6 @@ name|getArtifacts
 parameter_list|()
 block|{
 return|return
-operator|(
-name|Artifact
-index|[]
-operator|)
 name|parser
 operator|.
 name|getArtifacts
@@ -1978,10 +1968,6 @@ name|getArtifactReports
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ArtifactDownloadReport
-index|[]
-operator|)
 name|parser
 operator|.
 name|getArtifactReports
@@ -2010,10 +1996,6 @@ name|getDependencyRevisionIds
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ModuleRevisionId
-index|[]
-operator|)
 name|parser
 operator|.
 name|getModuleRevisionIds
@@ -2042,10 +2024,6 @@ name|getRealDependencyRevisionIds
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ModuleRevisionId
-index|[]
-operator|)
 name|parser
 operator|.
 name|getRealModuleRevisionIds

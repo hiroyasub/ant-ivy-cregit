@@ -1486,9 +1486,6 @@ decl_stmt|;
 name|String
 name|val
 init|=
-operator|(
-name|String
-operator|)
 name|variables
 operator|.
 name|getVariable
@@ -2519,9 +2516,6 @@ decl_stmt|;
 name|String
 name|val
 init|=
-operator|(
-name|String
-operator|)
 name|params
 operator|.
 name|getVariable

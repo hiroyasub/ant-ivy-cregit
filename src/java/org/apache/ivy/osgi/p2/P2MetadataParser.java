@@ -1912,12 +1912,7 @@ condition|)
 block|{
 name|eclipseType
 operator|=
-operator|(
-operator|(
-name|ProvidedHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|name
 expr_stmt|;
@@ -2272,12 +2267,7 @@ name|type
 init|=
 name|namespace2Type
 argument_list|(
-operator|(
-operator|(
-name|RequiredHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|namespace
 argument_list|)
@@ -2304,12 +2294,7 @@ name|debug
 argument_list|(
 literal|"Unsupported required capability "
 operator|+
-operator|(
-operator|(
-name|RequiredHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|namespace
 operator|+

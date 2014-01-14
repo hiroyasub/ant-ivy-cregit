@@ -968,12 +968,7 @@ name|SAXParseException
 argument_list|(
 literal|"Unsupported requirement filter: "
 operator|+
-operator|(
-operator|(
-name|RequireHandler
-operator|)
 name|child
-operator|)
 operator|.
 name|filter
 operator|+

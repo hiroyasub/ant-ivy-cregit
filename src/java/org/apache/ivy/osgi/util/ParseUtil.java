@@ -350,10 +350,6 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|list
 operator|.
 name|toArray

@@ -474,9 +474,6 @@ name|string
 operator|.
 name|concat
 argument_list|(
-operator|(
-name|String
-operator|)
 name|itValues
 operator|.
 name|next
@@ -533,9 +530,6 @@ name|string
 operator|.
 name|concat
 argument_list|(
-operator|(
-name|String
-operator|)
 name|directive
 operator|.
 name|getKey
@@ -557,9 +551,6 @@ name|string
 operator|.
 name|concat
 argument_list|(
-operator|(
-name|String
-operator|)
 name|directive
 operator|.
 name|getValue
@@ -598,9 +589,6 @@ name|string
 operator|.
 name|concat
 argument_list|(
-operator|(
-name|String
-operator|)
 name|attribute
 operator|.
 name|getKey
@@ -622,9 +610,6 @@ name|string
 operator|.
 name|concat
 argument_list|(
-operator|(
-name|String
-operator|)
 name|attribute
 operator|.
 name|getValue

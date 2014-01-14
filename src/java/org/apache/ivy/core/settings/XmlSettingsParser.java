@@ -1824,9 +1824,6 @@ literal|"true"
 operator|.
 name|equals
 argument_list|(
-operator|(
-name|String
-operator|)
 name|attributes
 operator|.
 name|get
@@ -2615,9 +2612,6 @@ specifier|final
 name|IvyVariableContainer
 name|variables
 init|=
-operator|(
-name|IvyVariableContainer
-operator|)
 name|ivy
 operator|.
 name|getVariableContainer

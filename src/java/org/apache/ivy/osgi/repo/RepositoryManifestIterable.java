@@ -199,9 +199,6 @@ name|repo
 operator|.
 name|getResource
 argument_list|(
-operator|(
-name|String
-operator|)
 name|location
 argument_list|)
 decl_stmt|;
@@ -255,9 +252,6 @@ name|repo
 operator|.
 name|getResource
 argument_list|(
-operator|(
-name|String
-operator|)
 name|f
 argument_list|)
 operator|.
@@ -287,9 +281,6 @@ name|listAll
 argument_list|(
 name|repo
 argument_list|,
-operator|(
-name|String
-operator|)
 name|dir
 argument_list|)
 argument_list|)
@@ -317,9 +308,6 @@ name|listAll
 argument_list|(
 name|repo
 argument_list|,
-operator|(
-name|String
-operator|)
 name|dir
 argument_list|)
 argument_list|)
