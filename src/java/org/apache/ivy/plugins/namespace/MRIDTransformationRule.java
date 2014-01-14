@@ -159,7 +159,7 @@ name|ModuleRevisionId
 name|mrid
 parameter_list|)
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|matchers
 index|[
 literal|0
@@ -352,7 +352,7 @@ block|}
 return|return
 literal|true
 return|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 block|}
 specifier|public
 name|ModuleRevisionId

@@ -1536,7 +1536,7 @@ comment|// ignored
 block|}
 block|}
 block|}
-comment|/**       * Read and ignore the response body.       */
+comment|/**      * Read and ignore the response body.      */
 specifier|private
 name|void
 name|readResponseBody
@@ -1581,7 +1581,7 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|//Skip content
+comment|// Skip content
 block|}
 block|}
 catch|catch
@@ -1648,7 +1648,7 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|//Skip content
+comment|// Skip content
 block|}
 block|}
 catch|catch

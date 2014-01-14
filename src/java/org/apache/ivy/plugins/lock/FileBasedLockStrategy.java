@@ -166,11 +166,11 @@ name|timeout
 init|=
 name|DEFAULT_TIMEOUT
 decl_stmt|;
-comment|/**      * Lock counter list must be static: locks are implicitly shared to the      * entire process, so the list too much be.      */
+comment|/**      * Lock counter list must be static: locks are implicitly shared to the entire process, so the      * list too much be.      */
 specifier|private
 specifier|static
 name|ConcurrentMap
-comment|/*<File, Map<Thread, Integer>>*/
+comment|/*<File, Map<Thread, Integer>> */
 name|currentLockHolders
 init|=
 operator|new
@@ -635,7 +635,7 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Determine the state of the lockfile.      *       * Must be called from within a synchronized block.      *       * Three possibilities exist:      *  - The lock is held by the current thread (>0)      *  - The lock is held by one or more different threads (-1)      *  - The lock is not held at all (0).      *       * @param file file to lock      * @param forThread thread for which lock status is being queried      */
+comment|/**      * Determine the state of the lockfile.      *       * Must be called from within a synchronized block.      *       * Three possibilities exist: - The lock is held by the current thread (>0) - The lock is held      * by one or more different threads (-1) - The lock is not held at all (0).      *       * @param file      *            file to lock      * @param forThread      *            thread for which lock status is being queried      */
 specifier|private
 name|int
 name|hasLock
@@ -729,7 +729,7 @@ literal|1
 return|;
 block|}
 block|}
-comment|/** Record that this thread holds the lock.      *       * Asserts that the lock has been previously grabbed by this thread.      * Must be called from a synchronized block in which the lock was grabbed.       *       * @param file file which has been locked      * @param forThread thread for which locking occurred      * @return number of times this thread has grabbed the lock      */
+comment|/**      * Record that this thread holds the lock.      *       * Asserts that the lock has been previously grabbed by this thread. Must be called from a      * synchronized block in which the lock was grabbed.      *       * @param file      *            file which has been locked      * @param forThread      *            thread for which locking occurred      * @return number of times this thread has grabbed the lock      */
 specifier|private
 name|int
 name|incrementLock
@@ -823,7 +823,7 @@ return|return
 name|holdLocks
 return|;
 block|}
-comment|/** Decrease depth of this thread's lock.      *       * Must be called within a synchronized block.      *       * If this returns 0, the caller is responsible for releasing the lock      * within that same block.       *       * @param file file for which lock depth is being decreased      * @param forThread thread for which lock depth is being decreased      * @return remaining depth of this lock      */
+comment|/**      * Decrease depth of this thread's lock.      *       * Must be called within a synchronized block.      *       * If this returns 0, the caller is responsible for releasing the lock within that same block.      *       * @param file      *            file for which lock depth is being decreased      * @param forThread      *            thread for which lock depth is being decreased      * @return remaining depth of this lock      */
 specifier|private
 name|int
 name|decrementLock
@@ -947,7 +947,7 @@ return|return
 name|newHeldLocks
 return|;
 block|}
-comment|/** Return a string naming the threads which currently hold this lock.      */
+comment|/**      * Return a string naming the threads which currently hold this lock.      */
 specifier|protected
 name|String
 name|getCurrentLockHolderNames
@@ -1212,7 +1212,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Locks a file using the {@link FileLock} mechanism.       */
+comment|/**      * Locks a file using the {@link FileLock} mechanism.      */
 specifier|public
 specifier|static
 class|class

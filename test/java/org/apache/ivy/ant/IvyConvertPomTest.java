@@ -119,19 +119,19 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//do not work properly on all platform and depends on the file date
-comment|//keep the code in comments in case someone manage to fix this and to highlight the fact
-comment|//that this is not checked
-comment|//        String wrote = FileUtil.readEntirely(new BufferedReader(new FileReader(destFile)));
-comment|//        String expected = readEntirely("test-convertpom.xml").replaceAll("\r\n", "\n").replace(
-comment|//            '\r', '\n');
-comment|//         assertEquals(expected, wrote);
+comment|// do not work properly on all platform and depends on the file date
+comment|// keep the code in comments in case someone manage to fix this and to highlight the fact
+comment|// that this is not checked
+comment|// String wrote = FileUtil.readEntirely(new BufferedReader(new FileReader(destFile)));
+comment|// String expected = readEntirely("test-convertpom.xml").replaceAll("\r\n", "\n").replace(
+comment|// '\r', '\n');
+comment|// assertEquals(expected, wrote);
 block|}
-comment|//    private String readEntirely(String resource) throws IOException {
-comment|//        return FileUtil.readEntirely(
-comment|//            new BufferedReader(new InputStreamReader(IvyConvertPomTest.class.getResource(resource)
-comment|//                    .openStream()))).replaceAll("\r\n", "\n").replace('\r', '\n');
-comment|//    }
+comment|// private String readEntirely(String resource) throws IOException {
+comment|// return FileUtil.readEntirely(
+comment|// new BufferedReader(new InputStreamReader(IvyConvertPomTest.class.getResource(resource)
+comment|// .openStream()))).replaceAll("\r\n", "\n").replace('\r', '\n');
+comment|// }
 block|}
 end_class
 

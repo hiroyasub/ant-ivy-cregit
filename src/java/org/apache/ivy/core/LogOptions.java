@@ -38,7 +38,7 @@ name|LOG_DOWNLOAD_ONLY
 init|=
 literal|"download-only"
 decl_stmt|;
-comment|/**      * This log setting disable all usual messages during the resolve process.       */
+comment|/**      * This log setting disable all usual messages during the resolve process.      */
 specifier|public
 specifier|static
 specifier|final
@@ -47,7 +47,7 @@ name|LOG_QUIET
 init|=
 literal|"quiet"
 decl_stmt|;
-comment|/**      * The log settings to use.      * One of {@link #LOG_DEFAULT}, {@link #LOG_DOWNLOAD_ONLY}, {@link #LOG_QUIET}      */
+comment|/**      * The log settings to use. One of {@link #LOG_DEFAULT}, {@link #LOG_DOWNLOAD_ONLY},      * {@link #LOG_QUIET}      */
 specifier|private
 name|String
 name|log

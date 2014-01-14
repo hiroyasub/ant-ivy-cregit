@@ -118,7 +118,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|circularDependencies
 init|=
 operator|new

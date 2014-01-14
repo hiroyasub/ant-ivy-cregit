@@ -412,7 +412,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/*          * If the list of conflicts contains dynamic revisions, delay the conflict          * calculation until they are resolved.          * TODO: we probably could already evict some of the dynamic revisions!          */
+comment|/*          * If the list of conflicts contains dynamic revisions, delay the conflict calculation until          * they are resolved. TODO: we probably could already evict some of the dynamic revisions!          */
 for|for
 control|(
 name|Iterator

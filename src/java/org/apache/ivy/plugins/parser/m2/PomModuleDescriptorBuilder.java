@@ -590,7 +590,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Build a module descriptor.  This class handle the complexity of the structure of an ivy   * ModuleDescriptor and isolate the PomModuleDescriptorParser from it.   */
+comment|/**  * Build a module descriptor. This class handle the complexity of the structure of an ivy  * ModuleDescriptor and isolate the PomModuleDescriptorParser from it.  */
 end_comment
 
 begin_class
@@ -900,7 +900,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|JAR_PACKAGINGS
 init|=
 name|Arrays
@@ -982,7 +982,7 @@ argument_list|,
 literal|"compile(*)"
 argument_list|)
 expr_stmt|;
-comment|//dd.addDependencyConfiguration("optional", "provided(*)");
+comment|// dd.addDependencyConfiguration("optional", "provided(*)");
 name|dd
 operator|.
 name|addDependencyConfiguration
@@ -1004,7 +1004,7 @@ argument_list|,
 literal|"compile(*)"
 argument_list|)
 expr_stmt|;
-comment|//dd.addDependencyConfiguration("compile", "provided(*)");
+comment|// dd.addDependencyConfiguration("compile", "provided(*)");
 name|dd
 operator|.
 name|addDependencyConfiguration
@@ -1243,7 +1243,7 @@ name|boolean
 name|isOptional
 parameter_list|)
 block|{
-comment|//optional doesn't make sense in the test scope
+comment|// optional doesn't make sense in the test scope
 name|dd
 operator|.
 name|addDependencyConfiguration
@@ -1287,7 +1287,7 @@ name|boolean
 name|isOptional
 parameter_list|)
 block|{
-comment|//optional doesn't make sense in the system scope
+comment|// optional doesn't make sense in the system scope
 name|dd
 operator|.
 name|addDependencyConfiguration
@@ -2117,7 +2117,7 @@ comment|// inherited from parent POMs if either of the following is true:
 comment|// the<exclusions> element is missing or the<exclusions> element
 comment|// is present, but empty.
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|excluded
 init|=
 name|dep
@@ -2263,7 +2263,8 @@ parameter_list|)
 block|{
 comment|// Some POMs depend on themselves through their parent pom, don't add this dependency
 comment|// since Ivy doesn't allow this!
-comment|// Example: http://repo2.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
+comment|// Example:
+comment|// http://repo2.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
 name|ModuleId
 name|dependencyId
 init|=
@@ -2607,7 +2608,7 @@ block|}
 specifier|public
 specifier|static
 name|List
-comment|/*<PomDependencyMgt>*/
+comment|/*<PomDependencyMgt> */
 name|getPlugins
 parameter_list|(
 name|ModuleDescriptor
@@ -2810,7 +2811,7 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getExcludedModules
 parameter_list|()
 block|{
@@ -3139,7 +3140,7 @@ block|}
 specifier|private
 specifier|static
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getDependencyMgtExclusions
 parameter_list|(
 name|ModuleDescriptor
@@ -3213,16 +3214,16 @@ name|artifactId
 argument_list|)
 decl_stmt|;
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|exclusionIds
 init|=
 operator|new
 name|LinkedList
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 argument_list|()
 decl_stmt|;
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|extras
 init|=
 name|descriptor
@@ -3254,7 +3255,7 @@ block|{
 name|Map
 operator|.
 name|Entry
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|ent
 init|=
 operator|(
@@ -3365,7 +3366,7 @@ block|}
 specifier|public
 specifier|static
 name|Map
-comment|/*<ModuleId, String version>*/
+comment|/*<ModuleId, String version> */
 name|getDependencyManagementMap
 parameter_list|(
 name|ModuleDescriptor
@@ -3804,7 +3805,7 @@ name|scopeKey
 argument_list|)
 decl_stmt|;
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|exclusions
 init|=
 name|getDependencyMgtExclusions
@@ -4254,7 +4255,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *<code>DependencyDescriptor</code> that provides access to the original<code>PomDependencyData</code>.      */
+comment|/**      *<code>DependencyDescriptor</code> that provides access to the original      *<code>PomDependencyData</code>.      */
 specifier|public
 specifier|static
 class|class
@@ -4300,7 +4301,7 @@ operator|=
 name|pomDependencyData
 expr_stmt|;
 block|}
-comment|/**          * Get PomDependencyData.          * @return PomDependencyData          */
+comment|/**          * Get PomDependencyData.          *           * @return PomDependencyData          */
 specifier|public
 name|PomDependencyData
 name|getPomDependencyData
@@ -4321,7 +4322,7 @@ block|{
 specifier|private
 specifier|final
 name|Map
-comment|/*<ModuleId, PomDependencyMgt>*/
+comment|/*<ModuleId, PomDependencyMgt> */
 name|dependencyManagementMap
 init|=
 operator|new

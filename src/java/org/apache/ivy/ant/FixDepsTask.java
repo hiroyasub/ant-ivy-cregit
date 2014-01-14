@@ -301,7 +301,7 @@ name|getResolvedReport
 argument_list|()
 decl_stmt|;
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|midToKeep
 init|=
 operator|new

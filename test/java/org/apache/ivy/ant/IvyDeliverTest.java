@@ -546,8 +546,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//publish the parent descriptor first, so that it can be found while
-comment|//we are reading the child descriptor.
+comment|// publish the parent descriptor first, so that it can be found while
+comment|// we are reading the child descriptor.
 name|project
 operator|.
 name|setProperty
@@ -633,7 +633,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//resolve and deliver the child descriptor
+comment|// resolve and deliver the child descriptor
 name|project
 operator|.
 name|setProperty

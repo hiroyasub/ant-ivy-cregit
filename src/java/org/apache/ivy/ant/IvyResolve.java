@@ -496,7 +496,7 @@ name|checkIfChanged
 init|=
 literal|true
 decl_stmt|;
-comment|//for backward compatibility
+comment|// for backward compatibility
 specifier|private
 name|List
 comment|/*<IvyDependency> */
@@ -2138,7 +2138,7 @@ name|getCheckIfChanged
 argument_list|()
 condition|)
 block|{
-comment|//hasChanged has already been set earlier
+comment|// hasChanged has already been set earlier
 name|getProject
 argument_list|()
 operator|.
@@ -2332,7 +2332,7 @@ block|}
 block|}
 specifier|protected
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|getAllowedLogOptions
 parameter_list|()
 block|{

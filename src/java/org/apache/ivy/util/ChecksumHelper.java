@@ -743,7 +743,7 @@ operator|*
 literal|2
 argument_list|)
 decl_stmt|;
-comment|//CheckStyle:MagicNumber OFF
+comment|// CheckStyle:MagicNumber OFF
 for|for
 control|(
 name|int
@@ -844,7 +844,7 @@ argument_list|)
 expr_stmt|;
 comment|// convert the nibble to a String Character
 block|}
-comment|//CheckStyle:MagicNumber ON
+comment|// CheckStyle:MagicNumber ON
 return|return
 name|out
 operator|.

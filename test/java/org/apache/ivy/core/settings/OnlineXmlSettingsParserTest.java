@@ -212,7 +212,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//Use a settings file via http that use an include with relative url
+comment|// Use a settings file via http that use an include with relative url
 name|configureURLHandler
 argument_list|()
 expr_stmt|;
@@ -273,7 +273,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//Use a settings file via http that use an include with relative file
+comment|// Use a settings file via http that use an include with relative file
 name|configureURLHandler
 argument_list|()
 expr_stmt|;
@@ -334,9 +334,9 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//Use a settings file via http that use an include with absolute file
-comment|//WARNING : this test will only work if the test are launched from the project root
-comment|//directory
+comment|// Use a settings file via http that use an include with absolute file
+comment|// WARNING : this test will only work if the test are launched from the project root
+comment|// directory
 name|configureURLHandler
 argument_list|()
 expr_stmt|;

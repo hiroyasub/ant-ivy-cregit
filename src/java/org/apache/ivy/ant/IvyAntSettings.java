@@ -491,7 +491,7 @@ name|autoRegistered
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param  project  TODO add text.      * @return  An IvySetting instance.      */
+comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param project      *            TODO add text.      * @return An IvySetting instance.      */
 specifier|public
 specifier|static
 name|IvyAntSettings
@@ -967,7 +967,7 @@ operator|=
 name|url
 expr_stmt|;
 block|}
-comment|/*      * This is usually not necessary to define a reference in Ant, but it's the only      * way to know the id of the settings, which we use to set ant properties.      */
+comment|/*      * This is usually not necessary to define a reference in Ant, but it's the only way to know the      * id of the settings, which we use to set ant properties.      */
 specifier|public
 name|void
 name|setId
@@ -1048,7 +1048,7 @@ return|return
 name|id
 return|;
 block|}
-comment|/**      * Return the configured Ivy instance.      * @return Returns the configured Ivy instance.      */
+comment|/**      * Return the configured Ivy instance.      *       * @return Returns the configured Ivy instance.      */
 specifier|public
 name|Ivy
 name|getConfiguredIvyInstance

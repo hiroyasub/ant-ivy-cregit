@@ -464,8 +464,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//publish the parent descriptor first, so that it can be found while
-comment|//we are reading the child descriptor.
+comment|// publish the parent descriptor first, so that it can be found while
+comment|// we are reading the child descriptor.
 name|project
 operator|.
 name|setProperty
@@ -551,7 +551,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
+comment|// update=true implies merge=true
 name|project
 operator|.
 name|setProperty
@@ -719,7 +719,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -744,7 +744,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -799,11 +799,12 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//here we directly publish a module extending ivy-multiconf.xml,
-comment|//the module parent is not published not yet in cache
-comment|//See : IVY-1248
-comment|//update=true implies merge=true
-comment|//project.setProperty("ivy.dep.file", "test/java/org/apache/ivy/ant/ivy-extends-multiconf.xml");
+comment|// here we directly publish a module extending ivy-multiconf.xml,
+comment|// the module parent is not published not yet in cache
+comment|// See : IVY-1248
+comment|// update=true implies merge=true
+comment|// project.setProperty("ivy.dep.file",
+comment|// "test/java/org/apache/ivy/ant/ivy-extends-multiconf.xml");
 name|publish
 operator|.
 name|setResolver
@@ -962,7 +963,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -987,7 +988,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -1042,9 +1043,9 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//here we directly publish a module extending ivy-multiconf.xml,
-comment|//the module parent is not published not yet in cache
-comment|//See : IVY-1248
+comment|// here we directly publish a module extending ivy-multiconf.xml,
+comment|// the module parent is not published not yet in cache
+comment|// See : IVY-1248
 name|IvyResolve
 name|resolve
 init|=
@@ -1075,7 +1076,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
+comment|// update=true implies merge=true
 name|publish
 operator|.
 name|setResolver
@@ -1248,7 +1249,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -1273,7 +1274,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -1328,7 +1329,7 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//See : IVY-XXX
+comment|// See : IVY-XXX
 name|IvyResolve
 name|resolve
 init|=
@@ -1359,8 +1360,9 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
-comment|//project.setProperty("ivy.dep.file", "test/java/org/apache/ivy/ant/ivy-extends-multiconf.xml");
+comment|// update=true implies merge=true
+comment|// project.setProperty("ivy.dep.file",
+comment|// "test/java/org/apache/ivy/ant/ivy-extends-multiconf.xml");
 name|publish
 operator|.
 name|setResolver
@@ -1498,7 +1500,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -1523,7 +1525,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -1578,8 +1580,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//publish the parent descriptor first, so that it can be found while
-comment|//we are reading the child descriptor.
+comment|// publish the parent descriptor first, so that it can be found while
+comment|// we are reading the child descriptor.
 name|project
 operator|.
 name|setProperty
@@ -1665,7 +1667,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
+comment|// update=true implies merge=true
 name|project
 operator|.
 name|setProperty
@@ -1833,7 +1835,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -1858,7 +1860,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -1913,8 +1915,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//publish the parent descriptor first, so that it can be found while
-comment|//we are reading the child descriptor.
+comment|// publish the parent descriptor first, so that it can be found while
+comment|// we are reading the child descriptor.
 name|project
 operator|.
 name|setProperty
@@ -2000,7 +2002,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
+comment|// update=true implies merge=true
 name|project
 operator|.
 name|setProperty
@@ -2193,7 +2195,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -2218,7 +2220,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -2273,8 +2275,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|//publish the parent descriptor first, so that it can be found while
-comment|//we are reading the child descriptor.
+comment|// publish the parent descriptor first, so that it can be found while
+comment|// we are reading the child descriptor.
 name|project
 operator|.
 name|setProperty
@@ -2360,7 +2362,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|//update=true implies merge=true
+comment|// update=true implies merge=true
 name|project
 operator|.
 name|setProperty
@@ -2553,7 +2555,7 @@ name|readLine
 argument_list|()
 control|)
 block|{
-comment|//strip timestamps for the comparison
+comment|// strip timestamps for the comparison
 if|if
 condition|(
 name|mergeLine
@@ -2578,7 +2580,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|//discard whitespace-only lines
+comment|// discard whitespace-only lines
 if|if
 condition|(
 operator|!
@@ -4752,7 +4754,7 @@ name|BuildException
 name|ex
 parameter_list|)
 block|{
-comment|//normal
+comment|// normal
 block|}
 block|}
 specifier|public

@@ -420,7 +420,7 @@ parameter_list|)
 throws|throws
 name|ParseException
 block|{
-comment|//TODO make it a real mock and check that dd and data are the one that are expected
+comment|// TODO make it a real mock and check that dd and data are the one that are expected
 name|DefaultModuleDescriptor
 name|moduleDesc
 init|=
@@ -3300,10 +3300,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//I don't know what it should be.  Ivy has no notion of optional dependencies
-comment|//assertEquals(new HashSet(Arrays.asList(new String[] {"compile(*)", "runtime(*)",
-comment|//        "master(*)"})), new HashSet(Arrays.asList(dds[0]
-comment|//        .getDependencyConfigurations("optional"))));
+comment|// I don't know what it should be. Ivy has no notion of optional dependencies
+comment|// assertEquals(new HashSet(Arrays.asList(new String[] {"compile(*)", "runtime(*)",
+comment|// "master(*)"})), new HashSet(Arrays.asList(dds[0]
+comment|// .getDependencyConfigurations("optional"))));
 name|assertEquals
 argument_list|(
 name|ModuleRevisionId
@@ -5888,7 +5888,7 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
-comment|//2 are inherited from parent.  Only the first one is important for this test
+comment|// 2 are inherited from parent. Only the first one is important for this test
 name|assertEquals
 argument_list|(
 name|ModuleRevisionId
@@ -5911,7 +5911,8 @@ name|getDependencyRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//present in the pom using a property defined in the parent
+comment|// present in the pom using a property defined in the
+comment|// parent
 block|}
 specifier|public
 name|void
@@ -6061,7 +6062,7 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
-comment|//2 are inherited from parent.  Only the first one is important for this test
+comment|// 2 are inherited from parent. Only the first one is important for this test
 name|assertEquals
 argument_list|(
 name|ModuleRevisionId

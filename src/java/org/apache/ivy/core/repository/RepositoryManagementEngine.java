@@ -366,9 +366,9 @@ name|KILO
 init|=
 literal|1024
 decl_stmt|;
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 comment|// state loaded on #load()
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 comment|/**      * True if the repository has already been loaded, false otherwise.      */
 specifier|private
 name|boolean
@@ -377,7 +377,7 @@ decl_stmt|;
 comment|/**      * ModuleDescriptors stored by ModuleRevisionId      */
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId,ModuleDescriptor>*/
+comment|/*<ModuleRevisionId,ModuleDescriptor> */
 name|revisions
 init|=
 operator|new
@@ -387,7 +387,7 @@ decl_stmt|;
 comment|/**      * ModuleRevisionId for which loading was not possible, with corresponding error message.      */
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId,String>*/
+comment|/*<ModuleRevisionId,String> */
 name|errors
 init|=
 operator|new
@@ -397,16 +397,16 @@ decl_stmt|;
 comment|/**      * List of ModuleRevisionId per ModuleId.      */
 specifier|private
 name|Map
-comment|/*<ModuleId,Collection<ModuleRevisionId>>*/
+comment|/*<ModuleId,Collection<ModuleRevisionId>> */
 name|modules
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 comment|// state loaded on #analyze()
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 comment|/**      * True when the repository has been analyzed, false otherwise      */
 specifier|private
 name|boolean
@@ -415,7 +415,7 @@ decl_stmt|;
 comment|/**      * Cache from requested module revision id to actual module revision id.      */
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId,ModuleRevisionId>*/
+comment|/*<ModuleRevisionId,ModuleRevisionId> */
 name|cache
 init|=
 operator|new
@@ -425,16 +425,16 @@ decl_stmt|;
 comment|/**      * list of dependers per ModuleRevisionId.      */
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId,List<ModuleRevisionId>>*/
+comment|/*<ModuleRevisionId,List<ModuleRevisionId>> */
 name|dependers
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 comment|// dependencies
-comment|///////////////////////////////////////////
+comment|// /////////////////////////////////////////
 specifier|private
 name|SearchEngine
 name|searchEngine
@@ -659,7 +659,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event      * dispatch thread in a GUI.      *</p>      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event dispatch      * thread in a GUI.      *</p>      *       * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|void
 name|analyze

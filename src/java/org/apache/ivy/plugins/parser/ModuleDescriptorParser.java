@@ -211,7 +211,7 @@ name|Resource
 name|res
 parameter_list|)
 function_decl|;
-comment|/**      * Return the 'type' of module artifacts this parser is parsing      * @return the 'type' of module artifacts this parser is parsing      */
+comment|/**      * Return the 'type' of module artifacts this parser is parsing      *       * @return the 'type' of module artifacts this parser is parsing      */
 specifier|public
 name|String
 name|getType

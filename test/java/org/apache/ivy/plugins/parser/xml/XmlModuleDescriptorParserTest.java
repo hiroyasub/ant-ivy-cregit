@@ -557,7 +557,7 @@ operator|new
 name|IvySettings
 argument_list|()
 expr_stmt|;
-comment|//prevent test from polluting local cache
+comment|// prevent test from polluting local cache
 name|settings
 operator|.
 name|setDefaultCache
@@ -9431,7 +9431,7 @@ literal|99
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//default extends type is 'all' when no extendsType attribute is specified.
+comment|// default extends type is 'all' when no extendsType attribute is specified.
 name|ModuleDescriptor
 name|md
 init|=
@@ -9509,7 +9509,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was merged.
+comment|// verify that the parent description was merged.
 name|assertEquals
 argument_list|(
 literal|"Parent module description."
@@ -9520,7 +9520,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent and child configurations were merged together.
+comment|// verify that the parent and child configurations were merged together.
 specifier|final
 name|Configuration
 index|[]
@@ -9574,7 +9574,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent and child dependencies were merged together.
+comment|// verify parent and child dependencies were merged together.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -9749,7 +9749,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -9807,7 +9807,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//descriptor specifies that only parent dependencies should be included
+comment|// descriptor specifies that only parent dependencies should be included
 name|ModuleDescriptor
 name|md
 init|=
@@ -9888,7 +9888,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was ignored.
+comment|// verify that the parent description was ignored.
 name|assertEquals
 argument_list|(
 literal|""
@@ -9899,7 +9899,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent configurations were ignored.
+comment|// verify that the parent configurations were ignored.
 specifier|final
 name|Configuration
 index|[]
@@ -9941,7 +9941,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent dependencies were merged.
+comment|// verify parent dependencies were merged.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -10114,7 +10114,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -10172,7 +10172,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//descriptor specifies that only parent configurations should be included
+comment|// descriptor specifies that only parent configurations should be included
 name|ModuleDescriptor
 name|md
 init|=
@@ -10253,7 +10253,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was ignored.
+comment|// verify that the parent description was ignored.
 name|assertEquals
 argument_list|(
 literal|""
@@ -10264,7 +10264,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent and child configurations were merged together.
+comment|// verify that the parent and child configurations were merged together.
 specifier|final
 name|Configuration
 index|[]
@@ -10318,7 +10318,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent dependencies were ignored.
+comment|// verify parent dependencies were ignored.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -10419,7 +10419,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -10477,7 +10477,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//descriptor specifies that only parent description should be included
+comment|// descriptor specifies that only parent description should be included
 name|ModuleDescriptor
 name|md
 init|=
@@ -10558,7 +10558,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was merged.
+comment|// verify that the parent description was merged.
 name|assertEquals
 argument_list|(
 literal|"Parent module description."
@@ -10569,7 +10569,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent configurations were ignored.
+comment|// verify that the parent configurations were ignored.
 specifier|final
 name|Configuration
 index|[]
@@ -10611,7 +10611,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent dependencies were ignored.
+comment|// verify parent dependencies were ignored.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -10710,7 +10710,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -10768,7 +10768,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//descriptor specifies that only parent description should be included
+comment|// descriptor specifies that only parent description should be included
 name|ModuleDescriptor
 name|md
 init|=
@@ -10849,7 +10849,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//child description should always be preferred, even if extendType="description"
+comment|// child description should always be preferred, even if extendType="description"
 name|assertEquals
 argument_list|(
 literal|"Child description overrides parent."
@@ -10860,7 +10860,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent configurations were ignored.
+comment|// verify that the parent configurations were ignored.
 specifier|final
 name|Configuration
 index|[]
@@ -10902,7 +10902,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent dependencies were ignored.
+comment|// verify parent dependencies were ignored.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -11001,7 +11001,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -11059,7 +11059,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//descriptor specifies that parent configurations and dependencies should be included
+comment|// descriptor specifies that parent configurations and dependencies should be included
 name|ModuleDescriptor
 name|md
 init|=
@@ -11140,7 +11140,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was ignored.
+comment|// verify that the parent description was ignored.
 name|assertEquals
 argument_list|(
 literal|""
@@ -11151,7 +11151,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent and child configurations were merged together.
+comment|// verify that the parent and child configurations were merged together.
 specifier|final
 name|Configuration
 index|[]
@@ -11205,7 +11205,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent and child dependencies were merged together.
+comment|// verify parent and child dependencies were merged together.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -11380,7 +11380,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts
@@ -11438,7 +11438,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//configure a resolver to serve the parent descriptor, so that parse succeeds.
+comment|// configure a resolver to serve the parent descriptor, so that parse succeeds.
 name|File
 name|resolveRoot
 init|=
@@ -11531,8 +11531,8 @@ argument_list|(
 literal|"testExtendsCached"
 argument_list|)
 expr_stmt|;
-comment|//descriptor extends a module without a location="..." attribute, so resolver lookup
-comment|//must be performed.
+comment|// descriptor extends a module without a location="..." attribute, so resolver lookup
+comment|// must be performed.
 name|ModuleDescriptor
 name|md
 init|=
@@ -11610,7 +11610,7 @@ name|getStatus
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent description was merged.
+comment|// verify that the parent description was merged.
 name|assertEquals
 argument_list|(
 literal|"Parent module description."
@@ -11621,7 +11621,7 @@ name|getDescription
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify that the parent and child configurations were merged together.
+comment|// verify that the parent and child configurations were merged together.
 specifier|final
 name|Configuration
 index|[]
@@ -11675,7 +11675,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//verify parent and child dependencies were merged together.
+comment|// verify parent and child dependencies were merged together.
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -11850,7 +11850,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//verify only child publications are present
+comment|// verify only child publications are present
 name|Artifact
 index|[]
 name|artifacts

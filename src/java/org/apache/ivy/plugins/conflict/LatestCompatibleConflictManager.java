@@ -310,7 +310,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This conflict manager can be used to allow only compatible dependencies to be used together (like  * the strict conflict manager), but it has the advantage of using a best effort algorithm to find a  * set of compatible dependencies, even if it requires stepping back to older revisions (as long as  * they are in the set of compatibility).  *<p>  * Here is an example of what this conflict manager is able to do:<br/>   *<b>Available Modules</b>:  *<pre>  * #A;2-&gt;{ #B;[1.0,1.5] #C;[2.0,2.5] }  * #B;1.4-&gt;#D;1.5  * #B;1.5-&gt;#D;2.0  * #C;2.5-&gt;#D;[1.0,1.6]  *</pre>  *   *<b>Result</b>: #B;1.4, #C;2.5, #D;1.5<br/>   *<b>Details</b>The conflict manager finds that the latest matching version  * of #B (1.5) depends on a version of #D incompatible with what is expected by the latest matching  * version of #C. Hence the conflict manager blacklists #B;1.5, and the version range [1.0,1.5] is  * resolved again to end up with #B;1.4 which depends on #D;1.5, which is fine to work with #C;2.5.  *</p>  */
+comment|/**  * This conflict manager can be used to allow only compatible dependencies to be used together (like  * the strict conflict manager), but it has the advantage of using a best effort algorithm to find a  * set of compatible dependencies, even if it requires stepping back to older revisions (as long as  * they are in the set of compatibility).  *<p>  * Here is an example of what this conflict manager is able to do:<br/>  *<b>Available Modules</b>:  *   *<pre>  * #A;2-&gt;{ #B;[1.0,1.5] #C;[2.0,2.5] }  * #B;1.4-&gt;#D;1.5  * #B;1.5-&gt;#D;2.0  * #C;2.5-&gt;#D;[1.0,1.6]  *</pre>  *   *<b>Result</b>: #B;1.4, #C;2.5, #D;1.5<br/>  *<b>Details</b>The conflict manager finds that the latest matching version of #B (1.5) depends on  * a version of #D incompatible with what is expected by the latest matching version of #C. Hence  * the conflict manager blacklists #B;1.5, and the version range [1.0,1.5] is resolved again to end  * up with #B;1.4 which depends on #D;1.5, which is fine to work with #C;2.5.  *</p>  */
 end_comment
 
 begin_class
@@ -1098,7 +1098,7 @@ block|}
 comment|/**      * Tries to blacklist exactly one version for all callers paths.      *       * @param versionMatcher      *            the version matcher to use to interpret versions      * @param conflictParent      *            the node in which the conflict is occurring      * @param selectedNode      *            the node in favor of which the conflict is resolved      * @param evictedNode      *            the node which will be evicted if we are able to blacklist all paths      * @param node      *            the node for which callers should be considered      * @return the collection of blacklisting to do, null if a blacklist is not possible in at least      *         one caller path      */
 specifier|private
 name|Collection
-comment|/*<IvyNodeBlacklist>*/
+comment|/*<IvyNodeBlacklist> */
 name|blackListIncompatibleCaller
 parameter_list|(
 name|VersionMatcher
@@ -1114,17 +1114,17 @@ name|IvyNode
 name|evictedNode
 parameter_list|,
 name|Stack
-comment|/*<IvyNode>*/
+comment|/*<IvyNode> */
 name|callerStack
 parameter_list|)
 block|{
 name|Collection
-comment|/*<IvyNodeBlacklist>*/
+comment|/*<IvyNodeBlacklist> */
 name|blacklisted
 init|=
 operator|new
 name|ArrayList
-comment|/*<IvyNodeBlacklist>*/
+comment|/*<IvyNodeBlacklist> */
 argument_list|()
 decl_stmt|;
 name|IvyNode
@@ -1382,7 +1382,7 @@ name|DependencyDescriptor
 name|dd
 parameter_list|,
 name|Collection
-comment|/*<ModuleRevisionId>*/
+comment|/*<ModuleRevisionId> */
 name|foundBlacklisted
 parameter_list|)
 block|{
@@ -1398,7 +1398,7 @@ name|getResolveData
 argument_list|()
 decl_stmt|;
 name|Collection
-comment|/*<IvyNode>*/
+comment|/*<IvyNode> */
 name|blacklisted
 init|=
 operator|new

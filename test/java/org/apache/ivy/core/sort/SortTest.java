@@ -789,7 +789,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//Test IVY-624
+comment|// Test IVY-624
 specifier|public
 name|void
 name|testCircularDependencyInfiniteLoop
@@ -879,7 +879,7 @@ argument_list|,
 name|nonMatchReporter
 argument_list|)
 expr_stmt|;
-comment|//If it ends, it's ok.
+comment|// If it ends, it's ok.
 block|}
 comment|/**      * In case of Circular dependency a warning is generated.      */
 specifier|public

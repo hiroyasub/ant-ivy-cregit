@@ -207,14 +207,14 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
-comment|/*<ModuleRevisionId, ModuleRevisionId>*/
+comment|/*<ModuleRevisionId, ModuleRevisionId> */
 name|CACHE
 init|=
 operator|new
 name|WeakHashMap
 argument_list|()
 decl_stmt|;
-comment|/**      * Pattern to use to matched mrid text representation.      * @see #parse(String)      */
+comment|/**      * Pattern to use to matched mrid text representation.      *       * @see #parse(String)      */
 specifier|public
 specifier|static
 specifier|final
@@ -337,7 +337,7 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 return|return
 name|newInstance
 argument_list|(
@@ -370,7 +370,7 @@ literal|4
 argument_list|)
 argument_list|)
 return|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 block|}
 specifier|public
 specifier|static
@@ -1192,7 +1192,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|hash
 operator|=
 literal|31
@@ -1254,7 +1254,7 @@ operator|.
 name|hashCode
 argument_list|()
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 block|}
 return|return
 name|hash
@@ -1772,7 +1772,7 @@ return|return
 name|branch
 return|;
 block|}
-comment|/**      * [revision] is a valid revision in maven. This method strips the '[' and ']'      * characters. Cfr. http://docs.codehaus.org/x/IGU      */
+comment|/**      * [revision] is a valid revision in maven. This method strips the '[' and ']' characters. Cfr.      * http://docs.codehaus.org/x/IGU      */
 specifier|private
 specifier|static
 name|String

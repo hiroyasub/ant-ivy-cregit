@@ -60,7 +60,7 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getExcludedModules
 parameter_list|()
 function_decl|;

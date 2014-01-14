@@ -256,7 +256,7 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|substitutes
 decl_stmt|;
 specifier|public
@@ -281,7 +281,7 @@ name|HashMap
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @return The parser settings that must be used in place of the orignal settings      * The returned object delegates all the call to the original settings.      */
+comment|/**      * @return The parser settings that must be used in place of the orignal settings The returned      *         object delegates all the call to the original settings.      */
 specifier|public
 name|ParserSettings
 name|getMonitoredSettings
@@ -291,7 +291,7 @@ return|return
 name|monitoredSettings
 return|;
 block|}
-comment|/**      * Free the ressource used during the monitoring, keeping only the info      * required to evaluate hasChanged.      */
+comment|/**      * Free the ressource used during the monitoring, keeping only the info required to evaluate      * hasChanged.      */
 specifier|public
 name|void
 name|endMonitoring
@@ -306,7 +306,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Check if the newSettings is compatible with the original settings that      * has been monitored.  Only the info that was actually used is compared.      */
+comment|/**      * Check if the newSettings is compatible with the original settings that has been monitored.      * Only the info that was actually used is compared.      */
 specifier|public
 name|boolean
 name|hasChanged

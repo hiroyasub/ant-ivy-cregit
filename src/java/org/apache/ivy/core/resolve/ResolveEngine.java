@@ -4647,7 +4647,7 @@ argument_list|()
 condition|)
 block|{
 name|Collection
-comment|/*<VisitNode>*/
+comment|/*<VisitNode> */
 name|dependencies
 init|=
 name|node
@@ -4776,11 +4776,11 @@ name|i
 operator|++
 control|)
 block|{
-comment|//shouldBeFixed=false to because some of those dependencies might
-comment|//be private when they were actually extending public conf.
-comment|//Should we keep two list of confs to fetch (private&public)?
-comment|//I don't think, visibility is already checked, and a change in the
-comment|//configuration between version might anyway have worse problems.
+comment|// shouldBeFixed=false to because some of those dependencies might
+comment|// be private when they were actually extending public conf.
+comment|// Should we keep two list of confs to fetch (private&public)?
+comment|// I don't think, visibility is already checked, and a change in the
+comment|// configuration between version might anyway have worse problems.
 name|fetchDependencies
 argument_list|(
 name|dep
@@ -5959,7 +5959,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Compute possible conflicts for a node, in the context of an ancestor (a node which has a      * dependency - direct or indirect - on the node for which conflicts should be computed.      *       * @param node      *            the node for which conflicts should be computed      * @param ancestor      *            the ancestor in which conflicts should be computed      * @param conf      *            the configuration of the node in which conflicts should be computed      * @param toevict      *            a collection of nodes which have been evicted during conflict resolution at lower      *            level. It may be empty if no conflict resolution has occurred for this node yet, or      *            if no node has been evicted.      * @param selectedNodes      *            a collection of nodes selected during previous conflict resolution for the given      *            node and ancestor. This collection is updated by this call, removing nodes which      *            should be evicted.      * @return a collection of IvyNode which may be in conflict with the given node in the given      *         ancestor. This collection always contain at least the given node.      */
+comment|/**      * Compute possible conflicts for a node, in the context of an ancestor (a node which has a      * dependency - direct or indirect - on the node for which conflicts should be computed.      *       * @param node      *            the node for which conflicts should be computed      * @param ancestor      *            the ancestor in which conflicts should be computed      * @param conf      *            the configuration of the node in which conflicts should be computed      * @param toevict      *            a collection of nodes which have been evicted during conflict resolution at lower      *            level. It may be empty if no conflict resolution has occurred for this node yet,      *            or if no node has been evicted.      * @param selectedNodes      *            a collection of nodes selected during previous conflict resolution for the given      *            node and ancestor. This collection is updated by this call, removing nodes which      *            should be evicted.      * @return a collection of IvyNode which may be in conflict with the given node in the given      *         ancestor. This collection always contain at least the given node.      */
 specifier|private
 name|Collection
 name|computeConflicts

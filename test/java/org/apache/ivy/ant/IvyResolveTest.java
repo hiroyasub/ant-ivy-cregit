@@ -1344,8 +1344,8 @@ literal|"ivy.deps.changed"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//To be complete, we should also check that the XmlReportParser is not invoked
-comment|//but this would require a too big refactoring to inject a mock object
+comment|// To be complete, we should also check that the XmlReportParser is not invoked
+comment|// but this would require a too big refactoring to inject a mock object
 block|}
 specifier|public
 name|void

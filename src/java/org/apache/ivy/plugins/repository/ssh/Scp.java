@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is using the scp client to transfer data and information for the repository.   *<p>  * It is based on the SCPClient from the ganymed ssh library from Christian Plattner,  * released under a BSD style license.   *<p>  * To minimize the dependency to the ssh library and because we needed some additional   * functionality, we decided to copy'n'paste the single class rather than to inherit or   * delegate it somehow.   *<p>  * Nevertheless credit should go to the original author.  */
+comment|/**  * This class is using the scp client to transfer data and information for the repository.  *<p>  * It is based on the SCPClient from the ganymed ssh library from Christian Plattner, released under  * a BSD style license.  *<p>  * To minimize the dependency to the ssh library and because we needed some additional  * functionality, we decided to copy'n'paste the single class rather than to inherit or delegate it  * somehow.  *<p>  * Nevertheless credit should go to the original author.  */
 end_comment
 
 begin_class
@@ -230,7 +230,7 @@ literal|64
 operator|*
 literal|1024
 decl_stmt|;
-comment|/*      * Maximum length authorized for scp lines.       * This is a random limit - if your path names are longer, then adjust it.      */
+comment|/*      * Maximum length authorized for scp lines. This is a random limit - if your path names are      * longer, then adjust it.      */
 specifier|private
 specifier|static
 specifier|final

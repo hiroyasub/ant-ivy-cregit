@@ -360,7 +360,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**     * Escape invalid URL characters (Copied from Wicket, just use StringUtils instead of Strings)     *     * @param queryString The orginal querystring     * @return url The querystring with invalid characters escaped      */
+comment|/**      * Escape invalid URL characters (Copied from Wicket, just use StringUtils instead of Strings)      *       * @param queryString      *            The orginal querystring      * @return url The querystring with invalid characters escaped      */
 specifier|private
 name|String
 name|escapeUrl

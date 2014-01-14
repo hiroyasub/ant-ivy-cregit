@@ -370,7 +370,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides the method to read some data out of the DOM tree of a pom   * file.  */
+comment|/**  * Provides the method to read some data out of the DOM tree of a pom file.  */
 end_comment
 
 begin_class
@@ -827,7 +827,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Add a property if not yet set and value is not null.      * This garantee that property keep the first value that is put on it and that the properties      * are never null.      */
+comment|/**      * Add a property if not yet set and value is not null. This garantee that property keep the      * first value that is put on it and that the properties are never null.      */
 specifier|public
 name|void
 name|setProperty
@@ -1232,7 +1232,7 @@ name|normalize
 argument_list|()
 expr_stmt|;
 name|List
-comment|/*<License>*/
+comment|/*<License> */
 name|lics
 init|=
 operator|new
@@ -1740,7 +1740,7 @@ operator|=
 name|depElement
 expr_stmt|;
 block|}
-comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getGroupId()          */
+comment|/*          * (non-Javadoc)          *           * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getGroupId()          */
 specifier|public
 name|String
 name|getGroupId
@@ -1763,7 +1763,7 @@ name|val
 argument_list|)
 return|;
 block|}
-comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
+comment|/*          * (non-Javadoc)          *           * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
 specifier|public
 name|String
 name|getArtifactId
@@ -1786,7 +1786,7 @@ name|val
 argument_list|)
 return|;
 block|}
-comment|/* (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getVersion()          */
+comment|/*          * (non-Javadoc)          *           * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getVersion()          */
 specifier|public
 name|String
 name|getVersion
@@ -1833,7 +1833,7 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getExcludedModules
 parameter_list|()
 block|{
@@ -2204,7 +2204,7 @@ comment|// not used
 block|}
 specifier|public
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getExcludedModules
 parameter_list|()
 block|{

@@ -1145,7 +1145,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Attempts to connect to a local SSH agent (using either UNIX sockets or PuTTY's Pageant)      *      * @param jsch      *          Connection to be attached to an available local agent      * @return      *          true if connected to agent, false otherwise      */
+comment|/**      * Attempts to connect to a local SSH agent (using either UNIX sockets or PuTTY's Pageant)      *       * @param jsch      *            Connection to be attached to an available local agent      * @return true if connected to agent, false otherwise      */
 specifier|private
 name|boolean
 name|attemptAgentUse

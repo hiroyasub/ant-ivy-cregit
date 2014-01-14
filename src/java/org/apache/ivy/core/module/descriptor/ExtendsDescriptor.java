@@ -52,7 +52,7 @@ name|ModuleRevisionId
 name|getParentRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * get the resolved revision id for {@link #getParentRevisionId}, see      * {@link org.apache.ivy.core.module.descriptor.ModuleDescriptor#getResolvedModuleRevisionId()} }      */
+comment|/**      * get the resolved revision id for {@link #getParentRevisionId}, see      * {@link org.apache.ivy.core.module.descriptor.ModuleDescriptor#getResolvedModuleRevisionId()}      */
 specifier|public
 name|ModuleRevisionId
 name|getResolvedParentRevisionId
@@ -63,13 +63,13 @@ name|ModuleDescriptor
 name|getParentMd
 parameter_list|()
 function_decl|;
-comment|/**      * If there is an explicit path to check for the parent descriptor, return it.      * Otherwise returns null.      */
+comment|/**      * If there is an explicit path to check for the parent descriptor, return it. Otherwise returns      * null.      */
 specifier|public
 name|String
 name|getLocation
 parameter_list|()
 function_decl|;
-comment|/**      * Get the parts of the parent descriptor that are inherited.  Default      * supported types are<code>info</code>,<code>description</code>,      *<code>configurations</code>,<code>dependencies</code>, and/or<code>all</code>.      * Ivy extensions may add support for additional extends types.      */
+comment|/**      * Get the parts of the parent descriptor that are inherited. Default supported types are      *<code>info</code>,<code>description</code>,<code>configurations</code>,      *<code>dependencies</code>, and/or<code>all</code>. Ivy extensions may add support for      * additional extends types.      */
 specifier|public
 name|String
 index|[]
@@ -82,7 +82,7 @@ name|boolean
 name|isAllInherited
 parameter_list|()
 function_decl|;
-comment|/** @return true if parent info attributes are inherited (organisation, branch, revision, etc)*/
+comment|/** @return true if parent info attributes are inherited (organisation, branch, revision, etc) */
 specifier|public
 name|boolean
 name|isInfoInherited

@@ -586,21 +586,21 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|//    private static class DescriptionHandler extends DelegetingHandler {
+comment|// private static class DescriptionHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String DESCRIPTION = "description";
+comment|// private static final String DESCRIPTION = "description";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        public DescriptionHandler() {
-comment|//            super(DESCRIPTION);
-comment|//            setBufferingChar(true);
-comment|//        }
+comment|// public DescriptionHandler() {
+comment|// super(DESCRIPTION);
+comment|// setBufferingChar(true);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String url = atts.getValue(URL);
-comment|//        }
-comment|//    }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String url = atts.getValue(URL);
+comment|// }
+comment|// }
 specifier|private
 specifier|static
 class|class
@@ -988,60 +988,60 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//    private static class ArchiveHandler extends DelegetingHandler {
+comment|// private static class ArchiveHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String ARCHIVE = "archive";
+comment|// private static final String ARCHIVE = "archive";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        private static final String PATH = "path";
+comment|// private static final String PATH = "path";
 comment|//
-comment|//        private Archive archive;
+comment|// private Archive archive;
 comment|//
-comment|//        public ArchiveHandler() {
-comment|//            super(ARCHIVE);
-comment|//        }
+comment|// public ArchiveHandler() {
+comment|// super(ARCHIVE);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            archive = new Archive();
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// archive = new Archive();
 comment|//
-comment|//            String path = atts.getValue(PATH);
-comment|//            archive.setPath(path);
+comment|// String path = atts.getValue(PATH);
+comment|// archive.setPath(path);
 comment|//
-comment|//            String url = atts.getValue(URL);
-comment|//            archive.setURL(url);
+comment|// String url = atts.getValue(URL);
+comment|// archive.setURL(url);
 comment|//
-comment|//        }
-comment|//    }
-comment|//    private static class CategoryDefHandler extends DelegetingHandler {
+comment|// }
+comment|// }
+comment|// private static class CategoryDefHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String CATEGORY_DEF = "category-def";
+comment|// private static final String CATEGORY_DEF = "category-def";
 comment|//
-comment|//        private static final String NAME = "name";
+comment|// private static final String NAME = "name";
 comment|//
-comment|//        private static final String LABEL = "label";
+comment|// private static final String LABEL = "label";
 comment|//
-comment|//        private CategoryDef categoryDef;
+comment|// private CategoryDef categoryDef;
 comment|//
-comment|//        public CategoryDefHandler() {
-comment|//            super(CATEGORY_DEF);
-comment|//            addChild(new DescriptionHandler(), new ChildElementHandler<DescriptionHandler>() {
-comment|//                public void childHanlded(DescriptionHandler child) {
-comment|//                    categoryDef.setDescription(child.getBufferedChars().trim());
-comment|//                }
-comment|//            });
-comment|//        }
+comment|// public CategoryDefHandler() {
+comment|// super(CATEGORY_DEF);
+comment|// addChild(new DescriptionHandler(), new ChildElementHandler<DescriptionHandler>() {
+comment|// public void childHanlded(DescriptionHandler child) {
+comment|// categoryDef.setDescription(child.getBufferedChars().trim());
+comment|// }
+comment|// });
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            categoryDef = new CategoryDef();
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// categoryDef = new CategoryDef();
 comment|//
-comment|//            String name = atts.getValue(NAME);
-comment|//            categoryDef.setName(name);
+comment|// String name = atts.getValue(NAME);
+comment|// categoryDef.setName(name);
 comment|//
-comment|//            String label = atts.getValue(LABEL);
-comment|//            categoryDef.setLabel(label);
-comment|//        }
-comment|//    }
+comment|// String label = atts.getValue(LABEL);
+comment|// categoryDef.setLabel(label);
+comment|// }
+comment|// }
 block|}
 end_class
 

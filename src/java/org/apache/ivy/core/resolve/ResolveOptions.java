@@ -240,7 +240,7 @@ name|FilterHelper
 operator|.
 name|NO_FILTER
 decl_stmt|;
-comment|/**      * The resolve mode to use. Should be one of {@link #RESOLVEMODES}, or<code>null</code> to      * use settings configured resolve mode.      */
+comment|/**      * The resolve mode to use. Should be one of {@link #RESOLVEMODES}, or<code>null</code> to use      * settings configured resolve mode.      */
 specifier|private
 name|String
 name|resolveMode
@@ -254,7 +254,7 @@ specifier|private
 name|boolean
 name|refresh
 decl_stmt|;
-comment|/**      *  True if the resolve should compare the new resolution against the previous report       **/
+comment|/**      * True if the resolve should compare the new resolution against the previous report      **/
 specifier|private
 name|boolean
 name|checkIfChanged
@@ -412,7 +412,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Indicates if the configurations use a special configuration       * * , *(private) or *(public).      * When special configurations are used, you must have the module      * descriptor in order to get the list of configurations.      * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * Indicates if the configurations use a special configuration * , *(private) or *(public). When      * special configurations are used, you must have the module descriptor in order to get the list      * of configurations.      *       * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|boolean
 name|useSpecialConfs
@@ -461,7 +461,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @pre can only be called if useSpecialConfs()==false.  When it is true,       * you have to provide a module desciptor so that configurations can be resolved.      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * @pre can only be called if useSpecialConfs()==false. When it is true, you have to provide a      *      module desciptor so that configurations can be resolved.      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|String
 index|[]
@@ -488,7 +488,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|/**       * Get the aksed confs.  Special confs (like *) use the moduleDescriptor to find the values *       * @param md Used to get the exact values for special confs.       * */
+comment|/**      * Get the aksed confs. Special confs (like *) use the moduleDescriptor to find the values *      *       * @param md      *            Used to get the exact values for special confs.      * */
 specifier|public
 name|String
 index|[]
@@ -498,7 +498,7 @@ name|ModuleDescriptor
 name|md
 parameter_list|)
 block|{
-comment|//TODO add isInline, in that case, replace * by *(public).
+comment|// TODO add isInline, in that case, replace * by *(public).
 return|return
 name|ConfigurationUtils
 operator|.

@@ -444,7 +444,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base the parent directory to which the file must be evaluated.      * @param file the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
+comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
 specifier|private
 name|String
 name|getPath
@@ -619,7 +619,7 @@ block|}
 comment|/**      * @return a list of files, starting with the root and ending with the file itself      */
 specifier|private
 name|LinkedList
-comment|/*<File>*/
+comment|/*<File> */
 name|getParents
 parameter_list|(
 name|File

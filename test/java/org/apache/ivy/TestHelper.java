@@ -710,7 +710,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns an array of {@link ModuleRevisionId} corresponding to the given comma separated list of      * their text representation.      *       * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return an array of {@link ModuleRevisionId}      */
+comment|/**      * Returns an array of {@link ModuleRevisionId} corresponding to the given comma separated list      * of their text representation.      *       * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return an array of {@link ModuleRevisionId}      */
 specifier|public
 specifier|static
 name|ModuleRevisionId
@@ -749,7 +749,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses a string represenation of a module descriptor in micro ivy format.      *<p>      * Examples:      *<pre>      * #A;1      *</pre>      *<hr/>      *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *<hr/>      *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *</p>      *       * @param microIvy the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
+comment|/**      * Parses a string represenation of a module descriptor in micro ivy format.      *<p>      * Examples:      *       *<pre>      * #A;1      *</pre>      *       *<hr/>      *       *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *       *<hr/>      *       *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *       *</p>      *       * @param microIvy      *            the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
 specifier|public
 specifier|static
 name|ModuleDescriptor
@@ -1057,7 +1057,7 @@ comment|/**      * Parses a collection of module descriptors in the micro ivy fo
 specifier|public
 specifier|static
 name|Collection
-comment|/*<ModuleDescriptor>*/
+comment|/*<ModuleDescriptor> */
 name|parseMicroIvyDescriptors
 parameter_list|(
 name|String
@@ -1117,7 +1117,7 @@ return|return
 name|r
 return|;
 block|}
-comment|/**      * Fills a repository with a set of module, using empty files for published artifacts.      *       * @param resolver the resolver to use to publish the modules      * @param mds the descriptors of the modules to put in the repository      * @throws IOException if an IO problem occurs while filling the repository      */
+comment|/**      * Fills a repository with a set of module, using empty files for published artifacts.      *       * @param resolver      *            the resolver to use to publish the modules      * @param mds      *            the descriptors of the modules to put in the repository      * @throws IOException      *             if an IO problem occurs while filling the repository      */
 specifier|public
 specifier|static
 name|void
@@ -1127,7 +1127,7 @@ name|DependencyResolver
 name|resolver
 parameter_list|,
 name|Collection
-comment|/*<ModuleDescriptor>*/
+comment|/*<ModuleDescriptor> */
 name|mds
 parameter_list|)
 throws|throws
@@ -1364,7 +1364,7 @@ return|return
 name|testRepository
 return|;
 block|}
-comment|/**      * Cleans up the test repository.      * @see #newTestRepository()      */
+comment|/**      * Cleans up the test repository.      *       * @see #newTestRepository()      */
 specifier|public
 specifier|static
 name|void
@@ -1383,7 +1383,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Cleans up the test repository and cache.      * @see #newTestSettings()      */
+comment|/**      * Cleans up the test repository and cache.      *       * @see #newTestSettings()      */
 specifier|public
 specifier|static
 name|void

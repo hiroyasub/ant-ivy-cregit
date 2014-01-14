@@ -53,7 +53,7 @@ block|{
 specifier|private
 specifier|final
 name|Map
-comment|/*<String, Configuration>*/
+comment|/*<String, Configuration> */
 name|members
 decl_stmt|;
 specifier|public
@@ -63,7 +63,7 @@ name|String
 name|confName
 parameter_list|,
 name|Map
-comment|/*<String, Configuration>*/
+comment|/*<String, Configuration> */
 name|members
 parameter_list|)
 block|{
@@ -109,7 +109,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the {@link Configuration} object for the given conf name, or      *<code>null</code> if the given conf name is not part of this group or if this conf      * name isn't defined in the module in which this group has been built.      *       * @param confName      *            the name of the configuration to return.      * @return the member {@link Configuration} object for the given conf name      */
+comment|/**      * Returns the {@link Configuration} object for the given conf name, or<code>null</code> if the      * given conf name is not part of this group or if this conf name isn't defined in the module in      * which this group has been built.      *       * @param confName      *            the name of the configuration to return.      * @return the member {@link Configuration} object for the given conf name      */
 specifier|public
 name|Configuration
 name|getMemberConfiguration

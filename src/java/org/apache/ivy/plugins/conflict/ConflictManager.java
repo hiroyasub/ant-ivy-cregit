@@ -89,7 +89,7 @@ name|DependencyDescriptor
 name|dd
 parameter_list|,
 name|Collection
-comment|/*<ModuleRevisionId>*/
+comment|/*<ModuleRevisionId> */
 name|foundBlacklisted
 parameter_list|)
 function_decl|;

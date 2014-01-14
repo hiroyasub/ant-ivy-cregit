@@ -245,7 +245,7 @@ specifier|private
 name|IvyPatternHelper
 parameter_list|()
 block|{
-comment|//Helper class
+comment|// Helper class
 block|}
 specifier|public
 specifier|static

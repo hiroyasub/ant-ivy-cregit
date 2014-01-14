@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Interface for a pattern matcher.<p/> The pattern matcher is the main abstraction regarding the  * matching of an expression. Implementation may vary depending on the expression syntax handling  * that is desired.  */
+comment|/**  * Interface for a pattern matcher.  *<p/>  * The pattern matcher is the main abstraction regarding the matching of an expression.  * Implementation may vary depending on the expression syntax handling that is desired.  */
 end_comment
 
 begin_interface

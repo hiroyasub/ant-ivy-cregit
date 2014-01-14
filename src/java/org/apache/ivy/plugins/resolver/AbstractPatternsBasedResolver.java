@@ -1750,7 +1750,7 @@ name|String
 name|token
 parameter_list|)
 block|{
-comment|//to be overridden by subclasses wanting to have listing features
+comment|// to be overridden by subclasses wanting to have listing features
 block|}
 comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      *       * @param pattern      */
 specifier|public

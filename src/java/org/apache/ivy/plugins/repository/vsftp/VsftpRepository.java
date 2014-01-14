@@ -2320,7 +2320,7 @@ name|InterruptedException
 name|e
 parameter_list|)
 block|{
-comment|//nothing to do
+comment|// nothing to do
 block|}
 block|}
 name|updateLastCommandTime
@@ -2650,7 +2650,7 @@ name|InterruptedException
 name|e
 parameter_list|)
 block|{
-comment|//nothing to do
+comment|// nothing to do
 block|}
 name|disconnect
 argument_list|()
@@ -2906,7 +2906,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-comment|//nothing to do
+comment|// nothing to do
 block|}
 block|}
 block|}
@@ -3033,7 +3033,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-comment|//nothing I can do
+comment|// nothing I can do
 block|}
 finally|finally
 block|{
@@ -3099,7 +3099,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-comment|//nothing I can do
+comment|// nothing I can do
 block|}
 try|try
 block|{
@@ -3115,7 +3115,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//nothing I can do
+comment|// nothing I can do
 block|}
 try|try
 block|{
@@ -3131,7 +3131,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//nothing I can do
+comment|// nothing I can do
 block|}
 try|try
 block|{
@@ -3147,7 +3147,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//nothing I can do
+comment|// nothing I can do
 block|}
 name|connectionCleaner
 operator|=

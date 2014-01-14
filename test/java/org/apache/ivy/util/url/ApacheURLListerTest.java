@@ -373,7 +373,7 @@ argument_list|)
 expr_stmt|;
 comment|// archiva listing is not valid html at all currently (1.0, unclosed a tags),
 comment|// and we don't want to adapt to this
-comment|//        assertEquals(3, d.size());
+comment|// assertEquals(3, d.size());
 block|}
 specifier|public
 name|void

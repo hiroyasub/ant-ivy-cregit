@@ -492,7 +492,7 @@ operator|=
 name|options
 expr_stmt|;
 block|}
-comment|/**      * Check if the set of dependencies has changed since the previous execution       * of a resolution.<br/>      * This function use the report file found in the cache.  So the function must be called      * before the new report is serialized there.</br>      * This function also use the internal dependencies that must already be filled.      * This function might be 'heavy' because it may have to parse the previous       * report.      * @return      */
+comment|/**      * Check if the set of dependencies has changed since the previous execution of a resolution.<br/>      * This function use the report file found in the cache. So the function must be called before      * the new report is serialized there.</br> This function also use the internal dependencies      * that must already be filled. This function might be 'heavy' because it may have to parse the      * previous report.      *       * @return      */
 specifier|public
 name|void
 name|checkIfChanged
@@ -1570,7 +1570,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *       * @param downloadStatus      *            the status of download to retreive. Set it to<code>null</code> for no      *            restriction on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved.      * @return the list of reports, never<code>null</code>      * @see ArtifactDownloadReport      */
+comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *       * @param downloadStatus      *            the status of download to retreive. Set it to<code>null</code> for no restriction      *            on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved.      * @return the list of reports, never<code>null</code>      * @see ArtifactDownloadReport      */
 specifier|public
 name|ArtifactDownloadReport
 index|[]

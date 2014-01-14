@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Cache ModuleDescriptors so that when the same module is used twice (in multi-module build for   * instance), it is parsed only once.  * This cache is has a limited size, and keep the most recently used entries.  * The entry in the cache are invalidated if there is a change to one variable  * used in the module descriptor.  */
+comment|/**  * Cache ModuleDescriptors so that when the same module is used twice (in multi-module build for  * instance), it is parsed only once. This cache is has a limited size, and keep the most recently  * used entries. The entry in the cache are invalidated if there is a change to one variable used in  * the module descriptor.  */
 end_comment
 
 begin_class
@@ -131,10 +131,10 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|LinkedHashMap
-comment|/*<File,CacheEntry>*/
+comment|/*<File,CacheEntry> */
 name|valueMap
 decl_stmt|;
-comment|/**      * Create a cache of the given size      * @param size      */
+comment|/**      * Create a cache of the given size      *       * @param size      */
 specifier|public
 name|ModuleDescriptorMemoryCache
 parameter_list|(
@@ -217,7 +217,7 @@ return|return
 name|descriptor
 return|;
 block|}
-comment|/**      * Get the module descriptor from the mdProvider and store it into the cache.       */
+comment|/**      * Get the module descriptor from the mdProvider and store it into the cache.      */
 specifier|public
 name|ModuleDescriptor
 name|getStale
@@ -300,7 +300,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-comment|//cache is disbaled
+comment|// cache is disbaled
 return|return
 literal|null
 return|;
@@ -361,7 +361,7 @@ return|;
 block|}
 else|else
 block|{
-comment|//Move the entry at the end of the list
+comment|// Move the entry at the end of the list
 name|valueMap
 operator|.
 name|remove
@@ -433,7 +433,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-comment|//cache is disabled
+comment|// cache is disabled
 return|return;
 block|}
 if|if

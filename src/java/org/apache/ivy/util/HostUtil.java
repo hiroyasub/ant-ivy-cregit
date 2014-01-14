@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class contains basic helper methods for the Host.   *   */
+comment|/**  * This class contains basic helper methods for the Host.  *   */
 end_comment
 
 begin_class
@@ -58,7 +58,7 @@ name|HostUtil
 parameter_list|()
 block|{
 block|}
-comment|/**      * This method returns the name of the current Host, if this name cannot be determined,      * localhost will be returned.       *       * @return The name of the current "local" Host.      */
+comment|/**      * This method returns the name of the current Host, if this name cannot be determined,      * localhost will be returned.      *       * @return The name of the current "local" Host.      */
 specifier|public
 specifier|static
 name|String

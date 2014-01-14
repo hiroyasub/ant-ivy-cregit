@@ -99,7 +99,7 @@ specifier|private
 name|String
 name|pubBranch
 decl_stmt|;
-comment|/**      * True to indicate that the revConstraint attribute should be generated if      * applicable, false to never generate the revConstraint attribute.      */
+comment|/**      * True to indicate that the revConstraint attribute should be generated if applicable, false to      * never generate the revConstraint attribute.      */
 specifier|private
 name|boolean
 name|generateRevConstraint
@@ -410,7 +410,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Return the configurations which must be deliverd. Returns<tt>null</tt> if all      * configurations has to be deliverd. Attention: the returned array can contain wildcards!      *       * @return the configurations to deliver      */
+comment|/**      * Return the configurations which must be deliverd. Returns<tt>null</tt> if all configurations      * has to be deliverd. Attention: the returned array can contain wildcards!      *       * @return the configurations to deliver      */
 specifier|public
 name|String
 index|[]

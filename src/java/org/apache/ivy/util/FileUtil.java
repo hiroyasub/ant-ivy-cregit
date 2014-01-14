@@ -249,7 +249,7 @@ specifier|private
 name|FileUtil
 parameter_list|()
 block|{
-comment|//Utility class
+comment|// Utility class
 block|}
 comment|// according to tests by users, 64kB seems to be a good value for the buffer used during copy
 comment|// further improvements could be obtained using NIO API
@@ -339,7 +339,7 @@ argument_list|()
 condition|)
 block|{
 name|Entry
-comment|/*<File, File>*/
+comment|/*<File, File> */
 name|entry
 init|=
 operator|(
@@ -2297,7 +2297,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param  dir  The directory from which all files, including files in subdirectory)      *              are extracted.      * @param ignore a Collection of filenames which must be excluded from listing      * @return  A collectoin containing all the files of the given directory and it's      *              subdirectories.      */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      *            The directory from which all files, including files in subdirectory) are      *            extracted.      * @param ignore      *            a Collection of filenames which must be excluded from listing      * @return A collectoin containing all the files of the given directory and it's subdirectories.      */
 specifier|public
 specifier|static
 name|Collection
@@ -2474,10 +2474,10 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|//////////////////////////////////////////////
+comment|// ////////////////////////////////////////////
 comment|// The following code comes from Ant FileUtils
-comment|//////////////////////////////////////////////
-comment|/**     *&quot;Normalize&quot; the given absolute path.     *     *<p>This includes:     *<ul>     *<li>Uppercase the drive letter if there is one.</li>     *<li>Remove redundant slashes after the drive spec.</li>     *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>     *<li>DOS style paths that start with a drive letter will have     *     \ as the separator.</li>     *</ul>     * Unlike {@link File#getCanonicalPath()} this method     * specifically does not resolve symbolic links.     *     * @param path the path to be normalized.     * @return the normalized version of the path.     *     * @throws java.lang.NullPointerException if path is null.     */
+comment|// ////////////////////////////////////////////
+comment|/**      *&quot;Normalize&quot; the given absolute path.      *       *<p>      * This includes:      *<ul>      *<li>Uppercase the drive letter if there is one.</li>      *<li>Remove redundant slashes after the drive spec.</li>      *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>      *<li>DOS style paths that start with a drive letter will have \ as the separator.</li>      *</ul>      * Unlike {@link File#getCanonicalPath()} this method specifically does not resolve symbolic      * links.      *       * @param path      *            the path to be normalized.      * @return the normalized version of the path.      *       * @throws java.lang.NullPointerException      *             if path is null.      */
 specifier|public
 specifier|static
 name|File
@@ -2673,7 +2673,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Dissect the specified absolute path.      * @param path the path to dissect.      * @return String[] {root, remaining path}.      * @throws java.lang.NullPointerException if path is null.      * @since Ant 1.7      */
+comment|/**      * Dissect the specified absolute path.      *       * @param path      *            the path to dissect.      * @return String[] {root, remaining path}.      * @throws java.lang.NullPointerException      *             if path is null.      * @since Ant 1.7      */
 specifier|private
 specifier|static
 name|String
@@ -2709,10 +2709,10 @@ argument_list|,
 name|sep
 argument_list|)
 expr_stmt|;
-comment|//        // make sure we are dealing with an absolute path
-comment|//        if (!isAbsolutePath(path)) {
-comment|//            throw new BuildException(path + " is not an absolute path");
-comment|//        }
+comment|// // make sure we are dealing with an absolute path
+comment|// if (!isAbsolutePath(path)) {
+comment|// throw new BuildException(path + " is not an absolute path");
+comment|// }
 name|String
 name|root
 init|=
@@ -2767,7 +2767,7 @@ name|root
 operator|+=
 name|sep
 expr_stmt|;
-comment|//remove the initial separator; the root has it.
+comment|// remove the initial separator; the root has it.
 name|next
 operator|=
 operator|(

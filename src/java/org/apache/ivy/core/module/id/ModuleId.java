@@ -121,7 +121,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
-comment|/*<ModuleId, WeakReference<ModuleId>>*/
+comment|/*<ModuleId, WeakReference<ModuleId>> */
 name|CACHE
 init|=
 operator|new
@@ -249,14 +249,14 @@ name|hash
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String, String>*/
+comment|/*<String, String> */
 name|attributes
 init|=
 operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|/**      * Constructor.      * @param  organisation  The organisation which creates the module.      * @param  name  The name of the module.      */
+comment|/**      * Constructor.      *       * @param organisation      *            The organisation which creates the module.      * @param name      *            The name of the module.      */
 specifier|public
 name|ModuleId
 parameter_list|(
@@ -317,7 +317,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the name of the module.      * @return  The name of the module.      */
+comment|/**      * Returns the name of the module.      *       * @return The name of the module.      */
 specifier|public
 name|String
 name|getName
@@ -327,7 +327,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns the name of the organisation.      * @return  The name of the organisation.      */
+comment|/**      * Returns the name of the organisation.      *       * @return The name of the organisation.      */
 specifier|public
 name|String
 name|getOrganisation
@@ -428,7 +428,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|hash
 operator|=
 literal|31
@@ -463,7 +463,7 @@ operator|.
 name|hashCode
 argument_list|()
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 block|}
 return|return
 name|hash
@@ -535,7 +535,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Returns the encoded String representing this ModuleId.      * @return  The ModuleId encoded as String.      */
+comment|/**      * Returns the encoded String representing this ModuleId.      *       * @return The ModuleId encoded as String.      */
 specifier|public
 name|String
 name|encodeToString
@@ -551,7 +551,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a Map of all attributes of this module id.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too).       *       * @return A Map instance containing all the attributes and their values.      */
+comment|/**      * Returns a Map of all attributes of this module id. The Map keys are attribute names as      * Strings, and values are corresponding attribute values (as String too).      *       * @return A Map instance containing all the attributes and their values.      */
 specifier|public
 name|Map
 name|getAttributes
@@ -561,7 +561,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a ModuleId        * @param  encoded        * @return  The new ModuleId.      * @throws  IllegalArgumentException  If the given String could not be decoded.      */
+comment|/**      * Returns a ModuleId      *       * @param encoded      * @return The new ModuleId.      * @throws IllegalArgumentException      *             If the given String could not be decoded.      */
 specifier|public
 specifier|static
 name|ModuleId
@@ -619,7 +619,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Pattern to use to matched mid text representation.      * @see #parse(String)      */
+comment|/**      * Pattern to use to matched mid text representation.      *       * @see #parse(String)      */
 specifier|public
 specifier|static
 specifier|final
@@ -695,7 +695,7 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 return|return
 name|newInstance
 argument_list|(
@@ -714,7 +714,7 @@ literal|2
 argument_list|)
 argument_list|)
 return|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 block|}
 block|}
 end_class

@@ -298,7 +298,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -324,7 +324,7 @@ argument_list|()
 operator|*
 literal|17
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 return|return
 name|hash
 return|;
@@ -501,7 +501,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String, Set<Depender>>*/
+comment|/*<String, Set<Depender>> */
 name|dependers
 init|=
 operator|new
@@ -665,7 +665,7 @@ return|;
 block|}
 specifier|protected
 name|Set
-comment|/*<String>*/
+comment|/*<String> */
 name|getRootModuleConfigurations
 parameter_list|()
 block|{
@@ -681,7 +681,7 @@ name|void
 name|updateDataFrom
 parameter_list|(
 name|Collection
-comment|/*<IvyNodeUsage>*/
+comment|/*<IvyNodeUsage> */
 name|usages
 parameter_list|,
 name|String
@@ -901,15 +901,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|//    protected void addDependencyArtifacts(String rootModuleConf,
-comment|//            DependencyArtifactDescriptor[] dependencyArtifacts) {
-comment|//        addObjectsForConf(rootModuleConf, Arrays.asList(dependencyArtifacts),
-comment|//            this.dependencyArtifacts);
-comment|//    }
+comment|// protected void addDependencyArtifacts(String rootModuleConf,
+comment|// DependencyArtifactDescriptor[] dependencyArtifacts) {
+comment|// addObjectsForConf(rootModuleConf, Arrays.asList(dependencyArtifacts),
+comment|// this.dependencyArtifacts);
+comment|// }
 comment|//
-comment|//    protected void addDependencyIncludes(String rootModuleConf, IncludeRule[] rules) {
-comment|//        addObjectsForConf(rootModuleConf, Arrays.asList(rules), dependencyIncludes);
-comment|//    }
+comment|// protected void addDependencyIncludes(String rootModuleConf, IncludeRule[] rules) {
+comment|// addObjectsForConf(rootModuleConf, Arrays.asList(rules), dependencyIncludes);
+comment|// }
 comment|//
 specifier|private
 name|void
@@ -1311,7 +1311,7 @@ name|rootModuleConf
 parameter_list|)
 block|{
 name|Set
-comment|/*<Depender>*/
+comment|/*<Depender> */
 name|dependersSet
 init|=
 operator|(

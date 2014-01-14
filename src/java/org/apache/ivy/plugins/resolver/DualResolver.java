@@ -946,7 +946,7 @@ operator|=
 name|allownomd
 expr_stmt|;
 block|}
-comment|/**      * Sets the module descriptor presence rule.      * Should be one of {@link #DESCRIPTOR_REQUIRED} or {@link #DESCRIPTOR_OPTIONAL}.      *        * @param descriptorRule the descriptor rule to use with this resolver.      */
+comment|/**      * Sets the module descriptor presence rule. Should be one of {@link #DESCRIPTOR_REQUIRED} or      * {@link #DESCRIPTOR_OPTIONAL}.      *       * @param descriptorRule      *            the descriptor rule to use with this resolver.      */
 specifier|public
 name|void
 name|setDescriptor

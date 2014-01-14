@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Resolve relative url relatively to the current execution directory instead  * of relatively to the context.  * This is was actually done prior 2.0.  This class allow thus to work  * in a backward compatible mode.  */
+comment|/**  * Resolve relative url relatively to the current execution directory instead of relatively to the  * context. This is was actually done prior 2.0. This class allow thus to work in a backward  * compatible mode.  */
 end_comment
 
 begin_class

@@ -318,7 +318,7 @@ name|ModuleRevisionId
 name|revId
 parameter_list|)
 function_decl|;
-comment|/**      * Get the list of parent descriptors imported via an&lt;extends&gt; element.      * Only directly imported descriptors are included; the parent's parents are      * not included.      */
+comment|/**      * Get the list of parent descriptors imported via an&lt;extends&gt; element. Only directly      * imported descriptors are included; the parent's parents are not included.      */
 name|ExtendsDescriptor
 index|[]
 name|getInheritedDescriptors
@@ -336,7 +336,7 @@ name|String
 name|getStatus
 parameter_list|()
 function_decl|;
-comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return  The publication date or<code>null</code> when not knwon.      */
+comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return The publication date or<code>null</code> when not knwon.      */
 name|Date
 name|getPublicationDate
 parameter_list|()
@@ -478,28 +478,28 @@ index|[]
 name|getAllExcludeRules
 parameter_list|()
 function_decl|;
-comment|/**      * Returns all the dependency descriptor mediators used by this {@link ModuleDescriptor}, as an      * instance of {@link ModuleRules}.      *<p>      * All rules in the {@link ModuleRules} object returned are       * {@link DependencyDescriptorMediator}.      *</p>      *       * @return all the dependency descriptor mediators used by this {@link ModuleDescriptor}.      */
+comment|/**      * Returns all the dependency descriptor mediators used by this {@link ModuleDescriptor}, as an      * instance of {@link ModuleRules}.      *<p>      * All rules in the {@link ModuleRules} object returned are {@link DependencyDescriptorMediator}      * .      *</p>      *       * @return all the dependency descriptor mediators used by this {@link ModuleDescriptor}.      */
 specifier|public
 name|ModuleRules
-comment|/*<DependencyDescriptorMediator>*/
+comment|/*<DependencyDescriptorMediator> */
 name|getAllDependencyDescriptorMediators
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the list of xml namespaces used by extra attributes, as Map from prefix to namespace      * URIs.      *<p>      * The returned list is never<code>null</code>, it is empty when no extra attribute is used      * or if extra attributes are used without xml namespaces      *</p>      *       * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs.      */
+comment|/**      * Returns the list of xml namespaces used by extra attributes, as Map from prefix to namespace      * URIs.      *<p>      * The returned list is never<code>null</code>, it is empty when no extra attribute is used or      * if extra attributes are used without xml namespaces      *</p>      *       * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs.      */
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the custom info provided in the info tag.      * All the tags except the description are given.      * The key is the name of the tag, the value is its content.      * @return      */
+comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.      *       * @return      */
 annotation|@
 name|Deprecated
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|getExtraInfo
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of extras infos (tag name, attributes and content).      * All the tags except the description are given.      * @return      */
+comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @return      */
 name|List
 argument_list|<
 name|ExtraInfoHolder

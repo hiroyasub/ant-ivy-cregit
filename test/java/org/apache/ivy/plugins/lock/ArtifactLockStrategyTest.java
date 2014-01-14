@@ -399,7 +399,8 @@ argument_list|()
 decl_stmt|;
 comment|// run 3 concurrent resolves, one taking 100ms to download files, one 20ms and one 5ms
 comment|// the first one do 10 resolves, the second one 20 and the third 50
-comment|// note that the download time is useful only at the very beginning, then the cached file is used
+comment|// note that the download time is useful only at the very beginning, then the cached file is
+comment|// used
 name|ResolveThread
 name|t1
 init|=
@@ -1013,7 +1014,7 @@ init|(
 name|this
 init|)
 block|{
-comment|//Message.info(this.toString() + " count = " + count);
+comment|// Message.info(this.toString() + " count = " + count);
 name|count
 operator|++
 expr_stmt|;

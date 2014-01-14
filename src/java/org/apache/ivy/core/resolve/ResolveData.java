@@ -833,7 +833,7 @@ return|return
 name|currentVisitNode
 return|;
 block|}
-comment|/**      * Sets the currently visited node.       * WARNING: This should only be called by Ivy core ResolveEngine!      *       * @param currentVisitNode      */
+comment|/**      * Sets the currently visited node. WARNING: This should only be called by Ivy core      * ResolveEngine!      *       * @param currentVisitNode      */
 name|void
 name|setCurrentVisitNode
 parameter_list|(
@@ -1254,21 +1254,21 @@ argument_list|(
 name|mrid
 argument_list|)
 decl_stmt|;
-comment|//        if (node == null) {
-comment|//            // search again, now ignore the extra attributes
-comment|//            // TODO: maybe we should search the node that has at least the
-comment|//            // same attributes as mrid
-comment|//            for (Iterator it = visitData.entrySet().iterator(); it.hasNext();) {
-comment|//                Map.Entry entry = (Entry) it.next();
-comment|//                ModuleRevisionId current = (ModuleRevisionId) entry.getKey();
-comment|//                if (current.getModuleId().equals(mrid.getModuleId())
+comment|// if (node == null) {
+comment|// // search again, now ignore the extra attributes
+comment|// // TODO: maybe we should search the node that has at least the
+comment|// // same attributes as mrid
+comment|// for (Iterator it = visitData.entrySet().iterator(); it.hasNext();) {
+comment|// Map.Entry entry = (Entry) it.next();
+comment|// ModuleRevisionId current = (ModuleRevisionId) entry.getKey();
+comment|// if (current.getModuleId().equals(mrid.getModuleId())
 comment|//&& current.getRevision().equals(mrid.getRevision())) {
-comment|//                    VisitData data = (VisitData) entry.getValue();
-comment|//                    node = data.getNode();
-comment|//                    break;
-comment|//                }
-comment|//            }
-comment|//        }
+comment|// VisitData data = (VisitData) entry.getValue();
+comment|// node = data.getNode();
+comment|// break;
+comment|// }
+comment|// }
+comment|// }
 comment|//
 return|return
 name|node

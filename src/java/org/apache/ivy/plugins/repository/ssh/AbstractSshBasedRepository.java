@@ -214,7 +214,7 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * hashmap of user/hosts with credentials.      * key is hostname, value is Credentials      **/
+comment|/**      * hashmap of user/hosts with credentials. key is hostname, value is Credentials      **/
 specifier|private
 specifier|static
 name|HashMap
@@ -610,9 +610,9 @@ literal|"Missing path in URI"
 argument_list|)
 throw|;
 block|}
-comment|//if (uri.getUserInfo() == null&& getUser() == null) {
-comment|//    throw new URISyntaxException(source, "Missing username in URI or in resolver");
-comment|//}
+comment|// if (uri.getUserInfo() == null&& getUser() == null) {
+comment|// throw new URISyntaxException(source, "Missing username in URI or in resolver");
+comment|// }
 return|return
 name|uri
 return|;
@@ -661,7 +661,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      *  Called, when user was not found in URL.      * Maintain static hashe of credentials and retrieve or ask credentials      * for host.      *      * @param host       *       host for which we want to get credentials.      * @return credentials for given host       **/
+comment|/**      * Called, when user was not found in URL. Maintain static hashe of credentials and retrieve or      * ask credentials for host.      *       * @param host      *            host for which we want to get credentials.      * @return credentials for given host      **/
 specifier|private
 name|Credentials
 name|requestCredentials
@@ -1040,7 +1040,7 @@ return|return
 name|passFile
 return|;
 block|}
-comment|/**      * @return allowedAgentUse      *            Whether use of a local SSH agent for authentication is allowed      */
+comment|/**      * @return allowedAgentUse Whether use of a local SSH agent for authentication is allowed      */
 specifier|public
 name|boolean
 name|isAllowedAgentUse

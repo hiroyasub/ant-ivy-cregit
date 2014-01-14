@@ -237,7 +237,7 @@ block|}
 specifier|public
 specifier|static
 name|Collection
-comment|/*<Configuration>*/
+comment|/*<Configuration> */
 name|findConfigurationExtending
 parameter_list|(
 name|String
@@ -365,7 +365,7 @@ specifier|private
 name|ModuleRevisionId
 name|sourceModule
 decl_stmt|;
-comment|/**      * Creates a new configuration.      *       * @param name the name of the configuration      */
+comment|/**      * Creates a new configuration.      *       * @param name      *            the name of the configuration      */
 specifier|public
 name|Configuration
 parameter_list|(
@@ -447,7 +447,7 @@ name|sourceModule
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new configuration.      *       * @param name the name of the configuration      * @param visibility the visibility of the configuration      * @param description a description      * @param ext the configurations to extend from      * @param transitive indicates if the configuration is transitive      * @param deprecated the deprecation message      */
+comment|/**      * Creates a new configuration.      *       * @param name      *            the name of the configuration      * @param visibility      *            the visibility of the configuration      * @param description      *            a description      * @param ext      *            the configurations to extend from      * @param transitive      *            indicates if the configuration is transitive      * @param deprecated      *            the deprecation message      */
 specifier|public
 name|Configuration
 parameter_list|(
@@ -659,7 +659,7 @@ operator|=
 name|sourceModule
 expr_stmt|;
 block|}
-comment|/**      * Returns the deprecation message, or<tt>null</tt> if not specified.      * @return Returns the deprecation message.      */
+comment|/**      * Returns the deprecation message, or<tt>null</tt> if not specified.      *       * @return Returns the deprecation message.      */
 specifier|public
 name|String
 name|getDeprecated

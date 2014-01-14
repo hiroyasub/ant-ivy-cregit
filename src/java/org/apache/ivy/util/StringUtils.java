@@ -71,7 +71,7 @@ specifier|private
 name|StringUtils
 parameter_list|()
 block|{
-comment|//Utility class
+comment|// Utility class
 block|}
 specifier|public
 specifier|static
@@ -312,7 +312,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Joins the given object array in one string, each separated by the given separator.       *       * Example:      *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param  objs  The array of objects (<code>toString()</code> is used).      * @param  sep  The separator to use.      * @return  The concatinated string.      */
+comment|/**      * Joins the given object array in one string, each separated by the given separator.      *       * Example:      *       *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param objs      *            The array of objects (<code>toString()</code> is used).      * @param sep      *            The separator to use.      * @return The concatinated string.      */
 specifier|public
 specifier|static
 name|String
@@ -1018,7 +1018,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Decrypts a string encrypted with encrypt.      *       * @param str      *            the encrypted string to decrypt      * @return  The decrypted string.      */
+comment|/**      * Decrypts a string encrypted with encrypt.      *       * @param str      *            the encrypted string to decrypt      * @return The decrypted string.      */
 specifier|public
 specifier|static
 specifier|final

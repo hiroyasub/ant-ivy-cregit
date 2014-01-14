@@ -2523,7 +2523,8 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// not default
+comment|// not
+comment|// default
 comment|// -> should the
 comment|// one kept
 name|MockResolver
@@ -3395,7 +3396,8 @@ argument_list|(
 name|rmr
 argument_list|)
 expr_stmt|;
-comment|// the module returned should be the default one found in cache since check modified is false
+comment|// the module returned should be the default one found in cache since check modified is
+comment|// false
 name|assertEquals
 argument_list|(
 literal|true
@@ -3930,7 +3932,8 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// first resolver has only an artifact pattern which don't lead to anything: it won't find the module
+comment|// first resolver has only an artifact pattern which don't lead to anything: it won't find
+comment|// the module
 name|FileSystemResolver
 name|resolver
 init|=

@@ -234,7 +234,7 @@ specifier|public
 interface|interface
 name|RepositoryCacheManager
 block|{
-comment|/**      * Returns the name of the repository cache manager.      * @return the name of the repository cache manager.      */
+comment|/**      * Returns the name of the repository cache manager.      *       * @return the name of the repository cache manager.      */
 specifier|public
 specifier|abstract
 name|String
@@ -257,7 +257,7 @@ name|String
 name|artifactResolverName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the artifact origin of the given artifact as saved in this cache.      *<p>      * If the origin is unknown, the returned ArtifactOrigin instance will return true when       * {@link ArtifactOrigin#isUnknown(ArtifactOrigin)} is called.      *       * @param artifact      *            the artifact for which the saved artifact origin should be returned.      * @return the artifact origin of the given artifact as saved in this cache      */
+comment|/**      * Returns the artifact origin of the given artifact as saved in this cache.      *<p>      * If the origin is unknown, the returned ArtifactOrigin instance will return true when      * {@link ArtifactOrigin#isUnknown(ArtifactOrigin)} is called.      *       * @param artifact      *            the artifact for which the saved artifact origin should be returned.      * @return the artifact origin of the given artifact as saved in this cache      */
 specifier|public
 specifier|abstract
 name|ArtifactOrigin
@@ -286,7 +286,7 @@ name|String
 name|expectedResolver
 parameter_list|)
 function_decl|;
-comment|/**      * Downloads an artifact to this cache.      *       * @param artifact      *            the artifact to download      * @param resourceResolver      *            a resource resolver to use if the artifact needs to be resolved to a Resource for      *            downloading      * @param resourceDownloader      *            a resource downloader to use if actual download of the resource is needed      * @param options      *            a set of options to adjust the download       * @return a report indicating how the download was performed      */
+comment|/**      * Downloads an artifact to this cache.      *       * @param artifact      *            the artifact to download      * @param resourceResolver      *            a resource resolver to use if the artifact needs to be resolved to a Resource for      *            downloading      * @param resourceDownloader      *            a resource downloader to use if actual download of the resource is needed      * @param options      *            a set of options to adjust the download      * @return a report indicating how the download was performed      */
 specifier|public
 specifier|abstract
 name|ArtifactDownloadReport
@@ -382,7 +382,7 @@ name|void
 name|clean
 parameter_list|()
 function_decl|;
-comment|/**      * Caches a dynamic revision constraint resolution.      *       * @param dynamicMrid the dynamic module revision id      * @param revision the resolved revision      */
+comment|/**      * Caches a dynamic revision constraint resolution.      *       * @param dynamicMrid      *            the dynamic module revision id      * @param revision      *            the resolved revision      */
 specifier|public
 name|void
 name|saveResolvedRevision

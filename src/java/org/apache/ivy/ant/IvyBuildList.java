@@ -2176,7 +2176,7 @@ name|Map
 name|moduleIdMap
 parameter_list|)
 block|{
-comment|//toKeep.add(node);
+comment|// toKeep.add(node);
 name|DependencyDescriptor
 index|[]
 name|deps
@@ -2732,7 +2732,7 @@ operator|=
 name|onMissingDescriptor
 expr_stmt|;
 block|}
-comment|/**      * @deprecated use {@link #getOnMissingDescriptor()} instead.       */
+comment|/**      * @deprecated use {@link #getOnMissingDescriptor()} instead.      */
 specifier|public
 name|boolean
 name|isSkipbuildwithoutivy
@@ -2746,7 +2746,7 @@ operator|.
 name|SKIP
 return|;
 block|}
-comment|/**      * @deprecated use {@link #setOnMissingDescriptor(String)} instead.       */
+comment|/**      * @deprecated use {@link #setOnMissingDescriptor(String)} instead.      */
 specifier|public
 name|void
 name|setSkipbuildwithoutivy

@@ -601,7 +601,7 @@ argument_list|,
 name|providerMock3
 argument_list|)
 expr_stmt|;
-comment|//adding 1
+comment|// adding 1
 name|cache
 operator|.
 name|get
@@ -615,7 +615,7 @@ argument_list|,
 name|providerMock1b
 argument_list|)
 expr_stmt|;
-comment|//and one has been removed
+comment|// and one has been removed
 name|providerMock1b
 operator|.
 name|assertCalled
@@ -732,7 +732,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-comment|//and one has been removed
+comment|// and one has been removed
 name|cache
 operator|.
 name|get

@@ -211,7 +211,7 @@ block|{
 specifier|private
 specifier|static
 name|ThreadLocal
-comment|/*<Stack<IvyContext>>*/
+comment|/*<Stack<IvyContext>> */
 name|current
 init|=
 operator|new
@@ -224,7 +224,7 @@ name|defaultIvy
 decl_stmt|;
 specifier|private
 name|WeakReference
-comment|/*<Ivy>*/
+comment|/*<Ivy> */
 name|ivy
 init|=
 operator|new
@@ -349,7 +349,7 @@ block|}
 specifier|private
 specifier|static
 name|Stack
-comment|/*<IvyContext>*/
+comment|/*<IvyContext> */
 name|getCurrentStack
 parameter_list|()
 block|{
@@ -389,7 +389,7 @@ return|return
 name|cur
 return|;
 block|}
-comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      * @return the newly pushed context      */
+comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *       * @return the newly pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -405,7 +405,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a new IvyContext as a copy of the current one and pushes it as the current context in      * the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>     * @return the newly pushed context      */
+comment|/**      * Creates a new IvyContext as a copy of the current one and pushes it as the current context in      * the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *       * @return the newly pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -424,7 +424,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *       * @param context      *            the new context to use in this thread.     * @return the pushed context      */
+comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *       * @param context      *            the new context to use in this thread.      * @return the pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -622,7 +622,7 @@ argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
-comment|//???
+comment|// ???
 block|}
 block|}
 return|return

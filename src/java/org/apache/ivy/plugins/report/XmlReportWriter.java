@@ -370,7 +370,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * XmlReportWriter allows to write ResolveReport in an xml format.   */
+comment|/**  * XmlReportWriter allows to write ResolveReport in an xml format.  */
 end_comment
 
 begin_class
@@ -487,7 +487,7 @@ operator|.
 name|getModuleRevisionId
 argument_list|()
 decl_stmt|;
-comment|//out.println("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
+comment|// out.println("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
 name|out
 operator|.
 name|println

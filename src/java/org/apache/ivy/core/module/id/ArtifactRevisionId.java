@@ -346,7 +346,7 @@ name|hashCode
 parameter_list|()
 block|{
 comment|// WARN: uniqueness needs to be relatively strong here
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -382,7 +382,7 @@ argument_list|()
 operator|*
 literal|37
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 return|return
 name|hash
 return|;

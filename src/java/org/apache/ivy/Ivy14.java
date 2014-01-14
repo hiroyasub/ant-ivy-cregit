@@ -518,7 +518,7 @@ specifier|public
 class|class
 name|Ivy14
 block|{
-comment|//CheckStyle:ParameterNumberCheck OFF
+comment|// CheckStyle:ParameterNumberCheck OFF
 comment|// don't check parameter numbers, since this class is here for backward compatibility
 specifier|private
 name|Ivy
@@ -3456,7 +3456,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|//CheckStyle:ParameterNumberCheck ON
+comment|// CheckStyle:ParameterNumberCheck ON
 block|}
 end_class
 

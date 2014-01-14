@@ -594,7 +594,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class used to launch ivy as a standalone tool.  *<p>  * Valid arguments can be obtained with the -? argument.   */
+comment|/**  * Class used to launch ivy as a standalone tool.  *<p>  * Valid arguments can be obtained with the -? argument.  */
 end_comment
 
 begin_class
@@ -1711,7 +1711,7 @@ literal|"cache"
 argument_list|)
 condition|)
 block|{
-comment|//override default cache path with user supplied cache path
+comment|// override default cache path with user supplied cache path
 name|settings
 operator|.
 name|setDefaultCache
@@ -2677,11 +2677,11 @@ name|popContext
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Parses the<code>cp</code> option from the command line, and returns a list of {@link File}.      *<p>      * All the files contained in the returned List exist, non existing files are simply skipped      * with a warning.      *</p>      *       * @param line      *            the command line in which the cp option shold be parsed      * @return a List of files to include as extra classpath entries, or<code>null</code> if no      *         cp option was provided.      */
+comment|/**      * Parses the<code>cp</code> option from the command line, and returns a list of {@link File}.      *<p>      * All the files contained in the returned List exist, non existing files are simply skipped      * with a warning.      *</p>      *       * @param line      *            the command line in which the cp option shold be parsed      * @return a List of files to include as extra classpath entries, or<code>null</code> if no cp      *         option was provided.      */
 specifier|private
 specifier|static
 name|List
-comment|/*<File>*/
+comment|/*<File> */
 name|getExtraClasspathFileList
 parameter_list|(
 name|CommandLine
@@ -2707,7 +2707,7 @@ name|fileList
 operator|=
 operator|new
 name|ArrayList
-comment|/*<File>*/
+comment|/*<File> */
 argument_list|()
 expr_stmt|;
 name|String

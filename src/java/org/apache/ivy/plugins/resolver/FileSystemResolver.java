@@ -255,7 +255,7 @@ argument_list|(
 literal|"(.*[/\\\\]\\[revision\\])([/\\\\].+)"
 argument_list|)
 decl_stmt|;
-comment|/**      * Transactional mode.      *       * auto: use transaction if possible, only log verbose message if not      * true: always use transaction, fail if not supported      * false: never use transactions      */
+comment|/**      * Transactional mode.      *       * auto: use transaction if possible, only log verbose message if not true: always use      * transaction, fail if not supported false: never use transactions      */
 specifier|private
 name|String
 name|transactional
@@ -276,7 +276,7 @@ decl_stmt|;
 comment|/**      * Map between actual patterns and patterns used during the transaction to put files in a      * temporary directory      */
 specifier|private
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|fullTransactionPatterns
 init|=
 operator|new

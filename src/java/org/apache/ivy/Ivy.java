@@ -758,7 +758,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *   *</p>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.<br/> To do so, it is recommended to use the  * {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method like this:  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback   *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  *   *</p>  */
+comment|/**  *<a href="http://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *   *</p>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.<br/>  * To do so, it is recommended to use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method  * like this:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback  *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  *   *</p>  */
 end_comment
 
 begin_class
@@ -808,14 +808,14 @@ operator|.
 name|DATE_FORMAT_PATTERN
 argument_list|)
 decl_stmt|;
-comment|/**      * the current version of Ivy, as displayed on the console when       * Ivy is initialized      */
+comment|/**      * the current version of Ivy, as displayed on the console when Ivy is initialized      */
 specifier|private
 specifier|static
 specifier|final
 name|String
 name|IVY_VERSION
 decl_stmt|;
-comment|/**      * the date at which this version of Ivy has been built.      * May be empty if unknown.      */
+comment|/**      * the date at which this version of Ivy has been built. May be empty if unknown.      */
 specifier|private
 specifier|static
 specifier|final
@@ -906,7 +906,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the current version of Ivy, as displayed on the console when       * Ivy is initialized.      *       * @return the current version of Ivy      */
+comment|/**      * Returns the current version of Ivy, as displayed on the console when Ivy is initialized.      *       * @return the current version of Ivy      */
 specifier|public
 specifier|static
 name|String
@@ -928,7 +928,7 @@ return|return
 name|IVY_DATE
 return|;
 block|}
-comment|/**      * Returns the URL at which Ivy web site can be found.      * @return the URL at which Ivy web site can be found      */
+comment|/**      * Returns the URL at which Ivy web site can be found.      *       * @return the URL at which Ivy web site can be found      */
 specifier|public
 specifier|static
 name|String
@@ -1063,7 +1063,7 @@ name|Ivy
 parameter_list|()
 block|{
 block|}
-comment|/**      * This method is used to bind this Ivy instance to required dependencies, i.e. instance of      * settings, engines, and so on.       *<p>      * After this call Ivy is still not configured, which means that      * the settings object is still empty.      *</p>      */
+comment|/**      * This method is used to bind this Ivy instance to required dependencies, i.e. instance of      * settings, engines, and so on.      *<p>      * After this call Ivy is still not configured, which means that the settings object is still      * empty.      *</p>      */
 specifier|public
 name|void
 name|bind

@@ -2697,7 +2697,7 @@ name|sax
 throw|;
 block|}
 block|}
-comment|/**          * Default parent location to check (for dev ONLY)           * @return a relative path to a parent module descriptor          */
+comment|/**          * Default parent location to check (for dev ONLY)          *           * @return a relative path to a parent module descriptor          */
 specifier|protected
 name|String
 name|getDefaultParentLocation
@@ -2707,7 +2707,7 @@ return|return
 literal|"../ivy.xml"
 return|;
 block|}
-comment|/**          * Handle extends elements.          * It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          * @param attributes           * @throws ParseException           */
+comment|/**          * Handle extends elements. It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the          * default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          *           * @param attributes          * @throws ParseException          */
 specifier|protected
 name|void
 name|extendsStarted
@@ -2880,7 +2880,7 @@ argument_list|,
 name|parentRevision
 argument_list|)
 decl_stmt|;
-comment|//check on filesystem based on location attribute (for dev ONLY)
+comment|// check on filesystem based on location attribute (for dev ONLY)
 name|boolean
 name|local
 init|=
@@ -3086,7 +3086,7 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Merge current module with a given module descriptor and specify what should be inherited through extendTypes argument          * @param extendTypes specify what should be inherited          * @param parent a given parent module descriptor          */
+comment|/**          * Merge current module with a given module descriptor and specify what should be inherited          * through extendTypes argument          *           * @param extendTypes          *            specify what should be inherited          * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeWithOtherModuleDescriptor
@@ -3229,7 +3229,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**          * Merge everything from a given parent          * @param parent a given parent module desciptor          */
+comment|/**          * Merge everything from a given parent          *           * @param parent          *            a given parent module desciptor          */
 specifier|protected
 name|void
 name|mergeAll
@@ -3281,7 +3281,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Explain how to inherit metadatas related to info element          * @param parent a given parent module decriptor          */
+comment|/**          * Explain how to inherit metadatas related to info element          *           * @param parent          *            a given parent module decriptor          */
 specifier|protected
 name|void
 name|mergeInfo
@@ -3554,7 +3554,7 @@ return|return
 name|dup
 return|;
 block|}
-comment|/**          * Describes how to merge configurations elements          * @param sourceMrid the source module revision id          * @param configurations array of configurations to be inherited           */
+comment|/**          * Describes how to merge configurations elements          *           * @param sourceMrid          *            the source module revision id          * @param configurations          *            array of configurations to be inherited          */
 specifier|protected
 name|void
 name|mergeConfigurations
@@ -3617,7 +3617,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//copy configuration from parent descriptor
+comment|// copy configuration from parent descriptor
 name|getMd
 argument_list|()
 operator|.
@@ -3684,7 +3684,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how dependencies should be inherited          * @param dependencies array of dependencies to inherit          */
+comment|/**          * Describes how dependencies should be inherited          *           * @param dependencies          *            array of dependencies to inherit          */
 specifier|protected
 name|void
 name|mergeDependencies
@@ -3749,7 +3749,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge description          * @param description description going to be inherited          */
+comment|/**          * Describes how to merge description          *           * @param description          *            description going to be inherited          */
 specifier|protected
 name|void
 name|mergeDescription
@@ -3794,7 +3794,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge licenses          * @param licenses licenses going to be inherited          */
+comment|/**          * Describes how to merge licenses          *           * @param licenses          *            licenses going to be inherited          */
 specifier|public
 name|void
 name|mergeLicenses
@@ -3834,7 +3834,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge exclude rules          * @param excludeRules exclude rules going to be inherited          */
+comment|/**          * Describes how to merge exclude rules          *           * @param excludeRules          *            exclude rules going to be inherited          */
 specifier|public
 name|void
 name|mergeExcludes
@@ -3874,7 +3874,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Returns the parent module using the location attribute (for dev purpose).          * @param location a given location           * @throws IOException          * @throws ParseException           */
+comment|/**          * Returns the parent module using the location attribute (for dev purpose).          *           * @param location          *            a given location          * @throws IOException          * @throws ParseException          */
 specifier|private
 name|ModuleDescriptor
 name|parseParentModuleOnFilesystem
@@ -4056,7 +4056,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**          * Describe how to parse a {@link ModuleDescriptor} by asking repositories          * @param parentMrid a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor} was found          * @throws ParseException          */
+comment|/**          * Describe how to parse a {@link ModuleDescriptor} by asking repositories          *           * @param parentMrid          *            a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor}          *         was found          * @throws ParseException          */
 specifier|protected
 name|ModuleDescriptor
 name|parseOtherIvyFile
@@ -5574,11 +5574,11 @@ literal|"branchConstraint"
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|//            if (branchConstraint == null) {
-comment|//                // there was no branch constraint before, so we should
-comment|//                // set the branchConstraint to the current default branch
-comment|//                branchConstraint = settings.getDefaultBranch(ModuleId.newInstance(org, name));
-comment|//            }
+comment|// if (branchConstraint == null) {
+comment|// // there was no branch constraint before, so we should
+comment|// // set the branchConstraint to the current default branch
+comment|// branchConstraint = settings.getDefaultBranch(ModuleId.newInstance(org, name));
+comment|// }
 name|String
 name|rev
 init|=

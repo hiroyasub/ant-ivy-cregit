@@ -2015,7 +2015,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * List modules matching a given criteria, available in the given dependency resolver.      *<p>      * ModuleRevisionId are returned in the system namespace.      *</p>      *        * @param resolver the resolver in which modules should looked up      * @param moduleCrit the criteria to match      * @param matcher the matcher to use to match criteria      * @return an array of matching module revision ids      */
+comment|/**      * List modules matching a given criteria, available in the given dependency resolver.      *<p>      * ModuleRevisionId are returned in the system namespace.      *</p>      *       * @param resolver      *            the resolver in which modules should looked up      * @param moduleCrit      *            the criteria to match      * @param matcher      *            the matcher to use to match criteria      * @return an array of matching module revision ids      */
 specifier|public
 name|ModuleRevisionId
 index|[]

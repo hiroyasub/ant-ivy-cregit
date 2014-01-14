@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Resolve an file or url relatively to its context.    */
+comment|/**  * Resolve an file or url relatively to its context.  */
 end_comment
 
 begin_class
@@ -55,7 +55,7 @@ specifier|abstract
 class|class
 name|RelativeUrlResolver
 block|{
-comment|/**      * Resolve the url in the context of context.        * @param context The URL of the ressource containing the reference url      * @param url a relative or absolution url string      * @throws MalformedURLException      */
+comment|/**      * Resolve the url in the context of context.      *       * @param context      *            The URL of the ressource containing the reference url      * @param url      *            a relative or absolution url string      * @throws MalformedURLException      */
 specifier|public
 specifier|abstract
 name|URL
@@ -70,7 +70,7 @@ parameter_list|)
 throws|throws
 name|MalformedURLException
 function_decl|;
-comment|/**      * Relsovle file or url path relatively to a context.  file is considered first.      * If file is not defined, url will be considered.        * @param context The URL of the ressource containing the reference file or url      * @param file a relative or absolute path      * @param url a relative or absolution url string      * @return the resulting url or null if faile and url are null.      * @throws MalformedURLException      */
+comment|/**      * Relsovle file or url path relatively to a context. file is considered first. If file is not      * defined, url will be considered.      *       * @param context      *            The URL of the ressource containing the reference file or url      * @param file      *            a relative or absolute path      * @param url      *            a relative or absolution url string      * @return the resulting url or null if faile and url are null.      * @throws MalformedURLException      */
 specifier|public
 name|URL
 name|getURL

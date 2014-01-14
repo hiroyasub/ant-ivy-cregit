@@ -701,7 +701,7 @@ decl_stmt|;
 comment|// usage information merged from evicted nodes this node is "replacing"
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId, IvyNodeUsage>*/
+comment|/*<ModuleRevisionId, IvyNodeUsage> */
 name|mergedUsages
 init|=
 operator|new
@@ -1970,7 +1970,7 @@ block|}
 comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *       * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return      */
 specifier|public
 name|Collection
-comment|/*<IvyNode>*/
+comment|/*<IvyNode> */
 name|getDependencies
 parameter_list|(
 name|String
@@ -2015,7 +2015,8 @@ operator|new
 name|LinkedHashMap
 argument_list|()
 decl_stmt|;
-comment|// it's important to respect order
+comment|// it's important to
+comment|// respect order
 for|for
 control|(
 name|int
@@ -3539,7 +3540,7 @@ name|conf
 argument_list|)
 return|;
 block|}
-comment|//This is never called.  Could we remove it?
+comment|// This is never called. Could we remove it?
 specifier|public
 name|void
 name|discardConf
@@ -4397,7 +4398,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|Collection
-comment|/*<IvyNodeUsage>*/
+comment|/*<IvyNodeUsage> */
 name|getAllUsages
 parameter_list|()
 block|{
@@ -6337,7 +6338,7 @@ return|;
 block|}
 specifier|public
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|getAllEvictingNodesDetails
 parameter_list|()
 block|{
@@ -6715,7 +6716,7 @@ block|}
 comment|// /////////////////////////////////////////////////////////////////////////////
 comment|// BLACKLISTING MANAGEMENT
 comment|// /////////////////////////////////////////////////////////////////////////////
-comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *       * @param rootModuleConf the root module configuration in which the node should be blacklisted      */
+comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *       * @param rootModuleConf      *            the root module configuration in which the node should be blacklisted      */
 specifier|public
 name|void
 name|blacklist
@@ -6804,7 +6805,7 @@ name|String
 name|rootModuleConf
 parameter_list|,
 name|Stack
-comment|/*<IvyNode>*/
+comment|/*<IvyNode> */
 name|callerStack
 parameter_list|)
 block|{

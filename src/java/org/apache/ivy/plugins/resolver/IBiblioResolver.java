@@ -1851,7 +1851,7 @@ argument_list|)
 condition|)
 block|{
 comment|// now we must use metadata if available
-comment|/*              * we substitute tokens with ext token only in the m2 per module pattern, to match              * has has been done in the given pattern              */
+comment|/*              * we substitute tokens with ext token only in the m2 per module pattern, to match has              * has been done in the given pattern              */
 name|String
 name|partiallyResolvedM2PerModulePattern
 init|=
@@ -1944,7 +1944,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/*                  * this is probably because the given pattern has been substituted with jar ext,                  * if this resolver has optional module descriptors. But since we have to use                  * maven metadata, we don't care about this case, maven metadata has already                  * been used when looking for revisions with the pattern substituted with                  * ext=xml for the "ivy" pattern.                  */
+comment|/*                  * this is probably because the given pattern has been substituted with jar ext, if                  * this resolver has optional module descriptors. But since we have to use maven                  * metadata, we don't care about this case, maven metadata has already been used                  * when looking for revisions with the pattern substituted with ext=xml for the                  * "ivy" pattern.                  */
 return|return
 operator|new
 name|String

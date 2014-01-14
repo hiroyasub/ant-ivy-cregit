@@ -779,7 +779,7 @@ name|dynamicRevId
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String,List<String>>*/
+comment|/*<String,List<String>> */
 name|confs
 init|=
 operator|new
@@ -1320,7 +1320,7 @@ operator|)
 name|c
 decl_stmt|;
 name|Set
-comment|/*<String>*/
+comment|/*<String> */
 name|intersectedDepConfs
 init|=
 operator|new
@@ -1425,7 +1425,7 @@ block|}
 else|else
 block|{
 name|Set
-comment|/*<String>*/
+comment|/*<String> */
 name|intersectedDepConfsCopy
 init|=
 name|intersectedDepConfs
@@ -1485,7 +1485,7 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
-comment|/*                                 we do not handle special confs like *!sg or [cond]* in right hand                                  confs yet: it would require supporting parenthesis grouping in                                  configurations intersection interpretation                                                                    for (Iterator it2 = depConfs.iterator(); it2.hasNext();) {                                     String depConf = (String) it2.next();                                     if (depConf.startsWith("*")) {                                         if (intersectedDepConf                                                 .indexOf("(" + depConf + ")") != -1) {                                             intersectedDepConfs.add(intersectedDepConf);                                         } else {                                             intersectedDepConfs.add(                                                 "(" + intersectedDepConf + ")+(" + depConf + ")");                                         }                                     } else if (intersectedDepConf.startsWith("*")) {                                         if (depConf                                             .indexOf("(" + intersectedDepConf + ")") != -1) {                                             intersectedDepConfs.add(depConf);                                         } else {                                             intersectedDepConfs.add(                                                 depConf + "+" + intersectedDepConf);                                         }                                     }                                 }                                 */
+comment|/*                                  * we do not handle special confs like *!sg or [cond]* in right hand                                  * confs yet: it would require supporting parenthesis grouping in                                  * configurations intersection interpretation                                  *                                   * for (Iterator it2 = depConfs.iterator(); it2.hasNext();) { String                                  * depConf = (String) it2.next(); if (depConf.startsWith("*")) { if                                  * (intersectedDepConf .indexOf("(" + depConf + ")") != -1) {                                  * intersectedDepConfs.add(intersectedDepConf); } else {                                  * intersectedDepConfs.add( "(" + intersectedDepConf + ")+(" +                                  * depConf + ")"); } } else if (intersectedDepConf.startsWith("*"))                                  * { if (depConf .indexOf("(" + intersectedDepConf + ")") != -1) {                                  * intersectedDepConfs.add(depConf); } else {                                  * intersectedDepConfs.add( depConf + "+" + intersectedDepConf); } }                                  * }                                  */
 block|}
 block|}
 block|}
@@ -1666,7 +1666,7 @@ operator|)
 name|c
 decl_stmt|;
 name|Set
-comment|/*<String>*/
+comment|/*<String> */
 name|groupDepConfs
 init|=
 operator|new
@@ -2022,7 +2022,7 @@ name|requestedConfiguration
 parameter_list|)
 block|{
 name|Set
-comment|/*<String>*/
+comment|/*<String> */
 name|allDepConfs
 init|=
 operator|new

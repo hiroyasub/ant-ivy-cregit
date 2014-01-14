@@ -302,7 +302,7 @@ specifier|private
 name|Boolean
 name|isCircular
 decl_stmt|;
-comment|/**      * IvyNode usage information to update when visiting the underlying IvyNode.      * This is usually the main IvyNodeUsage of the underlying node, except when we are visiting it      * coming from an evicted node replaced by the other one.      */
+comment|/**      * IvyNode usage information to update when visiting the underlying IvyNode. This is usually the      * main IvyNodeUsage of the underlying node, except when we are visiting it coming from an      * evicted node replaced by the other one.      */
 specifier|private
 name|IvyNodeUsage
 name|usage
@@ -505,7 +505,7 @@ block|}
 comment|/**      * Get an ordered collection with the nodes from the root to this node      *       * @return      */
 specifier|public
 name|Collection
-comment|/*<VisitNode>*/
+comment|/*<VisitNode> */
 name|getPath
 parameter_list|()
 block|{
@@ -528,7 +528,7 @@ return|;
 block|}
 specifier|private
 name|Collection
-comment|/*<VisitNode>*/
+comment|/*<VisitNode> */
 name|computePath
 parameter_list|()
 block|{
@@ -986,7 +986,7 @@ comment|// we now register this node on the new resolved id
 comment|// this includes two cases:
 comment|// - the id refers to a dynamic revision, which has been resolved by loadData
 comment|// - the loaded module descriptor has extra attributes in his info tag which are not
-comment|//   used when declaring the dependency
+comment|// used when declaring the dependency
 if|if
 condition|(
 name|data
@@ -1044,7 +1044,7 @@ return|;
 block|}
 specifier|public
 name|Collection
-comment|/*<VisitNode>*/
+comment|/*<VisitNode> */
 name|getDependencies
 parameter_list|(
 name|String
@@ -1052,7 +1052,7 @@ name|conf
 parameter_list|)
 block|{
 name|Collection
-comment|/*<IvyNode>*/
+comment|/*<IvyNode> */
 name|deps
 init|=
 name|node
@@ -1067,7 +1067,7 @@ name|requestedConf
 argument_list|)
 decl_stmt|;
 name|Collection
-comment|/*<VisitNode>*/
+comment|/*<VisitNode> */
 name|ret
 init|=
 operator|new
@@ -1124,7 +1124,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node.       *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
+comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node.      *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
 name|VisitNode
 name|gotoNode
 parameter_list|(

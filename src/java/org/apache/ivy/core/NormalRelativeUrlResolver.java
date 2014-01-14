@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Normal implementation of RelativeUrlResolver.   */
+comment|/**  * Normal implementation of RelativeUrlResolver.  */
 end_comment
 
 begin_class

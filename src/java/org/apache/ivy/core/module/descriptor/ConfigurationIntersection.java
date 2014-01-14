@@ -53,7 +53,7 @@ block|{
 specifier|private
 specifier|final
 name|Map
-comment|/*<String, Configuration>*/
+comment|/*<String, Configuration> */
 name|intersectedConfs
 decl_stmt|;
 specifier|public
@@ -63,7 +63,7 @@ name|String
 name|confName
 parameter_list|,
 name|Map
-comment|/*<String, Configuration>*/
+comment|/*<String, Configuration> */
 name|intersectedConfs
 parameter_list|)
 block|{

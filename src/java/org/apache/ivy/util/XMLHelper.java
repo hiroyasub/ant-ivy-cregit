@@ -912,7 +912,7 @@ return|return
 name|canUseSchemaValidation
 return|;
 block|}
-comment|/**      * Escapes invalid XML characters in the given character data using XML entities.      * For the moment, only the following characters are being escaped: (<), (&), (')       * and (").      *       * Remark: we don't escape the (>) character to keep the readability of the      * configuration mapping! The XML spec only requires that the (&) and (<)      * characters are being escaped inside character data.      *       * @param text the character data to escape      * @return the escaped character data      */
+comment|/**      * Escapes invalid XML characters in the given character data using XML entities. For the      * moment, only the following characters are being escaped: (<), (&), (') and (").      *       * Remark: we don't escape the (>) character to keep the readability of the configuration      * mapping! The XML spec only requires that the (&) and (<) characters are being escaped inside      * character data.      *       * @param text      *            the character data to escape      * @return the escaped character data      */
 specifier|public
 specifier|static
 name|String

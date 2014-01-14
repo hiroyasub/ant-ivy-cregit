@@ -418,7 +418,7 @@ name|RepositoryHandler
 extends|extends
 name|DelegatingHandler
 block|{
-comment|//        private static final String P2_TIMESTAMP = "p2.timestamp";
+comment|// private static final String P2_TIMESTAMP = "p2.timestamp";
 specifier|private
 specifier|static
 specifier|final
@@ -427,15 +427,15 @@ name|REPOSITORY
 init|=
 literal|"repository"
 decl_stmt|;
-comment|//        private static final String NAME = "name";
+comment|// private static final String NAME = "name";
 comment|//
-comment|//        private static final String TYPE = "type";
+comment|// private static final String TYPE = "type";
 comment|//
-comment|//        private static final String VERSION = "version";
+comment|// private static final String VERSION = "version";
 comment|//
-comment|//        private static final String DESCRIPTION = "description";
+comment|// private static final String DESCRIPTION = "description";
 comment|//
-comment|//        private static final String PROVIDER = "provider";
+comment|// private static final String PROVIDER = "provider";
 specifier|public
 name|RepositoryHandler
 parameter_list|(
@@ -449,15 +449,15 @@ argument_list|(
 name|REPOSITORY
 argument_list|)
 expr_stmt|;
-comment|//            addChild(new PropertiesHandler(P2_TIMESTAMP),
-comment|//                new ChildElementHandler<PropertiesHandler>() {
-comment|//                    public void childHanlded(PropertiesHandler child) {
-comment|//                        String timestamp = child.properties.get(P2_TIMESTAMP);
-comment|//                        if (timestamp != null) {
-comment|//                            p2Descriptor.setTimestamp(Long.parseLong(timestamp));
-comment|//                        }
-comment|//                    }
-comment|//                });
+comment|// addChild(new PropertiesHandler(P2_TIMESTAMP),
+comment|// new ChildElementHandler<PropertiesHandler>() {
+comment|// public void childHanlded(PropertiesHandler child) {
+comment|// String timestamp = child.properties.get(P2_TIMESTAMP);
+comment|// if (timestamp != null) {
+comment|// p2Descriptor.setTimestamp(Long.parseLong(timestamp));
+comment|// }
+comment|// }
+comment|// });
 name|addChild
 argument_list|(
 operator|new
@@ -527,13 +527,13 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String name = atts.getValue(NAME);
-comment|//            String type = atts.getValue(TYPE);
-comment|//            String version = atts.getValue(VERSION);
-comment|//            String description = atts.getValue(DESCRIPTION);
-comment|//            String provider = atts.getValue(PROVIDER);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String name = atts.getValue(NAME);
+comment|// String type = atts.getValue(TYPE);
+comment|// String version = atts.getValue(VERSION);
+comment|// String description = atts.getValue(DESCRIPTION);
+comment|// String provider = atts.getValue(PROVIDER);
+comment|// }
 block|}
 specifier|private
 class|class
@@ -659,11 +659,11 @@ name|REPOSITORY
 init|=
 literal|"repository"
 decl_stmt|;
-comment|//        private static final String TYPE = "type";
+comment|// private static final String TYPE = "type";
 comment|//
-comment|//        private static final String OPTIONS = "options";
+comment|// private static final String OPTIONS = "options";
 comment|//
-comment|//        private static final String NAME = "name";
+comment|// private static final String NAME = "name";
 specifier|private
 specifier|static
 specifier|final
@@ -690,11 +690,11 @@ name|REPOSITORY
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        int type;
+comment|// int type;
 comment|//
-comment|//        int options;
+comment|// int options;
 comment|//
-comment|//        String name;
+comment|// String name;
 name|URI
 name|uri
 decl_stmt|;
@@ -708,9 +708,9 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|//            type = Integer.parseInt(atts.getValue(TYPE));
-comment|//            options = Integer.parseInt(atts.getValue(OPTIONS));
-comment|//            name = atts.getValue(NAME);
+comment|// type = Integer.parseInt(atts.getValue(TYPE));
+comment|// options = Integer.parseInt(atts.getValue(OPTIONS));
+comment|// name = atts.getValue(NAME);
 name|String
 name|uriAtt
 init|=
@@ -2467,7 +2467,7 @@ name|OPTIONAL
 init|=
 literal|"optional"
 decl_stmt|;
-comment|//        private static final String GREEDY = "greedy";
+comment|// private static final String GREEDY = "greedy";
 name|String
 name|namespace
 decl_stmt|;
@@ -2477,9 +2477,9 @@ decl_stmt|;
 name|VersionRange
 name|range
 decl_stmt|;
-comment|//        String filter;
+comment|// String filter;
 comment|//
-comment|//        boolean greedy;
+comment|// boolean greedy;
 name|boolean
 name|optional
 decl_stmt|;
@@ -2492,11 +2492,11 @@ argument_list|(
 name|REQUIRED
 argument_list|)
 expr_stmt|;
-comment|//            addChild(new FilterHandler(), new ChildElementHandler<FilterHandler>() {
-comment|//                public void childHanlded(FilterHandler child) {
-comment|//                    filter = child.getBufferedChars().trim();
-comment|//                }
-comment|//            });
+comment|// addChild(new FilterHandler(), new ChildElementHandler<FilterHandler>() {
+comment|// public void childHanlded(FilterHandler child) {
+comment|// filter = child.getBufferedChars().trim();
+comment|// }
+comment|// });
 block|}
 specifier|protected
 name|void
@@ -2556,7 +2556,7 @@ name|e
 argument_list|)
 throw|;
 block|}
-comment|//            greedy = getOptionalBooleanAttribute(atts, GREEDY, Boolean.TRUE).booleanValue();
+comment|// greedy = getOptionalBooleanAttribute(atts, GREEDY, Boolean.TRUE).booleanValue();
 name|optional
 operator|=
 name|getOptionalBooleanAttribute
@@ -2874,24 +2874,24 @@ throw|;
 block|}
 block|}
 block|}
-comment|//    private static class TouchpointHandler extends DelegetingHandler {
+comment|// private static class TouchpointHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String TOUCHPOINT = "touchpoint";
+comment|// private static final String TOUCHPOINT = "touchpoint";
 comment|//
-comment|//        private static final String ID = "id";
+comment|// private static final String ID = "id";
 comment|//
-comment|//        private static final String VERSION = "version";
+comment|// private static final String VERSION = "version";
 comment|//
-comment|//        public TouchpointHandler() {
-comment|//            super(TOUCHPOINT);
-comment|//        }
+comment|// public TouchpointHandler() {
+comment|// super(TOUCHPOINT);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String id = atts.getValue(ID);
-comment|//            String version = atts.getValue(VERSION);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String id = atts.getValue(ID);
+comment|// String version = atts.getValue(VERSION);
+comment|// }
 comment|//
-comment|//    }
+comment|// }
 specifier|private
 class|class
 name|TouchpointDataHandler
@@ -3162,144 +3162,144 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//    private static class LicensesHandler extends DelegetingHandler {
+comment|// private static class LicensesHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String LICENSES = "licenses";
+comment|// private static final String LICENSES = "licenses";
 comment|//
-comment|//        private static final String SIZE = "size";
+comment|// private static final String SIZE = "size";
 comment|//
-comment|//        public LicensesHandler() {
-comment|//            super(LICENSES);
-comment|//            addChild(new LicenseHandler(), new ChildElementHandler() {
-comment|//                public void childHanlded(DelegetingHandler child) {
-comment|//                }
-comment|//            });
-comment|//        }
+comment|// public LicensesHandler() {
+comment|// super(LICENSES);
+comment|// addChild(new LicenseHandler(), new ChildElementHandler() {
+comment|// public void childHanlded(DelegetingHandler child) {
+comment|// }
+comment|// });
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String size = atts.getValue(SIZE);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String size = atts.getValue(SIZE);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class LicenseHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class LicenseHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String LICENSE = "license";
+comment|// private static final String LICENSE = "license";
 comment|//
-comment|//        private static final String URI = "uri";
+comment|// private static final String URI = "uri";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        public LicenseHandler() {
-comment|//            super(LICENSE);
-comment|//            setBufferingChar(true);
-comment|//        }
+comment|// public LicenseHandler() {
+comment|// super(LICENSE);
+comment|// setBufferingChar(true);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String uri = atts.getValue(URI);
-comment|//            String url = atts.getValue(URL);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String uri = atts.getValue(URI);
+comment|// String url = atts.getValue(URL);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class CopyrightHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class CopyrightHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String COPYRIGHT = "copyright";
+comment|// private static final String COPYRIGHT = "copyright";
 comment|//
-comment|//        private static final String URI = "uri";
+comment|// private static final String URI = "uri";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        public CopyrightHandler() {
-comment|//            super(COPYRIGHT);
-comment|//        }
+comment|// public CopyrightHandler() {
+comment|// super(COPYRIGHT);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            String uri = atts.getValue(URI);
-comment|//            String url = atts.getValue(URL);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// String uri = atts.getValue(URI);
+comment|// String url = atts.getValue(URL);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private class ChangesHandler extends DelegetingHandler {
+comment|// }
+comment|// private class ChangesHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String CHANGES = "changes";
+comment|// private static final String CHANGES = "changes";
 comment|//
-comment|//        private static final String SIZE = "size";
+comment|// private static final String SIZE = "size";
 comment|//
-comment|//        public ChangesHandler() {
-comment|//            super(CHANGES);
-comment|//            addChild(new ChangeHandler(), new ChildElementHandler<ChangeHandler>() {
-comment|//                public void childHanlded(ChangeHandler child) {
-comment|//                }
-comment|//            });
-comment|//        }
+comment|// public ChangesHandler() {
+comment|// super(CHANGES);
+comment|// addChild(new ChangeHandler(), new ChildElementHandler<ChangeHandler>() {
+comment|// public void childHanlded(ChangeHandler child) {
+comment|// }
+comment|// });
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            int size = Integer.parseInt(atts.getValue(SIZE));
-comment|//        }
-comment|//    }
-comment|//    private class ChangeHandler extends DelegetingHandler {
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// int size = Integer.parseInt(atts.getValue(SIZE));
+comment|// }
+comment|// }
+comment|// private class ChangeHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String CHANGE = "change";
+comment|// private static final String CHANGE = "change";
 comment|//
-comment|//        public ChangeHandler() {
-comment|//            super(CHANGE);
-comment|//        }
-comment|//    }
-comment|//    private class FromHandler extends AbstractRequirementHandler {
+comment|// public ChangeHandler() {
+comment|// super(CHANGE);
+comment|// }
+comment|// }
+comment|// private class FromHandler extends AbstractRequirementHandler {
 comment|//
-comment|//        private static final String FROM = "from";
+comment|// private static final String FROM = "from";
 comment|//
-comment|//        public FromHandler() {
-comment|//            super(FROM);
-comment|//        }
+comment|// public FromHandler() {
+comment|// super(FROM);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private class ToHandler extends AbstractRequirementHandler {
+comment|// }
+comment|// private class ToHandler extends AbstractRequirementHandler {
 comment|//
-comment|//        private static final String TO = "to";
+comment|// private static final String TO = "to";
 comment|//
-comment|//        public ToHandler() {
-comment|//            super(TO);
-comment|//        }
+comment|// public ToHandler() {
+comment|// super(TO);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private class PatchScopeHandler extends DelegetingHandler {
+comment|// }
+comment|// private class PatchScopeHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String PATCH_SCOPE = "patchScope";
+comment|// private static final String PATCH_SCOPE = "patchScope";
 comment|//
-comment|//        private static final String SIZE = "size";
+comment|// private static final String SIZE = "size";
 comment|//
-comment|//        public PatchScopeHandler() {
-comment|//            super(PATCH_SCOPE);
-comment|//            addChild(new PatchScopeHandler(), new ChildElementHandler<PatchScopeHandler>() {
-comment|//                public void childHanlded(PatchScopeHandler child) {
-comment|//                }
-comment|//            });
-comment|//        }
+comment|// public PatchScopeHandler() {
+comment|// super(PATCH_SCOPE);
+comment|// addChild(new PatchScopeHandler(), new ChildElementHandler<PatchScopeHandler>() {
+comment|// public void childHanlded(PatchScopeHandler child) {
+comment|// }
+comment|// });
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) {
-comment|//            int size = Integer.parseInt(atts.getValue(SIZE));
-comment|//        }
-comment|//    }
-comment|//    private class ScopeHandler extends DelegetingHandler {
+comment|// protected void handleAttributes(Attributes atts) {
+comment|// int size = Integer.parseInt(atts.getValue(SIZE));
+comment|// }
+comment|// }
+comment|// private class ScopeHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String SCOPE = "scope";
+comment|// private static final String SCOPE = "scope";
 comment|//
-comment|//        public ScopeHandler() {
-comment|//            super(SCOPE);
-comment|//            addChild(new RequiresHandler(), new ChildElementHandler<RequiresHandler>() {
-comment|//                public void childHanlded(RequiresHandler child) {
-comment|//                }
-comment|//            });
-comment|//        }
-comment|//    }
-comment|//    private  class LifeCycleHandler extends AbstractRequirementHandler {
+comment|// public ScopeHandler() {
+comment|// super(SCOPE);
+comment|// addChild(new RequiresHandler(), new ChildElementHandler<RequiresHandler>() {
+comment|// public void childHanlded(RequiresHandler child) {
+comment|// }
+comment|// });
+comment|// }
+comment|// }
+comment|// private class LifeCycleHandler extends AbstractRequirementHandler {
 comment|//
-comment|//        private static final String LIFE_CYCLE = "lifeCycle";
+comment|// private static final String LIFE_CYCLE = "lifeCycle";
 comment|//
-comment|//        public LifeCycleHandler() {
-comment|//            super(LIFE_CYCLE);
-comment|//        }
-comment|//    }
+comment|// public LifeCycleHandler() {
+comment|// super(LIFE_CYCLE);
+comment|// }
+comment|// }
 block|}
 end_class
 

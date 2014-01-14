@@ -1283,7 +1283,8 @@ literal|".original"
 argument_list|)
 condition|)
 block|{
-comment|// publish original metadata artifact, too, as it has a different type
+comment|// publish original metadata artifact, too, as it has a different
+comment|// type
 name|toResolver
 operator|.
 name|publish

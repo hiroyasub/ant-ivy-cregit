@@ -14508,7 +14508,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod20.4 ->  mod20.3;1.0 mod20.2;1.0
+comment|// mod20.4 -> mod20.3;1.0 mod20.2;1.0
 comment|// mod20.3;1.0 -> mod20.1;1.0
 comment|// mod20.2;1.0 -> mod20.1;1.1 (transitive false)
 comment|// mod20.1;1.0 -> mod1.2;1.0
@@ -14618,7 +14618,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test IVY-618.       */
+comment|/**      * Test IVY-618.      */
 specifier|public
 name|void
 name|testResolveConflictFromPoms
@@ -16951,7 +16951,7 @@ block|}
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|//NB the order impact the bug
+comment|// NB the order impact the bug
 name|assertFalse
 argument_list|(
 name|report
@@ -20939,7 +20939,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// same as ResolveModeDynamic2, but resolve mode is set in settings, and overriden when calling resolve
+comment|// same as ResolveModeDynamic2, but resolve mode is set in settings, and overriden when
+comment|// calling resolve
 name|Map
 name|attributes
 init|=
@@ -29615,8 +29616,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//Same as testResolveMaven2 but with a relocated module pointing to the module
-comment|//used in testResolveMaven2.
+comment|// Same as testResolveMaven2 but with a relocated module pointing to the module
+comment|// used in testResolveMaven2.
 name|ivy
 operator|=
 operator|new
@@ -29774,8 +29775,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//Same as testResolveMaven2 but with a relocated module pointing to the module
-comment|//used in testResolveMaven2.
+comment|// Same as testResolveMaven2 but with a relocated module pointing to the module
+comment|// used in testResolveMaven2.
 name|ivy
 operator|=
 operator|new
@@ -31462,10 +31463,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test has a dependency on test2 but there is no version listed. test has a parent of parent(2.0)
-comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list the version as
+comment|// test has a dependency on test2 but there is no version listed. test has a parent of
+comment|// parent(2.0)
+comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list
+comment|// the version as
 comment|// ${pom.version}. The parent version should take precidence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and it's version is listed
+comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and
+comment|// it's version is listed
 comment|// as 1.0 in parent2 (dependencies inherited from parent comes after).
 name|Ivy
 name|ivy
@@ -31572,7 +31576,7 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//test the report to make sure the right dependencies are listed
+comment|// test the report to make sure the right dependencies are listed
 name|List
 name|dependencies
 init|=
@@ -31611,14 +31615,14 @@ argument_list|(
 name|ivyNode
 argument_list|)
 expr_stmt|;
-comment|//      Bad assertions based on IVY-1301 bug, corrected below:
-comment|//        mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
-comment|//        assertEquals(mrid, ivyNode.getId());
-comment|//        // dependencies
-comment|//        assertTrue(getIvyFileInCache(
-comment|//            ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
-comment|//        assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
-comment|//            "test2", "jar", "jar").exists());
+comment|// Bad assertions based on IVY-1301 bug, corrected below:
+comment|// mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
+comment|// assertEquals(mrid, ivyNode.getId());
+comment|// // dependencies
+comment|// assertTrue(getIvyFileInCache(
+comment|// ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
+comment|// assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
+comment|// "test2", "jar", "jar").exists());
 name|mrid
 operator|=
 name|ModuleRevisionId
@@ -31846,9 +31850,9 @@ argument_list|(
 name|md
 argument_list|)
 expr_stmt|;
-comment|//        assertEquals(mrid, md.getModuleRevisionId());
-comment|//        assertTrue(getResolvedIvyFileInCache(mrid).exists());
-comment|//test the report to make sure the right dependencies are listed
+comment|// assertEquals(mrid, md.getModuleRevisionId());
+comment|// assertTrue(getResolvedIvyFileInCache(mrid).exists());
+comment|// test the report to make sure the right dependencies are listed
 name|List
 name|dependencies
 init|=
@@ -32130,10 +32134,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test has a dependency on test2 but there is no version listed. test has a parent of parent(2.0)
-comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list the version as
+comment|// test has a dependency on test2 but there is no version listed. test has a parent of
+comment|// parent(2.0)
+comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list
+comment|// the version as
 comment|// ${pom.version}. The parent version should take precidence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and it's version is listed
+comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and
+comment|// it's version is listed
 comment|// as 1.0 in parent2. (dependencies inherited from parent comes after)
 comment|// now run tests with dual resolver
 name|Ivy
@@ -32241,7 +32248,7 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//test the report to make sure the right dependencies are listed
+comment|// test the report to make sure the right dependencies are listed
 name|List
 name|dependencies
 init|=
@@ -32280,14 +32287,14 @@ argument_list|(
 name|ivyNode
 argument_list|)
 expr_stmt|;
-comment|//      Bad assertions based on IVY-1301 bug, corrected below:
-comment|//        mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
-comment|//        assertEquals(mrid, ivyNode.getId());
-comment|//        // dependencies
-comment|//        assertTrue(getIvyFileInCache(
-comment|//            ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
-comment|//        assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
-comment|//            "test2", "jar", "jar").exists());
+comment|// Bad assertions based on IVY-1301 bug, corrected below:
+comment|// mrid = ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0");
+comment|// assertEquals(mrid, ivyNode.getId());
+comment|// // dependencies
+comment|// assertTrue(getIvyFileInCache(
+comment|// ModuleRevisionId.newInstance("org.apache.dm", "test2", "2.0")).exists());
+comment|// assertTrue(getArchiveFileInCache(ivy, "org.apache.dm", "test2", "2.0",
+comment|// "test2", "jar", "jar").exists());
 name|mrid
 operator|=
 name|ModuleRevisionId
@@ -32452,8 +32459,10 @@ comment|// test has a parent of parent(2.0) then parent2.
 comment|// Both parents have a dependencyManagement element for test2, and each list the version as
 comment|// ${pom.version}. The version for test2 in test should take precedance,
 comment|// so the version should be test2 version 3.0.
-comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement section specifying test4;1.0.
-comment|// since maven 2.0.6, the information in parent should override transitive dependency version,
+comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement section specifying
+comment|// test4;1.0.
+comment|// since maven 2.0.6, the information in parent should override transitive dependency
+comment|// version,
 comment|// and thus we should get test4;1.0
 name|Ivy
 name|ivy
@@ -32512,7 +32521,7 @@ argument_list|(
 name|report
 argument_list|)
 expr_stmt|;
-comment|//test the report to make sure the right dependencies are listed
+comment|// test the report to make sure the right dependencies are listed
 name|List
 name|dependencies
 init|=
@@ -32767,7 +32776,7 @@ argument_list|(
 name|report
 argument_list|)
 expr_stmt|;
-comment|//test the report to make sure the right dependencies are listed
+comment|// test the report to make sure the right dependencies are listed
 name|List
 name|dependencies
 init|=
@@ -35095,7 +35104,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// second test case for IVY-745: now we disable consistency checking, everything should work fine
+comment|// second test case for IVY-745: now we disable consistency checking, everything should work
+comment|// fine
 name|Ivy
 name|ivy
 init|=
@@ -38857,10 +38867,14 @@ argument_list|,
 literal|"1"
 argument_list|)
 decl_stmt|;
-comment|// check that the resolve report has the expected results, namely that trunk/5 is considered later than branch/1
-comment|// purely because 5>1. Of course it is more likely that we would want to consider this a 'bad comparison', but
-comment|// this Unit Test is not about that. It is about inconsistency of results between the resolve report and the
-comment|// delivered descriptor. In fact the delivered descriptor is out of step, because retrieve and the report both
+comment|// check that the resolve report has the expected results, namely that trunk/5 is considered
+comment|// later than branch/1
+comment|// purely because 5>1. Of course it is more likely that we would want to consider this a
+comment|// 'bad comparison', but
+comment|// this Unit Test is not about that. It is about inconsistency of results between the
+comment|// resolve report and the
+comment|// delivered descriptor. In fact the delivered descriptor is out of step, because retrieve
+comment|// and the report both
 comment|// agree that trunk/5 is selected. Deliver begs to differ.
 name|Set
 name|reportMrids

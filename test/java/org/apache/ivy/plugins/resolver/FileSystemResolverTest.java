@@ -478,7 +478,7 @@ name|FileSystemResolverTest
 extends|extends
 name|AbstractDependencyResolverTest
 block|{
-comment|//CheckStyle:MagicNumberCheck OFF
+comment|// CheckStyle:MagicNumberCheck OFF
 specifier|private
 specifier|static
 specifier|final

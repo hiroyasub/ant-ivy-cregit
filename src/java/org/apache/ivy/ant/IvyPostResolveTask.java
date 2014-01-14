@@ -628,7 +628,7 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-comment|//When we make an inline resolution, we can not resolve private confs.
+comment|// When we make an inline resolution, we can not resolve private confs.
 for|for
 control|(
 name|int

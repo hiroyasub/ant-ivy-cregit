@@ -118,7 +118,7 @@ name|IvyConfigure
 extends|extends
 name|Task
 block|{
-comment|/**      * Use to override a previous definition of settings with the same id       */
+comment|/**      * Use to override a previous definition of settings with the same id      */
 specifier|public
 specifier|static
 specifier|final

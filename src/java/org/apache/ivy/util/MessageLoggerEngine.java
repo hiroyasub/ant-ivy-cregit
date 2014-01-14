@@ -69,7 +69,7 @@ block|{
 specifier|private
 specifier|final
 name|ThreadLocal
-comment|/*<Stack<MessageLogger>>*/
+comment|/*<Stack<MessageLogger>> */
 name|loggerStacks
 init|=
 operator|new
@@ -152,7 +152,7 @@ name|MessageLoggerEngine
 parameter_list|()
 block|{
 block|}
-comment|/**      * Sets the logger used when the stack is empty.      *       * @param defaultLogger the logger to use when the stack is empty.      */
+comment|/**      * Sets the logger used when the stack is empty.      *       * @param defaultLogger      *            the logger to use when the stack is empty.      */
 specifier|public
 name|void
 name|setDefaultLogger
@@ -219,7 +219,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the current logger, or the default one if there is no logger in the stack      * @return the current logger, or the default one if there is no logger in the stack      */
+comment|/**      * Returns the current logger, or the default one if there is no logger in the stack      *       * @return the current logger, or the default one if there is no logger in the stack      */
 specifier|public
 name|MessageLogger
 name|peekLogger

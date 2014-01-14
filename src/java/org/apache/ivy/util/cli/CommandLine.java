@@ -44,7 +44,7 @@ name|CommandLine
 block|{
 specifier|private
 name|Map
-comment|/*<String, String[]>*/
+comment|/*<String, String[]> */
 name|optionValues
 init|=
 operator|new

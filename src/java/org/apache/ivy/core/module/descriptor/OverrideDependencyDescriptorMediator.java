@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DependencyDescriptorMediator used to override some dependency descriptors values, such as   * the branch or version of the dependency.   */
+comment|/**  * DependencyDescriptorMediator used to override some dependency descriptors values, such as the  * branch or version of the dependency.  */
 end_comment
 
 begin_class
@@ -56,7 +56,7 @@ specifier|private
 name|String
 name|branch
 decl_stmt|;
-comment|/**      * Constructs a new instance.      *       * @param branch      *            the branch to give to mediated dependency descriptors,<code>null</code> to keep      *            the original branch.      * @param version      *            the version to give to mediated dependency descriptors,<code>null</code> to      *            keep the original one.      */
+comment|/**      * Constructs a new instance.      *       * @param branch      *            the branch to give to mediated dependency descriptors,<code>null</code> to keep      *            the original branch.      * @param version      *            the version to give to mediated dependency descriptors,<code>null</code> to keep      *            the original one.      */
 specifier|public
 name|OverrideDependencyDescriptorMediator
 parameter_list|(
@@ -80,7 +80,7 @@ operator|=
 name|version
 expr_stmt|;
 block|}
-comment|/**      * Returns the version this mediator will give to mediated descriptors, or<code>null</code>      * if this mediator does not override version.      *       * @return the version this mediator will give to mediated descriptors.      */
+comment|/**      * Returns the version this mediator will give to mediated descriptors, or<code>null</code> if      * this mediator does not override version.      *       * @return the version this mediator will give to mediated descriptors.      */
 specifier|public
 name|String
 name|getVersion
@@ -90,7 +90,7 @@ return|return
 name|version
 return|;
 block|}
-comment|/**      * Returns the branch this mediator will give to mediated descriptors, or<code>null</code>      * if this mediator does not override branch.      *       * @return the branch this mediator will give to mediated descriptors.      */
+comment|/**      * Returns the branch this mediator will give to mediated descriptors, or<code>null</code> if      * this mediator does not override branch.      *       * @return the branch this mediator will give to mediated descriptors.      */
 specifier|public
 name|String
 name|getBranch

@@ -2396,7 +2396,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-comment|//nothing to do
+comment|// nothing to do
 block|}
 block|}
 block|}
@@ -3627,7 +3627,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
-comment|//nothing
+comment|// nothing
 block|}
 block|}
 block|}
@@ -3874,7 +3874,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value      *         If the input str doesn't use any variable, the same object is returned      */
+comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value If      *         the input str doesn't use any variable, the same object is returned      */
 specifier|public
 specifier|synchronized
 name|String
@@ -3899,11 +3899,11 @@ comment|/**      * Substitute variables in the given map values by their value f
 specifier|public
 specifier|synchronized
 name|Map
-comment|/*<String, String>*/
+comment|/*<String, String> */
 name|substitute
 parameter_list|(
 name|Map
-comment|/*<String, String>*/
+comment|/*<String, String> */
 name|strings
 parameter_list|)
 block|{
@@ -4700,7 +4700,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved      * with respect to the settings's base directory.      *      * @param fileName The name of the file to resolve.      *                 Must not be<code>null</code>.      *      * @return the resolved File.      *      */
+comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved with respect to the settings's base      * directory.      *       * @param fileName      *            The name of the file to resolve. Must not be<code>null</code>.      *       * @return the resolved File.      *       */
 specifier|public
 specifier|synchronized
 name|File
@@ -6604,7 +6604,7 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
-comment|/**      * Returns the file names of the files that should be ignored when       * creating a file listing.      */
+comment|/**      * Returns the file names of the files that should be ignored when creating a file listing.      */
 specifier|public
 specifier|synchronized
 name|String

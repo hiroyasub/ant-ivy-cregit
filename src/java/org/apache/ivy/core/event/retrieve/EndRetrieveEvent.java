@@ -224,7 +224,7 @@ return|return
 name|nbUpToDate
 return|;
 block|}
-comment|/**      * Total size of all copied (or symlinked) artifacts, in bytes.      * @return Total size of all copied (or symlinked) artifacts, in bytes.      */
+comment|/**      * Total size of all copied (or symlinked) artifacts, in bytes.      *       * @return Total size of all copied (or symlinked) artifacts, in bytes.      */
 specifier|public
 name|long
 name|getTotalCopiedSize

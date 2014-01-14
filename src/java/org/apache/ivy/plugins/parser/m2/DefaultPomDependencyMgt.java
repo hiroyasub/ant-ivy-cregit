@@ -54,7 +54,7 @@ name|scope
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|excludedModules
 decl_stmt|;
 specifier|public
@@ -73,7 +73,7 @@ name|String
 name|scope
 parameter_list|,
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|excludedModules
 parameter_list|)
 block|{
@@ -146,7 +146,7 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ModuleId>*/
+comment|/*<ModuleId> */
 name|getExcludedModules
 parameter_list|()
 block|{

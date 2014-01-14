@@ -543,10 +543,10 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-comment|//            addChild(new UrlHandler(), new ChildElementHandler<UrlHandler>() {
-comment|//                public void childHanlded(UrlHandler child) {
-comment|//                }
-comment|//            });
+comment|// addChild(new UrlHandler(), new ChildElementHandler<UrlHandler>() {
+comment|// public void childHanlded(UrlHandler child) {
+comment|// }
+comment|// });
 block|}
 specifier|protected
 name|void
@@ -1002,7 +1002,7 @@ name|DESCRIPTION
 init|=
 literal|"description"
 decl_stmt|;
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 specifier|public
 name|DescriptionHandler
 parameter_list|()
@@ -1028,7 +1028,7 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|//            String url = atts.getValue(URL);
+comment|// String url = atts.getValue(URL);
 block|}
 block|}
 specifier|private
@@ -1046,7 +1046,7 @@ name|LICENSE
 init|=
 literal|"license"
 decl_stmt|;
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 specifier|public
 name|LicenseHandler
 parameter_list|()
@@ -1072,7 +1072,7 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|//            String url = atts.getValue(URL);
+comment|// String url = atts.getValue(URL);
 block|}
 block|}
 specifier|private
@@ -1090,7 +1090,7 @@ name|COPYRIGHT
 init|=
 literal|"copyright"
 decl_stmt|;
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 specifier|public
 name|CopyrightHandler
 parameter_list|()
@@ -1116,7 +1116,7 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|//            String url = atts.getValue(URL);
+comment|// String url = atts.getValue(URL);
 block|}
 block|}
 specifier|static
@@ -1374,107 +1374,107 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//    private static class IncludesHandler extends DelegetingHandler {
+comment|// private static class IncludesHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String INCLUDES = "includes";
+comment|// private static final String INCLUDES = "includes";
 comment|//
-comment|//        private static final String FILTER = "filter";
+comment|// private static final String FILTER = "filter";
 comment|//
-comment|//        private static final String OPTIONAL = "optional";
+comment|// private static final String OPTIONAL = "optional";
 comment|//
-comment|//        private static final String VERSION = "version";
+comment|// private static final String VERSION = "version";
 comment|//
-comment|//        private static final String ID = "id";
+comment|// private static final String ID = "id";
 comment|//
-comment|//        public IncludesHandler() {
-comment|//            super(INCLUDES);
-comment|//        }
+comment|// public IncludesHandler() {
+comment|// super(INCLUDES);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            String id = atts.getValue(ID);
-comment|//            String version = atts.getValue(VERSION);
-comment|//            String optional = atts.getValue(OPTIONAL);
-comment|//            String filter = atts.getValue(FILTER);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// String id = atts.getValue(ID);
+comment|// String version = atts.getValue(VERSION);
+comment|// String optional = atts.getValue(OPTIONAL);
+comment|// String filter = atts.getValue(FILTER);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class InstallHandlerHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class InstallHandlerHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String INSTALL_HANDLER = "install-handler";
+comment|// private static final String INSTALL_HANDLER = "install-handler";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        private static final String LIBRARY = "library";
+comment|// private static final String LIBRARY = "library";
 comment|//
-comment|//        private static final String HANDLER = "handler";
+comment|// private static final String HANDLER = "handler";
 comment|//
-comment|//        public InstallHandlerHandler() {
-comment|//            super(INSTALL_HANDLER);
-comment|//        }
+comment|// public InstallHandlerHandler() {
+comment|// super(INSTALL_HANDLER);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            String handler = atts.getValue(HANDLER);
-comment|//            String library = atts.getValue(LIBRARY);
-comment|//            String url = atts.getValue(URL);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// String handler = atts.getValue(HANDLER);
+comment|// String library = atts.getValue(LIBRARY);
+comment|// String url = atts.getValue(URL);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class UrlHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class UrlHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        public UrlHandler() {
-comment|//            super(URL);
-comment|//            addChild(new UpdateHandler(), new ChildElementHandler<UpdateHandler>() {
-comment|//                public void childHanlded(UpdateHandler child) {
-comment|//                }
-comment|//            });
-comment|//            addChild(new DiscoveryHandler(), new ChildElementHandler<DiscoveryHandler>() {
-comment|//                public void childHanlded(DiscoveryHandler child) {
-comment|//                }
-comment|//            });
-comment|//        }
+comment|// public UrlHandler() {
+comment|// super(URL);
+comment|// addChild(new UpdateHandler(), new ChildElementHandler<UpdateHandler>() {
+comment|// public void childHanlded(UpdateHandler child) {
+comment|// }
+comment|// });
+comment|// addChild(new DiscoveryHandler(), new ChildElementHandler<DiscoveryHandler>() {
+comment|// public void childHanlded(DiscoveryHandler child) {
+comment|// }
+comment|// });
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class UpdateHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class UpdateHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String UPDATE = "update";
+comment|// private static final String UPDATE = "update";
 comment|//
-comment|//        private static final String LABEL = "label";
+comment|// private static final String LABEL = "label";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        public UpdateHandler() {
-comment|//            super(UPDATE);
-comment|//        }
+comment|// public UpdateHandler() {
+comment|// super(UPDATE);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            String label = atts.getValue(LABEL);
-comment|//            String url = atts.getValue(URL);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// String label = atts.getValue(LABEL);
+comment|// String url = atts.getValue(URL);
+comment|// }
 comment|//
-comment|//    }
-comment|//    private static class DiscoveryHandler extends DelegetingHandler {
+comment|// }
+comment|// private static class DiscoveryHandler extends DelegetingHandler {
 comment|//
-comment|//        private static final String DISCOVERY = "discovery";
+comment|// private static final String DISCOVERY = "discovery";
 comment|//
-comment|//        private static final String URL = "url";
+comment|// private static final String URL = "url";
 comment|//
-comment|//        private static final String LABEL = "label";
+comment|// private static final String LABEL = "label";
 comment|//
-comment|//        private static final String TYPE = "type";
+comment|// private static final String TYPE = "type";
 comment|//
-comment|//        public DiscoveryHandler() {
-comment|//            super(DISCOVERY);
-comment|//        }
+comment|// public DiscoveryHandler() {
+comment|// super(DISCOVERY);
+comment|// }
 comment|//
-comment|//        protected void handleAttributes(Attributes atts) throws SAXException {
-comment|//            String type = atts.getValue(TYPE);
-comment|//            String label = atts.getValue(LABEL);
-comment|//            String url = atts.getValue(URL);
-comment|//        }
+comment|// protected void handleAttributes(Attributes atts) throws SAXException {
+comment|// String type = atts.getValue(TYPE);
+comment|// String label = atts.getValue(LABEL);
+comment|// String url = atts.getValue(URL);
+comment|// }
 comment|//
-comment|//    }
+comment|// }
 block|}
 end_class
 

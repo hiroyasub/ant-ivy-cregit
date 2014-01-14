@@ -942,7 +942,7 @@ operator|.
 name|built
 return|;
 block|}
-comment|/**      * Get a built artifact.      *      * @throws IllegalStateException if this entry's built has not      *  (yet) completed successfully      */
+comment|/**      * Get a built artifact.      *       * @throws IllegalStateException      *             if this entry's built has not (yet) completed successfully      */
 specifier|public
 name|ResolvedResource
 name|getBuiltArtifact

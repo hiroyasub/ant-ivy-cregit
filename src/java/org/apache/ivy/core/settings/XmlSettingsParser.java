@@ -2692,7 +2692,7 @@ else|else
 block|{
 try|try
 block|{
-comment|//First asume that it is an absolute URL
+comment|// First asume that it is an absolute URL
 name|settingsURL
 operator|=
 operator|new
@@ -2708,7 +2708,7 @@ name|MalformedURLException
 name|e
 parameter_list|)
 block|{
-comment|//If that fail, it may be because it is a relative one.
+comment|// If that fail, it may be because it is a relative one.
 name|settingsURL
 operator|=
 operator|new
@@ -2900,7 +2900,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** Provide an URL referencing the given filepath.  If filePath is an absolute path, then      * the resulting URL point to a local file, otherwise, the filepath is evaluated relatively      * to the URL of the current settings file (can be local file or remote URL).      */
+comment|/**      * Provide an URL referencing the given filepath. If filePath is an absolute path, then the      * resulting URL point to a local file, otherwise, the filepath is evaluated relatively to the      * URL of the current settings file (can be local file or remote URL).      */
 specifier|private
 name|URL
 name|urlFromFileAttribute

@@ -610,7 +610,8 @@ name|addMD
 argument_list|(
 literal|"#D;3.0->#B;3.5"
 argument_list|)
-comment|// circular dependency
+comment|// circular
+comment|// dependency
 operator|.
 name|addMD
 argument_list|(

@@ -980,7 +980,7 @@ name|useOrigin
 decl_stmt|;
 specifier|private
 name|ModuleRules
-comment|/*<Long>*/
+comment|/*<Long> */
 name|ttlRules
 init|=
 operator|new
@@ -1499,7 +1499,7 @@ name|void
 name|addConfiguredTtl
 parameter_list|(
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|attributes
 parameter_list|)
 block|{
@@ -1722,7 +1722,7 @@ name|matches
 argument_list|()
 condition|)
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|int
 name|days
 init|=
@@ -1773,7 +1773,7 @@ argument_list|,
 literal|5
 argument_list|)
 decl_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 return|return
 name|days
 operator|*
@@ -3032,7 +3032,8 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|// found a match, key is artifact:[name]#[type]#[ext]#[hashcode].location
+comment|// found a match, key is
+comment|// artifact:[name]#[type]#[ext]#[hashcode].location
 name|java
 operator|.
 name|util
@@ -4513,7 +4514,8 @@ condition|(
 name|expiration
 operator|>
 literal|0
-comment|// negative expiration means that Long.MAX_VALUE has been exceeded
+comment|// negative expiration means that Long.MAX_VALUE has been
+comment|// exceeded
 operator|&&
 name|System
 operator|.
@@ -7685,19 +7687,19 @@ argument_list|)
 return|;
 block|}
 comment|// not used any more, but maybe useful for finer grain locking when downloading artifacts
-comment|//    private boolean lockArtifact(Artifact artifact) {
-comment|//        try {
-comment|//            return getLockStrategy().lockArtifact(artifact,
-comment|//                getArchiveFileInCache(artifact, null));
-comment|//        } catch (InterruptedException e) {
-comment|//            Thread.currentThread().interrupt(); // reset interrupt status
-comment|//            throw new RuntimeException("operation interrupted");
-comment|//        }
-comment|//    }
+comment|// private boolean lockArtifact(Artifact artifact) {
+comment|// try {
+comment|// return getLockStrategy().lockArtifact(artifact,
+comment|// getArchiveFileInCache(artifact, null));
+comment|// } catch (InterruptedException e) {
+comment|// Thread.currentThread().interrupt(); // reset interrupt status
+comment|// throw new RuntimeException("operation interrupted");
+comment|// }
+comment|// }
 comment|//
-comment|//    private void unlockArtifact(Artifact artifact) {
-comment|//        getLockStrategy().unlockArtifact(artifact, getArchiveFileInCache(artifact, null));
-comment|//    }
+comment|// private void unlockArtifact(Artifact artifact) {
+comment|// getLockStrategy().unlockArtifact(artifact, getArchiveFileInCache(artifact, null));
+comment|// }
 specifier|public
 name|Artifact
 name|getOriginalMetadataArtifact

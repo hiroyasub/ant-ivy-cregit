@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Resolver that performs a "build" operation to resolve artifacts.  *  *<p>  * The resolver is configured with a base URL, from which the "ivy.xml"  * and "packager.xml" files are resolved. The latter file contains  * instructions describing how to build the actual artifacts.  */
+comment|/**  * Resolver that performs a "build" operation to resolve artifacts.  *   *<p>  * The resolver is configured with a base URL, from which the "ivy.xml" and "packager.xml" files are  * resolved. The latter file contains instructions describing how to build the actual artifacts.  */
 end_comment
 
 begin_class
@@ -253,7 +253,7 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|HashMap
-comment|/*<ModuleRevisionId, PackagerCacheEntry>*/
+comment|/*<ModuleRevisionId, PackagerCacheEntry> */
 name|packagerCache
 init|=
 operator|new
@@ -274,7 +274,7 @@ name|resourceURL
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|properties
 init|=
 operator|new
@@ -426,7 +426,7 @@ operator|=
 name|buildRoot
 expr_stmt|;
 block|}
-comment|/**      * Returns root directory under which builds take place.       */
+comment|/**      * Returns root directory under which builds take place.      */
 specifier|public
 name|File
 name|getBuildRoot
@@ -646,7 +646,7 @@ name|rule
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets a property to be passed to the child Ant build responsible for packaging the dependency.      *       * @param propertyKey the property to pass      * @param propertyValue the value of the property to pass      */
+comment|/**      * Sets a property to be passed to the child Ant build responsible for packaging the dependency.      *       * @param propertyKey      *            the property to pass      * @param propertyValue      *            the value of the property to pass      */
 specifier|public
 name|void
 name|setProperty

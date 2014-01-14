@@ -3494,8 +3494,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//WARNING : this test will only work if the test are launched from the project root
-comment|//directory
+comment|// WARNING : this test will only work if the test are launched from the project root
+comment|// directory
 name|IvySettings
 name|settings
 init|=
@@ -3600,7 +3600,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//An exception must be throwed
+comment|// An exception must be throwed
 block|}
 block|}
 specifier|public

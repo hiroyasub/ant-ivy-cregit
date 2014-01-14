@@ -604,7 +604,7 @@ return|return
 name|exists
 return|;
 block|}
-comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *       * @return<code>true</code> if the resource physically exists,<code>false</code>      *         otherwise.      */
+comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *       * @return<code>true</code> if the resource physically exists,<code>false</code> otherwise.      */
 specifier|public
 name|boolean
 name|physicallyExists

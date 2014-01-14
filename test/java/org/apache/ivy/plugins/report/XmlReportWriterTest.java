@@ -397,7 +397,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|//check that the XML is valid
+comment|// check that the XML is valid
 name|XMLHelper
 operator|.
 name|parse

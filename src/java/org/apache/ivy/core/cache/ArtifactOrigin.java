@@ -264,7 +264,7 @@ return|return
 name|artifact
 return|;
 block|}
-comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this information is      * not actually used by in some case.      *       * @return      */
+comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this      * information is not actually used by in some case.      *       * @return      */
 specifier|public
 name|Long
 name|getLastChecked

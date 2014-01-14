@@ -502,7 +502,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -528,7 +528,7 @@ argument_list|()
 operator|*
 literal|17
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 return|return
 name|hash
 return|;
@@ -1593,7 +1593,7 @@ return|;
 block|}
 specifier|public
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|getAllEvictingNodesDetails
 parameter_list|()
 block|{

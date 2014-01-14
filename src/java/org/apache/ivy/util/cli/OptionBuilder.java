@@ -48,7 +48,7 @@ name|name
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<String>*/
+comment|/*<String> */
 name|args
 init|=
 operator|new

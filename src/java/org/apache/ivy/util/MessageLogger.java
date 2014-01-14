@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A MessageLogger is used to log messages.  *<p>  * Where the messages are logged is depending on the implementation.  *</p>  *<p>  * This interface provides both level specific methods ({@link #info(String)},  * {@link #warn(String)}, ...) and generic methods ({@link #log(String, int)},  * {@link #rawlog(String, int)}). Note that calling level specific methods is usually not  * equivalent to calling the generic method with the corresponding level. Indeed, for warn and error  * level, the implementation will actually log the message at a lower level (usually  * {@link Message#MSG_VERBOSE}) and log the message at the actual level only when  * {@link #sumupProblems()} is called.  *</p>  *   * @see Message  */
+comment|/**  * A MessageLogger is used to log messages.  *<p>  * Where the messages are logged is depending on the implementation.  *</p>  *<p>  * This interface provides both level specific methods ({@link #info(String)}, {@link #warn(String)}  * , ...) and generic methods ({@link #log(String, int)}, {@link #rawlog(String, int)}). Note that  * calling level specific methods is usually not equivalent to calling the generic method with the  * corresponding level. Indeed, for warn and error level, the implementation will actually log the  * message at a lower level (usually {@link Message#MSG_VERBOSE}) and log the message at the actual  * level only when {@link #sumupProblems()} is called.  *</p>  *   * @see Message  */
 end_comment
 
 begin_interface

@@ -643,8 +643,8 @@ specifier|final
 class|class
 name|XmlModuleDescriptorUpdater
 block|{
-comment|//CheckStyle:StaticVariableName| OFF
-comment|//LINE_SEPARATOR is actually a constant, but we have to modify it for the tests
+comment|// CheckStyle:StaticVariableName| OFF
+comment|// LINE_SEPARATOR is actually a constant, but we have to modify it for the tests
 specifier|public
 specifier|static
 name|String
@@ -657,7 +657,7 @@ argument_list|(
 literal|"line.separator"
 argument_list|)
 decl_stmt|;
-comment|//CheckStyle:StaticVariableName| ON
+comment|// CheckStyle:StaticVariableName| ON
 specifier|private
 name|XmlModuleDescriptorUpdater
 parameter_list|()
@@ -905,7 +905,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-comment|//TODO: use resource as input stream context?
+comment|// TODO: use resource as input stream context?
 name|URL
 name|inputStreamContext
 init|=
@@ -1400,9 +1400,9 @@ name|justOpen
 init|=
 literal|null
 decl_stmt|;
-comment|//track the size of the left indent, so that inserted elements are formatted
-comment|//like nearby elements.
-comment|//true when we're reading indent whitespace
+comment|// track the size of the left indent, so that inserted elements are formatted
+comment|// like nearby elements.
+comment|// true when we're reading indent whitespace
 specifier|private
 name|boolean
 name|indenting
@@ -1424,21 +1424,21 @@ name|ArrayList
 argument_list|()
 decl_stmt|;
 comment|// ArrayList<String>
-comment|//true if an ivy-module/info/description element has been found in the published descriptor
+comment|// true if an ivy-module/info/description element has been found in the published descriptor
 specifier|private
 name|boolean
 name|hasDescription
 init|=
 literal|false
 decl_stmt|;
-comment|//true if merged configurations have been written
+comment|// true if merged configurations have been written
 specifier|private
 name|boolean
 name|mergedConfigurations
 init|=
 literal|false
 decl_stmt|;
-comment|//true if merged deps have been written
+comment|// true if merged deps have been written
 specifier|private
 name|boolean
 name|mergedDependencies
@@ -1636,8 +1636,8 @@ literal|"configurations"
 argument_list|)
 condition|)
 block|{
-comment|//TODO, in the case of !replaceInclude, we should still replace the relative path
-comment|//by an absolute path.
+comment|// TODO, in the case of !replaceInclude, we should still replace the relative path
+comment|// by an absolute path.
 name|includeStarted
 argument_list|(
 name|attributes
@@ -2333,8 +2333,8 @@ literal|"ivy-module/info/description"
 argument_list|)
 condition|)
 block|{
-comment|//if the descriptor already contains a description, don't bother printing
-comment|//the merged version.
+comment|// if the descriptor already contains a description, don't bother printing
+comment|// the merged version.
 name|hasDescription
 operator|=
 literal|true
@@ -2351,8 +2351,8 @@ name|qName
 argument_list|)
 condition|)
 block|{
-comment|//according to the XSD, we should write description after all of the other
-comment|//standard<info> elements but before any extended elements.
+comment|// according to the XSD, we should write description after all of the other
+comment|// standard<info> elements but before any extended elements.
 name|writeInheritedDescription
 argument_list|(
 name|merged
@@ -2534,7 +2534,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-comment|//replace inline revision with resolved parent revision
+comment|// replace inline revision with resolved parent revision
 name|ModuleDescriptor
 name|merged
 init|=
@@ -4035,7 +4035,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// this dependency is on a specific branch, we set it explicitly in the updated file
+comment|// this dependency is on a specific branch, we set it explicitly in the updated
+comment|// file
 name|write
 argument_list|(
 literal|" branch=\""
@@ -4130,8 +4131,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|//TODO : settings can be null, but I don't why.
-comment|//Check if the next code is correct in that case
+comment|// TODO : settings can be null, but I don't why.
+comment|// Check if the next code is correct in that case
 name|String
 name|fileName
 init|=
@@ -4602,7 +4603,7 @@ init|=
 literal|null
 decl_stmt|;
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|extraAttributes
 init|=
 literal|null
@@ -4615,7 +4616,7 @@ name|isMerge
 argument_list|()
 condition|)
 block|{
-comment|//get attributes from merged descriptor, ignoring raw XML
+comment|// get attributes from merged descriptor, ignoring raw XML
 name|ModuleDescriptor
 name|merged
 init|=
@@ -4660,7 +4661,7 @@ operator|.
 name|getStatus
 argument_list|()
 expr_stmt|;
-comment|//TODO: should namespace be added to ModuleDescriptor interface, so we don't
+comment|// TODO: should namespace be added to ModuleDescriptor interface, so we don't
 comment|// have to do this kind of check?
 if|if
 condition|(
@@ -4725,7 +4726,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|//get attributes from raw XML, performing property substitution
+comment|// get attributes from raw XML, performing property substitution
 name|organisation
 operator|=
 name|substitute
@@ -4868,7 +4869,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|//apply override values provided in options
+comment|// apply override values provided in options
 if|if
 condition|(
 name|revision
@@ -4915,7 +4916,7 @@ operator|.
 name|status
 expr_stmt|;
 block|}
-comment|//if necessary translate mrid using optional namespace argument
+comment|// if necessary translate mrid using optional namespace argument
 name|ModuleRevisionId
 name|localMid
 init|=
@@ -5782,8 +5783,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//examine characters for current indent level, keeping in mind
-comment|//that our indent might be split across multiple calls to characters()
+comment|// examine characters for current indent level, keeping in mind
+comment|// that our indent might be split across multiple calls to characters()
 for|for
 control|(
 name|int
@@ -5824,7 +5825,7 @@ operator|==
 literal|'\n'
 condition|)
 block|{
-comment|//newline resets the indent level
+comment|// newline resets the indent level
 name|currentIndent
 operator|.
 name|setLength
@@ -5842,7 +5843,7 @@ condition|(
 name|indenting
 condition|)
 block|{
-comment|//indent continues until first non-whitespace character
+comment|// indent continues until first non-whitespace character
 if|if
 condition|(
 name|Character
@@ -5881,8 +5882,8 @@ condition|(
 name|indenting
 condition|)
 block|{
-comment|//record the indent at this level.  if we insert any elements at
-comment|//this level, we'll use the same indent.
+comment|// record the indent at this level. if we insert any elements at
+comment|// this level, we'll use the same indent.
 name|setIndent
 argument_list|(
 name|context
@@ -5904,7 +5905,7 @@ literal|false
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Set the indent for the given depth.  Indents less than the provided depth          * will be calculated automatically, if they have not already been defined.          */
+comment|/**          * Set the indent for the given depth. Indents less than the provided depth will be          * calculated automatically, if they have not already been defined.          */
 specifier|private
 name|void
 name|setIndent
@@ -5931,7 +5932,7 @@ name|indent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Guarantee that indent levels have been calculated up to and including the          * given depth (starting at 0).          */
+comment|/**          * Guarantee that indent levels have been calculated up to and including the given depth          * (starting at 0).          */
 specifier|private
 name|void
 name|fillIndents
@@ -5948,7 +5949,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|//add a default single-level indent until we see indents in the document
+comment|// add a default single-level indent until we see indents in the document
 name|indentLevels
 operator|.
 name|add
@@ -6039,7 +6040,7 @@ name|level
 argument_list|)
 return|;
 block|}
-comment|/**          * Write XML elements that do not appear in the source descriptor, but have been copied in          * from a parent module descriptor via&lt;extends&gt; declaration.          * @param merged child descriptor containing the merged data          * @param items the list of inherited items to print          * @param printer a printer that knows how to write the given type of item          * @param itemName the name of the container element, e.g. "configurations"          * @param includeContainer if true, include an enclosing element named          *<code>itemName</code>. Otherwise just write the inherited items inline,          *   with a comment indicating where they came from.          */
+comment|/**          * Write XML elements that do not appear in the source descriptor, but have been copied in          * from a parent module descriptor via&lt;extends&gt; declaration.          *           * @param merged          *            child descriptor containing the merged data          * @param items          *            the list of inherited items to print          * @param printer          *            a printer that knows how to write the given type of item          * @param itemName          *            the name of the container element, e.g. "configurations"          * @param includeContainer          *            if true, include an enclosing element named<code>itemName</code>. Otherwise          *            just write the inherited items inline, with a comment indicating where they          *            came from.          */
 specifier|private
 name|void
 name|writeInheritedItems
@@ -6061,8 +6062,8 @@ name|boolean
 name|includeContainer
 parameter_list|)
 block|{
-comment|//first categorize inherited items by their source module, so that
-comment|//we can add some useful comments
+comment|// first categorize inherited items by their source module, so that
+comment|// we can add some useful comments
 name|PrintWriter
 name|out
 init|=
@@ -6212,7 +6213,7 @@ name|justOpen
 operator|=
 literal|null
 expr_stmt|;
-comment|//helps endElement() decide how to write close tags
+comment|// helps endElement() decide how to write close tags
 block|}
 name|writeInheritanceComment
 argument_list|(
@@ -6308,7 +6309,7 @@ name|println
 argument_list|()
 expr_stmt|;
 block|}
-comment|//restore the prior indent
+comment|// restore the prior indent
 name|out
 operator|.
 name|print
@@ -6359,10 +6360,10 @@ literal|" -->"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Collect the given list of inherited descriptor items into lists keyed by parent Id.          * Thus all of the items inherited from parent A can be written together, then all of          * the items from parent B, and so on.          * @param merged the merged child descriptor          * @param items the inherited items to collate          * @return maps parent ModuleRevisionId to a List of InheritedItems imported from that parent          */
+comment|/**          * Collect the given list of inherited descriptor items into lists keyed by parent Id. Thus          * all of the items inherited from parent A can be written together, then all of the items          * from parent B, and so on.          *           * @param merged          *            the merged child descriptor          * @param items          *            the inherited items to collate          * @return maps parent ModuleRevisionId to a List of InheritedItems imported from that          *         parent          */
 specifier|private
 name|Map
-comment|/*<ModuleRevisionId,List>*/
+comment|/*<ModuleRevisionId,List> */
 name|collateInheritedItems
 parameter_list|(
 name|ModuleDescriptor
@@ -6374,7 +6375,7 @@ name|items
 parameter_list|)
 block|{
 name|LinkedHashMap
-comment|/*<ModuleRevisionId,List>*/
+comment|/*<ModuleRevisionId,List> */
 name|inheritedItems
 init|=
 operator|new
@@ -6409,7 +6410,7 @@ operator|.
 name|getSourceModule
 argument_list|()
 decl_stmt|;
-comment|//ignore items that are defined directly in the child descriptor
+comment|// ignore items that are defined directly in the child descriptor
 if|if
 condition|(
 name|source
@@ -6486,7 +6487,7 @@ return|return
 name|inheritedItems
 return|;
 block|}
-comment|/**          * If no info/description element has yet been written, write the description inherited from          * the parent descriptor, if any.  Calling this method more than once has no affect.          */
+comment|/**          * If no info/description element has yet been written, write the description inherited from          * the parent descriptor, if any. Calling this method more than once has no affect.          */
 specifier|private
 name|void
 name|writeInheritedDescription
@@ -6578,7 +6579,7 @@ operator|+
 literal|"</description>"
 argument_list|)
 expr_stmt|;
-comment|//restore the indent that existed before we wrote the extra elements
+comment|// restore the indent that existed before we wrote the extra elements
 name|writer
 operator|.
 name|print
@@ -6669,7 +6670,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          *<p>If publishing in merge mode, guarantee that any merged elements appearing          * before<code>moduleElement</code> have been written.  This method should          * be called<i>before</i> we write the start tag of<code>moduleElement</code>.          * This covers cases where merged elements like "configurations" and "dependencies" appear          * in the parent descriptor, but are completely missing in the child descriptor.</p>          *          *<p>For example, if "moduleElement" is "dependencies", guarantees that "configurations"          * has been written.  If<code>moduleElement</code> is<code>null</code>, then all          * missing merged elements will be flushed.</p>          *          * @param moduleElement a descriptor element name, for example "configurations" or "info"          */
+comment|/**          *<p>          * If publishing in merge mode, guarantee that any merged elements appearing before          *<code>moduleElement</code> have been written. This method should be called<i>before</i>          * we write the start tag of<code>moduleElement</code>. This covers cases where merged          * elements like "configurations" and "dependencies" appear in the parent descriptor, but          * are completely missing in the child descriptor.          *</p>          *           *<p>          * For example, if "moduleElement" is "dependencies", guarantees that "configurations" has          * been written. If<code>moduleElement</code> is<code>null</code>, then all missing merged          * elements will be flushed.          *</p>          *           * @param moduleElement          *            a descriptor element name, for example "configurations" or "info"          */
 specifier|private
 name|void
 name|flushMergedElementsBefore
@@ -6710,7 +6711,7 @@ name|mergedDependencies
 operator|)
 condition|)
 block|{
-comment|//calculate the position of the element in ivy-module
+comment|// calculate the position of the element in ivy-module
 name|int
 name|position
 init|=
@@ -6738,7 +6739,7 @@ operator|.
 name|getMergedDescriptor
 argument_list|()
 decl_stmt|;
-comment|//see if we should write<configurations>
+comment|// see if we should write<configurations>
 if|if
 condition|(
 operator|!
@@ -6781,7 +6782,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|//see if we should write<dependencies>
+comment|// see if we should write<dependencies>
 if|if
 condition|(
 operator|!
@@ -6885,8 +6886,8 @@ name|path
 argument_list|)
 condition|)
 block|{
-comment|//guarantee that inherited description has been written before
-comment|//info element closes.
+comment|// guarantee that inherited description has been written before
+comment|// info element closes.
 name|writeInheritedDescription
 argument_list|(
 name|merged
@@ -6903,7 +6904,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-comment|//write inherited configurations after all child configurations
+comment|// write inherited configurations after all child configurations
 name|writeInheritedConfigurations
 argument_list|(
 name|merged
@@ -6920,7 +6921,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-comment|//write inherited dependencies after all child dependencies
+comment|// write inherited dependencies after all child dependencies
 name|writeInheritedDependencies
 argument_list|(
 name|merged
@@ -6937,8 +6938,8 @@ name|path
 argument_list|)
 condition|)
 block|{
-comment|//write any remaining inherited data before we close the
-comment|//descriptor.
+comment|// write any remaining inherited data before we close the
+comment|// descriptor.
 name|flushAllMergedElements
 argument_list|()
 expr_stmt|;
@@ -7647,7 +7648,7 @@ specifier|static
 interface|interface
 name|ItemPrinter
 block|{
-comment|/**          * Print an XML representation of<code>item</code> to<code>out</code>.          * @param parent the module descriptor containing<code>item</code>          * @param item subcomponent of the descriptor, for example a {@link DependencyDescriptor}           *   or {@link Configuration}          */
+comment|/**          * Print an XML representation of<code>item</code> to<code>out</code>.          *           * @param parent          *            the module descriptor containing<code>item</code>          * @param item          *            subcomponent of the descriptor, for example a {@link DependencyDescriptor} or          *            {@link Configuration}          */
 specifier|public
 name|void
 name|print

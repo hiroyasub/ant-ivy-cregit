@@ -1367,7 +1367,7 @@ block|}
 block|}
 comment|// now collects artifacts files
 name|Map
-comment|/*<Artifact,File>*/
+comment|/*<Artifact,File> */
 name|artifactsFiles
 init|=
 operator|new
@@ -1902,7 +1902,7 @@ operator|.
 name|checkInterrupted
 argument_list|()
 expr_stmt|;
-comment|//notify triggers that an artifact is about to be published
+comment|// notify triggers that an artifact is about to be published
 name|eventManager
 operator|.
 name|fireIvyEvent
@@ -1925,7 +1925,7 @@ name|successful
 init|=
 literal|false
 decl_stmt|;
-comment|//set to true once the publish succeeds
+comment|// set to true once the publish succeeds
 try|try
 block|{
 if|if
@@ -1955,7 +1955,7 @@ block|}
 block|}
 finally|finally
 block|{
-comment|//notify triggers that the publish is finished, successfully or not.
+comment|// notify triggers that the publish is finished, successfully or not.
 name|eventManager
 operator|.
 name|fireIvyEvent

@@ -54,7 +54,7 @@ specifier|private
 name|DateUtil
 parameter_list|()
 block|{
-comment|//Utility class
+comment|// Utility class
 block|}
 specifier|public
 specifier|static

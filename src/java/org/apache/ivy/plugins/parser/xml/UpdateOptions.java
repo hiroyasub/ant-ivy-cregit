@@ -185,7 +185,7 @@ name|confsToExclude
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * True to set branch information on dependencies to default branch when omitted, false to keep       * it as is.      */
+comment|/**      * True to set branch information on dependencies to default branch when omitted, false to keep      * it as is.      */
 specifier|private
 name|boolean
 name|updateBranch
@@ -196,7 +196,7 @@ specifier|private
 name|String
 name|branch
 decl_stmt|;
-comment|/**      * True to indicate that the revConstraint attribute should be generated if      * applicable, false to never generate the revConstraint attribute.      */
+comment|/**      * True to indicate that the revConstraint attribute should be generated if applicable, false to      * never generate the revConstraint attribute.      */
 specifier|private
 name|boolean
 name|generateRevConstraint

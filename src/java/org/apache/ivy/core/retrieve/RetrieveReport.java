@@ -100,7 +100,7 @@ name|RetrieveReport
 block|{
 specifier|private
 name|Collection
-comment|/*<File>*/
+comment|/*<File> */
 name|upToDateFiles
 init|=
 operator|new
@@ -109,7 +109,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Collection
-comment|/*<File>*/
+comment|/*<File> */
 name|copiedFiles
 init|=
 operator|new
@@ -118,7 +118,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<File, ArtifactDownloadReport>*/
+comment|/*<File, ArtifactDownloadReport> */
 name|downloadReport
 init|=
 operator|new
@@ -234,7 +234,7 @@ name|report
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve process.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
 specifier|public
 name|Collection
 name|getCopiedFiles
@@ -248,7 +248,7 @@ name|copiedFiles
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve process.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
 specifier|public
 name|Collection
 name|getUpToDateFiles
@@ -262,7 +262,7 @@ name|upToDateFiles
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were retrieved during the retrieve process. This is      * the union of the files being copied and the files that were up-to-date.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were retrieved during the retrieve process.      * This is the union of the files being copied and the files that were up-to-date.      */
 specifier|public
 name|Collection
 name|getRetrievedFiles

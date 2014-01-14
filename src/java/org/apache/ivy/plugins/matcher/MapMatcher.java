@@ -76,7 +76,7 @@ name|MapMatcher
 block|{
 specifier|private
 name|Map
-comment|/*<String, Matcher>*/
+comment|/*<String, Matcher> */
 name|matchers
 init|=
 operator|new
@@ -187,7 +187,7 @@ name|boolean
 name|matches
 parameter_list|(
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|m
 parameter_list|)
 block|{

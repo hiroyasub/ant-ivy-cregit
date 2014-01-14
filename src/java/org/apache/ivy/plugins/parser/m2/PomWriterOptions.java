@@ -103,7 +103,7 @@ name|artifactPackaging
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<ExtraDependency>*/
+comment|/*<ExtraDependency> */
 name|extraDependencies
 init|=
 operator|new
@@ -278,7 +278,7 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ExtraDependency>*/
+comment|/*<ExtraDependency> */
 name|getExtraDependencies
 parameter_list|()
 block|{
@@ -291,7 +291,7 @@ name|PomWriterOptions
 name|setExtraDependencies
 parameter_list|(
 name|List
-comment|/*<ExtraDependency>*/
+comment|/*<ExtraDependency> */
 name|extraDependencies
 parameter_list|)
 block|{
@@ -393,14 +393,14 @@ name|ConfigurationScopeMapping
 block|{
 specifier|private
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|scopes
 decl_stmt|;
 specifier|public
 name|ConfigurationScopeMapping
 parameter_list|(
 name|Map
-comment|/*<String,String>*/
+comment|/*<String,String> */
 name|scopesMapping
 parameter_list|)
 block|{
@@ -415,7 +415,7 @@ name|scopesMapping
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Returns the scope mapped to the given configuration array.          *           * @param confs the configurations for which the scope should be returned          * @return the scope to which the conf is mapped          */
+comment|/**          * Returns the scope mapped to the given configuration array.          *           * @param confs          *            the configurations for which the scope should be returned          * @return the scope to which the conf is mapped          */
 specifier|public
 name|String
 name|getScope

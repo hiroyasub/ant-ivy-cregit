@@ -283,7 +283,7 @@ return|return
 name|report
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if this resolved module revision should be forced as the one      * being returned.      *<p>      * This is used as an indication for CompositeResolver, to know if they should continue to look      * for a better ResolvedModuleRevision if possible, or stop with this instance.      *</p>      *       * @return<code>true</code> if this resolved module revision should be forced as the one      *         being returned.      */
+comment|/**      * Returns<code>true</code> if this resolved module revision should be forced as the one being      * returned.      *<p>      * This is used as an indication for CompositeResolver, to know if they should continue to look      * for a better ResolvedModuleRevision if possible, or stop with this instance.      *</p>      *       * @return<code>true</code> if this resolved module revision should be forced as the one being      *         returned.      */
 specifier|public
 name|boolean
 name|isForce

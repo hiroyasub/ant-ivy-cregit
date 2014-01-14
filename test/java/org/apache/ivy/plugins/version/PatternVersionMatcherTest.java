@@ -230,7 +230,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Generates a Match instance that has the following xml representation:      *<match revision="foo" pattern="${major}\.${minor}\.\d+" args="major, minor" matcher="regexp" />      * @return      */
+comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}\.\d+" args="major, minor" matcher="regexp" />      *       * @return      */
 specifier|private
 name|Match
 name|generateRegexpMatch1
@@ -275,7 +275,7 @@ return|return
 name|match
 return|;
 block|}
-comment|/**      * Generates a Match instance that has the following xml representation:      *<match revision="foo" pattern="${major}\.${minor}" args="major, minor" matcher="regexp" />      * @return      */
+comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}" args="major, minor" matcher="regexp" />      *       * @return      */
 specifier|private
 name|Match
 name|generateRegexpMatch2

@@ -198,11 +198,11 @@ name|value
 parameter_list|)
 function_decl|;
 name|Map
-comment|/*<String, String>*/
+comment|/*<String, String> */
 name|substitute
 parameter_list|(
 name|Map
-comment|/*<String, String>*/
+comment|/*<String, String> */
 name|strings
 parameter_list|)
 function_decl|;

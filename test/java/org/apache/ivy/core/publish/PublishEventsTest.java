@@ -304,12 +304,12 @@ name|PublishEventsTest
 extends|extends
 name|TestCase
 block|{
-comment|//maps ArtifactRevisionId to PublishTestCase instance.
+comment|// maps ArtifactRevisionId to PublishTestCase instance.
 specifier|private
 name|HashMap
 name|expectedPublications
 decl_stmt|;
-comment|//expected values for the current artifact being published.
+comment|// expected values for the current artifact being published.
 specifier|private
 name|PublishTestCase
 name|currentTestCase
@@ -318,22 +318,22 @@ specifier|private
 name|boolean
 name|expectedOverwrite
 decl_stmt|;
-comment|//number of times PrePublishTrigger has been invoked successfully
+comment|// number of times PrePublishTrigger has been invoked successfully
 specifier|private
 name|int
 name|preTriggers
 decl_stmt|;
-comment|//number of times PostPublishTrigger has been invoked successfully
+comment|// number of times PostPublishTrigger has been invoked successfully
 specifier|private
 name|int
 name|postTriggers
 decl_stmt|;
-comment|//number of times an artifact has been successfully published by the resolver
+comment|// number of times an artifact has been successfully published by the resolver
 specifier|private
 name|int
 name|publications
 decl_stmt|;
-comment|//dummy test data that is reused by all cases.
+comment|// dummy test data that is reused by all cases.
 specifier|private
 name|File
 name|ivyFile
@@ -362,12 +362,12 @@ specifier|private
 name|PublishOptions
 name|publishOptions
 decl_stmt|;
-comment|//if non-null, InstrumentedResolver will throw this exception during publish
+comment|// if non-null, InstrumentedResolver will throw this exception during publish
 specifier|private
 name|IOException
 name|publishError
 decl_stmt|;
-comment|//the ivy instance under test
+comment|// the ivy instance under test
 specifier|private
 name|Ivy
 name|ivy
@@ -388,12 +388,13 @@ operator|.
 name|setUp
 argument_list|()
 expr_stmt|;
-comment|//reset test case state.
+comment|// reset test case state.
 name|resetCounters
 argument_list|()
 expr_stmt|;
-comment|//this ivy settings should configure an InstrumentedResolver, PrePublishTrigger, and PostPublishTrigger
-comment|//(see inner classes below).
+comment|// this ivy settings should configure an InstrumentedResolver, PrePublishTrigger, and
+comment|// PostPublishTrigger
+comment|// (see inner classes below).
 name|ivy
 operator|=
 name|Ivy
@@ -427,9 +428,11 @@ operator|.
 name|getPublishEngine
 argument_list|()
 expr_stmt|;
-comment|//setup dummy ivy and data files to test publishing.  since we're testing the engine and not the resolver,
-comment|//we don't really care whether the file actually gets published.  we just want to make sure
-comment|//that the engine calls the correct methods in the correct order, and fires required events.
+comment|// setup dummy ivy and data files to test publishing. since we're testing the engine and not
+comment|// the resolver,
+comment|// we don't really care whether the file actually gets published. we just want to make sure
+comment|// that the engine calls the correct methods in the correct order, and fires required
+comment|// events.
 name|ivyFile
 operator|=
 operator|new
@@ -448,7 +451,7 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//the contents of the data file don't matter.
+comment|// the contents of the data file don't matter.
 name|dataFile
 operator|=
 name|File
@@ -490,7 +493,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-comment|//always use the same source data file, no pattern substitution is required.
+comment|// always use the same source data file, no pattern substitution is required.
 name|publishSources
 operator|=
 name|Collections
@@ -503,7 +506,7 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//always use the same ivy file, no pattern substitution is required.
+comment|// always use the same ivy file, no pattern substitution is required.
 name|publishOptions
 operator|=
 operator|new
@@ -520,8 +523,8 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//set up our expectations for the test.  these variables will
-comment|//be checked by the resolver and triggers during publication.
+comment|// set up our expectations for the test. these variables will
+comment|// be checked by the resolver and triggers during publication.
 name|dataArtifact
 operator|=
 name|publishModule
@@ -611,8 +614,8 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//push the TestCase instance onto the context stack, so that our
-comment|//triggers and resolver instances can interact with it it.
+comment|// push the TestCase instance onto the context stack, so that our
+comment|// triggers and resolver instances can interact with it it.
 name|IvyContext
 operator|.
 name|getContext
@@ -643,11 +646,11 @@ operator|.
 name|tearDown
 argument_list|()
 expr_stmt|;
-comment|//reset test state.
+comment|// reset test state.
 name|resetCounters
 argument_list|()
 expr_stmt|;
-comment|//test case is finished, pop the test context off the stack.
+comment|// test case is finished, pop the test context off the stack.
 name|IvyContext
 operator|.
 name|getContext
@@ -663,7 +666,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//cleanup ivy resources
+comment|// cleanup ivy resources
 if|if
 condition|(
 name|ivy
@@ -755,8 +758,9 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-comment|//no modifications to input required for this case -- call out to the resolver, and verify that
-comment|//all of our test counters have been incremented.
+comment|// no modifications to input required for this case -- call out to the resolver, and verify
+comment|// that
+comment|// all of our test counters have been incremented.
 name|Collection
 name|missing
 init|=
@@ -788,7 +792,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//if all tests passed, all of our counter variables should have been updated.
+comment|// if all tests passed, all of our counter variables should have been updated.
 name|assertEquals
 argument_list|(
 literal|"pre-publish trigger fired and passed all tests"
@@ -837,14 +841,16 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-comment|//we expect the overwrite settings to be passed through the event listeners and into the publisher.
+comment|// we expect the overwrite settings to be passed through the event listeners and into the
+comment|// publisher.
 name|this
 operator|.
 name|expectedOverwrite
 operator|=
 literal|true
 expr_stmt|;
-comment|//set overwrite to true.  InstrumentedResolver will verify that the correct argument value was provided.
+comment|// set overwrite to true. InstrumentedResolver will verify that the correct argument value
+comment|// was provided.
 name|publishOptions
 operator|.
 name|setOverwrite
@@ -883,7 +889,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//if all tests passed, all of our counter variables should have been updated.
+comment|// if all tests passed, all of our counter variables should have been updated.
 name|assertEquals
 argument_list|(
 literal|"pre-publish trigger fired and passed all tests"
@@ -932,8 +938,8 @@ parameter_list|()
 throws|throws
 name|IOException
 block|{
-comment|//delete the datafile.  the publish should fail
-comment|//and the ivy artifact should still publish successfully.
+comment|// delete the datafile. the publish should fail
+comment|// and the ivy artifact should still publish successfully.
 name|assertTrue
 argument_list|(
 literal|"datafile has been destroyed"
@@ -1015,7 +1021,7 @@ name|next
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//if all tests passed, all of our counter variables should have been updated.
+comment|// if all tests passed, all of our counter variables should have been updated.
 name|assertEquals
 argument_list|(
 literal|"pre-publish trigger fired and passed all tests"
@@ -1062,7 +1068,7 @@ name|void
 name|testPublishWithException
 parameter_list|()
 block|{
-comment|//set an error to be thrown during publication of the data file.
+comment|// set an error to be thrown during publication of the data file.
 name|this
 operator|.
 name|publishError
@@ -1073,7 +1079,7 @@ argument_list|(
 literal|"boom!"
 argument_list|)
 expr_stmt|;
-comment|//we don't care which artifact is attempted; either will fail with an IOException.
+comment|// we don't care which artifact is attempted; either will fail with an IOException.
 for|for
 control|(
 name|Iterator
@@ -1149,9 +1155,10 @@ name|expected
 argument_list|)
 expr_stmt|;
 block|}
-comment|//the publish engine gives up after the resolver throws an exception on the first artifact,
-comment|//so only one set of events should have been fired.
-comment|//note that the initial publish error shouldn't prevent the post-publish trigger from firing.
+comment|// the publish engine gives up after the resolver throws an exception on the first artifact,
+comment|// so only one set of events should have been fired.
+comment|// note that the initial publish error shouldn't prevent the post-publish trigger from
+comment|// firing.
 name|assertEquals
 argument_list|(
 literal|"pre-publish trigger fired and passed all tests"
@@ -1429,7 +1436,7 @@ name|success
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Base class for pre- and post-publish-artifact triggers.  When the trigger receives an event,      * the contents of the publish event are examined to make sure they match the variable settings      * on the calling {@link PublishEventsTest#currentTestCase} instance.      */
+comment|/**      * Base class for pre- and post-publish-artifact triggers. When the trigger receives an event,      * the contents of the publish event are examined to make sure they match the variable settings      * on the calling {@link PublishEventsTest#currentTestCase} instance.      */
 specifier|public
 specifier|static
 class|class
@@ -1498,8 +1505,8 @@ argument_list|,
 name|test
 argument_list|)
 expr_stmt|;
-comment|//test the proper sequence of events by comparing the number of pre-events,
-comment|//post-events, and actual publications.
+comment|// test the proper sequence of events by comparing the number of pre-events,
+comment|// post-events, and actual publications.
 name|assertTrue
 argument_list|(
 literal|"event is of correct base type"
@@ -1697,8 +1704,10 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//we test file separately, since it is hard to guaranteean exact path match, but we want
-comment|//to make sure that both paths point to the same canonical location on the filesystem
+comment|// we test file separately, since it is hard to guaranteean exact path match, but we
+comment|// want
+comment|// to make sure that both paths point to the same canonical location on the
+comment|// filesystem
 name|String
 name|filePath
 init|=
@@ -1751,7 +1760,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Extends the tests done by {@link TestPublishTrigger} to check that pre-publish events are      * fired before DependencyResolver.publish() is called, and before post-publish events are fired.      */
+comment|/**      * Extends the tests done by {@link TestPublishTrigger} to check that pre-publish events are      * fired before DependencyResolver.publish() is called, and before post-publish events are      * fired.      */
 specifier|public
 specifier|static
 class|class
@@ -1805,8 +1814,9 @@ name|StartArtifactPublishEvent
 operator|)
 name|event
 decl_stmt|;
-comment|//verify that the artifact being publish was in the expected set.  set the 'currentTestCase'
-comment|//pointer so that the resolver and post-publish trigger can check against it.
+comment|// verify that the artifact being publish was in the expected set. set the
+comment|// 'currentTestCase'
+comment|// pointer so that the resolver and post-publish trigger can check against it.
 name|Artifact
 name|artifact
 init|=
@@ -1887,7 +1897,7 @@ name|currentTestCase
 operator|=
 name|currentTestCase
 expr_stmt|;
-comment|//superclass tests common attributes of publish events
+comment|// superclass tests common attributes of publish events
 name|super
 operator|.
 name|progress
@@ -1895,7 +1905,7 @@ argument_list|(
 name|event
 argument_list|)
 expr_stmt|;
-comment|//increment the call counter in the test
+comment|// increment the call counter in the test
 name|currentTestCase
 operator|.
 name|preTriggerFired
@@ -1909,7 +1919,7 @@ name|preTriggers
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Extends the tests done by {@link TestPublishTrigger} to check that post-publish events are      * fired after DependencyResolver.publish() is called, and that the "status" attribute is      * set to the correct value.      */
+comment|/**      * Extends the tests done by {@link TestPublishTrigger} to check that post-publish events are      * fired after DependencyResolver.publish() is called, and that the "status" attribute is set to      * the correct value.      */
 specifier|public
 specifier|static
 class|class
@@ -1925,7 +1935,7 @@ name|IvyEvent
 name|event
 parameter_list|)
 block|{
-comment|//superclass tests common attributes of publish events
+comment|// superclass tests common attributes of publish events
 name|super
 operator|.
 name|progress
@@ -1954,8 +1964,8 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//test the proper sequence of events by comparing the current count of pre-events,
-comment|//post-events, and actual publications.
+comment|// test the proper sequence of events by comparing the current count of pre-events,
+comment|// post-events, and actual publications.
 name|assertTrue
 argument_list|(
 literal|"event is of correct concrete type"
@@ -1976,7 +1986,7 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-comment|//test sequence of events
+comment|// test sequence of events
 name|assertTrue
 argument_list|(
 literal|"pre-trigger event has already been fired for this artifact"
@@ -2016,7 +2026,7 @@ operator|.
 name|postTriggerFired
 argument_list|)
 expr_stmt|;
-comment|//test the "status" attribute of the post- event.
+comment|// test the "status" attribute of the post- event.
 name|EndArtifactPublishEvent
 name|endEvent
 init|=
@@ -2071,7 +2081,7 @@ literal|"status"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//increment the call counter in the wrapper test
+comment|// increment the call counter in the wrapper test
 name|test
 operator|.
 name|currentTestCase
@@ -2087,7 +2097,7 @@ name|postTriggers
 expr_stmt|;
 block|}
 block|}
-comment|/**      * When publish() is called, verifies that a pre-publish event has been fired, and also verifies that      * the method arguments have the correct value.  Also simulates an IOException if the current      * test case demands it.      */
+comment|/**      * When publish() is called, verifies that a pre-publish event has been fired, and also verifies      * that the method arguments have the correct value. Also simulates an IOException if the      * current test case demands it.      */
 specifier|public
 specifier|static
 class|class
@@ -2111,7 +2121,7 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-comment|//verify that the data from the current test case has been handed down to us
+comment|// verify that the data from the current test case has been handed down to us
 name|PublishEventsTest
 name|test
 init|=
@@ -2133,7 +2143,7 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//test sequence of events.
+comment|// test sequence of events.
 name|assertNotNull
 argument_list|(
 name|test
@@ -2174,7 +2184,7 @@ operator|.
 name|published
 argument_list|)
 expr_stmt|;
-comment|//test event data
+comment|// test event data
 name|assertSameArtifact
 argument_list|(
 literal|"publisher has received correct artifact"
@@ -2232,7 +2242,7 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//simulate a publisher error if the current test case demands it.
+comment|// simulate a publisher error if the current test case demands it.
 if|if
 condition|(
 name|test
@@ -2246,7 +2256,7 @@ name|test
 operator|.
 name|publishError
 throw|;
-comment|//all assertions pass.  increment the publication count
+comment|// all assertions pass. increment the publication count
 name|test
 operator|.
 name|currentTestCase

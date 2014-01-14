@@ -252,7 +252,7 @@ name|getSettingsId
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//        ref.setProject(project);
+comment|// ref.setProject(project);
 name|task
 operator|.
 name|setSettingsRef

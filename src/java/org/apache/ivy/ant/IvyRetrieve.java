@@ -769,7 +769,7 @@ block|}
 block|}
 specifier|protected
 name|Collection
-comment|/*<String>*/
+comment|/*<String> */
 name|getAllowedLogOptions
 parameter_list|()
 block|{
@@ -928,7 +928,7 @@ return|return
 name|overwriteMode
 return|;
 block|}
-comment|/**      * Add a mapper to convert the file names.      *      * @param mapper a<code>Mapper</code> value.      */
+comment|/**      * Add a mapper to convert the file names.      *       * @param mapper      *            a<code>Mapper</code> value.      */
 specifier|public
 name|void
 name|addMapper
@@ -961,7 +961,7 @@ operator|=
 name|mapper
 expr_stmt|;
 block|}
-comment|/**      * Add a nested filenamemapper.      * @param fileNameMapper the mapper to add.      */
+comment|/**      * Add a nested filenamemapper.      *       * @param fileNameMapper      *            the mapper to add.      */
 specifier|public
 name|void
 name|add
@@ -993,7 +993,7 @@ name|m
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the path of the file relative to the given base directory.      *      * @param base the parent directory to which the file must be evaluated.      * @param file the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
+comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
 specifier|private
 name|String
 name|getPath

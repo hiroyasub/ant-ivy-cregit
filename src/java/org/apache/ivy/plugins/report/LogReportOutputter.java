@@ -761,7 +761,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|char
 index|[]
 name|sep
@@ -932,7 +932,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 name|line
 operator|.
 name|append
@@ -1229,7 +1229,7 @@ argument_list|(
 literal|"\t"
 argument_list|)
 decl_stmt|;
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|append
 argument_list|(
 name|line
@@ -1359,7 +1359,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| ON
+comment|// CheckStyle:MagicNumber| ON
 name|line
 operator|.
 name|append

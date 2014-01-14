@@ -416,7 +416,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-comment|//ignore
+comment|// ignore
 block|}
 block|}
 block|}

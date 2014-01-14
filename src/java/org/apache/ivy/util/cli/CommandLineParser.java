@@ -146,7 +146,7 @@ literal|30
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String, Option>*/
+comment|/*<String, Option> */
 name|options
 init|=
 operator|new
@@ -155,7 +155,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String, List<Option>>*/
+comment|/*<String, List<Option>> */
 name|categories
 init|=
 operator|new
@@ -602,7 +602,7 @@ name|category
 argument_list|)
 expr_stmt|;
 name|List
-comment|/*<Option>*/
+comment|/*<Option> */
 name|options
 init|=
 operator|(

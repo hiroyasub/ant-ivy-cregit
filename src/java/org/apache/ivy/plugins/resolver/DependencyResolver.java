@@ -339,7 +339,7 @@ parameter_list|)
 throws|throws
 name|ParseException
 function_decl|;
-comment|/**      * Finds the module descriptor for the specified<tt>DependencyDescriptor</tt>.      * If this resolver can't find the module descriptor,<tt>null</tt> is returned.      *       * @param dd the dependency descriptor      * @param data the resolve data      * @return the module descriptor, or<tt>null</tt>      */
+comment|/**      * Finds the module descriptor for the specified<tt>DependencyDescriptor</tt>. If this resolver      * can't find the module descriptor,<tt>null</tt> is returned.      *       * @param dd      *            the dependency descriptor      * @param data      *            the resolve data      * @return the module descriptor, or<tt>null</tt>      */
 name|ResolvedResource
 name|findIvyFileRef
 parameter_list|(
@@ -373,7 +373,7 @@ name|DownloadOptions
 name|options
 parameter_list|)
 function_decl|;
-comment|/**      * Returns<code>true</code> if the given artifact can be located by this resolver and      * actually exist.      *       * @param artifact      *            the artifact which should be tested.      * @return<code>true</code> if the given artifact can be located by this resolver and      *         actually exist.      */
+comment|/**      * Returns<code>true</code> if the given artifact can be located by this resolver and actually      * exist.      *       * @param artifact      *            the artifact which should be tested.      * @return<code>true</code> if the given artifact can be located by this resolver and actually      *         exist.      */
 name|boolean
 name|exists
 parameter_list|(
@@ -445,7 +445,7 @@ comment|// listing methods, enable to know what is available from this resolver
 comment|// the listing methods must only list entries directly
 comment|// available from them, no recursion is needed as long as sub resolvers
 comment|// are registered in ivy too.
-comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      *<p>      * Note that listing does not take into account namespaces, and return raw       * information without any namespace transformation. The caller is responsible for calling       * namespace transformation with the Namespace returned by {@link #getNamespace()}.      *</p>      */
+comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      *<p>      * Note that listing does not take into account namespaces, and return raw information without      * any namespace transformation. The caller is responsible for calling namespace transformation      * with the Namespace returned by {@link #getNamespace()}.      *</p>      */
 name|String
 index|[]
 name|listTokenValues
@@ -491,7 +491,7 @@ name|ModuleEntry
 name|module
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the namespace associated with this resolver.      * @return the namespace associated with this resolver.      */
+comment|/**      * Returns the namespace associated with this resolver.      *       * @return the namespace associated with this resolver.      */
 name|Namespace
 name|getNamespace
 parameter_list|()

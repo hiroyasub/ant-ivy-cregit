@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Utility class providing some cache related facilities.   *  */
+comment|/**  * Utility class providing some cache related facilities.  *   */
 end_comment
 
 begin_class

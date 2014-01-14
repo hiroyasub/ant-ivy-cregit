@@ -44,7 +44,7 @@ specifier|private
 name|String
 name|ext
 decl_stmt|;
-comment|/**      * @param mid  The ModuleId, which is the base of this artifact.      * @param name  The name of the artifact.      * @param type  The type of the artifact.      */
+comment|/**      * @param mid      *            The ModuleId, which is the base of this artifact.      * @param name      *            The name of the artifact.      * @param type      *            The type of the artifact.      */
 specifier|public
 name|ArtifactId
 parameter_list|(
@@ -169,7 +169,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 name|int
 name|hash
 init|=
@@ -205,7 +205,7 @@ argument_list|()
 operator|*
 literal|37
 expr_stmt|;
-comment|//CheckStyle:MagicNumber| OFF
+comment|// CheckStyle:MagicNumber| OFF
 return|return
 name|hash
 return|;

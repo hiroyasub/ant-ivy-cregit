@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface for elements that can be inherited from a parent descriptor  * by a child descriptor.  * @see Configuration  * @see DependencyDescriptor  */
+comment|/**  * Interface for elements that can be inherited from a parent descriptor by a child descriptor.  *   * @see Configuration  * @see DependencyDescriptor  */
 end_comment
 
 begin_interface
@@ -46,7 +46,7 @@ specifier|public
 interface|interface
 name|InheritableItem
 block|{
-comment|/**      * @return the module in which this item was actually defined, if different       *   from the module in which the item appears.  May be null.      */
+comment|/**      * @return the module in which this item was actually defined, if different from the module in      *         which the item appears. May be null.      */
 specifier|public
 name|ModuleRevisionId
 name|getSourceModule
