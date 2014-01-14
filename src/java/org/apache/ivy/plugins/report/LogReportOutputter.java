@@ -183,7 +183,9 @@ name|core
 operator|.
 name|resolve
 operator|.
-name|ResolveOptions
+name|IvyNodeEviction
+operator|.
+name|EvictionData
 import|;
 end_import
 
@@ -199,9 +201,7 @@ name|core
 operator|.
 name|resolve
 operator|.
-name|IvyNodeEviction
-operator|.
-name|EvictionData
+name|ResolveOptions
 import|;
 end_import
 

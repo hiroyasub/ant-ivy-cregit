@@ -61,24 +61,6 @@ name|Artifact
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
-name|DefaultArtifact
-import|;
-end_import
-
 begin_comment
 comment|/**  * Report on the download of an artifact from a repository to a local (cached) file.  *<p>  * Note that depending on cache implementation, the artifact may not be actually downloaded, but  * used directly from its original location.  *</p>  */
 end_comment

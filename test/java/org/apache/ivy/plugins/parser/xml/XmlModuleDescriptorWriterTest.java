@@ -107,7 +107,13 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Configuration
 import|;
 end_import
 
@@ -126,6 +132,8 @@ operator|.
 name|descriptor
 operator|.
 name|Configuration
+operator|.
+name|Visibility
 import|;
 end_import
 
@@ -162,26 +170,6 @@ operator|.
 name|descriptor
 operator|.
 name|ModuleDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
-name|Configuration
-operator|.
-name|Visibility
 import|;
 end_import
 

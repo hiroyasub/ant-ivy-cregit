@@ -123,7 +123,9 @@ name|util
 operator|.
 name|url
 operator|.
-name|URLHandlerRegistry
+name|URLHandler
+operator|.
+name|URLInfo
 import|;
 end_import
 
@@ -139,9 +141,7 @@ name|util
 operator|.
 name|url
 operator|.
-name|URLHandler
-operator|.
-name|URLInfo
+name|URLHandlerRegistry
 import|;
 end_import
 

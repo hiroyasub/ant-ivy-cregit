@@ -87,7 +87,9 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|ModuleDescriptor
+name|Configuration
+operator|.
+name|Visibility
 import|;
 end_import
 
@@ -105,9 +107,7 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|Configuration
-operator|.
-name|Visibility
+name|ModuleDescriptor
 import|;
 end_import
 
