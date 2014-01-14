@@ -810,6 +810,8 @@ init|=
 literal|1024
 decl_stmt|;
 comment|/**      * @deprecated Use the {@link DateUtil} utility class instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final

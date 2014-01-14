@@ -496,6 +496,8 @@ name|eventManager
 expr_stmt|;
 block|}
 comment|/**      * example of destFilePattern : - lib/[organisation]/[module]/[artifact]-[revision].[type] -      * lib/[artifact].[type] : flatten with no revision moduleId is used with confs and      * localCacheDirectory to determine an ivy report file, used as input for the copy If such a      * file does not exist for any conf (resolve has not been called before ?) then an      * IllegalStateException is thrown and nothing is copied.      *       * @deprecated Use      *             {@link #retrieve(org.apache.ivy.core.module.id.ModuleRevisionId, RetrieveOptions)}      *             instead      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|retrieve

@@ -816,6 +816,8 @@ name|log
 expr_stmt|;
 block|}
 comment|/**      * @deprecated Use {@link #setFailureProperty(String)} instead      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setFailurePropery

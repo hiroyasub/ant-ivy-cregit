@@ -2733,6 +2733,8 @@ name|onMissingDescriptor
 expr_stmt|;
 block|}
 comment|/**      * @deprecated use {@link #getOnMissingDescriptor()} instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isSkipbuildwithoutivy
@@ -2747,6 +2749,8 @@ name|SKIP
 return|;
 block|}
 comment|/**      * @deprecated use {@link #setOnMissingDescriptor(String)} instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setSkipbuildwithoutivy

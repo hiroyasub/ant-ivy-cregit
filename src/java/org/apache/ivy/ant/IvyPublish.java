@@ -409,6 +409,8 @@ name|destivypattern
 expr_stmt|;
 block|}
 comment|/**      * @deprecated use {@link #getSrcivypattern()} instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getDeliverivypattern
@@ -419,6 +421,8 @@ name|srcivypattern
 return|;
 block|}
 comment|/**      * @deprecated use {@link #setSrcivypattern(String)} instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDeliverivypattern

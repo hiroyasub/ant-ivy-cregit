@@ -200,6 +200,8 @@ name|osgi
 expr_stmt|;
 block|}
 comment|/**      * @deprecated use setPathid instead      * @param id      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setId

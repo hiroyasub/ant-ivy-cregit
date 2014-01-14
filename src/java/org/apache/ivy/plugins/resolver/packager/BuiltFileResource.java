@@ -118,7 +118,7 @@ name|BuiltFileResource
 implements|implements
 name|Resource
 block|{
-comment|/**      * Where the build file should put built artifacts (relative to the build directory). Value is:      * {@value}      */
+comment|/**      * Where the build file should put built artifacts (relative to the build directory). Value is:      * * {@value}      */
 specifier|public
 specifier|static
 specifier|final
