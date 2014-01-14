@@ -4010,6 +4010,7 @@ argument_list|(
 literal|""
 argument_list|)
 condition|)
+block|{
 name|write
 argument_list|(
 literal|" branch=\""
@@ -4019,6 +4020,7 @@ operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(

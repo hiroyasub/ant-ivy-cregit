@@ -803,6 +803,7 @@ argument_list|(
 literal|"<info"
 argument_list|)
 condition|)
+block|{
 name|assertEquals
 argument_list|(
 literal|"published descriptor matches at line["
@@ -822,6 +823,7 @@ name|trim
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 operator|++
 name|lineNo
 expr_stmt|;

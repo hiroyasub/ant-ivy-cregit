@@ -1093,6 +1093,7 @@ name|ivySettings
 operator|!=
 literal|null
 condition|)
+block|{
 name|ivySettings
 operator|.
 name|substitute
@@ -1100,6 +1101,7 @@ argument_list|(
 literal|"${val}"
 argument_list|)
 expr_stmt|;
+block|}
 name|called
 operator|=
 literal|true

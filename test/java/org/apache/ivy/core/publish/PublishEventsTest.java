@@ -694,11 +694,13 @@ name|dataFile
 operator|!=
 literal|null
 condition|)
+block|{
 name|dataFile
 operator|.
 name|delete
 argument_list|()
 expr_stmt|;
+block|}
 name|dataFile
 operator|=
 literal|null
@@ -1099,6 +1101,7 @@ name|hasNext
 argument_list|()
 condition|;
 control|)
+block|{
 operator|(
 operator|(
 name|PublishTestCase
@@ -1113,6 +1116,7 @@ name|expectedSuccess
 operator|=
 literal|false
 expr_stmt|;
+block|}
 try|try
 block|{
 name|publishEngine
@@ -1676,6 +1680,7 @@ condition|;
 operator|++
 name|i
 control|)
+block|{
 name|assertEquals
 argument_list|(
 literal|"event declares correct value for "
@@ -1704,6 +1709,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|// we test file separately, since it is hard to guaranteean exact path match, but we
 comment|// want
 comment|// to make sure that both paths point to the same canonical location on the
@@ -2251,11 +2257,13 @@ name|publishError
 operator|!=
 literal|null
 condition|)
+block|{
 throw|throw
 name|test
 operator|.
 name|publishError
 throw|;
+block|}
 comment|// all assertions pass. increment the publication count
 name|test
 operator|.
