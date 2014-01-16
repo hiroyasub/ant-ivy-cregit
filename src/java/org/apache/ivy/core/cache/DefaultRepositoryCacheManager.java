@@ -3673,12 +3673,10 @@ block|{
 comment|// found in cache !
 try|try
 block|{
-name|XmlModuleDescriptorParser
+name|ModuleDescriptorParser
 name|parser
 init|=
-name|XmlModuleDescriptorParser
-operator|.
-name|getInstance
+name|getModuleDescriptorParser
 argument_list|()
 decl_stmt|;
 name|ModuleDescriptor
@@ -4107,6 +4105,18 @@ return|return
 literal|null
 return|;
 block|}
+specifier|protected
+name|ModuleDescriptorParser
+name|getModuleDescriptorParser
+parameter_list|()
+block|{
+return|return
+name|XmlModuleDescriptorParser
+operator|.
+name|getInstance
+argument_list|()
+return|;
+block|}
 specifier|private
 class|class
 name|MyModuleDescriptorProvider
@@ -4188,7 +4198,7 @@ specifier|private
 name|ModuleDescriptor
 name|getMdFromCache
 parameter_list|(
-name|XmlModuleDescriptorParser
+name|ModuleDescriptorParser
 name|mdParser
 parameter_list|,
 name|CacheMetadataOptions
