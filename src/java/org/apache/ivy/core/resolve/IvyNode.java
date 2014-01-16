@@ -1565,6 +1565,20 @@ name|problem
 operator|=
 name|e
 expr_stmt|;
+name|Message
+operator|.
+name|debug
+argument_list|(
+literal|"Unexpected error: "
+operator|+
+name|problem
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+name|problem
+argument_list|)
+expr_stmt|;
 return|return
 literal|false
 return|;
