@@ -313,11 +313,7 @@ name|setRequestProperty
 argument_list|(
 literal|"User-Agent"
 argument_list|,
-literal|"Apache Ivy/"
-operator|+
-name|Ivy
-operator|.
-name|getIvyVersion
+name|getUserAgent
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -848,11 +844,7 @@ name|setRequestProperty
 argument_list|(
 literal|"User-Agent"
 argument_list|,
-literal|"Apache Ivy/"
-operator|+
-name|Ivy
-operator|.
-name|getIvyVersion
+name|getUserAgent
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1063,11 +1055,7 @@ name|setRequestProperty
 argument_list|(
 literal|"User-Agent"
 argument_list|,
-literal|"Apache Ivy/"
-operator|+
-name|Ivy
-operator|.
-name|getIvyVersion
+name|getUserAgent
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1334,11 +1322,7 @@ name|setRequestProperty
 argument_list|(
 literal|"User-Agent"
 argument_list|,
-literal|"Apache Ivy/"
-operator|+
-name|Ivy
-operator|.
-name|getIvyVersion
+name|getUserAgent
 argument_list|()
 argument_list|)
 expr_stmt|;

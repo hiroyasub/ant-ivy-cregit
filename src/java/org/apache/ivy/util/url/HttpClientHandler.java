@@ -1833,11 +1833,7 @@ name|HttpMethodParams
 operator|.
 name|USER_AGENT
 argument_list|,
-literal|"Apache Ivy/"
-operator|+
-name|Ivy
-operator|.
-name|getIvyVersion
+name|getUserAgent
 argument_list|()
 argument_list|)
 expr_stmt|;
