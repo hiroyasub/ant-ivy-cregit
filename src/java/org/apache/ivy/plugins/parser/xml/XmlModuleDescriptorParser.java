@@ -1487,6 +1487,8 @@ block|,
 literal|"2.2"
 block|,
 literal|"2.3"
+block|,
+literal|"2.4"
 block|}
 argument_list|)
 decl_stmt|;
