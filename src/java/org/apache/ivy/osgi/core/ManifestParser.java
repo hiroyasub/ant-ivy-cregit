@@ -1069,6 +1069,13 @@ name|getValues
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|bundleInfo
+operator|.
+name|setHasInnerClasspath
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|bundleInfo

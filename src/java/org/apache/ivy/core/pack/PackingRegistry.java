@@ -79,6 +79,13 @@ name|Pack200Packing
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|register
+argument_list|(
+operator|new
+name|OsgiBundlePacking
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
