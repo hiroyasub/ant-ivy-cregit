@@ -101,6 +101,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|jar
+operator|.
+name|Manifest
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
@@ -1830,8 +1842,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|JarInputStream
-name|in
+name|Manifest
+name|manifest
 init|=
 operator|new
 name|JarInputStream
@@ -1844,6 +1856,9 @@ operator|+
 name|jarName
 argument_list|)
 argument_list|)
+operator|.
+name|getManifest
+argument_list|()
 decl_stmt|;
 name|BundleInfo
 name|bundleInfo
@@ -1852,10 +1867,7 @@ name|ManifestParser
 operator|.
 name|parseManifest
 argument_list|(
-name|in
-operator|.
-name|getManifest
-argument_list|()
+name|manifest
 argument_list|)
 decl_stmt|;
 name|bundleInfo
@@ -2078,8 +2090,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|JarInputStream
-name|in
+name|Manifest
+name|manifest
 init|=
 operator|new
 name|JarInputStream
@@ -2092,6 +2104,9 @@ operator|+
 name|jarName
 argument_list|)
 argument_list|)
+operator|.
+name|getManifest
+argument_list|()
 decl_stmt|;
 name|BundleInfo
 name|bundleInfo
@@ -2100,10 +2115,7 @@ name|ManifestParser
 operator|.
 name|parseManifest
 argument_list|(
-name|in
-operator|.
-name|getManifest
-argument_list|()
+name|manifest
 argument_list|)
 decl_stmt|;
 name|bundleInfo
@@ -2145,6 +2157,8 @@ argument_list|,
 literal|null
 argument_list|,
 name|bundleInfo
+argument_list|,
+name|manifest
 argument_list|,
 name|profileProvider
 argument_list|)
