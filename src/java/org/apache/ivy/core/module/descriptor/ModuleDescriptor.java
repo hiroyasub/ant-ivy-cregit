@@ -489,6 +489,22 @@ argument_list|>
 name|getExtraInfos
 parameter_list|()
 function_decl|;
+comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @return      */
+name|String
+name|getExtraInfoContentByTagName
+parameter_list|(
+name|String
+name|tagName
+parameter_list|)
+function_decl|;
+comment|/**      * Returns first extrainfo matching with given tag name      *       * @return      */
+name|ExtraInfoHolder
+name|getExtraInfoByTagName
+parameter_list|(
+name|String
+name|tagName
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

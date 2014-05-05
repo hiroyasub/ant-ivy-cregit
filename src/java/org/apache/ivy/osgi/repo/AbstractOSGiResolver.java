@@ -1319,15 +1319,9 @@ decl_stmt|;
 name|String
 name|rev
 init|=
-operator|(
-name|String
-operator|)
 name|md
 operator|.
-name|getExtraInfo
-argument_list|()
-operator|.
-name|get
+name|getExtraInfoContentByTagName
 argument_list|(
 name|BundleInfoAdapter
 operator|.

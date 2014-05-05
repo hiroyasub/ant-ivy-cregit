@@ -1045,7 +1045,7 @@ name|extractPomProperties
 argument_list|(
 name|parentDescr
 operator|.
-name|getExtraInfo
+name|getExtraInfos
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1551,7 +1551,7 @@ name|addExtraInfos
 argument_list|(
 name|parentDescr
 operator|.
-name|getExtraInfo
+name|getExtraInfos
 argument_list|()
 argument_list|)
 expr_stmt|;
