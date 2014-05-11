@@ -1188,6 +1188,9 @@ name|md
 operator|.
 name|addExtraInfo
 argument_list|(
+operator|new
+name|ExtraInfoHolder
+argument_list|(
 name|entries
 operator|.
 name|getKey
@@ -1203,6 +1206,7 @@ argument_list|()
 operator|.
 name|toString
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -469,19 +469,27 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns the list of xml namespaces used by extra attributes, as Map from prefix to namespace      * URIs.      *<p>      * The returned list is never<code>null</code>, it is empty when no extra attribute is used or      * if extra attributes are used without xml namespaces      *</p>      *       * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs.      */
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.      *       * @deprecated please use getExtraInfos() method instead      * @return      */
+comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.<br />      *       * @deprecated this method is not returning the full content of the extra info: to get the full      *             structure of the extra infos, use getExtraInfos()      */
 annotation|@
 name|Deprecated
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getExtraInfo
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @return      */
+comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @since 2.4.0      * @return      */
 name|List
 argument_list|<
 name|ExtraInfoHolder
@@ -489,7 +497,7 @@ argument_list|>
 name|getExtraInfos
 parameter_list|()
 function_decl|;
-comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @return      */
+comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @since 2.4.0      * @return      */
 name|String
 name|getExtraInfoContentByTagName
 parameter_list|(
@@ -497,7 +505,7 @@ name|String
 name|tagName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns first extrainfo matching with given tag name      *       * @return      */
+comment|/**      * Returns first extrainfo matching with given tag name      *       * @since 2.4.0      * @return      */
 name|ExtraInfoHolder
 name|getExtraInfoByTagName
 parameter_list|(

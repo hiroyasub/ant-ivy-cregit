@@ -1935,6 +1935,19 @@ name|Date
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|fixedmd
+operator|.
+name|getExtraInfos
+argument_list|()
+operator|.
+name|addAll
+argument_list|(
+name|md
+operator|.
+name|getExtraInfos
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// copy configurations
 name|List
 argument_list|<
