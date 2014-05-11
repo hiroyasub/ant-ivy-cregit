@@ -473,7 +473,7 @@ comment|/*<String,String> */
 name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.      *       * @return      */
+comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.      *       * @deprecated please use getExtraInfos() method instead      * @return      */
 annotation|@
 name|Deprecated
 name|Map
