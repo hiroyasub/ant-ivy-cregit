@@ -3926,7 +3926,7 @@ argument_list|)
 expr_stmt|;
 name|found
 operator|=
-literal|false
+literal|true
 expr_stmt|;
 block|}
 block|}
