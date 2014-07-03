@@ -3677,7 +3677,9 @@ name|ModuleDescriptorParser
 name|parser
 init|=
 name|getModuleDescriptorParser
-argument_list|()
+argument_list|(
+name|ivyFile
+argument_list|)
 decl_stmt|;
 name|ModuleDescriptor
 name|depMD
@@ -4105,10 +4107,14 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
-parameter_list|()
+parameter_list|(
+name|File
+name|moduleDescriptorFile
+parameter_list|)
 block|{
 return|return
 name|XmlModuleDescriptorParser

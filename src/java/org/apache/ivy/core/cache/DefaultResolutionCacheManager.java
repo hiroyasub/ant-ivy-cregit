@@ -901,7 +901,9 @@ argument_list|()
 decl_stmt|;
 return|return
 name|getModuleDescriptorParser
-argument_list|()
+argument_list|(
+name|ivyFile
+argument_list|)
 operator|.
 name|parseDescriptor
 argument_list|(
@@ -913,10 +915,14 @@ literal|false
 argument_list|)
 return|;
 block|}
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
-parameter_list|()
+parameter_list|(
+name|File
+name|moduleDescriptorFile
+parameter_list|)
 block|{
 return|return
 name|XmlModuleDescriptorParser
