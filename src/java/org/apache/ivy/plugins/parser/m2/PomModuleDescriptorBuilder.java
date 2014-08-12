@@ -1853,7 +1853,7 @@ name|version
 argument_list|)
 decl_stmt|;
 comment|// Some POMs depend on theirselfves, don't add this dependency: Ivy doesn't allow this!
-comment|// Example: http://repo2.maven.org/maven2/net/jini/jsk-platform/2.1/jsk-platform-2.1.pom
+comment|// Example: https://repo1.maven.org/maven2/net/jini/jsk-platform/2.1/jsk-platform-2.1.pom
 name|ModuleRevisionId
 name|mRevId
 init|=
@@ -2282,7 +2282,7 @@ block|{
 comment|// Some POMs depend on themselves through their parent pom, don't add this dependency
 comment|// since Ivy doesn't allow this!
 comment|// Example:
-comment|// http://repo2.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
+comment|// https://repo1.maven.org/maven2/com/atomikos/atomikos-util/3.6.4/atomikos-util-3.6.4.pom
 name|ModuleId
 name|dependencyId
 init|=

@@ -202,7 +202,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://repo1.maven.org/maven2/commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
+literal|"https://repo1.maven.org/maven2/commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
 argument_list|)
 argument_list|)
 decl_stmt|;

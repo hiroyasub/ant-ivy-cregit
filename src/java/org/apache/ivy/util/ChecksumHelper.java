@@ -301,7 +301,7 @@ name|spaceIndex
 argument_list|)
 expr_stmt|;
 comment|// IVY-1155: support some strange formats like this one:
-comment|// http://repo2.maven.org/maven2/org/apache/pdfbox/fontbox/0.8.0-incubator/fontbox-0.8.0-incubator.jar.md5
+comment|// https://repo1.maven.org/maven2/org/apache/pdfbox/fontbox/0.8.0-incubator/fontbox-0.8.0-incubator.jar.md5
 if|if
 condition|(
 name|expected

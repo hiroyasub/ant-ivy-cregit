@@ -366,7 +366,7 @@ name|setVariable
 argument_list|(
 literal|"ivy.ibiblio.default.artifact.root"
 argument_list|,
-literal|"http://repo1.maven.org/maven2/"
+literal|"https://repo1.maven.org/maven2/"
 argument_list|)
 expr_stmt|;
 name|settings

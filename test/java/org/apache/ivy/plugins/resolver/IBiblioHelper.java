@@ -114,7 +114,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"http://repo1.maven.org/maven/REPOSITORY-V1.txt"
+literal|"https://repo1.maven.org/maven/REPOSITORY-V1.txt"
 block|,
 literal|"http://www.ibiblio.org/maven"
 block|}
@@ -127,7 +127,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"http://repo1.maven.org/maven"
+literal|"https://repo1.maven.org/maven"
 block|,
 literal|"http://www.ibiblio.org/maven"
 block|}
