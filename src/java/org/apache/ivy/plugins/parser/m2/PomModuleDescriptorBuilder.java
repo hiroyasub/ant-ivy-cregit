@@ -3851,7 +3851,7 @@ if|if
 condition|(
 name|ivyModuleDescriptor
 operator|.
-name|getExtraInfoContentByTagName
+name|getExtraInfoByTagName
 argument_list|(
 name|key
 argument_list|)
