@@ -139,6 +139,24 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|url
+operator|.
+name|URLHandler
+operator|.
+name|URLInfo
+import|;
+end_import
+
 begin_comment
 comment|/**  * Utility class which helps to list urls under a given url. This has been tested with Apache 1.3.33  * server listing, as the one used at ibiblio, and with Apache 2.0.53 server listing, as the one on  * mirrors.sunsite.dk.  */
 end_comment
@@ -320,8 +338,8 @@ operator|.
 name|getDefault
 argument_list|()
 decl_stmt|;
-name|String
-name|charset
+name|URLInfo
+name|urlInfo
 init|=
 name|urlHandler
 operator|.
@@ -329,6 +347,26 @@ name|getURLInfo
 argument_list|(
 name|url
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|urlInfo
+operator|==
+name|URLHandler
+operator|.
+name|UNAVAILABLE
+condition|)
+block|{
+return|return
+name|urlList
+return|;
+comment|// not found => return empty list
+block|}
+comment|// here, urlInfo is valid
+name|String
+name|charset
+init|=
+name|urlInfo
 operator|.
 name|getBodyCharset
 argument_list|()
