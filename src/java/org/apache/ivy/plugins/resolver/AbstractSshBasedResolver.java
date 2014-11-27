@@ -296,6 +296,24 @@ name|port
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * sets the path to an OpenSSH-style config file to be used for reading configuration values for      * an ssh repository, such as a username      *      * @param path      *            of the config file      */
+specifier|public
+name|void
+name|setSshConfig
+parameter_list|(
+name|String
+name|sshConfig
+parameter_list|)
+block|{
+name|getSshBasedRepository
+argument_list|()
+operator|.
+name|setSshConfig
+argument_list|(
+name|sshConfig
+argument_list|)
+expr_stmt|;
+block|}
 annotation|@
 name|Override
 specifier|public
