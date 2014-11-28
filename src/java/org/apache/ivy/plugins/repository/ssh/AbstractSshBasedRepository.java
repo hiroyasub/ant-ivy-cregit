@@ -1203,6 +1203,7 @@ operator|=
 name|allowedAgentUse
 expr_stmt|;
 block|}
+comment|/**      * @return sshConfig Path to a local ssh config file      */
 specifier|public
 name|String
 name|getSshConfig
@@ -1212,6 +1213,7 @@ return|return
 name|sshConfig
 return|;
 block|}
+comment|/**      * @param sshConfig      *            Path to a local ssh config file      */
 specifier|public
 name|void
 name|setSshConfig
