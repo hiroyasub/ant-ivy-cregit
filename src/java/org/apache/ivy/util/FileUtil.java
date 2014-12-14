@@ -387,7 +387,11 @@ name|void
 name|symlinkInMass
 parameter_list|(
 name|Map
-comment|/*<File, File> */
+argument_list|<
+name|File
+argument_list|,
+name|File
+argument_list|>
 name|destToSrcMap
 parameter_list|,
 name|boolean
@@ -412,6 +416,14 @@ name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|Entry
+argument_list|<
+name|File
+argument_list|,
+name|File
+argument_list|>
+argument_list|>
 name|keyItr
 init|=
 name|destToSrcMap
@@ -431,12 +443,13 @@ argument_list|()
 condition|)
 block|{
 name|Entry
-comment|/*<File, File> */
+argument_list|<
+name|File
+argument_list|,
+name|File
+argument_list|>
 name|entry
 init|=
-operator|(
-name|Entry
-operator|)
 name|keyItr
 operator|.
 name|next
@@ -445,9 +458,6 @@ decl_stmt|;
 name|File
 name|destFile
 init|=
-operator|(
-name|File
-operator|)
 name|entry
 operator|.
 name|getKey
@@ -456,9 +466,6 @@ decl_stmt|;
 name|File
 name|srcFile
 init|=
-operator|(
-name|File
-operator|)
 name|entry
 operator|.
 name|getValue
@@ -1381,12 +1388,15 @@ name|IOException
 block|{
 comment|// the list of files which already exist in the destination folder
 name|List
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|existingChild
 init|=
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -1603,9 +1613,6 @@ control|)
 block|{
 name|forceDelete
 argument_list|(
-operator|(
-name|File
-operator|)
 name|existingChild
 operator|.
 name|get
@@ -2311,6 +2318,9 @@ comment|/**      * Returns a list of Files composed of all directories being par
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|getPathFiles
 parameter_list|(
 name|File
@@ -2321,10 +2331,16 @@ name|file
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|ret
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|()
 decl_stmt|;
 while|while
@@ -2393,12 +2409,18 @@ comment|/**      * Returns a collection of all Files being contained in the give
 specifier|public
 specifier|static
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|listAll
 parameter_list|(
 name|File
 name|dir
 parameter_list|,
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|ignore
 parameter_list|)
 block|{
@@ -2409,6 +2431,9 @@ name|dir
 argument_list|,
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|()
 argument_list|,
 name|ignore
@@ -2418,15 +2443,24 @@ block|}
 specifier|private
 specifier|static
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|listAll
 parameter_list|(
 name|File
 name|file
 parameter_list|,
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|list
 parameter_list|,
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|ignore
 parameter_list|)
 block|{
@@ -2581,10 +2615,16 @@ name|path
 parameter_list|)
 block|{
 name|Stack
+argument_list|<
+name|String
+argument_list|>
 name|s
 init|=
 operator|new
 name|Stack
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|String
@@ -3313,6 +3353,8 @@ operator|=
 name|wrapped
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
@@ -3322,6 +3364,8 @@ name|IOException
 block|{
 comment|// do not close
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|read
@@ -3336,6 +3380,8 @@ name|read
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -3348,6 +3394,8 @@ name|hashCode
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|read
@@ -3368,6 +3416,8 @@ name|b
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -3385,6 +3435,8 @@ name|obj
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|read
@@ -3415,6 +3467,8 @@ name|len
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|long
 name|skip
@@ -3434,6 +3488,8 @@ name|n
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -3446,6 +3502,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|available
@@ -3460,6 +3518,8 @@ name|available
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|mark
@@ -3476,6 +3536,8 @@ name|readlimit
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|reset
@@ -3489,6 +3551,8 @@ name|reset
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|markSupported

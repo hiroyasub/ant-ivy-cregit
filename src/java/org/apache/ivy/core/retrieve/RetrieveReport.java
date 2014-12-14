@@ -100,29 +100,48 @@ name|RetrieveReport
 block|{
 specifier|private
 name|Collection
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|upToDateFiles
 init|=
 operator|new
 name|HashSet
+argument_list|<
+name|File
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 name|Collection
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|copiedFiles
 init|=
 operator|new
 name|HashSet
+argument_list|<
+name|File
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<File, ArtifactDownloadReport> */
+argument_list|<
+name|File
+argument_list|,
+name|ArtifactDownloadReport
+argument_list|>
 name|downloadReport
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|File
+argument_list|,
+name|ArtifactDownloadReport
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -237,12 +256,18 @@ block|}
 comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
 specifier|public
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|getCopiedFiles
 parameter_list|()
 block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|(
 name|copiedFiles
 argument_list|)
@@ -251,12 +276,18 @@ block|}
 comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
 specifier|public
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|getUpToDateFiles
 parameter_list|()
 block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|(
 name|upToDateFiles
 argument_list|)
@@ -265,14 +296,23 @@ block|}
 comment|/**      * Returns a collection of<tt>File</tt> objects who were retrieved during the retrieve process.      * This is the union of the files being copied and the files that were up-to-date.      */
 specifier|public
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|getRetrievedFiles
 parameter_list|()
 block|{
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|result
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|(
 name|upToDateFiles
 operator|.
@@ -306,6 +346,11 @@ block|}
 comment|/**      * Get the mapping between the copied files and their corresponding download report      */
 specifier|public
 name|Map
+argument_list|<
+name|File
+argument_list|,
+name|ArtifactDownloadReport
+argument_list|>
 name|getDownloadReport
 parameter_list|()
 block|{
