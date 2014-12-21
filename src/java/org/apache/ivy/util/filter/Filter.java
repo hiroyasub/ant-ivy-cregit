@@ -21,11 +21,14 @@ begin_interface
 specifier|public
 interface|interface
 name|Filter
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 name|boolean
 name|accept
 parameter_list|(
-name|Object
+name|T
 name|o
 parameter_list|)
 function_decl|;
