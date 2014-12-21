@@ -131,6 +131,24 @@ name|IncludeRule
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|WorkspaceModuleDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Class collecting usage data for an IvyNode.  *<p>  * Usage data contains the configurations required by callers for each root module configuration,  * the configurations required by caller node and caller configuration, dependency artifacts  * descriptors declared by callers, include rules declared by callers, and blacklisted data by root  * module conf.  *</p>  */
 end_comment
@@ -1098,6 +1116,21 @@ name|String
 name|rootModuleConf
 parameter_list|)
 block|{
+if|if
+condition|(
+name|node
+operator|.
+name|getDescriptor
+argument_list|()
+operator|instanceof
+name|WorkspaceModuleDescriptor
+condition|)
+block|{
+comment|// for a module in the "workspace" artifacts will be actually declared by the resolver
+return|return
+literal|null
+return|;
+block|}
 name|Collection
 argument_list|<
 name|Depender
