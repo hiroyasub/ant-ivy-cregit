@@ -1804,6 +1804,17 @@ block|{
 if|if
 condition|(
 name|namespace
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+if|if
+condition|(
+name|namespace
 operator|.
 name|equals
 argument_list|(
