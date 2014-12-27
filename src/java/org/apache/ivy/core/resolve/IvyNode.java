@@ -5506,15 +5506,10 @@ name|ret
 operator|.
 name|add
 argument_list|(
-name|allArtifacts
-operator|.
-name|get
-argument_list|(
 name|entry
 operator|.
 name|getValue
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
