@@ -91,16 +91,6 @@ end_import
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -275,12 +265,24 @@ name|FileUtil
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|custommonkey
+operator|.
+name|xmlunit
+operator|.
+name|XMLTestCase
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|XmlModuleDescriptorWriterTest
 extends|extends
-name|TestCase
+name|XMLTestCase
 block|{
 specifier|private
 specifier|static
@@ -1241,7 +1243,7 @@ argument_list|,
 literal|'\n'
 argument_list|)
 decl_stmt|;
-name|assertEquals
+name|assertXMLEqual
 argument_list|(
 name|expected
 argument_list|,
