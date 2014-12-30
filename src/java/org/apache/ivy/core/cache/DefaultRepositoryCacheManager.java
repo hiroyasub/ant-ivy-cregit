@@ -113,7 +113,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|Map
 import|;
 end_import
 
@@ -124,6 +124,8 @@ operator|.
 name|util
 operator|.
 name|Map
+operator|.
+name|Entry
 import|;
 end_import
 
@@ -928,11 +930,16 @@ name|useOrigin
 decl_stmt|;
 specifier|private
 name|ModuleRules
-comment|/*<Long> */
+argument_list|<
+name|Long
+argument_list|>
 name|ttlRules
 init|=
 operator|new
 name|ModuleRules
+argument_list|<
+name|Long
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -1413,6 +1420,11 @@ name|void
 name|addTTL
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|attributes
 parameter_list|,
 name|PatternMatcher
@@ -1447,16 +1459,17 @@ name|void
 name|addConfiguredTtl
 parameter_list|(
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|attributes
 parameter_list|)
 block|{
 name|String
 name|duration
 init|=
-operator|(
-name|String
-operator|)
 name|attributes
 operator|.
 name|remove
@@ -1482,9 +1495,6 @@ block|}
 name|String
 name|matcher
 init|=
-operator|(
-name|String
-operator|)
 name|attributes
 operator|.
 name|remove
@@ -2914,17 +2924,6 @@ block|{
 comment|// try to find other cached artifact info with same location. This must be the
 comment|// origin. We must parse the key as we do not know for sure what the original
 comment|// artifact is named.
-name|Iterator
-name|it
-init|=
-name|cdf
-operator|.
-name|entrySet
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
 name|String
 name|ownLocationKey
 init|=
@@ -2933,29 +2932,22 @@ argument_list|(
 name|artifact
 argument_list|)
 decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
-name|Map
-operator|.
+for|for
+control|(
 name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|entry
-init|=
-operator|(
-name|Map
+range|:
+name|cdf
 operator|.
-name|Entry
-operator|)
-name|it
-operator|.
-name|next
+name|entrySet
 argument_list|()
-decl_stmt|;
+control|)
+block|{
 if|if
 condition|(
 name|entry
@@ -4612,9 +4604,6 @@ block|{
 name|Long
 name|ttl
 init|=
-operator|(
-name|Long
-operator|)
 name|ttlRules
 operator|.
 name|getRule
@@ -4636,6 +4625,8 @@ name|longValue
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

@@ -49,26 +49,44 @@ name|MessageLogger
 block|{
 specifier|private
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|problems
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|warns
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|errors
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -77,7 +95,6 @@ name|showProgress
 init|=
 literal|true
 decl_stmt|;
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#debug(java.lang.String)      */
 specifier|public
 name|void
 name|debug
@@ -96,7 +113,6 @@ name|MSG_DEBUG
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#verbose(java.lang.String)      */
 specifier|public
 name|void
 name|verbose
@@ -115,7 +131,6 @@ name|MSG_VERBOSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#deprecated(java.lang.String)      */
 specifier|public
 name|void
 name|deprecated
@@ -136,7 +151,6 @@ name|MSG_WARN
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#info(java.lang.String)      */
 specifier|public
 name|void
 name|info
@@ -155,7 +169,6 @@ name|MSG_INFO
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#info(java.lang.String)      */
 specifier|public
 name|void
 name|rawinfo
@@ -174,7 +187,6 @@ name|MSG_INFO
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#warn(java.lang.String)      */
 specifier|public
 name|void
 name|warn
@@ -212,7 +224,6 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#error(java.lang.String)      */
 specifier|public
 name|void
 name|error
@@ -252,9 +263,11 @@ name|msg
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#getProblems()      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getProblems
 parameter_list|()
 block|{
@@ -262,7 +275,6 @@ return|return
 name|problems
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#sumupProblems()      */
 specifier|public
 name|void
 name|sumupProblems
@@ -302,6 +314,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getErrors
 parameter_list|()
 block|{
@@ -311,6 +326,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getWarns
 parameter_list|()
 block|{
@@ -318,7 +336,6 @@ return|return
 name|warns
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#progress()      */
 specifier|public
 name|void
 name|progress
@@ -334,7 +351,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#endProgress()      */
 specifier|public
 name|void
 name|endProgress
@@ -346,7 +362,6 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#endProgress(java.lang.String)      */
 specifier|public
 name|void
 name|endProgress
@@ -367,7 +382,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#isShowProgress()      */
 specifier|public
 name|boolean
 name|isShowProgress
@@ -377,7 +391,6 @@ return|return
 name|showProgress
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.util.MessageLogger#setShowProgress(boolean)      */
 specifier|public
 name|void
 name|setShowProgress

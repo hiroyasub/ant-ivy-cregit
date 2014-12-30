@@ -399,6 +399,8 @@ literal|"cache"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ResolvedModuleRevision
 name|getDependency
@@ -714,6 +716,8 @@ return|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DownloadReport
 name|download
@@ -897,6 +901,8 @@ return|return
 name|dr
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|exists
@@ -917,6 +923,8 @@ name|artifact
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArtifactOrigin
 name|locate
@@ -937,6 +945,8 @@ name|artifact
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|publish
@@ -968,6 +978,8 @@ name|overwrite
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|OrganisationEntry
 index|[]
@@ -984,6 +996,8 @@ name|listOrganisations
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ModuleEntry
 index|[]
@@ -1005,6 +1019,8 @@ name|org
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|RevisionEntry
 index|[]
@@ -1026,6 +1042,8 @@ name|module
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dumpSettings
@@ -1062,6 +1080,9 @@ name|setIvyPatterns
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1069,6 +1090,9 @@ name|setArtifactPatterns
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1177,6 +1201,8 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTypeName

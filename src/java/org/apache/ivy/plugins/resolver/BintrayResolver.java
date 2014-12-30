@@ -22,11 +22,6 @@ comment|/**  * BintrayResolver is a resolver which can be used to resolve depend
 end_comment
 
 begin_class
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"ClassTooDeepInInheritanceTree"
-argument_list|)
 specifier|public
 class|class
 name|BintrayResolver
@@ -137,11 +132,6 @@ name|updateRoot
 argument_list|()
 expr_stmt|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"MethodWithMultipleReturnPoints"
-argument_list|)
 specifier|private
 name|void
 name|updateRoot

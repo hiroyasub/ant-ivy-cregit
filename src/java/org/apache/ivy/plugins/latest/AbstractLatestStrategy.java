@@ -83,6 +83,8 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -105,6 +107,9 @@ name|date
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|l
 init|=
 name|sort
@@ -117,6 +122,9 @@ comment|// sorted list in the reverse direction.
 for|for
 control|(
 name|ListIterator
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|iter
 init|=
 name|l
@@ -139,9 +147,6 @@ block|{
 name|ArtifactInfo
 name|info
 init|=
-operator|(
-name|ArtifactInfo
-operator|)
 name|iter
 operator|.
 name|previous

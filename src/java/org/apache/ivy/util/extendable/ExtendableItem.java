@@ -50,16 +50,31 @@ parameter_list|)
 function_decl|;
 comment|/**      * Returns a Map of all attributes of this extendable item, including standard and extra ones.      * The Map keys are attribute names as Strings, and values are corresponding attribute values      * (as String too). Extra attributes are included in unqualified form only.      *       * @return A Map instance containing all the attributes and their values.      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getAttributes
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a Map of all extra attributes of this extendable item. The Map keys are      *<b>unqualified</b> attribute names as Strings, and values are corresponding attribute values      * (as String too)      *       * @return A Map instance containing all the extra attributes and their values.      * @see #getQualifiedExtraAttributes()      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getExtraAttributes
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a Map of all extra attributes of this extendable item.      *<p>      * The Map keys are<b>qualified</b> attribute names as Strings, and values are corresponding      * attribute values (as String too).      *</p>      *<p>      * An attribute name is qualified with a namespace exactly the same way xml attributes are      * qualified. Thus qualified attribute names are of the form<code>prefix:name</code>      *</p>      *       * @return A Map instance containing all the extra attributes and their values.      * @see #getExtraAttributes()      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getQualifiedExtraAttributes
 parameter_list|()
 function_decl|;

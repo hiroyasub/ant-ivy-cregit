@@ -1063,6 +1063,11 @@ name|String
 name|token
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|otherTokenValues
 parameter_list|)
 block|{
@@ -1076,6 +1081,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 index|[]
 name|listTokenValues
 parameter_list|(
@@ -1084,6 +1094,11 @@ index|[]
 name|tokens
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|criteria
 parameter_list|)
 block|{
@@ -1143,6 +1158,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

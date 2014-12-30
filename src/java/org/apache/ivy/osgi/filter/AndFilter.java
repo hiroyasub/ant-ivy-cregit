@@ -56,6 +56,8 @@ name|filters
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|char
 name|operator

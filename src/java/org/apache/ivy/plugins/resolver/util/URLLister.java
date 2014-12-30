@@ -63,6 +63,9 @@ name|pattern
 parameter_list|)
 function_decl|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|listAll
 parameter_list|(
 name|URL

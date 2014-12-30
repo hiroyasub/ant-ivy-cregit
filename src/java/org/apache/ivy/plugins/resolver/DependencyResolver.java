@@ -454,11 +454,21 @@ name|String
 name|token
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|otherTokenValues
 parameter_list|)
 function_decl|;
-comment|/**      * Same as {@link #listTokenValues(String, Map)} but more generic.      *       * @param tokens      *            the tokens of the query      * @param criteria      *            the token which have values      * @return the list of token values (Map<Strin, String>[]), must not be<code>null</code>      */
+comment|/**      * Same as {@link #listTokenValues(String, Map)} but more generic.      *       * @param tokens      *            the tokens of the query      * @param criteria      *            the token which have values      * @return the list of token values, must not be<code>null</code>      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 index|[]
 name|listTokenValues
 parameter_list|(
@@ -467,6 +477,11 @@ index|[]
 name|tokens
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|criteria
 parameter_list|)
 function_decl|;

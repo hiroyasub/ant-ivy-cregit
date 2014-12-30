@@ -41,16 +41,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -172,8 +162,6 @@ name|UpdateSite
 name|site
 parameter_list|)
 throws|throws
-name|ParseException
-throws|,
 name|IOException
 throws|,
 name|SAXException
@@ -282,6 +270,8 @@ name|FeatureHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded

@@ -55,6 +55,24 @@ name|module
 operator|.
 name|descriptor
 operator|.
+name|Artifact
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
 name|ModuleDescriptor
 import|;
 end_import
@@ -234,6 +252,9 @@ decl_stmt|;
 comment|/**      * A filter to use to avoid downloading all artifacts.      */
 specifier|private
 name|Filter
+argument_list|<
+name|Artifact
+argument_list|>
 name|artifactFilter
 init|=
 name|FilterHelper
@@ -359,6 +380,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Filter
+argument_list|<
+name|Artifact
+argument_list|>
 name|getArtifactFilter
 parameter_list|()
 block|{
@@ -371,6 +395,9 @@ name|ResolveOptions
 name|setArtifactFilter
 parameter_list|(
 name|Filter
+argument_list|<
+name|Artifact
+argument_list|>
 name|artifactFilter
 parameter_list|)
 block|{

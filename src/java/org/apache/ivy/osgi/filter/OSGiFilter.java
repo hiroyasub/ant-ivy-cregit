@@ -33,6 +33,8 @@ specifier|abstract
 class|class
 name|OSGiFilter
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
