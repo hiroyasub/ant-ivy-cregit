@@ -1493,6 +1493,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Ant task execute. Calls prepareTask, doExecute, finalzeTask      */
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1526,6 +1528,8 @@ parameter_list|()
 throws|throws
 name|BuildException
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
