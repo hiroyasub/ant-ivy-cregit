@@ -45,7 +45,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
+name|LinkedHashMap
 import|;
 end_import
 
@@ -103,11 +103,16 @@ name|artifactPackaging
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<ExtraDependency> */
+argument_list|<
+name|ExtraDependency
+argument_list|>
 name|extraDependencies
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ExtraDependency
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -278,7 +283,9 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ExtraDependency> */
+argument_list|<
+name|ExtraDependency
+argument_list|>
 name|getExtraDependencies
 parameter_list|()
 block|{
@@ -291,7 +298,9 @@ name|PomWriterOptions
 name|setExtraDependencies
 parameter_list|(
 name|List
-comment|/*<ExtraDependency> */
+argument_list|<
+name|ExtraDependency
+argument_list|>
 name|extraDependencies
 parameter_list|)
 block|{
@@ -393,23 +402,37 @@ name|ConfigurationScopeMapping
 block|{
 specifier|private
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|scopes
 decl_stmt|;
 specifier|public
 name|ConfigurationScopeMapping
 parameter_list|(
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|scopesMapping
 parameter_list|)
 block|{
+comment|// preserve the order
 name|this
 operator|.
 name|scopes
 operator|=
 operator|new
-name|HashMap
+name|LinkedHashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|(
 name|scopesMapping
 argument_list|)
@@ -456,9 +479,6 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|(
-name|String
-operator|)
 name|scopes
 operator|.
 name|get
