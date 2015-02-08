@@ -5513,7 +5513,7 @@ name|resolverName
 argument_list|)
 expr_stmt|;
 block|}
-if|if
+if|else if
 condition|(
 name|workspaceResolver
 operator|!=
@@ -5537,6 +5537,18 @@ argument_list|,
 name|resolver
 argument_list|,
 name|workspaceResolver
+argument_list|)
+expr_stmt|;
+name|resolversMap
+operator|.
+name|put
+argument_list|(
+name|resolver
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|resolver
 argument_list|)
 expr_stmt|;
 name|resolversMap
