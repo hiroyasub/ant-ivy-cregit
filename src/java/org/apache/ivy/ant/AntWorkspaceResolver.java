@@ -579,7 +579,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|addResourceCollection
+name|addConfigured
 parameter_list|(
 name|ResourceCollection
 name|resources

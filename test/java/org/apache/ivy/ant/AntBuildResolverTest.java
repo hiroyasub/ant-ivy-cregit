@@ -360,7 +360,7 @@ argument_list|)
 expr_stmt|;
 name|antWorkspaceResolver
 operator|.
-name|addResourceCollection
+name|addConfigured
 argument_list|(
 name|fileset
 argument_list|)
