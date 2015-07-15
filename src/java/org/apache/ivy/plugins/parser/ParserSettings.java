@@ -273,6 +273,13 @@ name|Namespace
 name|getContextNamespace
 parameter_list|()
 function_decl|;
+name|String
+name|getVariable
+parameter_list|(
+name|String
+name|string
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
