@@ -27,25 +27,23 @@ end_import
 
 begin_import
 import|import
-name|junit
+name|org
 operator|.
-name|framework
+name|apache
 operator|.
-name|TestCase
+name|ivy
+operator|.
+name|TestHelper
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Project
+name|TestCase
 import|;
 end_import
 
@@ -74,8 +72,9 @@ name|task
 operator|.
 name|setProject
 argument_list|(
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 argument_list|)
 expr_stmt|;

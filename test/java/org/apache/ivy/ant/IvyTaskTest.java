@@ -37,11 +37,13 @@ end_import
 
 begin_import
 import|import
-name|junit
+name|org
 operator|.
-name|framework
+name|apache
 operator|.
-name|TestCase
+name|ivy
+operator|.
+name|Ivy
 import|;
 end_import
 
@@ -53,7 +55,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|TestHelper
 import|;
 end_import
 
@@ -117,6 +119,16 @@ name|Reference
 import|;
 end_import
 
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -134,8 +146,9 @@ block|{
 name|Project
 name|p
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|p
@@ -345,8 +358,9 @@ block|{
 name|Project
 name|p
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|p
@@ -567,8 +581,9 @@ block|{
 name|Project
 name|p
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|p

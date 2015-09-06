@@ -19,25 +19,13 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
 operator|.
 name|ivy
 operator|.
-name|ant
-operator|.
-name|AntTestHelper
+name|TestHelper
 import|;
 end_import
 
@@ -52,6 +40,16 @@ operator|.
 name|ant
 operator|.
 name|Project
+import|;
+end_import
+
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
 import|;
 end_import
 
@@ -74,7 +72,7 @@ block|{
 name|Project
 name|project
 init|=
-name|AntTestHelper
+name|TestHelper
 operator|.
 name|newProject
 argument_list|()
