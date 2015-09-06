@@ -3514,6 +3514,12 @@ return|;
 block|}
 if|if
 condition|(
+operator|!
+name|options
+operator|.
+name|isUseCacheOnly
+argument_list|()
+operator|&&
 name|isChanging
 argument_list|(
 name|dd

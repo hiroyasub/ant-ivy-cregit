@@ -2298,6 +2298,17 @@ name|getNamespace
 argument_list|()
 argument_list|)
 operator|.
+name|setUseCacheOnly
+argument_list|(
+name|data
+operator|.
+name|getOptions
+argument_list|()
+operator|.
+name|isUseCacheOnly
+argument_list|()
+argument_list|)
+operator|.
 name|setForce
 argument_list|(
 name|data
