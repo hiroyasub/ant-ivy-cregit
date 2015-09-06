@@ -114,9 +114,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"https://repo1.maven.org/maven/REPOSITORY-V1.txt"
-block|,
-literal|"http://www.ibiblio.org/maven"
+literal|"http://mirrors.ibiblio.org/maven"
 block|}
 decl_stmt|;
 name|String
@@ -127,9 +125,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"https://repo1.maven.org/maven"
-block|,
-literal|"http://www.ibiblio.org/maven"
+literal|"http://mirrors.ibiblio.org/maven"
 block|}
 decl_stmt|;
 name|long
@@ -178,7 +174,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-literal|300
+literal|500
 argument_list|)
 condition|)
 block|{
