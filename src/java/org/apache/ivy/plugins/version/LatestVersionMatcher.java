@@ -172,23 +172,6 @@ name|ModuleRevisionId
 name|foundMrid
 parameter_list|)
 block|{
-comment|// if asking for a branch, foundMrid will likely have an invalid value that doesn't
-comment|// come from the module descriptor itself. return true so accept is given the real
-comment|// module descriptor with the correct branch.
-if|if
-condition|(
-name|askedMrid
-operator|.
-name|getBranch
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
 name|List
 argument_list|<
 name|Status
