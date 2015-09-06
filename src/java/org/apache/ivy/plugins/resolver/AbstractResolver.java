@@ -2688,6 +2688,14 @@ argument_list|,
 literal|"data"
 argument_list|)
 expr_stmt|;
+comment|// always cache dynamic mrids because we can store per-resolver values
+name|saveModuleRevisionIfNeeded
+argument_list|(
+name|dd
+argument_list|,
+name|newModuleFound
+argument_list|)
+expr_stmt|;
 comment|// check if latest is asked and compare to return the most recent
 name|ResolvedModuleRevision
 name|previousModuleFound
@@ -2737,13 +2745,6 @@ operator|+
 name|newModuleDesc
 argument_list|)
 expr_stmt|;
-name|saveModuleRevisionIfNeeded
-argument_list|(
-name|dd
-argument_list|,
-name|newModuleFound
-argument_list|)
-expr_stmt|;
 return|return
 name|newModuleFound
 return|;
@@ -2770,13 +2771,6 @@ argument_list|(
 literal|"\tmodule revision kept as younger: "
 operator|+
 name|newModuleDesc
-argument_list|)
-expr_stmt|;
-name|saveModuleRevisionIfNeeded
-argument_list|(
-name|dd
-argument_list|,
-name|newModuleFound
 argument_list|)
 expr_stmt|;
 return|return
@@ -2810,13 +2804,6 @@ argument_list|(
 literal|"\tmodule revision kept as better (not default): "
 operator|+
 name|newModuleDesc
-argument_list|)
-expr_stmt|;
-name|saveModuleRevisionIfNeeded
-argument_list|(
-name|dd
-argument_list|,
-name|newModuleFound
 argument_list|)
 expr_stmt|;
 return|return
@@ -2876,6 +2863,9 @@ argument_list|()
 operator|.
 name|saveResolvedRevision
 argument_list|(
+name|getName
+argument_list|()
+argument_list|,
 name|dd
 operator|.
 name|getDependencyRevisionId

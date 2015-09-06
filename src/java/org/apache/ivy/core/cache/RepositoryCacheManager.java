@@ -382,11 +382,26 @@ name|void
 name|clean
 parameter_list|()
 function_decl|;
-comment|/**      * Caches a dynamic revision constraint resolution.      *       * @param dynamicMrid      *            the dynamic module revision id      * @param revision      *            the resolved revision      */
+comment|/**      * Caches a dynamic revision constraint resolution.      *       * @param dynamicMrid      *            the dynamic module revision id      * @param revision      *            the resolved revision      * @deprecated See {@link #saveResolvedRevision(String, ModuleRevisionId, String)} which      *             prevents cache + * thrashing when multiple resolvers store the same dynamicMrid      */
 specifier|public
 name|void
 name|saveResolvedRevision
 parameter_list|(
+name|ModuleRevisionId
+name|dynamicMrid
+parameter_list|,
+name|String
+name|revision
+parameter_list|)
+function_decl|;
+comment|/**      * Caches a dynamic revision constraint resolution for a specific resolver.      *       * @param resolverName      *            the resolver in which this dynamic revision was resolved      * @param dynamicMrid      *            the dynamic module revision id      * @param revision      *            the resolved revision      */
+specifier|public
+name|void
+name|saveResolvedRevision
+parameter_list|(
+name|String
+name|resolverName
+parameter_list|,
 name|ModuleRevisionId
 name|dynamicMrid
 parameter_list|,
