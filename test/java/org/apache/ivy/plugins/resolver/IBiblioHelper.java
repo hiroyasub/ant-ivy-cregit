@@ -114,7 +114,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"http://mirrors.ibiblio.org/maven"
+literal|"http://maven.ibiblio.org/maven"
 block|}
 decl_stmt|;
 name|String
@@ -125,7 +125,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"http://mirrors.ibiblio.org/maven"
+literal|"http://maven.ibiblio.org/maven"
 block|}
 decl_stmt|;
 name|long

@@ -960,9 +960,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|//TODO
 specifier|public
 name|void
-name|testLatestIntegrationIsCachedPerResolver
+name|disableTestLatestIntegrationIsCachedPerResolver
 parameter_list|()
 throws|throws
 name|Exception
