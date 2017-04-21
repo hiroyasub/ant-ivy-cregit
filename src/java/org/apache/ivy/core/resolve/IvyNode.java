@@ -53,6 +53,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -1322,9 +1332,7 @@ operator|+
 name|getId
 argument_list|()
 operator|+
-literal|": check your configuration and "
-operator|+
-literal|"make sure revision is part of your pattern"
+literal|": check your configuration and make sure revision is part of your pattern"
 argument_list|)
 expr_stmt|;
 name|problem
@@ -1682,8 +1690,6 @@ return|return
 literal|false
 return|;
 block|}
-else|else
-block|{
 name|DependencyDescriptor
 name|dd
 init|=
@@ -1714,7 +1720,6 @@ block|}
 return|return
 name|loaded
 return|;
-block|}
 block|}
 specifier|private
 name|void
@@ -2057,7 +2062,7 @@ return|return
 name|deps
 return|;
 block|}
-comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *       * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return      */
+comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *       * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return {@link Collection} of {@link IvyNode}      */
 specifier|public
 name|Collection
 argument_list|<
@@ -2119,19 +2124,10 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|DependencyDescriptor
+name|dependencyDescriptor
+range|:
 name|dds
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|DependencyDescriptor
@@ -2141,10 +2137,7 @@ name|data
 operator|.
 name|mediate
 argument_list|(
-name|dds
-index|[
-name|i
-index|]
+name|dependencyDescriptor
 argument_list|)
 decl_stmt|;
 name|String
@@ -2642,14 +2635,11 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-else|else
-block|{
 return|return
 name|Boolean
 operator|.
 name|FALSE
 return|;
-block|}
 block|}
 specifier|public
 name|boolean
@@ -2751,19 +2741,10 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|realConf
+range|:
 name|confs
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|Configuration
@@ -2773,10 +2754,7 @@ name|md
 operator|.
 name|getConfiguration
 argument_list|(
-name|confs
-index|[
-name|i
-index|]
+name|realConf
 argument_list|)
 decl_stmt|;
 if|if
@@ -2826,10 +2804,7 @@ name|conf
 operator|.
 name|equals
 argument_list|(
-name|confs
-index|[
-name|i
-index|]
+name|realConf
 argument_list|)
 condition|)
 block|{
@@ -2848,10 +2823,7 @@ name|conf
 operator|+
 literal|"'. Missing configuration: '"
 operator|+
-name|confs
-index|[
-name|i
-index|]
+name|realConf
 operator|+
 literal|"'. It was required from "
 operator|+
@@ -2876,10 +2848,7 @@ name|this
 operator|+
 literal|": '"
 operator|+
-name|confs
-index|[
-name|i
-index|]
+name|realConf
 operator|+
 literal|"'. It was required from "
 operator|+
@@ -2895,7 +2864,7 @@ return|return
 literal|false
 return|;
 block|}
-if|else if
+if|if
 condition|(
 name|shouldBePublic
 operator|&&
@@ -3033,29 +3002,21 @@ argument_list|(
 name|conf
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 name|m
 operator|.
 name|matches
 argument_list|()
-condition|)
-block|{
-return|return
+condition|?
 name|m
 operator|.
 name|group
 argument_list|(
 literal|2
 argument_list|)
-return|;
-block|}
-else|else
-block|{
-return|return
+else|:
 name|conf
 return|;
-block|}
 block|}
 specifier|private
 name|String
@@ -3075,29 +3036,21 @@ argument_list|(
 name|conf
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 name|m
 operator|.
 name|matches
 argument_list|()
-condition|)
-block|{
-return|return
+condition|?
 name|m
 operator|.
 name|group
 argument_list|(
 literal|1
 argument_list|)
-return|;
-block|}
-else|else
-block|{
-return|return
+else|:
 literal|null
 return|;
-block|}
 block|}
 specifier|public
 name|void
@@ -3259,7 +3212,7 @@ return|return
 name|dependencyConfigurations
 return|;
 block|}
-comment|/**      * returns the required configurations from the given node      *       * @param in      * @return      */
+comment|/**      * returns the required configurations from the given node      *       * @param in      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3327,16 +3280,6 @@ expr_stmt|;
 block|}
 return|return
 name|req
-operator|==
-literal|null
-condition|?
-operator|new
-name|String
-index|[
-literal|0
-index|]
-else|:
-name|req
 operator|.
 name|toArray
 argument_list|(
@@ -3387,7 +3330,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * returns all the current required configurations of the node      *       * @return      */
+comment|/**      * returns all the current required configurations of the node      *       * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3516,7 +3459,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf      * @return      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3773,19 +3716,6 @@ index|[]
 name|dependencyConfs
 parameter_list|)
 block|{
-name|Set
-argument_list|<
-name|String
-argument_list|>
-name|depConfs
-init|=
-name|usage
-operator|.
-name|addAndGetConfigurations
-argument_list|(
-name|rootModuleConf
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|md
@@ -3796,31 +3726,12 @@ block|{
 comment|// add all given dependency configurations to the set + extended ones
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|dependencyConf
+range|:
 name|dependencyConfs
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
-name|depConfs
-operator|.
-name|add
-argument_list|(
-name|dependencyConfs
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 name|Configuration
 name|conf
 init|=
@@ -3828,10 +3739,7 @@ name|md
 operator|.
 name|getConfiguration
 argument_list|(
-name|dependencyConfs
-index|[
-name|i
-index|]
+name|dependencyConf
 argument_list|)
 decl_stmt|;
 if|if
@@ -3841,15 +3749,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|String
-index|[]
-name|exts
-init|=
-name|conf
-operator|.
-name|getExtends
-argument_list|()
-decl_stmt|;
 comment|// recursive add of extended
 name|addRootModuleConfigurations
 argument_list|(
@@ -3857,45 +3756,31 @@ name|usage
 argument_list|,
 name|rootModuleConf
 argument_list|,
-name|exts
+name|conf
+operator|.
+name|getExtends
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
-else|else
-block|{
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|dependencyConfs
+name|Collections
 operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|depConfs
-operator|.
-name|add
+name|addAll
 argument_list|(
+name|usage
+operator|.
+name|addAndGetConfigurations
+argument_list|(
+name|rootModuleConf
+argument_list|)
+argument_list|,
 name|dependencyConfs
-index|[
-name|i
-index|]
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-block|}
-comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return      */
+comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3927,7 +3812,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return      */
+comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return {@link Set} of configuration names      */
 specifier|public
 name|Set
 argument_list|<
@@ -4107,10 +3992,12 @@ if|if
 condition|(
 name|conf
 operator|.
-name|startsWith
+name|charAt
 argument_list|(
-literal|"*"
+literal|0
 argument_list|)
+operator|==
+literal|'*'
 condition|)
 block|{
 return|return
@@ -4125,7 +4012,7 @@ block|}
 argument_list|)
 return|;
 block|}
-if|else if
+if|if
 condition|(
 name|conf
 operator|.
@@ -4295,9 +4182,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"circular dependency found while looking for the path for another one: "
-operator|+
-literal|"was looking for "
+literal|"circular dependency found while looking for the path for another one: was looking for "
 operator|+
 name|from
 operator|+
@@ -4523,7 +4408,7 @@ return|return
 name|usages
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *       * @return      */
+comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *       * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4584,7 +4469,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *       * @param artifactFilter      * @return      */
+comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *       * @param artifactFilter      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4678,7 +4563,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf      * @return      */
+comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4735,9 +4620,6 @@ argument_list|(
 literal|"impossible to get artifacts when data has not been loaded. IvyNode = "
 operator|+
 name|this
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -5656,9 +5538,6 @@ argument_list|(
 literal|"impossible to get conflict manager when data has not been loaded. IvyNode = "
 operator|+
 name|this
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -5840,7 +5719,7 @@ name|getResolvedModuleRevisionId
 argument_list|()
 return|;
 block|}
-if|else if
+if|if
 condition|(
 name|module
 operator|!=
@@ -5854,13 +5733,10 @@ name|getId
 argument_list|()
 return|;
 block|}
-else|else
-block|{
 return|return
 name|getId
 argument_list|()
 return|;
-block|}
 block|}
 comment|/**      * Clean data related to one root module configuration only      */
 specifier|public
@@ -5884,38 +5760,20 @@ name|String
 name|rootModuleConf
 parameter_list|)
 block|{
+for|for
+control|(
 name|Caller
-index|[]
-name|callers
-init|=
+name|caller
+range|:
 name|getCallers
 argument_list|(
 name|rootModuleConf
 argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|callers
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 if|if
 condition|(
-name|callers
-index|[
-name|i
-index|]
+name|caller
 operator|.
 name|canExclude
 argument_list|()
@@ -6844,40 +6702,20 @@ argument_list|>
 name|callerStack
 parameter_list|)
 block|{
-name|IvyNode
-name|node
-init|=
+for|for
+control|(
+name|Caller
+name|caller
+range|:
 name|callerStack
 operator|.
 name|peek
 argument_list|()
-decl_stmt|;
-name|Caller
-index|[]
-name|callers
-init|=
-name|node
 operator|.
 name|getCallers
 argument_list|(
 name|rootModuleConf
 argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|callers
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|IvyNode
@@ -6885,10 +6723,7 @@ name|callerNode
 init|=
 name|findNode
 argument_list|(
-name|callers
-index|[
-name|i
-index|]
+name|caller
 operator|.
 name|getModuleRevisionId
 argument_list|()
@@ -6979,28 +6814,13 @@ return|return
 literal|false
 return|;
 block|}
-name|String
-index|[]
-name|rootModuleConfigurations
-init|=
-name|getRootModuleConfigurations
-argument_list|()
-decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|rootModuleConfigurations
-operator|.
-name|length
-condition|;
-name|i
-operator|++
+name|String
+name|rootModuleConfiguration
+range|:
+name|getRootModuleConfigurations
+argument_list|()
 control|)
 block|{
 if|if
@@ -7008,10 +6828,7 @@ condition|(
 operator|!
 name|isBlacklisted
 argument_list|(
-name|rootModuleConfigurations
-index|[
-name|i
-index|]
+name|rootModuleConfiguration
 argument_list|)
 condition|)
 block|{
