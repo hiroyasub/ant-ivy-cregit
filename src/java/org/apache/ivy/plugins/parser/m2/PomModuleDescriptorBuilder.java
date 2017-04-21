@@ -121,18 +121,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -1854,7 +1842,7 @@ argument_list|,
 name|version
 argument_list|)
 decl_stmt|;
-comment|// Some POMs depend on theirselfves, don't add this dependency: Ivy doesn't allow this!
+comment|// Some POMs depend on themselves; Ivy doesn't allow this. Don't add this dependency!
 comment|// Example: https://repo1.maven.org/maven2/net/jini/jsk-platform/2.1/jsk-platform-2.1.pom
 name|ModuleRevisionId
 name|mRevId
@@ -3356,6 +3344,8 @@ condition|)
 block|{
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|ModuleId
@@ -3577,9 +3567,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|key
-operator|)
 operator|.
 name|startsWith
 argument_list|(
@@ -3758,6 +3746,8 @@ parameter_list|)
 block|{
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|String
@@ -3979,6 +3969,8 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|String
@@ -4396,7 +4388,7 @@ argument_list|>
 name|dependencyManagementMap
 init|=
 operator|new
-name|HashMap
+name|LinkedHashMap
 argument_list|<
 name|ModuleId
 argument_list|,
