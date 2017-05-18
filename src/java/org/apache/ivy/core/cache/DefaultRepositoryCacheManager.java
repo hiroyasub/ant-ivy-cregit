@@ -2201,7 +2201,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param name      *            artifact resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param artifactResolverName      *            artifact resolver name      */
 specifier|public
 name|void
 name|saveResolvers
@@ -5435,6 +5435,13 @@ argument_list|(
 name|archiveFile
 argument_list|)
 expr_stmt|;
+name|adr
+operator|.
+name|setUnpackedArtifact
+argument_list|(
+name|unpacked
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -5452,6 +5459,10 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+specifier|final
+name|Artifact
+name|unpackedArtifact
+init|=
 name|packagingManager
 operator|.
 name|unpackArtifact
@@ -5465,12 +5476,19 @@ argument_list|()
 argument_list|,
 name|archiveFile
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|adr
 operator|.
 name|setUnpackedLocalFile
 argument_list|(
 name|archiveFile
+argument_list|)
+expr_stmt|;
+name|adr
+operator|.
+name|setUnpackedArtifact
+argument_list|(
+name|unpackedArtifact
 argument_list|)
 expr_stmt|;
 block|}
