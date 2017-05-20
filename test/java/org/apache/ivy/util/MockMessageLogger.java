@@ -202,6 +202,11 @@ name|void
 name|clear
 parameter_list|()
 block|{
+name|super
+operator|.
+name|clearProblems
+argument_list|()
+expr_stmt|;
 name|_logs
 operator|.
 name|clear
