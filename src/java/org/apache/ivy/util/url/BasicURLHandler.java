@@ -309,6 +309,13 @@ argument_list|()
 expr_stmt|;
 name|con
 operator|.
+name|setConnectTimeout
+argument_list|(
+name|timeout
+argument_list|)
+expr_stmt|;
+name|con
+operator|.
 name|setRequestProperty
 argument_list|(
 literal|"User-Agent"

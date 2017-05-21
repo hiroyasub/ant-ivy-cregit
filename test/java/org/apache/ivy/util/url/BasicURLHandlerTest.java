@@ -130,6 +130,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+specifier|final
+name|int
+name|connectionTimeoutInMillis
+init|=
+literal|15000
+decl_stmt|;
+comment|// 15 seconds
 name|assertTrue
 argument_list|(
 name|handler
@@ -141,6 +148,8 @@ name|URL
 argument_list|(
 literal|"http://www.google.fr/"
 argument_list|)
+argument_list|,
+name|connectionTimeoutInMillis
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -155,6 +164,8 @@ name|URL
 argument_list|(
 literal|"http://www.google.fr/unknownpage.html"
 argument_list|)
+argument_list|,
+name|connectionTimeoutInMillis
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -175,6 +186,8 @@ argument_list|()
 operator|.
 name|toURL
 argument_list|()
+argument_list|,
+name|connectionTimeoutInMillis
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -195,6 +208,8 @@ argument_list|()
 operator|.
 name|toURL
 argument_list|()
+argument_list|,
+name|connectionTimeoutInMillis
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -211,6 +226,8 @@ name|URL
 argument_list|(
 literal|"ftp://ftp.mozilla.org/unknown.file"
 argument_list|)
+argument_list|,
+name|connectionTimeoutInMillis
 argument_list|)
 argument_list|)
 expr_stmt|;
