@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -108,6 +98,16 @@ operator|.
 name|junit
 operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
 import|;
 end_import
 
@@ -486,6 +486,97 @@ expr_stmt|;
 name|assertLogContaining
 argument_list|(
 literal|"\\- org1#mod1.2;2.2"
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Tests that dependency tree task doesn't run into an infinite loop due to circular dependencies      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1540">IVY-1540</a> for more details      */
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testCircularDep
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+specifier|final
+name|String
+name|resolveId
+init|=
+literal|"circular-dep-tree"
+decl_stmt|;
+comment|// resolve
+specifier|final
+name|IvyResolve
+name|ivyResolve
+init|=
+operator|new
+name|IvyResolve
+argument_list|()
+decl_stmt|;
+name|ivyResolve
+operator|.
+name|setProject
+argument_list|(
+name|project
+argument_list|)
+expr_stmt|;
+name|ivyResolve
+operator|.
+name|setResolveId
+argument_list|(
+name|resolveId
+argument_list|)
+expr_stmt|;
+name|ivyResolve
+operator|.
+name|setFile
+argument_list|(
+operator|new
+name|File
+argument_list|(
+literal|"test/repositories/1/org/foo-bar/ivys/ivy-1.2.3.xml"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|ivyResolve
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+comment|// use the resolveid to fetch the dependency tree from that previous resolution
+name|dependencyTree
+operator|.
+name|setResolveId
+argument_list|(
+name|resolveId
+argument_list|)
+expr_stmt|;
+name|dependencyTree
+operator|.
+name|execute
+argument_list|()
+expr_stmt|;
+comment|// check the logged message
+name|assertLogContaining
+argument_list|(
+literal|"Dependency tree for "
+operator|+
+name|resolveId
+argument_list|)
+expr_stmt|;
+name|assertLogContaining
+argument_list|(
+literal|"(circularly depends on) "
+operator|+
+literal|"org.circular#module1;1.0"
+argument_list|)
+expr_stmt|;
+name|assertLogNotContaining
+argument_list|(
+literal|"(circularly depends on) "
+operator|+
+literal|"org.circular#module2;2.0"
 argument_list|)
 expr_stmt|;
 block|}
