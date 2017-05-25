@@ -27,11 +27,13 @@ end_import
 
 begin_import
 import|import
-name|junit
+name|org
 operator|.
-name|framework
+name|apache
 operator|.
-name|TestCase
+name|ivy
+operator|.
+name|Ivy
 import|;
 end_import
 
@@ -43,7 +45,7 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|Ivy
+name|TestHelper
 import|;
 end_import
 
@@ -155,6 +157,16 @@ name|Reference
 import|;
 end_import
 
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -179,8 +191,9 @@ name|Exception
 block|{
 name|project
 operator|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 expr_stmt|;
 name|project
@@ -320,8 +333,9 @@ expr_stmt|;
 comment|// test with a File
 name|project
 operator|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 expr_stmt|;
 name|configure
@@ -382,8 +396,9 @@ expr_stmt|;
 comment|// test if no defaultCacheDir is specified
 name|project
 operator|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 expr_stmt|;
 name|configure

@@ -29,6 +29,24 @@ name|List
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleId
+import|;
+end_import
+
 begin_interface
 specifier|public
 interface|interface
@@ -60,7 +78,9 @@ parameter_list|()
 function_decl|;
 specifier|public
 name|List
-comment|/*<ModuleId> */
+argument_list|<
+name|ModuleId
+argument_list|>
 name|getExcludedModules
 parameter_list|()
 function_decl|;

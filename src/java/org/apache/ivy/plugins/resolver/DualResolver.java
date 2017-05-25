@@ -665,6 +665,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|abortPublishTransaction
@@ -683,6 +685,8 @@ name|abortPublishTransaction
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|beginPublishTransaction
@@ -715,6 +719,8 @@ name|overwrite
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitPublishTransaction
@@ -733,6 +739,8 @@ name|commitPublishTransaction
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dumpSettings
@@ -784,6 +792,8 @@ literal|"]"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|exists
@@ -821,6 +831,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArtifactOrigin
 name|locate
@@ -858,6 +870,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArtifactDownloadReport
 name|download

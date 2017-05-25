@@ -290,8 +290,6 @@ name|InputStream
 name|in
 parameter_list|)
 throws|throws
-name|ParseException
-throws|,
 name|IOException
 throws|,
 name|SAXException
@@ -407,6 +405,8 @@ name|ResourceHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -429,6 +429,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -564,6 +566,8 @@ name|ResourceSourceHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -675,6 +679,8 @@ name|ResourceDescriptionHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -713,6 +719,8 @@ name|ResourceDocumentationHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -751,6 +759,8 @@ name|ResourceLicenseHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -789,6 +799,8 @@ name|ResourceSizeHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -867,6 +879,8 @@ name|CapabilityHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -932,6 +946,8 @@ name|RequireHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1025,6 +1041,8 @@ name|ExtendHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1041,6 +1059,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1239,6 +1259,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getCurrentElementIdentifier
@@ -1449,6 +1471,8 @@ name|CapabilityPropertyHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1494,6 +1518,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1577,6 +1603,8 @@ name|CAPABILITY_PROPERTY
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1669,6 +1697,8 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes

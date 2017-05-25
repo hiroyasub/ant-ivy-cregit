@@ -471,6 +471,8 @@ name|UnitsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -514,6 +516,8 @@ name|ReferencesHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -585,6 +589,8 @@ name|RepositoryReferenceHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -607,6 +613,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -698,6 +706,8 @@ comment|// String name;
 name|URI
 name|uri
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -881,6 +891,8 @@ name|UnitHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -924,6 +936,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1029,6 +1043,8 @@ name|PropertiesHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1097,6 +1113,8 @@ name|ProvidesHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1213,6 +1231,8 @@ name|FilterHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1238,6 +1258,8 @@ name|RequiresHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1281,6 +1303,8 @@ name|HostRequirementsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1306,6 +1330,8 @@ name|MetaRequirementsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1331,6 +1357,8 @@ name|ArtifactsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1360,6 +1388,8 @@ name|TouchpointDataHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1661,6 +1691,8 @@ comment|// public void childHanlded(DelegetingHandler child) {
 comment|// }
 comment|// });
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1901,6 +1933,8 @@ name|ProvidedHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -2041,6 +2075,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2135,6 +2171,8 @@ name|PROVIDED
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2251,6 +2289,8 @@ name|RequiredHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -2356,6 +2396,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2494,6 +2536,8 @@ comment|// filter = child.getBufferedChars().trim();
 comment|// }
 comment|// });
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2671,6 +2715,8 @@ name|ArtifactHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -2693,6 +2739,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2780,6 +2828,8 @@ name|ARTIFACT
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -2931,6 +2981,8 @@ name|InstructionsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -2956,6 +3008,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -3010,6 +3064,8 @@ name|InstructionHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -3088,6 +3144,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -3139,6 +3197,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes

@@ -116,8 +116,11 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Return a listing of resources names      *       * @param parent      *            The parent directory from which to generate the listing.      * @return A listing of the parent directory's file content, as a List of String.      * @throws IOException      *             On listing failure.      */
+comment|/**      * Return a listing of resources names      *       * @param parent      *            The parent directory from which to generate the listing.      * @return A listing of the parent directory's file content      * @throws IOException      *             On listing failure.      */
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|list
 parameter_list|(
 name|String

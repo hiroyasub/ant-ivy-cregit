@@ -50,6 +50,8 @@ name|char
 name|operator
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|append
@@ -100,6 +102,8 @@ return|return
 name|subFilter
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -141,6 +145,8 @@ return|return
 name|result
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals

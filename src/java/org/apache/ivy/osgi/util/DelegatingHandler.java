@@ -408,6 +408,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDocumentLocator
@@ -593,6 +595,8 @@ throw|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -638,6 +642,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -683,6 +689,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -920,6 +928,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1144,6 +1154,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1237,6 +1249,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1302,6 +1316,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1357,6 +1373,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1434,6 +1452,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1509,6 +1529,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1574,6 +1596,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1629,7 +1653,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
-comment|/**      * @throws SAXException      */
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1716,6 +1741,8 @@ block|{
 comment|// by default do nothing
 block|}
 comment|// ERROR HANDLING
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1771,6 +1798,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void
@@ -1826,6 +1855,8 @@ name|SAXException
 block|{
 comment|// by default do nothing
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|final
 name|void

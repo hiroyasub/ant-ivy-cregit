@@ -165,8 +165,6 @@ name|InputStream
 name|in
 parameter_list|)
 throws|throws
-name|ParseException
-throws|,
 name|IOException
 throws|,
 name|SAXException
@@ -365,6 +363,8 @@ name|DescriptionHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -403,6 +403,8 @@ name|LicenseHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -441,6 +443,8 @@ name|CopyrightHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -479,6 +483,8 @@ name|PluginHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -513,6 +519,8 @@ name|RequiresHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -548,6 +556,8 @@ comment|// public void childHanlded(UrlHandler child) {
 comment|// }
 comment|// });
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -855,6 +865,8 @@ name|PLUGIN
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1018,6 +1030,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1062,6 +1076,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1106,6 +1122,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -1168,6 +1186,8 @@ name|ImportHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1259,6 +1279,8 @@ name|IMPORT
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes

@@ -215,6 +215,9 @@ name|void
 name|filterIgnore
 parameter_list|(
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|names
 parameter_list|)
 function_decl|;

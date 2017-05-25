@@ -276,11 +276,20 @@ decl_stmt|;
 comment|/**      * Map between actual patterns and patterns used during the transaction to put files in a      * temporary directory      */
 specifier|private
 name|Map
-comment|/*<String,String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|fullTransactionPatterns
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Location where files are published during the transaction      */
@@ -305,6 +314,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTypeName
@@ -357,6 +368,8 @@ name|getRepository
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getDestination
@@ -383,9 +396,6 @@ block|{
 name|String
 name|destPattern
 init|=
-operator|(
-name|String
-operator|)
 name|fullTransactionPatterns
 operator|.
 name|get
@@ -457,6 +467,8 @@ operator|!=
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|abortPublishTransaction
@@ -515,6 +527,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitPublishTransaction
@@ -667,6 +681,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|beginPublishTransaction
@@ -758,11 +774,19 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|filterNames
 parameter_list|(
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|values
 parameter_list|)
 block|{
@@ -784,6 +808,9 @@ expr_stmt|;
 for|for
 control|(
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|iterator
 init|=
 name|values
@@ -801,9 +828,6 @@ block|{
 name|String
 name|v
 init|=
-operator|(
-name|String
-operator|)
 name|iterator
 operator|.
 name|next
@@ -904,12 +928,18 @@ operator|.
 name|FALSE
 expr_stmt|;
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|ivyPatterns
 init|=
 name|getIvyPatterns
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|artifactPatterns
 init|=
 name|getArtifactPatterns
@@ -928,9 +958,6 @@ block|{
 name|String
 name|pattern
 init|=
-operator|(
-name|String
-operator|)
 name|ivyPatterns
 operator|.
 name|get
@@ -1013,9 +1040,6 @@ block|{
 name|String
 name|pattern
 init|=
-operator|(
-name|String
-operator|)
 name|artifactPatterns
 operator|.
 name|get
@@ -1307,6 +1331,8 @@ operator|=
 name|transactional
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addConfiguredIvy
@@ -1348,6 +1374,8 @@ name|p
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addIvyPattern
@@ -1379,6 +1407,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addConfiguredArtifact
@@ -1420,6 +1450,8 @@ name|p
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addArtifactPattern

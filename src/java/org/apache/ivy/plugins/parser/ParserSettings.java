@@ -198,11 +198,19 @@ name|value
 parameter_list|)
 function_decl|;
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|substitute
 parameter_list|(
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|strings
 parameter_list|)
 function_decl|;
@@ -264,6 +272,13 @@ comment|/**      * Returns the namespace context in which the current descriptor
 name|Namespace
 name|getContextNamespace
 parameter_list|()
+function_decl|;
+name|String
+name|getVariable
+parameter_list|(
+name|String
+name|string
+parameter_list|)
 function_decl|;
 block|}
 end_interface

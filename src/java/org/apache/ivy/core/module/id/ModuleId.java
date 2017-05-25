@@ -109,6 +109,9 @@ class|class
 name|ModuleId
 implements|implements
 name|Comparable
+argument_list|<
+name|ModuleId
+argument_list|>
 block|{
 specifier|static
 specifier|final
@@ -121,11 +124,26 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
-comment|/*<ModuleId, WeakReference<ModuleId>> */
+argument_list|<
+name|ModuleId
+argument_list|,
+name|WeakReference
+argument_list|<
+name|ModuleId
+argument_list|>
+argument_list|>
 name|CACHE
 init|=
 operator|new
 name|WeakHashMap
+argument_list|<
+name|ModuleId
+argument_list|,
+name|WeakReference
+argument_list|<
+name|ModuleId
+argument_list|>
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Returns a ModuleId for the given organization and module name.      *       * @param org      *            the module's organization, can be<code>null</code>      * @param name      *            the module's name, must not be<code>null</code>      * @return a ModuleId instance      */
@@ -175,11 +193,11 @@ name|CACHE
 init|)
 block|{
 name|WeakReference
+argument_list|<
+name|ModuleId
+argument_list|>
 name|ref
 init|=
-operator|(
-name|WeakReference
-operator|)
 name|CACHE
 operator|.
 name|get
@@ -196,9 +214,6 @@ condition|)
 block|{
 name|r
 operator|=
-operator|(
-name|ModuleId
-operator|)
 name|ref
 operator|.
 name|get
@@ -224,6 +239,9 @@ name|r
 argument_list|,
 operator|new
 name|WeakReference
+argument_list|<
+name|ModuleId
+argument_list|>
 argument_list|(
 name|r
 argument_list|)
@@ -249,11 +267,20 @@ name|hash
 decl_stmt|;
 specifier|private
 name|Map
-comment|/*<String, String> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|attributes
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Constructor.      *       * @param organisation      *            The organisation which creates the module.      * @param name      *            The name of the module.      */
@@ -337,7 +364,8 @@ return|return
 name|organisation
 return|;
 block|}
-comment|/** {@inheritDoc} */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -415,7 +443,8 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/** {@inheritDoc} */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -469,7 +498,8 @@ return|return
 name|hash
 return|;
 block|}
-comment|/** {@inheritDoc} */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -483,23 +513,14 @@ operator|+
 name|name
 return|;
 block|}
-comment|/** {@inheritDoc} */
 specifier|public
 name|int
 name|compareTo
 parameter_list|(
-name|Object
-name|obj
-parameter_list|)
-block|{
 name|ModuleId
 name|that
-init|=
-operator|(
-name|ModuleId
-operator|)
-name|obj
-decl_stmt|;
+parameter_list|)
+block|{
 name|int
 name|result
 init|=
@@ -554,6 +575,11 @@ block|}
 comment|/**      * Returns a Map of all attributes of this module id. The Map keys are attribute names as      * Strings, and values are corresponding attribute values (as String too).      *       * @return A Map instance containing all the attributes and their values.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getAttributes
 parameter_list|()
 block|{

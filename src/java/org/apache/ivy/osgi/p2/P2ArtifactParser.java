@@ -440,6 +440,8 @@ name|MappingsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -532,6 +534,8 @@ name|ArtifactsHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -605,6 +609,8 @@ name|RuleHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -631,6 +637,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -718,6 +726,8 @@ name|RULE
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -801,6 +811,8 @@ name|ArtifactHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1165,6 +1177,8 @@ name|PropertiesHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -1184,6 +1198,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes

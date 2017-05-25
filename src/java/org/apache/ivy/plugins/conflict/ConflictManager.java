@@ -55,6 +55,24 @@ name|ivy
 operator|.
 name|core
 operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
 name|resolve
 operator|.
 name|IvyNode
@@ -68,12 +86,18 @@ name|ConflictManager
 block|{
 comment|/**      * Resolves the eventual conflicts found in the given collection of IvyNode. This method return      * a Collection of IvyNode which have not been evicted. The given conflicts Collection contains      * at least one IvyNode. This method can be called with IvyNodes which are not yet loaded. If      * this conflict manager is not able to resolve conflicts with the current data found in the      * IvyNodes and need them to be fully loaded, it will return null to indicate that no conflict      * resolution has been done.      *       * @param parent      *            the ivy node parent for which the conflict is to be resolved      * @param conflicts      *            the collection of IvyNode to check for conflicts      * @return a Collection of IvyNode which have not been evicted, or null if conflict management      *         resolution is not possible yet      */
 name|Collection
+argument_list|<
+name|IvyNode
+argument_list|>
 name|resolveConflicts
 parameter_list|(
 name|IvyNode
 name|parent
 parameter_list|,
 name|Collection
+argument_list|<
+name|IvyNode
+argument_list|>
 name|conflicts
 parameter_list|)
 function_decl|;
@@ -89,7 +113,9 @@ name|DependencyDescriptor
 name|dd
 parameter_list|,
 name|Collection
-comment|/*<ModuleRevisionId> */
+argument_list|<
+name|ModuleRevisionId
+argument_list|>
 name|foundBlacklisted
 parameter_list|)
 function_decl|;

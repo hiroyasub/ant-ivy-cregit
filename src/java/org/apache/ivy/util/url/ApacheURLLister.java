@@ -188,6 +188,9 @@ comment|// ~ Methods -----------------------------------------------------------
 comment|/**      * Returns a list of sub urls of the given url. The returned list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub urls of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|listAll
 parameter_list|(
 name|URL
@@ -210,6 +213,9 @@ block|}
 comment|/**      * Returns a list of sub 'directories' of the given url. The returned list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub 'directories' of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|listDirectories
 parameter_list|(
 name|URL
@@ -232,6 +238,9 @@ block|}
 comment|/**      * Returns a list of sub 'files' (in opposition to directories) of the given url. The returned      * list is a list of URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @return a list of sub 'files' of the given url.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|listFiles
 parameter_list|(
 name|URL
@@ -254,6 +263,9 @@ block|}
 comment|/**      * Retrieves a {@link List} of {@link URL}s corresponding to the files and/or directories found      * at the supplied base URL.      *       * @param url      *            The base URL from which to retrieve the listing.      * @param includeFiles      *            If true include files in the returned list.      * @param includeDirectories      *            If true include directories in the returned list.      * @return A {@link List} of {@link URL}s.      * @throws IOException      *             If an error occures retrieving the HTML.      */
 specifier|public
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|retrieveListing
 parameter_list|(
 name|URL
@@ -269,10 +281,16 @@ throws|throws
 name|IOException
 block|{
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|urlList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|URL
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|// add trailing slash for relative urls

@@ -37,16 +37,6 @@ end_import
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -113,6 +103,16 @@ name|Project
 import|;
 end_import
 
+begin_import
+import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -171,8 +171,9 @@ argument_list|)
 expr_stmt|;
 name|project
 operator|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 expr_stmt|;
 name|project
@@ -1100,8 +1101,9 @@ comment|// first we do a resolve in another project
 name|Project
 name|project
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|project
@@ -1209,8 +1211,9 @@ comment|// first we do a resolve in another project
 name|Project
 name|project
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|project
@@ -1333,8 +1336,9 @@ comment|// first we do a resolve with useOrigin=true in another project
 name|Project
 name|project
 init|=
-operator|new
-name|Project
+name|TestHelper
+operator|.
+name|newProject
 argument_list|()
 decl_stmt|;
 name|project

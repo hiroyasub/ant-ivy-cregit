@@ -76,6 +76,9 @@ name|AbstractLatestStrategy
 block|{
 specifier|private
 name|Comparator
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|comparator
 decl_stmt|;
 specifier|public
@@ -87,6 +90,9 @@ specifier|public
 name|ComparatorLatestStrategy
 parameter_list|(
 name|Comparator
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|comparator
 parameter_list|)
 block|{
@@ -99,6 +105,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|sort
 parameter_list|(
 name|ArtifactInfo
@@ -107,10 +116,16 @@ name|infos
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|ret
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 argument_list|(
 name|Arrays
 operator|.
@@ -135,6 +150,9 @@ return|;
 block|}
 specifier|public
 name|Comparator
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|getComparator
 parameter_list|()
 block|{
@@ -147,6 +165,9 @@ name|void
 name|setComparator
 parameter_list|(
 name|Comparator
+argument_list|<
+name|ArtifactInfo
+argument_list|>
 name|comparator
 parameter_list|)
 block|{

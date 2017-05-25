@@ -99,16 +99,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -318,6 +308,8 @@ operator|=
 name|forceMetadataUpdate
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|init
@@ -666,38 +658,6 @@ name|in
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"The OBR repository resolver "
-operator|+
-name|getName
-argument_list|()
-operator|+
-literal|" couldn't be configured: the file "
-operator|+
-name|sourceLocation
-operator|+
-literal|" is incorrectly formed ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|,
-name|e
-argument_list|)
-throw|;
 block|}
 catch|catch
 parameter_list|(

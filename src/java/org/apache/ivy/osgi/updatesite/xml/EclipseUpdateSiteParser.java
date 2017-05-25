@@ -175,8 +175,6 @@ name|InputStream
 name|in
 parameter_list|)
 throws|throws
-name|ParseException
-throws|,
 name|IOException
 throws|,
 name|SAXException
@@ -309,6 +307,8 @@ name|FeatureHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -341,6 +341,8 @@ comment|// updateSite.addCategoryDef(((CategoryDefHandler) child).categoryDef);
 comment|// }
 comment|// });
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -722,6 +724,8 @@ name|CategoryHandler
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|childHanlded
@@ -744,6 +748,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes
@@ -967,6 +973,8 @@ name|CATEGORY
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleAttributes

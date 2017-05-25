@@ -74,13 +74,28 @@ decl_stmt|;
 comment|/**      * The associated visit nodes, per rootModuleConf Note that the value is a List, because a node      * can be visited from several parents during the resolution process      */
 specifier|private
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|<
+name|VisitNode
+argument_list|>
+argument_list|>
 name|visitNodes
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|<
+name|VisitNode
+argument_list|>
+argument_list|>
 argument_list|()
 decl_stmt|;
-comment|// Map (String rootModuleConf -> List(VisitNode))
 specifier|public
 name|VisitData
 parameter_list|(
@@ -124,6 +139,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|VisitNode
+argument_list|>
 name|getVisitNodes
 parameter_list|(
 name|String
@@ -131,11 +149,11 @@ name|rootModuleConf
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|VisitNode
+argument_list|>
 name|visits
 init|=
-operator|(
-name|List
-operator|)
 name|visitNodes
 operator|.
 name|get
@@ -154,6 +172,9 @@ name|visits
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|VisitNode
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|visitNodes
@@ -202,6 +223,9 @@ name|String
 name|rootModuleConf
 parameter_list|,
 name|List
+argument_list|<
+name|VisitNode
+argument_list|>
 name|visitNodes
 parameter_list|)
 block|{

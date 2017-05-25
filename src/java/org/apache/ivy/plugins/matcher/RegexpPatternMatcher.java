@@ -75,6 +75,8 @@ name|REGEXP
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Matcher
 name|newMatcher
