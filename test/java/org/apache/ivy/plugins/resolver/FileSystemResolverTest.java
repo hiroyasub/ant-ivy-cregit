@@ -467,6 +467,48 @@ name|FileUtil
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
+import|;
+end_import
+
 begin_comment
 comment|/**  *   */
 end_comment
@@ -571,12 +613,12 @@ name|setupLastModified
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|settings
 operator|=
@@ -731,12 +773,12 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CacheCleaner
 operator|.
@@ -746,6 +788,8 @@ name|cache
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFixedRevision
@@ -1044,6 +1088,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFindIvyFileRefWithMultipleIvyPatterns
@@ -1169,6 +1215,8 @@ name|DownloadOptions
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMaven2
@@ -1320,6 +1368,8 @@ name|reportFailure
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChecksum
@@ -1748,6 +1798,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that<code>SHA-256</code> algorithm can be used for checksums on resolvers      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSHA256Checksum
@@ -1971,6 +2023,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that<code>SHA-512</code> algorithm can be used for checksums on resolvers      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSHA512Checksum
@@ -2193,6 +2247,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCheckModified
@@ -2546,6 +2602,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoRevision
@@ -3085,6 +3143,8 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChanging
@@ -3678,6 +3738,8 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestTime
@@ -3835,6 +3897,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestRevision
@@ -3992,6 +4056,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativePath
@@ -4160,6 +4226,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFormattedLatestTime
@@ -4317,6 +4385,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFormattedLatestRevision
@@ -4474,6 +4544,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublish
@@ -4705,6 +4777,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishOverwrite
@@ -4962,6 +5036,8 @@ name|createNewFile
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishTransaction
@@ -5178,6 +5254,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishTransactionWithBranch
@@ -5396,6 +5474,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishTransactionWithSubDirectories
@@ -5612,6 +5692,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishTransactionWithDottedOrganisation
@@ -5835,6 +5917,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAbortTransaction
@@ -6026,6 +6110,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnsupportedTransaction
@@ -6159,13 +6245,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"transactional"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -6185,6 +6268,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnsupportedTransaction2
@@ -6360,13 +6445,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"transactional"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -6386,6 +6468,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnsupportedTransaction3
@@ -6519,13 +6603,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"transactional"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -6545,6 +6626,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransaction
@@ -6768,6 +6851,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListing
@@ -7011,6 +7096,8 @@ name|revs
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDownloadWithUseOriginIsTrue

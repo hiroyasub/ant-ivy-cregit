@@ -436,12 +436,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
 name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 
@@ -679,8 +681,6 @@ argument_list|(
 name|expectedMrids
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|expected
@@ -1427,7 +1427,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Cleans up the test repository and cache.      *       * @see #newTestSettings()      */
+comment|/**      * Cleans up the test repository and cache.      *      */
 specifier|public
 specifier|static
 name|void

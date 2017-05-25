@@ -81,11 +81,67 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -93,8 +149,6 @@ begin_class
 specifier|public
 class|class
 name|IvyInstallTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|File
@@ -108,12 +162,12 @@ specifier|private
 name|Project
 name|project
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|createCache
 argument_list|()
@@ -173,12 +227,12 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 argument_list|()
@@ -228,6 +282,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallDummyDefault
@@ -350,6 +406,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithAnyType
@@ -424,6 +482,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithMultipleType
@@ -499,6 +559,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Normal case; no confs set (should use the default->* configuration).      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithConfsDefaultSettings
@@ -598,6 +660,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test retrieving artifacts under only the master and runtime configuration.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithConfsRuntimeOnly
@@ -703,6 +767,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithClassifiers
@@ -829,6 +895,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithUnusedType
@@ -903,6 +971,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithOriginalMetadata
@@ -1042,6 +1112,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY843
@@ -1131,6 +1203,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithBranch
@@ -1205,6 +1279,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithNamespace
@@ -1291,6 +1367,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithNamespace2
@@ -1369,6 +1447,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInstallWithNamespace3
@@ -1455,6 +1535,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependencyNotFoundFailure
@@ -1526,6 +1608,8 @@ block|{
 comment|// success
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependencyNotFoundSuccess

@@ -49,11 +49,47 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -65,10 +101,10 @@ begin_class
 specifier|public
 class|class
 name|ApacheURLListerTest
-extends|extends
-name|TestCase
 block|{
 comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveListing
@@ -233,6 +269,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveListingWithSpaces
@@ -284,6 +322,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveArtifactoryListing
@@ -335,6 +375,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveArchivaListing
@@ -375,6 +417,8 @@ comment|// archiva listing is not valid html at all currently (1.0, unclosed a t
 comment|// and we don't want to adapt to this
 comment|// assertEquals(3, d.size());
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveFixedArchivaListing
@@ -422,6 +466,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveMavenProxyListing

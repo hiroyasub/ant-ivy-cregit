@@ -451,11 +451,23 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -467,9 +479,9 @@ begin_class
 specifier|public
 class|class
 name|XmlSettingsParserTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test
@@ -992,6 +1004,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTypedef
@@ -1169,6 +1183,8 @@ name|MockResolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStatuses
@@ -1310,6 +1326,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConflictManager
@@ -1390,6 +1408,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMode
@@ -1492,6 +1512,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraModuleAttribute
@@ -1548,6 +1570,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCache
@@ -1994,6 +2018,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInvalidCache
@@ -2052,17 +2078,16 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"mycache"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVersionMatchers1
@@ -2208,6 +2233,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVersionMatchers2
@@ -2317,6 +2344,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRef
@@ -2574,6 +2603,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMacro
@@ -2887,6 +2918,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMacroAndRef
@@ -3030,6 +3063,8 @@ name|FileSystemResolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMacroAndRef2
@@ -3156,6 +3191,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPropertiesMissingFile
@@ -3218,6 +3255,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInclude
@@ -3487,6 +3526,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncludeAbsoluteFile
@@ -3549,6 +3590,8 @@ name|ChainResolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncludeMissingFile
@@ -3603,6 +3646,8 @@ block|{
 comment|// An exception must be throwed
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncludeSpecialCharInName
@@ -3872,6 +3917,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativePropertiesFile
@@ -3922,6 +3969,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParser
@@ -3989,6 +4038,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOutputter
@@ -4050,6 +4101,8 @@ name|MyOutputter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLockingStrategies
@@ -4110,6 +4163,8 @@ name|MyLockStrategy
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileAttribute
@@ -4229,6 +4284,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBaseDirVariables

@@ -18,6 +18,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -131,11 +155,11 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
-name|TestCase
+name|Test
 import|;
 end_import
 
@@ -143,10 +167,9 @@ begin_class
 specifier|public
 class|class
 name|OBRParserTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
+specifier|final
 name|File
 name|testObr
 init|=
@@ -156,6 +179,8 @@ argument_list|(
 literal|"test/test-obr"
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParse
@@ -214,6 +239,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParseSource

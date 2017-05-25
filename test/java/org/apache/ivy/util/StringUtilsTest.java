@@ -17,11 +17,47 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -29,9 +65,9 @@ begin_class
 specifier|public
 class|class
 name|StringUtilsTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetStackTrace
@@ -55,29 +91,25 @@ name|assertTrue
 argument_list|(
 name|trace
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"java.lang.Exception"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
 name|trace
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"at org.apache.ivy.util.StringUtilsTest.testGetStackTrace(StringUtilsTest.java"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncryption

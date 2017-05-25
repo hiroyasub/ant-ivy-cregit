@@ -37,11 +37,23 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 
@@ -49,9 +61,9 @@ begin_class
 specifier|public
 class|class
 name|PatternVersionMatcherTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingleMatch
@@ -117,6 +129,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleMatchEqualRevisions
@@ -168,6 +182,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleMatchNonEqualRevisions
@@ -230,7 +246,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}\.\d+" args="major, minor" matcher="regexp" />      *       * @return      */
+comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}\.\d+" args="major, minor" matcher="regexp" />      *       * @return Match      */
 specifier|private
 name|Match
 name|generateRegexpMatch1
@@ -275,7 +291,7 @@ return|return
 name|match
 return|;
 block|}
-comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}" args="major, minor" matcher="regexp" />      *       * @return      */
+comment|/**      * Generates a Match instance that has the following xml representation:<match revision="foo"      * pattern="${major}\.${minor}" args="major, minor" matcher="regexp" />      *       * @return Match      */
 specifier|private
 name|Match
 name|generateRegexpMatch2

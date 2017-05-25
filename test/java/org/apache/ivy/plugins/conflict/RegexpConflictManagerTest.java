@@ -71,11 +71,55 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -83,8 +127,6 @@ begin_class
 specifier|public
 class|class
 name|RegexpConflictManagerTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Ivy
@@ -94,7 +136,9 @@ specifier|private
 name|File
 name|_cache
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -135,12 +179,12 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.
@@ -150,6 +194,8 @@ name|_cache
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoApiConflictResolve
@@ -192,6 +238,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConflictResolve
@@ -245,13 +293,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"org1#mod1.2;2.0.0:2.0 (needed by [apache#resolve-noconflict;1.0])"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -268,13 +313,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"conflicts with"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -291,13 +333,10 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"org1#mod1.2;2.1.0:2.1 (needed by [apache#resolve-noconflict;1.0])"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}

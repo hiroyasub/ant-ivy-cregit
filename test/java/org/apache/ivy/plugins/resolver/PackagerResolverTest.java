@@ -349,6 +349,48 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests PackagerResolver.  */
 end_comment
@@ -384,7 +426,9 @@ specifier|private
 name|File
 name|cachedir
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -517,7 +561,9 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
@@ -550,6 +596,8 @@ name|workdir
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFile
@@ -844,7 +892,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-literal|"downloaddetails: "
+literal|"download details: "
 operator|+
 name|ar
 operator|.
@@ -1059,6 +1107,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testZipResourceInclusion
@@ -1315,6 +1365,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTarResourceInclusion

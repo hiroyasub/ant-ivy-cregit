@@ -93,20 +93,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|SystemUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|ivy
 operator|.
 name|Ivy
@@ -385,11 +371,43 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -397,14 +415,14 @@ begin_class
 specifier|public
 class|class
 name|RetrieveTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Ivy
 name|ivy
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -448,12 +466,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|TestHelper
 operator|.
@@ -493,6 +511,8 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveSimple
@@ -513,6 +533,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -648,6 +671,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveSameFileConflict
@@ -668,6 +693,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.4/ivys/ivy-1.0.1.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -774,6 +802,8 @@ literal|"conflict on"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveDifferentArtifactsOfSameModuleToSameFile
@@ -793,6 +823,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org2/mod2.2/ivys/ivy-0.5.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -864,7 +897,7 @@ argument_list|)
 expr_stmt|;
 name|fail
 argument_list|(
-literal|"Exeption should have been thrown!"
+literal|"Exception should have been thrown!"
 argument_list|)
 expr_stmt|;
 block|}
@@ -884,6 +917,8 @@ literal|"multiple artifacts"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvent
@@ -903,6 +938,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1162,6 +1200,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveOverwrite
@@ -1182,6 +1222,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1303,6 +1346,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveWithSymlinks
@@ -1323,6 +1368,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1453,6 +1501,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveWithSymlinksMass
@@ -1462,9 +1512,17 @@ name|Exception
 block|{
 if|if
 condition|(
-name|SystemUtils
+name|System
 operator|.
-name|IS_OS_WINDOWS
+name|getProperty
+argument_list|(
+literal|"os.name"
+argument_list|)
+operator|.
+name|startsWith
+argument_list|(
+literal|"Windows"
+argument_list|)
 condition|)
 block|{
 return|return;
@@ -1691,7 +1749,7 @@ literal|"Mac OS X"
 argument_list|)
 condition|)
 block|{
-comment|// these OS should support symnlink, so check that the file is actually a symlink.
+comment|// these OS should support symlink, so check that the file is actually a symlink.
 comment|// this is done be checking that the canonical path is different from the absolute
 comment|// path.
 name|File
@@ -1728,6 +1786,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveWithVariable
@@ -1757,6 +1817,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org1/mod1.1/ivys/ivy-1.0.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -1918,6 +1981,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveReport
@@ -1938,6 +2003,9 @@ name|File
 argument_list|(
 literal|"test/repositories/1/org20/mod20.1/ivys/ivy-1.2.xml"
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -2103,6 +2171,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnpack
@@ -2293,6 +2363,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnpackSync
@@ -2491,6 +2563,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that the {@link RetrieveEngine} retrieves artifacts with the correct extension if the artifact is unpacked      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1478">IVY-1478</a>      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnpackExt

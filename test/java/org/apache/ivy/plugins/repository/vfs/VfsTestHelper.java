@@ -279,7 +279,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Generate a set of well-formed VFS resource identifiers      *       * @param resource      *            name of the resource      * @return<class>List</class> of well-formed VFS reosurce identifiers      */
+comment|/**      * Generate a set of well-formed VFS resource identifiers      *       * @param resource      *            name of the resource      * @return<class>List</class> of well-formed VFS resource identifiers      */
 specifier|public
 name|List
 name|createVFSUriSet

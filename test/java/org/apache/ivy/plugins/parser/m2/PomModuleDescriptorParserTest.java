@@ -411,6 +411,48 @@ name|MockResolver
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -456,9 +498,7 @@ argument_list|(
 name|dd
 argument_list|)
 decl_stmt|;
-name|ResolvedModuleRevision
-name|r
-init|=
+return|return
 operator|new
 name|ResolvedModuleRevision
 argument_list|(
@@ -470,9 +510,6 @@ name|moduleDesc
 argument_list|,
 literal|null
 argument_list|)
-decl_stmt|;
-return|return
-name|r
 return|;
 block|}
 specifier|protected
@@ -515,12 +552,12 @@ operator|new
 name|MockedDependencyResolver
 argument_list|()
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|settings
 operator|.
@@ -528,11 +565,6 @@ name|setDictatorResolver
 argument_list|(
 name|mockedResolver
 argument_list|)
-expr_stmt|;
-name|super
-operator|.
-name|setUp
-argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -570,12 +602,12 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(
@@ -592,6 +624,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAccept
@@ -647,6 +681,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimple
@@ -809,6 +845,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLargePom
@@ -869,6 +907,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPackaging
@@ -1001,6 +1041,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEjbPackaging
@@ -1133,6 +1175,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEjbType
@@ -1281,6 +1325,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParent
@@ -1387,6 +1433,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentNotFound
@@ -1437,17 +1485,16 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"Impossible to load parent"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParent2
@@ -1554,6 +1601,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentVersion
@@ -1660,6 +1709,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentGroupId
@@ -1766,6 +1817,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testProjectParentVersion
@@ -1872,6 +1925,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependencies
@@ -1989,6 +2044,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithClassifier
@@ -2265,6 +2322,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithType
@@ -2418,6 +2477,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithVersionPropertyAndPropertiesTag
@@ -2522,6 +2583,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// IVY-392
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithInactiveProfile
@@ -2622,6 +2685,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithoutVersion
@@ -2722,6 +2787,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testProperties
@@ -2822,6 +2889,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReal
@@ -2922,6 +2991,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReal2
@@ -2977,6 +3048,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVariables
@@ -3078,6 +3151,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesInProfile
@@ -3134,6 +3209,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY424
@@ -3190,6 +3267,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOptional
@@ -3624,6 +3703,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithScope
@@ -4078,6 +4159,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExclusion
@@ -4814,6 +4897,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPlugins
@@ -4893,6 +4978,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHomeAndDescription
@@ -4988,6 +5075,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLicense
@@ -5068,7 +5157,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if a module doesn't have a license specified, then parent pom's license (if any) is used for the child      * module      *      * @throws Exception      */
+comment|/**      * Tests that if a module doesn't have a license specified, then parent pom's license (if any)      * is used for the child module      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLicenseFromParent
@@ -5193,7 +5284,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if a project explicitly specifies the licenses, then the licenses (if any) from its parent pom      * aren't applied to the child project      *      * @throws Exception      */
+comment|/**      * Tests that if a project explicitly specifies the licenses, then the licenses (if any) from      * its parent pom aren't applied to the child project      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOverriddenLicense
@@ -5318,9 +5411,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
-name|testDependencyManagment
+name|testDependencyManagement
 parameter_list|()
 throws|throws
 name|ParseException
@@ -5450,9 +5545,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
-name|testDependencyManagmentWithScope
+name|testDependencyManagementWithScope
 parameter_list|()
 throws|throws
 name|ParseException
@@ -5604,6 +5701,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentDependencyMgt
@@ -5908,6 +6007,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOverrideParentVersionPropertyDependencyMgt
@@ -6212,6 +6313,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentProperties
@@ -6386,6 +6489,8 @@ expr_stmt|;
 comment|// present in the pom using a property defined in the
 comment|// parent
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOverrideParentProperties
@@ -6558,6 +6663,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOverrideGrandparentProperties
@@ -6782,6 +6889,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPomWithEntity
@@ -6818,6 +6927,8 @@ name|md
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testModel
@@ -6980,6 +7091,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentBomImport
@@ -7164,6 +7277,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGrandparentBomImport
@@ -7370,6 +7485,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParentProfileBomImport

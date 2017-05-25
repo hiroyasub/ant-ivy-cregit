@@ -95,11 +95,43 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -107,8 +139,6 @@ begin_class
 specifier|public
 class|class
 name|VfsResourceTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|VfsTestHelper
@@ -116,27 +146,8 @@ name|helper
 init|=
 literal|null
 decl_stmt|;
-specifier|public
-name|VfsResourceTest
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|VfsResourceTest
-parameter_list|(
-name|String
-name|arg0
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|arg0
-argument_list|)
-expr_stmt|;
-block|}
+annotation|@
+name|Before
 specifier|public
 name|void
 name|setUp
@@ -151,6 +162,8 @@ name|VfsTestHelper
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|After
 specifier|public
 name|void
 name|tearDown
@@ -162,6 +175,13 @@ literal|null
 expr_stmt|;
 block|}
 comment|/**      * Validate VFSResource creation for a valid VFS URI pointing to an physically existing file      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateResourceThatExists
@@ -360,7 +380,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Escape invalid URL characters (Copied from Wicket, just use StringUtils instead of Strings)      *       * @param queryString      *            The orginal querystring      * @return url The querystring with invalid characters escaped      */
+comment|/**      * Escape invalid URL characters (Copied from Wicket, just use StringUtils instead of Strings)      *       * @param queryString      *            The original querystring      * @return url The querystring with invalid characters escaped      */
 specifier|private
 name|String
 name|escapeUrl
@@ -491,6 +511,13 @@ name|queryString
 return|;
 block|}
 comment|/**      * Validating that resource can be created for files which don't physically exists - e.g.      * resources that are going to created.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateResourceThatDoesntExist
@@ -693,6 +720,13 @@ block|}
 block|}
 block|}
 comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBadURI
@@ -839,6 +873,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Validate getChildren when given a VFS URI for a directory      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListFolderChildren
@@ -1076,6 +1112,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListFileChildren
@@ -1160,6 +1198,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListImaginary

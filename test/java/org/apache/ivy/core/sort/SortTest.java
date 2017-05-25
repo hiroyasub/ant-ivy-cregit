@@ -249,21 +249,45 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
-name|Assert
+name|Before
 import|;
 end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -271,8 +295,6 @@ begin_class
 specifier|public
 class|class
 name|SortTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|DefaultModuleDescriptor
@@ -302,19 +324,13 @@ specifier|private
 name|SilentNonMatchingVersionReporter
 name|nonMatchReporter
 decl_stmt|;
-comment|/*      * (non-Javadoc)      *       * @see junit.framework.TestCase#setUp()      */
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
 name|md1
 operator|=
 name|createModuleDescriptorToSort
@@ -324,7 +340,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-comment|// The revison is often not set in the
+comment|// The revision is often not set in the
 comment|// ivy.xml file that are ordered
 name|md2
 operator|=
@@ -335,7 +351,7 @@ argument_list|,
 literal|"rev2"
 argument_list|)
 expr_stmt|;
-comment|// But somtimes they are set
+comment|// But sometimes they are set
 name|md3
 operator|=
 name|createModuleDescriptorToSort
@@ -394,6 +410,8 @@ name|SilentNonMatchingVersionReporter
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSort
@@ -506,6 +524,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (if A depends      * transitively of B, but B doesn't depends transitively on A then B always comes before A).      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircularDependency
@@ -656,6 +676,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircularDependency2
@@ -728,9 +750,8 @@ name|md3
 block|,
 name|md4
 block|}
-comment|// ,
-comment|// {md3, md1, md2, md4} //we don't have this solution. The loops apear has one contigous
-comment|// element.
+comment|// {md3, md1, md2, md4}
+comment|// we don't have this solution. The loops appear has one contiguous element.
 block|}
 decl_stmt|;
 name|Collection
@@ -790,6 +811,8 @@ expr_stmt|;
 block|}
 block|}
 comment|// Test IVY-624
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircularDependencyInfiniteLoop
@@ -882,6 +905,8 @@ expr_stmt|;
 comment|// If it ends, it's ok.
 block|}
 comment|/**      * In case of Circular dependency a warning is generated.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircularDependencyReport
@@ -965,7 +990,7 @@ expr_stmt|;
 name|String
 name|assertMsg
 init|=
-literal|"incorrect cicular dependency invocation"
+literal|"incorrect circular dependency invocation"
 operator|+
 name|CircularDependencyHelper
 operator|.
@@ -1095,11 +1120,9 @@ name|void
 name|validate
 parameter_list|()
 block|{
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
-literal|"handleCircularDependency has nor been called"
+literal|"handleCircularDependency has not been called"
 argument_list|,
 literal|1
 argument_list|,
@@ -1157,6 +1180,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * The dependency can ask for the latest integration. It should match whatever the version      * declared in the modules to order.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestIntegration
@@ -1275,7 +1300,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * When the version asked by a dependency is not compatible with the version declared in the      * module to order, the two modules should be considered as independant NB: I'm sure of what      * 'compatible' means !      */
+comment|/**      * When the version asked by a dependency is not compatible with the version declared in the      * module to order, the two modules should be considered as independent NB: I'm sure of what      * 'compatible' means !      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDifferentVersionNotConsidered
@@ -1398,6 +1425,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * In case of Different version a warning is generated.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDifferentVersionWarning
@@ -1466,19 +1495,15 @@ name|ModuleDescriptor
 name|md
 parameter_list|)
 block|{
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
-literal|"reportNonMatchingVersion should be invokded only once"
+literal|"reportNonMatchingVersion should be invoked only once"
 argument_list|,
 literal|0
 argument_list|,
 name|nbOfCall
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|md4OtherDep
@@ -1486,8 +1511,6 @@ argument_list|,
 name|descriptor
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|md4
@@ -1504,11 +1527,9 @@ name|void
 name|validate
 parameter_list|()
 block|{
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
-literal|"reportNonMatchingVersion has not be called"
+literal|"reportNonMatchingVersion has not been called"
 argument_list|,
 literal|1
 argument_list|,
@@ -1791,11 +1812,11 @@ return|return;
 block|}
 block|}
 comment|// failed, build a nice message
-name|StringBuffer
+name|StringBuilder
 name|errorMessage
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|errorMessage
@@ -1863,7 +1884,7 @@ name|errorMessage
 operator|.
 name|append
 argument_list|(
-literal|"}\nEpected : \n"
+literal|"}\nExpected : \n"
 argument_list|)
 expr_stmt|;
 for|for

@@ -169,11 +169,33 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 
@@ -181,8 +203,6 @@ begin_class
 specifier|public
 class|class
 name|WarnCircularDependencyStrategyTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|CircularDependencyStrategy
@@ -192,12 +212,12 @@ specifier|private
 name|MockMessageLogger
 name|mockMessageImpl
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|strategy
 operator|=
@@ -229,6 +249,8 @@ name|mockMessageImpl
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLog
@@ -256,6 +278,8 @@ literal|"circular dependency found: #A;1.0->#B;1.0"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveDuplicates
@@ -302,6 +326,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveDuplicates2

@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -26,6 +46,30 @@ operator|.
 name|regex
 operator|.
 name|PatternSyntaxException
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -40,12 +84,12 @@ name|RegexpPatternMatcherTest
 extends|extends
 name|AbstractPatternMatcherTest
 block|{
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|setUp
 argument_list|(
@@ -97,6 +141,15 @@ literal|"abc_123\\d"
 block|}
 return|;
 block|}
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|PatternSyntaxException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testImplementation
@@ -152,8 +205,6 @@ literal|"aa"
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|matcher
 operator|=
 name|patternMatcher
@@ -168,14 +219,6 @@ argument_list|(
 literal|"Should fail on invalid syntax"
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|PatternSyntaxException
-name|e
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 end_class

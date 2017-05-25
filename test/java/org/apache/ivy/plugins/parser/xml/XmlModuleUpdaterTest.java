@@ -311,6 +311,26 @@ begin_import
 import|import
 name|org
 operator|.
+name|junit
+operator|.
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -320,12 +340,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|*
 import|;
 end_import
 
@@ -333,21 +355,14 @@ begin_class
 specifier|public
 class|class
 name|XmlModuleUpdaterTest
-extends|extends
-name|TestCase
 block|{
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|super
-operator|.
-name|tearDown
-argument_list|()
-expr_stmt|;
 name|XmlModuleDescriptorUpdater
 operator|.
 name|LINE_SEPARATOR
@@ -360,6 +375,8 @@ literal|"line.separator"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdate
@@ -620,6 +637,8 @@ name|updated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithComments
@@ -742,6 +761,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVariableReplacement
@@ -1362,6 +1383,8 @@ name|updated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithImportedMappingOverride
@@ -1424,16 +1447,15 @@ literal|"Updated XML doesn't define the confmappingoverride attribute"
 argument_list|,
 name|updatedXml
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"confmappingoverride=\"true\""
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations1
@@ -1615,6 +1637,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations2
@@ -1697,6 +1721,8 @@ block|{
 comment|// this is ok too
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations3
@@ -1904,6 +1930,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations4
@@ -2093,6 +2121,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations5
@@ -2307,6 +2337,8 @@ expr_stmt|;
 block|}
 block|}
 comment|// IVY-1356
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMergedUpdateWithExtendsAndExcludes
@@ -2469,7 +2501,7 @@ name|assertTrue
 argument_list|(
 name|updatedXml
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 name|XmlModuleDescriptorUpdater
 operator|.
@@ -2481,9 +2513,6 @@ name|XmlModuleDescriptorUpdater
 operator|.
 name|LINE_SEPARATOR
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}

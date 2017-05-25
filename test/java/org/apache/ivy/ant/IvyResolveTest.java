@@ -129,11 +129,53 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -141,8 +183,6 @@ begin_class
 specifier|public
 class|class
 name|IvyResolveTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Project
@@ -152,12 +192,12 @@ specifier|private
 name|IvyResolve
 name|resolve
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|TestHelper
 operator|.
@@ -208,12 +248,12 @@ name|project
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|TestHelper
 operator|.
@@ -221,6 +261,8 @@ name|cleanCache
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1455
@@ -255,12 +297,14 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/* disabled: Ivy is not thread-safe, and this usage is not supported at this time */
+annotation|@
+name|Test
+annotation|@
+name|Ignore
 specifier|public
 name|void
 name|disabledIVY1454
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// run init in parent thread, then resolve in children
 name|project
@@ -340,6 +384,8 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY779
@@ -473,6 +519,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimple
@@ -560,6 +608,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithoutIvyFile
@@ -743,6 +793,8 @@ name|id
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInline
@@ -827,6 +879,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInlineWithResolveId
@@ -925,6 +979,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInlineForNonExistingModule
@@ -1003,12 +1059,11 @@ name|valueOf
 argument_list|(
 name|failure
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithSlashes
@@ -1141,6 +1196,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDepsChanged
@@ -1196,6 +1253,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDontCheckIfChanged
@@ -1256,6 +1315,8 @@ expr_stmt|;
 comment|// To be complete, we should also check that the XmlReportParser is not invoked
 comment|// but this would require a too big refactoring to inject a mock object
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConflictingDepsChanged
@@ -1311,6 +1372,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDouble
@@ -1403,6 +1466,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailure
@@ -1443,6 +1508,8 @@ block|{
 comment|// ok => should raise an exception
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIvyLogModulesInUseWithFailure
@@ -1487,6 +1554,8 @@ argument_list|()
 expr_stmt|;
 comment|// we did manage to get here, so no NPE has been thrown (IVY-961)
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailureWithMissingConfigurations
@@ -1538,17 +1607,16 @@ operator|.
 name|getMessage
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"unknown"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailureOnBadDependencyIvyFile
@@ -1589,6 +1657,8 @@ block|{
 comment|// ok => should raise an exception
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailureOnBadStatusInDependencyIvyFile
@@ -1629,6 +1699,8 @@ block|{
 comment|// ok => should raise an exception
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHaltOnFailure
@@ -1680,6 +1752,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveId
@@ -1982,6 +2056,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoubleResolveWithResolveId
@@ -2236,6 +2312,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDifferentResolveWithSameResolveId
@@ -2497,6 +2575,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExcludedConf
@@ -2585,16 +2665,15 @@ argument_list|(
 literal|"ivy.resolved.configurations"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"default"
 argument_list|)
-operator|>
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithAbsoluteFile
@@ -2651,6 +2730,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithRelativeFile
@@ -2707,6 +2788,8 @@ name|getIvyInstance
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsSimple
@@ -2770,6 +2853,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsMultiple
@@ -2945,6 +3030,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsMultipleWithConf
@@ -3085,6 +3172,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsMultipleWithConf2
@@ -3246,6 +3335,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsExclude
@@ -3408,6 +3499,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsDependencyExclude
@@ -3563,6 +3656,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsDependencyInclude
@@ -3690,6 +3785,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildsFail
@@ -3748,6 +3845,8 @@ block|{
 comment|// ok
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimpleExtends

@@ -157,11 +157,55 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -169,8 +213,6 @@ begin_class
 specifier|public
 class|class
 name|LatestConflictManagerTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Ivy
@@ -180,7 +222,9 @@ specifier|private
 name|File
 name|_cache
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -221,12 +265,12 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.
@@ -237,6 +281,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Test case for issue IVY-388
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIvy388
@@ -405,6 +451,8 @@ block|}
 block|}
 block|}
 comment|// Test case for issue IVY-383
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIvy383
@@ -523,6 +571,8 @@ block|}
 block|}
 block|}
 comment|// Test case for issue IVY-407
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestTime1
@@ -710,6 +760,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestTime2
@@ -898,6 +950,8 @@ block|}
 block|}
 block|}
 comment|/*      * Test case for issue IVY-407 (with transitivity) There are 5 modules A, B, C, D and E. 1)      * publish C-1.0.0, C-1.0.1 and C-1.0.2 2) B needs C-1.0.0 : retrieve ok and publish B-1.0.0 3)      * A needs B-1.0.0 and C-1.0.2 : retrieve ok and publish A-1.0.0 4) D needs C-1.0.1 : retrieve      * ok and publish D-1.0.0 5) E needs D-1.0.0 and A-1.0.0 (D before A in ivy file) retrieve      * failed to get C-1.0.2 from A (get apparently C-1.0.1 from D)      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestTimeTransitivity
@@ -1156,6 +1210,8 @@ block|}
 block|}
 block|}
 comment|/*      * Test case for issue IVY-1399:      * Dependency tree:      * Mycompany#target;1      *     MyCompany#A;1      *         conflicting-dependency#dep;1      *         OtherCompany#prefers-later;1      *             conflicting-dependency#dep;2      *     MyCompany#B;1      *         MyCompany#A;1      *             ...      *         OtherCompany#prefers-later;1      *             ...      *         MyCompany#C;1      *             conflicting-dependency#dep;1      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictedModules

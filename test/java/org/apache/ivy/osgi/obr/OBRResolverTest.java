@@ -519,21 +519,33 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
-name|AssertionFailedError
+name|Before
 import|;
 end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -541,8 +553,6 @@ begin_class
 specifier|public
 class|class
 name|OBRResolverTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 specifier|static
@@ -714,6 +724,8 @@ operator|.
 name|getInstance
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Before
 specifier|public
 name|void
 name|setUp
@@ -1002,25 +1014,13 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|RepositoryCacheManager
+name|cache
+range|:
 name|caches
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
-name|caches
-index|[
-name|i
-index|]
+name|cache
 operator|.
 name|clean
 argument_list|()
@@ -1042,6 +1042,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimpleResolve
@@ -1073,6 +1075,8 @@ name|mrid
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimpleUrlResolve
@@ -1104,6 +1108,8 @@ name|mrid
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDual
@@ -1341,6 +1347,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImporting
@@ -1368,6 +1376,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportingOptional
@@ -1421,6 +1431,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportingTransitiveOptional
@@ -1476,6 +1488,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportingVersion
@@ -1503,6 +1517,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportingRangeVersion
@@ -1530,6 +1546,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveUse
@@ -1555,6 +1573,8 @@ block|{}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportingUse
@@ -1586,6 +1606,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveRequire
@@ -1615,6 +1637,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveOptionalConf
@@ -1644,6 +1668,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportAmbiguity
@@ -1689,6 +1715,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveImportNoAmbiguity
@@ -1718,6 +1746,8 @@ literal|"default"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveRequireAmbiguity
@@ -1756,6 +1786,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveRequireJre
@@ -1821,6 +1853,11 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 specifier|private
 name|void
 name|genericTestResolve
@@ -2062,7 +2099,7 @@ comment|// test passed
 block|}
 catch|catch
 parameter_list|(
-name|AssertionFailedError
+name|AssertionError
 name|e
 parameter_list|)
 block|{

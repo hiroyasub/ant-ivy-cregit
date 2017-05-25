@@ -289,11 +289,43 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -301,8 +333,6 @@ begin_class
 specifier|public
 class|class
 name|PublishEventsTest
-extends|extends
-name|TestCase
 block|{
 comment|// maps ArtifactRevisionId to PublishTestCase instance.
 specifier|private
@@ -376,18 +406,15 @@ specifier|private
 name|PublishEngine
 name|publishEngine
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
 comment|// reset test case state.
 name|resetCounters
 argument_list|()
@@ -634,18 +661,13 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|super
-operator|.
-name|tearDown
-argument_list|()
-expr_stmt|;
 comment|// reset test state.
 name|resetCounters
 argument_list|()
@@ -753,6 +775,8 @@ literal|null
 expr_stmt|;
 block|}
 comment|/**      * Test a simple artifact publish, without errors or overwrite settings.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishNoOverwrite
@@ -836,6 +860,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test a simple artifact publish, with overwrite set to true.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishWithOverwrite
@@ -933,6 +959,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test an attempted publish with an invalid data file path.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishMissingFile
@@ -1065,6 +1093,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test an attempted publish in which the target resolver throws an IOException.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishWithException
@@ -1710,9 +1740,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we test file separately, since it is hard to guaranteean exact path match, but we
-comment|// want
-comment|// to make sure that both paths point to the same canonical location on the
+comment|// we test file separately, since it is hard to guarantee an exact path match, but we
+comment|// want to make sure that both paths point to the same canonical location on the
 comment|// filesystem
 name|String
 name|filePath

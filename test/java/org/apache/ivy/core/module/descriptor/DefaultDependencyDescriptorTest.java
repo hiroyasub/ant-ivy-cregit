@@ -21,11 +21,47 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|runner
+operator|.
+name|JUnitCore
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
 import|;
 end_import
 
@@ -33,8 +69,6 @@ begin_class
 specifier|public
 class|class
 name|DefaultDependencyDescriptorTest
-extends|extends
-name|TestCase
 block|{
 specifier|public
 specifier|static
@@ -46,13 +80,9 @@ index|[]
 name|args
 parameter_list|)
 block|{
-name|junit
+name|JUnitCore
 operator|.
-name|textui
-operator|.
-name|TestRunner
-operator|.
-name|run
+name|runClasses
 argument_list|(
 name|DefaultDependencyDescriptorTest
 operator|.
@@ -61,6 +91,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*      * Test method for      * 'org.apache.ivy.DefaultDependencyDescriptor.replaceSelfFallbackPattern(String, String)'      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceSelfFallbackPattern
@@ -121,6 +153,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*      * Test method for      * 'org.apache.ivy.DefaultDependencyDescriptor.replaceThisFallbackPattern(String, String)'      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceThisFallbackPattern

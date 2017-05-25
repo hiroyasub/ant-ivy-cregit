@@ -16,6 +16,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -215,11 +239,21 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -227,9 +261,9 @@ begin_class
 specifier|public
 class|class
 name|AntCallTriggerTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test
@@ -274,12 +308,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.
@@ -750,7 +784,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates the InputHandler and adds it to the project.      *       * @param project      *            the project instance.      * @param inputHandlerClassname      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
+comment|/**      * Creates the InputHandler and adds it to the project.      *       * @param project      *            the project instance.      * @param inputHandlerClassname      *            String      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
 specifier|private
 name|void
 name|addInputHandler

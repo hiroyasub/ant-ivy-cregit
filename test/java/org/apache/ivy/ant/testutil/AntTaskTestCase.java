@@ -44,12 +44,26 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -57,8 +71,6 @@ begin_class
 specifier|public
 class|class
 name|AntTaskTestCase
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|AntTestListener

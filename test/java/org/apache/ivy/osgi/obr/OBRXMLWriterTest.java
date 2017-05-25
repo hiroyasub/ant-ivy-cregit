@@ -18,6 +18,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -229,6 +253,16 @@ begin_import
 import|import
 name|org
 operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -237,22 +271,10 @@ name|ContentHandler
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
 name|OBRXMLWriterTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 specifier|static
@@ -288,6 +310,8 @@ name|BUNDLE_2
 init|=
 literal|"org.apache.ivy.test2"
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWriteWithSource
@@ -430,7 +454,7 @@ decl_stmt|;
 try|try
 block|{
 name|ContentHandler
-name|hanlder
+name|handler
 init|=
 name|OBRXMLWriter
 operator|.
@@ -449,7 +473,7 @@ name|writeBundles
 argument_list|(
 name|bundles
 argument_list|,
-name|hanlder
+name|handler
 argument_list|)
 expr_stmt|;
 block|}

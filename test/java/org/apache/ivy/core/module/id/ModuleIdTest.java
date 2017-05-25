@@ -21,11 +21,23 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -33,9 +45,9 @@ begin_class
 specifier|public
 class|class
 name|ModuleIdTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testModuleId
@@ -83,6 +95,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testModuleIdIllegalArgumentException
@@ -146,6 +160,8 @@ block|{
 comment|// success
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsObjectTrue
@@ -214,6 +230,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsObjectFalse
@@ -282,6 +300,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncodeToString
@@ -325,6 +345,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecode
@@ -372,6 +394,8 @@ name|moduleId2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompareToNullObject
@@ -422,6 +446,8 @@ block|{
 comment|// success
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompareToEqual
@@ -467,6 +493,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompareToLessThan
@@ -535,9 +563,11 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
-name|testCompareToGreatherThan
+name|testCompareToGreaterThan
 parameter_list|()
 block|{
 name|String

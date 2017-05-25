@@ -65,11 +65,55 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -81,8 +125,6 @@ begin_class
 specifier|public
 class|class
 name|VfsRepositoryTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|VfsRepository
@@ -102,33 +144,15 @@ name|scratchDir
 init|=
 literal|null
 decl_stmt|;
+annotation|@
+name|Before
 specifier|public
-name|VfsRepositoryTest
-parameter_list|(
-name|String
-name|arg0
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-name|super
-argument_list|(
-name|arg0
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
 name|void
 name|setUp
 parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
 name|helper
 operator|=
 operator|new
@@ -166,18 +190,13 @@ name|mkdir
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|super
-operator|.
-name|tearDown
-argument_list|()
-expr_stmt|;
 name|repo
 operator|=
 literal|null
@@ -200,6 +219,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Basic validation of happy path put - valid VFS URI and no conflict with existing file      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPutValid
@@ -377,6 +398,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we can overwrite an existing file      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPutOverwriteTrue
@@ -590,6 +613,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPutOverwriteFalse
@@ -728,6 +753,8 @@ block|}
 block|}
 block|}
 comment|/**      * Test the retrieval of an artifact from the repository creating a new artifact      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetNoExisting
@@ -879,6 +906,8 @@ block|}
 block|}
 block|}
 comment|/**      * Test the retrieval of an artifact from the repository overwriting an existing artifact      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetOverwriteExisting
@@ -1056,6 +1085,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to an existing file      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetResourceValidExist
@@ -1138,6 +1169,8 @@ block|}
 block|}
 block|}
 comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to a non-existent file.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetResourceValidNoExist

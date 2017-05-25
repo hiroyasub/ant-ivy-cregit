@@ -129,11 +129,67 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -149,8 +205,6 @@ begin_class
 specifier|public
 class|class
 name|IvyBuildListTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|File
@@ -164,12 +218,12 @@ specifier|private
 name|IvyBuildList
 name|buildlist
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|createCache
 argument_list|()
@@ -212,12 +266,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 argument_list|()
@@ -394,6 +448,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/*      * Those tests use the ivy files A , B , C , D , E in test/buildlist The dependencies are : A ->      * C B has no dependency C -> B D -> A , B E has no dependency F -> G G -> F      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimple
@@ -486,6 +542,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReverse
@@ -585,6 +643,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithRoot
@@ -679,6 +739,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithRootCircular
@@ -750,6 +812,8 @@ argument_list|)
 expr_stmt|;
 comment|// F and G should be in the list
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithTwoRoots
@@ -846,6 +910,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithRootExclude
@@ -945,6 +1011,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithRootAndOnlyDirectDep
@@ -1046,6 +1114,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithLeaf
@@ -1142,6 +1212,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithLeafCircular
@@ -1212,6 +1284,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithTwoLeafs
@@ -1310,6 +1384,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithLeafExclude
@@ -1411,6 +1487,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithLeafAndOnlyDirectDep
@@ -1512,6 +1590,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRestartFrom
@@ -1609,6 +1689,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOnMissingDescriptor
@@ -1708,6 +1790,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOnMissingDescriptor2
@@ -1805,6 +1889,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithModuleWithSameNameAndDifferentOrg
@@ -1994,6 +2080,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoParents
@@ -2086,6 +2174,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOneParent
@@ -2178,6 +2268,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTwoParents
@@ -2270,6 +2362,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativePathToParent
@@ -2362,6 +2456,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAbsolutePathToParent
