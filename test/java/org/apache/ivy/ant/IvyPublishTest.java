@@ -4718,8 +4718,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test must not publish ivy file with bad revision.      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testBadNoDeliver
@@ -4819,27 +4827,11 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|publish
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"shouldn't publish ivy file with bad revision"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|ex
-parameter_list|)
-block|{
-comment|// normal
-block|}
 block|}
 annotation|@
 name|Test

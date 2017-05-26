@@ -821,6 +821,7 @@ literal|"#B;2, #C;2"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -884,12 +885,8 @@ argument_list|(
 literal|"#A;conflict"
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -956,11 +953,6 @@ operator|.
 name|resolve
 argument_list|(
 literal|"#A;conflict"
-argument_list|)
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
 argument_list|)
 expr_stmt|;
 block|}

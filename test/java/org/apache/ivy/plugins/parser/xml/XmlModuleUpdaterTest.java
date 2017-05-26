@@ -323,7 +323,29 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Rule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|rules
+operator|.
+name|ExpectedException
 import|;
 end_import
 
@@ -1639,6 +1661,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|IllegalArgumentException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testUpdateWithExcludeConfigurations2
@@ -1670,8 +1699,6 @@ operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 name|XmlModuleDescriptorUpdater
 operator|.
 name|update
@@ -1698,28 +1725,6 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"IllegalArgumentException hasn't been thrown"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IllegalArgumentException
-name|e
-parameter_list|)
-block|{
-comment|// this is ok
-block|}
-catch|catch
-parameter_list|(
-name|SAXParseException
-name|e
-parameter_list|)
-block|{
-comment|// this is ok too
-block|}
 block|}
 annotation|@
 name|Test

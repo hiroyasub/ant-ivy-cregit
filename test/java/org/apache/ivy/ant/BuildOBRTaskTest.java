@@ -186,10 +186,6 @@ specifier|private
 name|BuildOBRTask
 name|buildObr
 decl_stmt|;
-specifier|private
-name|Project
-name|project
-decl_stmt|;
 annotation|@
 name|Before
 specifier|public
@@ -198,13 +194,6 @@ name|setUp
 parameter_list|()
 block|{
 name|createCache
-argument_list|()
-expr_stmt|;
-name|project
-operator|=
-name|TestHelper
-operator|.
-name|newProject
 argument_list|()
 expr_stmt|;
 name|buildObr
@@ -217,7 +206,10 @@ name|buildObr
 operator|.
 name|setProject
 argument_list|(
-name|project
+name|TestHelper
+operator|.
+name|newProject
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|System

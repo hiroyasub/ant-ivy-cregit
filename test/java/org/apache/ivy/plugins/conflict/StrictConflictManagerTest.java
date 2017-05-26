@@ -276,16 +276,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testConflictResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|ivy
 operator|.
@@ -304,31 +310,23 @@ name|getResolveOptions
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected
-block|}
-block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testConflictWithDynamicRevisionResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|ivy
 operator|.
@@ -347,20 +345,6 @@ name|getResolveOptions
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected
-block|}
 block|}
 specifier|private
 name|ResolveOptions

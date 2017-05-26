@@ -516,6 +516,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test fails due to bad resolver configuration.      *      * @throws IOException      * @throws ParseException      */
 annotation|@
 name|Test
 argument_list|(
@@ -552,12 +553,8 @@ literal|"dualresolverconf-bad.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"bad dual resolver configuration should raise exception"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test fails due to bad resolver configuration      *      * @throws ParseException      */
 annotation|@
 name|Test
 argument_list|(
@@ -617,11 +614,6 @@ argument_list|(
 name|dd
 argument_list|,
 name|_data
-argument_list|)
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"bad dual resolver configuration should raise exception"
 argument_list|)
 expr_stmt|;
 block|}

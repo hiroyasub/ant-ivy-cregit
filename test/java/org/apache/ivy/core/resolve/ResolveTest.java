@@ -741,7 +741,29 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Rule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|rules
+operator|.
+name|ExpectedException
 import|;
 end_import
 
@@ -807,6 +829,17 @@ decl_stmt|;
 specifier|private
 name|File
 name|workDir
+decl_stmt|;
+annotation|@
+name|Rule
+specifier|public
+name|ExpectedException
+name|expExc
+init|=
+name|ExpectedException
+operator|.
+name|none
+argument_list|()
 decl_stmt|;
 annotation|@
 name|Before
@@ -21926,6 +21959,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3;      * circular dependency strategy set to error.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -21935,7 +21969,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org6#mod6.3;1.0->org6#mod6.2;1.0->org6#mod6.3;latest.integration"
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -22069,8 +22118,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -22092,30 +22139,8 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-name|assertEquals
-argument_list|(
-literal|"org6#mod6.3;1.0->org6#mod6.2;1.0->org6#mod6.3;latest.integration"
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Circular dependency: mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+;      * circular dependency strategy set to error.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -22125,7 +22150,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org8#mod8.5;NONE->org8#mod8.6;2.+->org8#mod8.5;2.+"
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -22171,8 +22211,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -22194,31 +22232,8 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-comment|// ok
-name|assertEquals
-argument_list|(
-literal|"org8#mod8.5;NONE->org8#mod8.6;2.+->org8#mod8.5;2.+"
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Test case for IVY-400.      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3,      * in both configuration default and test; circular dependency strategy set to error.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -22228,9 +22243,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-400
-comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3,
-comment|// in both configuration default and test
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->..."
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -22461,8 +22489,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -22486,29 +22512,6 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-name|assertEquals
-argument_list|(
-literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->..."
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Test
@@ -30293,7 +30296,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testResolveVesionRelocationChainedWithGroupRelocation
+name|testResolveVersionRelocationChainedWithGroupRelocation
 parameter_list|()
 throws|throws
 name|Exception
@@ -32531,13 +32534,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test has a dependency on test2 but there is no version listed. test has a parent of
-comment|// parent(2.0)
-comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list
-comment|// the version as
-comment|// ${pom.version}. The parent version should take precedence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and
-comment|// it's version is listed
+comment|// test has a dependency on test2 but there is no version listed. test
+comment|// has a parent of parent(2.0) then parent2. Both parents have a
+comment|// dependencyManagement element for test2, and each list the version as
+comment|// ${pom.version}. The parent version should take precedence over
+comment|// parent2, so the version should be test2 version 2.0. Test3 is also a
+comment|// dependency of parent, and it's version is listed
 comment|// as 1.0 in parent2. (dependencies inherited from parent comes after)
 comment|// now run tests with dual resolver
 name|Ivy
@@ -32852,14 +32854,13 @@ name|Exception
 block|{
 comment|// test;2.0 has a dependency on test2;3.0.
 comment|// test has a parent of parent(2.0) then parent2.
-comment|// Both parents have a dependencyManagement element for test2, and each list the version as
-comment|// ${pom.version}. The version for test2 in test should take precedence,
-comment|// so the version should be test2 version 3.0.
-comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement section specifying
-comment|// test4;1.0.
-comment|// since maven 2.0.6, the information in parent should override transitive dependency
-comment|// version,
-comment|// and thus we should get test4;1.0
+comment|// Both parents have a dependencyManagement element for test2, and each
+comment|// list the version as ${pom.version}. The version for test2 in test
+comment|// should take precedence, so the version should be test2 version 3.0.
+comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement
+comment|// section specifying test4;1.0.
+comment|// since maven 2.0.6, the information in parent should override
+comment|// transitive dependency version, and thus we should get test4;1.0
 name|Ivy
 name|ivy
 init|=
@@ -36895,21 +36896,7 @@ name|Artifact
 name|art
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|containsArtifact
-argument_list|(
-name|art
-argument_list|,
-name|conf
-operator|.
-name|getDownloadedArtifactsReports
-argument_list|()
-argument_list|)
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"artifact "
 operator|+
@@ -36931,9 +36918,18 @@ argument_list|()
 operator|.
 name|getModuleRevisionId
 argument_list|()
+argument_list|,
+name|containsArtifact
+argument_list|(
+name|art
+argument_list|,
+name|conf
+operator|.
+name|getDownloadedArtifactsReports
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|void
@@ -36979,20 +36975,7 @@ argument_list|,
 name|ext
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|containsArtifact
-argument_list|(
-name|art
-argument_list|,
-name|conf
-operator|.
-name|getDownloadedArtifactsReports
-argument_list|()
-argument_list|)
-condition|)
-block|{
-name|fail
+name|assertFalse
 argument_list|(
 literal|"artifact "
 operator|+
@@ -37014,9 +36997,18 @@ argument_list|()
 operator|.
 name|getModuleRevisionId
 argument_list|()
+argument_list|,
+name|containsArtifact
+argument_list|(
+name|art
+argument_list|,
+name|conf
+operator|.
+name|getDownloadedArtifactsReports
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|Artifact
@@ -38429,6 +38421,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testIVY956
@@ -38454,8 +38453,6 @@ literal|"latest-compatible"
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -38490,20 +38487,6 @@ literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"No StrictConflictException has been thrown"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
 block|}
 annotation|@
 name|Test
@@ -39331,15 +39314,14 @@ argument_list|,
 literal|"1"
 argument_list|)
 decl_stmt|;
-comment|// check that the resolve report has the expected results, namely that trunk/5 is considered
-comment|// later than branch/1
-comment|// purely because 5>1. Of course it is more likely that we would want to consider this a
-comment|// 'bad comparison', but
-comment|// this Unit Test is not about that. It is about inconsistency of results between the
-comment|// resolve report and the
-comment|// delivered descriptor. In fact the delivered descriptor is out of step, because retrieve
-comment|// and the report both
-comment|// agree that trunk/5 is selected. Deliver begs to differ.
+comment|// check that the resolve report has the expected results, namely that
+comment|// trunk/5 is considered later than branch/1 purely because 5>1. Of
+comment|// course it is more likely that we would want to consider this a
+comment|// 'bad comparison', but this Unit Test is not about that. It is about
+comment|// inconsistency of results between the resolve report and the
+comment|// delivered descriptor. In fact the delivered descriptor is out of
+comment|// step, because retrieve and the report both agree that trunk/5 is
+comment|// selected. Deliver begs to differ.
 name|Set
 argument_list|<
 name|ModuleRevisionId

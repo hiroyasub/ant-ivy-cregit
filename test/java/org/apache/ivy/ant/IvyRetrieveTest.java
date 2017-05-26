@@ -1721,6 +1721,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Retrieve without previous resolve must fail.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -1737,7 +1738,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// we do a retrieve with the module information whereas no resolve has been previously done
 name|retrieve
 operator|.
 name|setOrganisation
@@ -1764,12 +1764,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"retrieve without previous resolve should have thrown an exception"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -1799,11 +1795,6 @@ name|retrieve
 operator|.
 name|execute
 argument_list|()
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
 expr_stmt|;
 block|}
 annotation|@

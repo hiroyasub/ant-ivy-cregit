@@ -426,16 +426,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test must fail because no resolve was performed      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testWithResolveIdWithoutResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|prop
 operator|.
@@ -463,20 +469,6 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Task should have failed because no resolve was performed!"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected!
-block|}
 block|}
 block|}
 end_class

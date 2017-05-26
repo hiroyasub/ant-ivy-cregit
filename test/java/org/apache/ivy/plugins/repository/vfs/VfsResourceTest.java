@@ -131,7 +131,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|fail
+name|*
 import|;
 end_import
 
@@ -244,44 +244,43 @@ operator|.
 name|fsManager
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|res
-operator|==
-literal|null
-condition|)
-block|{
-name|fail
+name|assertNotNull
 argument_list|(
 literal|"Unexpected null value on VFS URI: "
 operator|+
 name|resId
+argument_list|,
+name|res
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
-name|res
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"Resource does not exist and it should: "
 operator|+
 name|resId
+argument_list|,
+name|res
+operator|.
+name|exists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 comment|// VFS apparently does some weird normalization so that resource id used to create
 comment|// the VFS resource is not necessarily identical to the id returned from the getName
 comment|// method<sigh>. We try to work around this by transforming things into java URIs.
-if|if
-condition|(
-operator|!
+name|assertEquals
+argument_list|(
+literal|"Failed on getName. Expected: "
+operator|+
+name|resId
+operator|+
+literal|". Actual: "
+operator|+
+name|res
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 operator|new
 name|URI
 argument_list|(
@@ -290,9 +289,7 @@ argument_list|(
 name|resId
 argument_list|)
 argument_list|)
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 operator|new
 name|URI
 argument_list|(
@@ -308,76 +305,47 @@ operator|.
 name|normalize
 argument_list|()
 argument_list|)
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Failed on getName. Expected: "
-operator|+
-name|resId
-operator|+
-literal|". Actual: "
-operator|+
-name|res
-operator|.
-name|getName
-argument_list|()
-argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|res
-operator|.
-name|getLastModified
-argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|fail
+name|assertNotEquals
 argument_list|(
 literal|"Expected non-null file modification date for URI: "
 operator|+
 name|resId
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
+argument_list|,
+literal|0
+argument_list|,
 name|res
 operator|.
-name|getContentLength
+name|getLastModified
 argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|fail
+argument_list|)
+expr_stmt|;
+name|assertNotEquals
 argument_list|(
 literal|"Expected non-zero file length for URI: "
 operator|+
 name|resId
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
+argument_list|,
+literal|0
+argument_list|,
 name|res
 operator|.
-name|physicallyExists
+name|getContentLength
 argument_list|()
-condition|)
-block|{
-name|fail
+argument_list|)
+expr_stmt|;
+name|assertTrue
 argument_list|(
 literal|"Physical existence check returned false for existing resource: "
 operator|+
 name|resId
+argument_list|,
+name|res
+operator|.
+name|physicallyExists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Escape invalid URL characters (Copied from Wicket, just use StringUtils instead of Strings)      *       * @param queryString      *            The original querystring      * @return url The querystring with invalid characters escaped      */
@@ -578,43 +546,43 @@ operator|.
 name|fsManager
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|res
-operator|==
-literal|null
-condition|)
-block|{
-name|fail
+name|assertNotNull
 argument_list|(
 literal|"Unexpected null value on VFS URI: "
 operator|+
 name|resId
+argument_list|,
+name|res
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+name|assertFalse
+argument_list|(
+literal|"Resource does exist and it should not: "
+operator|+
+name|resId
+argument_list|,
 name|res
 operator|.
 name|exists
 argument_list|()
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Resource does not exist and it shouldn't: "
-operator|+
-name|resId
 argument_list|)
 expr_stmt|;
-block|}
 comment|// VFS apparently does some weird normalization so that resource id used to create
 comment|// the VFS resource is not necessarily identical to the id returned from the getName
 comment|// method<sigh>. We try to work around this by transforming things into java URIs.
-if|if
-condition|(
-operator|!
+name|assertEquals
+argument_list|(
+literal|"Failed on getName. Expected: "
+operator|+
+name|resId
+operator|+
+literal|". Actual: "
+operator|+
+name|res
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 operator|new
 name|URI
 argument_list|(
@@ -623,9 +591,7 @@ argument_list|(
 name|resId
 argument_list|)
 argument_list|)
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 operator|new
 name|URI
 argument_list|(
@@ -641,82 +607,47 @@ operator|.
 name|normalize
 argument_list|()
 argument_list|)
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Failed on getName. Expected: "
-operator|+
-name|resId
-operator|+
-literal|". Actual: "
-operator|+
-name|res
-operator|.
-name|getName
-argument_list|()
-argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|res
-operator|.
-name|getLastModified
-argument_list|()
-operator|!=
-literal|0
-condition|)
-block|{
-name|fail
+name|assertEquals
 argument_list|(
 literal|"Expected null file modification date for URI: "
 operator|+
 name|resId
-operator|+
-literal|": "
-operator|+
+argument_list|,
+literal|0
+argument_list|,
 name|res
 operator|.
 name|getLastModified
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+name|assertEquals
+argument_list|(
+literal|"Expected zero file length for URI: "
+operator|+
+name|resId
+argument_list|,
+literal|0
+argument_list|,
 name|res
 operator|.
 name|getContentLength
 argument_list|()
-operator|!=
-literal|0
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Expected non-zero file length for URI: "
-operator|+
-name|resId
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|res
-operator|.
-name|physicallyExists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertFalse
 argument_list|(
 literal|"Physical existence check returned true for non-existent resource: "
 operator|+
 name|resId
+argument_list|,
+name|res
+operator|.
+name|physicallyExists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      */
@@ -752,52 +683,28 @@ operator|.
 name|fsManager
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|res
-operator|==
-literal|null
-condition|)
-block|{
-name|fail
+name|assertNotNull
 argument_list|(
 literal|"Unexpected null value on VFS URI: "
 operator|+
 name|vfsURI
+argument_list|,
+name|res
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|res
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertFalse
 argument_list|(
 literal|"Resource is marked as existing and it should not: "
 operator|+
 name|vfsURI
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
+argument_list|,
 name|res
 operator|.
-name|getName
+name|exists
 argument_list|()
-operator|.
-name|equals
-argument_list|(
-literal|"smb1:/goobeldygook"
 argument_list|)
-condition|)
-block|{
-name|fail
+expr_stmt|;
+name|assertEquals
 argument_list|(
 literal|"Failed on getName. Expected: "
 operator|+
@@ -809,20 +716,16 @@ name|res
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
+argument_list|,
 name|res
 operator|.
-name|getLastModified
+name|getName
 argument_list|()
-operator|!=
-literal|0
-condition|)
-block|{
-name|fail
+argument_list|,
+literal|"smb1:/goobeldygook"
+argument_list|)
+expr_stmt|;
+name|assertEquals
 argument_list|(
 literal|"Expected null file modification date for URI: "
 operator|+
@@ -834,43 +737,41 @@ name|res
 operator|.
 name|getLastModified
 argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
+argument_list|,
+literal|0
+argument_list|,
 name|res
 operator|.
-name|getContentLength
+name|getLastModified
 argument_list|()
-operator|!=
-literal|0
-condition|)
-block|{
-name|fail
+argument_list|)
+expr_stmt|;
+name|assertEquals
 argument_list|(
 literal|"Expected zero file length for URI: "
 operator|+
 name|vfsURI
+argument_list|,
+literal|0
+argument_list|,
+name|res
+operator|.
+name|getContentLength
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+name|assertFalse
+argument_list|(
+literal|"Physical existence check returned true for non-existent resource: "
+operator|+
+name|vfsURI
+argument_list|,
 name|res
 operator|.
 name|physicallyExists
 argument_list|()
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Physical existence check returned false for existing resource: "
-operator|+
-name|vfsURI
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Validate getChildren when given a VFS URI for a directory      */
 annotation|@
@@ -1080,18 +981,7 @@ argument_list|(
 name|expected
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|actual
-operator|.
-name|equals
-argument_list|(
-name|expected
-argument_list|)
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"\nExpected: "
 operator|+
@@ -1100,15 +990,21 @@ operator|.
 name|toString
 argument_list|()
 operator|+
-literal|"\n.Actual: "
+literal|"\nActual: "
 operator|+
 name|actual
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|actual
+operator|.
+name|equals
+argument_list|(
+name|expected
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      */
@@ -1179,22 +1075,18 @@ operator|.
 name|getChildren
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
+name|assertEquals
+argument_list|(
+literal|"getChildren query on file provided results when it shouldn't have"
+argument_list|,
+literal|0
+argument_list|,
 name|results
 operator|.
 name|size
 argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"getChildren query on file provided results when it shouldn't have"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      */
@@ -1263,22 +1155,18 @@ operator|.
 name|getChildren
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
+name|assertEquals
+argument_list|(
+literal|"getChildren query on file provided results when it shouldn't have"
+argument_list|,
+literal|0
+argument_list|,
 name|results
 operator|.
 name|size
 argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"getChildren query on file provided results when it shouldn't have"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

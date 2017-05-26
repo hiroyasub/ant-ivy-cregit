@@ -127,6 +127,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|Exception
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testCyclicSubstitute
@@ -162,8 +169,6 @@ argument_list|,
 literal|"${var}"
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|IvyPatternHelper
 operator|.
 name|substituteVariables
@@ -173,34 +178,6 @@ argument_list|,
 name|variables
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"cyclic var should raise an exception"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-comment|// ok
-block|}
-catch|catch
-parameter_list|(
-name|Error
-name|er
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"cyclic var shouldn't raise an error: "
-operator|+
-name|er
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Test

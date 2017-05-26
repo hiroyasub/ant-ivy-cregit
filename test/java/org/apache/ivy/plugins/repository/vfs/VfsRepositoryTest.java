@@ -101,19 +101,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
+name|*
 import|;
 end_import
 
@@ -342,20 +330,7 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|new
-name|File
-argument_list|(
-name|srcFile
-argument_list|)
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"Put didn't happen. Src VfsURI: "
 operator|+
@@ -367,9 +342,17 @@ operator|+
 literal|".\nExpected file: "
 operator|+
 name|destFile
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|srcFile
+argument_list|)
+operator|.
+name|exists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
@@ -541,20 +524,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|new
-name|File
-argument_list|(
-name|srcFile
-argument_list|)
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"Put didn't happen. Src VfsURI: "
 operator|+
@@ -566,25 +536,29 @@ operator|+
 literal|".\nExpected file: "
 operator|+
 name|destFile
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|srcFile
+argument_list|)
+operator|.
+name|exists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+name|assertNotEquals
+argument_list|(
+literal|"Zero file size indicates file not overwritten"
+argument_list|,
+literal|0
+argument_list|,
 name|destFile
 operator|.
 name|length
 argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Zero file size indicates file not overwritten"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
@@ -615,6 +589,13 @@ block|}
 comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *       * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|IOException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testPutOverwriteFalse
@@ -717,8 +698,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 name|repo
 operator|.
 name|put
@@ -737,19 +716,6 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Did not throw expected IOException from attempted overwrite of existing file"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 comment|/**      * Test the retrieval of an artifact from the repository creating a new artifact      *       * @throws Exception      */
@@ -850,20 +816,7 @@ name|testFile
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|new
-name|File
-argument_list|(
-name|testFile
-argument_list|)
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"Expected file: "
 operator|+
@@ -875,9 +828,17 @@ name|vfsURI
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+operator|new
+name|File
+argument_list|(
+name|testFile
+argument_list|)
+operator|.
+name|exists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(
@@ -1017,16 +978,7 @@ argument_list|,
 name|testFile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|testFile
-operator|.
-name|exists
-argument_list|()
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"Expected file: "
 operator|+
@@ -1038,25 +990,25 @@ name|vfsURI
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|testFile
+operator|.
+name|exists
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+name|assertNotEquals
+argument_list|(
+literal|"Zero file size indicates file not overwritten"
+argument_list|,
+literal|0
+argument_list|,
 name|testFile
 operator|.
 name|length
 argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Zero file size indicates file not overwritten"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 catch|catch
 parameter_list|(

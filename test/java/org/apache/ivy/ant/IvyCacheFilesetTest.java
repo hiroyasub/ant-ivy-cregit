@@ -584,6 +584,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -621,12 +622,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -672,11 +669,6 @@ name|fileset
 operator|.
 name|execute
 argument_list|()
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
 expr_stmt|;
 block|}
 annotation|@

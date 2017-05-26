@@ -1367,12 +1367,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Installing a module with namespace coordinates instead of system one should fail.      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testInstallWithNamespace2
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|project
 operator|.
@@ -1425,27 +1435,11 @@ argument_list|(
 literal|"install"
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|install
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"installing module with namespace coordinates instead of system one should fail"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|ex
-parameter_list|)
-block|{
-comment|// expected
-block|}
 block|}
 annotation|@
 name|Test
@@ -1535,12 +1529,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Fail on unknown dependency when haltonfailure=true.      *      * @throws Exception      */
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testDependencyNotFoundFailure
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|project
 operator|.
@@ -1586,27 +1590,11 @@ argument_list|(
 literal|"install"
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|install
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"unknown dependency, failure expected (haltonfailure=true)"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|be
-parameter_list|)
-block|{
-comment|// success
-block|}
 block|}
 annotation|@
 name|Test

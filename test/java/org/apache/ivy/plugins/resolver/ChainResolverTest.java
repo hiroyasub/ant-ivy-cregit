@@ -1714,10 +1714,7 @@ argument_list|,
 literal|true
 argument_list|)
 block|,
-comment|// latest
-comment|// ->
-comment|// but
-comment|// default
+comment|// latest -> but default
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -1779,9 +1776,7 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest ->
-comment|// should the
-comment|// one kept
+comment|// latest -> should be the one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2484,10 +2479,7 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// not
-comment|// default
-comment|// -> should the
-comment|// one kept
+comment|// not default -> should be the one kept
 name|MockResolver
 operator|.
 name|buildMockResolver

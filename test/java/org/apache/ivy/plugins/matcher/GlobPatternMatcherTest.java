@@ -484,11 +484,6 @@ argument_list|(
 literal|"["
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Should fail on invalid regexp syntax"
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class

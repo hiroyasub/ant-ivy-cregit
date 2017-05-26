@@ -374,11 +374,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Should fail for null input"
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Test
@@ -399,11 +394,6 @@ operator|.
 name|getMatcher
 argument_list|(
 literal|null
-argument_list|)
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"Should fail for null expression"
 argument_list|)
 expr_stmt|;
 block|}

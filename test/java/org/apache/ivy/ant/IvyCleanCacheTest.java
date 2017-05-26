@@ -507,6 +507,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * clean cache must fail with unknown cache      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -550,11 +551,6 @@ name|cleanCache
 operator|.
 name|perform
 argument_list|()
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"clean cache should have raised an exception with unknown cache"
-argument_list|)
 expr_stmt|;
 block|}
 block|}

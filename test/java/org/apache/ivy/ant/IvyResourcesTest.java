@@ -1527,6 +1527,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testFail
@@ -1563,27 +1570,11 @@ argument_list|(
 literal|"2.0"
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|resources
 operator|.
 name|iterator
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"A fail resolved should have raised a build exception"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|e
-parameter_list|)
-block|{
-comment|// ok
-block|}
 block|}
 block|}
 end_class

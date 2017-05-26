@@ -119,7 +119,29 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Rule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|rules
+operator|.
+name|ExpectedException
 import|;
 end_import
 
@@ -145,6 +167,17 @@ block|{
 specifier|private
 name|IvyDependencyUpdateChecker
 name|dependencyUpdateChecker
+decl_stmt|;
+annotation|@
+name|Rule
+specifier|public
+name|ExpectedException
+name|expExc
+init|=
+name|ExpectedException
+operator|.
+name|none
+argument_list|()
 decl_stmt|;
 annotation|@
 name|Before
@@ -476,6 +509,7 @@ literal|"org1#mod1.2\t2.0 -> 2.2"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -532,12 +566,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -570,12 +600,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test must fail because of missing configurations.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -585,8 +611,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-try|try
-block|{
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|BuildException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"unknown"
+argument_list|)
+expr_stmt|;
 name|dependencyUpdateChecker
 operator|.
 name|setFile
@@ -610,33 +650,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"missing configurations didn't raised an exception"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|ex
-parameter_list|)
-block|{
-name|assertTrue
-argument_list|(
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-operator|.
-name|contains
-argument_list|(
-literal|"unknown"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -669,12 +684,8 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
-expr_stmt|;
 block|}
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -706,11 +717,6 @@ name|dependencyUpdateChecker
 operator|.
 name|execute
 argument_list|()
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"failure didn't raised an exception with default haltonfailure setting"
-argument_list|)
 expr_stmt|;
 block|}
 annotation|@
