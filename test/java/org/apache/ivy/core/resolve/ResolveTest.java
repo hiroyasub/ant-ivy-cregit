@@ -4989,7 +4989,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Configures an Ivy instance using a resolver locating modules on file system, in a      * build/testCache2 location which is created for the test and removed after, and can thus      * easily simulate a repository availability problem      *       * @return the configured ivy instance      */
+comment|/**      * Configures an Ivy instance using a resolver locating modules on file system, in a      * build/testCache2 location which is created for the test and removed after, and can thus      * easily simulate a repository availability problem      *      * @return the configured ivy instance      */
 specifier|private
 name|Ivy
 name|ivyTestCache

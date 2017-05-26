@@ -93,7 +93,7 @@ name|event
 parameter_list|)
 block|{
 block|}
-comment|/**      * Fired after the last target has finished. This event will still be thrown if an error      * occurred during the build.      *       * @see BuildEvent#getException()      */
+comment|/**      * Fired after the last target has finished. This event will still be thrown if an error      * occurred during the build.      *      * @see BuildEvent#getException()      */
 specifier|public
 name|void
 name|buildFinished
@@ -103,7 +103,7 @@ name|event
 parameter_list|)
 block|{
 block|}
-comment|/**      * Fired when a target is started.      *       * @see BuildEvent#getTarget()      */
+comment|/**      * Fired when a target is started.      *      * @see BuildEvent#getTarget()      */
 specifier|public
 name|void
 name|targetStarted
@@ -114,7 +114,7 @@ parameter_list|)
 block|{
 comment|// System.out.println("targetStarted " + event.getTarget().getName());
 block|}
-comment|/**      * Fired when a target has finished. This event will still be thrown if an error occurred during      * the build.      *       * @see BuildEvent#getException()      */
+comment|/**      * Fired when a target has finished. This event will still be thrown if an error occurred during      * the build.      *      * @see BuildEvent#getException()      */
 specifier|public
 name|void
 name|targetFinished
@@ -125,7 +125,7 @@ parameter_list|)
 block|{
 comment|// System.out.println("targetFinished " + event.getTarget().getName());
 block|}
-comment|/**      * Fired when a task is started.      *       * @see BuildEvent#getTask()      */
+comment|/**      * Fired when a task is started.      *      * @see BuildEvent#getTask()      */
 specifier|public
 name|void
 name|taskStarted
@@ -136,7 +136,7 @@ parameter_list|)
 block|{
 comment|// System.out.println("taskStarted " + event.getTask().getTaskName());
 block|}
-comment|/**      * Fired when a task has finished. This event will still be throw if an error occurred during      * the build.      *       * @see BuildEvent#getException()      */
+comment|/**      * Fired when a task has finished. This event will still be throw if an error occurred during      * the build.      *      * @see BuildEvent#getException()      */
 specifier|public
 name|void
 name|taskFinished
@@ -147,7 +147,7 @@ parameter_list|)
 block|{
 comment|// System.out.println("taskFinished " + event.getTask().getTaskName());
 block|}
-comment|/**      * Fired whenever a message is logged.      *       * @see BuildEvent#getMessage()      * @see BuildEvent#getPriority()      */
+comment|/**      * Fired whenever a message is logged.      *      * @see BuildEvent#getMessage()      * @see BuildEvent#getPriority()      */
 specifier|public
 name|void
 name|messageLogged

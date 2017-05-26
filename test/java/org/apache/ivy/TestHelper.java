@@ -659,7 +659,7 @@ name|getRepositoryCacheManager
 argument_list|()
 return|;
 block|}
-comment|/**      * Assertion utility methods to test if a collection of {@link ModuleRevisionId} matches a given      * expected set of mrids.      *<p>      * Expected mrids is given as a String of comma separated string representations of      * {@link ModuleRevisionId}.      *       * @param expectedMrids      *            the expected set of mrids      * @param mrids      *            the3 mrids to test      */
+comment|/**      * Assertion utility methods to test if a collection of {@link ModuleRevisionId} matches a given      * expected set of mrids.      *<p>      * Expected mrids is given as a String of comma separated string representations of      * {@link ModuleRevisionId}.      *      * @param expectedMrids      *            the expected set of mrids      * @param mrids      *            the3 mrids to test      */
 specifier|public
 specifier|static
 name|void
@@ -689,7 +689,7 @@ name|mrids
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a Set of {@link ModuleRevisionId} corresponding to the given comma separated list of      * their text representation.      *       * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return a collection of {@link ModuleRevisionId}      */
+comment|/**      * Returns a Set of {@link ModuleRevisionId} corresponding to the given comma separated list of      * their text representation.      *      * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return a collection of {@link ModuleRevisionId}      */
 specifier|public
 specifier|static
 name|Collection

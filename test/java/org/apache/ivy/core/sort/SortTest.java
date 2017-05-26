@@ -1703,7 +1703,7 @@ return|return
 name|depDescr
 return|;
 block|}
-comment|/**      * Verifies that sorted in one of the list of listOfPossibleSort.      *       * @param listOfPossibleSort      *            array of possible sort result      * @param sorted      *            actual sortedList to compare      */
+comment|/**      * Verifies that sorted in one of the list of listOfPossibleSort.      *      * @param listOfPossibleSort      *            array of possible sort result      * @param sorted      *            actual sortedList to compare      */
 specifier|private
 name|void
 name|assertSorted

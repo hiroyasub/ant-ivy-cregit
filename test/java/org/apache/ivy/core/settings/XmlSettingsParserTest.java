@@ -2051,7 +2051,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test of esolver referencing a non existent cache.      *      * @throws Exception      */
+comment|/**      * Test of resolver referencing a non existent cache.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
