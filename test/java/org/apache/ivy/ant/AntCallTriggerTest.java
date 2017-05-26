@@ -760,7 +760,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *       * @param project      *            The project to add listeners to. Must not be<code>null</code>.      */
+comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *      * @param project      *            The project to add listeners to. Must not be<code>null</code>.      */
 specifier|protected
 name|void
 name|addBuildListeners
@@ -784,7 +784,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates the InputHandler and adds it to the project.      *       * @param project      *            the project instance.      * @param inputHandlerClassname      *            String      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
+comment|/**      * Creates the InputHandler and adds it to the project.      *      * @param project      *            the project instance.      * @param inputHandlerClassname      *            String      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
 specifier|private
 name|void
 name|addInputHandler
@@ -826,7 +826,6 @@ operator|=
 operator|(
 name|InputHandler
 operator|)
-operator|(
 name|Class
 operator|.
 name|forName
@@ -836,7 +835,6 @@ argument_list|)
 operator|.
 name|newInstance
 argument_list|()
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -923,7 +921,7 @@ comment|// XXX: (Jon Skeet) Any reason for writing a message and then using a ba
 comment|// RuntimeException rather than just using a BuildException here? Is it
 comment|// in case the message could end up being written to no loggers (as the
 comment|// loggers could have failed to be created due to this failure)?
-comment|/**      * Creates the default build logger for sending build events to the ant log.      *       * @return the logger instance for this build.      */
+comment|/**      * Creates the default build logger for sending build events to the ant log.      *      * @return the logger instance for this build.      */
 specifier|private
 name|BuildLogger
 name|createLogger

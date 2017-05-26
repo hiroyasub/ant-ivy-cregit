@@ -206,7 +206,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Basic validation of happy path put - valid VFS URI and no conflict with existing file      *       * @throws Exception      */
+comment|/**      * Basic validation of happy path put - valid VFS URI and no conflict with existing file      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -380,7 +380,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Validate that we can overwrite an existing file      *       * @throws Exception      */
+comment|/**      * Validate that we can overwrite an existing file      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -586,7 +586,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *       * @throws Exception      */
+comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *      * @throws Exception      */
 annotation|@
 name|Test
 argument_list|(
@@ -718,7 +718,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Test the retrieval of an artifact from the repository creating a new artifact      *       * @throws Exception      */
+comment|/**      * Test the retrieval of an artifact from the repository creating a new artifact      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -866,7 +866,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Test the retrieval of an artifact from the repository overwriting an existing artifact      *       * @throws Exception      */
+comment|/**      * Test the retrieval of an artifact from the repository overwriting an existing artifact      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public

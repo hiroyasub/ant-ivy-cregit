@@ -102,7 +102,7 @@ specifier|public
 class|class
 name|ApacheURLListerTest
 block|{
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -268,7 +268,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public

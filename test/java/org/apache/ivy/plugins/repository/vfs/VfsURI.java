@@ -371,7 +371,7 @@ return|return
 name|vfsURI
 return|;
 block|}
-comment|/**      * Create a wellformed VFS resource identifier      *       * @param scheme      *            the name of the scheme used to access the resource      * @param user      *            a user name. May be<code>null</code>      * @param passwd      *            a passwd. May be<code>null</code>      * @param host      *            a host identifier. May be<code>null</code>      * @param path      *            a scheme specific path to a resource      */
+comment|/**      * Create a wellformed VFS resource identifier      *      * @param scheme      *            the name of the scheme used to access the resource      * @param user      *            a user name. May be<code>null</code>      * @param passwd      *            a passwd. May be<code>null</code>      * @param host      *            a host identifier. May be<code>null</code>      * @param path      *            a scheme specific path to a resource      */
 specifier|public
 name|VfsURI
 parameter_list|(
@@ -488,7 +488,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return a well-formed VFS Resource identifier      *       * @return<code>String<code> representing a well formed VFS resource identifier      */
+comment|/**      * Return a well-formed VFS Resource identifier      *      * @return<code>String<code> representing a well formed VFS resource identifier      */
 specifier|public
 name|String
 name|getVfsURI
@@ -651,7 +651,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Convert a resource path to the format required for a VFS resource identifier      *       * @param path      *<code>String</code> path to the resource      * @return<code>String</code> representing a normalized resource path      */
+comment|/**      * Convert a resource path to the format required for a VFS resource identifier      *      * @param path      *<code>String</code> path to the resource      * @return<code>String</code> representing a normalized resource path      */
 specifier|private
 name|String
 name|normalizePath
