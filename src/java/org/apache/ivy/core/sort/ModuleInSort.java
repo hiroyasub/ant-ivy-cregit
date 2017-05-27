@@ -166,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Decorates a ModuleDescriptor with some attributes used during the sort. Thus every instance of a  * ModuleInSort can be used in only one ModuleDescriptorSorter at a time.<br>  * The added fields are :<br>  *<ul>  *<li><code>isSorted</code> : is true iff this module has already been added to the sorted list.</li>  *<li><code>loopElements</code> : When the module is the root of a loop (=the first element of a  * loop met during the sort),<code>loopElements</code> contains all ModuleInSort of the loop  * (excluding the root itself.</li>  *<li><code>isLoopIntermediateElement</code> : When a loop is detected, all modules included in the  * loop (except the root) have<code>isLoopIntermediateElement</code> set to true.</li>  *<li><code>caller</code> : During the sort, we traverse recursively the graph. When doing that,  * caller point to the parent element.  */
+comment|/**  * Decorates a ModuleDescriptor with some attributes used during the sort. Thus every instance of a  * ModuleInSort can be used in only one ModuleDescriptorSorter at a time.<br>  * The added fields are :<br>  *<ul>  *<li><code>isSorted</code> : is true iff this module has already been added to the sorted list.  *</li>  *<li><code>loopElements</code> : When the module is the root of a loop (=the first element of a  * loop met during the sort),<code>loopElements</code> contains all ModuleInSort of the loop  * (excluding the root itself.</li>  *<li><code>isLoopIntermediateElement</code> : When a loop is detected, all modules included in the  * loop (except the root) have<code>isLoopIntermediateElement</code> set to true.</li>  *<li><code>caller</code> : During the sort, we traverse recursively the graph. When doing that,  * caller point to the parent element.  */
 end_comment
 
 begin_class
@@ -330,7 +330,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Check if a adding this element as a dependency of caller will introduce a circular      * dependency. If it is, all the elements of the loop are flaged as 'loopIntermediateElement',      * and the loopElements of this module (which is the root of the loop) is updated. The      * depStrategy is invoked on order to report a correct circular loop message.      *       * @param futurCaller      * @param depStrategy      * @return true if a loop is detected.      */
+comment|/**      * Check if a adding this element as a dependency of caller will introduce a circular      * dependency. If it is, all the elements of the loop are flagged as 'loopIntermediateElement',      * and the loopElements of this module (which is the root of the loop) is updated. The      * depStrategy is invoked on order to report a correct circular loop message.      *       * @param futurCaller ModuleInSort      * @param depStrategy CircularDependencyStrategy      * @return true if a loop is detected.      */
 specifier|public
 name|boolean
 name|checkLoop

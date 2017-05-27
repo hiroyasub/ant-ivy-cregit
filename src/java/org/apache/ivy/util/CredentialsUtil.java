@@ -183,6 +183,11 @@ specifier|final
 class|class
 name|CredentialsUtil
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final
@@ -643,7 +648,7 @@ name|Properties
 name|props
 init|=
 operator|new
-name|EncrytedProperties
+name|EncryptedProperties
 argument_list|()
 decl_stmt|;
 name|props
@@ -788,7 +793,7 @@ name|Properties
 name|props
 init|=
 operator|new
-name|EncrytedProperties
+name|EncryptedProperties
 argument_list|()
 decl_stmt|;
 name|FileInputStream

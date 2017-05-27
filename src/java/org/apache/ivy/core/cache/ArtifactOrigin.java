@@ -71,7 +71,7 @@ specifier|public
 specifier|static
 specifier|final
 name|ArtifactOrigin
-name|unkwnown
+name|unknown
 parameter_list|(
 name|Artifact
 name|artifact
@@ -264,7 +264,7 @@ return|return
 name|artifact
 return|;
 block|}
-comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this      * information is not actually used by in some case.      *       * @return      */
+comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this      * information is not actually used by in some case.      *       * @return Long timestamp      */
 specifier|public
 name|Long
 name|getLastChecked
@@ -391,14 +391,7 @@ operator|!=
 name|that
 operator|.
 name|isLocal
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|if
-condition|(
+operator|||
 operator|!
 name|location
 operator|.
@@ -452,21 +445,12 @@ return|return
 literal|false
 return|;
 block|}
-if|if
-condition|(
+return|return
 name|exists
-operator|!=
+operator|==
 name|that
 operator|.
 name|exists
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-literal|true
 return|;
 block|}
 specifier|public

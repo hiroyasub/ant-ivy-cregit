@@ -407,6 +407,11 @@ name|SKIP_LINE
 init|=
 literal|"SKIP_LINE"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final

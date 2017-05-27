@@ -155,7 +155,7 @@ name|overwriteMode
 init|=
 name|OVERWRITEMODE_NEWER
 decl_stmt|;
-comment|/**      * True if the original files should be used insteaad of their cache copy.      */
+comment|/**      * True if the original files should be used instead of their cache copy.      */
 specifier|private
 name|boolean
 name|useOrigin

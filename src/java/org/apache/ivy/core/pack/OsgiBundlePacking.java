@@ -33,16 +33,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileNotFoundException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|IOException
 import|;
 end_import
@@ -118,8 +108,6 @@ name|File
 name|f
 parameter_list|)
 throws|throws
-name|FileNotFoundException
-throws|,
 name|IOException
 block|{
 comment|// XXX maybe we should only unpack file listed by the 'Bundle-ClassPath' MANIFEST header ?

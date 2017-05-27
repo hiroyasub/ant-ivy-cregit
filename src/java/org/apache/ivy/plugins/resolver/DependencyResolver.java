@@ -433,7 +433,7 @@ name|void
 name|reportFailure
 parameter_list|()
 function_decl|;
-comment|/**      * Reports last artifact download failure as Messages      *       * @param art      */
+comment|/**      * Reports last artifact download failure as Messages      *       * @param art Artifact      */
 name|void
 name|reportFailure
 parameter_list|(

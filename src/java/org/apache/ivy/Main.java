@@ -1633,16 +1633,13 @@ block|}
 name|boolean
 name|validate
 init|=
+operator|!
 name|line
 operator|.
 name|hasOption
 argument_list|(
 literal|"novalidate"
 argument_list|)
-condition|?
-literal|false
-else|:
-literal|true
 decl_stmt|;
 name|Ivy
 name|ivy
@@ -2677,7 +2674,7 @@ name|popContext
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Parses the<code>cp</code> option from the command line, and returns a list of {@link File}.      *<p>      * All the files contained in the returned List exist, non existing files are simply skipped      * with a warning.      *</p>      *       * @param line      *            the command line in which the cp option shold be parsed      * @return a List of files to include as extra classpath entries, or<code>null</code> if no cp      *         option was provided.      */
+comment|/**      * Parses the<code>cp</code> option from the command line, and returns a list of {@link File}.      *<p>      * All the files contained in the returned List exist, non existing files are simply skipped      * with a warning.      *</p>      *       * @param line      *            the command line in which the cp option should be parsed      * @return a List of files to include as extra classpath entries, or<code>null</code> if no cp      *         option was provided.      */
 specifier|private
 specifier|static
 name|List
@@ -3456,6 +3453,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 specifier|private
 specifier|static
 name|void

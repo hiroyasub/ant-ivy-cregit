@@ -228,9 +228,11 @@ block|{
 name|String
 name|matcherName
 init|=
+operator|(
 name|matcher
 operator|==
 literal|null
+operator|)
 condition|?
 name|PatternMatcher
 operator|.
@@ -241,9 +243,11 @@ decl_stmt|;
 name|String
 name|orgPattern
 init|=
+operator|(
 name|org
 operator|==
 literal|null
+operator|)
 condition|?
 name|PatternMatcher
 operator|.
@@ -254,9 +258,11 @@ decl_stmt|;
 name|String
 name|modulePattern
 init|=
+operator|(
 name|module
 operator|==
 literal|null
+operator|)
 condition|?
 name|PatternMatcher
 operator|.

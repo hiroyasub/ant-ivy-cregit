@@ -334,7 +334,7 @@ operator|=
 name|settings
 expr_stmt|;
 block|}
-comment|/**      * Returns an empty array when no token values are found.      *       * @param token      * @param otherTokenValues      * @return      */
+comment|/**      * Returns an empty array when no token values are found.      *       * @param token      *            ditto      * @param otherTokenValues      * @return String[]      */
 specifier|public
 name|String
 index|[]
@@ -1296,7 +1296,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * List module ids of the module accessible through the current resolvers matching the given mid      * criteria according to the given matcher.      *<p>      * ModuleId are returned in the system namespace.      *</p>      *       * @param criteria      * @param matcher      * @return      */
+comment|/**      * List module ids of the module accessible through the current resolvers matching the given mid      * criteria according to the given matcher.      *<p>      * ModuleId are returned in the system namespace.      *</p>      *       * @param moduleCrit      *            ModuleId      * @param matcher      * @return ModuleId[]      */
 specifier|public
 name|ModuleId
 index|[]
@@ -1514,7 +1514,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * List module revision ids of the module accessible through the current resolvers matching the      * given mrid criteria according to the given matcher.      *<p>      * ModuleRevisionId are returned in the system namespace.      *</p>      *       * @param criteria      * @param matcher      * @return      */
+comment|/**      * List module revision ids of the module accessible through the current resolvers matching the      * given mrid criteria according to the given matcher.      *<p>      * ModuleRevisionId are returned in the system namespace.      *</p>      *       * @param moduleCrit      *            ModuleRevisionId      * @param matcher      * @return ModuleRevisionId[]      */
 specifier|public
 name|ModuleRevisionId
 index|[]

@@ -405,6 +405,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * This method is similar to getResource, except that the returned resource is fully initialized      * (resolved in the sftp repository), and that the given string is a full remote path      *       * @param path      *            the full remote path in the repository of the resource      * @return a fully initialized resource, able to answer to all its methods without needing any      *         further connection      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Resource
 name|resolveResource
@@ -535,7 +540,7 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-comment|// silent fail, return unexisting resource
+comment|// silent fail, return nonexistent resource
 block|}
 return|return
 operator|new
@@ -1184,6 +1189,11 @@ return|return
 name|result
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
 name|list
@@ -1402,7 +1412,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Checks the existence for a remote file      *       * @param file      *            to check      * @param channel      *            to use      * @returns true if file exists, false otherwise      * @throws IOException      * @throws SftpException      */
+comment|/**      * Checks the existence for a remote file      *       * @param file      *            to check      * @param channel      *            to use      * @return true if file exists, false otherwise      */
 specifier|private
 name|boolean
 name|checkExistence
@@ -1413,10 +1423,6 @@ parameter_list|,
 name|ChannelSftp
 name|channel
 parameter_list|)
-throws|throws
-name|IOException
-throws|,
-name|SftpException
 block|{
 try|try
 block|{

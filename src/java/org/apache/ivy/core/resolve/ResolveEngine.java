@@ -2952,7 +2952,7 @@ name|options
 argument_list|)
 return|;
 block|}
-comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its ivy file URL. This method requires appropriate configuration of      * the ivy instance, especially resolvers.      *       * @param ivySource      *            url of the ivy file to use for dependency resolving      * @param confs      *            an array of configuration names to resolve - must not be null nor empty      * @param getCache      *            the cache to use - default cache is used if null      * @param date      *            the date to which resolution must be done - may be null      * @return an array of the resolved dependencies      * @throws ParseException      *             if a parsing problem occurred in the ivy file      * @throws IOException      *             if an IO problem was raised during ivy file parsing      */
+comment|/**      * Resolve the dependencies of a module without downloading corresponding artifacts. The module      * to resolve is given by its ivy file URL. This method requires appropriate configuration of      * the ivy instance, especially resolvers.      *       * @param ivySource      *            url of the ivy file to use for dependency resolving      * @param options      *            ditto      * @return an array of the resolved dependencies      * @throws ParseException      *             if a parsing problem occurred in the ivy file      * @throws IOException      *             if an IO problem was raised during ivy file parsing      */
 specifier|public
 name|IvyNode
 index|[]
@@ -3484,7 +3484,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|// prune and reverse sort fectched dependencies
+comment|// prune and reverse sort fetched dependencies
 name|Collection
 argument_list|<
 name|IvyNode
@@ -3575,7 +3575,7 @@ argument_list|(
 name|sortedDependencies
 argument_list|)
 expr_stmt|;
-name|handleTransiviteEviction
+name|handleTransitiveEviction
 argument_list|(
 name|md
 argument_list|,
@@ -3613,7 +3613,7 @@ block|}
 block|}
 specifier|private
 name|void
-name|handleTransiviteEviction
+name|handleTransitiveEviction
 parameter_list|(
 name|ModuleDescriptor
 name|md
@@ -4735,7 +4735,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we have finiched with this configuration, if it was the original requested conf
+comment|// we have finished with this configuration, if it was the original requested conf
 comment|// we can clean it now
 if|if
 condition|(
@@ -4830,9 +4830,7 @@ operator|.
 name|getResolvedId
 argument_list|()
 decl_stmt|;
-name|String
-name|key
-init|=
+return|return
 name|moduleRevisionId
 operator|.
 name|getOrganisation
@@ -4855,9 +4853,6 @@ operator|+
 literal|"|"
 operator|+
 name|conf
-decl_stmt|;
-return|return
-name|key
 return|;
 block|}
 specifier|private

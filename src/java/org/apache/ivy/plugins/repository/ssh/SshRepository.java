@@ -290,7 +290,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * Fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *       * @param source      *            ssh uri for the file to get info for      * @return SshResource filled with the needed informations      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
+comment|/**      * Fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *       * @param source      *            ssh uri for the file to get info for      * @return SshResource filled with the needed information      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
 specifier|public
 name|SshResource
 name|resolveResource
@@ -1013,7 +1013,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * @param session      * @return      * @throws JSchException      */
+comment|/**      * @param session Session      * @return ChannelExec      */
 specifier|private
 name|ChannelExec
 name|getExecChannel
@@ -1058,7 +1058,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * Replace the argument placeholder with argument or append the argument if no placeholder is      * present      *       * @param command      *            with argument placeholder or not      * @param argument      * @return replaced full command      */
+comment|/**      * Replace the argument placeholder with argument or append the argument if no placeholder is      * present      *       * @param command      *            with argument placeholder or not      * @param argument ditto      * @return replaced full command      */
 specifier|private
 name|String
 name|replaceArgument
@@ -1370,7 +1370,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Tries to create a directory path on the target system      *       * @param path      *            to create      * @param connnection      *            to use      */
+comment|/**      * Tries to create a directory path on the target system      *       * @param path      *            to create      * @param session      *            to use      */
 specifier|private
 name|void
 name|makePath

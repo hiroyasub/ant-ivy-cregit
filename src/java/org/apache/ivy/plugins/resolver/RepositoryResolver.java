@@ -2153,13 +2153,8 @@ return|return
 name|alwaysCheckExactRevision
 operator|==
 literal|null
-condition|?
-literal|true
-else|:
+operator|||
 name|alwaysCheckExactRevision
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -2174,12 +2169,7 @@ name|this
 operator|.
 name|alwaysCheckExactRevision
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|alwaysCheckExactRevision
-argument_list|)
 expr_stmt|;
 block|}
 block|}

@@ -54,7 +54,7 @@ specifier|public
 interface|interface
 name|URLLister
 block|{
-comment|/**      * Indicates if this lister is able to list urls with the given pattern. In general, only      * protocol is used.      *       * @param pattern      * @return      */
+comment|/**      * Indicates if this lister is able to list urls with the given pattern. In general, only      * protocol is used.      *       * @param pattern ditto      * @return boolean      */
 name|boolean
 name|accept
 parameter_list|(

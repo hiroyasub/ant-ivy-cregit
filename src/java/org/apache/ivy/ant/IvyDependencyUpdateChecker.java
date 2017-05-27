@@ -642,9 +642,8 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|// is this dependency a transitive dependency ? or direct dependency
-comment|// (unfortunatly
-comment|// .isTranstive() methods doesn't have the same meaning)
+comment|// is this dependency a transitive or a direct dependency?
+comment|// (unfortunately .isTransitive() methods do not have the same meaning)
 name|boolean
 name|isTransitiveDependency
 init|=

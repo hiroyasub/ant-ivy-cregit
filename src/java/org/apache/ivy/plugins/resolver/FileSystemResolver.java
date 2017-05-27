@@ -890,9 +890,6 @@ argument_list|()
 expr_stmt|;
 return|return
 name|supportTransaction
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|private

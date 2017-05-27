@@ -62,12 +62,12 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|EncrytedProperties
+name|EncryptedProperties
 extends|extends
 name|Properties
 block|{
 specifier|public
-name|EncrytedProperties
+name|EncryptedProperties
 parameter_list|()
 block|{
 name|super

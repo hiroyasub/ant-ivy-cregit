@@ -1014,7 +1014,7 @@ name|XmlModuleDescriptorParser
 parameter_list|()
 block|{
 block|}
-comment|/**      * @param settings      * @param xmlURL      *            the url pointing to the file to parse      * @param res      *            the real resource to parse, used for log only      * @param validate      * @return      * @throws ParseException      * @throws IOException      */
+comment|/**      * @param ivySettings ParserSettings      * @param xmlURL      *            the url pointing to the file to parse      * @param res      *            the real resource to parse, used for log only      * @param validate boolean      * @return ModuleDescriptor      * @throws ParseException      * @throws IOException      */
 specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
@@ -2710,7 +2710,7 @@ return|return
 literal|"../ivy.xml"
 return|;
 block|}
-comment|/**          * Handle extends elements. It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the          * default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          *           * @param attributes          * @throws ParseException          */
+comment|/**          * Handle extends elements. It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the          * default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          *           * @param attributes Attributes          * @throws ParseException          */
 specifier|protected
 name|void
 name|extendsStarted
@@ -3230,7 +3230,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**          * Merge everything from a given parent          *           * @param parent          *            a given parent module desciptor          */
+comment|/**          * Merge everything from a given parent          *           * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeAll
@@ -3282,7 +3282,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Explain how to inherit metadatas related to info element          *           * @param parent          *            a given parent module decriptor          */
+comment|/**          * Explain how to inherit metadata related to info element          *           * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeInfo
@@ -3593,7 +3593,7 @@ return|return
 name|dup
 return|;
 block|}
-comment|/**          * Describes how to merge configurations elements          *           * @param sourceMrid          *            the source module revision id          * @param configurations          *            array of configurations to be inherited          */
+comment|/**          * Describes how to merge configurations elements          *           * @param parent          *            the module descriptor          */
 specifier|protected
 name|void
 name|mergeConfigurations
@@ -5127,9 +5127,6 @@ argument_list|(
 literal|"transitive"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|deprecated
@@ -5155,9 +5152,11 @@ name|Visibility
 operator|.
 name|getVisibility
 argument_list|(
+operator|(
 name|visibility
 operator|==
 literal|null
+operator|)
 condition|?
 literal|"public"
 else|:
@@ -5176,9 +5175,11 @@ literal|"description"
 argument_list|)
 argument_list|)
 argument_list|,
+operator|(
 name|ext
 operator|==
 literal|null
+operator|)
 condition|?
 literal|null
 else|:
@@ -5503,9 +5504,6 @@ literal|"force"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|boolean
 name|changing
@@ -5526,9 +5524,6 @@ literal|"changing"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|transitiveValue
@@ -5567,9 +5562,6 @@ argument_list|(
 literal|"transitive"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|name
@@ -6266,9 +6258,6 @@ name|valueOf
 argument_list|(
 name|confMappingOverride
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6341,9 +6330,6 @@ literal|"confmappingoverride"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6597,9 +6583,6 @@ literal|"default"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
@@ -8330,9 +8313,15 @@ operator|.
 name|append
 argument_list|(
 literal|"</"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|qName
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|">"
 argument_list|)
 expr_stmt|;

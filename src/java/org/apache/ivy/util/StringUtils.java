@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Convenient class used only for uncapitalization Usually use commons lang but here we do not want  * to have such a dependency for only one feature  */
+comment|/**  * Convenient class used only for uncapitalization. Usually use commons lang but here we do not want  * to have such a dependency for only one feature  */
 end_comment
 
 begin_class
@@ -312,7 +312,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Joins the given object array in one string, each separated by the given separator.      *       * Example:      *       *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param objs      *            The array of objects (<code>toString()</code> is used).      * @param sep      *            The separator to use.      * @return The concatinated string.      */
+comment|/**      * Joins the given object array in one string, each separated by the given separator.      *       * Example:      *       *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param objs      *            The array of objects (<code>toString()</code> is used).      * @param sep      *            The separator to use.      * @return The concatenated string.      */
 specifier|public
 specifier|static
 name|String

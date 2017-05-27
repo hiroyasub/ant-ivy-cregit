@@ -134,7 +134,7 @@ return|return
 name|resolution
 return|;
 block|}
-comment|/**      * Sets weither the resolution cache should be cleaned or not.      *       * @param resolution      *<code>true</code> if the resolution cache should be cleaned,<code>false</code>      *            otherwise.      */
+comment|/**      * Sets whether the resolution cache should be cleaned or not.      *       * @param resolution      *<code>true</code> if the resolution cache should be cleaned,<code>false</code>      *            otherwise.      */
 specifier|public
 name|void
 name|setResolution

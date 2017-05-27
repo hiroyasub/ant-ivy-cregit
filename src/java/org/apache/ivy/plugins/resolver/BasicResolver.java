@@ -934,6 +934,11 @@ init|=
 literal|"required"
 decl_stmt|;
 comment|/**      * Exception thrown internally in getDependency to indicate a dependency is unresolved.      *<p>      * Due to the contract of getDependency, this exception is never thrown publicly, but rather      * converted in a message (either error or verbose) and returning null      *</p>      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|private
 specifier|static
 class|class
@@ -1410,7 +1415,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"): but we are in force mode, let's try to find one ourself"
+literal|"): but we are in force mode, let's try to find one ourselves"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3729,14 +3734,23 @@ operator|.
 name|append
 argument_list|(
 literal|"bad organisation: expected='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mrid
 operator|.
 name|getOrganisation
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"' found='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3744,7 +3758,10 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"'; "
 argument_list|)
 expr_stmt|;
@@ -3814,14 +3831,23 @@ operator|.
 name|append
 argument_list|(
 literal|"bad module name: expected='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mrid
 operator|.
 name|getName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"' found='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3829,7 +3855,10 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"'; "
 argument_list|)
 expr_stmt|;
@@ -3906,14 +3935,23 @@ operator|.
 name|append
 argument_list|(
 literal|"bad branch name: expected='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mrid
 operator|.
 name|getBranch
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"' found='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3921,7 +3959,10 @@ argument_list|()
 operator|.
 name|getBranch
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"'; "
 argument_list|)
 expr_stmt|;
@@ -4041,14 +4082,23 @@ operator|.
 name|append
 argument_list|(
 literal|"bad revision: expected='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|ivyRef
 operator|.
 name|getRevision
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"' found='"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|md
 operator|.
 name|getModuleRevisionId
@@ -4056,7 +4106,10 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"'; "
 argument_list|)
 expr_stmt|;
@@ -4115,12 +4168,18 @@ operator|.
 name|append
 argument_list|(
 literal|"bad status: '"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|md
 operator|.
 name|getStatus
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"'; "
 argument_list|)
 expr_stmt|;
@@ -4236,7 +4295,10 @@ operator|.
 name|append
 argument_list|(
 name|errorMsg
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|";"
 argument_list|)
 expr_stmt|;
@@ -5650,14 +5712,11 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 name|artifactRef
 operator|!=
 literal|null
-condition|)
-block|{
-return|return
+operator|&&
 name|artifactRef
 operator|.
 name|getResource
@@ -5665,10 +5724,6 @@ argument_list|()
 operator|.
 name|exists
 argument_list|()
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 annotation|@
@@ -6741,12 +6796,12 @@ name|void
 name|setCheckconsistency
 parameter_list|(
 name|boolean
-name|checkConsitency
+name|checkConsistency
 parameter_list|)
 block|{
 name|checkconsistency
 operator|=
-name|checkConsitency
+name|checkConsistency
 expr_stmt|;
 block|}
 specifier|public

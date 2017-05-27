@@ -774,7 +774,7 @@ name|NoConflictResolvedYetException
 name|ex
 parameter_list|)
 block|{
-comment|// we have not enough informations in the nodes to resolve conflict
+comment|// we have not enough information in the nodes to resolve conflict
 comment|// according to the resolveConflicts contract, resolveConflicts must return null
 return|return
 literal|false
@@ -1126,7 +1126,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/**      * Tries to blacklist exactly one version for all callers paths.      *       * @param versionMatcher      *            the version matcher to use to interpret versions      * @param conflictParent      *            the node in which the conflict is occurring      * @param selectedNode      *            the node in favor of which the conflict is resolved      * @param evictedNode      *            the node which will be evicted if we are able to blacklist all paths      * @param node      *            the node for which callers should be considered      * @return the collection of blacklisting to do, null if a blacklist is not possible in at least      *         one caller path      */
+comment|/**      * Tries to blacklist exactly one version for all callers paths.      *       * @param versionMatcher      *            the version matcher to use to interpret versions      * @param conflictParent      *            the node in which the conflict is occurring      * @param selectedNode      *            the node in favor of which the conflict is resolved      * @param evictedNode      *            the node which will be evicted if we are able to blacklist all paths      * @param callerStack      *            ditto      * @return the collection of blacklisting to do, null if a blacklist is not possible in at least      *         one caller path      */
 specifier|private
 name|Collection
 argument_list|<

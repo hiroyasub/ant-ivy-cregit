@@ -18,38 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Before
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|regex
-operator|.
-name|PatternSyntaxException
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -74,14 +42,34 @@ import|;
 end_import
 
 begin_import
-import|import static
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|regex
+operator|.
+name|PatternSyntaxException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|junit
 operator|.
-name|Assert
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|fail
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 

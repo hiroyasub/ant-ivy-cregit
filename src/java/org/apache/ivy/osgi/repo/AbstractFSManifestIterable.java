@@ -306,9 +306,6 @@ name|add
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|T
-operator|>
 name|singleton
 argument_list|(
 name|root

@@ -1430,7 +1430,7 @@ specifier|private
 specifier|static
 specifier|final
 name|long
-name|INTERUPT_TIMEOUT
+name|INTERRUPT_TIMEOUT
 init|=
 literal|2000
 decl_stmt|;
@@ -4170,7 +4170,7 @@ return|return
 name|substituted
 return|;
 block|}
-comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return      */
+comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|IvyVariableContainer
@@ -6936,7 +6936,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
+comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names ditto      */
 specifier|public
 specifier|synchronized
 name|void
@@ -7386,9 +7386,6 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7416,9 +7413,6 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7446,9 +7440,6 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7474,10 +7465,6 @@ argument_list|)
 decl_stmt|;
 name|debugConflictResolution
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|var
 operator|!=
 literal|null
@@ -7488,17 +7475,10 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|debugConflictResolution
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7524,10 +7504,6 @@ argument_list|)
 decl_stmt|;
 name|debugLocking
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|var
 operator|!=
 literal|null
@@ -7538,17 +7514,10 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|debugLocking
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7574,10 +7543,6 @@ argument_list|)
 decl_stmt|;
 name|dumpMemoryUsage
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|var
 operator|!=
 literal|null
@@ -7588,17 +7553,10 @@ name|valueOf
 argument_list|(
 name|var
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|dumpMemoryUsage
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7839,7 +7797,7 @@ name|getInterruptTimeout
 parameter_list|()
 block|{
 return|return
-name|INTERUPT_TIMEOUT
+name|INTERRUPT_TIMEOUT
 return|;
 block|}
 specifier|public
@@ -7900,7 +7858,7 @@ return|return
 name|variableContainer
 return|;
 block|}
-comment|/**      * Use a different variable container.      *       * @param variables      */
+comment|/**      * Use a different variable container.      *       * @param variables IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|void
@@ -8118,7 +8076,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validates all {@link Validatable} objects in the collection.      *       * @param objects      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
+comment|/**      * Validates all {@link Validatable} objects in the collection.      *       * @param values      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
 specifier|private
 name|void
 name|validateAll

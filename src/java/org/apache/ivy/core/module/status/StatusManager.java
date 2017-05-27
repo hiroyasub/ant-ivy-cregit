@@ -602,9 +602,6 @@ return|;
 block|}
 return|return
 name|isIntegration
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public

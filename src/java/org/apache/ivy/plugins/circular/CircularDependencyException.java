@@ -40,6 +40,11 @@ comment|/**  * Unchecked exception thrown when a circular dependency exists betw
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 class|class
 name|CircularDependencyException
@@ -51,7 +56,7 @@ name|ModuleRevisionId
 index|[]
 name|mrids
 decl_stmt|;
-comment|/**      * @param descriptors      *            module descriptors in order of circular dependency      */
+comment|/**      * @param mrids      *            module descriptors in order of circular dependency      */
 specifier|public
 name|CircularDependencyException
 parameter_list|(

@@ -1707,9 +1707,6 @@ operator|.
 name|compile
 argument_list|(
 name|acceptNamePattern
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 decl_stmt|;
 for|for

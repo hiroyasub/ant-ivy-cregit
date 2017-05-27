@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Keep traces of the usage of a ParserSettings in order to check afterwards that the relevant  * settings didn't changed.  *<p>  * A ParserSettingsMonitor provide a ParserSettings that must be used in place of the orignal one.  *</p>  *<p>  * The current implementation consider that a settings changed iff one of the used variable has  * changed.  *</p>  */
+comment|/**  * Keep traces of the usage of a ParserSettings in order to check afterwards that the relevant  * settings didn't changed.  *<p>  * A ParserSettingsMonitor provide a ParserSettings that must be used in place of the original one.  *</p>  *<p>  * The current implementation consider that a settings changed iff one of the used variable has  * changed.  *</p>  */
 end_comment
 
 begin_class
@@ -281,7 +281,7 @@ name|HashMap
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @return The parser settings that must be used in place of the orignal settings The returned      *         object delegates all the call to the original settings.      */
+comment|/**      * @return The parser settings that must be used in place of the original settings The returned      *         object delegates all the call to the original settings.      */
 specifier|public
 name|ParserSettings
 name|getMonitoredSettings
@@ -291,7 +291,7 @@ return|return
 name|monitoredSettings
 return|;
 block|}
-comment|/**      * Free the ressource used during the monitoring, keeping only the info required to evaluate      * hasChanged.      */
+comment|/**      * Free the resource used during the monitoring, keeping only the info required to evaluate      * hasChanged.      */
 specifier|public
 name|void
 name|endMonitoring

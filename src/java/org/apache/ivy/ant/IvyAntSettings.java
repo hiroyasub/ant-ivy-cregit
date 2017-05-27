@@ -495,7 +495,7 @@ specifier|private
 name|AntWorkspaceResolver
 name|antWorkspaceResolver
 decl_stmt|;
-comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param project      *            TODO add text.      * @return An IvySetting instance.      */
+comment|/**      * Returns the default ivy settings of this classloader. If it doesn't exist yet, a new one is      * created using the given project to back the VariableContainer.      *       * @param task      *            TODO add text.      * @return An IvySetting instance.      */
 specifier|public
 specifier|static
 name|IvyAntSettings
@@ -831,7 +831,7 @@ name|id
 argument_list|)
 condition|)
 block|{
-comment|// register ourselfs as default settings, just in case the id attribute is not set
+comment|// register ourselves as default settings, just in case the id attribute is not set
 name|getProject
 argument_list|()
 operator|.
@@ -1496,7 +1496,7 @@ return|return
 name|props
 return|;
 block|}
-comment|/**      * Set file or url to its default value      *       * @param variableContainer      */
+comment|/**      * Set file or url to its default value      *       * @param variableContainer IvyVariableContainer      */
 specifier|private
 name|void
 name|defineDefaultSettingFile
@@ -1682,9 +1682,6 @@ argument_list|(
 literal|"ivy.14.compatible"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 condition|)
 block|{
 name|task

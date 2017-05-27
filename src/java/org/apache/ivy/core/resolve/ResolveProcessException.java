@@ -22,6 +22,11 @@ comment|/**  * ResolveProcessException is an exception which is used to control 
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 class|class
 name|ResolveProcessException

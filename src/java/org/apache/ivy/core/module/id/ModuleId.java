@@ -587,7 +587,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a ModuleId      *       * @param encoded      * @return The new ModuleId.      * @throws IllegalArgumentException      *             If the given String could not be decoded.      */
+comment|/**      * Returns a ModuleId      *       * @param encoded String      * @return The new ModuleId.      * @throws IllegalArgumentException      *             If the given String could not be decoded.      */
 specifier|public
 specifier|static
 name|ModuleId

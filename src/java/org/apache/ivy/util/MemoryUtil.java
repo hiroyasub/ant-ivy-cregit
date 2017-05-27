@@ -201,15 +201,10 @@ operator|.
 name|freeMemory
 argument_list|()
 decl_stmt|;
-name|long
-name|usedMemory
-init|=
+return|return
 name|totalMemory
 operator|-
 name|freeMemory
-decl_stmt|;
-return|return
-name|usedMemory
 return|;
 block|}
 specifier|private

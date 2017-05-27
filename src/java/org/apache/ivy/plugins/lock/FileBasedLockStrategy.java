@@ -1272,6 +1272,11 @@ name|l
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 specifier|public
 name|boolean
 name|tryLock

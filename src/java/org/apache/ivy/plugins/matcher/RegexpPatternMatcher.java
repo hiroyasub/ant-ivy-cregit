@@ -204,9 +204,6 @@ expr_stmt|;
 block|}
 return|return
 name|exact
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|private

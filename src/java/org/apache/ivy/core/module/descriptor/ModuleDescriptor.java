@@ -278,7 +278,7 @@ name|CALLER_ALL_CONFIGURATION
 init|=
 literal|"all"
 decl_stmt|;
-comment|/**      * Returns true if this descriptor is a default one, i.e. one generated for a module not      * actually having one.      *       * @return      */
+comment|/**      * Returns true if this descriptor is a default one, i.e. one generated for a module not      * actually having one.      *       * @return boolean      */
 name|boolean
 name|isDefault
 parameter_list|()
@@ -287,12 +287,12 @@ name|ModuleRevisionId
 name|getModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * The module revision id returned here is the resolved one, i.e. it is never a latest one. If      * the revision has not been resolved, a null revision should be returned by getRevision() of      * the returned ModuleRevisionId. This revision must be the same as the module descriptor      * resolved revision id unless no module descriptor is defined      *       * @return      */
+comment|/**      * The module revision id returned here is the resolved one, i.e. it is never a latest one. If      * the revision has not been resolved, a null revision should be returned by getRevision() of      * the returned ModuleRevisionId. This revision must be the same as the module descriptor      * resolved revision id unless no module descriptor is defined      *       * @return ModuleRevisionId      */
 name|ModuleRevisionId
 name|getResolvedModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * This method update the resolved module revision id      *       * @param revId      */
+comment|/**      * This method update the resolved module revision id      *       * @param revId ModuleRevisionId      */
 name|void
 name|setResolvedModuleRevisionId
 parameter_list|(
@@ -306,7 +306,7 @@ index|[]
 name|getInheritedDescriptors
 parameter_list|()
 function_decl|;
-comment|/**      * This method update the resolved publication date      *       * @param publicationDate      */
+comment|/**      * This method update the resolved publication date      *       * @param publicationDate Date      */
 name|void
 name|setResolvedPublicationDate
 parameter_list|(
@@ -318,7 +318,7 @@ name|String
 name|getStatus
 parameter_list|()
 function_decl|;
-comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return The publication date or<code>null</code> when not knwon.      */
+comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return The publication date or<code>null</code> when not known.      */
 name|Date
 name|getPublicationDate
 parameter_list|()
@@ -358,13 +358,13 @@ index|[]
 name|getAllArtifacts
 parameter_list|()
 function_decl|;
-comment|/**      * @retun The dependencies of the module. If there is no dependencies return an empty array (non      *        null)      */
+comment|/**      * @return The dependencies of the module. If there is no dependencies return an empty array (non      *        null)      */
 name|DependencyDescriptor
 index|[]
 name|getDependencies
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if the module described by this descriptor dependes directly upon the given      * module descriptor      *       * @param md      * @return      */
+comment|/**      * Returns true if the module described by this descriptor depends directly upon the given      * module descriptor      *      * @param matcher VersionMatcher      * @param md ModuleDescriptor      * @return boolean      */
 name|boolean
 name|dependsOn
 parameter_list|(
@@ -375,7 +375,7 @@ name|ModuleDescriptor
 name|md
 parameter_list|)
 function_decl|;
-comment|/**      * @param confName      * @return      */
+comment|/**      * @param confName ditto      * @return Configuration      */
 name|Configuration
 name|getConfiguration
 parameter_list|(
@@ -383,7 +383,7 @@ name|String
 name|confName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the conflict manager to use for the given ModuleId, or<code>null</code> if no      * specific conflict manager is associated with the given module id in this module descriptor.      *       * @param id      * @return      */
+comment|/**      * Returns the conflict manager to use for the given ModuleId, or<code>null</code> if no      * specific conflict manager is associated with the given module id in this module descriptor.      *       * @param id ModuleId      * @return ConflictManager      */
 name|ConflictManager
 name|getConflictManager
 parameter_list|(
@@ -391,7 +391,7 @@ name|ModuleId
 name|id
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the licenses of the module described by this descriptor      *       * @return      */
+comment|/**      * Returns the licenses of the module described by this descriptor      *       * @return License[]      */
 name|License
 index|[]
 name|getLicenses
@@ -421,12 +421,12 @@ name|ParseException
 throws|,
 name|IOException
 function_decl|;
-comment|/**      * The ModuleDescriptorParser used to parse this module descriptor, null is no parser was used.      *       * @return      */
+comment|/**      * The ModuleDescriptorParser used to parse this module descriptor, null is no parser was used.      *       * @return ModuleDescriptorParser      */
 name|ModuleDescriptorParser
 name|getParser
 parameter_list|()
 function_decl|;
-comment|/**      * The resource being the source of this module descriptor, null if no resource corresponds to      * this module descriptor      *       * @return      */
+comment|/**      * The resource being the source of this module descriptor, null if no resource corresponds to      * this module descriptor      *       * @return Resource      */
 name|Resource
 name|getResource
 parameter_list|()
@@ -441,7 +441,7 @@ name|boolean
 name|canExclude
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if an exclude rule of this module attached to any of the given configurations      * matches the given artifact id, and thus exclude it      *       * @param moduleConfs      * @param artifactId      * @return      */
+comment|/**      * Returns true if an exclude rule of this module attached to any of the given configurations      * matches the given artifact id, and thus exclude it      *       * @param moduleConfs String[]      * @param artifactId ditto      * @return boolean      */
 name|boolean
 name|doesExclude
 parameter_list|(
@@ -489,7 +489,7 @@ argument_list|>
 name|getExtraInfo
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @since 2.4.0      * @return      */
+comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @since 2.4.0      * @return List&lt;ExtraInfoHolder&gt;      */
 name|List
 argument_list|<
 name|ExtraInfoHolder
@@ -497,7 +497,7 @@ argument_list|>
 name|getExtraInfos
 parameter_list|()
 function_decl|;
-comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @since 2.4.0      * @return      */
+comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @since 2.4.0      * @return ditto      */
 name|String
 name|getExtraInfoContentByTagName
 parameter_list|(
@@ -505,7 +505,7 @@ name|String
 name|tagName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns first extrainfo matching with given tag name      *       * @since 2.4.0      * @return      */
+comment|/**      * Returns first extrainfo matching with given tag name      *       * @since 2.4.0      * @return ExtraInfoHolder      */
 name|ExtraInfoHolder
 name|getExtraInfoByTagName
 parameter_list|(

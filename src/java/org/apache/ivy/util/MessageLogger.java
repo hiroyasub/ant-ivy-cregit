@@ -34,7 +34,7 @@ specifier|public
 interface|interface
 name|MessageLogger
 block|{
-comment|/**      * Logs a message at the given level.      *<p>      *<code>level</code> constants are defined in the {@link Message} class.      *</p>      *       * @param msg      *            the message to log      * @param level      *            the level at which the message should be logged.      * @see Message#MSG_DEBUG      * @see Message#MSG_VERBOSE      * @see Message#MSG_INFO      * @see Message#MSG_WARN      * @see Message#MSG_ERROR      */
+comment|/**      * Logs a message at the given level.      *<p>      *<code>level</code> constants are defined in the {@link Message} class.      *</p>      *       * @param msg      *            the message to log      * @param level      *            the level at which the message should be logged.      * @see Message#MSG_DEBUG      * @see Message#MSG_VERBOSE      * @see Message#MSG_INFO      * @see Message#MSG_WARN      * @see Message#MSG_ERR      */
 specifier|public
 specifier|abstract
 name|void

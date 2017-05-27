@@ -1756,7 +1756,7 @@ block|}
 return|return
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|artifact
 argument_list|)

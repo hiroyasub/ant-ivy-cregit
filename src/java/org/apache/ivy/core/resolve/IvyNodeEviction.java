@@ -464,21 +464,11 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-operator|(
+return|return
 name|obj
 operator|instanceof
 name|ModuleIdConf
-operator|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 name|getModuleId
 argument_list|()
 operator|.
@@ -1544,7 +1534,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns null if this node has only be evicted transitively, or the the collection of selected      * nodes if it has been evicted by other selected nodes      *       * @return      */
+comment|/**      * Returns null if this node has only be evicted transitively, or the the collection of selected      * nodes if it has been evicted by other selected nodes      *       * @return Collection&lt;IvyNode&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -1813,7 +1803,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root, null      * otherwise (if it hasn't been evicted in root) for the given rootModuleConf. Note that this      * method only works if conflict resolution has already be done in all the ancestors.      *       * @param rootModuleConf      * @param ancestor      * @return      */
+comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root, null      * otherwise (if it hasn't been evicted in root) for the given rootModuleConf. Note that this      * method only works if conflict resolution has already be done in all the ancestors.      *       * @param rootModuleConf ditto      * @param ancestor IvyNode      * @return EvictionData      */
 specifier|public
 name|EvictionData
 name|getEvictionDataInRoot

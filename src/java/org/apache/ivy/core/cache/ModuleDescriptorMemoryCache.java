@@ -134,7 +134,7 @@ name|LinkedHashMap
 comment|/*<File,CacheEntry> */
 name|valueMap
 decl_stmt|;
-comment|/**      * Create a cache of the given size      *       * @param size      */
+comment|/**      * Create a cache of the given size      *       * @param size int      */
 specifier|public
 name|ModuleDescriptorMemoryCache
 parameter_list|(
@@ -300,7 +300,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-comment|// cache is disbaled
+comment|// cache is disabled
 return|return
 literal|null
 return|;

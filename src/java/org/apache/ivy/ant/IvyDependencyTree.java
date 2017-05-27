@@ -225,7 +225,7 @@ operator|.
 name|getModuleRevisionId
 argument_list|()
 decl_stmt|;
-comment|// make dependency tree easier to fetch informations
+comment|// make dependency tree easier to fetch information
 for|for
 control|(
 name|Iterator

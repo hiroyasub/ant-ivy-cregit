@@ -336,7 +336,6 @@ name|SshCache
 parameter_list|()
 block|{
 block|}
-empty_stmt|;
 specifier|private
 specifier|static
 name|SshCache
@@ -607,7 +606,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * key is username / host / port      *       * @see SshCache.createCacheKey() for details      */
+comment|/**      * key is username / host / port      *       * @see #createCacheKey(String, String, int) for details      */
 specifier|private
 name|Map
 name|uriCacheMap
@@ -625,7 +624,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|/**      * retrieves a session entry for a given hostname from the cache      *       * @param hostname      *            to retrieve session for      * @return null or the existing entry      */
+comment|/**      * retrieves a session entry for a given hostname from the cache      *      * @param user      *            to retrieve session for      * @param host      *            ditto      * @param port      *            ditto      * @return null or the existing entry      */
 specifier|private
 name|Entry
 name|getCacheEntry
@@ -659,7 +658,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a cobined cache key from the given key parts      *       * @param user      *            name of the user      * @param host      *            of the connection      * @param port      *            of the connection      * @return key for the cache      */
+comment|/**      * Creates a combined cache key from the given key parts      *       * @param user      *            name of the user      * @param host      *            of the connection      * @param port      *            of the connection      * @return key for the cache      */
 specifier|private
 specifier|static
 name|String
@@ -967,7 +966,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * discardes session entries from the cache      *       * @param session      *            to clear      */
+comment|/**      * discards session entries from the cache      *       * @param session      *            to clear      */
 specifier|public
 name|void
 name|clearSession

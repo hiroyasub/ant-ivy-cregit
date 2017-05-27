@@ -460,7 +460,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy repository graph task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' or "
+literal|"It can either be set explicitly via the attribute 'module' or "
 operator|+
 literal|"via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)

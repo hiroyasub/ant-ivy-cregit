@@ -99,7 +99,7 @@ specifier|private
 name|char
 name|c
 decl_stmt|;
-comment|/**          * Default constructor          *           * @param header          *            the header to parse          */
+comment|/**          * Default constructor          *           * @param text          *            the header to parse          */
 name|Parser
 parameter_list|(
 name|String
@@ -122,7 +122,7 @@ name|length
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**          * Do the parsing          *           * @return          *           * @throws ParseException          */
+comment|/**          * Do the parsing          *           * @return OSGiFilter          *           * @throws ParseException          */
 name|OSGiFilter
 name|parse
 parameter_list|()

@@ -490,7 +490,7 @@ block|{
 name|beginIndex
 operator|++
 expr_stmt|;
-comment|// skip the seperator char as well
+comment|// skip the separator char as well
 block|}
 return|return
 name|file

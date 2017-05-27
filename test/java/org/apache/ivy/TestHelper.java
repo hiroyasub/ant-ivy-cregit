@@ -1427,7 +1427,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Cleans up the test repository and cache.      *      */
+comment|/**      * Cleans up the test repository and cache.      *       * @see #newTestRepository()      */
 specifier|public
 specifier|static
 name|void

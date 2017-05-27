@@ -1040,7 +1040,7 @@ specifier|private
 name|boolean
 name|interrupted
 decl_stmt|;
-comment|/**      * True if this instance of Ivy has already been bound to its dependencies, false otherwise.      *       * @see bind()      */
+comment|/**      * True if this instance of Ivy has already been bound to its dependencies, false otherwise.      *       * @see #bind()      */
 specifier|private
 name|boolean
 name|bound
@@ -1437,7 +1437,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Executes the given callback in the context of this Ivy instance.      *<p>      * Alternatively you can use the {@link #pushContext()} and {@link #popContext()} methods, but      * this is not recommended:      *       *<pre>      * Object result = null;      * pushContext();      * try {      *     result = callback.doInIvyContext(this, IvyContext.getContext());      * } finally {      *     popContext();      * }      * doSomethingWithResult(result);      *</pre>      *       *</p>      *       * @param callback      * @return      */
+comment|/**      * Executes the given callback in the context of this Ivy instance.      *<p>      * Alternatively you can use the {@link #pushContext()} and {@link #popContext()} methods, but      * this is not recommended:      *       *<pre>      * Object result = null;      * pushContext();      * try {      *     result = callback.doInIvyContext(this, IvyContext.getContext());      * } finally {      *     popContext();      * }      * doSomethingWithResult(result);      *</pre>      *       *</p>      *       * @param callback IvyCallback      * @return Object      */
 specifier|public
 name|Object
 name|execute
@@ -1990,6 +1990,11 @@ block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// RETRIEVE
 comment|// ///////////////////////////////////////////////////////////////////////
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|int
 name|retrieve
@@ -2161,7 +2166,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *       * @param mrid      * @param revision      * @param destIvyPattern      * @param options      * @throws IOException      * @throws ParseException      */
+comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *       * @param mrid ModuleRevisionId      * @param revision String      * @param destIvyPattern String      * @param options DeliverOptions      * @throws IOException      * @throws ParseException      */
 specifier|public
 name|void
 name|deliver
@@ -2711,6 +2716,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Interrupts the current running operation in the given operating thread, no later than      * interruptTimeout milliseconds after the call      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|void
 name|interrupt

@@ -272,7 +272,7 @@ specifier|private
 specifier|static
 specifier|final
 name|int
-name|MAX_CREDENTILAS_CACHE_SIZE
+name|MAX_CREDENTIALS_CACHE_SIZE
 init|=
 literal|100
 decl_stmt|;
@@ -798,7 +798,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Called, when user was not found in URL. Maintain static hashe of credentials and retrieve or      * ask credentials for host.      *       * @param host      *            host for which we want to get credentials.      * @return credentials for given host      **/
+comment|/**      * Called, when user was not found in URL. Maintain static hash of credentials and retrieve or      * ask credentials for host.      *       * @param host      *            host for which we want to get credentials.      * @return credentials for given host      **/
 specifier|private
 name|Credentials
 name|requestCredentials
@@ -861,7 +861,7 @@ operator|.
 name|size
 argument_list|()
 operator|>
-name|MAX_CREDENTILAS_CACHE_SIZE
+name|MAX_CREDENTIALS_CACHE_SIZE
 condition|)
 block|{
 name|credentialsCache

@@ -793,7 +793,7 @@ name|BuildException
 argument_list|(
 literal|"no conf provided for ivy report task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'conf' or "
+literal|"It can either be set explicitly via the attribute 'conf' or "
 operator|+
 literal|"via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
 argument_list|)
@@ -948,7 +948,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy report task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' or "
+literal|"It can either be set explicitly via the attribute 'organisation' or "
 operator|+
 literal|"via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
@@ -967,7 +967,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy report task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' or "
+literal|"It can either be set explicitly via the attribute 'module' or "
 operator|+
 literal|"via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)

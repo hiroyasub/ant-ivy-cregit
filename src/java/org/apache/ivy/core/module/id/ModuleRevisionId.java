@@ -1130,9 +1130,7 @@ name|ModuleRevisionId
 operator|)
 name|obj
 decl_stmt|;
-if|if
-condition|(
-operator|!
+return|return
 name|other
 operator|.
 name|getRevision
@@ -1143,14 +1141,9 @@ argument_list|(
 name|getRevision
 argument_list|()
 argument_list|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|else if
-condition|(
+operator|&&
+operator|!
+operator|(
 name|other
 operator|.
 name|getBranch
@@ -1162,14 +1155,10 @@ name|getBranch
 argument_list|()
 operator|!=
 literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|else if
-condition|(
+operator|)
+operator|&&
+operator|!
+operator|(
 name|other
 operator|.
 name|getBranch
@@ -1188,15 +1177,8 @@ argument_list|(
 name|getBranch
 argument_list|()
 argument_list|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|else if
-condition|(
-operator|!
+operator|)
+operator|&&
 name|other
 operator|.
 name|getModuleId
@@ -1207,15 +1189,7 @@ argument_list|(
 name|getModuleId
 argument_list|()
 argument_list|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-else|else
-block|{
-return|return
+operator|&&
 name|other
 operator|.
 name|getQualifiedExtraAttributes
@@ -1227,7 +1201,6 @@ name|getQualifiedExtraAttributes
 argument_list|()
 argument_list|)
 return|;
-block|}
 block|}
 annotation|@
 name|Override
@@ -1875,7 +1848,7 @@ name|revision
 argument_list|)
 condition|)
 block|{
-comment|// this is the case when listing dynamic revions
+comment|// this is the case when listing dynamic revisions
 return|return
 name|revision
 return|;

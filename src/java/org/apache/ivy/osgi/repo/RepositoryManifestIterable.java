@@ -162,7 +162,7 @@ specifier|final
 name|Repository
 name|repo
 decl_stmt|;
-comment|/**      * Default constructor      *       * @param root      *            the root directory of the file system to lookup      */
+comment|/**      * Default constructor      *       * @param repo      *            the root directory of the file system to lookup      */
 specifier|public
 name|RepositoryManifestIterable
 parameter_list|(
@@ -326,9 +326,11 @@ name|array
 parameter_list|)
 block|{
 return|return
+operator|(
 name|array
 operator|==
 literal|null
+operator|)
 condition|?
 name|Collections
 operator|.
@@ -340,9 +342,6 @@ argument_list|()
 else|:
 name|Arrays
 operator|.
-expr|<
-name|String
-operator|>
 name|asList
 argument_list|(
 name|array

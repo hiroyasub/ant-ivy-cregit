@@ -185,7 +185,7 @@ name|MapMatcher
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Add matcher.      *       * If matcher is exact pattern matcher, it will be associated with a key and placed in keyed      * collection.      *       * If matcher is not exact pattern matcher, it will be placed into non-keyed collection      *       * @param matcher      */
+comment|/**      * Add matcher.      *       * If matcher is exact pattern matcher, it will be associated with a key and placed in keyed      * collection.      *       * If matcher is not exact pattern matcher, it will be placed into non-keyed collection      *       * @param matcher MapMatcher      */
 specifier|public
 name|void
 name|add

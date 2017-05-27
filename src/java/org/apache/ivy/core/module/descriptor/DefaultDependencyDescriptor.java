@@ -322,7 +322,7 @@ argument_list|(
 literal|"#(\\+[^\\(]+)?(\\(.*\\))?"
 argument_list|)
 decl_stmt|;
-comment|/**      * Transforms the given dependency descriptor of the given namespace and return a new dependency      * descriptor in the system namespace.<i>Note that exclude rules are not converted in system      * namespace, because they aren't transformable (the name space hasn't the ability to convert      * regular expressions). However, method doesExclude will work with system artifacts.</i>      *       * @param dd      * @param ns      * @return      */
+comment|/**      * Transforms the given dependency descriptor of the given namespace and return a new dependency      * descriptor in the system namespace.<i>Note that exclude rules are not converted in system      * namespace, because they aren't transformable (the name space hasn't the ability to convert      * regular expressions). However, method doesExclude will work with system artifacts.</i>      *       * @param dd DependencyDescriptor      * @param ns Namespace      * @return DependencyDescriptor      */
 specifier|public
 specifier|static
 name|DependencyDescriptor
@@ -377,7 +377,7 @@ return|return
 name|newdd
 return|;
 block|}
-comment|/**      * Transforms a dependency descriptor using the given transformer. Note that no namespace info      * will be attached to the transformed dependency descriptor, so calling doesExclude is not      * recommended (doesExclude only works when namespace is properly set)      *       * @param dd      * @param t      * @return      */
+comment|/**      * Transforms a dependency descriptor using the given transformer. Note that no namespace info      * will be attached to the transformed dependency descriptor, so calling doesExclude is not      * recommended (doesExclude only works when namespace is properly set)      *       * @param dd DependencyDescriptor      * @param t NamespaceTransformer      * @return DefaultDependencyDescriptor      */
 specifier|public
 specifier|static
 name|DefaultDependencyDescriptor
@@ -3428,7 +3428,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return      */
+comment|/**      *       * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude

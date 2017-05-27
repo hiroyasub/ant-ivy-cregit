@@ -248,7 +248,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for the cache path related classes: cachepath and cachefileset. Most of the behviour  * is common to the two, since only the produced element differs.  */
+comment|/**  * Base class for the cache path related classes: cachepath and cachefileset. Most of the behaviour  * is common to the two, since only the produced element differs.  */
 end_comment
 
 begin_class

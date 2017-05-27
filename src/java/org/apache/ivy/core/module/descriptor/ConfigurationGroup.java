@@ -79,7 +79,7 @@ operator|=
 name|members
 expr_stmt|;
 block|}
-comment|/**      * Returns the list of configurations' names this object is a group of.      *<p>      * This list is built from the configuration name, if some of these configuration names have      * actually not been recognized in the module, they will be<code>null</code> when accessed from      * {@link #getIntersectedConfiguration(String)}.      *</p>      *       * @return the list of configurations' names this object is an intersection of.      */
+comment|/**      * Returns the list of configurations' names this object is a group of.      *<p>      * This list is built from the configuration name, if some of these configuration names have      * actually not been recognized in the module, they will be<code>null</code> when accessed from      * {@link org.apache.ivy.core.module.descriptor.ConfigurationIntersection#getIntersectedConfiguration(String)}.      *</p>      *       * @return the list of configurations' names this object is an intersection of.      */
 specifier|public
 name|String
 index|[]

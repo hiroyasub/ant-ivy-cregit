@@ -1861,12 +1861,7 @@ parameter_list|)
 block|{
 name|checkmodified
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|check
-argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      */
@@ -1897,9 +1892,6 @@ return|;
 block|}
 return|return
 name|useOrigin
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -1912,12 +1904,7 @@ parameter_list|)
 block|{
 name|useOrigin
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|b
-argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
@@ -2201,7 +2188,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param artifactResolverName      *            artifact resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
 specifier|public
 name|void
 name|saveResolvers
@@ -2585,7 +2572,7 @@ expr_stmt|;
 return|return
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|artifact
 argument_list|)
@@ -2678,9 +2665,6 @@ name|valueOf
 argument_list|(
 name|local
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -2693,7 +2677,7 @@ comment|// origin has not been specified, return null
 return|return
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|artifact
 argument_list|)
@@ -3123,7 +3107,7 @@ name|setExist
 argument_list|(
 name|Boolean
 operator|.
-name|parseBoolean
+name|valueOf
 argument_list|(
 name|exists
 argument_list|)
@@ -3421,11 +3405,6 @@ name|String
 name|expectedResolver
 parameter_list|)
 block|{
-name|ModuleRevisionId
-name|mrid
-init|=
-name|requestedRevisionId
-decl_stmt|;
 if|if
 condition|(
 name|isCheckmodified
@@ -3444,7 +3423,7 @@ name|verbose
 argument_list|(
 literal|"don't use cache for "
 operator|+
-name|mrid
+name|requestedRevisionId
 operator|+
 literal|": checkModified=true"
 argument_list|)
@@ -3477,7 +3456,7 @@ name|verbose
 argument_list|(
 literal|"don't use cache for "
 operator|+
-name|mrid
+name|requestedRevisionId
 operator|+
 literal|": changing=true"
 argument_list|)
@@ -3489,7 +3468,7 @@ block|}
 return|return
 name|doFindModuleInCache
 argument_list|(
-name|mrid
+name|requestedRevisionId
 argument_list|,
 name|options
 argument_list|,
@@ -4086,7 +4065,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return      */
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return ModuleDescriptorParser      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
@@ -6286,7 +6265,7 @@ name|DependencyResolver
 name|resolver
 parameter_list|,
 name|ResolvedResource
-name|orginalMetadataRef
+name|originalMetadataRef
 parameter_list|,
 name|Artifact
 name|requestedMetadataArtifact
@@ -6367,7 +6346,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-name|orginalMetadataRef
+name|originalMetadataRef
 argument_list|,
 name|md
 argument_list|,
@@ -6461,7 +6440,7 @@ name|metadataRef
 decl_stmt|;
 if|if
 condition|(
-name|orginalMetadataRef
+name|originalMetadataRef
 operator|==
 literal|null
 condition|)
@@ -6487,7 +6466,7 @@ name|String
 operator|.
 name|valueOf
 argument_list|(
-name|orginalMetadataRef
+name|originalMetadataRef
 argument_list|)
 expr_stmt|;
 block|}
@@ -7903,9 +7882,6 @@ name|options
 operator|.
 name|isCheckmodified
 argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 return|return
@@ -7996,7 +7972,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resource downloader which makes a copy of the previously existing file before overriding it.      *<p>      * The backup file can be restored or cleanuped later      */
+comment|/**      * Resource downloader which makes a copy of the previously existing file before overriding it.      *<p>      * The backup file can be restored or cleaned up later      */
 specifier|private
 specifier|final
 class|class

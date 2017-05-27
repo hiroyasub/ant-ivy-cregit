@@ -1912,7 +1912,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input collection of      * ModuleDescriptors and upon which the root module depends      *       * @param mds      *            input collection of ModuleDescriptors      * @param rootmd      *            root module      * @return filtered list of modules      */
+comment|/**      * Returns a collection of ModuleDescriptors that are contained in the input collection of      * ModuleDescriptors and upon which the root module depends      *       * @param mds      *            input collection of ModuleDescriptors      * @param rootmds      *            root module      * @return filtered list of modules      */
 specifier|private
 name|Collection
 argument_list|<
@@ -2189,7 +2189,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns a collection of ModuleDescriptors that are conatined in the input collection of      * ModuleDescriptors which depends on the leaf module      *       * @param mds      *            input collection of ModuleDescriptors      * @param leafmd      *            leaf module      * @return filtered list of modules      */
+comment|/**      * Returns a collection of ModuleDescriptors that are contained in the input collection of      * ModuleDescriptors which depends on the leaf module      *       * @param mds      *            input collection of ModuleDescriptors      * @param leafmds      *            leaf module      * @return filtered list of modules      */
 specifier|private
 name|Collection
 argument_list|<

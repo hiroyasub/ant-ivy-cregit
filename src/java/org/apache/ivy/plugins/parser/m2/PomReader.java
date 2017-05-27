@@ -843,7 +843,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Add a property if not yet set and value is not null. This garantee that property keep the      * first value that is put on it and that the properties are never null.      */
+comment|/**      * Add a property if not yet set and value is not null. This guarantees      * that property keeps the first value that is put on it and that the      * properties are never null.      */
 specifier|public
 name|void
 name|setProperty
@@ -3671,16 +3671,11 @@ operator|++
 index|]
 return|;
 block|}
-name|int
-name|result
-init|=
+return|return
 name|super
 operator|.
 name|read
 argument_list|()
-decl_stmt|;
-return|return
-name|result
 return|;
 block|}
 annotation|@

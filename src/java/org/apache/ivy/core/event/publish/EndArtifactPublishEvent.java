@@ -74,6 +74,11 @@ name|EndArtifactPublishEvent
 extends|extends
 name|PublishEvent
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final

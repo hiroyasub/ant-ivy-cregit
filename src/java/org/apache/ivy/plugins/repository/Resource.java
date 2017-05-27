@@ -46,7 +46,7 @@ specifier|public
 interface|interface
 name|Resource
 block|{
-comment|/**      * Get the name of the resource.      *       * @return the repositorie's assigned resource name/identifier.      */
+comment|/**      * Get the name of the resource.      *       * @return the repository's assigned resource name/identifier.      */
 specifier|public
 name|String
 name|getName

@@ -488,7 +488,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @pre can only be called if useSpecialConfs()==false. When it is true, you have to provide a      *      module desciptor so that configurations can be resolved.      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * @pre can only be called if useSpecialConfs()==false. When it is true, you have to provide a      *      module descriptor so that configurations can be resolved.      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|String
 index|[]
@@ -515,7 +515,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|/**      * Get the aksed confs. Special confs (like *) use the moduleDescriptor to find the values *      *       * @param md      *            Used to get the exact values for special confs.      * */
+comment|/**      * Get the asked confs. Special confs (like *) use the moduleDescriptor to find the values *      *       * @param md      *            Used to get the exact values for special confs.      * */
 specifier|public
 name|String
 index|[]

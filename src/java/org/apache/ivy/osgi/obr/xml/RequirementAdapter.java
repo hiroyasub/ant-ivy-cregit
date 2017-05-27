@@ -606,7 +606,7 @@ throw|throw
 operator|new
 name|UnsupportedFilterException
 argument_list|(
-literal|"Not filter on requirement comparaison is not supported"
+literal|"Not filter on requirement comparison is not supported"
 argument_list|)
 throw|;
 block|}
@@ -697,36 +697,13 @@ argument_list|()
 decl_stmt|;
 name|Version
 name|version
-decl_stmt|;
-try|try
-block|{
-name|version
-operator|=
+init|=
 operator|new
 name|Version
 argument_list|(
 name|v
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|ParseException
-argument_list|(
-literal|"Ill formed version: "
-operator|+
-name|v
-argument_list|,
-literal|0
-argument_list|)
-throw|;
-block|}
+decl_stmt|;
 name|Operator
 name|operator
 init|=
@@ -753,7 +730,7 @@ throw|throw
 operator|new
 name|UnsupportedFilterException
 argument_list|(
-literal|"Not filter on equals comparaison is not supported"
+literal|"Not filter on equals comparison is not supported"
 argument_list|)
 throw|;
 block|}

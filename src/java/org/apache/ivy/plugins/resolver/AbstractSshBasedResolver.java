@@ -138,7 +138,7 @@ name|allowedAgentUse
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Optional password file. If set the repository will use it as an encypted property file, to      * load username and passwd entries, and to store them if the user choose to do so. Defaults to      * user.dir/.ivy/[host].sftp.passwd, set it to null to disable this feature.      */
+comment|/**      * Optional password file. If set the repository will use it as an encrypted property file, to      * load username and passwd entries, and to store them if the user choose to do so. Defaults to      * user.dir/.ivy/[host].sftp.passwd, set it to null to disable this feature.      */
 specifier|public
 name|void
 name|setPassfile
@@ -296,7 +296,7 @@ name|port
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * sets the path to an OpenSSH-style config file to be used for reading configuration values for      * an ssh repository, such as a username      *      * @param path      *            of the config file      */
+comment|/**      * sets the path to an OpenSSH-style config file to be used for reading configuration values for      * an ssh repository, such as a username      *      * @param sshConfig      *            path of the config file      */
 specifier|public
 name|void
 name|setSshConfig

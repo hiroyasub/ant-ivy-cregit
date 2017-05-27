@@ -1958,9 +1958,6 @@ name|valueOf
 argument_list|(
 name|up2d
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2022,9 +2019,6 @@ name|valueOf
 argument_list|(
 name|useOrigin
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2283,9 +2277,6 @@ name|valueOf
 argument_list|(
 name|validate
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2332,9 +2323,6 @@ name|valueOf
 argument_list|(
 name|up2d
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2368,9 +2356,6 @@ name|valueOf
 argument_list|(
 name|useRemoteConfig
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2686,7 +2671,7 @@ else|else
 block|{
 try|try
 block|{
-comment|// First asume that it is an absolute URL
+comment|// First assume that it is an absolute URL
 name|settingsURL
 operator|=
 operator|new
@@ -3137,9 +3122,11 @@ decl_stmt|;
 name|boolean
 name|override
 init|=
+operator|(
 name|overrideStr
 operator|==
 literal|null
+operator|)
 condition|?
 literal|true
 else|:
@@ -3149,9 +3136,6 @@ name|valueOf
 argument_list|(
 name|overrideStr
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|Message
 operator|.
@@ -3341,9 +3325,11 @@ name|name
 argument_list|,
 name|value
 argument_list|,
+operator|(
 name|override
 operator|==
 literal|null
+operator|)
 condition|?
 literal|true
 else|:
@@ -3353,9 +3339,6 @@ name|valueOf
 argument_list|(
 name|override
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|,
 name|isSetVar
 argument_list|,

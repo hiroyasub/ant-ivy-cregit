@@ -949,9 +949,6 @@ condition|)
 block|{
 return|return
 name|validate
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 else|else
@@ -973,13 +970,8 @@ return|return
 name|validate
 operator|==
 literal|null
-condition|?
-literal|true
-else|:
+operator|||
 name|validate
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -994,12 +986,7 @@ name|this
 operator|.
 name|validate
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|validate
-argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
@@ -2046,12 +2033,7 @@ parameter_list|)
 block|{
 name|checkmodified
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|check
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -2614,7 +2596,7 @@ block|}
 block|}
 return|;
 block|}
-comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine which is the      * latest      *       * @param rmr1      * @param rmr2      * @return      */
+comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine which is the      * latest      *       * @param rmr1 ResolvedModuleRevision      * @param rmr2 ResolvedModuleRevision      * @param date Date      * @return boolean      */
 specifier|protected
 name|boolean
 name|isAfter

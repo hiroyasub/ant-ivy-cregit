@@ -1090,7 +1090,7 @@ name|foundMrid
 argument_list|)
 decl_stmt|;
 comment|// if the comparison consider them equal, we must return -1, because we can't consider the
-comment|// dynamic revision to be greater. Otherwise we can safeely return the result of the static
+comment|// dynamic revision to be greater. Otherwise we can safely return the result of the static
 comment|// comparison
 return|return
 name|c

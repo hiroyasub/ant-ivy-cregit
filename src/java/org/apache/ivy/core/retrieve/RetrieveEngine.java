@@ -551,7 +551,7 @@ throws|throws
 name|IOException
 block|{
 name|RetrieveOptions
-name|retieveOptions
+name|retrieveOptions
 init|=
 operator|new
 name|RetrieveOptions
@@ -559,7 +559,7 @@ argument_list|(
 name|options
 argument_list|)
 decl_stmt|;
-name|retieveOptions
+name|retrieveOptions
 operator|.
 name|setDestArtifactPattern
 argument_list|(
@@ -573,7 +573,7 @@ name|retrieve
 argument_list|(
 name|mrid
 argument_list|,
-name|retieveOptions
+name|retrieveOptions
 argument_list|)
 decl_stmt|;
 return|return
@@ -3210,7 +3210,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * The returned comparator should consider greater the artifact which gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager to resolve conflicts.      *       * @return      */
+comment|/**      * The returned comparator should consider greater the artifact which gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager to resolve conflicts.      *       * @return Comparator&lt;ArtifactDownloadReport&gt;      */
 specifier|private
 name|Comparator
 argument_list|<

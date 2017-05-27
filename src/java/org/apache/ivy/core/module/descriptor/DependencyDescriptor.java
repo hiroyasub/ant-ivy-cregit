@@ -253,7 +253,7 @@ index|[]
 name|moduleConfigurations
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if      *       * @param moduleConfigurations      * @param artifactId      * @return      */
+comment|/**      * Returns true if      *       * @param moduleConfigurations ditto      * @param artifactId ditto      * @return boolean      */
 name|boolean
 name|doesExclude
 parameter_list|(

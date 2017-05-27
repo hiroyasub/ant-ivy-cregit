@@ -570,9 +570,7 @@ literal|0
 argument_list|)
 throw|;
 block|}
-name|BundleCapability
-name|service
-init|=
+return|return
 operator|new
 name|BundleCapability
 argument_list|(
@@ -584,9 +582,6 @@ name|name
 argument_list|,
 name|version
 argument_list|)
-decl_stmt|;
-return|return
-name|service
 return|;
 block|}
 block|}

@@ -189,9 +189,6 @@ decl_stmt|;
 name|Status
 name|lowest
 init|=
-operator|(
-name|Status
-operator|)
 name|statuses
 operator|.
 name|get

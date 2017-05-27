@@ -80,7 +80,7 @@ name|ExcludeRule
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the id of the described artifact, without revision information      *       * @return      */
+comment|/**      * Returns the id of the described artifact, without revision information      *       * @return ArtifactId      */
 specifier|public
 name|ArtifactId
 name|getId
@@ -93,7 +93,7 @@ index|[]
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      *       * @return      */
+comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      *       * @return PatternMatcher      */
 specifier|public
 name|PatternMatcher
 name|getMatcher

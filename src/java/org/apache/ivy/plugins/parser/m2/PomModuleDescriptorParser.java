@@ -1287,7 +1287,7 @@ name|warn
 argument_list|(
 literal|"Resolution will only pick dependencies of the relocated element."
 operator|+
-literal|"  Artefact and other metadata will be ignored."
+literal|"  Artifact and other metadata will be ignored."
 argument_list|)
 expr_stmt|;
 name|ResolvedModuleRevision
@@ -1629,9 +1629,6 @@ name|mdBuilder
 operator|.
 name|addPlugin
 argument_list|(
-operator|(
-name|PomDependencyMgt
-operator|)
 name|pomDependencyMgt
 argument_list|)
 expr_stmt|;
@@ -2550,9 +2547,7 @@ name|getContextNamespace
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ResolvedModuleRevision
-name|otherModule
-init|=
+return|return
 name|resolver
 operator|.
 name|getDependency
@@ -2561,9 +2556,6 @@ name|dd
 argument_list|,
 name|data
 argument_list|)
-decl_stmt|;
-return|return
-name|otherModule
 return|;
 block|}
 block|}

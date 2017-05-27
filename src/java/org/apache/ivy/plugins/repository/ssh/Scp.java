@@ -1075,6 +1075,11 @@ name|modtime
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 specifier|private
 name|void
 name|sendFile
@@ -1414,7 +1419,7 @@ name|flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Receive a file via scp and store it in a stream      *       * @param channel      *            ssh channel to use      * @param file      *            to receive from remote      * @param target      *            to store file into (if null, get only file info)      * @return file information of the file we received      * @throws IOException      *             in case of network or protocol trouble      * @throws RemoteScpException      *             in case of problems on the target system (connection is fine)      */
+comment|/**      * Receive a file via scp and store it in a stream      *       * @param channel      *            ssh channel to use      * @param file      *            to receive from remote      * @param targetStream      *            to store file into (if null, get only file info)      * @return file information of the file we received      * @throws IOException      *             in case of network or protocol trouble      * @throws RemoteScpException      *             in case of problems on the target system (connection is fine)      */
 specifier|private
 name|FileInfo
 name|receiveStream
@@ -1810,7 +1815,7 @@ return|return
 name|fileInfo
 return|;
 block|}
-comment|/**      * @return      * @throws JSchException      */
+comment|/**      * @return ChannelExec      * @throws JSchException      */
 specifier|private
 name|ChannelExec
 name|getExecChannel
@@ -1838,6 +1843,11 @@ name|channel
 return|;
 block|}
 comment|/**      * Copy a local file to a remote site, uses the specified mode when creating the file on the      * remote side.      *       * @param localFile      *            Path and name of local file. Must be absolute.      * @param remoteTargetDir      *            Remote target directory where the file has to end up (optional)      * @param remoteTargetName      *            file name to use on the target system      * @param mode      *            a four digit string (e.g., 0644, see "man chmod", "man open")      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|void
 name|put
@@ -2128,6 +2138,11 @@ name|IOException
 throws|,
 name|RemoteScpException
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 name|ChannelExec
 name|channel
 init|=

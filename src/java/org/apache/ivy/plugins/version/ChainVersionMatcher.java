@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of {@link VersionMatcher} chaining several version matchers, and implemeting  * the {@link VersionMatcher} interface by returning results from the first matcher in the chain  * accepting the version.  */
+comment|/**  * An implementation of {@link VersionMatcher} chaining several version matchers, and implementing  * the {@link VersionMatcher} interface by returning results from the first matcher in the chain  * accepting the version.  */
 end_comment
 
 begin_class
@@ -299,7 +299,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns the list of matchers in the chain.      *<p>      * The list is returned as an unmodifiable view on the actual list of matchers, and will thus      * reflect futher changes made in the chain.      *       * @return the list of matchers in the chain. Is never null.      */
+comment|/**      * Returns the list of matchers in the chain.      *<p>      * The list is returned as an unmodifiable view on the actual list of matchers, and will thus      * reflect further changes made in the chain.      *       * @return the list of matchers in the chain. Is never null.      */
 specifier|public
 name|List
 name|getMatchers

@@ -523,7 +523,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a VfsResource      *       * @param source      *            a<code>String</code> identifying a VFS Resource      * @throws<code>IOException</code> on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
+comment|/**      * Get a VfsResource      *       * @param vfsURI      *            a<code>String</code> identifying a VFS Resource      * @throws<code>IOException</code> on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|Resource
 name|getResource
@@ -840,7 +840,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Transfer an Ivy resource to a VFS repository      *       * @param source      *            a<code>File</code> indentifying the local file to transfer to the repository      * @param vfsURI      *            a<code>String</code> identifying the destination VFS Resource.      * @param overwrite      *            whether to overwrite an existing resource.      * @throws<code>IOException</code> on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
+comment|/**      * Transfer an Ivy resource to a VFS repository      *       * @param source      *            a<code>File</code> identifying the local file to transfer to the repository      * @param vfsURI      *            a<code>String</code> identifying the destination VFS Resource.      * @param overwrite      *            whether to overwrite an existing resource.      * @throws<code>IOException</code> on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|void
 name|put

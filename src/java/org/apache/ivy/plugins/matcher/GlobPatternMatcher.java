@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pattern matcher matching input using unix-like glob matcher expressions. Meta characters are:  *<ul>  *<li>* - Matches zero or more characters</li>  *<li>? - Matches exactly one character.</li>  *</ul>  *<p/>  *<b> Note that this matcher is available only with<a href="http://jakarta.apache.org/oro"Apache  * Jakarta Oro 2.0.8</a> in your classpath.</b>  *   * @see<a  *      href="http://jakarta.apache.org/oro/api/org/apache/oro/text/GlobCompiler.html">GlobCompiler</a>  */
+comment|/**  * A pattern matcher matching input using unix-like glob matcher expressions. Meta characters are:  *<ul>  *<li>* - Matches zero or more characters</li>  *<li>? - Matches exactly one character.</li>  *</ul>  *<p/>  *<b> Note that this matcher is available only with<a href="http://jakarta.apache.org/oro"Apache  * Jakarta Oro 2.0.8</a> in your classpath.</b>  *   * @see<a href="http://jakarta.apache.org/oro/api/org/apache/oro/text/GlobCompiler.html">GlobCompiler</a>  */
 end_comment
 
 begin_class
@@ -267,9 +267,6 @@ expr_stmt|;
 block|}
 return|return
 name|exact
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|private

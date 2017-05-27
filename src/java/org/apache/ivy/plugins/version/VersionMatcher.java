@@ -81,7 +81,7 @@ name|ModuleRevisionId
 name|askedMrid
 parameter_list|)
 function_decl|;
-comment|/**      * Indicates if this version matcher considers that the module revision found matches the asked      * one.      *       * @param askedMrid      * @param foundMrid      * @return      */
+comment|/**      * Indicates if this version matcher considers that the module revision found matches the asked      * one.      *       * @param askedMrid ModuleRevisionId      * @param foundMrid ModuleRevisionId      * @return boolean      */
 specifier|public
 name|boolean
 name|accept
@@ -93,7 +93,7 @@ name|ModuleRevisionId
 name|foundMrid
 parameter_list|)
 function_decl|;
-comment|/**      * Indicates if this VersionMatcher needs module descriptors to determine if a module revision      * matches the asked one. Note that returning true in this method may imply big performance      * issues.      *       * @return      */
+comment|/**      * Indicates if this VersionMatcher needs module descriptors to determine if a module revision      * matches the asked one. Note that returning true in this method may imply big performance      * issues.      *       * @return boolean      */
 specifier|public
 name|boolean
 name|needModuleDescriptor
@@ -105,7 +105,7 @@ name|ModuleRevisionId
 name|foundMrid
 parameter_list|)
 function_decl|;
-comment|/**      * Indicates if this version matcher considers that the module found matches the asked one. This      * method can be called even needModuleDescriptor(ModuleRevisionId askedMrid, ModuleRevisionId      * foundMrid) returns false, so it is required to implement it in any case, a usual default      * implementation being: return accept(askedMrid, foundMD.getResolvedModuleRevisionId());      *       * @param askedMrid      * @param foundMD      * @return      */
+comment|/**      * Indicates if this version matcher considers that the module found matches the asked one. This      * method can be called even needModuleDescriptor(ModuleRevisionId askedMrid, ModuleRevisionId      * foundMrid) returns false, so it is required to implement it in any case, a usual default      * implementation being: return accept(askedMrid, foundMD.getResolvedModuleRevisionId());      *       * @param askedMrid ModuleRevisionId      * @param foundMD ModuleDescriptor      * @return boolean      */
 specifier|public
 name|boolean
 name|accept
@@ -117,7 +117,7 @@ name|ModuleDescriptor
 name|foundMD
 parameter_list|)
 function_decl|;
-comment|/**      * Compares a dynamic revision (askedMrid) with a static one (foundMrid) to indicate which one      * should be considered the greater. If there is not enough information to know which one is the      * greater, the dynamic one should be considered greater and this method should return 0. This      * method should never be called with a askdeMrid for which isDynamic returns false.      *       * @param askedMrid      *            the dynamic revision to compare      * @param foundMrid      *            the static revision to compare      * @param staticComparator      *            a comparator which can be used to compare static revisions      * @return 0 if it's not possible to know which one is greater, greater than 0 if askedMrid      *         should be considered greater, lower than 0 if it can't be consider greater      */
+comment|/**      * Compares a dynamic revision (askedMrid) with a static one (foundMrid) to indicate which one      * should be considered the greater. If there is not enough information to know which one is the      * greater, the dynamic one should be considered greater and this method should return 0. This      * method should never be called with a askedMrid for which isDynamic returns false.      *       * @param askedMrid      *            the dynamic revision to compare      * @param foundMrid      *            the static revision to compare      * @param staticComparator      *            a comparator which can be used to compare static revisions      * @return 0 if it's not possible to know which one is greater, greater than 0 if askedMrid      *         should be considered greater, lower than 0 if it can't be consider greater      */
 specifier|public
 name|int
 name|compare

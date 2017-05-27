@@ -827,7 +827,7 @@ return|return
 name|currentVisitNode
 return|;
 block|}
-comment|/**      * Sets the currently visited node. WARNING: This should only be called by Ivy core      * ResolveEngine!      *       * @param currentVisitNode      */
+comment|/**      * Sets the currently visited node. WARNING: This should only be called by Ivy core      * ResolveEngine!      *       * @param currentVisitNode VisitNode      */
 name|void
 name|setCurrentVisitNode
 parameter_list|(
@@ -1028,7 +1028,7 @@ argument_list|,
 name|keptVisitData
 argument_list|)
 expr_stmt|;
-comment|// update visit data with discarde visit nodes
+comment|// update visit data with discarded visit nodes
 name|keptVisitData
 operator|.
 name|addVisitNodes
@@ -1343,7 +1343,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// the returned path contains the currently visited node, we are only interested in
-comment|// the dependers, so we remove the currently visted node from the end
+comment|// the dependers, so we remove the currently visited node from the end
 name|dependers
 operator|.
 name|remove

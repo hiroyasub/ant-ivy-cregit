@@ -170,7 +170,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Should only be called during event object construction, since events should be immutable      *       * @param key      * @param value      */
+comment|/**      * Should only be called during event object construction, since events should be immutable      *       * @param key ditto      * @param value ditto      */
 specifier|protected
 name|void
 name|addAttribute

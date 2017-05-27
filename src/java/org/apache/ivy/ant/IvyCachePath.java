@@ -199,7 +199,7 @@ operator|=
 name|osgi
 expr_stmt|;
 block|}
-comment|/**      * @deprecated use setPathid instead      * @param id      */
+comment|/**      * @deprecated use setPathid instead      * @param id String      */
 annotation|@
 name|Deprecated
 specifier|public

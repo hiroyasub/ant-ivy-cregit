@@ -70,6 +70,11 @@ comment|/**  * A simple Properties extension easing the loading and saving of da
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 class|class
 name|PropertiesFile

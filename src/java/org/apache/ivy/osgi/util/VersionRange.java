@@ -141,7 +141,7 @@ specifier|private
 name|char
 name|c
 decl_stmt|;
-comment|/**          * Default constructor          *           * @param header          *            the header to parse          */
+comment|/**          * Default constructor          *           * @param version          *            the version to parse          */
 name|VersionRangeParser
 parameter_list|(
 name|String
@@ -413,7 +413,7 @@ literal|0
 argument_list|)
 decl_stmt|;
 name|String
-name|qualififer
+name|qualifier
 init|=
 literal|null
 decl_stmt|;
@@ -477,7 +477,7 @@ name|parseNumberSeparator
 argument_list|()
 condition|)
 block|{
-name|qualififer
+name|qualifier
 operator|=
 name|parseQualifier
 argument_list|()
@@ -504,7 +504,7 @@ operator|.
 name|intValue
 argument_list|()
 argument_list|,
-name|qualififer
+name|qualifier
 argument_list|)
 return|;
 block|}
@@ -802,7 +802,7 @@ throw|throw
 operator|new
 name|ParseException
 argument_list|(
-literal|"Expexting ] or )"
+literal|"Expecting ] or )"
 argument_list|,
 name|pos
 argument_list|)
@@ -1124,8 +1124,8 @@ name|Version
 name|version
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|(
 name|startExclusive
 condition|?
 name|version
@@ -1134,7 +1134,7 @@ name|compareUnqualified
 argument_list|(
 name|startVersion
 argument_list|)
-operator|<=
+operator|>
 literal|0
 else|:
 name|version
@@ -1143,27 +1143,16 @@ name|compareUnqualified
 argument_list|(
 name|startVersion
 argument_list|)
-operator|<
+operator|>=
 literal|0
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|if
-condition|(
+operator|)
+operator|&&
+operator|(
 name|endVersion
 operator|==
 literal|null
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-if|if
-condition|(
+operator|||
+operator|(
 name|endExclusive
 condition|?
 name|version
@@ -1172,7 +1161,7 @@ name|compareUnqualified
 argument_list|(
 name|endVersion
 argument_list|)
-operator|>=
+operator|<
 literal|0
 else|:
 name|version
@@ -1181,16 +1170,10 @@ name|compareUnqualified
 argument_list|(
 name|endVersion
 argument_list|)
-operator|>
+operator|<=
 literal|0
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-literal|true
+operator|)
+operator|)
 return|;
 block|}
 specifier|public

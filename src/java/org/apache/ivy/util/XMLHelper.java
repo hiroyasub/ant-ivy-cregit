@@ -493,9 +493,6 @@ block|}
 block|}
 return|return
 name|canDisableExternalDtds
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 comment|/**      * Convert an URL to a valid systemId according to RFC 2396.      */

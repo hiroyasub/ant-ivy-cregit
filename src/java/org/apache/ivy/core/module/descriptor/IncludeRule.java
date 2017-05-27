@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This describes a rule of inclusion. It is used to resctrict the artifacts and modules asked for a  * dependency, by including only modules and artifacts matching the rule  */
+comment|/**  * This describes a rule of inclusion. It is used to restrict the artifacts and modules asked for a  * dependency, by including only modules and artifacts matching the rule  */
 end_comment
 
 begin_interface
@@ -80,7 +80,7 @@ name|IncludeRule
 extends|extends
 name|ExtendableItem
 block|{
-comment|/**      * Returns the id of the described artifact, without revision information      *       * @return      */
+comment|/**      * Returns the id of the described artifact, without revision information      *       * @return ArtifactId      */
 specifier|public
 name|ArtifactId
 name|getId
@@ -93,7 +93,7 @@ index|[]
 name|getConfigurations
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      *       * @return      */
+comment|/**      * Returns the matcher to use to know if an artifact match the current descriptor      *       * @return PatternMatcher      */
 specifier|public
 name|PatternMatcher
 name|getMatcher

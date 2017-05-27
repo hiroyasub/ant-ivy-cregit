@@ -33,18 +33,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|lang
-operator|.
-name|reflect
-operator|.
-name|Method
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|net
 operator|.
 name|Authenticator
@@ -313,7 +301,7 @@ name|Message
 operator|.
 name|debug
 argument_list|(
-literal|"authenicating to proxy server with username ["
+literal|"authenticating to proxy server with username ["
 operator|+
 name|proxyUser
 operator|+

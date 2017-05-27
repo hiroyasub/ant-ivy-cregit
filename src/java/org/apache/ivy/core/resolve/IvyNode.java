@@ -2472,15 +2472,10 @@ argument_list|)
 decl_stmt|;
 return|return
 name|exclude
-operator|==
+operator|!=
 literal|null
-condition|?
-literal|false
-else|:
+operator|&&
 name|exclude
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 return|return
@@ -3212,7 +3207,7 @@ return|return
 name|dependencyConfigurations
 return|;
 block|}
-comment|/**      * returns the required configurations from the given node      *       * @param in      * @return array of configuration names      */
+comment|/**      * returns the required configurations from the given node      *       * @param in IvyNode      * @param inConf ditto      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3459,7 +3454,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf      * @return array of configuration names      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf String      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -4469,7 +4464,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *       * @param artifactFilter      * @return array of {@link Artifact}s      */
+comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *       * @param artifactFilter Filter      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4563,7 +4558,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf      * @return array of {@link Artifact}s      */
+comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf String      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -5666,7 +5661,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/**      * Returns the last modified timestamp of the module represented by this Node, or 0 if the last      * modified timestamp is currently unkwown (module not loaded)      *       * @return the last modified timestamp of the module represented by this Node      */
+comment|/**      * Returns the last modified timestamp of the module represented by this Node, or 0 if the last      * modified timestamp is currently unknown (module not loaded)      *       * @return the last modified timestamp of the module represented by this Node      */
 specifier|public
 name|long
 name|getLastModified
@@ -6543,7 +6538,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected but conflict      * resolution hasn't been done yet      *       * @param rootModuleConf      * @param mid      *            the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
+comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected but conflict      * resolution hasn't been done yet      *       * @param rootModuleConf ditto      * @param mid      *            the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
 specifier|public
 name|Collection
 argument_list|<
@@ -6601,7 +6596,7 @@ block|}
 comment|// /////////////////////////////////////////////////////////////////////////////
 comment|// BLACKLISTING MANAGEMENT
 comment|// /////////////////////////////////////////////////////////////////////////////
-comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *       * @param rootModuleConf      *            the root module configuration in which the node should be blacklisted      */
+comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *       * @param bdata      *            the root module configuration in which the node should be blacklisted      */
 specifier|public
 name|void
 name|blacklist
@@ -6780,7 +6775,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(String)      */
+comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|public
 name|boolean
 name|isBlacklisted
@@ -6798,7 +6793,7 @@ name|rootModuleConf
 argument_list|)
 return|;
 block|}
-comment|/**      * Indicates if this node has been blacklisted in all root module configurations.      *       * @return true if this node is blacklisted in all root module configurations, false otherwise      * @see #blacklist(String)      */
+comment|/**      * Indicates if this node has been blacklisted in all root module configurations.      *       * @return true if this node is blacklisted in all root module configurations, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|public
 name|boolean
 name|isCompletelyBlacklisted

@@ -212,6 +212,11 @@ name|BUNDLE_VERSION
 init|=
 literal|"Bundle-Version"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final
@@ -236,6 +241,11 @@ name|BUNDLE_SYMBOLIC_NAME
 init|=
 literal|"Bundle-SymbolicName"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final
@@ -313,6 +323,11 @@ name|IOException
 throws|,
 name|ParseException
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"resource"
+argument_list|)
 name|JarInputStream
 name|jis
 init|=
@@ -341,16 +356,11 @@ return|return
 literal|null
 return|;
 block|}
-name|BundleInfo
-name|bundleInfo
-init|=
+return|return
 name|parseManifest
 argument_list|(
 name|manifest
 argument_list|)
-decl_stmt|;
-return|return
-name|bundleInfo
 return|;
 block|}
 specifier|public
@@ -377,16 +387,11 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|BundleInfo
-name|parseManifest
-init|=
+return|return
 name|parseManifest
 argument_list|(
 name|fis
 argument_list|)
-decl_stmt|;
-return|return
-name|parseManifest
 return|;
 block|}
 finally|finally
@@ -931,7 +936,7 @@ operator|.
 name|SERVICE_TYPE
 argument_list|)
 expr_stmt|;
-comment|// handle Eclipse specific source attachement
+comment|// handle Eclipse specific source attachment
 name|String
 name|eclipseSourceBundle
 init|=
@@ -1430,7 +1435,7 @@ name|v
 argument_list|)
 return|;
 block|}
-comment|/**      * Ensure that the lines are not longer than 72 characters, so it can be parsed by the      * {@link Manifest} class      *       * @param manifest      * @return      */
+comment|/**      * Ensure that the lines are not longer than 72 characters, so it can be parsed by the      * {@link Manifest} class      *       * @param manifest ditto      * @return String      */
 specifier|public
 specifier|static
 name|String

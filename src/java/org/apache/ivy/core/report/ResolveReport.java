@@ -812,7 +812,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *       * @param downloadStatus      *            the status of download to retreive. Set it to<code>null</code> for no restriction      *            on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved,<code>false</code> to exclude reports from modules evicted in all      *            configurations.      * @return the list of reports, never<code>null</code>      * @see ConfigurationResolveReport#getArtifactsReports(DownloadStatus, boolean)      */
+comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *       * @param downloadStatus      *            the status of download to retrieve. Set it to<code>null</code> for no restriction      *            on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved,<code>false</code> to exclude reports from modules evicted in all      *            configurations.      * @return the list of reports, never<code>null</code>      * @see ConfigurationResolveReport#getArtifactsReports(DownloadStatus, boolean)      */
 specifier|public
 name|ArtifactDownloadReport
 index|[]
@@ -1525,7 +1525,12 @@ return|return
 name|resolveId
 return|;
 block|}
-comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *       * @param extended      * @return      */
+comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *       * @param extended String      * @return String[]      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|String
 index|[]

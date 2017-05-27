@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A CircularDependencyStrategy indicates what ivy does when a circular dependency is detected. Ivy  * can ignore it, warn the user, or interupt the processing.  */
+comment|/**  * A CircularDependencyStrategy indicates what ivy does when a circular dependency is detected. Ivy  * can ignore it, warn the user, or interrupt the processing.  */
 end_comment
 
 begin_interface

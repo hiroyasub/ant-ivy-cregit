@@ -242,7 +242,7 @@ name|URISyntaxException
 name|e
 parameter_list|)
 block|{
-comment|// very wierd URL, let's assume it is absolute
+comment|// very weird URL, let's assume it is absolute
 name|uri
 operator|=
 literal|null

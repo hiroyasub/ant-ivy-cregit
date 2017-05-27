@@ -304,7 +304,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository This is  * especially useful to leverage the gssapi authentication supported by SecureCRT. In caseswhere  * usual sftp is enough, prefer the 100% java solution of sftp repository. This requires SecureCRT  * to be in the PATH. Tested with SecureCRT 5.0.5  */
+comment|/**  * Repository using SecureCRT vsftp command line program to access an sftp repository This is  * especially useful to leverage the gssapi authentication supported by SecureCRT. In cases where  * usual sftp is enough, prefer the 100% java solution of sftp repository. This requires SecureCRT  * to be in the PATH. Tested with SecureCRT 5.0.5  */
 end_comment
 
 begin_class
@@ -1618,7 +1618,7 @@ name|readTimeout
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * The behaviour of vsftp with some commands is to log the resulting message on the error      * stream, even if everything is ok. So it's quite difficult if there was an error or not. Hence      * we compare the response with the expected message and deal with it. The problem is that this      * is very specific to the version of vsftp used for the test, That's why expected messages are      * obtained using overridable protected methods.      */
+comment|/**      * The behaviour of vsftp with some commands is to log the resulting message on the error      * stream, even if everything is ok. So it's quite difficult if there was an error or not. Hence      * we compare the response with the expected message and deal with it. The problem is that this      * is very specific to the version of vsftp used for the test, That's why expected messages are      * obtained using overriddable protected methods.      */
 specifier|protected
 name|void
 name|sendCommand
@@ -1921,6 +1921,11 @@ name|readTimeout
 argument_list|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|protected
 specifier|synchronized
 name|String
@@ -3186,7 +3191,7 @@ literal|" closed"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Parses a ls -l line and transforms it in a resource      *       * @param file      * @param responseLine      * @return      */
+comment|/**      * Parses a ls -l line and transforms it in a resource      *       * @param file ditto      * @param responseLine ditto      * @return Resource      */
 specifier|protected
 name|Resource
 name|lslToResource
@@ -3677,7 +3682,7 @@ operator|+
 literal|")"
 return|;
 block|}
-comment|/**      * Sets the reuse connection time. The same connection will be reused if the time here does not      * last between two commands. O indicates that the connection should never be reused      *       * @param time      */
+comment|/**      * Sets the reuse connection time. The same connection will be reused if the time here does not      * last between two commands. O indicates that the connection should never be reused      *       * @param time long      */
 specifier|public
 name|void
 name|setReuseConnection

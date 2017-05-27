@@ -424,7 +424,7 @@ name|REPOSITORY
 argument_list|)
 expr_stmt|;
 comment|// addChild(new PropertiesHandler(), new ChildElementHandler<PropertiesHandler>() {
-comment|// public void childHanlded(PropertiesHandler child) {
+comment|// public void childHandled(PropertiesHandler child) {
 comment|// }
 comment|// });
 name|addChild
@@ -444,7 +444,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|MappingsHandler
 name|child
@@ -538,7 +538,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ArtifactsHandler
 name|child
@@ -613,7 +613,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RuleHandler
 name|child
@@ -815,7 +815,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ArtifactHandler
 name|child
@@ -1181,7 +1181,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|PropertiesHandler
 name|child
@@ -1222,11 +1222,7 @@ argument_list|)
 decl_stmt|;
 name|Version
 name|version
-decl_stmt|;
-try|try
-block|{
-name|version
-operator|=
+init|=
 operator|new
 name|Version
 argument_list|(
@@ -1237,42 +1233,7 @@ argument_list|(
 name|VERSION
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version attribute on artifact '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|atts
-operator|.
-name|getValue
-argument_list|(
-name|VERSION
-argument_list|)
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
+decl_stmt|;
 name|String
 name|classifier
 init|=

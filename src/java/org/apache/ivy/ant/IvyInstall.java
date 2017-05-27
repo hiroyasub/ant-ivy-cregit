@@ -276,7 +276,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' "
+literal|"It can either be set explicitly via the attribute 'organisation' "
 operator|+
 literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
@@ -304,7 +304,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' "
+literal|"It can either be set explicitly via the attribute 'module' "
 operator|+
 literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
@@ -356,7 +356,7 @@ name|BuildException
 argument_list|(
 literal|"no module revision provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'revision' "
+literal|"It can either be set explicitly via the attribute 'revision' "
 operator|+
 literal|"or via 'ivy.revision' property or a prior call to<resolve/>"
 argument_list|)

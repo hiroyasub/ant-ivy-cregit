@@ -1366,7 +1366,8 @@ name|confs
 operator|=
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -6009,7 +6010,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** get the whitespace that should precede new elements at the current depth in the document */
+comment|/**          * get the whitespace that should precede new elements at the current depth in the document          */
 specifier|private
 name|String
 name|getIndent
@@ -7572,9 +7573,6 @@ return|;
 block|}
 return|return
 name|print
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 name|void
@@ -7588,12 +7586,7 @@ name|this
 operator|.
 name|print
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|print
-argument_list|)
 expr_stmt|;
 block|}
 name|void

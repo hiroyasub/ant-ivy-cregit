@@ -199,7 +199,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"unknwon visibility "
+literal|"unknown visibility "
 operator|+
 name|name
 argument_list|)
@@ -771,21 +771,11 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-operator|(
+return|return
 name|obj
 operator|instanceof
 name|Configuration
-operator|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 operator|(
 operator|(
 name|Configuration

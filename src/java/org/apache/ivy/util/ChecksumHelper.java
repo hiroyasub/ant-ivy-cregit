@@ -270,7 +270,7 @@ literal|false
 return|;
 block|}
 block|}
-comment|/**      * Checks the checksum of the given file against the given checksumFile, and throws an      * IOException if the checksum is not compliant      *       * @param dest      *            the file to test      * @param checksumFile      *            the file containing the expected checksum      * @param algorithm      *            the checksum algorithm to use      * @throws IOException      *             if an IO problem occur whle reading files or if the checksum is not compliant      */
+comment|/**      * Checks the checksum of the given file against the given checksumFile, and throws an      * IOException if the checksum is not compliant      *       * @param dest      *            the file to test      * @param checksumFile      *            the file containing the expected checksum      * @param algorithm      *            the checksum algorithm to use      * @throws IOException      *             if an IO problem occur while reading files or if the checksum is not compliant      */
 specifier|public
 specifier|static
 name|void

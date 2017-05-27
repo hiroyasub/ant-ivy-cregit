@@ -274,7 +274,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|FeatureHandler
 name|child

@@ -541,19 +541,31 @@ operator|.
 name|append
 argument_list|(
 literal|"ln -s -f \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|srcFile
 operator|.
 name|getAbsolutePath
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\"  \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|destFile
 operator|.
 name|getAbsolutePath
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\";"
 argument_list|)
 expr_stmt|;
@@ -2070,7 +2082,10 @@ operator|.
 name|append
 argument_list|(
 name|line
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -2314,7 +2329,7 @@ name|delete
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a list of Files composed of all directories being parent of file and child of root +      * file and root themselves. Example: getPathFiles(new File("test"), new      * File("test/dir1/dir2/file.txt")) => {new File("test/dir1"), new File("test/dir1/dir2"), new      * File("test/dir1/dir2/file.txt") } Note that if root is not an ancester of file, or if root is      * null, all directories from the file system root will be returned.      */
+comment|/**      * Returns a list of Files composed of all directories being parent of file and child of root +      * file and root themselves. Example: getPathFiles(new File("test"), new      * File("test/dir1/dir2/file.txt")) => {new File("test/dir1"), new File("test/dir1/dir2"), new      * File("test/dir1/dir2/file.txt") } Note that if root is not an ancestor of file, or if root is      * null, all directories from the file system root will be returned.      */
 specifier|public
 specifier|static
 name|List
@@ -2405,7 +2420,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      *            The directory from which all files, including files in subdirectory) are      *            extracted.      * @param ignore      *            a Collection of filenames which must be excluded from listing      * @return A collectoin containing all the files of the given directory and it's subdirectories.      */
+comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      *            The directory from which all files, including files in subdirectory) are      *            extracted.      * @param ignore      *            a Collection of filenames which must be excluded from listing      * @return A collection containing all the files of the given directory and it's subdirectories.      */
 specifier|public
 specifier|static
 name|Collection

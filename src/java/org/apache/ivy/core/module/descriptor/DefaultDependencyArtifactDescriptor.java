@@ -142,7 +142,7 @@ specifier|private
 name|DependencyDescriptor
 name|dd
 decl_stmt|;
-comment|/**      * @param dd      * @param name      * @param type      * @param url      */
+comment|/**      * @param dd DependencyDescriptor      * @param name ditto      * @param type ditto      * @param ext ditto      * @param url ditto      * @param extraAttributes ditto      */
 specifier|public
 name|DefaultDependencyArtifactDescriptor
 parameter_list|(
@@ -352,7 +352,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Add a configuration for this artifact.      *       * @param conf      */
+comment|/**      * Add a configuration for this artifact.      *       * @param conf ditto      */
 specifier|public
 name|void
 name|addConfiguration

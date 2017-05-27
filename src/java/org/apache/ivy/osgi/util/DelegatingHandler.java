@@ -1036,7 +1036,7 @@ name|SAXException
 block|{
 name|childHandler
 operator|.
-name|_childHanlded
+name|_childHandled
 argument_list|(
 name|savedDelegate
 argument_list|)
@@ -1120,7 +1120,7 @@ block|{
 specifier|public
 specifier|abstract
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|DH
 name|child
@@ -1136,7 +1136,7 @@ literal|"unchecked"
 argument_list|)
 specifier|private
 name|void
-name|_childHanlded
+name|_childHandled
 parameter_list|(
 name|DelegatingHandler
 name|delegate
@@ -1144,7 +1144,7 @@ parameter_list|)
 throws|throws
 name|SAXParseException
 block|{
-name|childHanlded
+name|childHandled
 argument_list|(
 operator|(
 name|DH
@@ -2009,6 +2009,11 @@ operator|+
 literal|"] "
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|void
 name|skipOnError
@@ -2513,16 +2518,11 @@ name|defaultValue
 return|;
 block|}
 return|return
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|parseBoolean
 argument_list|(
 name|name
 argument_list|,
 name|value
-argument_list|)
 argument_list|)
 return|;
 block|}

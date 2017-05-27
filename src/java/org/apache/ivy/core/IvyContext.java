@@ -1053,6 +1053,11 @@ block|}
 block|}
 block|}
 comment|/**      * Puts a new object at the start of the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown. If no list exists      * under given key a new LinkedList is created. This is kept without WeakReference in opposite      * to the put() results.      *       * @param key      *            key context key for the string      * @param value      *            value to be saved under the key      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|void
 name|push

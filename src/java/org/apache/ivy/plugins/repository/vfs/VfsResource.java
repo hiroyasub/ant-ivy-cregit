@@ -351,7 +351,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a list of direct descendents of the given resource. Note that attempts to get a list of      * children does<emphasize>not</emphasize> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      */
+comment|/**      * Get a list of direct descendants of the given resource. Note that attempts to get a list of      * children does<em>not</em> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      */
 specifier|public
 name|List
 name|getChildren
@@ -518,7 +518,7 @@ name|fsManager
 argument_list|)
 return|;
 block|}
-comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *       * @param vfsURI      * @return a normalized<class>String</class> representing the VFS URI      */
+comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *       * @param vfsURI ditto      * @return a normalized<class>String</class> representing the VFS URI      */
 specifier|public
 specifier|static
 name|String
@@ -624,7 +624,7 @@ argument_list|()
 return|;
 comment|// originally I only checked for a FileSystemException. I expanded it to
 comment|// include all exceptions when I found it would throw a NPE exception when the query was
-comment|// run on non-wellformed VFS URI.
+comment|// run on ill-formed VFS URI.
 block|}
 catch|catch
 parameter_list|(
@@ -636,7 +636,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"Fail to check the existance of the resource "
+literal|"Fail to check the existence of the resource "
 operator|+
 name|getName
 argument_list|()

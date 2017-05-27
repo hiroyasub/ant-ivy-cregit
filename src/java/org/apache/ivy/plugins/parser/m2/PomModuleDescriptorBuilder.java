@@ -3142,7 +3142,7 @@ name|String
 name|groupId
 parameter_list|,
 name|String
-name|artifaceId
+name|artifactId
 parameter_list|)
 block|{
 return|return
@@ -3154,7 +3154,7 @@ name|groupId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
-name|artifaceId
+name|artifactId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
@@ -3170,7 +3170,7 @@ name|String
 name|groupId
 parameter_list|,
 name|String
-name|artifaceId
+name|artifactId
 parameter_list|)
 block|{
 return|return
@@ -3182,7 +3182,7 @@ name|groupId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
-name|artifaceId
+name|artifactId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
@@ -3215,7 +3215,7 @@ name|String
 name|groupId
 parameter_list|,
 name|String
-name|artifaceId
+name|artifactId
 parameter_list|)
 block|{
 return|return
@@ -3227,7 +3227,7 @@ name|groupId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
-name|artifaceId
+name|artifactId
 operator|+
 name|EXTRA_INFO_DELIMITER
 operator|+
