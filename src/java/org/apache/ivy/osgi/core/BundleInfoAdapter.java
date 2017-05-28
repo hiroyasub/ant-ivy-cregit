@@ -591,7 +591,7 @@ name|profileProvider
 argument_list|)
 return|;
 block|}
-comment|/**      *       * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @return DefaultModuleDescriptor ditto      * @throws ProfileNotFoundException      */
+comment|/**      * @param parser ModuleDescriptorParser      * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @param bundle BundleInfo      * @param manifest Manifest      * @param profileProvider ExecutionEnvironmentProfileProvider      * @return DefaultModuleDescriptor ditto      * @throws ProfileNotFoundException if descriptor is not found      */
 specifier|public
 specifier|static
 name|DefaultModuleDescriptor

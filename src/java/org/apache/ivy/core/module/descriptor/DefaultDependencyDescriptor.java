@@ -322,7 +322,7 @@ argument_list|(
 literal|"#(\\+[^\\(]+)?(\\(.*\\))?"
 argument_list|)
 decl_stmt|;
-comment|/**      * Transforms the given dependency descriptor of the given namespace and return a new dependency      * descriptor in the system namespace.<i>Note that exclude rules are not converted in system      * namespace, because they aren't transformable (the name space hasn't the ability to convert      * regular expressions). However, method doesExclude will work with system artifacts.</i>      *       * @param dd DependencyDescriptor      * @param ns Namespace      * @return DependencyDescriptor      */
+comment|/**      * Transforms the given dependency descriptor of the given namespace and return a new dependency      * descriptor in the system namespace.<i>Note that exclude rules are not converted in system      * namespace, because they aren't transformable (the name space hasn't the ability to convert      * regular expressions). However, method doesExclude will work with system artifacts.</i>      *      * @param dd DependencyDescriptor      * @param ns Namespace      * @return DependencyDescriptor      */
 specifier|public
 specifier|static
 name|DependencyDescriptor
@@ -377,7 +377,7 @@ return|return
 name|newdd
 return|;
 block|}
-comment|/**      * Transforms a dependency descriptor using the given transformer. Note that no namespace info      * will be attached to the transformed dependency descriptor, so calling doesExclude is not      * recommended (doesExclude only works when namespace is properly set)      *       * @param dd DependencyDescriptor      * @param t NamespaceTransformer      * @return DefaultDependencyDescriptor      */
+comment|/**      * Transforms a dependency descriptor using the given transformer. Note that no namespace info      * will be attached to the transformed dependency descriptor, so calling doesExclude is not      * recommended (doesExclude only works when namespace is properly set)      *      * @param dd DependencyDescriptor      * @param t NamespaceTransformer      * @param fromSystem boolean      * @return DefaultDependencyDescriptor      */
 specifier|public
 specifier|static
 name|DefaultDependencyDescriptor
@@ -1274,7 +1274,7 @@ name|moduleConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually      * resolved because of the given requestedConfiguration      *<p>      * Usually requestedConfiguration and moduleConfiguration are the same, except when a conf      * extends another, then the moduleConfiguration is the configuration currently resolved (the      * extended one), and requestedConfiguration is the one actually requested initially (the      * extending one). Both moduleConfiguration and requestedConfiguration are configurations of the      * caller, the array returned is composed of the required configurations of the dependency      * described by this descriptor.      */
+comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually      * resolved because of the given requestedConfiguration      *<p>      * Usually requestedConfiguration and moduleConfiguration are the same, except when a conf      * extends another, then the moduleConfiguration is the configuration currently resolved (the      * extended one), and requestedConfiguration is the one actually requested initially (the      * extending one). Both moduleConfiguration and requestedConfiguration are configurations of the      * caller, the array returned is composed of the required configurations of the dependency      * described by this descriptor.      *</p>      */
 specifier|public
 name|String
 index|[]
@@ -1485,7 +1485,7 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
-comment|/*                                  * we do not handle special confs like *!sg or [cond]* in right hand                                  * confs yet: it would require supporting parenthesis grouping in                                  * configurations intersection interpretation                                  *                                   * for (Iterator it2 = depConfs.iterator(); it2.hasNext();) { String                                  * depConf = (String) it2.next(); if (depConf.startsWith("*")) { if                                  * (intersectedDepConf .indexOf("(" + depConf + ")") != -1) {                                  * intersectedDepConfs.add(intersectedDepConf); } else {                                  * intersectedDepConfs.add( "(" + intersectedDepConf + ")+(" +                                  * depConf + ")"); } } else if (intersectedDepConf.startsWith("*"))                                  * { if (depConf .indexOf("(" + intersectedDepConf + ")") != -1) {                                  * intersectedDepConfs.add(depConf); } else {                                  * intersectedDepConfs.add( depConf + "+" + intersectedDepConf); } }                                  * }                                  */
+comment|/*                                  * we do not handle special confs like *!sg or [cond]* in right hand                                  * confs yet: it would require supporting parenthesis grouping in                                  * configurations intersection interpretation                                  *                                  * for (Iterator it2 = depConfs.iterator(); it2.hasNext();) {                                  *     String depConf = (String) it2.next();                                  *     if (depConf.startsWith("*")) {                                  *         if (intersectedDepConf .indexOf("(" + depConf + ")") != -1) {                                  *             intersectedDepConfs.add(intersectedDepConf);                                  *         } else {                                  *             intersectedDepConfs.add( "(" + intersectedDepConf + ")+(" + depConf + ")");                                  *         }                                  *     } else if (intersectedDepConf.startsWith("*")) {                                  *         if (depConf .indexOf("(" + intersectedDepConf + ")") != -1) {                                  *             intersectedDepConfs.add(depConf);                                  *         } else {                                  *             intersectedDepConfs.add( depConf + "+" + intersectedDepConf);                                  *         }                                  *     }                                  * }                                  */
 block|}
 block|}
 block|}
@@ -2164,7 +2164,7 @@ name|requestedConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**      * Replaces fallback patterns with correct values if fallback pattern exists.      *       * @param pattern      *            pattern to look for      * @param conf      *            configuration mapping from dependency element      * @param moduleConfiguration      *            module's configuration to use for replacement      * @return Replaced string if pattern matched. Otherwise null.      */
+comment|/**      * Replaces fallback patterns with correct values if fallback pattern exists.      *      * @param pattern      *            pattern to look for      * @param conf      *            configuration mapping from dependency element      * @param moduleConfiguration      *            module's configuration to use for replacement      * @return Replaced string if pattern matched. Otherwise null.      */
 specifier|protected
 specifier|static
 name|String
@@ -3428,7 +3428,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      *       * @return true if this descriptor contains any exclusion rule      */
+comment|/**      *      * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude

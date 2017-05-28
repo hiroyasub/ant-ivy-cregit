@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Identifies an artifact in a module, without revision information  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
+comment|/**  * Identifies an artifact in a module, without revision information  *  * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class
@@ -44,7 +44,7 @@ specifier|private
 name|String
 name|ext
 decl_stmt|;
-comment|/**      * @param mid      *            The ModuleId, which is the base of this artifact.      * @param name      *            The name of the artifact.      * @param type      *            The type of the artifact.      */
+comment|/**      * @param mid      *            The ModuleId, which is the base of this artifact.      * @param name      *            The name of the artifact.      * @param type      *            The type of the artifact.      * @param ext      *            The name extension of the artifact.      */
 specifier|public
 name|ArtifactId
 parameter_list|(

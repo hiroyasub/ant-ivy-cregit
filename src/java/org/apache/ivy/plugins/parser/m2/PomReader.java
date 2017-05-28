@@ -843,7 +843,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Add a property if not yet set and value is not null. This guarantees      * that property keeps the first value that is put on it and that the      * properties are never null.      */
+comment|/**      * Add a property if not yet set and value is not null. This guarantees      * that property keeps the first value that is put on it and that the      * properties are never null.      *      * @param prop String      * @param val String      */
 specifier|public
 name|void
 name|setProperty

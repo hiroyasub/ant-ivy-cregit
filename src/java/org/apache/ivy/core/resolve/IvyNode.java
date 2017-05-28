@@ -898,7 +898,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * After the call node may be discarded. To avoid using discarded node, make sure to get the      * real node after the call IvyNode node = ... node.loadData(); node = node.getRealNode(); ...      */
+comment|/**      * After the call node may be discarded. To avoid using discarded node, make sure to get the      * real node after the call      *<code>IvyNode node = ... node.loadData(); node = node.getRealNode(); ...</code>      *      * @param rootModuleConf String      * @param parent IvyNode      * @param parentConf String      * @param conf String      * @param shouldBePublic boolean      * @param usage IvyNodeUsage      * @return boolean      */
 specifier|public
 name|boolean
 name|loadData
@@ -2062,7 +2062,7 @@ return|return
 name|deps
 return|;
 block|}
-comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *       * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return {@link Collection} of {@link IvyNode}      */
+comment|/**      * Load the dependencies of the current node      *<p>      * The resulting collection of nodes may have some configuration to load      *      * @param rootModuleConf      *            the requested configuration of the root module      * @param conf      *            the configuration to load of this node      * @param requestedConf      *            the actual node conf requested, possibly extending the<code>conf</code> one.      * @return {@link Collection} of {@link IvyNode}      */
 specifier|public
 name|Collection
 argument_list|<
@@ -3207,7 +3207,7 @@ return|return
 name|dependencyConfigurations
 return|;
 block|}
-comment|/**      * returns the required configurations from the given node      *       * @param in IvyNode      * @param inConf ditto      * @return array of configuration names      */
+comment|/**      * returns the required configurations from the given node      *      * @param in IvyNode      * @param inConf ditto      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3325,7 +3325,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * returns all the current required configurations of the node      *       * @return array of configuration names      */
+comment|/**      * returns all the current required configurations of the node      *      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3454,7 +3454,7 @@ return|return
 name|configuration
 return|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf String      * @return array of configuration names      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *      * @param rootModuleConf String      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3775,7 +3775,7 @@ name|dependencyConfs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return array of configuration names      */
+comment|/**      * Returns the root module configurations in which this dependency is required      *      * @return array of configuration names      */
 specifier|public
 name|String
 index|[]
@@ -3807,7 +3807,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the root module configurations in which this dependency is required      *       * @return {@link Set} of configuration names      */
+comment|/**      * Returns the root module configurations in which this dependency is required      *      * @return {@link Set} of configuration names      */
 specifier|public
 name|Set
 argument_list|<
@@ -4072,7 +4072,7 @@ name|conf
 block|}
 return|;
 block|}
-comment|/**      * Finds and returns a path in callers from the given module id to the current node      *       * @param from      *            the module id to start the path from      * @return a collection representing the path, starting with the from node, followed by the list      *         of nodes being one path to the current node, excluded      */
+comment|/**      * Finds and returns a path in callers from the given module id to the current node      *      * @param from      *            the module id to start the path from      * @return a collection representing the path, starting with the from node, followed by the list      *         of nodes being one path to the current node, excluded      */
 specifier|private
 name|Collection
 argument_list|<
@@ -4240,7 +4240,7 @@ name|path
 argument_list|)
 return|;
 block|}
-comment|/**      * Update data in this node from data of the given node, for the given root module      * configuration.      *       * @param node      *            the source node from which data should be copied      * @param rootModuleConf      *            the root module configuration for which data should be updated      * @param real      *            true if the node to update from actually corresponds to the same real node      *            (usually updated because of dynamic revision resolution), false if it's not the      *            same real node (usually updated because of node eviction)      */
+comment|/**      * Update data in this node from data of the given node, for the given root module      * configuration.      *      * @param node      *            the source node from which data should be copied      * @param rootModuleConf      *            the root module configuration for which data should be updated      * @param real      *            true if the node to update from actually corresponds to the same real node      *            (usually updated because of dynamic revision resolution), false if it's not the      *            same real node (usually updated because of node eviction)      */
 specifier|private
 name|void
 name|updateDataFrom
@@ -4403,7 +4403,7 @@ return|return
 name|usages
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *       * @return array of {@link Artifact}s      */
+comment|/**      * Returns all the artifacts of this dependency required in all the root module configurations      *      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4464,7 +4464,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *       * @param artifactFilter Filter      * @return array of {@link Artifact}s      */
+comment|/**      * Returns all the artifacts of this dependency required in the root module configurations in      * which the node is not evicted nor blacklisted      *      * @param artifactFilter Filter      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -4558,7 +4558,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *       * @param rootModuleConf String      * @return array of {@link Artifact}s      */
+comment|/**      * Returns the artifacts of this dependency required in the configurations themselves required      * in the given root module configuration      *      * @param rootModuleConf String      * @return array of {@link Artifact}s      */
 specifier|public
 name|Artifact
 index|[]
@@ -5661,7 +5661,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/**      * Returns the last modified timestamp of the module represented by this Node, or 0 if the last      * modified timestamp is currently unknown (module not loaded)      *       * @return the last modified timestamp of the module represented by this Node      */
+comment|/**      * Returns the last modified timestamp of the module represented by this Node, or 0 if the last      * modified timestamp is currently unknown (module not loaded)      *      * @return the last modified timestamp of the module represented by this Node      */
 specifier|public
 name|long
 name|getLastModified
@@ -6055,7 +6055,7 @@ block|}
 comment|// /////////////////////////////////////////////////////////////////////////////
 comment|// EVICTION MANAGEMENT
 comment|// /////////////////////////////////////////////////////////////////////////////
-comment|/** A copy of the set of resolved nodes (real nodes) */
+comment|/**      * A copy of the set of resolved nodes (real nodes)      *      * @param moduleId ditto      * @param rootModuleConf String      * @return Set&lt;IvyNode&gt;      */
 specifier|public
 name|Set
 argument_list|<
@@ -6538,7 +6538,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected but conflict      * resolution hasn't been done yet      *       * @param rootModuleConf ditto      * @param mid      *            the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
+comment|/**      * Returns a collection of Nodes in conflict for which conflict has been detected but conflict      * resolution hasn't been done yet      *      * @param rootModuleConf ditto      * @param mid      *            the module id for which pending conflicts should be found      * @return a Collection of IvyNode in pending conflict      */
 specifier|public
 name|Collection
 argument_list|<
@@ -6596,7 +6596,7 @@ block|}
 comment|// /////////////////////////////////////////////////////////////////////////////
 comment|// BLACKLISTING MANAGEMENT
 comment|// /////////////////////////////////////////////////////////////////////////////
-comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *       * @param bdata      *            the root module configuration in which the node should be blacklisted      */
+comment|/**      * Blacklists the current node, so that a new resolve process won't ever consider this node as      * available in the repository.      *<p>      * This is useful in combination with {@link RestartResolveProcess} for conflict manager      * implementation which use a best effort strategy to find compatible dependency set, like      * {@link LatestCompatibleConflictManager}      *</p>      *      * @param bdata      *            the root module configuration in which the node should be blacklisted      */
 specifier|public
 name|void
 name|blacklist
@@ -6775,7 +6775,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
+comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *      * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *      * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|public
 name|boolean
 name|isBlacklisted
@@ -6793,7 +6793,7 @@ name|rootModuleConf
 argument_list|)
 return|;
 block|}
-comment|/**      * Indicates if this node has been blacklisted in all root module configurations.      *       * @return true if this node is blacklisted in all root module configurations, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
+comment|/**      * Indicates if this node has been blacklisted in all root module configurations.      *      * @return true if this node is blacklisted in all root module configurations, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|public
 name|boolean
 name|isCompletelyBlacklisted
@@ -6836,7 +6836,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns the blacklist data of this node in the given root module conf, or<code>null</code>      * if this node is not blacklisted in this root module conf.      *       * @param rootModuleConf      *            the root module configuration to consider      * @return the blacklist data if any      */
+comment|/**      * Returns the blacklist data of this node in the given root module conf, or<code>null</code>      * if this node is not blacklisted in this root module conf.      *      * @param rootModuleConf      *            the root module configuration to consider      * @return the blacklist data if any      */
 specifier|public
 name|IvyNodeBlacklist
 name|getBlacklistData
@@ -6863,7 +6863,7 @@ return|return
 name|usage
 return|;
 block|}
-comment|/**      * Indicates if there is any of the merged usages of this node which has a depender with      * transitive dependency descriptor.      *<p>      * If at there is at least one usage from the merged usages for which there is a depender in the      * given root module conf which has a dependency descriptor with transitive == true, then it      * returns true. Otherwise it returns false.      *</p>      *       * @param rootModuleConf      *            the root module configuration to consider      * @return true if there is any merged usage with transitive dd, false otherwise.      */
+comment|/**      * Indicates if there is any of the merged usages of this node which has a depender with      * transitive dependency descriptor.      *<p>      * If at there is at least one usage from the merged usages for which there is a depender in the      * given root module conf which has a dependency descriptor with transitive == true, then it      * returns true. Otherwise it returns false.      *</p>      *      * @param rootModuleConf      *            the root module configuration to consider      * @return true if there is any merged usage with transitive dd, false otherwise.      */
 specifier|public
 name|boolean
 name|hasAnyMergedUsageWithTransitiveDependency

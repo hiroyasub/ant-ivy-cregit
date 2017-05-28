@@ -757,7 +757,7 @@ operator|=
 name|node
 expr_stmt|;
 block|}
-comment|/**      * @param rootModuleConf ditto      * @param callerNode IvyNode      * @param callerConf ditto      * @param dependencyConfs      *            '*' must have been resolved      * @param dd      *            the dependency revision id asked by the caller      */
+comment|/**      * @param rootModuleConf ditto      * @param callerNode IvyNode      * @param callerConf ditto      * @param requestedConf ditto      * @param dependencyConfs      *            '*' must have been resolved      * @param dd      *            the dependency revision id asked by the caller      */
 specifier|public
 name|void
 name|addCaller
@@ -1391,7 +1391,7 @@ name|from
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if ALL callers exclude the given artifact in the given root module conf      *       * @param rootModuleConf ditto      * @param artifact Artifact      * @return boolean      */
+comment|/**      * Returns true if ALL callers exclude the given artifact in the given root module conf      *      * @param rootModuleConf ditto      * @param artifact Artifact      * @return boolean      */
 name|boolean
 name|doesCallersExclude
 parameter_list|(

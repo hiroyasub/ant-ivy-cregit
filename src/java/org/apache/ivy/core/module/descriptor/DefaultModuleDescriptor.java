@@ -1012,7 +1012,7 @@ return|return
 name|moduleDescriptor
 return|;
 block|}
-comment|/**      * Transforms the given module descriptor of the given namespace and return a new module      * descriptor in the system namespace.<i>Note that dependency exclude rules are not converted      * in system namespace, because they aren't transformable (the name space hasn't the ability to      * convert regular expressions)</i>      *       * @param md ModuleDescriptor      * @param ns Namespace      * @return ModuleDescriptor      */
+comment|/**      * Transforms the given module descriptor of the given namespace and return a new module      * descriptor in the system namespace.<i>Note that dependency exclude rules are not converted      * in system namespace, because they aren't transformable (the name space hasn't the ability to      * convert regular expressions)</i>      *      * @param md ModuleDescriptor      * @param ns Namespace      * @return ModuleDescriptor      */
 specifier|public
 specifier|static
 name|ModuleDescriptor
@@ -1914,7 +1914,7 @@ name|getInstance
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * IMPORTANT : at least call setModuleRevisionId and setResolvedPublicationDate with instances      * created by this constructor !      */
+comment|/**      * IMPORTANT : at least call setModuleRevisionId and setResolvedPublicationDate with instances      * created by this constructor !      *      * @param parser ModuleDescriptorParser      * @param res Resource      */
 specifier|public
 name|DefaultModuleDescriptor
 parameter_list|(
@@ -2205,7 +2205,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Artifact configurations are not used since added artifact may not be entirely completed, so      * its configurations data may not be accurate      *       * @param conf ditto      * @param artifact ditto      */
+comment|/**      * Artifact configurations are not used since added artifact may not be entirely completed, so      * its configurations data may not be accurate      *      * @param conf ditto      * @param artifact ditto      */
 specifier|public
 name|void
 name|addArtifact
@@ -2544,7 +2544,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the configuration object with the given name in the current module descriptor, null      * if not found.      */
+comment|/**      * Returns the configuration object with the given name in the current module descriptor, null      * if not found.      *      * @param confName String      */
 specifier|public
 name|Configuration
 name|getConfiguration
@@ -3594,7 +3594,7 @@ operator|=
 name|b
 expr_stmt|;
 block|}
-comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId organisation and      * name      *       * @param moduleId ditto      * @param matcher PatternMatcher      * @param manager ConflictManager      */
+comment|/**      * regular expressions as explained in Pattern class may be used in ModuleId organisation and      * name      *      * @param moduleId ditto      * @param matcher PatternMatcher      * @param manager ConflictManager      */
 specifier|public
 name|void
 name|addConflictManager
@@ -3923,7 +3923,7 @@ operator|=
 name|ns
 expr_stmt|;
 block|}
-comment|/**      * Throws an exception if the module descriptor is inconsistent For the moment, only extended      * configurations existence and cycles are checked      */
+comment|/**      * Throws an exception if the module descriptor is inconsistent. For the moment, only extended      * configurations existence and cycles are checked      */
 specifier|public
 name|void
 name|check
@@ -4395,7 +4395,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not      * set      */
+comment|/**      * Only works when namespace is properly set. The behaviour is not specified if namespace is      * not set.      *      * @param moduleConfigurations String[]      * @param artifactId ditto      * @return boolean      */
 specifier|public
 name|boolean
 name|doesExclude

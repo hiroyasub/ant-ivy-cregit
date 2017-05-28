@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A lock strategy determines when and how lock should be performed when downloading data to a  * cache.  *<p>  * Note that some implementations may actually choose to NOT perform locking, when no lock is  * necessary (cache not shared). Some other implementations may choose to lock the cache for the  * download of a whole module (not possible yet), or at the artifact level.  *<p>  *</p>  * The lock methods should return true when the lock is either actually acquired or not performed by  * the strategy.</p>  *<p>  * Locking used in the locking strategy must support reentrant lock. Reentrant locking should be  * performed for the whole strategy.  *</p>  */
+comment|/**  * A lock strategy determines when and how lock should be performed when downloading data to a  * cache.  *<p>  * Note that some implementations may actually choose to NOT perform locking, when no lock is  * necessary (cache not shared). Some other implementations may choose to lock the cache for the  * download of a whole module (not possible yet), or at the artifact level.  *</p>  *<p>  * The lock methods should return true when the lock is either actually acquired or not performed by  * the strategy.  *</p>  *<p>  * Locking used in the locking strategy must support reentrant lock. Reentrant locking should be  * performed for the whole strategy.  *</p>  */
 end_comment
 
 begin_interface
@@ -54,12 +54,12 @@ specifier|public
 interface|interface
 name|LockStrategy
 block|{
-comment|/**      * Returns the name of the strategy      *       * @return the name of the strategy      */
+comment|/**      * Returns the name of the strategy      *      * @return the name of the strategy      */
 name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Performs a lock before downloading the given {@link Artifact} to the given file.      *       * @param artifact      *            the artifact about to be downloaded      * @param artifactFileToDownload      *            the file where the artifact will be downloaded      * @return true if the artifact is locked, false otherwise      * @throws InterruptedException      *             if the thread is interrupted while waiting to acquire the lock      */
+comment|/**      * Performs a lock before downloading the given {@link Artifact} to the given file.      *      * @param artifact      *            the artifact about to be downloaded      * @param artifactFileToDownload      *            the file where the artifact will be downloaded      * @return true if the artifact is locked, false otherwise      * @throws InterruptedException      *             if the thread is interrupted while waiting to acquire the lock      */
 name|boolean
 name|lockArtifact
 parameter_list|(
@@ -72,7 +72,7 @@ parameter_list|)
 throws|throws
 name|InterruptedException
 function_decl|;
-comment|/**      * Release the lock acquired for an artifact download.      *       * @param artifact      *            the artifact for which the lock was acquired      * @param artifactFileToDownload      *            the file where the artifact is supposed to have been downloaded      */
+comment|/**      * Release the lock acquired for an artifact download.      *      * @param artifact      *            the artifact for which the lock was acquired      * @param artifactFileToDownload      *            the file where the artifact is supposed to have been downloaded      */
 name|void
 name|unlockArtifact
 parameter_list|(

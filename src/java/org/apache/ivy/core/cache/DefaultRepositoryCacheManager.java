@@ -1811,7 +1811,7 @@ name|g
 argument_list|)
 return|;
 block|}
-comment|/**      * True if this cache should check lastmodified date to know if ivy files are up to date.      *       * @return boolean      */
+comment|/**      * True if this cache should check lastmodified date to know if ivy files are up to date.      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isCheckmodified
@@ -1864,7 +1864,7 @@ operator|=
 name|check
 expr_stmt|;
 block|}
-comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      */
+comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isUseOrigin
@@ -1907,7 +1907,7 @@ operator|=
 name|b
 expr_stmt|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      *      * @param artifact Artifact      * @return File      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -1933,7 +1933,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      *      * @param artifact Artifact      * @param origin ArtifactOrigin      * @return File      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -2018,7 +2018,7 @@ return|return
 name|archive
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information      * provided as parameter and the setting of useOrigin. If useOrigin is false, this method will      * always return the file in the cache.      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information      * provided as parameter and the setting of useOrigin. If useOrigin is false, this method will      * always return the file in the cache.      *      * @param artifact Artifact      * @param origin ArtifactOrigin      * @param useOrigin boolean      * @return File      */
 specifier|private
 name|File
 name|getArchiveFileInCache
@@ -2152,7 +2152,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param name      *            resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedResolverName(ModuleDescriptor md)      *      * @param md      *            the module descriptor resolved      * @param name      *            resolver name      */
 specifier|private
 name|void
 name|saveResolver
@@ -2188,7 +2188,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *      * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
 specifier|public
 name|void
 name|saveResolvers
@@ -3127,7 +3127,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      *       * @param artifact      *            the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
+comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      *      * @param artifact      *            the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
 specifier|private
 name|String
 name|getPrefixKey
@@ -3176,7 +3176,7 @@ operator|+
 name|hashCode
 return|;
 block|}
-comment|/**      * Returns the key used to identify the location of the artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
+comment|/**      * Returns the key used to identify the location of the artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
 specifier|private
 name|String
 name|getLocationKey
@@ -3199,7 +3199,7 @@ operator|+
 literal|".location"
 return|;
 block|}
-comment|/**      * Returns the key used to identify if the artifact is local.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact locality.      */
+comment|/**      * Returns the key used to identify if the artifact is local.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact locality.      */
 specifier|private
 name|String
 name|getIsLocalKey
@@ -3222,7 +3222,7 @@ operator|+
 literal|".is-local"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the last time the artifact was checked to be up to date.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact's last check date.      */
+comment|/**      * Returns the key used to identify the last time the artifact was checked to be up to date.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact's last check date.      */
 specifier|private
 name|String
 name|getLastCheckedKey
@@ -3245,7 +3245,7 @@ operator|+
 literal|".lastchecked"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the existence of the remote artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the existence of the artifact.      */
+comment|/**      * Returns the key used to identify the existence of the remote artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the existence of the artifact.      */
 specifier|private
 name|String
 name|getExistsKey
@@ -3268,7 +3268,7 @@ operator|+
 literal|".exists"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the original artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the original artifact.      */
+comment|/**      * Returns the key used to identify the original artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the original artifact.      */
 specifier|private
 name|String
 name|getOriginalKey
@@ -4065,7 +4065,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return ModuleDescriptorParser      */
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *      * @param moduleDescriptorFile      *            a given module descriptor      * @return ModuleDescriptorParser      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
@@ -6095,7 +6095,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Compute a SHA1 of the resource name, encoded in base64, so we can use it as a file name.      *       * @param resource      *            the resource which name will be hashed      * @return the hash      */
+comment|/**      * Compute a SHA1 of the resource name, encoded in base64, so we can use it as a file name.      *      * @param resource      *            the resource which name will be hashed      * @return the hash      */
 specifier|private
 name|String
 name|computeResourceNameHash
@@ -6151,7 +6151,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Check that a cached file can be considered up to date and thus not downloaded      *       * @param archiveFile      *            the file in the cache      * @param resource      *            the remote resource to check      * @param savedOrigin      *            the saved origin which contains that last checked date      * @param origin      *            the origin in which to store the new last checked date      * @param ttl      *            the time to live to consider the cache up to date      * @return<code>true</code> if the cache is considered up to date      */
+comment|/**      * Check that a cached file can be considered up to date and thus not downloaded      *      * @param archiveFile      *            the file in the cache      * @param resource      *            the remote resource to check      * @param savedOrigin      *            the saved origin which contains that last checked date      * @param origin      *            the origin in which to store the new last checked date      * @param ttl      *            the time to live to consider the cache up to date      * @return<code>true</code> if the cache is considered up to date      */
 specifier|private
 name|boolean
 name|checkCacheUptodate

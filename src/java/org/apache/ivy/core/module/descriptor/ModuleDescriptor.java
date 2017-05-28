@@ -278,7 +278,7 @@ name|CALLER_ALL_CONFIGURATION
 init|=
 literal|"all"
 decl_stmt|;
-comment|/**      * Returns true if this descriptor is a default one, i.e. one generated for a module not      * actually having one.      *       * @return boolean      */
+comment|/**      * @return true if this descriptor is a default one, i.e. one generated for a module not      *         actually having one.      */
 name|boolean
 name|isDefault
 parameter_list|()
@@ -287,12 +287,12 @@ name|ModuleRevisionId
 name|getModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * The module revision id returned here is the resolved one, i.e. it is never a latest one. If      * the revision has not been resolved, a null revision should be returned by getRevision() of      * the returned ModuleRevisionId. This revision must be the same as the module descriptor      * resolved revision id unless no module descriptor is defined      *       * @return ModuleRevisionId      */
+comment|/**      * @return the resolved module revision id; it is never the latest one. If the revision has not      *         been resolved, a null revision should be returned by getRevision() of the returned      *         ModuleRevisionId. This revision must be the same as the module descriptor resolved      *         revision id unless no module descriptor is defined      */
 name|ModuleRevisionId
 name|getResolvedModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * This method update the resolved module revision id      *       * @param revId ModuleRevisionId      */
+comment|/**      * This method updates the resolved module revision id      *       * @param revId ModuleRevisionId      */
 name|void
 name|setResolvedModuleRevisionId
 parameter_list|(
@@ -300,7 +300,7 @@ name|ModuleRevisionId
 name|revId
 parameter_list|)
 function_decl|;
-comment|/**      * Get the list of parent descriptors imported via an&lt;extends&gt; element. Only directly      * imported descriptors are included; the parent's parents are not included.      */
+comment|/**      * @return the list of parent descriptors imported via an&lt;extends&gt; element. Only directly      *         imported descriptors are included; the parent's parents are not included.      */
 name|ExtendsDescriptor
 index|[]
 name|getInheritedDescriptors
@@ -318,17 +318,17 @@ name|String
 name|getStatus
 parameter_list|()
 function_decl|;
-comment|/**      * May be<code>null</code> if unknown in the descriptor itself.      *       * @return The publication date or<code>null</code> when not known.      */
+comment|/**      * @return the publication date or null when not known in the descriptor itself.      */
 name|Date
 name|getPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * The publication date of the module revision should be the date at which it has been      * published, i.e. in general the date of any of its published artifacts, since all published      * artifact of a module should follow the same publishing cycle.      */
+comment|/**      * The publication date of the module revision should be the date at which it has been      * published, i.e. in general the date of any of its published artifacts, since all published      * artifact of a module should follow the same publishing cycle.      *      * @return Date      */
 name|Date
 name|getResolvedPublicationDate
 parameter_list|()
 function_decl|;
-comment|/**      * Returns all the configurations declared by this module as an array. This array is never empty      * (a 'default' conf is assumed when none is declared in the ivy file)      *       * @return all the configurations declared by this module as an array.      */
+comment|/**      * @return all the configurations declared by this module as an array. This array is never empty      *         (a 'default' conf is assumed when none is declared in the ivy file).      */
 name|Configuration
 index|[]
 name|getConfigurations
@@ -352,19 +352,19 @@ name|String
 name|conf
 parameter_list|)
 function_decl|;
-comment|/**      * Returns all artifacts of this module, excluding the artifact corresponding to the module      * descriptor.      *       * @return all published artifacts of this module      * @see #getMetadataArtifact()      */
+comment|/**      * @return all published artifacts of this module, excluding the artifact corresponding to the      *         module descriptor.      * @see #getMetadataArtifact()      */
 name|Artifact
 index|[]
 name|getAllArtifacts
 parameter_list|()
 function_decl|;
-comment|/**      * @return The dependencies of the module. If there is no dependencies return an empty array (non      *        null)      */
+comment|/**      * @return The dependencies of the module. If there are no dependencies return an empty array      *         (non null)      */
 name|DependencyDescriptor
 index|[]
 name|getDependencies
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if the module described by this descriptor depends directly upon the given      * module descriptor      *      * @param matcher VersionMatcher      * @param md ModuleDescriptor      * @return boolean      */
+comment|/**      * @param matcher VersionMatcher      * @param md ModuleDescriptor      * @return true if the module described by this descriptor depends directly upon the given      *         module descriptor      */
 name|boolean
 name|dependsOn
 parameter_list|(
@@ -383,7 +383,7 @@ name|String
 name|confName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the conflict manager to use for the given ModuleId, or<code>null</code> if no      * specific conflict manager is associated with the given module id in this module descriptor.      *       * @param id ModuleId      * @return ConflictManager      */
+comment|/**      * @param id ModuleId      * @return the conflict manager to use for the given ModuleId, or null if no specific conflict      *         manager is associated with the given module id in this module descriptor.      */
 name|ConflictManager
 name|getConflictManager
 parameter_list|(
@@ -391,7 +391,7 @@ name|ModuleId
 name|id
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the licenses of the module described by this descriptor      *       * @return License[]      */
+comment|/**      * @return the licenses of the module described by this descriptor      */
 name|License
 index|[]
 name|getLicenses
@@ -409,7 +409,7 @@ name|long
 name|getLastModified
 parameter_list|()
 function_decl|;
-comment|/**      * Writes this module descriptor as an ivy file. If this descriptor was obtained through the      * parsing of an ivy file, it should keep the layout of the file the most possible similar to      * the original one.      *       * @param ivyFile      *            the destination ivy file      */
+comment|/**      * Writes this module descriptor as an ivy file. If this descriptor was obtained through the      * parsing of an ivy file, it should keep the layout of the file the most possible similar to      * the original one.      *       * @param ivyFile      *            the destination ivy file      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 name|void
 name|toIvyFile
 parameter_list|(
@@ -421,27 +421,27 @@ name|ParseException
 throws|,
 name|IOException
 function_decl|;
-comment|/**      * The ModuleDescriptorParser used to parse this module descriptor, null is no parser was used.      *       * @return ModuleDescriptorParser      */
+comment|/**      * @return the ModuleDescriptorParser used to parse this module descriptor, null is no parser was used.      */
 name|ModuleDescriptorParser
 name|getParser
 parameter_list|()
 function_decl|;
-comment|/**      * The resource being the source of this module descriptor, null if no resource corresponds to      * this module descriptor      *       * @return Resource      */
+comment|/**      * @return the resource being the source of this module descriptor, null if no resource      *         corresponds to this module descriptor.      */
 name|Resource
 name|getResource
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the Artifact representing this module descriptor itself.      *<p>      * Even though the module descriptor is never described as a published artifact of a module in      * the module descriptor itself, it is often useful to consider it as any other artifact of the      * module. This method allows to access to the Artifact object representing this module      * descriptor for this purpose.      *</p>      *       * @return the Artifact representing this module descriptor itself.      */
+comment|/**      * Even though the module descriptor is never described as a published artifact of a module in      * the module descriptor itself, it is often useful to consider it as any other artifact of the      * module. This method allows to access to the Artifact object representing this module      * descriptor for this purpose.      *       * @return the Artifact representing this module descriptor itself.      */
 name|Artifact
 name|getMetadataArtifact
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return true if this descriptor contains any exclusion rule      */
+comment|/**      * @return true if this descriptor contains any exclusion rule.      */
 name|boolean
 name|canExclude
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if an exclude rule of this module attached to any of the given configurations      * matches the given artifact id, and thus exclude it      *       * @param moduleConfs String[]      * @param artifactId ditto      * @return boolean      */
+comment|/**      * @param moduleConfs String[]      * @param artifactId ditto      * @return true if an exclude rule of this module attached to any of the given configurations      *         matches the given artifact id, and thus exclude it      */
 name|boolean
 name|doesExclude
 parameter_list|(
@@ -453,21 +453,21 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an array of all the exclude rules this module descriptor currently holds. Module      * Descriptor exclude rules are used to exclude (usually transitive) dependencies for the whole      * module.      *       * @return an array of {@link ExcludeRule} this module descriptor holds      */
+comment|/**      * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies for the      * whole module.      *       * @return an array of all {@link ExcludeRule} this module descriptor currently holds.      */
 specifier|public
 name|ExcludeRule
 index|[]
 name|getAllExcludeRules
 parameter_list|()
 function_decl|;
-comment|/**      * Returns all the dependency descriptor mediators used by this {@link ModuleDescriptor}, as an      * instance of {@link ModuleRules}.      *<p>      * All rules in the {@link ModuleRules} object returned are {@link DependencyDescriptorMediator}      * .      *</p>      *       * @return all the dependency descriptor mediators used by this {@link ModuleDescriptor}.      */
+comment|/**      * @return all the {@link DependencyDescriptorMediator}s used by this      * {@link ModuleDescriptor}, as an instance of {@link ModuleRules}.      */
 specifier|public
 name|ModuleRules
 comment|/*<DependencyDescriptorMediator> */
 name|getAllDependencyDescriptorMediators
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the list of xml namespaces used by extra attributes, as Map from prefix to namespace      * URIs.      *<p>      * The returned list is never<code>null</code>, it is empty when no extra attribute is used or      * if extra attributes are used without xml namespaces      *</p>      *       * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs.      */
+comment|/**      * @return the list of xml namespaces used by extra attributes, as Map from prefix to namespace      *         URIs. The returned list is never null, it is empty when no extra attribute is used or      *         if extra attributes are used without xml namespaces      */
 name|Map
 argument_list|<
 name|String
@@ -477,7 +477,7 @@ argument_list|>
 name|getExtraAttributesNamespaces
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the custom info provided in the info tag. All the tags except the description are      * given. The key is the name of the tag, the value is its content.<br />      *       * @deprecated this method is not returning the full content of the extra info: to get the full      *             structure of the extra infos, use getExtraInfos()      */
+comment|/**      * @return the custom info provided in the info tag. All the tags except the description are      *         given. The key is the name of the tag, the value is its content.      * @deprecated this method is not returning the full content of the extra info: to get the full      *             structure of the extra infos, use getExtraInfos()      */
 annotation|@
 name|Deprecated
 name|Map
@@ -489,7 +489,7 @@ argument_list|>
 name|getExtraInfo
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a list of extras infos (tag name, attributes and content). All the tags except the      * description are given.      *       * @since 2.4.0      * @return List&lt;ExtraInfoHolder&gt;      */
+comment|/**      * @since 2.4.0      * @return a list of extras infos (tag name, attributes and content). All the tags except the      *         description are given.      */
 name|List
 argument_list|<
 name|ExtraInfoHolder
@@ -497,7 +497,7 @@ argument_list|>
 name|getExtraInfos
 parameter_list|()
 function_decl|;
-comment|/**      * Returns content from first extrainfo matching with given tag name      *       * @since 2.4.0      * @return ditto      */
+comment|/**      * @since 2.4.0      * @param tagName String      * @return content from first extrainfo matching with given tag name.      */
 name|String
 name|getExtraInfoContentByTagName
 parameter_list|(
@@ -505,7 +505,7 @@ name|String
 name|tagName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns first extrainfo matching with given tag name      *       * @since 2.4.0      * @return ExtraInfoHolder      */
+comment|/**      * @since 2.4.0      * @param tagName String      * @return first extrainfo matching with given tag name.      */
 name|ExtraInfoHolder
 name|getExtraInfoByTagName
 parameter_list|(

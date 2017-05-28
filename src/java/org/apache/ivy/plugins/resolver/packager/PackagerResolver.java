@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Resolver that performs a "build" operation to resolve artifacts.  *   *<p>  * The resolver is configured with a base URL, from which the "ivy.xml" and "packager.xml" files are  * resolved. The latter file contains instructions describing how to build the actual artifacts.  */
+comment|/**  * Resolver that performs a "build" operation to resolve artifacts.  *  *<p>  * The resolver is configured with a base URL, from which the "ivy.xml" and "packager.xml" files are  * resolved. The latter file contains instructions describing how to build the actual artifacts.  *</p>  */
 end_comment
 
 begin_class
@@ -410,7 +410,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Set root directory under which builds take place.      */
+comment|/**      * Set root directory under which builds take place.      *      * @param buildRoot File      */
 specifier|public
 name|void
 name|setBuildRoot
@@ -426,7 +426,7 @@ operator|=
 name|buildRoot
 expr_stmt|;
 block|}
-comment|/**      * Returns root directory under which builds take place.      */
+comment|/**      * Returns root directory under which builds take place.      *      * @return File      */
 specifier|public
 name|File
 name|getBuildRoot
@@ -436,7 +436,7 @@ return|return
 name|buildRoot
 return|;
 block|}
-comment|/**      * Set resource cache directory.      */
+comment|/**      * Set resource cache directory.      *      * @param resourceCache File      */
 specifier|public
 name|void
 name|setResourceCache
@@ -452,7 +452,7 @@ operator|=
 name|resourceCache
 expr_stmt|;
 block|}
-comment|/**      * Get resource cache directory.      */
+comment|/**      * Get resource cache directory.      *      * @return File      */
 specifier|public
 name|File
 name|getResourceCache
@@ -462,7 +462,7 @@ return|return
 name|resourceCache
 return|;
 block|}
-comment|/**      * Set base resource override URL pattern.      */
+comment|/**      * Set base resource override URL pattern.      *      * @param resourceURL String      */
 specifier|public
 name|void
 name|setResourceURL
@@ -478,7 +478,7 @@ operator|=
 name|resourceURL
 expr_stmt|;
 block|}
-comment|/**      * Set pattern for locating "packager.xml" files.      */
+comment|/**      * Set pattern for locating "packager.xml" files.      *      * @param pattern String      */
 specifier|public
 name|void
 name|setPackagerPattern
@@ -507,7 +507,7 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Set whether to preserve build directories. Default is false.      */
+comment|/**      * Set whether to preserve build directories. Default is false.      *      * @param preserve boolean      */
 specifier|public
 name|void
 name|setPreserveBuildDirectories
@@ -523,7 +523,7 @@ operator|=
 name|preserve
 expr_stmt|;
 block|}
-comment|/**      * Set whether to enable restricted mode. Default is true.      */
+comment|/**      * Set whether to enable restricted mode. Default is true.      *      * @param restricted boolean      */
 specifier|public
 name|void
 name|setRestricted
@@ -539,7 +539,7 @@ operator|=
 name|restricted
 expr_stmt|;
 block|}
-comment|/**      * Set whether to run ant with the -verbose flag. Default is false.      */
+comment|/**      * Set whether to run ant with the -verbose flag. Default is false.      *      * @param verbose boolean      */
 specifier|public
 name|void
 name|setVerbose
@@ -555,7 +555,7 @@ operator|=
 name|verbose
 expr_stmt|;
 block|}
-comment|/**      * Set whether to run ant with the -quiet flag. Default is false.      */
+comment|/**      * Set whether to run ant with the -quiet flag. Default is false.      *      * @param quiet boolean      */
 specifier|public
 name|void
 name|setQuiet
@@ -571,7 +571,7 @@ operator|=
 name|quiet
 expr_stmt|;
 block|}
-comment|/**      * Set whether to validate downloaded packager.xml files. Default is true.      */
+comment|/**      * Set whether to validate downloaded packager.xml files. Default is true.      *      * @param validate boolean      */
 specifier|public
 name|void
 name|setValidate
@@ -646,7 +646,7 @@ name|rule
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets a property to be passed to the child Ant build responsible for packaging the dependency.      *       * @param propertyKey      *            the property to pass      * @param propertyValue      *            the value of the property to pass      */
+comment|/**      * Sets a property to be passed to the child Ant build responsible for packaging the dependency.      *      * @param propertyKey      *            the property to pass      * @param propertyValue      *            the value of the property to pass      */
 specifier|public
 name|void
 name|setProperty

@@ -256,7 +256,7 @@ name|acceptedTypes
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a new collection containing only the items from the given collection, which are      * accepted by the filter.      *       * @param col      *            The collection to filter.      * @param filter      *            The filter to use.      * @return A new collection instance containing the only the instance accepted by the filter.      *       *<br />      *         Comment: We could have used      *<a href="http://jakarta.apache.org/commons/collections/">Commons-Collections</a>      *         facility for this. If we accepted to add dependencies on third party jars.      */
+comment|/**      * @param<T> The type parameter      * @param col      *            The collection to filter.      * @param filter      *            The filter to use.      * @return a new collection instance containing the only the the items from the given      *         collection, which are accepted by the filter.      *       *<p>      * Comment: We could have used      *<a href="http://jakarta.apache.org/commons/collections/">Commons Collections</a> facility for      * this, if we accepted additional dependencies on third party jars.      *</p>      */
 specifier|public
 specifier|static
 parameter_list|<

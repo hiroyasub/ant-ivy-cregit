@@ -416,7 +416,7 @@ name|quiet
 expr_stmt|;
 block|}
 comment|// CheckStyle:ParameterNumber ON
-comment|/**      * Attempt to build this entry.      *       * @param packagerResource      *            packager metadata resource      * @param properties      *            a map of properties to pass to the child Ant build responsible for dependency      *            packaging      *       * @throws IllegalStateException      *             if this entry has already been built      */
+comment|/**      * Attempt to build this entry.      *      * @param packagerResource      *            packager metadata resource      * @param properties      *            a map of properties to pass to the child Ant build responsible for dependency      *            packaging      *      * @throws IOException      *             if this entry has already been built      */
 specifier|public
 specifier|synchronized
 name|void
@@ -929,7 +929,7 @@ name|e
 throw|;
 block|}
 block|}
-comment|/**      * Has this entry been successfully built?      */
+comment|/**      * Has this entry been successfully built?      *      * @return boolean      */
 specifier|public
 specifier|synchronized
 name|boolean
@@ -942,7 +942,7 @@ operator|.
 name|built
 return|;
 block|}
-comment|/**      * Get a built artifact.      *       * @throws IllegalStateException      *             if this entry's built has not (yet) completed successfully      */
+comment|/**      * Get a built artifact.      *      * @param artifact ditto      * @return ResolvedResource      * @throws IllegalStateException      *             if this entry's built has not (yet) completed successfully      */
 specifier|public
 name|ResolvedResource
 name|getBuiltArtifact

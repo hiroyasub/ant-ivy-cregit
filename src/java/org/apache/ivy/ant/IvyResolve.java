@@ -820,7 +820,7 @@ operator|=
 name|log
 expr_stmt|;
 block|}
-comment|/**      * @deprecated Use {@link #setFailureProperty(String)} instead      */
+comment|/**      * @param failureProperty String      * @deprecated Use {@link #setFailureProperty(String)} instead      */
 annotation|@
 name|Deprecated
 specifier|public

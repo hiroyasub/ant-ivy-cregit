@@ -453,7 +453,7 @@ return|return
 name|locator
 return|;
 block|}
-comment|/**      * Return an sort of identifier of the current element being parsed. It will only be used for      * logging purpose.      *       * @return an empty string by default      */
+comment|/**      * Return an sort of identifier of the current element being parsed. It will only be used for      * logging purpose.      *      * @return an empty string by default      */
 specifier|protected
 name|String
 name|getCurrentElementIdentifier
@@ -632,7 +632,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doStartDocument
@@ -640,7 +640,6 @@ parameter_list|()
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -679,7 +678,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doEndDocument
@@ -687,7 +686,6 @@ parameter_list|()
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -893,7 +891,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Called when the expected node is achieved      *       * @param atts      *            the xml attributes attached to the expected node      * @exception SAXException      *                in case the parsing should be completely stopped      */
+comment|/**      * Called when the expected node is achieved; nothing to do by default.      *      * @param atts      *            the xml attributes attached to the expected node      * @exception SAXException      *                in case the parsing should be completely stopped      */
 specifier|protected
 name|void
 name|handleAttributes
@@ -904,9 +902,8 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// nothing to do by default
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param uri String      * @param localName String      * @param name String      * @param atts Attributes      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doStartElement
@@ -926,7 +923,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1087,7 +1083,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param uri String      * @param localName String      * @param name String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doEndElement
@@ -1104,7 +1100,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 specifier|public
 specifier|static
@@ -1213,7 +1208,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * @param ch char[]      * @param start int      * @param length int      * @throws SAXException if something goes wrong      */
 specifier|protected
 name|void
 name|doCharacters
@@ -1300,7 +1295,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param prefix String      * @param uri String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doStartPrefixMapping
@@ -1314,7 +1309,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1360,7 +1354,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param prefix String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doEndPrefixMapping
@@ -1371,7 +1365,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1432,7 +1425,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing      *      * @param ch char[]      * @param start int      * @param length int      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doIgnorableWhitespace
@@ -1450,7 +1443,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1510,7 +1502,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param name String      * @param publicId String      * @param systemId String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doNotationDecl
@@ -1527,7 +1519,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1580,7 +1571,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing      *      * @param target String      * @param data String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doProcessingInstruction
@@ -1594,7 +1585,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1640,7 +1630,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param name String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doSkippedEntity
@@ -1651,7 +1641,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1718,7 +1707,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param name String      * @param publicId String      * @param systemId String      * @param notationName String      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doUnparsedEntityDecl
@@ -1738,7 +1727,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 comment|// ERROR HANDLING
 annotation|@
@@ -1785,7 +1773,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param exception SAXParseException      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doWarning
@@ -1796,7 +1784,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1842,7 +1829,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param exception SAXParseException      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doError
@@ -1853,7 +1840,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 annotation|@
 name|Override
@@ -1899,7 +1885,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @throws SAXException      */
+comment|/**      * By default do nothing.      *      * @param exception SAXParseException      * @throws SAXException API told me so      */
 specifier|protected
 name|void
 name|doFatalError
@@ -1910,7 +1896,6 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// by default do nothing
 block|}
 comment|// //////////////////////
 comment|// Functions related to error handling

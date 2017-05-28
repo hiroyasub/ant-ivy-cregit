@@ -55,7 +55,7 @@ specifier|abstract
 class|class
 name|RelativeUrlResolver
 block|{
-comment|/**      * Resolve the url in the context of context.      *       * @param context      *            The URL of the resource containing the reference url      * @param url      *            a relative or absolution url string      * @throws MalformedURLException      */
+comment|/**      * Resolve the url in the context of context.      *      * @param context      *            The URL of the resource containing the reference url      * @param url      *            a relative or absolution url string      * @return URL      * @throws MalformedURLException if url is wrong      */
 specifier|public
 specifier|abstract
 name|URL
@@ -70,7 +70,7 @@ parameter_list|)
 throws|throws
 name|MalformedURLException
 function_decl|;
-comment|/**      * Resolve file or url path relatively to a context. file is considered first. If file is not      * defined, url will be considered.      *       * @param context      *            The URL of the resource containing the reference file or url      * @param file      *            a relative or absolute path      * @param url      *            a relative or absolution url string      * @return the resulting url or null if failed and url are null.      * @throws MalformedURLException      */
+comment|/**      * Resolve file or url path relatively to a context. file is considered first. If file is not      * defined, url will be considered.      *      * @param context      *            The URL of the resource containing the reference file or url      * @param file      *            a relative or absolute path      * @param url      *            a relative or absolution url string      * @return the resulting url or null if failed and url are null.      * @throws MalformedURLException if url is wrong      */
 specifier|public
 name|URL
 name|getURL

@@ -495,7 +495,7 @@ return|return
 name|canDisableExternalDtds
 return|;
 block|}
-comment|/**      * Convert an URL to a valid systemId according to RFC 2396.      */
+comment|/**      * Convert an URL to a valid systemId according to RFC 2396.      *      * @param url URL      * @return String      */
 specifier|public
 specifier|static
 name|String
@@ -536,9 +536,8 @@ return|;
 block|}
 block|}
 comment|// IMPORTANT: validation errors are only notified to the given handler, and
-comment|// do not cause exception
-comment|// implement warning error and fatalError methods in handler to be informed
-comment|// of validation errors
+comment|// do not cause exception implement warning error and fatalError methods in
+comment|// handler to be informed of validation errors
 specifier|public
 specifier|static
 name|void
@@ -893,7 +892,7 @@ return|return
 name|canUseSchemaValidation
 return|;
 block|}
-comment|/**      * Escapes invalid XML characters in the given character data using XML entities. For the      * moment, only the following characters are being escaped: (<), (&), (') and (").      *       * Remark: we don't escape the (>) character to keep the readability of the configuration      * mapping! The XML spec only requires that the (&) and (<) characters are being escaped inside      * character data.      *       * @param text      *            the character data to escape      * @return the escaped character data      */
+comment|/**      * Escapes invalid XML characters in the given character data using XML entities. For the      * moment, only the following characters are being escaped: (&lt;), (&amp;), (') and (&quot;).      *      * Remark: we don't escape the (&gt;) character to keep the readability of the configuration      * mapping! The XML spec only requires that the (&amp;) and (&lt;) characters are being escaped      * inside character data.      *      * @param text      *            the character data to escape      * @return the escaped character data      */
 specifier|public
 specifier|static
 name|String

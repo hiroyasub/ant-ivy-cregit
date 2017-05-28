@@ -181,7 +181,7 @@ name|ParseException
 throws|,
 name|IOException
 function_decl|;
-comment|/**      * Convert a module descriptor to an ivy file. This method MUST close the given input stream      * when job is finished      *       * @param is      *            input stream with opened on original module descriptor resource      */
+comment|/**      * Convert a module descriptor to an ivy file. This method MUST close the given input stream      * when job is finished      *       * @param is input stream with opened on original module descriptor resource      * @param res Resource      * @param destFile File      * @param md ModuleDescriptor      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 specifier|public
 name|void
 name|toIvyFile

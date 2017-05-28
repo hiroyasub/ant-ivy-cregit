@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class represents an execution context of an Ivy action. It contains several getters to  * retrieve information, like the used Ivy instance, the cache location...  *   * @see IvyThread  */
+comment|/**  * This class represents an execution context of an Ivy action. It contains several getters to  * retrieve information, like the used Ivy instance, the cache location...  *  * @see IvyThread  */
 end_comment
 
 begin_class
@@ -389,7 +389,7 @@ return|return
 name|cur
 return|;
 block|}
-comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *       * @return the newly pushed context      */
+comment|/**      * Creates a new IvyContext and pushes it as the current context in the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *      * @return the newly pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -405,7 +405,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a new IvyContext as a copy of the current one and pushes it as the current context in      * the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *       * @return the newly pushed context      */
+comment|/**      * Creates a new IvyContext as a copy of the current one and pushes it as the current context in      * the current thread.      *<p>      * {@link #popContext()} should usually be called when the job for which this context has been      * pushed is finished.      *</p>      *      * @return the newly pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -424,7 +424,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *       * @param context      *            the new context to use in this thread.      * @return the pushed context      */
+comment|/**      * Changes the context associated with this thread. This is especially useful when launching a      * new thread, to associate it with the same context as the initial one. Do not forget to call      * {@link #popContext()} when done.      *      * @param context      *            the new context to use in this thread.      * @return the pushed context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -446,7 +446,7 @@ return|return
 name|context
 return|;
 block|}
-comment|/**      * Pops one context used with this thread. This is usually called after having finished a task      * for which a call to {@link #pushNewContext()} or {@link #pushContext(IvyContext)} was done      * prior to beginning the task.      *       * @return the popped context      */
+comment|/**      * Pops one context used with this thread. This is usually called after having finished a task      * for which a call to {@link #pushNewContext()} or {@link #pushContext(IvyContext)} was done      * prior to beginning the task.      *      * @return the popped context      */
 specifier|public
 specifier|static
 name|IvyContext
@@ -464,7 +464,7 @@ name|pop
 argument_list|()
 return|;
 block|}
-comment|/**      * Reads the first object from the list saved under given key in the first context from the      * context stack in which this key is defined. If value under key in any of the contexts form      * the stack represents non List object then a RuntimeException is thrown.      *<p>      * This methods does a similar job to {@link #peek(String)}, except that it considers the whole      * context stack and not only one instance.      *</p>      *       * @param key      *            context key for the string      * @return top object from the list (index 0) of the first context in the stack containing this      *         key or null if no key or list empty in all contexts from the context stack      * @see #peek(String)      */
+comment|/**      * Reads the first object from the list saved under given key in the first context from the      * context stack in which this key is defined. If value under key in any of the contexts form      * the stack represents non List object then a RuntimeException is thrown.      *<p>      * This methods does a similar job to {@link #peek(String)}, except that it considers the whole      * context stack and not only one instance.      *</p>      *      * @param key      *            context key for the string      * @return top object from the list (index 0) of the first context in the stack containing this      *         key or null if no key or list empty in all contexts from the context stack      * @see #peek(String)      */
 specifier|public
 specifier|static
 name|Object
@@ -536,7 +536,7 @@ return|return
 name|value
 return|;
 block|}
-comment|/**      * Returns the current ivy instance.      *<p>      * When calling any public ivy method on an ivy instance, a reference to this instance is put in      * this context, and thus accessible using this method, until no code reference this instance      * and the garbage collector collects it.      *</p>      *<p>      * Then, or if no ivy method has been called, a default ivy instance is returned by this method,      * so that it never returns<code>null</code>.      *</p>      *       * @return the current ivy instance      */
+comment|/**      * Returns the current ivy instance.      *<p>      * When calling any public ivy method on an ivy instance, a reference to this instance is put in      * this context, and thus accessible using this method, until no code reference this instance      * and the garbage collector collects it.      *</p>      *<p>      * Then, or if no ivy method has been called, a default ivy instance is returned by this method,      * so that it never returns<code>null</code>.      *</p>      *      * @return the current ivy instance      */
 specifier|public
 name|Ivy
 name|getIvy
@@ -559,7 +559,7 @@ else|:
 name|ivy
 return|;
 block|}
-comment|/**      * Returns the Ivy instance associated with this context, or<code>null</code> if no such      * instance is currently associated with this context.      *<p>      * If you want get a default Ivy instance in case no instance if currently associated, use      * {@link #getIvy()}.      *</p>      *       * @return the current ivy instance, or<code>null</code> if there is no current ivy instance.      */
+comment|/**      * Returns the Ivy instance associated with this context, or<code>null</code> if no such      * instance is currently associated with this context.      *<p>      * If you want get a default Ivy instance in case no instance if currently associated, use      * {@link #getIvy()}.      *</p>      *      * @return the current ivy instance, or<code>null</code> if there is no current ivy instance.      */
 specifier|public
 name|Ivy
 name|peekIvy
@@ -740,7 +740,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Reads the first object from the list saved under given key in the context. If value under key      * represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
+comment|/**      * Reads the first object from the list saved under given key in the context. If value under key      * represents non List object then a RuntimeException is thrown.      *      * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
 specifier|public
 name|Object
 name|peek
@@ -834,7 +834,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Removes and returns first object from the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
+comment|/**      * Removes and returns first object from the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown.      *      * @param key      *            context key for the string      * @return top object from the list (index 0) or null if no key or list empty      */
 specifier|public
 name|Object
 name|pop
@@ -928,7 +928,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Removes and returns first object from the list saved under given key in the context but only      * if it equals the given expectedValue - if not a false value is returned. If value under key      * represents non List object then a RuntimeException is thrown.      *       * @param key      *            context key for the string      * @return true if the r      */
+comment|/**      * Removes and returns first object from the list saved under given key in the context but only      * if it equals the given expectedValue - if not a false value is returned. If value under key      * represents non List object then a RuntimeException is thrown.      *      * @param key      *            context key for the string      * @param expectedValue      *            expected value of the key      * @return true if the r      */
 specifier|public
 name|boolean
 name|pop
@@ -1052,7 +1052,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Puts a new object at the start of the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown. If no list exists      * under given key a new LinkedList is created. This is kept without WeakReference in opposite      * to the put() results.      *       * @param key      *            key context key for the string      * @param value      *            value to be saved under the key      */
+comment|/**      * Puts a new object at the start of the list saved under given key in the context. If value      * under key represents non List object then a RuntimeException is thrown. If no list exists      * under given key a new LinkedList is created. This is kept without WeakReference in opposite      * to the put() results.      *      * @param key      *            key context key for the string      * @param value      *            value to be saved under the key      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

@@ -146,7 +146,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the error message associated with the given Throwable. The error message returned      * will try to be as precise as possible, handling cases where e.getMessage() is not meaningful,      * like {@link NullPointerException} for instance.      *       * @param t      *            the throwable to get the error message from      * @return the error message of the given exception      */
+comment|/**      * Returns the error message associated with the given Throwable. The error message returned      * will try to be as precise as possible, handling cases where e.getMessage() is not meaningful,      * like {@link NullPointerException} for instance.      *       * @param t the throwable to get the error message from      * @return the error message of the given exception      */
 specifier|public
 specifier|static
 name|String
@@ -312,7 +312,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Joins the given object array in one string, each separated by the given separator.      *       * Example:      *       *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -> "one, two, three"      *</pre>      *       * @param objs      *            The array of objects (<code>toString()</code> is used).      * @param sep      *            The separator to use.      * @return The concatenated string.      */
+comment|/**      * Joins the given object array in one string, each separated by the given separator.      *       * Example:      *       *<pre>      * join(new String[] {"one", "two", "three"}, ", ") -&gt; "one, two, three"      *</pre>      *       * @param objs      *            The array of objects (<code>toString()</code> is used).      * @param sep      *            The separator to use.      * @return The concatenated string.      */
 specifier|public
 specifier|static
 name|String
@@ -400,7 +400,7 @@ argument_list|()
 return|;
 block|}
 comment|// basic string codec (same algo as CVS passfile, inspired by ant CVSPass class
-comment|/** Array contain char conversion data */
+comment|/**      * Array containing char conversion data      */
 specifier|private
 specifier|static
 specifier|final
@@ -922,7 +922,7 @@ block|,
 literal|152
 block|}
 decl_stmt|;
-comment|/**      * Encrypt the given string in a way which anybody having access to this method algorithm can      * easily decrypt. This is useful only to avoid clear string storage in a file for example, but      * shouldn't be considered as a real mean of security. This only works with simple characters      * (char< 256).      *       * @param str      *            the string to encrypt      * @return the encrypted version of the string      */
+comment|/**      * Encrypt the given string in a way which anybody having access to this method algorithm can      * easily decrypt. This is useful only to avoid clear string storage in a file for example, but      * shouldn't be considered as a real mean of security. This only works with simple characters      * (char&lt; 256).      *       * @param str      *            the string to encrypt      * @return the encrypted version of the string      */
 specifier|public
 specifier|static
 specifier|final

@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes a dependency from a depender to a dependee.  *<p>  * The main information this descriptor contains is the constraint on the dependency. There is  * actually two kind of dependency constraints: the default dependency constraint, which can be  * obtained with {@link #getDependencyRevisionId()}, and corresponds to the<code>rev</code>  * attribute in Ivy files. This is the constraint as it should be honored by Ivy in default resolve  * mode.  *</p>  *<p>  * Then there is the dynamic constraint, which can either be the same as the default constraint, or  * the original dependency constraint when an Ivy file is delivered an published to a repository.  * This dynamic constraint is returned by {@link #getDynamicConstraintDependencyRevisionId()}, and  * corresponds to the<code>revconstraint</code> attribute in the Ivy file. In some resolve mode,  * this constraint can be used instead of the default dependency constraint when performing  * dependency resolution.  *</p>  */
+comment|/**  * Describes a dependency from a depender to a dependee.  *<p>  * The main information this descriptor contains is the constraint on the dependency. There is  * actually two kind of dependency constraints: the default dependency constraint, which can be  * obtained with {@link #getDependencyRevisionId()}, and corresponds to the<code>rev</code>  * attribute in Ivy files. This is the constraint as it should be honored by Ivy in default resolve  * mode.  *</p>  *<p>  * Then there is the dynamic constraint, which can either be the same as the default constraint, or  * the original dependency constraint when an Ivy file is delivered an published to a  * repository. This dynamic constraint is returned by  * {@link #getDynamicConstraintDependencyRevisionId()}, and corresponds to the  *<code>revconstraint</code> attribute in the Ivy file. In some resolve mode, this constraint can  * be used instead of the default dependency constraint when performing dependency resolution.  *</p>  */
 end_comment
 
 begin_interface
@@ -122,12 +122,12 @@ name|ModuleId
 name|getDependencyId
 parameter_list|()
 function_decl|;
-comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently of      * conflicts manager. This only works for direct dependencies, and not transitive ones.      *       * @return true if this dependency should be used, false if conflicts manager can do its work.      */
+comment|/**      * Used to indicate that this revision must be used in case of conflicts, independently of      * conflicts manager. This only works for direct dependencies, and not transitive ones.      *      * @return true if this dependency should be used, false if conflicts manager can do its work.      */
 name|boolean
 name|isForce
 parameter_list|()
 function_decl|;
-comment|/**      * Used to indicate that this dependency is a changing one. A changing dependency in ivy means      * that the revision may have its artifacts modified without revision change. When new artifacts      * are published a new ivy file should also be published with a new publication date to indicate      * to ivy that artifacts have changed and that they should be downloaded again.      *       * @return true if this dependency is a changing one      */
+comment|/**      * Used to indicate that this dependency is a changing one. A changing dependency in ivy means      * that the revision may have its artifacts modified without revision change. When new artifacts      * are published a new ivy file should also be published with a new publication date to indicate      * to ivy that artifacts have changed and that they should be downloaded again.      *      * @return true if this dependency is a changing one      */
 name|boolean
 name|isChanging
 parameter_list|()
@@ -140,12 +140,12 @@ name|ModuleRevisionId
 name|getParentRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the constraint on dependency this descriptor represents.      *       * @return the constraint on dependency.      */
+comment|/**      * Returns the constraint on dependency this descriptor represents.      *      * @return the constraint on dependency.      */
 name|ModuleRevisionId
 name|getDependencyRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the dynamic constraint on dependency this descriptor represents.      *       * @return the dynamic constraint on dependency, or exact constraint if no dynamic constraint is      *         specified.      */
+comment|/**      * Returns the dynamic constraint on dependency this descriptor represents.      *      * @return the dynamic constraint on dependency, or exact constraint if no dynamic constraint is      *         specified.      */
 name|ModuleRevisionId
 name|getDynamicConstraintDependencyRevisionId
 parameter_list|()
@@ -253,7 +253,7 @@ index|[]
 name|moduleConfigurations
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if      *       * @param moduleConfigurations ditto      * @param artifactId ditto      * @return boolean      */
+comment|/**      * Returns true if      *      * @param moduleConfigurations ditto      * @param artifactId ditto      * @return boolean      */
 name|boolean
 name|doesExclude
 parameter_list|(
@@ -265,7 +265,7 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if this descriptor contains any exclusion rule      *       * @return true if this descriptor contains any exclusion rule      */
+comment|/**      * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude
@@ -275,7 +275,7 @@ name|DependencyDescriptor
 name|asSystem
 parameter_list|()
 function_decl|;
-comment|/**      * Clones current dependency descriptor with another revision.      *       * @param revision      *            the revision of the cloned dependency descriptor      * @return the cloned dependency descriptor      * @throws IllegalArgumentException      *             if the given {@link ModuleRevisionId} has not the same {@link ModuleId} as the      *             {@link ModuleRevisionId} of this descriptor.      */
+comment|/**      * Clones current dependency descriptor with another revision.      *      * @param revision      *            the revision of the cloned dependency descriptor      * @return the cloned dependency descriptor      * @throws IllegalArgumentException      *             if the given {@link ModuleRevisionId} has not the same {@link ModuleId} as the      *             {@link ModuleRevisionId} of this descriptor.      */
 name|DependencyDescriptor
 name|clone
 parameter_list|(

@@ -531,7 +531,7 @@ operator|=
 name|eventManager
 expr_stmt|;
 block|}
-comment|/**      * example of destFilePattern : - lib/[organisation]/[module]/[artifact]-[revision].[type] -      * lib/[artifact].[type] : flatten with no revision moduleId is used with confs and      * localCacheDirectory to determine an ivy report file, used as input for the copy If such a      * file does not exist for any conf (resolve has not been called before ?) then an      * IllegalStateException is thrown and nothing is copied.      *       * @deprecated Use      *             {@link #retrieve(org.apache.ivy.core.module.id.ModuleRevisionId, RetrieveOptions)}      *             instead      */
+comment|/**      * example of destFilePattern : - lib/[organisation]/[module]/[artifact]-[revision].[type] -      * lib/[artifact].[type] : flatten with no revision moduleId is used with confs and      * localCacheDirectory to determine an ivy report file, used as input for the copy If such a      * file does not exist for any conf (resolve has not been called before ?) then an      * IllegalStateException is thrown and nothing is copied.      *      * @param mrid ModuleRevisionId      * @param destFilePattern String      * @param options RetrieveOptions      * @return int      * @throws IOException if something goes wrong      * @deprecated Use      *             {@link #retrieve(org.apache.ivy.core.module.id.ModuleRevisionId, RetrieveOptions)}      *             instead      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3210,7 +3210,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * The returned comparator should consider greater the artifact which gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager to resolve conflicts.      *       * @return Comparator&lt;ArtifactDownloadReport&gt;      */
+comment|/**      * The returned comparator should consider greater the artifact which gains the conflict battle.      * This is used only during retrieve... prefer resolve conflict manager to resolve conflicts.      *      * @return Comparator&lt;ArtifactDownloadReport&gt;      */
 specifier|private
 name|Comparator
 argument_list|<

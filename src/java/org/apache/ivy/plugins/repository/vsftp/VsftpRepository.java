@@ -1618,7 +1618,7 @@ name|readTimeout
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * The behaviour of vsftp with some commands is to log the resulting message on the error      * stream, even if everything is ok. So it's quite difficult if there was an error or not. Hence      * we compare the response with the expected message and deal with it. The problem is that this      * is very specific to the version of vsftp used for the test, That's why expected messages are      * obtained using overriddable protected methods.      */
+comment|/**      * The behaviour of vsftp with some commands is to log the resulting message on the error      * stream, even if everything is ok. So it's quite difficult if there was an error or not. Hence      * we compare the response with the expected message and deal with it. The problem is that this      * is very specific to the version of vsftp used for the test, That's why expected messages are      * obtained using overriddable protected methods.      *      * @param command String      * @param expectedResponse Pattern      * @param timeout long      * @throws IOException if something goes wrong      */
 specifier|protected
 name|void
 name|sendCommand
@@ -3191,7 +3191,7 @@ literal|" closed"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Parses a ls -l line and transforms it in a resource      *       * @param file ditto      * @param responseLine ditto      * @return Resource      */
+comment|/**      * Parses a ls -l line and transforms it in a resource      *      * @param file ditto      * @param responseLine ditto      * @return Resource      */
 specifier|protected
 name|Resource
 name|lslToResource
@@ -3682,7 +3682,7 @@ operator|+
 literal|")"
 return|;
 block|}
-comment|/**      * Sets the reuse connection time. The same connection will be reused if the time here does not      * last between two commands. O indicates that the connection should never be reused      *       * @param time long      */
+comment|/**      * Sets the reuse connection time. The same connection will be reused if the time here does not      * last between two commands. O indicates that the connection should never be reused      *      * @param time long      */
 specifier|public
 name|void
 name|setReuseConnection

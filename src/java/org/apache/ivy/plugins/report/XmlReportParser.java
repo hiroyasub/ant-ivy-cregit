@@ -2059,7 +2059,7 @@ name|id
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the<tt>ModuleRevisionId</tt> of the resolved module.      */
+comment|/**      * Returns the<tt>ModuleRevisionId</tt> of the resolved module.      *      * @return ModuleRevisionId      */
 specifier|public
 name|ModuleRevisionId
 name|getResolvedModule

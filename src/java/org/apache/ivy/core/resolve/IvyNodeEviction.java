@@ -166,7 +166,7 @@ specifier|private
 name|String
 name|detail
 decl_stmt|;
-comment|/**          * Creates a new object containing the eviction data of an {@link IvyNode}.          *           * @param rootModuleConf          *            the root module configuration          * @param parent          *            the parent node (or<tt>null</tt> in case of transitive eviction)          * @param conflictManager          *            the conflict manager which evicted the node (or<tt>null</tt> in case of          *            transitive eviction)          * @param selected          *            a collection of {@link IvyNode}s which evict the evicted node (or          *<tt>null</tt> in case of transitive eviction)          */
+comment|/**          * Creates a new object containing the eviction data of an {@link IvyNode}.          *          * @param rootModuleConf          *            the root module configuration          * @param parent          *            the parent node (or<tt>null</tt> in case of transitive eviction)          * @param conflictManager          *            the conflict manager which evicted the node (or<tt>null</tt> in case of          *            transitive eviction)          * @param selected          *            a collection of {@link IvyNode}s which evict the evicted node (or          *<tt>null</tt> in case of transitive eviction)          */
 specifier|public
 name|EvictionData
 parameter_list|(
@@ -200,7 +200,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Creates a new object containing the eviction data of an {@link IvyNode}.          *           * @param rootModuleConf          *            the root module configuration          * @param parent          *            the parent node (or<tt>null</tt> in case of transitive eviction)          * @param conflictManager          *            the conflict manager which evicted the node (or<tt>null</tt> in case of          *            transitive eviction)          * @param selected          *            a collection of {@link IvyNode}s which evict the evicted node (or          *<tt>null</tt> in case of transitive eviction)          * @param detail          *            a String detailing the reason why the node was evicted          */
+comment|/**          * Creates a new object containing the eviction data of an {@link IvyNode}.          *          * @param rootModuleConf          *            the root module configuration          * @param parent          *            the parent node (or<tt>null</tt> in case of transitive eviction)          * @param conflictManager          *            the conflict manager which evicted the node (or<tt>null</tt> in case of          *            transitive eviction)          * @param selected          *            a collection of {@link IvyNode}s which evict the evicted node (or          *<tt>null</tt> in case of transitive eviction)          * @param detail          *            a String detailing the reason why the node was evicted          */
 specifier|public
 name|EvictionData
 parameter_list|(
@@ -694,7 +694,7 @@ operator|=
 name|node
 expr_stmt|;
 block|}
-comment|/**      * @return A copy of the set of resolved nodes (real nodes)      */
+comment|/**      * @param mid ModuleId      * @param rootModuleConf String      * @return A copy of the set of resolved nodes (real nodes)      */
 specifier|public
 name|Set
 argument_list|<
@@ -1534,7 +1534,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns null if this node has only be evicted transitively, or the the collection of selected      * nodes if it has been evicted by other selected nodes      *       * @return Collection&lt;IvyNode&gt;      */
+comment|/**      * Returns null if this node has only be evicted transitively, or the the collection of selected      * nodes if it has been evicted by other selected nodes      *      * @return Collection&lt;IvyNode&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -1803,7 +1803,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root, null      * otherwise (if it hasn't been evicted in root) for the given rootModuleConf. Note that this      * method only works if conflict resolution has already be done in all the ancestors.      *       * @param rootModuleConf ditto      * @param ancestor IvyNode      * @return EvictionData      */
+comment|/**      * Returns the eviction data for this node if it has been previously evicted in the root, null      * otherwise (if it hasn't been evicted in root) for the given rootModuleConf. Note that this      * method only works if conflict resolution has already be done in all the ancestors.      *      * @param rootModuleConf ditto      * @param ancestor IvyNode      * @return EvictionData      */
 specifier|public
 name|EvictionData
 name|getEvictionDataInRoot

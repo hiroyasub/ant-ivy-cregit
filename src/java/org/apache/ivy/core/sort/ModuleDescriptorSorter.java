@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Inner helper class for sorting ModuleDescriptors.<br>  * ModuleDescriptorSorter use CollectionOfModulesToSort to find the dependencies of the modules, and  * use ModuleInSort to store some temporary values attached to the modules to sort.  *   * @see ModuleInSort  * @see CollectionOfModulesToSort  */
+comment|/**  * Inner helper class for sorting ModuleDescriptors.  *<p>  * ModuleDescriptorSorter use CollectionOfModulesToSort to find the dependencies of the modules, and  * use ModuleInSort to store some temporary values attached to the modules to sort.  *</p>  *  * @see ModuleInSort  * @see CollectionOfModulesToSort  */
 end_comment
 
 begin_class
@@ -217,7 +217,7 @@ name|nonMatchingVersionReporter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Iterates over all modules calling sortModuleDescriptorsHelp.      *       * @return sorted module      * @throws CircularDependencyException      */
+comment|/**      * Iterates over all modules calling sortModuleDescriptorsHelp.      *      * @return sorted module      * @throws CircularDependencyException somehow      */
 specifier|public
 name|List
 argument_list|<
@@ -260,7 +260,7 @@ return|return
 name|sorted
 return|;
 block|}
-comment|/**      * If current module has already been added to list, returns, Otherwise invokes      * sortModuleDescriptorsHelp for all dependencies contained within set of moduleDescriptors.      * Then finally adds self to list of sorted.<br/>      * When a loop is detected by a recursive call, the moduleDescriptors are not added immediately      * added to the sorted list. They are added as loop dependencies of the root, and will be added      * to the sorted list only when the root itself will be added.      *       * @param current      *            Current module to add to sorted list.      * @throws CircularDependencyException      */
+comment|/**      * If current module has already been added to list, returns, Otherwise invokes      * sortModuleDescriptorsHelp for all dependencies contained within set of moduleDescriptors.      * Then finally adds self to list of sorted.<br/>      * When a loop is detected by a recursive call, the moduleDescriptors are not added immediately      * added to the sorted list. They are added as loop dependencies of the root, and will be added      * to the sorted list only when the root itself will be added.      *      * @param current      *            Current module to add to sorted list.      * @throws CircularDependencyException somehow      */
 specifier|private
 name|void
 name|sortModuleDescriptorsHelp

@@ -82,7 +82,7 @@ argument_list|(
 literal|"failed"
 argument_list|)
 decl_stmt|;
-comment|/**      * Returns the {@link DownloadStatus} corresponding to the given String representation.      *       * @return the {@link DownloadStatus} corresponding to the given String representation.      * @throws IllegalArgumentException      *             if the given String does not correspond to any {@link DownloadStatus}.      */
+comment|/**      * Returns the {@link DownloadStatus} corresponding to the given String representation.      *      * @param status String      * @return the {@link DownloadStatus} corresponding to the given String representation.      * @throws IllegalArgumentException      *             if the given String does not correspond to any {@link DownloadStatus}.      */
 specifier|public
 specifier|static
 specifier|final

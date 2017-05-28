@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class contains information about the origin of an artifact.  *   * @see org.apache.ivy.plugins.resolver.BasicResolver  * @see org.apache.ivy.plugins.resolver.util.ResolvedResource  */
+comment|/**  * This class contains information about the origin of an artifact.  *  * @see org.apache.ivy.plugins.resolver.BasicResolver  * @see org.apache.ivy.plugins.resolver.util.ResolvedResource  */
 end_comment
 
 begin_class
@@ -66,7 +66,7 @@ name|UNKNOWN
 init|=
 literal|"UNKNOWN"
 decl_stmt|;
-comment|/**      * ArtifactOrigin instance used when the origin is unknown.      */
+comment|/**      * ArtifactOrigin instance used when the origin is unknown.      *      * @param artifact ditto      * @return ArtifactOrigin      */
 specifier|public
 specifier|static
 specifier|final
@@ -168,7 +168,7 @@ name|exists
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Create a new instance      *       * @param artifact      *            the artifact pointed by this location. Must not be<code>null</code>.      * @param isLocal      *<code>boolean</code> value indicating if the resource is local (on the      *            filesystem).      * @param location      *            the location of the resource (normally a url). Must not be<code>null</code>.      */
+comment|/**      * Create a new instance      *      * @param artifact      *            the artifact pointed by this location. Must not be<code>null</code>.      * @param isLocal      *<code>boolean</code> value indicating if the resource is local (on the      *            filesystem).      * @param location      *            the location of the resource (normally a url). Must not be<code>null</code>.      */
 specifier|public
 name|ArtifactOrigin
 parameter_list|(
@@ -219,7 +219,7 @@ operator|=
 name|location
 expr_stmt|;
 block|}
-comment|/**      * Is this resource local to this host, i.e. is it on the file system?      *       * @return<code>boolean</code> value indicating if the resource is local.      */
+comment|/**      * Is this resource local to this host, i.e. is it on the file system?      *      * @return<code>boolean</code> value indicating if the resource is local.      */
 specifier|public
 name|boolean
 name|isLocal
@@ -229,7 +229,7 @@ return|return
 name|isLocal
 return|;
 block|}
-comment|/**      * Return the location of the resource (normally a url)      *       * @return the location of the resource      */
+comment|/**      * Return the location of the resource (normally a url)      *      * @return the location of the resource      */
 specifier|public
 name|String
 name|getLocation
@@ -254,7 +254,7 @@ operator|=
 name|location
 expr_stmt|;
 block|}
-comment|/**      * Return the artifact that this location is pointing at.      *       * @return the artifact that this location is pointing at.      */
+comment|/**      * Return the artifact that this location is pointing at.      *      * @return the artifact that this location is pointing at.      */
 specifier|public
 name|Artifact
 name|getArtifact
@@ -264,7 +264,7 @@ return|return
 name|artifact
 return|;
 block|}
-comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this      * information is not actually used by in some case.      *       * @return Long timestamp      */
+comment|/**      * The last time the resource was checked to be up to date. Maybe<code>null</code> if this      * information is not actually used by in some case.      *      * @return Long timestamp      */
 specifier|public
 name|Long
 name|getLastChecked

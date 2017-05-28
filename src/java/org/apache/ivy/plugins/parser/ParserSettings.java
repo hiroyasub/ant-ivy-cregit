@@ -268,7 +268,7 @@ name|ModuleId
 name|moduleId
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the namespace context in which the current descriptor is parsed.      */
+comment|/**      * @return the namespace context in which the current descriptor is parsed.      */
 name|Namespace
 name|getContextNamespace
 parameter_list|()

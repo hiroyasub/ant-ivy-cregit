@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Wrap a collection of descriptors wrapped themselves in ModuleInSort elements. It contains some  * dedicated function to retrieve module descriptors based on dependencies descriptors.<br>  *<i>This class is designed to be used internally by the ModuleDescriptorSorter.</i>  */
+comment|/**  * Wrap a collection of descriptors wrapped themselves in ModuleInSort elements. It contains some  * dedicated function to retrieve module descriptors based on dependencies descriptors.  *<p>  *<i>This class is designed to be used internally by the ModuleDescriptorSorter.</i>  *</p>  */
 end_comment
 
 begin_class
@@ -393,7 +393,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Find a matching module descriptor in the list of module to sort.      *       * @param descriptor ditto      * @return a ModuleDescriptor from the collection of module descriptors to sort. If none exists      *         returns null.      */
+comment|/**      * Find a matching module descriptor in the list of module to sort.      *      * @param descriptor ditto      * @return a ModuleDescriptor from the collection of module descriptors to sort. If none exists      *         returns null.      */
 specifier|public
 name|ModuleInSort
 name|getModuleDescriptorDependency

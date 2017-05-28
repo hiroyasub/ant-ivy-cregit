@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A set of options used during resolve related tasks  *   * @see ResolveEngine  */
+comment|/**  * A set of options used during resolve related tasks  *  * @see ResolveEngine  */
 end_comment
 
 begin_class
@@ -411,7 +411,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns the resolve mode to use, or<code>null</code> to use settings configured resolve      * mode.      *       * @return the resolve mode to use.      */
+comment|/**      * Returns the resolve mode to use, or<code>null</code> to use settings configured resolve      * mode.      *      * @return the resolve mode to use.      */
 specifier|public
 name|String
 name|getResolveMode
@@ -439,7 +439,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Indicates if the configurations use a special configuration * , *(private) or *(public). When      * special configurations are used, you must have the module descriptor in order to get the list      * of configurations.      *       * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * Indicates if the configurations use a special configuration * , *(private) or *(public). When      * special configurations are used, you must have the module descriptor in order to get the list      * of configurations.      *      * @return boolean      * @see #getConfs()      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|boolean
 name|useSpecialConfs
@@ -488,7 +488,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @pre can only be called if useSpecialConfs()==false. When it is true, you have to provide a      *      module descriptor so that configurations can be resolved.      * @see #getConfs(ModuleDescriptor)      */
+comment|/**      * @pre can only be called if useSpecialConfs()==false. When it is true, you have to provide a      *      module descriptor so that configurations can be resolved.      * @return String[]      * @see #getConfs(ModuleDescriptor)      */
 specifier|public
 name|String
 index|[]
@@ -515,7 +515,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|/**      * Get the asked confs. Special confs (like *) use the moduleDescriptor to find the values *      *       * @param md      *            Used to get the exact values for special confs.      * */
+comment|/**      * Get the asked confs. Special confs (like *) use the moduleDescriptor to find the values *      *      * @param md      *            Used to get the exact values for special confs.      * @return String[]      */
 specifier|public
 name|String
 index|[]

@@ -798,7 +798,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *   *</p>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.<br/>  * To do so, it is recommended to use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method  * like this:  *   *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback  *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  *   *</p>  */
+comment|/**  *<a href="http://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *</p>  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.  *</p>  *<p>  * To do so, it is recommended to use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method  * like this:  *</p>  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback  *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  */
 end_comment
 
 begin_class
@@ -806,13 +806,13 @@ specifier|public
 class|class
 name|Ivy
 block|{
-comment|/**      * Callback used to execute a set of Ivy related methods within an {@link IvyContext}.      *       * @see Ivy#execute(org.apache.ivy.Ivy.IvyCallback)      */
+comment|/**      * Callback used to execute a set of Ivy related methods within an {@link IvyContext}.      *      * @see Ivy#execute(org.apache.ivy.Ivy.IvyCallback)      */
 specifier|public
 specifier|static
 interface|interface
 name|IvyCallback
 block|{
-comment|/**          * Executes Ivy related job within an {@link IvyContext}          *           * @param ivy          *            the {@link Ivy} instance to which this callback is related          * @param context          *            the {@link IvyContext} in which this callback is executed          * @return the result of this job,<code>null</code> if there is no result          */
+comment|/**          * Executes Ivy related job within an {@link IvyContext}          *          * @param ivy          *            the {@link Ivy} instance to which this callback is related          * @param context          *            the {@link IvyContext} in which this callback is executed          * @return the result of this job,<code>null</code> if there is no result          */
 specifier|public
 name|Object
 name|doInIvyContext
@@ -948,7 +948,7 @@ literal|""
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the current version of Ivy, as displayed on the console when Ivy is initialized.      *       * @return the current version of Ivy      */
+comment|/**      * Returns the current version of Ivy, as displayed on the console when Ivy is initialized.      *      * @return the current version of Ivy      */
 specifier|public
 specifier|static
 name|String
@@ -959,7 +959,7 @@ return|return
 name|IVY_VERSION
 return|;
 block|}
-comment|/**      * Returns the date at which this version of Ivy has been built.      *<p>      * May be empty if unknown.      *       * @return the date at which this version of Ivy has been built      */
+comment|/**      * Returns the date at which this version of Ivy has been built.      *<p>May be empty if unknown.</p>      *      * @return the date at which this version of Ivy has been built      */
 specifier|public
 specifier|static
 name|String
@@ -970,7 +970,7 @@ return|return
 name|IVY_DATE
 return|;
 block|}
-comment|/**      * Returns the URL at which Ivy web site can be found.      *       * @return the URL at which Ivy web site can be found      */
+comment|/**      * Returns the URL at which Ivy web site can be found.      *      * @return the URL at which Ivy web site can be found      */
 specifier|public
 specifier|static
 name|String
@@ -1040,7 +1040,7 @@ specifier|private
 name|boolean
 name|interrupted
 decl_stmt|;
-comment|/**      * True if this instance of Ivy has already been bound to its dependencies, false otherwise.      *       * @see #bind()      */
+comment|/**      * True if this instance of Ivy has already been bound to its dependencies, false otherwise.      *      * @see #bind()      */
 specifier|private
 name|boolean
 name|bound
@@ -1437,7 +1437,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Executes the given callback in the context of this Ivy instance.      *<p>      * Alternatively you can use the {@link #pushContext()} and {@link #popContext()} methods, but      * this is not recommended:      *       *<pre>      * Object result = null;      * pushContext();      * try {      *     result = callback.doInIvyContext(this, IvyContext.getContext());      * } finally {      *     popContext();      * }      * doSomethingWithResult(result);      *</pre>      *       *</p>      *       * @param callback IvyCallback      * @return Object      */
+comment|/**      * Executes the given callback in the context of this Ivy instance.      *<p>      * Alternatively you can use the {@link #pushContext()} and {@link #popContext()} methods, but      * this is not recommended:      *</p>      *<pre>      * Object result = null;      * pushContext();      * try {      *     result = callback.doInIvyContext(this, IvyContext.getContext());      * } finally {      *     popContext();      * }      * doSomethingWithResult(result);      *</pre>      *      * @param callback IvyCallback      * @return Object      */
 specifier|public
 name|Object
 name|execute
@@ -1649,7 +1649,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Configures Ivy with 1.4 compatible default settings      */
+comment|/**      * Configures Ivy with 1.4 compatible default settings      *      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 specifier|public
 name|void
 name|configureDefault14
@@ -2166,7 +2166,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *       * @param mrid ModuleRevisionId      * @param revision String      * @param destIvyPattern String      * @param options DeliverOptions      * @throws IOException      * @throws ParseException      */
+comment|/**      * Example of use: deliver(mrid, "1.5", "target/ivy/ivy-[revision].xml",      * DeliverOptions.newInstance(settings).setStatus("release").setValidate(false));      *      * @param mrid ModuleRevisionId      * @param revision String      * @param destIvyPattern String      * @param options DeliverOptions      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      */
 specifier|public
 name|void
 name|deliver
@@ -2272,7 +2272,7 @@ block|}
 comment|// ///////////////////////////////////////////////////////////////////////
 comment|// SORT
 comment|// ///////////////////////////////////////////////////////////////////////
-comment|/**      * Sorts the collection of IvyNode from the less dependent to the more dependent      */
+comment|/**      * Sorts the collection of IvyNode from the less dependent to the more dependent      *      * @param nodes Collection&lt;IvyNode&gt;      * @param options SortOptions      * @return List&lt;IvyNode&gt;      */
 specifier|public
 name|List
 argument_list|<
@@ -2314,7 +2314,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *      * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
 specifier|public
 name|List
 argument_list|<
@@ -2715,7 +2715,7 @@ name|operatingThread
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Interrupts the current running operation in the given operating thread, no later than      * interruptTimeout milliseconds after the call      */
+comment|/**      * Interrupts the current running operation in the given operating thread, no later than      * interruptTimeout milliseconds after the call      *      * @param operatingThread Thread      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

@@ -148,7 +148,7 @@ specifier|private
 name|File
 name|retrieveRoot
 decl_stmt|;
-comment|/**      * Returns the root directory to where the artifacts are retrieved.      */
+comment|/**      * Returns the root directory to where the artifacts are retrieved.      *      * @return File      */
 specifier|public
 name|File
 name|getRetrieveRoot
@@ -253,7 +253,7 @@ name|report
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      *      * @return Collection&lt;File&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -273,7 +273,7 @@ name|copiedFiles
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were actually copied during the retrieve      * process.      *      * @return Collection&lt;File&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -293,7 +293,7 @@ name|upToDateFiles
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of<tt>File</tt> objects who were retrieved during the retrieve process.      * This is the union of the files being copied and the files that were up-to-date.      */
+comment|/**      * Returns a collection of<tt>File</tt> objects who were retrieved during the retrieve process.      * This is the union of the files being copied and the files that were up-to-date.      *      * @return Collection&lt;File&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -343,7 +343,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Get the mapping between the copied files and their corresponding download report      */
+comment|/**      * Get the mapping between the copied files and their corresponding download report      *      * @return Map&lt;File,ArtifactDownloadReport&gt;      */
 specifier|public
 name|Map
 argument_list|<

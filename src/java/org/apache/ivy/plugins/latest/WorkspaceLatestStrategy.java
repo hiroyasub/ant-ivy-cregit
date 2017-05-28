@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy which delegate to another strategy, unless for the latest and working revisions which  * are considered as superior to any other revision.< br/>  * NB : it is for internal usage of Ivy only!  */
+comment|/**  * A strategy which delegate to another strategy, unless for the latest and working revisions which  * are considered as superior to any other revision.  *<p>NB : it is for internal usage of Ivy only!</p>  */
 end_comment
 
 begin_class

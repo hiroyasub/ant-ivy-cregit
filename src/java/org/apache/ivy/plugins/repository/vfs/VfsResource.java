@@ -351,7 +351,7 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a list of direct descendants of the given resource. Note that attempts to get a list of      * children does<em>not</em> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      */
+comment|/**      * Get a list of direct descendants of the given resource. Note that attempts to get a list of      * children does<em>not</em> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *      * @return A<code>ArrayList</code> of VFSResources      */
 specifier|public
 name|List
 name|getChildren
@@ -487,7 +487,7 @@ return|return
 name|content
 return|;
 block|}
-comment|/**      * Get the name of the resource.      *       * @return a<code>String</code> representing the Resource URL.      */
+comment|/**      * Get the name of the resource.      *      * @return a<code>String</code> representing the Resource URL.      */
 specifier|public
 name|String
 name|getName
@@ -518,7 +518,7 @@ name|fsManager
 argument_list|)
 return|;
 block|}
-comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *       * @param vfsURI ditto      * @return a normalized<class>String</class> representing the VFS URI      */
+comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *      * @param vfsURI ditto      * @return a normalized String representing the VFS URI      */
 specifier|public
 specifier|static
 name|String
@@ -565,7 +565,7 @@ return|return
 name|vfsURI
 return|;
 block|}
-comment|/**      * Get the last modification time of the resource.      *       * @return a<code>long</code> indicating last modified time.      */
+comment|/**      * Get the last modification time of the resource.      *      * @return a<code>long</code> indicating last modified time.      */
 specifier|public
 name|long
 name|getLastModified
@@ -578,7 +578,7 @@ return|return
 name|lastModified
 return|;
 block|}
-comment|/**      * Get the size of the resource      *       * @return a<code>long</code> representing the size of the resource (in bytes).      */
+comment|/**      * Get the size of the resource      *      * @return a<code>long</code> representing the size of the resource (in bytes).      */
 specifier|public
 name|long
 name|getContentLength
@@ -591,7 +591,7 @@ return|return
 name|contentLength
 return|;
 block|}
-comment|/**      * Flag indicating whether a resource is available for querying      *       * @return<code>true</code> if the resource is available for querying,<code>false</code>      *         otherwise.      */
+comment|/**      * Flag indicating whether a resource is available for querying      *      * @return<code>true</code> if the resource is available for querying,<code>false</code>      *         otherwise.      */
 specifier|public
 name|boolean
 name|exists
@@ -604,7 +604,7 @@ return|return
 name|exists
 return|;
 block|}
-comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *       * @return<code>true</code> if the resource physically exists,<code>false</code> otherwise.      */
+comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *      * @return<code>true</code> if the resource physically exists,<code>false</code> otherwise.      */
 specifier|public
 name|boolean
 name|physicallyExists

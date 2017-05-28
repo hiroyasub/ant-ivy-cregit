@@ -3038,7 +3038,7 @@ name|dumpSettings
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Default initialization of settings, useful when you don't want to load your settings from a      * settings file or URL, but prefer to set them manually. By calling this method you will still      * have the basic initialization done when loading settings.      *       * @throws IOException      */
+comment|/**      * Default initialization of settings, useful when you don't want to load your settings from a      * settings file or URL, but prefer to set them manually. By calling this method you will still      * have the basic initialization done when loading settings.      *      * @throws IOException if something goes wrong      */
 specifier|public
 specifier|synchronized
 name|void
@@ -3377,7 +3377,7 @@ name|iae
 throw|;
 block|}
 block|}
-comment|/**      * Sets a deprecated variable with the value of the new variable      *       * @param deprecatedKey      *            the deprecated variable name      * @param newKey      *            the new variable name      */
+comment|/**      * Sets a deprecated variable with the value of the new variable      *      * @param deprecatedKey      *            the deprecated variable name      * @param newKey      *            the new variable name      */
 specifier|private
 name|void
 name|setDeprecatedVariable
@@ -4073,7 +4073,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value If      *         the input str doesn't use any variable, the same object is returned      */
+comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *      * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value If      *         the input str doesn't use any variable, the same object is returned      */
 specifier|public
 specifier|synchronized
 name|String
@@ -4094,7 +4094,7 @@ name|variableContainer
 argument_list|)
 return|;
 block|}
-comment|/**      * Substitute variables in the given map values by their value found in the current set of      * variables      *       * @param strings      *            the map of strings in which substitution should be made      * @return a new map of strings in which all current ivy variables in values have been      *         substituted by their value      */
+comment|/**      * Substitute variables in the given map values by their value found in the current set of      * variables      *      * @param strings      *            the map of strings in which substitution should be made      * @return a new map of strings in which all current ivy variables in values have been      *         substituted by their value      */
 specifier|public
 specifier|synchronized
 name|Map
@@ -4170,7 +4170,7 @@ return|return
 name|substituted
 return|;
 block|}
-comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return IvyVariableContainer      */
+comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *      * @return IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|IvyVariableContainer
@@ -4835,7 +4835,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * regular expressions as explained in Pattern class may be used in attributes      */
+comment|/**      * regular expressions as explained in Pattern class may be used in attributes      *      * @param attributes Map      * @param matcher PatternMatcher      * @param resolverName String      * @param branch String      * @param conflictManager String      * @param resolveMode String      */
 specifier|public
 specifier|synchronized
 name|void
@@ -4896,7 +4896,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved with respect to the settings's base      * directory.      *       * @param fileName      *            The name of the file to resolve. Must not be<code>null</code>.      *       * @return the resolved File.      *       */
+comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved with respect to the settings's base      * directory.      *      * @param fileName      *            The name of the file to resolve. Must not be<code>null</code>.      *      * @return the resolved File.      *      */
 specifier|public
 specifier|synchronized
 name|File
@@ -6936,7 +6936,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names ditto      */
+comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *      * @param names ditto      */
 specifier|public
 specifier|synchronized
 name|void
@@ -7858,7 +7858,7 @@ return|return
 name|variableContainer
 return|;
 block|}
-comment|/**      * Use a different variable container.      *       * @param variables IvyVariableContainer      */
+comment|/**      * Use a different variable container.      *      * @param variables IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|void
@@ -7996,7 +7996,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validates the settings, throwing an {@link IllegalStateException} if the current state is not      * valid.      *       * @throws IllegalStateException      *             if the settings is not valid.      */
+comment|/**      * Validates the settings, throwing an {@link IllegalStateException} if the current state is not      * valid.      *      * @throws IllegalStateException      *             if the settings is not valid.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -8076,7 +8076,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validates all {@link Validatable} objects in the collection.      *       * @param values      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
+comment|/**      * Validates all {@link Validatable} objects in the collection.      *      * @param values      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
 specifier|private
 name|void
 name|validateAll
