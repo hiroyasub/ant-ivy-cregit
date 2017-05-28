@@ -515,7 +515,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|/**      * Get the asked confs. Special confs (like *) use the moduleDescriptor to find the values *      *      * @param md      *            Used to get the exact values for special confs.      * @return String[]      */
+comment|/**      * Get the asked confs. Special confs (like *) use the moduleDescriptor to find the values      *      * @param md      *            Used to get the exact values for special confs.      * @return String[]      */
 specifier|public
 name|String
 index|[]

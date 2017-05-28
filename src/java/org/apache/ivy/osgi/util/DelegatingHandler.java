@@ -512,7 +512,6 @@ expr_stmt|;
 for|for
 control|(
 name|DelegatingHandler
-comment|/*<?> */
 name|subHandler
 range|:
 name|saxHandlerMapping

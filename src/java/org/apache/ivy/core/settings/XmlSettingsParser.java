@@ -3127,9 +3127,7 @@ name|overrideStr
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf
@@ -3330,9 +3328,7 @@ name|override
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf

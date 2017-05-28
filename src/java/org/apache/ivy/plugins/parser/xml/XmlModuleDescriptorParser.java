@@ -1990,7 +1990,6 @@ argument_list|(
 literal|">"
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 if|else if
 condition|(
@@ -5113,9 +5112,7 @@ name|transitiveValue
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf
@@ -5548,9 +5545,7 @@ name|transitiveValue
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf

@@ -144,12 +144,12 @@ name|void
 name|setPackage
 parameter_list|(
 name|String
-name|package1
+name|packageName
 parameter_list|)
 block|{
 name|pkg
 operator|=
-name|package1
+name|packageName
 expr_stmt|;
 block|}
 specifier|public

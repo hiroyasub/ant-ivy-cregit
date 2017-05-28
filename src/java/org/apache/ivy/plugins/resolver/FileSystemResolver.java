@@ -595,7 +595,7 @@ name|Message
 operator|.
 name|info
 argument_list|(
-literal|"\tpublish commited: moved "
+literal|"\tpublish committed: moved "
 operator|+
 name|transactionTempDir
 operator|+
