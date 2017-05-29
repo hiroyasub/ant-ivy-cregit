@@ -66,6 +66,26 @@ name|UNKNOWN
 init|=
 literal|"UNKNOWN"
 decl_stmt|;
+comment|/**      * Deprecated because of renaming due spell check.      */
+annotation|@
+name|Deprecated
+specifier|public
+specifier|static
+specifier|final
+name|ArtifactOrigin
+name|unkwnown
+parameter_list|(
+name|Artifact
+name|artifact
+parameter_list|)
+block|{
+return|return
+name|unknown
+argument_list|(
+name|artifact
+argument_list|)
+return|;
+block|}
 comment|/**      * ArtifactOrigin instance used when the origin is unknown.      *      * @param artifact ditto      * @return ArtifactOrigin      */
 specifier|public
 specifier|static

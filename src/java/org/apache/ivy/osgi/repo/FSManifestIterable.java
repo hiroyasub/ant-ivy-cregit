@@ -266,6 +266,17 @@ return|;
 block|}
 block|}
 decl_stmt|;
+comment|/**      * Deprecated because of renaming due spell check.      */
+annotation|@
+name|Deprecated
+specifier|public
+specifier|static
+specifier|final
+name|FilenameFilter
+name|DEFAULT_BUNLDE_FILTER
+init|=
+name|DEFAULT_BUNDLE_FILTER
+decl_stmt|;
 specifier|private
 name|FilenameFilter
 name|dirFilter

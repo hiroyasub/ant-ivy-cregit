@@ -1111,6 +1111,25 @@ extends|extends
 name|DelegatingHandler
 parameter_list|>
 block|{
+comment|/**          * Deprecated because of renaming due spell check.          */
+annotation|@
+name|Deprecated
+specifier|public
+name|void
+name|childHanlded
+parameter_list|(
+name|DH
+name|child
+parameter_list|)
+throws|throws
+name|SAXParseException
+block|{
+name|childHandled
+argument_list|(
+name|child
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 specifier|abstract
 name|void
