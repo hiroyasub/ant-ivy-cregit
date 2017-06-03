@@ -444,7 +444,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
+comment|/**      * Returns the path of the file relative to the given base directory.      *      * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
 specifier|private
 name|String
 name|getPath
@@ -504,7 +504,7 @@ name|beginIndex
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the common base directory between a current base directory and a given file.      *<p>      * The returned base directory must be a parent of both the current base and the given file.      *</p>      *       * @param base      *            the current base directory, may be null.      * @param file      *            the file for which the new base directory should be returned.      * @return the common base directory between a current base directory and a given file.      */
+comment|/**      * Returns the common base directory between a current base directory and a given file.      *<p>      * The returned base directory must be a parent of both the current base and the given file.      *</p>      *      * @param base      *            the current base directory, may be null.      * @param file      *            the file for which the new base directory should be returned.      * @return the common base directory between a current base directory and a given file.      */
 name|File
 name|getBaseDir
 parameter_list|(

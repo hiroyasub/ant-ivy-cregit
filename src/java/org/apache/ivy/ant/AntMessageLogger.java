@@ -144,7 +144,7 @@ name|PROGRESS_LOG_PERIOD
 init|=
 literal|1500
 decl_stmt|;
-comment|/**      * Creates and register an {@link AntMessageLogger} for the given {@link Task}, with the given      * {@link Ivy} instance.      *<p>      * The created instance will automatically be unregistered from the Ivy instance when the task      * finishes.      *</p>      *       * @param task      *            the task the logger should use for logging      * @param ivy      *            the ivy instance on which the logger should be registered      */
+comment|/**      * Creates and register an {@link AntMessageLogger} for the given {@link Task}, with the given      * {@link Ivy} instance.      *<p>      * The created instance will automatically be unregistered from the Ivy instance when the task      * finishes.      *</p>      *      * @param task      *            the task the logger should use for logging      * @param ivy      *            the ivy instance on which the logger should be registered      */
 specifier|public
 specifier|static
 name|void
@@ -400,7 +400,7 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-comment|/**      * Constructs a new AntMessageImpl instance.      *       * @param task      *            the ant project component this message implementation should use for logging. Must      *            not be<code>null</code>.      */
+comment|/**      * Constructs a new AntMessageImpl instance.      *      * @param task      *            the ant project component this message implementation should use for logging. Must      *            not be<code>null</code>.      */
 specifier|protected
 name|AntMessageLogger
 parameter_list|(

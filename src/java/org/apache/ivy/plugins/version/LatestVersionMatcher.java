@@ -325,7 +325,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * If we don't need a module descriptor we can consider the dynamic revision to be greater. If      * we need a module descriptor then we can't know which one is greater and return 0.      */
+comment|/**      * If we don't need a module descriptor we can consider the dynamic revision to be greater. If      * we need a module descriptor then we can't know which one is greater and return 0.      *      * @param askedMrid ModuleRevisionId      * @param foundMrid ModuleRevisionId      * @param staticComparator Comparator      * @return int      */
 specifier|public
 name|int
 name|compare

@@ -154,7 +154,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Identifies a module in a particular version  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
+comment|/**  * Identifies a module in a particular version  *  * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class
@@ -231,7 +231,7 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Pattern to use to matched mrid text representation.      *       * @see #parse(String)      */
+comment|/**      * Pattern to use to matched mrid text representation.      *      * @see #parse(String)      */
 specifier|public
 specifier|static
 specifier|final
@@ -303,7 +303,7 @@ operator|+
 literal|"+)"
 argument_list|)
 decl_stmt|;
-comment|/**      * Parses a module revision id text representation and returns a new {@link ModuleRevisionId}      * instance corresponding to the parsed String.      *<p>      * The result is unspecified if the module doesn't respect strict name conventions.      *</p>      *       * @param mrid      *            the text representation of the module (as returned by {@link #toString()}). Must      *            not be<code>null</code>.      * @return a {@link ModuleRevisionId} corresponding to the given text representation      * @throws IllegalArgumentException      *             if the given text representation does not match the {@link ModuleRevisionId} text      *             representation rules.      */
+comment|/**      * Parses a module revision id text representation and returns a new {@link ModuleRevisionId}      * instance corresponding to the parsed String.      *<p>      * The result is unspecified if the module doesn't respect strict name conventions.      *</p>      *      * @param mrid      *            the text representation of the module (as returned by {@link #toString()}). Must      *            not be<code>null</code>.      * @return a {@link ModuleRevisionId} corresponding to the given text representation      * @throws IllegalArgumentException      *             if the given text representation does not match the {@link ModuleRevisionId} text      *             representation rules.      */
 specifier|public
 specifier|static
 name|ModuleRevisionId
@@ -690,7 +690,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an intern instance of the given ModuleRevisionId if any, or put the given      * ModuleRevisionId in a cache of intern instances and returns it.      *<p>      * This method should be called on ModuleRevisionId created with one of the constructor to      * decrease memory footprint.      *</p>      *<p>      * When using static newInstances methods, this method is already called.      *</p>      *       * @param moduleRevisionId      *            the module revision id to intern      * @return an interned ModuleRevisionId      */
+comment|/**      * Returns an intern instance of the given ModuleRevisionId if any, or put the given      * ModuleRevisionId in a cache of intern instances and returns it.      *<p>      * This method should be called on ModuleRevisionId created with one of the constructor to      * decrease memory footprint.      *</p>      *<p>      * When using static newInstances methods, this method is already called.      *</p>      *      * @param moduleRevisionId      *            the module revision id to intern      * @return an interned ModuleRevisionId      */
 specifier|public
 specifier|static
 name|ModuleRevisionId

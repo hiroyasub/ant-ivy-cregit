@@ -458,6 +458,7 @@ operator|.
 name|isCompletelyEvicted
 argument_list|()
 condition|)
+block|{
 name|unevicted
 operator|.
 name|add
@@ -465,6 +466,7 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -678,7 +680,7 @@ return|return
 name|strategy
 return|;
 block|}
-comment|/**      * To conform to configurator API      *       * @param strategyName ditto      */
+comment|/**      * To conform to configurator API      *      * @param strategyName ditto      */
 specifier|public
 name|void
 name|setLatest

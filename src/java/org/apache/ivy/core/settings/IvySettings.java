@@ -2447,7 +2447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      */
+comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      *      * @param remote boolean      */
 specifier|public
 specifier|synchronized
 name|void
@@ -6912,7 +6912,7 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
-comment|/**      * Returns the file names of the files that should be ignored when creating a file listing.      */
+comment|/**      * Returns the file names of the files that should be ignored when creating a file listing.      *      * @return String[]      */
 specifier|public
 specifier|synchronized
 name|String

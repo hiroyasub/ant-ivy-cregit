@@ -523,7 +523,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a VfsResource      *      * @param vfsURI      *            a<code>String</code> identifying a VFS Resource      * @throws IOException on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
+comment|/**      * Get a VfsResource      *      * @param vfsURI      *            a<code>String</code> identifying a VFS Resource      * @return Resource      * @throws IOException on failure      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|Resource
 name|getResource
@@ -655,7 +655,7 @@ name|ex
 throw|;
 block|}
 block|}
-comment|/**      * Return a listing of the contents of a parent directory. Listing is a set of strings      * representing VFS URIs.      *      * @param vfsURI      *            providing identifying a VFS provided resource      * @throws IOException      *             on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
+comment|/**      * Return a listing of the contents of a parent directory. Listing is a set of strings      * representing VFS URIs.      *      * @param vfsURI      *            providing identifying a VFS provided resource      * @return List      * @throws IOException      *             on failure.      * @see "Supported File Systems in the jakarta-commons-vfs documentation"      */
 specifier|public
 name|List
 name|list

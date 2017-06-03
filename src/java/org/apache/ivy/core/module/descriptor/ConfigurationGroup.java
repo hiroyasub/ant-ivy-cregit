@@ -79,7 +79,7 @@ operator|=
 name|members
 expr_stmt|;
 block|}
-comment|/**      * Returns the list of configurations' names this object is a group of.      *<p>      * This list is built from the configuration name, if some of these configuration names have      * actually not been recognized in the module, they will be<code>null</code> when accessed from      * {@link org.apache.ivy.core.module.descriptor.ConfigurationIntersection#getIntersectedConfiguration(String)}.      *</p>      *       * @return the list of configurations' names this object is an intersection of.      */
+comment|/**      * Returns the list of configurations' names this object is a group of.      *<p>      * This list is built from the configuration name, if some of these configuration names have      * actually not been recognized in the module, they will be<code>null</code> when accessed from      * {@link org.apache.ivy.core.module.descriptor.ConfigurationIntersection#getIntersectedConfiguration(String)}.      *</p>      *      * @return the list of configurations' names this object is an intersection of.      */
 specifier|public
 name|String
 index|[]
@@ -109,7 +109,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the {@link Configuration} object for the given conf name, or<code>null</code> if the      * given conf name is not part of this group or if this conf name isn't defined in the module in      * which this group has been built.      *       * @param confName      *            the name of the configuration to return.      * @return the member {@link Configuration} object for the given conf name      */
+comment|/**      * Returns the {@link Configuration} object for the given conf name, or<code>null</code> if the      * given conf name is not part of this group or if this conf name isn't defined in the module in      * which this group has been built.      *      * @param confName      *            the name of the configuration to return.      * @return the member {@link Configuration} object for the given conf name      */
 specifier|public
 name|Configuration
 name|getMemberConfiguration

@@ -107,7 +107,7 @@ operator|=
 name|variables
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.core.settings.IvyVariableContainer#setVariable(java.lang.String,      * java.lang.String, boolean)      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.core.settings.IvyVariableContainer#setVariable(java.lang.String,      * java.lang.String, boolean)      */
 specifier|public
 name|void
 name|setVariable
@@ -263,7 +263,7 @@ return|return
 name|envPrefix
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariable(java.lang.String)      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.core.settings.IvyVariableContainer#getVariable(java.lang.String)      */
 specifier|public
 name|String
 name|getVariable

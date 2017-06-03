@@ -829,8 +829,8 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|void
 name|init
 parameter_list|()

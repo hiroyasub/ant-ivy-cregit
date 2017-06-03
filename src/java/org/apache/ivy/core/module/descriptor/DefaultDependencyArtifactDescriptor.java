@@ -352,7 +352,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Add a configuration for this artifact.      *       * @param conf ditto      */
+comment|/**      * Add a configuration for this artifact.      *      * @param conf ditto      */
 specifier|public
 name|void
 name|addConfiguration

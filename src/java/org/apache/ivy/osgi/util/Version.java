@@ -178,7 +178,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Build a version from another one while appending an extra qualifier      *       * @param baseVersion      *            Version      * @param extraQualifier      *            String      */
+comment|/**      * Build a version from another one while appending an extra qualifier      *      * @param baseVersion      *            Version      * @param extraQualifier      *            String      */
 specifier|public
 name|Version
 parameter_list|(

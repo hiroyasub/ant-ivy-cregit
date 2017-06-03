@@ -28,7 +28,7 @@ specifier|public
 interface|interface
 name|DependencyDescriptorMediator
 block|{
-comment|/**      * Mediates the given {@link DependencyDescriptor} according to this {@link ModuleDescriptor}.      *<p>      * This method gives the opportunity to a ModuleDescriptor to override dependency version      * information of any of its transitive dependencies, since it is called by dependency resolvers      * before actually resolving a dependency.      *</p>      *       * @param dd      *            the dependency descriptor which should be mediated.      * @return the mediated {@link DependencyDescriptor}, or the original      *         {@link DependencyDescriptor} if no mediation is required by this ModuleDescriptor.      */
+comment|/**      * Mediates the given {@link DependencyDescriptor} according to this {@link ModuleDescriptor}.      *<p>      * This method gives the opportunity to a ModuleDescriptor to override dependency version      * information of any of its transitive dependencies, since it is called by dependency resolvers      * before actually resolving a dependency.      *</p>      *      * @param dd      *            the dependency descriptor which should be mediated.      * @return the mediated {@link DependencyDescriptor}, or the original      *         {@link DependencyDescriptor} if no mediation is required by this ModuleDescriptor.      */
 name|DependencyDescriptor
 name|mediate
 parameter_list|(

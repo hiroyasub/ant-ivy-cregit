@@ -1160,7 +1160,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX". If          * the condition evaluates to true, the configuration is returned, if the condition          * evaluates to false, null is returned. If there are no conditions, the configuration          * itself is returned.          *           * @param conf          *            the configuration to evaluate          * @param dd          *            the dependency descriptor to which the configuration will be added          * @return the evaluated condition          */
+comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX". If          * the condition evaluates to true, the configuration is returned, if the condition          * evaluates to false, null is returned. If there are no conditions, the configuration          * itself is returned.          *          * @param conf          *            the configuration to evaluate          * @param dd          *            the dependency descriptor to which the configuration will be added          * @return the evaluated condition          */
 specifier|private
 name|String
 name|evaluateCondition

@@ -1101,8 +1101,8 @@ name|SAXException
 block|{
 block|}
 specifier|public
-specifier|static
 specifier|abstract
+specifier|static
 class|class
 name|ChildElementHandler
 parameter_list|<
@@ -1111,7 +1111,7 @@ extends|extends
 name|DelegatingHandler
 parameter_list|>
 block|{
-comment|/**          * Deprecated because of renaming due spell check.          */
+comment|/**          * @param child DH          * @throws SAXParseException on failure          * @deprecated because of renaming due spell check.          */
 annotation|@
 name|Deprecated
 specifier|public

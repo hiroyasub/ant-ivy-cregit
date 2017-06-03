@@ -178,7 +178,7 @@ operator|=
 name|file
 expr_stmt|;
 block|}
-comment|/**      * Adds a set of files to check.      *       * @param set      *            a set of files to check      */
+comment|/**      * Adds a set of files to check.      *      * @param set      *            a set of files to check      */
 specifier|public
 name|void
 name|addFileset

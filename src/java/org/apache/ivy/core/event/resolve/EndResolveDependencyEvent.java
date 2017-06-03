@@ -254,7 +254,7 @@ return|return
 name|module
 return|;
 block|}
-comment|/**      * Returns the time elapsed to resolve the dependency.      *<p>      * The time elapsed to resolve a dependency includes the time required to locate the the actual      * revision if the dependency descriptor use a version constraint, and to download the module      * metadata if necessary. It doesn't include any conflict management operations nor transitive      * dependency management. It's basically the time elapsed since the corresponding      * {@link StartResolveDependencyEvent}      *</p>      *       * @return the time elapsed to resolve the dependency.      */
+comment|/**      * Returns the time elapsed to resolve the dependency.      *<p>      * The time elapsed to resolve a dependency includes the time required to locate the the actual      * revision if the dependency descriptor use a version constraint, and to download the module      * metadata if necessary. It doesn't include any conflict management operations nor transitive      * dependency management. It's basically the time elapsed since the corresponding      * {@link StartResolveDependencyEvent}      *</p>      *      * @return the time elapsed to resolve the dependency.      */
 specifier|public
 name|long
 name|getDuration

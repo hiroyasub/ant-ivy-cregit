@@ -141,7 +141,7 @@ specifier|private
 name|char
 name|c
 decl_stmt|;
-comment|/**          * Default constructor          *           * @param version          *            the version to parse          */
+comment|/**          * Default constructor          *          * @param version          *            the version to parse          */
 name|VersionRangeParser
 parameter_list|(
 name|String
@@ -164,7 +164,7 @@ name|length
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**          * Do the parsing          *           * @throws ParseException          */
+comment|/**          * Do the parsing          *          * @throws ParseException          */
 name|void
 name|parse
 parameter_list|()

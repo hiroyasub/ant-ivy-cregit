@@ -261,7 +261,7 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-comment|/**      * Search a module descriptor in cache for a mrid      *      * @param dd                  the dependency descriptor identifying the module to search      * @param requestedRevisionId the requested dependency module revision id identifying the module to search      * @param options             options on how caching should be handled      * @param expectedResolver    the resolver with which the md in cache must have been resolved to be returned,      *                            null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      * has been found in cache      */
+comment|/**      * Search a module descriptor in cache for a mrid      *      * @param dd                  the dependency descriptor identifying the module to search      * @param requestedRevisionId the requested dependency module revision id identifying the module      *                            to search      * @param options             options on how caching should be handled      * @param expectedResolver    the resolver with which the md in cache must have been resolved to      *                            be returned, null if this doesn't matter      * @return the ResolvedModuleRevision corresponding to the module found, null if none correct      * has been found in cache      */
 name|ResolvedModuleRevision
 name|findModuleInCache
 parameter_list|(
@@ -278,7 +278,7 @@ name|String
 name|expectedResolver
 parameter_list|)
 function_decl|;
-comment|/**      * Downloads an artifact to this cache.      *      * @param artifact           the artifact to download      * @param resourceResolver   a resource resolver to use if the artifact needs to be resolved to a Resource for      *                           downloading      * @param resourceDownloader a resource downloader to use if actual download of the resource is needed      * @param options            a set of options to adjust the download      * @return a report indicating how the download was performed      */
+comment|/**      * Downloads an artifact to this cache.      *      * @param artifact           the artifact to download      * @param resourceResolver   a resource resolver to use if the artifact needs to be resolved to      *                           a Resource for downloading      * @param resourceDownloader a resource downloader to use if actual download of the resource is      *                           needed      * @param options            a set of options to adjust the download      * @return a report indicating how the download was performed      */
 name|ArtifactDownloadReport
 name|download
 parameter_list|(
@@ -295,7 +295,7 @@ name|CacheDownloadOptions
 name|options
 parameter_list|)
 function_decl|;
-comment|/**      * Download some repository resource and put it in the cache.      *<p>      * If the cached version is considered enough up to date, no downloading is done.      *      * @param resource   the resource of the file to put in cache      * @param name       the descriptive name of the resource (helps while manually looking into the cache      *                   files)      * @param type       the type of the resource (helps while manually looking into the cache files)      * @param extension  the extension of the resource (helps while manually looking into the cache files)      * @param options    a set of options to adjust the download      * @param repository the repository which resolve the content of the resource      * @return a report indicating how the download was performed      */
+comment|/**      * Download some repository resource and put it in the cache.      *<p>      * If the cached version is considered enough up to date, no downloading is done.      *      * @param resource   the resource of the file to put in cache      * @param name       the descriptive name of the resource (helps while manually looking into the      *                   cache files)      * @param type       the type of the resource (helps while manually looking into the cache files)      * @param extension  the extension of the resource (helps while manually looking into the cache      *                   files)      * @param options    a set of options to adjust the download      * @param repository the repository which resolve the content of the resource      * @return a report indicating how the download was performed      */
 name|ArtifactDownloadReport
 name|downloadRepositoryResource
 parameter_list|(
@@ -318,7 +318,7 @@ name|Repository
 name|repository
 parameter_list|)
 function_decl|;
-comment|/**      * Caches an original module descriptor.      *<p>      * After this call, the original module descriptor file (with no modification nor conversion)      * should be available as a local file.      *</p>      *      * @param resolver                  the dependency resolver from which the cache request comes from      * @param originalMetadataRef       a resolved resource pointing to the remote original module descriptor      * @param dd                        the dependency descriptor for which the module descriptor should be cached      * @param requestedMetadataArtifact the module descriptor artifact as requested originally      * @param downloader                a ResourceDownloader able to download the original module descriptor resource if      *                                  required by this cache implementation      * @param options                   options to apply to cache this module descriptor      * @return a {@link ResolvedModuleRevision} representing the local cached module descriptor, or      * null if it failed      * @throws ParseException if an exception occurred while parsing the module descriptor      */
+comment|/**      * Caches an original module descriptor.      *<p>      * After this call, the original module descriptor file (with no modification nor conversion)      * should be available as a local file.      *</p>      *      * @param resolver                  the dependency resolver from which the cache request comes      *                                  from      * @param originalMetadataRef       a resolved resource pointing to the remote original module      *                                  descriptor      * @param dd                        the dependency descriptor for which the module descriptor      *                                  should be cached      * @param requestedMetadataArtifact the module descriptor artifact as requested originally      * @param downloader                a ResourceDownloader able to download the original module      *                                  descriptor resource if required by this cache implementation      * @param options                   options to apply to cache this module descriptor      * @return a {@link ResolvedModuleRevision} representing the local cached module descriptor, or      * null if it failed      * @throws ParseException if an exception occurred while parsing the module descriptor      */
 name|ResolvedModuleRevision
 name|cacheModuleDescriptor
 parameter_list|(
@@ -343,7 +343,7 @@ parameter_list|)
 throws|throws
 name|ParseException
 function_decl|;
-comment|/**      * Stores a standardized version of an original module descriptor in the cache for later use.      *      * @param resolver                  the dependency resolver from which the cache request comes from      * @param originalMetadataRef       a resolved resource pointing to the remote original module descriptor      * @param requestedMetadataArtifact the module descriptor artifact as requested originally      * @param rmr                       the {@link ResolvedModuleRevision} representing the local cached module descriptor      * @param writer                    a {@link ModuleDescriptorWriter} able to write the module descriptor to a stream.      */
+comment|/**      * Stores a standardized version of an original module descriptor in the cache for later use.      *      * @param resolver                  the dependency resolver from which the cache request comes 	 *                                  from      * @param originalMetadataRef       a resolved resource pointing to the remote original module 	 *                                  descriptor      * @param requestedMetadataArtifact the module descriptor artifact as requested originally      * @param rmr                       the {@link ResolvedModuleRevision} representing the local 	 *                                  cached module descriptor      * @param writer                    a {@link ModuleDescriptorWriter} able to write the module 	 *                                  descriptor to a stream.      */
 name|void
 name|originalToCachedModuleDescriptor
 parameter_list|(

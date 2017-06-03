@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list of module specific rules.  *<p>  * This class defines a list of module specific rules. For each module only one rule apply,  * sometimes none.  *</p>  *<p>  * To know which rule to apply, they are configured using matchers. So you can define a rule  * applying to all module from one particular organization, or to all modules with a revisions  * matching a pattern, and so on.  *</p>  *<p>  * Rules condition are evaluated in order, so the first matching rule is returned.  *</p>  *<p>  * Rules themselves can be represented by any object, depending on the purpose of the rule (define  * which resolver to use, which TTL in cache, ...)  *</p>  */
+comment|/**  * A list of module specific rules.  *<p>  * This class defines a list of module specific rules. For each module only one rule apply,  * sometimes none.  *</p>  *<p>  * To know which rule to apply, they are configured using matchers. So you can define a rule  * applying to all module from one particular organization, or to all modules with a revisions  * matching a pattern, and so on.  *</p>  *<p>  * Rules condition are evaluated in order, so the first matching rule is returned.  *</p>  *<p>  * Rules themselves can be represented by any object, depending on the purpose of the rule (define  * which resolver to use, which TTL in cache, ...)  *</p>  *  * @param<T> a type parameter  */
 end_comment
 
 begin_class
@@ -248,7 +248,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Defines a new rule for the given condition.      *       * @param condition      *            the condition for which the rule should be applied. Must not be<code>null</code>.      * @param rule      *            the rule to apply. Must not be<code>null</code>.      */
+comment|/**      * Defines a new rule for the given condition.      *      * @param condition      *            the condition for which the rule should be applied. Must not be<code>null</code>.      * @param rule      *            the rule to apply. Must not be<code>null</code>.      */
 specifier|public
 name|void
 name|defineRule
@@ -295,7 +295,7 @@ name|condition
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      * applies.      *       * @param mid      *            the {@link ModuleId} to search the rule for. Must not be<code>null</code>.      * @return the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      *         applies.      * @see #getRule(ModuleId, Filter)      */
+comment|/**      * Returns the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      * applies.      *      * @param mid      *            the {@link ModuleId} to search the rule for. Must not be<code>null</code>.      * @return the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      *         applies.      * @see #getRule(ModuleId, Filter)      */
 specifier|public
 name|T
 name|getRule
@@ -319,7 +319,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the rules objects matching the given {@link ModuleId}, or an empty array if no rule      * applies.      *       * @param mid      *            the {@link ModuleId} to search the rule for. Must not be<code>null</code>.      * @return an array of rule objects matching the given {@link ModuleId}.      */
+comment|/**      * Returns the rules objects matching the given {@link ModuleId}, or an empty array if no rule      * applies.      *      * @param mid      *            the {@link ModuleId} to search the rule for. Must not be<code>null</code>.      * @return an array of rule objects matching the given {@link ModuleId}.      */
 specifier|public
 name|T
 index|[]
@@ -347,7 +347,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      * no rule applies.      *       * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @return the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      *         no rule applies.      * @see #getRule(ModuleRevisionId, Filter)      */
+comment|/**      * Returns the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      * no rule applies.      *      * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @return the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      *         no rule applies.      * @see #getRule(ModuleRevisionId, Filter)      */
 specifier|public
 name|T
 name|getRule
@@ -371,7 +371,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the rule object matching the given {@link ModuleId} and accepted by the given      * {@link Filter}, or<code>null</code> if no rule applies.      *       * @param mid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given {@link ModuleId},      *            and the first rule object accepted by the filter will be returned. Must not be      *<code>null</code>.      * @return the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      *         applies.      * @see #getRule(ModuleRevisionId, Filter)      */
+comment|/**      * Returns the rule object matching the given {@link ModuleId} and accepted by the given      * {@link Filter}, or<code>null</code> if no rule applies.      *      * @param mid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given {@link ModuleId},      *            and the first rule object accepted by the filter will be returned. Must not be      *<code>null</code>.      * @return the rule object matching the given {@link ModuleId}, or<code>null</code> if no rule      *         applies.      * @see #getRule(ModuleRevisionId, Filter)      */
 specifier|public
 name|T
 name|getRule
@@ -407,7 +407,7 @@ name|filter
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the rule object matching the given {@link ModuleRevisionId} and accepted by the given      * {@link Filter}, or<code>null</code> if no rule applies.      *       * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given      *            {@link ModuleRevisionId}, and the first rule object accepted by the filter will be      *            returned. Must not be<code>null</code>.      * @return the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      *         no rule applies.      * @see #getRule(ModuleRevisionId)      */
+comment|/**      * Returns the rule object matching the given {@link ModuleRevisionId} and accepted by the given      * {@link Filter}, or<code>null</code> if no rule applies.      *      * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given      *            {@link ModuleRevisionId}, and the first rule object accepted by the filter will be      *            returned. Must not be<code>null</code>.      * @return the rule object matching the given {@link ModuleRevisionId}, or<code>null</code> if      *         no rule applies.      * @see #getRule(ModuleRevisionId)      */
 specifier|public
 name|T
 name|getRule
@@ -531,7 +531,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns the rules object matching the given {@link ModuleRevisionId} and accepted by the      * given {@link Filter}, or an empty array if no rule applies.      *       * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given      *            {@link ModuleRevisionId}. Must not be<code>null</code>.      * @return an array of rule objects matching the given {@link ModuleRevisionId}.      */
+comment|/**      * Returns the rules object matching the given {@link ModuleRevisionId} and accepted by the      * given {@link Filter}, or an empty array if no rule applies.      *      * @param mrid      *            the {@link ModuleRevisionId} to search the rule for. Must not be<code>null</code>      *            .      * @param filter      *            the filter to use to filter the rule to return. The {@link Filter#accept(Object)}      *            method will be called only with rule objects matching the given      *            {@link ModuleRevisionId}. Must not be<code>null</code>.      * @return an array of rule objects matching the given {@link ModuleRevisionId}.      */
 specifier|public
 name|T
 index|[]
@@ -687,7 +687,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Dump the list of rules to {@link Message#debug(String)}      *       * @param prefix      *            the prefix to use for each line dumped      */
+comment|/**      * Dump the list of rules to {@link Message#debug(String)}      *      * @param prefix      *            the prefix to use for each line dumped      */
 specifier|public
 name|void
 name|dump
@@ -764,7 +764,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns an unmodifiable view of all the rules defined on this ModuleRules.      *<p>      * The rules are returned in a Map where they keys are the MapMatchers matching the rules      * object, and the values are the rules object themselves.      *</p>      *       * @return an unmodifiable view of all the rules defined on this ModuleRules.      */
+comment|/**      * Returns an unmodifiable view of all the rules defined on this ModuleRules.      *<p>      * The rules are returned in a Map where they keys are the MapMatchers matching the rules      * object, and the values are the rules object themselves.      *</p>      *      * @return an unmodifiable view of all the rules defined on this ModuleRules.      */
 specifier|public
 name|Map
 argument_list|<

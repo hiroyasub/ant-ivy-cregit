@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Event fired just before an artifact is published into a resolver. Triggers registered on  * {@link #NAME} will be notified of these events.  *   * @see DependencyResolver#publish(Artifact, File, boolean)  */
+comment|/**  * Event fired just before an artifact is published into a resolver. Triggers registered on  * {@link #NAME} will be notified of these events.  *  * @see DependencyResolver#publish(Artifact, File, boolean)  */
 end_comment
 
 begin_class

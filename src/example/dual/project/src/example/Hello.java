@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple hello world example to show how easy it is to retrieve libs with ivy,   * including transitive dependencies   */
+comment|/**  * Simple hello world example to show how easy it is to retrieve libs with ivy,  * including transitive dependencies  */
 end_comment
 
 begin_class

@@ -289,7 +289,7 @@ name|bundleFilter
 init|=
 name|DEFAULT_BUNDLE_FILTER
 decl_stmt|;
-comment|/**      * Default constructor      *       * @param root      *            the root directory of the file system to lookup      */
+comment|/**      * Default constructor      *      * @param root      *            the root directory of the file system to lookup      */
 specifier|public
 name|FSManifestIterable
 parameter_list|(

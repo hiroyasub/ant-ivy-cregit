@@ -2544,7 +2544,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the configuration object with the given name in the current module descriptor, null      * if not found.      *      * @param confName String      */
+comment|/**      * @param confName String      * @return the configuration object with the given name in the current module descriptor, null      * if not found.      */
 specifier|public
 name|Configuration
 name|getConfiguration

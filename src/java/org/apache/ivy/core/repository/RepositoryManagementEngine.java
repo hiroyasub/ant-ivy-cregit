@@ -659,7 +659,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event dispatch      * thread in a GUI.      *</p>      *       * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event dispatch      * thread in a GUI.      *</p>      *      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|void
 name|analyze
@@ -791,7 +791,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Returns the number of Module Revision in the repository.      *       * @return the number of module revisions in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Returns the number of Module Revision in the repository.      *      * @return the number of module revisions in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|int
 name|getRevisionsNumber
@@ -807,7 +807,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the number of ModuleId in the repository.      *       * @return the number of ModuleId in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Returns the number of ModuleId in the repository.      *      * @return the number of ModuleId in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|int
 name|getModuleIdsNumber
@@ -823,7 +823,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns Module Revisions which have no dependers.      *       * @return a Collection of the {@link ModuleRevisionId} of module revisions which have no      *         dependers in the repository.      * @throws IllegalStateException      *             if the repository has not been analyzed yet      * @see #analyze()      */
+comment|/**      * Returns Module Revisions which have no dependers.      *      * @return a Collection of the {@link ModuleRevisionId} of module revisions which have no      *         dependers in the repository.      * @throws IllegalStateException      *             if the repository has not been analyzed yet      * @see #analyze()      */
 specifier|public
 name|Collection
 name|getOrphans

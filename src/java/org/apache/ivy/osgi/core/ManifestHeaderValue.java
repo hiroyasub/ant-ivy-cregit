@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parse a header of a manifest. The manifest header is composed with the following rules:  *   *<pre>  * header ::= header-element (',' header-element)*  * header-element ::= values (';' (attribute | directive) )*  * values ::= value (';' value)*  * value ::=&lt;any string value that does not have ';' or ','&gt;  * attribute ::= key '=' value  * directive ::= key '=' value  * key ::= token  * value ::= token | quoted-string | double-quoted-string  *</pre>  */
+comment|/**  * Parse a header of a manifest. The manifest header is composed with the following rules:  *  *<pre>  * header ::= header-element (',' header-element)*  * header-element ::= values (';' (attribute | directive) )*  * values ::= value (';' value)*  * value ::=&lt;any string value that does not have ';' or ','&gt;  * attribute ::= key '=' value  * directive ::= key '=' value  * key ::= token  * value ::= token | quoted-string | double-quoted-string  *</pre>  */
 end_comment
 
 begin_class
@@ -337,7 +337,7 @@ specifier|private
 name|boolean
 name|isDirective
 decl_stmt|;
-comment|/**          * Default constructor          *           * @param header          *            the header to parse          */
+comment|/**          * Default constructor          *          * @param header          *            the header to parse          */
 name|ManifestHeaderParser
 parameter_list|(
 name|String
@@ -360,7 +360,7 @@ name|length
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**          * Do the parsing          *           * @throws ParseException          */
+comment|/**          * Do the parsing          *          * @throws ParseException          */
 name|void
 name|parse
 parameter_list|()

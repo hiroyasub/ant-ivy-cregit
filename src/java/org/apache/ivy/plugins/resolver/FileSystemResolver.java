@@ -255,7 +255,7 @@ argument_list|(
 literal|"(.*[/\\\\]\\[revision\\])([/\\\\].+)"
 argument_list|)
 decl_stmt|;
-comment|/**      * Transactional mode.      *       * auto: use transaction if possible, only log verbose message if not true: always use      * transaction, fail if not supported false: never use transactions      */
+comment|/**      * Transactional mode.      *      * auto: use transaction if possible, only log verbose message if not true: always use      * transaction, fail if not supported false: never use transactions      */
 specifier|private
 name|String
 name|transactional

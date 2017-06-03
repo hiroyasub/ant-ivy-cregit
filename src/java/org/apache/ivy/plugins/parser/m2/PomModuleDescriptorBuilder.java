@@ -4481,7 +4481,7 @@ operator|=
 name|pomDependencyData
 expr_stmt|;
 block|}
-comment|/**          * Get PomDependencyData.          *           * @return PomDependencyData          */
+comment|/**          * Get PomDependencyData.          *          * @return PomDependencyData          */
 specifier|public
 name|PomDependencyData
 name|getPomDependencyData

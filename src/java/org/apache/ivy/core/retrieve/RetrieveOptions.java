@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A set of options used during retrieve related tasks  *   * @see RetrieveEngine  */
+comment|/**  * A set of options used during retrieve related tasks  *  * @see RetrieveEngine  */
 end_comment
 
 begin_class

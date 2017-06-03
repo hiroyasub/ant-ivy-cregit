@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *   */
+comment|/**  *  */
 end_comment
 
 begin_class
@@ -503,7 +503,7 @@ return|return
 name|UNAVAILABLE
 return|;
 block|}
-comment|/**      * Extract the charset from the Content-Type header string, or default to ISO-8859-1 as per      * rfc2616-sec3.html#sec3.7.1 .      *       * @param contentType      *            the Content-Type header string      * @return the charset as specified in the content type, or ISO-8859-1 if unspecified.      */
+comment|/**      * Extract the charset from the Content-Type header string, or default to ISO-8859-1 as per      * rfc2616-sec3.html#sec3.7.1 .      *      * @param contentType      *            the Content-Type header string      * @return the charset as specified in the content type, or ISO-8859-1 if unspecified.      */
 specifier|public
 specifier|static
 name|String

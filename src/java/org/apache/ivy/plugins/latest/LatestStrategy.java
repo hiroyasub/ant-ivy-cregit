@@ -42,7 +42,7 @@ specifier|public
 interface|interface
 name|LatestStrategy
 block|{
-comment|/**      * Finds the latest artifact among the given artifacts info. The definition of 'latest' depends      * on the strategy itself. Given artifacts info are all good candidate. If the given date is not      * null, then found artifact should not be later than this date.      *       * @param infos ArtifactInfo[]      * @param date Date      * @return the latest artifact among the given ones.      */
+comment|/**      * Finds the latest artifact among the given artifacts info. The definition of 'latest' depends      * on the strategy itself. Given artifacts info are all good candidate. If the given date is not      * null, then found artifact should not be later than this date.      *      * @param infos ArtifactInfo[]      * @param date Date      * @return the latest artifact among the given ones.      */
 name|ArtifactInfo
 name|findLatest
 parameter_list|(
@@ -54,7 +54,7 @@ name|Date
 name|date
 parameter_list|)
 function_decl|;
-comment|/**      * Sorts the given artifacts info from the oldest one to the latest one. The definition of      * 'latest' depends on the strategy itself. Given artifacts info are all good candidate.      *       * @param infos ArtifactInfo[]      * @return List&lt;ArtifactInfo&gt;      */
+comment|/**      * Sorts the given artifacts info from the oldest one to the latest one. The definition of      * 'latest' depends on the strategy itself. Given artifacts info are all good candidate.      *      * @param infos ArtifactInfo[]      * @return List&lt;ArtifactInfo&gt;      */
 name|List
 argument_list|<
 name|ArtifactInfo

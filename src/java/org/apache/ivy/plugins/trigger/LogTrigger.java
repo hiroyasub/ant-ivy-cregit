@@ -220,7 +220,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Logs the given message.      *       * @param message      *            the message to log      */
+comment|/**      * Logs the given message.      *      * @param message      *            the message to log      */
 specifier|protected
 name|void
 name|log
@@ -380,7 +380,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Message to write.      *       * @param msg      *            Sets the value for the message variable.      */
+comment|/**      * Message to write.      *      * @param msg      *            Sets the value for the message variable.      */
 specifier|public
 name|void
 name|setMessage
@@ -396,7 +396,7 @@ operator|=
 name|msg
 expr_stmt|;
 block|}
-comment|/**      * File to write to.      *       * @param file      *            the file to write to, if not set, echo to standard Ivy logging      */
+comment|/**      * File to write to.      *      * @param file      *            the file to write to, if not set, echo to standard Ivy logging      */
 specifier|public
 name|void
 name|setFile
@@ -412,7 +412,7 @@ operator|=
 name|file
 expr_stmt|;
 block|}
-comment|/**      * If true, append to existing file.      *       * @param append      *            if true, append to existing file, default is false.      */
+comment|/**      * If true, append to existing file.      *      * @param append      *            if true, append to existing file, default is false.      */
 specifier|public
 name|void
 name|setAppend
@@ -428,7 +428,7 @@ operator|=
 name|append
 expr_stmt|;
 block|}
-comment|/**      * Declare the encoding to use when outputting to a file; Use "" for the platform's default      * encoding.      *       * @param encoding      *            the character encoding to use.      */
+comment|/**      * Declare the encoding to use when outputting to a file; Use "" for the platform's default      * encoding.      *      * @param encoding      *            the character encoding to use.      */
 specifier|public
 name|void
 name|setEncoding
