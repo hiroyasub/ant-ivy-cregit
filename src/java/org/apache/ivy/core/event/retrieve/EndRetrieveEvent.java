@@ -194,7 +194,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Duration of the retrieve operation, in ms.      *       * @return Duration of the retrieve operation, in ms.      */
+comment|/**      * Duration of the retrieve operation, in ms.      *      * @return Duration of the retrieve operation, in ms.      */
 specifier|public
 name|long
 name|getDuration
@@ -204,7 +204,7 @@ return|return
 name|duration
 return|;
 block|}
-comment|/**      * Number of artifacts which were copied (or symlinked) during the retrieve      *       * @return Number of artifacts which were copied during the retrieve.      */
+comment|/**      * Number of artifacts which were copied (or symlinked) during the retrieve      *      * @return Number of artifacts which were copied during the retrieve.      */
 specifier|public
 name|int
 name|getNbCopied
@@ -214,7 +214,7 @@ return|return
 name|nbCopied
 return|;
 block|}
-comment|/**      * Number of artifacts which were not copied since they were already present and up to date.      *       * @return Number of artifacts which were not copied since they were already present and up to      *         date.      */
+comment|/**      * Number of artifacts which were not copied since they were already present and up to date.      *      * @return Number of artifacts which were not copied since they were already present and up to      *         date.      */
 specifier|public
 name|int
 name|getNbUpToDate
@@ -224,7 +224,7 @@ return|return
 name|nbUpToDate
 return|;
 block|}
-comment|/**      * Total size of all copied (or symlinked) artifacts, in bytes.      *       * @return Total size of all copied (or symlinked) artifacts, in bytes.      */
+comment|/**      * Total size of all copied (or symlinked) artifacts, in bytes.      *      * @return Total size of all copied (or symlinked) artifacts, in bytes.      */
 specifier|public
 name|long
 name|getTotalCopiedSize

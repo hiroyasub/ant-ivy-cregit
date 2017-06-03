@@ -134,7 +134,7 @@ name|LinkedHashMap
 comment|/*<File,CacheEntry> */
 name|valueMap
 decl_stmt|;
-comment|/**      * Create a cache of the given size      *       * @param size int      */
+comment|/**      * Create a cache of the given size      *      * @param size int      */
 specifier|public
 name|ModuleDescriptorMemoryCache
 parameter_list|(

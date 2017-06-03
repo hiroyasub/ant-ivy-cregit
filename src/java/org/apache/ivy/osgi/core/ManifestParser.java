@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides an OSGi manifest parser.  *   */
+comment|/**  * Provides an OSGi manifest parser.  *  */
 end_comment
 
 begin_class
@@ -1435,7 +1435,7 @@ name|v
 argument_list|)
 return|;
 block|}
-comment|/**      * Ensure that the lines are not longer than 72 characters, so it can be parsed by the      * {@link Manifest} class      *       * @param manifest ditto      * @return String      */
+comment|/**      * Ensure that the lines are not longer than 72 characters, so it can be parsed by the      * {@link Manifest} class      *      * @param manifest ditto      * @return String      */
 specifier|public
 specifier|static
 name|String

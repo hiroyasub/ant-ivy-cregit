@@ -438,7 +438,7 @@ name|scopesMapping
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Returns the scope mapped to the given configuration array.          *           * @param confs          *            the configurations for which the scope should be returned          * @return the scope to which the conf is mapped          */
+comment|/**          * Returns the scope mapped to the given configuration array.          *          * @param confs          *            the configurations for which the scope should be returned          * @return the scope to which the conf is mapped          */
 specifier|public
 name|String
 name|getScope

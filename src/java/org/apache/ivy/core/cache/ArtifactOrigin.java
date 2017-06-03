@@ -66,7 +66,7 @@ name|UNKNOWN
 init|=
 literal|"UNKNOWN"
 decl_stmt|;
-comment|/**      * Deprecated because of renaming due spell check.      */
+comment|/**      * @param artifact ditto      * @return ArtifactOrigin      * @deprecated because of renaming due spell check.      */
 annotation|@
 name|Deprecated
 specifier|public

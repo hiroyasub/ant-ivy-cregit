@@ -4334,7 +4334,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * When the resolver has many choices, this function helps choosing one      *       * @param rress      *            the list of resolved resource which the resolver found to fit the requirement      * @param rmdparser      *            the parser of module descriptor      * @param mrid      *            the module being resolved      * @param date      *            the current date      * @return the selected resource      */
+comment|/**      * When the resolver has many choices, this function helps choosing one      *      * @param rress      *            the list of resolved resource which the resolver found to fit the requirement      * @param rmdparser      *            the parser of module descriptor      * @param mrid      *            the module being resolved      * @param date      *            the current date      * @return the selected resource      */
 specifier|public
 name|ResolvedResource
 name|findResource
@@ -4999,7 +4999,7 @@ return|return
 name|found
 return|;
 block|}
-comment|/**      * Filters names before returning them in the findXXXNames or findTokenValues method.      *<p>      * Remember to call the super implementation when overriding this method.      *</p>      *       * @param names      *            the list to filter.      * @return the filtered list      */
+comment|/**      * Filters names before returning them in the findXXXNames or findTokenValues method.      *<p>      * Remember to call the super implementation when overriding this method.      *</p>      *      * @param names      *            the list to filter.      * @return the filtered list      */
 specifier|protected
 name|Collection
 argument_list|<
@@ -6376,7 +6376,7 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Checks the given resource checksum if a checksum resource exists.      *       * @param resource      *            the resource to check      * @param dest      *            the file where the resource has been downloaded      * @param algorithm      *            the checksum algorithm to use      * @return true if the checksum has been successfully checked, false if the checksum wasn't      *         available      * @throws IOException      *             if a checksum exist but do not match the downloaded file checksum      */
+comment|/**      * Checks the given resource checksum if a checksum resource exists.      *      * @param resource      *            the resource to check      * @param dest      *            the file where the resource has been downloaded      * @param algorithm      *            the checksum algorithm to use      * @return true if the checksum has been successfully checked, false if the checksum wasn't      *         available      * @throws IOException      *             if a checksum exist but do not match the downloaded file checksum      */
 specifier|private
 name|boolean
 name|check
@@ -6867,7 +6867,7 @@ operator|=
 name|b
 expr_stmt|;
 block|}
-comment|/**      * Sets the module descriptor presence rule. Should be one of {@link #DESCRIPTOR_REQUIRED} or      * {@link #DESCRIPTOR_OPTIONAL}.      *       * @param descriptorRule      *            the descriptor rule to use with this resolver.      */
+comment|/**      * Sets the module descriptor presence rule. Should be one of {@link #DESCRIPTOR_REQUIRED} or      * {@link #DESCRIPTOR_OPTIONAL}.      *      * @param descriptorRule      *            the descriptor rule to use with this resolver.      */
 specifier|public
 name|void
 name|setDescriptor

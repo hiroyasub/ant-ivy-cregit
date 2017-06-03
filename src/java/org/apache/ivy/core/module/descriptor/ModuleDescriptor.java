@@ -292,7 +292,7 @@ name|ModuleRevisionId
 name|getResolvedModuleRevisionId
 parameter_list|()
 function_decl|;
-comment|/**      * This method updates the resolved module revision id      *       * @param revId ModuleRevisionId      */
+comment|/**      * This method updates the resolved module revision id      *      * @param revId ModuleRevisionId      */
 name|void
 name|setResolvedModuleRevisionId
 parameter_list|(
@@ -306,7 +306,7 @@ index|[]
 name|getInheritedDescriptors
 parameter_list|()
 function_decl|;
-comment|/**      * This method update the resolved publication date      *       * @param publicationDate Date      */
+comment|/**      * This method update the resolved publication date      *      * @param publicationDate Date      */
 name|void
 name|setResolvedPublicationDate
 parameter_list|(
@@ -409,7 +409,7 @@ name|long
 name|getLastModified
 parameter_list|()
 function_decl|;
-comment|/**      * Writes this module descriptor as an ivy file. If this descriptor was obtained through the      * parsing of an ivy file, it should keep the layout of the file the most possible similar to      * the original one.      *       * @param ivyFile      *            the destination ivy file      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
+comment|/**      * Writes this module descriptor as an ivy file. If this descriptor was obtained through the      * parsing of an ivy file, it should keep the layout of the file the most possible similar to      * the original one.      *      * @param ivyFile      *            the destination ivy file      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 name|void
 name|toIvyFile
 parameter_list|(
@@ -431,7 +431,7 @@ name|Resource
 name|getResource
 parameter_list|()
 function_decl|;
-comment|/**      * Even though the module descriptor is never described as a published artifact of a module in      * the module descriptor itself, it is often useful to consider it as any other artifact of the      * module. This method allows to access to the Artifact object representing this module      * descriptor for this purpose.      *       * @return the Artifact representing this module descriptor itself.      */
+comment|/**      * Even though the module descriptor is never described as a published artifact of a module in      * the module descriptor itself, it is often useful to consider it as any other artifact of the      * module. This method allows to access to the Artifact object representing this module      * descriptor for this purpose.      *      * @return the Artifact representing this module descriptor itself.      */
 name|Artifact
 name|getMetadataArtifact
 parameter_list|()
@@ -453,7 +453,7 @@ name|ArtifactId
 name|artifactId
 parameter_list|)
 function_decl|;
-comment|/**      * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies for the      * whole module.      *       * @return an array of all {@link ExcludeRule} this module descriptor currently holds.      */
+comment|/**      * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies for the      * whole module.      *      * @return an array of all {@link ExcludeRule} this module descriptor currently holds.      */
 specifier|public
 name|ExcludeRule
 index|[]

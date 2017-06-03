@@ -919,7 +919,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * this method should remove sensitive information from a location to be displayed in a log      *       * @param name      *            location      * @return location with sensitive data replaced by stars      */
+comment|/**      * this method should remove sensitive information from a location to be displayed in a log      *      * @param name      *            location      * @return location with sensitive data replaced by stars      */
 specifier|public
 name|String
 name|hidePassword
@@ -1202,7 +1202,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|/**      * Default implementation downloads the artifact without taking advantage of its location      */
+comment|/**      * Default implementation downloads the artifact without taking advantage of its location      *      * @param artifact ArtifactOrigin      * @param options DownloadOptions      * @return ArtifactDownloadReport      */
 specifier|public
 name|ArtifactDownloadReport
 name|download
@@ -1261,7 +1261,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Default implementation actually download the artifact Subclasses should overwrite this to      * avoid the download      */
+comment|/**      * Default implementation actually download the artifact Subclasses should overwrite this to      * avoid the download      *      * @param artifact ArtifactOrigin      * @return ArtifactOrigin      */
 specifier|public
 name|ArtifactOrigin
 name|locate
@@ -2596,7 +2596,7 @@ block|}
 block|}
 return|;
 block|}
-comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine which is the      * latest      *       * @param rmr1 ResolvedModuleRevision      * @param rmr2 ResolvedModuleRevision      * @param date Date      * @return boolean      */
+comment|/**      * Returns true if rmr1 is after rmr2, using the latest strategy to determine which is the      * latest      *      * @param rmr1 ResolvedModuleRevision      * @param rmr2 ResolvedModuleRevision      * @param date Date      * @return boolean      */
 specifier|protected
 name|boolean
 name|isAfter

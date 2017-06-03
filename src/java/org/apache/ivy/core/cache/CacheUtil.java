@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Utility class providing some cache related facilities.  *   */
+comment|/**  * Utility class providing some cache related facilities.  *  */
 end_comment
 
 begin_class
@@ -27,7 +27,7 @@ specifier|final
 class|class
 name|CacheUtil
 block|{
-comment|/**      * Checks that the given pattern is acceptable as a cache pattern      *       * @param cachePattern      *            the pattern to check      * @throws IllegalArgumentException      *             if the pattern isn't acceptable as cache pattern      */
+comment|/**      * Checks that the given pattern is acceptable as a cache pattern      *      * @param cachePattern      *            the pattern to check      * @throws IllegalArgumentException      *             if the pattern isn't acceptable as cache pattern      */
 specifier|public
 specifier|static
 name|void

@@ -817,7 +817,7 @@ name|obj2
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the VisitNode currently visited, or<code>null</code> if there is no node currently      * visited in this context.      *       * @return the VisitNode currently visited      */
+comment|/**      * Returns the VisitNode currently visited, or<code>null</code> if there is no node currently      * visited in this context.      *      * @return the VisitNode currently visited      */
 specifier|public
 name|VisitNode
 name|getCurrentVisitNode
@@ -827,7 +827,7 @@ return|return
 name|currentVisitNode
 return|;
 block|}
-comment|/**      * Sets the currently visited node. WARNING: This should only be called by Ivy core      * ResolveEngine!      *       * @param currentVisitNode VisitNode      */
+comment|/**      * Sets the currently visited node. WARNING: This should only be called by Ivy core      * ResolveEngine!      *      * @param currentVisitNode VisitNode      */
 name|void
 name|setCurrentVisitNode
 parameter_list|(
@@ -938,7 +938,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Updates the visit data currently associated with the given mrid with the given node and the      * visit nodes of the old visitData for the given rootModuleConf      *       * @param mrid      *            the module revision id for which the update should be done      * @param node      *            the IvyNode to associate with the visit data to update      * @param rootModuleConf      *            the root module configuration in which the update is made      */
+comment|/**      * Updates the visit data currently associated with the given mrid with the given node and the      * visit nodes of the old visitData for the given rootModuleConf      *      * @param mrid      *            the module revision id for which the update should be done      * @param node      *            the IvyNode to associate with the visit data to update      * @param rootModuleConf      *            the root module configuration in which the update is made      */
 name|void
 name|replaceNode
 parameter_list|(
@@ -1424,7 +1424,7 @@ return|return
 name|dd
 return|;
 block|}
-comment|/**      * Sets the last {@link ResolvedModuleRevision} which has been currently resolved.      *<p>      * This can be used especially in dependency resolvers, to know if another dependency resolver      * has already resolved the requested dependency, to take a decision if the resolver should try      * to resolve it by itself or not. Indeed, the dependency resolver is responsible for taking      * this decision, even when included in a chain. The chain responsibility is only to set this      * current resolved module revision to enable the resolver to take the decision.      *</p>      *       * @param mr      *            the last {@link ResolvedModuleRevision} which has been currently resolved.      */
+comment|/**      * Sets the last {@link ResolvedModuleRevision} which has been currently resolved.      *<p>      * This can be used especially in dependency resolvers, to know if another dependency resolver      * has already resolved the requested dependency, to take a decision if the resolver should try      * to resolve it by itself or not. Indeed, the dependency resolver is responsible for taking      * this decision, even when included in a chain. The chain responsibility is only to set this      * current resolved module revision to enable the resolver to take the decision.      *</p>      *      * @param mr      *            the last {@link ResolvedModuleRevision} which has been currently resolved.      */
 specifier|public
 name|void
 name|setCurrentResolvedModuleRevision
@@ -1440,7 +1440,7 @@ operator|=
 name|mr
 expr_stmt|;
 block|}
-comment|/**      * Returns the last {@link ResolvedModuleRevision} which has been currently resolved.      *<p>      * It can be<code>null</code>.      *</p>      *       * @return the last {@link ResolvedModuleRevision} which has been currently resolved.      */
+comment|/**      * Returns the last {@link ResolvedModuleRevision} which has been currently resolved.      *<p>      * It can be<code>null</code>.      *</p>      *      * @return the last {@link ResolvedModuleRevision} which has been currently resolved.      */
 specifier|public
 name|ResolvedModuleRevision
 name|getCurrentResolvedModuleRevision

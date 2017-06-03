@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pattern matcher matching input using regular expressions.  *   * @see Pattern  */
+comment|/**  * A pattern matcher matching input using regular expressions.  *  * @see Pattern  */
 end_comment
 
 begin_class

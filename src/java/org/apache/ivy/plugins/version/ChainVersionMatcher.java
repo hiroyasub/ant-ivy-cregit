@@ -179,7 +179,7 @@ literal|"chain"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a {@link VersionMatcher} to the chain.      *       * @param matcher      *            the version matcher to add. Must not be null      */
+comment|/**      * Adds a {@link VersionMatcher} to the chain.      *      * @param matcher      *            the version matcher to add. Must not be null      */
 specifier|public
 name|void
 name|add
@@ -233,7 +233,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets the settings this matcher will use, and set to the matcher in the chain which implements      * {@link IvySettingsAware}.      *       * @param settings      *            the settings to use in the whole chain. Must not be null.      */
+comment|/**      * Sets the settings this matcher will use, and set to the matcher in the chain which implements      * {@link IvySettingsAware}.      *      * @param settings      *            the settings to use in the whole chain. Must not be null.      */
 specifier|public
 name|void
 name|setSettings
@@ -299,7 +299,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns the list of matchers in the chain.      *<p>      * The list is returned as an unmodifiable view on the actual list of matchers, and will thus      * reflect further changes made in the chain.      *       * @return the list of matchers in the chain. Is never null.      */
+comment|/**      * Returns the list of matchers in the chain.      *<p>      * The list is returned as an unmodifiable view on the actual list of matchers, and will thus      * reflect further changes made in the chain.      *      * @return the list of matchers in the chain. Is never null.      */
 specifier|public
 name|List
 name|getMatchers

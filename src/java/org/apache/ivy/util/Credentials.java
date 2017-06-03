@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  *   */
+comment|/**  *  */
 end_comment
 
 begin_class
@@ -161,7 +161,7 @@ name|host
 return|;
 block|}
 block|}
-comment|/**      * Return a string that can be used for debug purpose. It contains only stars for each password      * character.      */
+comment|/**      * Return a string that can be used for debug purpose. It contains only stars for each password      * character.      *      * @return String      */
 specifier|public
 name|String
 name|toString

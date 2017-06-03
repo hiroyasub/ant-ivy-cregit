@@ -46,7 +46,7 @@ name|MemoryUtil
 parameter_list|()
 block|{
 block|}
-comment|/**      * Returns the approximate size of a default instance of the given class.      *       * @param clazz      *            the class to evaluate.      * @return the estimated size of instance, in bytes.      */
+comment|/**      * Returns the approximate size of a default instance of the given class.      *      * @param clazz      *            the class to evaluate.      * @return the estimated size of instance, in bytes.      */
 specifier|public
 specifier|static
 name|long
@@ -166,7 +166,7 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Returns the currently used memory, after calling garbage collector and waiting enough to get      * maximal chance it is actually called. But since {@link Runtime#gc()} is only advisory,      * results returned by this method should be treated as rough approximation only.      *       * @return the currently used memory, in bytes.      */
+comment|/**      * Returns the currently used memory, after calling garbage collector and waiting enough to get      * maximal chance it is actually called. But since {@link Runtime#gc()} is only advisory,      * results returned by this method should be treated as rough approximation only.      *      * @return the currently used memory, in bytes.      */
 specifier|public
 specifier|static
 name|long

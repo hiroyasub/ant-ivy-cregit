@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple example world to show how easy it is to retreive libs with ivy !!!   */
+comment|/**  * Simple example world to show how easy it is to retreive libs with ivy !!!  */
 end_comment
 
 begin_class

@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Identifies an artifact in a particular module revision  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
+comment|/**  * Identifies an artifact in a particular module revision  *  * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class

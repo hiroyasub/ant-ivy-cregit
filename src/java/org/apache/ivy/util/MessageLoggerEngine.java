@@ -177,7 +177,7 @@ name|MessageLoggerEngine
 parameter_list|()
 block|{
 block|}
-comment|/**      * Sets the logger used when the stack is empty.      *       * @param defaultLogger      *            the logger to use when the stack is empty.      */
+comment|/**      * Sets the logger used when the stack is empty.      *      * @param defaultLogger      *            the logger to use when the stack is empty.      */
 specifier|public
 name|void
 name|setDefaultLogger
@@ -193,7 +193,7 @@ operator|=
 name|defaultLogger
 expr_stmt|;
 block|}
-comment|/**      * Push a logger on the stack.      *       * @param logger      *            the logger to push. Must not be<code>null</code>.      */
+comment|/**      * Push a logger on the stack.      *      * @param logger      *            the logger to push. Must not be<code>null</code>.      */
 specifier|public
 name|void
 name|pushLogger
@@ -244,7 +244,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the current logger, or the default one if there is no logger in the stack      *       * @return the current logger, or the default one if there is no logger in the stack      */
+comment|/**      * Returns the current logger, or the default one if there is no logger in the stack      *      * @return the current logger, or the default one if there is no logger in the stack      */
 specifier|public
 name|MessageLogger
 name|peekLogger

@@ -162,7 +162,7 @@ specifier|final
 name|Repository
 name|repo
 decl_stmt|;
-comment|/**      * Default constructor      *       * @param repo      *            the root directory of the file system to lookup      */
+comment|/**      * Default constructor      *      * @param repo      *            the root directory of the file system to lookup      */
 specifier|public
 name|RepositoryManifestIterable
 parameter_list|(

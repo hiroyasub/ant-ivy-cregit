@@ -2041,7 +2041,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Reads the whole BufferedReader line by line, using \n as line separator for each line.      *<p>      * Note that this method will add a final \n to the last line even though there is no new line      * character at the end of last line in the original reader.      *</p>      *<p>      * The BufferedReader is closed when this method returns.      *</p>      *       * @param in      *            the {@link BufferedReader} to read from      * @return a String with the whole content read from the {@link BufferedReader}      * @throws IOException      *             if an IO problems occur during reading      */
+comment|/**      * Reads the whole BufferedReader line by line, using \n as line separator for each line.      *<p>      * Note that this method will add a final \n to the last line even though there is no new line      * character at the end of last line in the original reader.      *</p>      *<p>      * The BufferedReader is closed when this method returns.      *</p>      *      * @param in      *            the {@link BufferedReader} to read from      * @return a String with the whole content read from the {@link BufferedReader}      * @throws IOException      *             if an IO problems occur during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2113,7 +2113,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Reads the entire content of the file and returns it as a String.      *       * @param f      *            the file to read from      * @return a String with the file content      * @throws IOException      *             if an IO problems occurs during reading      */
+comment|/**      * Reads the entire content of the file and returns it as a String.      *      * @param f      *            the file to read from      * @return a String with the file content      * @throws IOException      *             if an IO problems occurs during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2136,7 +2136,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads the entire content of the {@link InputStream} and returns it as a String.      *<p>      * The input stream is closed when this method returns.      *</p>      *       * @param is      *            the {@link InputStream} to read from      * @return a String with the input stream content      * @throws IOException      *             if an IO problems occurs during reading      */
+comment|/**      * Reads the entire content of the {@link InputStream} and returns it as a String.      *<p>      * The input stream is closed when this method returns.      *</p>      *      * @param is      *            the {@link InputStream} to read from      * @return a String with the input stream content      * @throws IOException      *             if an IO problems occurs during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2239,7 +2239,7 @@ operator|+
 name|file
 return|;
 block|}
-comment|/**      * Recursively delete file      *       * @param file      *            the file to delete      * @return true if the deletion completed successfully (ie if the file does not exist on the      *         filesystem after this call), false if a deletion was not performed successfully.      */
+comment|/**      * Recursively delete file      *      * @param file      *            the file to delete      * @return true if the deletion completed successfully (ie if the file does not exist on the      *         filesystem after this call), false if a deletion was not performed successfully.      */
 specifier|public
 specifier|static
 name|boolean
@@ -2618,7 +2618,7 @@ block|}
 comment|// ////////////////////////////////////////////
 comment|// The following code comes from Ant FileUtils
 comment|// ////////////////////////////////////////////
-comment|/**      *&quot;Normalize&quot; the given absolute path.      *       *<p>      * This includes:      *<ul>      *<li>Uppercase the drive letter if there is one.</li>      *<li>Remove redundant slashes after the drive spec.</li>      *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>      *<li>DOS style paths that start with a drive letter will have \ as the separator.</li>      *</ul>      * Unlike {@link File#getCanonicalPath()} this method specifically does not resolve symbolic      * links.      *       * @param path the path to be normalized.      * @return the normalized version of the path.      * @throws NullPointerException if path is null.      */
+comment|/**      *&quot;Normalize&quot; the given absolute path.      *      *<p>      * This includes:      *<ul>      *<li>Uppercase the drive letter if there is one.</li>      *<li>Remove redundant slashes after the drive spec.</li>      *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>      *<li>DOS style paths that start with a drive letter will have \ as the separator.</li>      *</ul>      * Unlike {@link File#getCanonicalPath()} this method specifically does not resolve symbolic      * links.      *      * @param path the path to be normalized.      * @return the normalized version of the path.      * @throws NullPointerException if path is null.      */
 specifier|public
 specifier|static
 name|File
@@ -3138,7 +3138,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the length of the file, or the sum of the children lengths if it is a directory      *       * @param file File      * @return long      */
+comment|/**      * Get the length of the file, or the sum of the children lengths if it is a directory      *      * @param file File      * @return long      */
 specifier|public
 specifier|static
 name|long

@@ -217,7 +217,7 @@ operator|=
 name|settings
 expr_stmt|;
 block|}
-comment|/**      * Same as {@link #sortModuleDescriptors(Collection, SortOptions)} but for<code>IvyNode</code>      * s.      *       * @param nodes      *            a Collection of nodes to sort      * @param options      *            Options to use to sort the nodes.      * @return a List of sorted IvyNode      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
+comment|/**      * Same as {@link #sortModuleDescriptors(Collection, SortOptions)} but for<code>IvyNode</code>      * s.      *      * @param nodes      *            a Collection of nodes to sort      * @param options      *            Options to use to sort the nodes.      * @return a List of sorted IvyNode      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
 specifier|public
 name|List
 argument_list|<
@@ -469,7 +469,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *       * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
+comment|/**      * Sorts the given ModuleDescriptors from the less dependent to the more dependent. This sort      * ensures that a ModuleDescriptor is always found in the list before all ModuleDescriptors      * depending directly on it.      *      * @param moduleDescriptors      *            a Collection of ModuleDescriptor to sort      * @param options      *            Options to use to sort the descriptors.      * @return a List of sorted ModuleDescriptors      * @throws CircularDependencyException      *             if a circular dependency exists and circular dependency strategy decide to throw      *             an exception      */
 specifier|public
 name|List
 argument_list|<

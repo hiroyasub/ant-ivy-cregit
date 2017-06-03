@@ -264,7 +264,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a the given parser to this registry.      *       * @param parser      *            the parser to add      */
+comment|/**      * Adds a the given parser to this registry.      *      * @param parser      *            the parser to add      */
 specifier|public
 name|void
 name|addParser

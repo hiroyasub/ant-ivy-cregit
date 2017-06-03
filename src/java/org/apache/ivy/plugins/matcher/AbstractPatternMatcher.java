@@ -34,7 +34,7 @@ specifier|final
 name|String
 name|name
 decl_stmt|;
-comment|/**      * Create a new instance of a pattern matcher      *       * @param name      *            the name of the pattern matcher. Never null.      */
+comment|/**      * Create a new instance of a pattern matcher      *      * @param name      *            the name of the pattern matcher. Never null.      */
 specifier|public
 name|AbstractPatternMatcher
 parameter_list|(
@@ -106,7 +106,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns an instance of the implementation specific matcher.      *       * @param expression      *            the string to be matched.      * @return the instance of the related matcher. Never null.      */
+comment|/**      * Returns an instance of the implementation specific matcher.      *      * @param expression      *            the string to be matched.      * @return the instance of the related matcher. Never null.      */
 specifier|protected
 specifier|abstract
 comment|/* @NotNull */

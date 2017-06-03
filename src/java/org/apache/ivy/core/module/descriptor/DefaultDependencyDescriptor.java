@@ -1274,7 +1274,7 @@ name|moduleConfiguration
 argument_list|)
 return|;
 block|}
-comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually      * resolved because of the given requestedConfiguration      *<p>      * Usually requestedConfiguration and moduleConfiguration are the same, except when a conf      * extends another, then the moduleConfiguration is the configuration currently resolved (the      * extended one), and requestedConfiguration is the one actually requested initially (the      * extending one). Both moduleConfiguration and requestedConfiguration are configurations of the      * caller, the array returned is composed of the required configurations of the dependency      * described by this descriptor.      *</p>      */
+comment|/**      * Return the dependency configurations mapped to the given moduleConfiguration, actually      * resolved because of the given requestedConfiguration      *<p>      * Usually requestedConfiguration and moduleConfiguration are the same, except when a conf      * extends another, then the moduleConfiguration is the configuration currently resolved (the      * extended one), and requestedConfiguration is the one actually requested initially (the      * extending one). Both moduleConfiguration and requestedConfiguration are configurations of the      * caller, the array returned is composed of the required configurations of the dependency      * described by this descriptor.      *</p>      *      * @param moduleConfiguration String      * @param requestedConfiguration String      * @return String[]      */
 specifier|public
 name|String
 index|[]
@@ -3333,7 +3333,7 @@ name|toAdd
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not      * set      */
+comment|/**      * only works when namespace is properly set. The behaviour is not specified if namespace is not      * set.      *      * @param moduleConfigurations String[]      * @param artifactId ditto      * @return boolean      */
 specifier|public
 name|boolean
 name|doesExclude
@@ -3429,7 +3429,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      *      * @return true if this descriptor contains any exclusion rule      */
+comment|/**      * @return true if this descriptor contains any exclusion rule      */
 specifier|public
 name|boolean
 name|canExclude

@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for events fired during {@link DependencyResolver#publish(Artifact, File, boolean)}.  *   * @see StartArtifactPublishEvent  * @see EndArtifactPublishEvent  */
+comment|/**  * Base class for events fired during {@link DependencyResolver#publish(Artifact, File, boolean)}.  *  * @see StartArtifactPublishEvent  * @see EndArtifactPublishEvent  */
 end_comment
 
 begin_class

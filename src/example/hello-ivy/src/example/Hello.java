@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple example to show how easy it is to retrieve transitive libs with ivy !!!   */
+comment|/**  * Simple example to show how easy it is to retrieve transitive libs with ivy !!!  */
 end_comment
 
 begin_class
