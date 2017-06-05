@@ -30,18 +30,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|runner
-operator|.
-name|JUnitCore
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -70,26 +58,6 @@ specifier|public
 class|class
 name|DefaultDependencyDescriptorTest
 block|{
-specifier|public
-specifier|static
-name|void
-name|main
-parameter_list|(
-name|String
-index|[]
-name|args
-parameter_list|)
-block|{
-name|JUnitCore
-operator|.
-name|runClasses
-argument_list|(
-name|DefaultDependencyDescriptorTest
-operator|.
-name|class
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*      * Test method for      * 'org.apache.ivy.DefaultDependencyDescriptor.replaceSelfFallbackPattern(String, String)'      */
 annotation|@
 name|Test

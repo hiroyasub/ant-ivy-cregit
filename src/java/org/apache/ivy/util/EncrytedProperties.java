@@ -21,6 +21,11 @@ end_comment
 
 begin_class
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
+annotation|@
 name|Deprecated
 specifier|public
 class|class
