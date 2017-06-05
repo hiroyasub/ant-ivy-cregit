@@ -793,7 +793,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses a string represenation of a module descriptor in micro ivy format.      *<p>      * Examples:      *       *<pre>      * #A;1      *</pre>      *       *<hr/>      *       *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *       *<hr/>      *       *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *       *</p>      *       * @param microIvy      *            the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
+comment|/**      * Parses a string representation of a module descriptor in micro ivy format.      *<p>      * Examples:      *       *<pre>      * #A;1      *</pre>      *       *<hr/>      *       *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *       *<hr/>      *       *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *       *</p>      *       * @param microIvy      *            the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
 specifier|public
 specifier|static
 name|ModuleDescriptor
