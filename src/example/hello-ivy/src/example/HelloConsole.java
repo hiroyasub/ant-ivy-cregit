@@ -115,7 +115,7 @@ begin_class
 specifier|public
 specifier|final
 class|class
-name|Hello
+name|HelloConsole
 block|{
 specifier|public
 specifier|static
@@ -235,7 +235,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|Hello
+name|HelloConsole
 parameter_list|()
 block|{
 block|}

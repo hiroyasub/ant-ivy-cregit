@@ -61,7 +61,7 @@ begin_class
 specifier|public
 specifier|final
 class|class
-name|Hello
+name|HelloIvy
 block|{
 specifier|public
 specifier|static
@@ -195,7 +195,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|Hello
+name|HelloIvy
 parameter_list|()
 block|{
 block|}
