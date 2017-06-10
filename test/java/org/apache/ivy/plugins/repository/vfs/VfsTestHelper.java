@@ -235,7 +235,7 @@ parameter_list|()
 throws|throws
 name|FileSystemException
 block|{
-comment|// disable automatic loading potential unsupported extensions
+comment|// disable automatic loading of potentially unsupported extensions
 block|}
 block|}
 expr_stmt|;
@@ -282,6 +282,9 @@ block|}
 comment|/**      * Generate a set of well-formed VFS resource identifiers      *      * @param resource      *            name of the resource      * @return<class>List</class> of well-formed VFS resource identifiers      */
 specifier|public
 name|List
+argument_list|<
+name|VfsURI
+argument_list|>
 name|createVFSUriSet
 parameter_list|(
 name|String
@@ -289,29 +292,26 @@ name|resource
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|VfsURI
+argument_list|>
 name|set
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|VfsURI
+argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|scheme
+range|:
 name|VfsURI
 operator|.
 name|SUPPORTED_SCHEMES
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|set
@@ -322,12 +322,7 @@ name|VfsURI
 operator|.
 name|vfsURIFactory
 argument_list|(
-name|VfsURI
-operator|.
-name|SUPPORTED_SCHEMES
-index|[
-name|i
-index|]
+name|scheme
 argument_list|,
 name|resource
 argument_list|,

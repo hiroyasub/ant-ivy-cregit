@@ -121,10 +121,16 @@ name|values
 return|;
 block|}
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|result
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|Arrays
 operator|.
@@ -172,10 +178,6 @@ block|}
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|result
 operator|.
 name|toArray

@@ -82,10 +82,16 @@ name|values
 return|;
 block|}
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|result
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
@@ -137,10 +143,6 @@ expr_stmt|;
 block|}
 block|}
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|result
 operator|.
 name|toArray

@@ -1739,11 +1739,7 @@ name|buildlist
 operator|.
 name|setOnMissingDescriptor
 argument_list|(
-operator|new
-name|String
-argument_list|(
 literal|"tail"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// IVY-805: new String instance
@@ -1840,11 +1836,7 @@ name|buildlist
 operator|.
 name|setOnMissingDescriptor
 argument_list|(
-operator|new
-name|String
-argument_list|(
 literal|"skip"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// IVY-805: new String instance

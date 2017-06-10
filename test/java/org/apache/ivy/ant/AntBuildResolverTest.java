@@ -441,9 +441,6 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -532,9 +529,6 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -738,9 +732,6 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -937,9 +928,6 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1162,9 +1150,6 @@ expr_stmt|;
 name|Path
 name|path
 init|=
-operator|(
-name|Path
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1309,9 +1294,6 @@ expr_stmt|;
 name|Path
 name|path
 init|=
-operator|(
-name|Path
-operator|)
 name|project
 operator|.
 name|getReference

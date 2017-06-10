@@ -302,9 +302,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -327,9 +324,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -396,9 +390,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -421,9 +412,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -490,9 +478,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -515,9 +500,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -584,9 +566,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -609,9 +588,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -678,9 +654,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -745,9 +718,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -835,9 +805,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -911,9 +878,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1005,9 +969,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1104,9 +1065,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1199,9 +1157,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1249,9 +1204,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1281,9 +1233,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1294,9 +1243,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1379,9 +1325,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1429,9 +1372,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1461,9 +1401,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1474,9 +1411,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1559,9 +1493,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1609,9 +1540,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1641,9 +1569,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1654,9 +1579,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1739,9 +1661,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1789,9 +1708,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1821,9 +1737,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1834,9 +1747,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1919,9 +1829,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -2011,9 +1918,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -2043,9 +1947,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -2056,9 +1957,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference

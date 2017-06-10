@@ -268,14 +268,9 @@ argument_list|,
 name|name
 argument_list|)
 decl_stmt|;
-name|assertFalse
+name|assertNotNull
 argument_list|(
 name|moduleId
-operator|.
-name|equals
-argument_list|(
-literal|null
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertFalse
