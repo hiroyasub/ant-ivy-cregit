@@ -235,6 +235,24 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ArtifactRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|parser
@@ -327,6 +345,11 @@ block|{
 comment|// maps ArtifactRevisionId to PublishTestCase instance.
 specifier|private
 name|HashMap
+argument_list|<
+name|ArtifactRevisionId
+argument_list|,
+name|PublishTestCase
+argument_list|>
 name|expectedPublications
 decl_stmt|;
 comment|// expected values for the current artifact being published.
@@ -577,6 +600,11 @@ name|expectedPublications
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|ArtifactRevisionId
+argument_list|,
+name|PublishTestCase
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|expectedPublications
@@ -973,9 +1001,6 @@ expr_stmt|;
 name|PublishTestCase
 name|dataPublish
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|expectedPublications
 operator|.
 name|get
@@ -1104,8 +1129,8 @@ expr_stmt|;
 comment|// we don't care which artifact is attempted; either will fail with an IOException.
 for|for
 control|(
-name|Object
-name|o
+name|PublishTestCase
+name|publishTestCase
 range|:
 name|expectedPublications
 operator|.
@@ -1113,12 +1138,7 @@ name|values
 argument_list|()
 control|)
 block|{
-operator|(
-operator|(
-name|PublishTestCase
-operator|)
-name|o
-operator|)
+name|publishTestCase
 operator|.
 name|expectedSuccess
 operator|=
@@ -1848,9 +1868,6 @@ expr_stmt|;
 name|PublishTestCase
 name|currentTestCase
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|test
 operator|.
 name|expectedPublications
