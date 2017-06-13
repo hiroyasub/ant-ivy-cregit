@@ -399,6 +399,9 @@ name|publishModule
 decl_stmt|;
 specifier|private
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|publishSources
 decl_stmt|;
 specifier|private
@@ -802,6 +805,9 @@ comment|// no modifications to input required for this case -- call out to the r
 comment|// that
 comment|// all of our test counters have been incremented.
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -901,6 +907,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -1014,6 +1023,9 @@ operator|=
 literal|false
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine

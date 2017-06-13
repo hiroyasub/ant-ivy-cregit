@@ -307,6 +307,9 @@ return|;
 block|}
 specifier|private
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|asList
 parameter_list|(
 name|IvyResources
@@ -314,10 +317,14 @@ name|ivyResources
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|resources
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1254,6 +1261,9 @@ literal|"org1"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList

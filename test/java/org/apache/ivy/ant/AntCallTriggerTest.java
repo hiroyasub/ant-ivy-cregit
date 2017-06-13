@@ -380,10 +380,14 @@ throws|throws
 name|BuildException
 block|{
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 init|=
 operator|new
 name|Vector
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|targets
@@ -411,6 +415,9 @@ name|File
 name|buildFile
 parameter_list|,
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 parameter_list|,
 name|int
@@ -457,6 +464,9 @@ name|File
 name|buildFile
 parameter_list|,
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 parameter_list|,
 name|int

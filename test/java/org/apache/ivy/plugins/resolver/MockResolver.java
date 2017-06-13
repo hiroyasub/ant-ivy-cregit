@@ -464,10 +464,14 @@ name|r
 return|;
 block|}
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|askedDeps
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ResolvedModuleRevision
