@@ -407,7 +407,6 @@ throw|;
 block|}
 block|}
 comment|/**      * Returns a common base directory, determined from the {@link ArtifactDownloadReport#getLocalFile() local files} of the      * passed<code>artifactDownloadReports</code>. If no common base directory can be determined, this method throws a      * {@link BuildException}      *      * @param artifactDownloadReports The artifact download reports for which the common base directory of the artifacts      *                                has to be determined      * @return      */
-specifier|private
 name|File
 name|requireCommonBaseDir
 parameter_list|(
@@ -585,7 +584,7 @@ name|beginIndex
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the common base directory between the passed<code>file1</code> and<code>file2</code>.      *<p>      * The returned base directory must be a parent of both the<code>file1</code> and<code>file2</code>.      *</p>      *      * @param file1      *            One of the files, for which the common base directory is being sought, may be null.      * @param file2      *            The other file for which the common base directory should be returned.      * @return the common base directory between a<code>file1</code> and<code>file2</code>. Returns null      *          if no common base directory could be determined or if either<code>file1</code> or<code>file2</code>      *          is null      */
+comment|/**      * Returns the common base directory between the passed<code>file1</code> and<code>file2</code>.      *<p>      * The returned base directory will be a parent of both the<code>file1</code> and<code>file2</code> or      * it will be<code>null</code>.      *</p>      *      * @param file1      *            One of the files, for which the common base directory is being sought, may be null.      * @param file2      *            The other file for which the common base directory should be returned, may be null.      * @return the common base directory between a<code>file1</code> and<code>file2</code>. Returns null      *          if no common base directory could be determined or if either<code>file1</code> or<code>file2</code>      *          is null      */
 name|File
 name|getBaseDir
 parameter_list|(
@@ -615,7 +614,7 @@ return|;
 block|}
 specifier|final
 name|Iterator
-name|bases
+name|file1Parents
 init|=
 name|getParents
 argument_list|(
@@ -627,7 +626,7 @@ argument_list|()
 decl_stmt|;
 specifier|final
 name|Iterator
-name|fileParents
+name|file2Parents
 init|=
 name|getParents
 argument_list|(
@@ -647,12 +646,12 @@ literal|null
 decl_stmt|;
 while|while
 condition|(
-name|bases
+name|file1Parents
 operator|.
 name|hasNext
 argument_list|()
 operator|&&
-name|fileParents
+name|file2Parents
 operator|.
 name|hasNext
 argument_list|()
@@ -664,7 +663,7 @@ init|=
 operator|(
 name|File
 operator|)
-name|bases
+name|file1Parents
 operator|.
 name|next
 argument_list|()
@@ -675,7 +674,7 @@ name|next
 operator|.
 name|equals
 argument_list|(
-name|fileParents
+name|file2Parents
 operator|.
 name|next
 argument_list|()
@@ -699,7 +698,9 @@ block|}
 comment|/**      * @return a list of files, starting with the root and ending with the file itself      */
 specifier|private
 name|LinkedList
-comment|/*<File> */
+argument_list|<
+name|File
+argument_list|>
 name|getParents
 parameter_list|(
 name|File
@@ -707,10 +708,14 @@ name|file
 parameter_list|)
 block|{
 name|LinkedList
+argument_list|<
+name|File
+argument_list|>
 name|r
 init|=
 operator|new
 name|LinkedList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while
