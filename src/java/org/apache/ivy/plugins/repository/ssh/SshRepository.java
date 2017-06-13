@@ -262,7 +262,7 @@ name|publishPermissions
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * create a new resource with lazy initializing 	 * 	 * @param source String 	 * @return Resource      */
+comment|/**      * create a new resource with lazy initializing      *      * @param source String      * @return Resource      */
 specifier|public
 name|Resource
 name|getResource
@@ -1937,7 +1937,7 @@ operator|=
 name|permissions
 expr_stmt|;
 block|}
-comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName() 	 * 	 * @return String      */
+comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName()      *      * @return String      */
 specifier|protected
 name|String
 name|getRepositoryScheme
