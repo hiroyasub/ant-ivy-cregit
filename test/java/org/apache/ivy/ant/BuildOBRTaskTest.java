@@ -272,6 +272,8 @@ block|{
 name|BundleRepoDescriptor
 name|obr
 decl_stmt|;
+try|try
+init|(
 name|FileInputStream
 name|in
 init|=
@@ -280,8 +282,7 @@ name|FileInputStream
 argument_list|(
 name|obrFile
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|obr
 operator|=
@@ -296,14 +297,6 @@ argument_list|()
 argument_list|,
 name|in
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 return|return

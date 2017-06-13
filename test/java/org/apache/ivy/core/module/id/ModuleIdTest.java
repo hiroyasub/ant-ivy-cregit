@@ -279,6 +279,16 @@ name|moduleId
 operator|.
 name|equals
 argument_list|(
+literal|null
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+name|moduleId
+operator|.
+name|equals
+argument_list|(
 name|moduleId2
 argument_list|)
 argument_list|)

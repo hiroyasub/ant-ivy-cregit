@@ -11,14 +11,6 @@ end_package
 
 begin_import
 import|import
-name|version
-operator|.
-name|Version
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -47,6 +39,16 @@ name|File
 import|;
 end_import
 
+begin_import
+import|import static
+name|version
+operator|.
+name|Version
+operator|.
+name|register
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|final
@@ -55,8 +57,6 @@ name|ListFile
 block|{
 static|static
 block|{
-name|Version
-operator|.
 name|register
 argument_list|(
 literal|"list"
@@ -66,6 +66,9 @@ block|}
 specifier|public
 specifier|static
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|list
 parameter_list|(
 name|File
@@ -73,10 +76,16 @@ name|dir
 parameter_list|)
 block|{
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|()
 decl_stmt|;
 return|return
@@ -91,12 +100,18 @@ block|}
 specifier|private
 specifier|static
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|list
 parameter_list|(
 name|File
 name|file
 parameter_list|,
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|files
 parameter_list|)
 block|{

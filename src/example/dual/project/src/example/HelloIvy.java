@@ -78,7 +78,7 @@ block|{
 name|String
 name|message
 init|=
-literal|"hello ivy !"
+literal|"Hello Ivy!"
 decl_stmt|;
 name|System
 operator|.
@@ -173,6 +173,9 @@ literal|"now check if httpclient dependency on commons-logging has been realized
 argument_list|)
 expr_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|clss
 init|=
 name|Class

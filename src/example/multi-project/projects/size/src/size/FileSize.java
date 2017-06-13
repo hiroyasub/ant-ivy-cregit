@@ -11,9 +11,11 @@ end_package
 
 begin_import
 import|import
-name|version
+name|java
 operator|.
-name|Version
+name|io
+operator|.
+name|File
 import|;
 end_import
 
@@ -28,22 +30,22 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
+import|import static
+name|list
 operator|.
-name|util
+name|ListFile
 operator|.
-name|Iterator
+name|list
 import|;
 end_import
 
 begin_import
-import|import
-name|java
+import|import static
+name|version
 operator|.
-name|io
+name|Version
 operator|.
-name|File
+name|register
 import|;
 end_import
 
@@ -55,14 +57,17 @@ name|FileSize
 block|{
 static|static
 block|{
-name|Version
-operator|.
 name|register
 argument_list|(
 literal|"size"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 specifier|static
 name|long
@@ -76,10 +81,6 @@ return|return
 name|totalSize
 argument_list|(
 name|list
-operator|.
-name|ListFile
-operator|.
-name|list
 argument_list|(
 name|dir
 argument_list|)
@@ -92,6 +93,9 @@ name|long
 name|totalSize
 parameter_list|(
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|files
 parameter_list|)
 block|{
@@ -102,7 +106,7 @@ literal|0
 decl_stmt|;
 for|for
 control|(
-name|Object
+name|File
 name|file
 range|:
 name|files
@@ -110,12 +114,7 @@ control|)
 block|{
 name|total
 operator|+=
-operator|(
-operator|(
-name|File
-operator|)
 name|file
-operator|)
 operator|.
 name|length
 argument_list|()

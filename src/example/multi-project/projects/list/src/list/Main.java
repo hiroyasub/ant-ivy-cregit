@@ -21,26 +21,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -77,7 +57,7 @@ name|commons
 operator|.
 name|cli
 operator|.
-name|GnuParser
+name|DefaultParser
 import|;
 end_import
 
@@ -106,20 +86,6 @@ operator|.
 name|cli
 operator|.
 name|Option
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|cli
-operator|.
-name|OptionBuilder
 import|;
 end_import
 
@@ -166,9 +132,14 @@ block|{
 name|Option
 name|dir
 init|=
-name|OptionBuilder
+name|Option
 operator|.
-name|withArgName
+name|builder
+argument_list|(
+literal|"d"
+argument_list|)
+operator|.
+name|longOpt
 argument_list|(
 literal|"dir"
 argument_list|)
@@ -176,15 +147,13 @@ operator|.
 name|hasArg
 argument_list|()
 operator|.
-name|withDescription
+name|desc
 argument_list|(
 literal|"list files in given dir"
 argument_list|)
 operator|.
-name|create
-argument_list|(
-literal|"dir"
-argument_list|)
+name|build
+argument_list|()
 decl_stmt|;
 name|Options
 name|options
@@ -228,7 +197,7 @@ name|CommandLineParser
 name|parser
 init|=
 operator|new
-name|GnuParser
+name|DefaultParser
 argument_list|()
 decl_stmt|;
 name|CommandLine
@@ -253,7 +222,7 @@ name|line
 operator|.
 name|getOptionValue
 argument_list|(
-literal|"dir"
+literal|"d"
 argument_list|,
 literal|"."
 argument_list|)
@@ -272,7 +241,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|Object
+name|File
 name|file
 range|:
 name|ListFile
