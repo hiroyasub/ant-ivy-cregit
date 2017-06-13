@@ -705,9 +705,7 @@ name|c
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1078,9 +1076,7 @@ name|r
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ModuleDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

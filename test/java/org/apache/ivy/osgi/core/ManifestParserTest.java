@@ -194,9 +194,7 @@ name|expectedRequires
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|BundleRequirement
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|expectedRequires
@@ -394,9 +392,7 @@ name|expectedRequires
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|BundleRequirement
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|expectedRequires

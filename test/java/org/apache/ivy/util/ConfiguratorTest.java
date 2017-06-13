@@ -157,9 +157,7 @@ name|_housings
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Housing
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -172,9 +170,7 @@ name|_streets
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Street
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -282,9 +278,7 @@ name|_trees
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Tree
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -297,9 +291,7 @@ name|_walkers
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Person
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -417,9 +409,7 @@ name|_rooms
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Room
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private

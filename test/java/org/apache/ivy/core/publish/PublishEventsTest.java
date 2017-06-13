@@ -600,11 +600,7 @@ name|expectedPublications
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|ArtifactRevisionId
-argument_list|,
-name|PublishTestCase
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|expectedPublications

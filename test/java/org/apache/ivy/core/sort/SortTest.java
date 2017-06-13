@@ -1970,12 +1970,7 @@ name|r
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|List
-argument_list|<
-name|ModuleDescriptor
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 name|nbOfList
 argument_list|)

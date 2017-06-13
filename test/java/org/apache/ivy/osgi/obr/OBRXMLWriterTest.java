@@ -327,9 +327,7 @@ name|bundles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|BundleInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|BundleInfo
