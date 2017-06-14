@@ -600,13 +600,9 @@ argument_list|)
 argument_list|,
 literal|null
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 name|JOptionPane
 operator|.
 name|OK_OPTION
-argument_list|)
 argument_list|)
 operator|==
 name|JOptionPane

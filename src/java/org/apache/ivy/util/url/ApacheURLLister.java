@@ -288,9 +288,7 @@ name|urlList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// add trailing slash for relative urls

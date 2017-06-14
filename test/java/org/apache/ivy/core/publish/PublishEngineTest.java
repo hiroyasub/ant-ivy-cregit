@@ -652,12 +652,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 literal|"build/test/publish/module/[artifact].[ext]"
-block|}
 argument_list|)
 argument_list|,
 name|resolver

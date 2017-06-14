@@ -43,16 +43,21 @@ class|class
 name|OptionBuilder
 block|{
 specifier|private
+specifier|final
 name|String
 name|name
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|args
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -194,10 +199,6 @@ name|Option
 argument_list|(
 name|name
 argument_list|,
-operator|(
-name|String
-index|[]
-operator|)
 name|args
 operator|.
 name|toArray

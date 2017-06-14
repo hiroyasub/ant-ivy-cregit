@@ -69,12 +69,7 @@ name|loggerStacks
 init|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|Stack
-argument_list|<
-name|MessageLogger
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -92,9 +87,7 @@ name|problems
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -106,9 +99,7 @@ name|warns
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -120,9 +111,7 @@ name|errors
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -155,9 +144,7 @@ name|stack
 operator|=
 operator|new
 name|Stack
-argument_list|<
-name|MessageLogger
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|loggerStacks

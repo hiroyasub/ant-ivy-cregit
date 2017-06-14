@@ -1221,6 +1221,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|ddAsList
 init|=
 name|Arrays
@@ -1560,6 +1563,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|ddAsList
 init|=
 name|Arrays
@@ -1856,6 +1862,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|ddAsList
 init|=
 name|Arrays
@@ -2264,6 +2273,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|ddAsList
 init|=
 name|Arrays
@@ -2534,6 +2546,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DependencyDescriptor
+argument_list|>
 name|ddAsList
 init|=
 name|Arrays

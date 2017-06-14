@@ -1062,9 +1062,6 @@ literal|"missing artifact was returned"
 argument_list|,
 name|dataArtifact
 argument_list|,
-operator|(
-name|Artifact
-operator|)
 name|missing
 operator|.
 name|iterator

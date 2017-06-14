@@ -43,12 +43,19 @@ class|class
 name|CommandLine
 block|{
 specifier|private
+specifier|final
 name|Map
-comment|/*<String, String[]> */
+argument_list|<
+name|String
+argument_list|,
+name|String
+index|[]
+argument_list|>
 name|optionValues
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -182,10 +189,6 @@ name|option
 parameter_list|)
 block|{
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|optionValues
 operator|.
 name|get

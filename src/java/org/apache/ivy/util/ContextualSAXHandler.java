@@ -79,9 +79,7 @@ name|contextStack
 init|=
 operator|new
 name|Stack
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -195,11 +193,11 @@ name|String
 name|getContext
 parameter_list|()
 block|{
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 for|for

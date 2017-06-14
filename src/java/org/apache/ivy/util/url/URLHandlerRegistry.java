@@ -184,24 +184,7 @@ block|}
 catch|catch
 parameter_list|(
 name|InstantiationException
-name|e
-parameter_list|)
-block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"couldn't instantiate HttpClientHandler: using jdk url handling"
-argument_list|)
-expr_stmt|;
-return|return
-operator|new
-name|BasicURLHandler
-argument_list|()
-return|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|IllegalAccessException
 name|e
 parameter_list|)

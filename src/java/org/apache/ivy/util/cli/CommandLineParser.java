@@ -145,11 +145,7 @@ name|options
 init|=
 operator|new
 name|LinkedHashMap
-argument_list|<
-name|String
-argument_list|,
-name|Option
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -166,14 +162,7 @@ name|categories
 init|=
 operator|new
 name|LinkedHashMap
-argument_list|<
-name|String
-argument_list|,
-name|List
-argument_list|<
-name|Option
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -665,11 +654,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// print description
-name|StringBuffer
+name|StringBuilder
 name|desc
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 operator|(
 name|option
