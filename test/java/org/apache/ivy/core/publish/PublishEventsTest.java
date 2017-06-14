@@ -79,16 +79,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -245,6 +235,24 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ArtifactRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|parser
@@ -337,6 +345,11 @@ block|{
 comment|// maps ArtifactRevisionId to PublishTestCase instance.
 specifier|private
 name|HashMap
+argument_list|<
+name|ArtifactRevisionId
+argument_list|,
+name|PublishTestCase
+argument_list|>
 name|expectedPublications
 decl_stmt|;
 comment|// expected values for the current artifact being published.
@@ -386,6 +399,9 @@ name|publishModule
 decl_stmt|;
 specifier|private
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|publishSources
 decl_stmt|;
 specifier|private
@@ -587,6 +603,7 @@ name|expectedPublications
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|expectedPublications
@@ -788,6 +805,9 @@ comment|// no modifications to input required for this case -- call out to the r
 comment|// that
 comment|// all of our test counters have been incremented.
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -887,6 +907,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -983,9 +1006,6 @@ expr_stmt|;
 name|PublishTestCase
 name|dataPublish
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|expectedPublications
 operator|.
 name|get
@@ -1003,6 +1023,9 @@ operator|=
 literal|false
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -1114,33 +1137,16 @@ expr_stmt|;
 comment|// we don't care which artifact is attempted; either will fail with an IOException.
 for|for
 control|(
-name|Iterator
-name|it
-init|=
+name|PublishTestCase
+name|publishTestCase
+range|:
 name|expectedPublications
 operator|.
 name|values
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|;
 control|)
 block|{
-operator|(
-operator|(
-name|PublishTestCase
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-operator|)
+name|publishTestCase
 operator|.
 name|expectedSuccess
 operator|=
@@ -1870,9 +1876,6 @@ expr_stmt|;
 name|PublishTestCase
 name|currentTestCase
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|test
 operator|.
 name|expectedPublications

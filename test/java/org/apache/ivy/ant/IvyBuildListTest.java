@@ -29,6 +29,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -1739,11 +1749,7 @@ name|buildlist
 operator|.
 name|setOnMissingDescriptor
 argument_list|(
-operator|new
-name|String
-argument_list|(
 literal|"tail"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// IVY-805: new String instance
@@ -1840,11 +1846,7 @@ name|buildlist
 operator|.
 name|setOnMissingDescriptor
 argument_list|(
-operator|new
-name|String
-argument_list|(
 literal|"skip"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// IVY-805: new String instance
@@ -1982,10 +1984,14 @@ argument_list|)
 expr_stmt|;
 comment|// the order of E and E2 is undefined
 name|List
+argument_list|<
+name|URI
+argument_list|>
 name|other
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|other

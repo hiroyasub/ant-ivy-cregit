@@ -515,9 +515,6 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference

@@ -2728,6 +2728,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -2746,6 +2747,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -2918,6 +2920,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -2936,6 +2939,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3106,6 +3110,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3122,6 +3127,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3287,6 +3293,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3305,6 +3312,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3474,6 +3482,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3492,6 +3501,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3661,6 +3671,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3677,6 +3688,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3818,6 +3830,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3838,6 +3851,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4039,6 +4053,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4055,6 +4070,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -7788,6 +7804,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -7806,6 +7823,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

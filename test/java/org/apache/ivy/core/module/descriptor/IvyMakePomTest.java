@@ -408,9 +408,7 @@ name|expectedPomArtifactIds
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|expectedPomArtifactIds
@@ -990,15 +988,13 @@ argument_list|,
 name|optional
 operator|!=
 literal|null
-condition|?
+operator|&&
 name|Boolean
 operator|.
 name|parseBoolean
 argument_list|(
 name|optional
 argument_list|)
-else|:
-literal|false
 argument_list|)
 return|;
 block|}
@@ -1043,39 +1039,22 @@ name|toString
 parameter_list|()
 block|{
 return|return
-literal|"PomDependency{"
-operator|+
-literal|"groupId='"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"PomDependency{groupId='%s', artifactId='%s', version='%s', scope='%s', classifier='%s'}"
+argument_list|,
 name|groupId
-operator|+
-literal|'\''
-operator|+
-literal|", artifactId='"
-operator|+
+argument_list|,
 name|artifactId
-operator|+
-literal|'\''
-operator|+
-literal|", version='"
-operator|+
+argument_list|,
 name|version
-operator|+
-literal|'\''
-operator|+
-literal|", scope='"
-operator|+
+argument_list|,
 name|scope
-operator|+
-literal|'\''
-operator|+
-literal|", classifier='"
-operator|+
+argument_list|,
 name|classifier
-operator|+
-literal|'\''
-operator|+
-literal|'}'
+argument_list|)
 return|;
 block|}
 block|}

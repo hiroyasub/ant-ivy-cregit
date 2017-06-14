@@ -196,19 +196,10 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|expression
+range|:
 name|expressions
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|matcher
@@ -217,20 +208,14 @@ name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be exact"
 argument_list|,
@@ -251,10 +236,7 @@ name|assertTrue
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be exact"
 argument_list|,
@@ -273,19 +255,10 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|expression
+range|:
 name|expressions
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|matcher
@@ -294,20 +267,14 @@ name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be inexact"
 argument_list|,
@@ -328,10 +295,7 @@ name|assertFalse
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be inexact"
 argument_list|,

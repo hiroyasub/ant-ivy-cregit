@@ -2028,9 +2028,7 @@ name|actual
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -2063,9 +2061,7 @@ name|expected
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -2093,9 +2089,7 @@ name|expected2
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

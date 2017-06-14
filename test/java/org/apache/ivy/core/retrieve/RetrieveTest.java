@@ -958,10 +958,14 @@ argument_list|)
 decl_stmt|;
 specifier|final
 name|List
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|events
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ivy
