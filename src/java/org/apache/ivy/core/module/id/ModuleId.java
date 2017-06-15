@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Identifies a module, without revision information  *   * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
+comment|/**  * Identifies a module, without revision information  *  * @see<a href="package-summary.html">org.apache.ivy.core.module.id</a>  */
 end_comment
 
 begin_class
@@ -146,7 +146,7 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns a ModuleId for the given organization and module name.      *       * @param org      *            the module's organization, can be<code>null</code>      * @param name      *            the module's name, must not be<code>null</code>      * @return a ModuleId instance      */
+comment|/**      * Returns a ModuleId for the given organization and module name.      *      * @param org      *            the module's organization, can be<code>null</code>      * @param name      *            the module's name, must not be<code>null</code>      * @return a ModuleId instance      */
 specifier|public
 specifier|static
 name|ModuleId
@@ -172,7 +172,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an intern instance of a ModuleId equals to the given ModuleId if any, or the given      * ModuleId.      *<p>      * This is useful to reduce the number of instances of ModuleId kept in memory, and thus reduce      * memory footprint.      *</p>      *       * @param moduleId      *            the module id to return      * @return a unit instance of the given module id.      */
+comment|/**      * Returns an intern instance of a ModuleId equals to the given ModuleId if any, or the given      * ModuleId.      *<p>      * This is useful to reduce the number of instances of ModuleId kept in memory, and thus reduce      * memory footprint.      *</p>      *      * @param moduleId      *            the module id to return      * @return a unit instance of the given module id.      */
 specifier|public
 specifier|static
 name|ModuleId
@@ -283,7 +283,7 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Constructor.      *       * @param organisation      *            The organisation which creates the module.      * @param name      *            The name of the module.      */
+comment|/**      * Constructor.      *      * @param organisation      *            The organisation which creates the module.      * @param name      *            The name of the module.      */
 specifier|public
 name|ModuleId
 parameter_list|(
@@ -344,7 +344,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the name of the module.      *       * @return The name of the module.      */
+comment|/**      * Returns the name of the module.      *      * @return The name of the module.      */
 specifier|public
 name|String
 name|getName
@@ -354,7 +354,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns the name of the organisation.      *       * @return The name of the organisation.      */
+comment|/**      * Returns the name of the organisation.      *      * @return The name of the organisation.      */
 specifier|public
 name|String
 name|getOrganisation
@@ -556,7 +556,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Returns the encoded String representing this ModuleId.      *       * @return The ModuleId encoded as String.      */
+comment|/**      * Returns the encoded String representing this ModuleId.      *      * @return The ModuleId encoded as String.      */
 specifier|public
 name|String
 name|encodeToString
@@ -572,7 +572,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a Map of all attributes of this module id. The Map keys are attribute names as      * Strings, and values are corresponding attribute values (as String too).      *       * @return A Map instance containing all the attributes and their values.      */
+comment|/**      * Returns a Map of all attributes of this module id. The Map keys are attribute names as      * Strings, and values are corresponding attribute values (as String too).      *      * @return A Map instance containing all the attributes and their values.      */
 specifier|public
 name|Map
 argument_list|<
@@ -587,7 +587,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a ModuleId      *       * @param encoded      * @return The new ModuleId.      * @throws IllegalArgumentException      *             If the given String could not be decoded.      */
+comment|/**      * Returns a ModuleId      *      * @param encoded String      * @return The new ModuleId.      * @throws IllegalArgumentException      *             If the given String could not be decoded.      */
 specifier|public
 specifier|static
 name|ModuleId
@@ -645,7 +645,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Pattern to use to matched mid text representation.      *       * @see #parse(String)      */
+comment|/**      * Pattern to use to matched mid text representation.      *      * @see #parse(String)      */
 specifier|public
 specifier|static
 specifier|final
@@ -673,7 +673,7 @@ operator|+
 literal|"+)"
 argument_list|)
 decl_stmt|;
-comment|/**      * Parses the module id text representation and returns it as a {@link ModuleId} instance.      *       * @param mid      *            the module id text representation to parse      * @return the ModuleId instance corresponding to the representation      * @throws IllegalArgumentException      *             if the given text representation cannot be parsed      */
+comment|/**      * Parses the module id text representation and returns it as a {@link ModuleId} instance.      *      * @param mid      *            the module id text representation to parse      * @return the ModuleId instance corresponding to the representation      * @throws IllegalArgumentException      *             if the given text representation cannot be parsed      */
 specifier|public
 specifier|static
 name|ModuleId

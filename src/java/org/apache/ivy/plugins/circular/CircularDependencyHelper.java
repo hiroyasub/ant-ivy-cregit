@@ -105,7 +105,7 @@ name|CircularDependencyHelper
 parameter_list|()
 block|{
 block|}
-comment|/**      * Returns a string representation of this circular dependency graph      *       * @param descriptors      *            in order of circular dependency      * @return a string representation of this circular dependency graph      */
+comment|/**      * Returns a string representation of this circular dependency graph      *      * @param mrids      *            in order of circular dependency      * @return a string representation of this circular dependency graph      */
 specifier|public
 specifier|static
 name|String
@@ -239,7 +239,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param loopElements      *            a List<ModuleDescriptor>      */
+comment|/**      * @param loopElements      *            a List&lt;ModuleDescriptor&gt;      * @return String      */
 specifier|public
 specifier|static
 name|String

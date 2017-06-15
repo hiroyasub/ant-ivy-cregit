@@ -26,7 +26,7 @@ specifier|public
 interface|interface
 name|Validatable
 block|{
-comment|/**      * Validates the Validatable, throwing an {@link IllegalStateException} if the current state is      * not valid.      *       * @throws IllegalStateException      *             if the state of the {@link Validatable} is not valid.      */
+comment|/**      * Validates the Validatable, throwing an {@link IllegalStateException} if the current state is      * not valid.      *      * @throws IllegalStateException      *             if the state of the {@link Validatable} is not valid.      */
 specifier|public
 name|void
 name|validate

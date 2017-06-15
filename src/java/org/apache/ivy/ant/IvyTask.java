@@ -246,9 +246,6 @@ condition|)
 block|{
 return|return
 name|validate
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 return|return
@@ -267,13 +264,8 @@ return|return
 name|validate
 operator|==
 literal|null
-condition|?
-literal|true
-else|:
+operator|||
 name|validate
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -288,12 +280,7 @@ name|this
 operator|.
 name|validate
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|validate
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -1482,7 +1469,7 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"ANT project poped from stack not equals current !. Ignoring"
+literal|"ANT project popped from stack not equals current! Ignoring"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1492,7 +1479,7 @@ name|popContext
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Ant task execute. Calls prepareTask, doExecute, finalzeTask      */
+comment|/**      * Ant task execute. Calls prepareTask, doExecute, finalizeTask      */
 annotation|@
 name|Override
 specifier|public
@@ -1519,7 +1506,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * The real logic of task execution after project has been set in the context. MUST be      * implemented by subclasses      *       * @throws BuildException      */
+comment|/**      * The real logic of task execution after project has been set in the context. MUST be      * implemented by subclasses      *      * @throws BuildException if something goes wrong      */
 specifier|public
 specifier|abstract
 name|void

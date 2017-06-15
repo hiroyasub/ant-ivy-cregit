@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes a mapping between a package name and an org name revision uple  */
+comment|/**  * Describes a mapping between a package name and an org name revision tuple  */
 end_comment
 
 begin_class
@@ -144,12 +144,12 @@ name|void
 name|setPackage
 parameter_list|(
 name|String
-name|package1
+name|packageName
 parameter_list|)
 block|{
 name|pkg
 operator|=
-name|package1
+name|packageName
 expr_stmt|;
 block|}
 specifier|public

@@ -420,7 +420,7 @@ operator|=
 name|destivypattern
 expr_stmt|;
 block|}
-comment|/**      * @deprecated use {@link #getSrcivypattern()} instead.      */
+comment|/**      * @return String      * @deprecated use {@link #getSrcivypattern()} instead.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -432,7 +432,7 @@ return|return
 name|srcivypattern
 return|;
 block|}
-comment|/**      * @deprecated use {@link #setSrcivypattern(String)} instead.      */
+comment|/**      * @param destivypattern String      * @deprecated use {@link #setSrcivypattern(String)} instead.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -961,7 +961,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' "
+literal|"It can either be set explicitly via the attribute 'organisation' "
 operator|+
 literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
@@ -980,7 +980,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' "
+literal|"It can either be set explicitly via the attribute 'module' "
 operator|+
 literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
@@ -999,7 +999,7 @@ name|BuildException
 argument_list|(
 literal|"no module revision provided for ivy publish task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'revision' "
+literal|"It can either be set explicitly via the attribute 'revision' "
 operator|+
 literal|"or via 'ivy.revision' property or a prior call to<resolve/>"
 argument_list|)

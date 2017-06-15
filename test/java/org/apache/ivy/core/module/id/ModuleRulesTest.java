@@ -20,6 +20,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -135,11 +147,21 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -147,8 +169,6 @@ begin_class
 specifier|public
 class|class
 name|ModuleRulesTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|ModuleRules
@@ -159,12 +179,12 @@ name|Object
 index|[]
 name|rule
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|rules
 operator|=
@@ -208,7 +228,8 @@ name|i
 expr_stmt|;
 block|}
 block|}
-comment|// tests
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetRule
@@ -298,6 +319,8 @@ literal|"unknown#module1;1.5"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetRuleWithFilter

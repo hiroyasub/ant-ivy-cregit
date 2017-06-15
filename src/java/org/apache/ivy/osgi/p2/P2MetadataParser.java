@@ -451,7 +451,7 @@ argument_list|)
 expr_stmt|;
 comment|// addChild(new PropertiesHandler(P2_TIMESTAMP),
 comment|// new ChildElementHandler<PropertiesHandler>() {
-comment|// public void childHanlded(PropertiesHandler child) {
+comment|// public void childHandled(PropertiesHandler child) {
 comment|// String timestamp = child.properties.get(P2_TIMESTAMP);
 comment|// if (timestamp != null) {
 comment|// p2Descriptor.setTimestamp(Long.parseLong(timestamp));
@@ -475,7 +475,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|UnitsHandler
 name|child
@@ -520,7 +520,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ReferencesHandler
 name|child
@@ -593,7 +593,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RepositoryReferenceHandler
 name|child
@@ -895,7 +895,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|UnitHandler
 name|child
@@ -1025,7 +1025,7 @@ name|UNIT
 argument_list|)
 expr_stmt|;
 comment|// addChild(new UpdateHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 name|addChild
@@ -1047,7 +1047,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|PropertiesHandler
 name|child
@@ -1077,9 +1077,6 @@ name|valueOf
 argument_list|(
 name|category
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 condition|)
 block|{
 comment|// this is a category definition, this is useless, skip this unit
@@ -1117,7 +1114,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ProvidesHandler
 name|child
@@ -1143,7 +1140,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// we need to parse the manifest in the toupointData to figure out the
+comment|// we need to parse the manifest in the touchpointData to figure out the
 comment|// targeted bundle
 comment|// in case we won't have the proper data in the manifest, prepare the source
 comment|// data from the convention
@@ -1235,7 +1232,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|FilterHandler
 name|child
@@ -1262,7 +1259,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RequiresHandler
 name|child
@@ -1307,7 +1304,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|HostRequirementsHandler
 name|child
@@ -1334,7 +1331,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|MetaRequirementsHandler
 name|child
@@ -1361,7 +1358,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ArtifactsHandler
 name|child
@@ -1372,7 +1369,7 @@ block|}
 argument_list|)
 expr_stmt|;
 comment|// addChild(new TouchpointHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 name|addChild
@@ -1392,7 +1389,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|TouchpointDataHandler
 name|child
@@ -1416,9 +1413,6 @@ argument_list|(
 name|child
 operator|.
 name|zipped
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1679,15 +1673,15 @@ block|}
 argument_list|)
 expr_stmt|;
 comment|// addChild(new LicensesHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 comment|// addChild(new CopyrightHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 comment|// addChild(new ChangesHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 block|}
@@ -1724,8 +1718,6 @@ name|VERSION
 argument_list|)
 decl_stmt|;
 comment|// Boolean singleton = Boolean.valueOf(atts.getValue(SINGLETON));
-try|try
-block|{
 name|bundleInfo
 operator|=
 operator|new
@@ -1741,38 +1733,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on bundle '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
 block|}
-block|}
-block|}
-comment|// static class UpdateHandler extends DelegetingHandler {
+comment|// static class UpdateHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String UPDATE = "update";
 comment|//
@@ -1937,7 +1899,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ProvidedHandler
 name|child
@@ -2201,8 +2163,6 @@ argument_list|(
 name|NAME
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|version
 operator|=
 operator|new
@@ -2216,32 +2176,6 @@ name|VERSION
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on provided capability: "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
 block|}
 block|}
 specifier|abstract
@@ -2293,7 +2227,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RequiredHandler
 name|child
@@ -2531,7 +2465,7 @@ name|REQUIRED
 argument_list|)
 expr_stmt|;
 comment|// addChild(new FilterHandler(), new ChildElementHandler<FilterHandler>() {
-comment|// public void childHanlded(FilterHandler child) {
+comment|// public void childHandled(FilterHandler child) {
 comment|// filter = child.getBufferedChars().trim();
 comment|// }
 comment|// });
@@ -2609,9 +2543,6 @@ name|Boolean
 operator|.
 name|FALSE
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -2719,7 +2650,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ArtifactHandler
 name|child
@@ -2870,8 +2801,6 @@ argument_list|(
 name|CLASSIFIER
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|artifact
 operator|=
 operator|new
@@ -2889,38 +2818,8 @@ name|classifier
 argument_list|)
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on artifact '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
 block|}
-block|}
-block|}
-comment|// private static class TouchpointHandler extends DelegetingHandler {
+comment|// private static class TouchpointHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String TOUCHPOINT = "touchpoint";
 comment|//
@@ -2985,7 +2884,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|InstructionsHandler
 name|child
@@ -3068,7 +2967,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|InstructionHandler
 name|child
@@ -3218,7 +3117,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// private static class LicensesHandler extends DelegetingHandler {
+comment|// private static class LicensesHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String LICENSES = "licenses";
 comment|//
@@ -3227,7 +3126,7 @@ comment|//
 comment|// public LicensesHandler() {
 comment|// super(LICENSES);
 comment|// addChild(new LicenseHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// }
 comment|// });
 comment|// }
@@ -3237,7 +3136,7 @@ comment|// String size = atts.getValue(SIZE);
 comment|// }
 comment|//
 comment|// }
-comment|// private static class LicenseHandler extends DelegetingHandler {
+comment|// private static class LicenseHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String LICENSE = "license";
 comment|//
@@ -3256,7 +3155,7 @@ comment|// String url = atts.getValue(URL);
 comment|// }
 comment|//
 comment|// }
-comment|// private static class CopyrightHandler extends DelegetingHandler {
+comment|// private static class CopyrightHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String COPYRIGHT = "copyright";
 comment|//
@@ -3274,7 +3173,7 @@ comment|// String url = atts.getValue(URL);
 comment|// }
 comment|//
 comment|// }
-comment|// private class ChangesHandler extends DelegetingHandler {
+comment|// private class ChangesHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String CHANGES = "changes";
 comment|//
@@ -3283,7 +3182,7 @@ comment|//
 comment|// public ChangesHandler() {
 comment|// super(CHANGES);
 comment|// addChild(new ChangeHandler(), new ChildElementHandler<ChangeHandler>() {
-comment|// public void childHanlded(ChangeHandler child) {
+comment|// public void childHandled(ChangeHandler child) {
 comment|// }
 comment|// });
 comment|// }
@@ -3292,7 +3191,7 @@ comment|// protected void handleAttributes(Attributes atts) {
 comment|// int size = Integer.parseInt(atts.getValue(SIZE));
 comment|// }
 comment|// }
-comment|// private class ChangeHandler extends DelegetingHandler {
+comment|// private class ChangeHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String CHANGE = "change";
 comment|//
@@ -3318,7 +3217,7 @@ comment|// super(TO);
 comment|// }
 comment|//
 comment|// }
-comment|// private class PatchScopeHandler extends DelegetingHandler {
+comment|// private class PatchScopeHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String PATCH_SCOPE = "patchScope";
 comment|//
@@ -3327,7 +3226,7 @@ comment|//
 comment|// public PatchScopeHandler() {
 comment|// super(PATCH_SCOPE);
 comment|// addChild(new PatchScopeHandler(), new ChildElementHandler<PatchScopeHandler>() {
-comment|// public void childHanlded(PatchScopeHandler child) {
+comment|// public void childHandled(PatchScopeHandler child) {
 comment|// }
 comment|// });
 comment|// }
@@ -3336,14 +3235,14 @@ comment|// protected void handleAttributes(Attributes atts) {
 comment|// int size = Integer.parseInt(atts.getValue(SIZE));
 comment|// }
 comment|// }
-comment|// private class ScopeHandler extends DelegetingHandler {
+comment|// private class ScopeHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String SCOPE = "scope";
 comment|//
 comment|// public ScopeHandler() {
 comment|// super(SCOPE);
 comment|// addChild(new RequiresHandler(), new ChildElementHandler<RequiresHandler>() {
-comment|// public void childHanlded(RequiresHandler child) {
+comment|// public void childHandled(RequiresHandler child) {
 comment|// }
 comment|// });
 comment|// }

@@ -502,9 +502,6 @@ argument_list|(
 literal|"default"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 expr_stmt|;
 comment|// retrieve position from file. If no position is found, it may be an old
 comment|// report generated with a previous version,
@@ -949,7 +946,7 @@ name|setArtifactOrigin
 argument_list|(
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|madr
 operator|.
@@ -1265,7 +1262,7 @@ name|setArtifactOrigin
 argument_list|(
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|aReport
 operator|.
@@ -2062,7 +2059,7 @@ name|id
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the<tt>ModuleRevisionId</tt> of the resolved module.      */
+comment|/**      * Returns the<tt>ModuleRevisionId</tt> of the resolved module.      *      * @return ModuleRevisionId      */
 specifier|public
 name|ModuleRevisionId
 name|getResolvedModule

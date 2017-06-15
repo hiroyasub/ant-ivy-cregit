@@ -591,7 +591,7 @@ name|profileProvider
 argument_list|)
 return|;
 block|}
-comment|/**      *       * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @return      * @throws ProfileNotFoundException      */
+comment|/**      * @param parser ModuleDescriptorParser      * @param baseUri      *            uri to help build the absolute url if the bundle info has a relative uri.      * @param bundle BundleInfo      * @param manifest Manifest      * @param profileProvider ExecutionEnvironmentProfileProvider      * @return DefaultModuleDescriptor ditto      * @throws ProfileNotFoundException if descriptor is not found      */
 specifier|public
 specifier|static
 name|DefaultModuleDescriptor
@@ -1705,7 +1705,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"illformed ivy url"
+literal|"ill-formed ivy url"
 argument_list|,
 name|e
 argument_list|)
@@ -2064,9 +2064,7 @@ argument_list|,
 name|rev
 argument_list|)
 decl_stmt|;
-name|DefaultArtifact
-name|artifact
-init|=
+return|return
 operator|new
 name|DefaultArtifact
 argument_list|(
@@ -2080,9 +2078,6 @@ name|type
 argument_list|,
 name|ext
 argument_list|)
-decl_stmt|;
-return|return
-name|artifact
 return|;
 block|}
 specifier|private
@@ -2402,6 +2397,11 @@ name|revision
 argument_list|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 specifier|static
 class|class

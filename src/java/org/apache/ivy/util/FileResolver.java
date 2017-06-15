@@ -61,7 +61,7 @@ return|;
 block|}
 block|}
 decl_stmt|;
-comment|/**      * Return the canonical form of a path, or raise an {@link IllegalArgumentException} if the path      * is not valid for this {@link FileResolver}.      *<p>      *       * @param path      *            The path of the file to resolve. Must not be<code>null</code>.      * @param fileName      *            The name of the file to resolve. This is used only for exception message if any.      *            Must not be<code>null</code>.      *       * @return the resolved File.      *       */
+comment|/**      * Return the canonical form of a path, or raise an {@link IllegalArgumentException} if the path      * is not valid for this {@link FileResolver}.      *<p>      *      * @param path      *            The path of the file to resolve. Must not be<code>null</code>.      * @param filename      *            The name of the file to resolve. This is used only for exception message if any.      *            Must not be<code>null</code>.      *      * @return the resolved File.      *      */
 name|File
 name|resolveFile
 parameter_list|(

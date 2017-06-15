@@ -18,6 +18,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -107,11 +131,31 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -119,19 +163,17 @@ begin_class
 specifier|public
 class|class
 name|LatestCompatibleConflictManagerTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|TestFixture
 name|fixture
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|fixture
 operator|=
@@ -167,12 +209,12 @@ name|cm
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|fixture
 operator|.
@@ -180,6 +222,8 @@ name|clean
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInitFromSettings
@@ -227,6 +271,8 @@ name|LatestCompatibleConflictManager
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve1
@@ -272,6 +318,8 @@ literal|"#B;1.4, #C;2.5, #D;1.5"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve2
@@ -327,6 +375,8 @@ literal|"#B;1.4, #C;2.5, #D;1.5"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve3
@@ -407,6 +457,8 @@ literal|"#B;2.3, #C;3.4, #D;1.5, #E;1.0"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve4
@@ -472,6 +524,8 @@ literal|"#B;1.4, #C;2.5, #D;1.5, #F;1.0"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve5
@@ -532,6 +586,8 @@ literal|"#B;1.3, #C;2.6, #D;1.6"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolve6
@@ -577,6 +633,8 @@ literal|"#B;1.4, #C;2.5, #D;1.5"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolveCircularDependency1
@@ -630,6 +688,8 @@ literal|"#B;3.4, #C;4.6, #D;2.5"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolveCircularDependency2
@@ -688,6 +748,8 @@ literal|"#B;2, #C;2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompatibilityResolveCircularDependency3
@@ -747,14 +809,22 @@ literal|"#B;2, #C;2"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testConflict
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|fixture
 operator|.
@@ -803,29 +873,23 @@ argument_list|(
 literal|"#A;conflict"
 argument_list|)
 expr_stmt|;
-name|fail
+block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+annotation|@
+name|Test
 argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+name|expected
+operator|=
 name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected
-block|}
-block|}
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testDynamicRootConflict
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|fixture
 operator|.
@@ -879,20 +943,6 @@ argument_list|(
 literal|"#A;conflict"
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected }
-block|}
 block|}
 specifier|private
 name|void

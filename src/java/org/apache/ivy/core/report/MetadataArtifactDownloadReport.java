@@ -73,7 +73,7 @@ name|artifact
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if the resolution of this metadata artifact required at least one      * access to the repository, or<code>false</code> if only provisioned data was used.      *       * @return<code>true</code> if the resolution of this metadata artifact required at least one      *         access to the repository      */
+comment|/**      * Returns<code>true</code> if the resolution of this metadata artifact required at least one      * access to the repository, or<code>false</code> if only provisioned data was used.      *      * @return<code>true</code> if the resolution of this metadata artifact required at least one      *         access to the repository      */
 specifier|public
 name|boolean
 name|isSearched
@@ -98,7 +98,7 @@ operator|=
 name|isSearched
 expr_stmt|;
 block|}
-comment|/**      * Returns the location on the local filesystem where the original metadata artifact is      * provisioned, or<code>null</code> if the provisioning failed.      *       * @return the location on the local filesystem where the original metadata artifact is      *         provisioned.      */
+comment|/**      * Returns the location on the local filesystem where the original metadata artifact is      * provisioned, or<code>null</code> if the provisioning failed.      *      * @return the location on the local filesystem where the original metadata artifact is      *         provisioned.      */
 specifier|public
 name|File
 name|getOriginalLocalFile

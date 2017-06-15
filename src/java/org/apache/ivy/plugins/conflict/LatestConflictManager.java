@@ -162,6 +162,11 @@ name|LatestConflictManager
 extends|extends
 name|AbstractConflictManager
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 specifier|static
 class|class
@@ -215,7 +220,7 @@ literal|0
 condition|)
 block|{
 comment|// if the last modified timestamp is unknown, we can't resolve
-comment|// the conflicts now, and trigger an exception which will be catched
+comment|// the conflicts now, and trigger an exception which will be caught
 comment|// in the main resolveConflicts method
 throw|throw
 operator|new
@@ -453,6 +458,7 @@ operator|.
 name|isCompletelyEvicted
 argument_list|()
 condition|)
+block|{
 name|unevicted
 operator|.
 name|add
@@ -460,6 +466,7 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -529,7 +536,7 @@ name|NoConflictResolvedYetException
 name|ex
 parameter_list|)
 block|{
-comment|// we have not enough informations in the nodes to resolve conflict
+comment|// we have not enough information in the nodes to resolve conflict
 comment|// according to the resolveConflicts contract, we must return null
 return|return
 literal|null
@@ -673,7 +680,7 @@ return|return
 name|strategy
 return|;
 block|}
-comment|/**      * To conform to configurator API      *       * @param latestStrategy      */
+comment|/**      * To conform to configurator API      *      * @param strategyName ditto      */
 specifier|public
 name|void
 name|setLatest

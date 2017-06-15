@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This exception will be used for Remote SCP Exceptions (failures on the target system, no  * connetion probs)  */
+comment|/**  * This exception will be used for Remote SCP Exceptions (failures on the target system, no  * connection probs)  */
 end_comment
 
 begin_class
@@ -43,7 +43,7 @@ name|RemoteScpException
 parameter_list|()
 block|{
 block|}
-comment|/**      * @param message      */
+comment|/**      * @param message ditto      */
 specifier|public
 name|RemoteScpException
 parameter_list|(
@@ -57,7 +57,7 @@ name|message
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @param cause      */
+comment|/**      * @param cause Throwable      */
 specifier|public
 name|RemoteScpException
 parameter_list|(
@@ -71,7 +71,7 @@ name|cause
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @param message      * @param cause      */
+comment|/**      * @param message ditto      * @param cause Throwable      */
 specifier|public
 name|RemoteScpException
 parameter_list|(

@@ -2840,7 +2840,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Writes the extra attributes of the given {@link ExtendableItem} to the given      *<tt>PrintWriter</tt>.      *       * @param item      *            the {@link ExtendableItem}, cannot be<tt>null</tt>      * @param out      *            the writer to use      * @param prefix      *            the string to write before writing the attributes (if any)      */
+comment|/**      * Writes the extra attributes of the given {@link ExtendableItem} to the given      *<tt>PrintWriter</tt>.      *      * @param item      *            the {@link ExtendableItem}, cannot be<tt>null</tt>      * @param out      *            the writer to use      * @param prefix      *            the string to write before writing the attributes (if any)      */
 specifier|private
 specifier|static
 name|void
@@ -2869,7 +2869,7 @@ name|prefix
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Writes the specified<tt>Map</tt> containing the extra attributes to the given      *<tt>PrintWriter</tt>.      *       * @param extra      *            the extra attributes, can be<tt>null</tt>      * @param out      *            the writer to use      * @param prefix      *            the string to write before writing the attributes (if any)      */
+comment|/**      * Writes the specified<tt>Map</tt> containing the extra attributes to the given      *<tt>PrintWriter</tt>.      *      * @param extra      *            the extra attributes, can be<tt>null</tt>      * @param out      *            the writer to use      * @param prefix      *            the string to write before writing the attributes (if any)      */
 specifier|private
 specifier|static
 name|void
@@ -4458,6 +4458,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|private
 specifier|static
 name|boolean

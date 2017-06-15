@@ -16,6 +16,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -215,11 +239,21 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -227,9 +261,9 @@ begin_class
 specifier|public
 class|class
 name|AntCallTriggerTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test
@@ -274,12 +308,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.
@@ -346,10 +380,14 @@ throws|throws
 name|BuildException
 block|{
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 init|=
 operator|new
 name|Vector
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|targets
@@ -377,6 +415,9 @@ name|File
 name|buildFile
 parameter_list|,
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 parameter_list|,
 name|int
@@ -423,6 +464,9 @@ name|File
 name|buildFile
 parameter_list|,
 name|Vector
+argument_list|<
+name|String
+argument_list|>
 name|targets
 parameter_list|,
 name|int
@@ -690,29 +734,17 @@ block|}
 catch|catch
 parameter_list|(
 name|RuntimeException
-name|exc
-parameter_list|)
-block|{
-name|error
-operator|=
-name|exc
-expr_stmt|;
-throw|throw
-name|exc
-throw|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|Error
-name|err
+name|exc
 parameter_list|)
 block|{
 name|error
 operator|=
-name|err
+name|exc
 expr_stmt|;
 throw|throw
-name|err
+name|exc
 throw|;
 block|}
 finally|finally
@@ -726,7 +758,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *       * @param project      *            The project to add listeners to. Must not be<code>null</code>.      */
+comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *      * @param project      *            The project to add listeners to. Must not be<code>null</code>.      */
 specifier|protected
 name|void
 name|addBuildListeners
@@ -750,7 +782,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates the InputHandler and adds it to the project.      *       * @param project      *            the project instance.      * @param inputHandlerClassname      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
+comment|/**      * Creates the InputHandler and adds it to the project.      *      * @param project      *            the project instance.      * @param inputHandlerClassname      *            String      * @exception BuildException      *                if a specified InputHandler implementation could not be loaded.      */
 specifier|private
 name|void
 name|addInputHandler
@@ -792,7 +824,6 @@ operator|=
 operator|(
 name|InputHandler
 operator|)
-operator|(
 name|Class
 operator|.
 name|forName
@@ -802,7 +833,6 @@ argument_list|)
 operator|.
 name|newInstance
 argument_list|()
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -889,7 +919,7 @@ comment|// XXX: (Jon Skeet) Any reason for writing a message and then using a ba
 comment|// RuntimeException rather than just using a BuildException here? Is it
 comment|// in case the message could end up being written to no loggers (as the
 comment|// loggers could have failed to be created due to this failure)?
-comment|/**      * Creates the default build logger for sending build events to the ant log.      *       * @return the logger instance for this build.      */
+comment|/**      * Creates the default build logger for sending build events to the ant log.      *      * @return the logger instance for this build.      */
 specifier|private
 name|BuildLogger
 name|createLogger

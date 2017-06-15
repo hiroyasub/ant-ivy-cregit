@@ -48,6 +48,7 @@ import|;
 end_import
 
 begin_class
+specifier|final
 class|class
 name|DeleteOnExitHook
 block|{

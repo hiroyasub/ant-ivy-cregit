@@ -105,8 +105,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|char
 name|operator
 parameter_list|()

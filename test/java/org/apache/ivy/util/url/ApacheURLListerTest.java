@@ -33,27 +33,53 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -65,10 +91,10 @@ begin_class
 specifier|public
 class|class
 name|ApacheURLListerTest
-extends|extends
-name|TestCase
 block|{
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveListing
@@ -84,6 +110,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|files
 init|=
 name|lister
@@ -121,32 +150,12 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|Iterator
-name|iter
-init|=
-name|files
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|iter
-operator|.
-name|hasNext
-argument_list|()
-condition|;
-control|)
-block|{
 name|URL
 name|file
-init|=
-operator|(
-name|URL
-operator|)
-name|iter
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|files
+control|)
+block|{
 name|assertTrue
 argument_list|(
 literal|"found a non matching file: "
@@ -167,6 +176,9 @@ expr_stmt|;
 block|}
 comment|// try a directory listing
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|dirs
 init|=
 name|lister
@@ -203,6 +215,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|empty
 init|=
 name|lister
@@ -232,7 +247,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *       * @throws Exception      */
+comment|/**      * Tests {@link ApacheURLLister#retrieveListing(URL, boolean, boolean)}.      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveListingWithSpaces
@@ -248,6 +265,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|files
 init|=
 name|lister
@@ -284,6 +304,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveArtifactoryListing
@@ -299,6 +321,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|files
 init|=
 name|lister
@@ -335,6 +360,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveArchivaListing
@@ -350,6 +377,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|d
 init|=
 name|lister
@@ -375,6 +405,8 @@ comment|// archiva listing is not valid html at all currently (1.0, unclosed a t
 comment|// and we don't want to adapt to this
 comment|// assertEquals(3, d.size());
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveFixedArchivaListing
@@ -390,6 +422,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|d
 init|=
 name|lister
@@ -422,6 +457,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRetrieveMavenProxyListing
@@ -437,6 +474,9 @@ name|ApacheURLLister
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|URL
+argument_list|>
 name|d
 init|=
 name|lister

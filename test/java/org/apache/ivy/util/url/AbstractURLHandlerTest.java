@@ -73,11 +73,23 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 
@@ -85,10 +97,10 @@ begin_class
 specifier|public
 class|class
 name|AbstractURLHandlerTest
-extends|extends
-name|TestCase
 block|{
 comment|/**      * JUnit test for IVY-923.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNormalizeToStringWithSpaceURL
@@ -126,6 +138,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * JUnit test for IVY-923.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNormalizeToStringWithPlusCharacter
@@ -162,6 +176,8 @@ name|normalizedUrl
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNormalizeToStringWithUnderscoreInHostname
@@ -198,6 +214,8 @@ name|normalizedUrl
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNormalizeToStringWithUnderscoreInHostnameAndSpaceInPath

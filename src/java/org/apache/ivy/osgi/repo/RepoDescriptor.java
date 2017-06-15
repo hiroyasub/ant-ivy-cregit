@@ -43,8 +43,8 @@ specifier|abstract
 class|class
 name|RepoDescriptor
 block|{
-specifier|abstract
 specifier|public
+specifier|abstract
 name|Iterator
 argument_list|<
 name|ModuleDescriptorWrapper
@@ -52,8 +52,8 @@ argument_list|>
 name|getModules
 parameter_list|()
 function_decl|;
-specifier|abstract
 specifier|public
+specifier|abstract
 name|Set
 argument_list|<
 name|String
@@ -61,8 +61,8 @@ argument_list|>
 name|getCapabilities
 parameter_list|()
 function_decl|;
-specifier|abstract
 specifier|public
+specifier|abstract
 name|Set
 argument_list|<
 name|ModuleDescriptorWrapper
@@ -76,8 +76,8 @@ name|String
 name|value
 parameter_list|)
 function_decl|;
-specifier|abstract
 specifier|public
+specifier|abstract
 name|Set
 argument_list|<
 name|String

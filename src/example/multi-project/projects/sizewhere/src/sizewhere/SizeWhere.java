@@ -11,25 +11,9 @@ end_package
 
 begin_import
 import|import
-name|version
-operator|.
-name|Version
-import|;
-end_import
-
-begin_import
-import|import
 name|size
 operator|.
 name|FileSize
-import|;
-end_import
-
-begin_import
-import|import
-name|find
-operator|.
-name|FindFile
 import|;
 end_import
 
@@ -43,6 +27,26 @@ name|File
 import|;
 end_import
 
+begin_import
+import|import static
+name|find
+operator|.
+name|FindFile
+operator|.
+name|find
+import|;
+end_import
+
+begin_import
+import|import static
+name|version
+operator|.
+name|Version
+operator|.
+name|register
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|final
@@ -51,8 +55,6 @@ name|SizeWhere
 block|{
 static|static
 block|{
-name|Version
-operator|.
 name|register
 argument_list|(
 literal|"sizewhere"
@@ -76,8 +78,6 @@ name|FileSize
 operator|.
 name|totalSize
 argument_list|(
-name|FindFile
-operator|.
 name|find
 argument_list|(
 name|dir

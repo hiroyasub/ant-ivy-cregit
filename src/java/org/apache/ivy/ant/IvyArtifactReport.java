@@ -836,7 +836,7 @@ block|{
 try|try
 block|{
 name|FileOutputStream
-name|fileOuputStream
+name|fileOutputStream
 init|=
 operator|new
 name|FileOutputStream
@@ -851,7 +851,7 @@ name|saxHandler
 init|=
 name|createTransformerHandler
 argument_list|(
-name|fileOuputStream
+name|fileOutputStream
 argument_list|)
 decl_stmt|;
 name|saxHandler
@@ -1112,7 +1112,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|fileOuputStream
+name|fileOutputStream
 operator|.
 name|close
 argument_list|()
@@ -1173,7 +1173,7 @@ name|TransformerHandler
 name|createTransformerHandler
 parameter_list|(
 name|FileOutputStream
-name|fileOuputStream
+name|fileOutputStream
 parameter_list|)
 throws|throws
 name|TransformerFactoryConfigurationError
@@ -1236,7 +1236,7 @@ argument_list|(
 operator|new
 name|StreamResult
 argument_list|(
-name|fileOuputStream
+name|fileOutputStream
 argument_list|)
 argument_list|)
 expr_stmt|;

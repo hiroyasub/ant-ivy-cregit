@@ -238,7 +238,7 @@ specifier|public
 specifier|static
 specifier|final
 name|FilenameFilter
-name|DEFAULT_BUNLDE_FILTER
+name|DEFAULT_BUNDLE_FILTER
 init|=
 operator|new
 name|FilenameFilter
@@ -266,6 +266,17 @@ return|;
 block|}
 block|}
 decl_stmt|;
+comment|/**      * Deprecated because of renaming due spell check.      */
+annotation|@
+name|Deprecated
+specifier|public
+specifier|static
+specifier|final
+name|FilenameFilter
+name|DEFAULT_BUNLDE_FILTER
+init|=
+name|DEFAULT_BUNDLE_FILTER
+decl_stmt|;
 specifier|private
 name|FilenameFilter
 name|dirFilter
@@ -276,9 +287,9 @@ specifier|private
 name|FilenameFilter
 name|bundleFilter
 init|=
-name|DEFAULT_BUNLDE_FILTER
+name|DEFAULT_BUNDLE_FILTER
 decl_stmt|;
-comment|/**      * Default constructor      *       * @param root      *            the root directory of the file system to lookup      */
+comment|/**      * Default constructor      *      * @param root      *            the root directory of the file system to lookup      */
 specifier|public
 name|FSManifestIterable
 parameter_list|(
@@ -450,20 +461,12 @@ name|File
 name|f
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
+return|return
 name|f
 operator|.
 name|isFile
 argument_list|()
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 name|bundleFilter
 operator|.
 name|accept
@@ -517,20 +520,13 @@ name|File
 name|f
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
+return|return
 name|f
 operator|.
 name|isDirectory
 argument_list|()
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
+operator|(
 name|dirFilter
 operator|==
 literal|null
@@ -549,6 +545,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+operator|)
 return|;
 block|}
 block|}

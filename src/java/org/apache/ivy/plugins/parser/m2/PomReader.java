@@ -151,6 +151,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -601,7 +611,8 @@ init|=
 literal|"profile"
 decl_stmt|;
 specifier|private
-name|HashMap
+specifier|final
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -631,9 +642,11 @@ decl_stmt|;
 specifier|public
 name|PomReader
 parameter_list|(
+specifier|final
 name|URL
 name|descriptorURL
 parameter_list|,
+specifier|final
 name|Resource
 name|res
 parameter_list|)
@@ -831,6 +844,87 @@ block|{
 comment|// ignore
 block|}
 block|}
+comment|// Both environment and system properties take precedence over properties set in
+comment|// pom.xml. So we pre-populate our properties with the environment and system properties
+comment|// here
+for|for
+control|(
+specifier|final
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|envEntry
+range|:
+name|System
+operator|.
+name|getenv
+argument_list|()
+operator|.
+name|entrySet
+argument_list|()
+control|)
+block|{
+comment|// Maven let's users use "env." prefix for environment variables
+name|this
+operator|.
+name|setProperty
+argument_list|(
+literal|"env."
+operator|+
+name|envEntry
+operator|.
+name|getKey
+argument_list|()
+argument_list|,
+name|envEntry
+operator|.
+name|getValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|// add system properties
+specifier|final
+name|Properties
+name|sysProps
+init|=
+name|System
+operator|.
+name|getProperties
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+specifier|final
+name|String
+name|sysProp
+range|:
+name|sysProps
+operator|.
+name|stringPropertyNames
+argument_list|()
+control|)
+block|{
+name|this
+operator|.
+name|setProperty
+argument_list|(
+name|sysProp
+argument_list|,
+name|sysProps
+operator|.
+name|getProperty
+argument_list|(
+name|sysProp
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
@@ -843,7 +937,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Add a property if not yet set and value is not null. This garantee that property keep the      * first value that is put on it and that the properties are never null.      */
+comment|/**      * Add a property if not yet set and value is not null. This guarantees      * that property keeps the first value that is put on it and that the      * properties are never null.      *      * @param prop String      * @param val String      */
 specifier|public
 name|void
 name|setProperty
@@ -3671,16 +3765,11 @@ operator|++
 index|]
 return|;
 block|}
-name|int
-name|result
-init|=
+return|return
 name|super
 operator|.
 name|read
 argument_list|()
-decl_stmt|;
-return|return
-name|result
 return|;
 block|}
 annotation|@

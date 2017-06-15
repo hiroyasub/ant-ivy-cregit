@@ -342,7 +342,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The repository management can be used to load all metadata from a repository, analyze them, and  * provide a bunch of information about the whole repository state.  *<p>  * Since loading all metadata from a repository is not a light task, this engine should only be used  * on a machine having good access to the repository (on the same filesystem being usually the best  * suited).  *</p>  *<p>  * To access information, you usually have before to call a method to init the data: {@link #load()}  * is used to load repository metadata, {@link #analyze()} is used to analyze them. These methods  * being very time consuming, they must always be called explicitly.  *</p>  *<p>  * On a large repository, this engine can be very memory consuming to use, it is not suited to be  * used in a long running process, but rather in short process loading data and taking action about  * the current state of the repository.  *</p>  *<p>  * This engine is not intended to be used concurrently with publish, the order of repository loaded  * being undeterministic and long, it could end up in having an inconsistent in memory state.  *</p>  *<p>  * For better performance, we strongly suggest using this engine with cache in useOrigin mode.  *</p>  */
+comment|/**  * The repository management can be used to load all metadata from a repository, analyze them, and  * provide a bunch of information about the whole repository state.  *<p>  * Since loading all metadata from a repository is not a light task, this engine should only be used  * on a machine having good access to the repository (on the same filesystem being usually the best  * suited).  *</p>  *<p>  * To access information, you usually have before to call a method to init the data: {@link #load()}  * is used to load repository metadata, {@link #analyze()} is used to analyze them. These methods  * being very time consuming, they must always be called explicitly.  *</p>  *<p>  * On a large repository, this engine can be very memory consuming to use, it is not suited to be  * used in a long running process, but rather in short process loading data and taking action about  * the current state of the repository.  *</p>  *<p>  * This engine is not intended to be used concurrently with publish, the order of repository loaded  * being nondeterministic and long, it could end up in having an inconsistent in memory state.  *</p>  *<p>  * For better performance, we strongly suggest using this engine with cache in useOrigin mode.  *</p>  */
 end_comment
 
 begin_class
@@ -659,7 +659,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event dispatch      * thread in a GUI.      *</p>      *       * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Analyze data in the repository.      *<p>      * This method may take a long time to proceed. It should never be called from event dispatch      * thread in a GUI.      *</p>      *      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|void
 name|analyze
@@ -791,7 +791,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Returns the number of Module Revision in the repository.      *       * @return the number of module revisions in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Returns the number of Module Revision in the repository.      *      * @return the number of module revisions in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|int
 name|getRevisionsNumber
@@ -807,7 +807,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the number of ModuleId in the repository.      *       * @return the number of ModuleId in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
+comment|/**      * Returns the number of ModuleId in the repository.      *      * @return the number of ModuleId in the repository.      * @throws IllegalStateException      *             if the repository has not been loaded yet      * @see #load()      */
 specifier|public
 name|int
 name|getModuleIdsNumber
@@ -823,7 +823,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns Module Revisions which have no dependers.      *       * @return a Collection of the {@link ModuleRevisionId} of module revisions which have no      *         dependers in the repository.      * @throws IllegalStateException      *             if the repository has not been analyzed yet      * @see #analyze()      */
+comment|/**      * Returns Module Revisions which have no dependers.      *      * @return a Collection of the {@link ModuleRevisionId} of module revisions which have no      *         dependers in the repository.      * @throws IllegalStateException      *             if the repository has not been analyzed yet      * @see #analyze()      */
 specifier|public
 name|Collection
 name|getOrphans

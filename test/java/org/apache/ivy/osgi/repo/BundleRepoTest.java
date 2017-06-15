@@ -251,6 +251,16 @@ begin_import
 import|import
 name|org
 operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -260,12 +270,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
@@ -273,8 +285,6 @@ begin_class
 specifier|public
 class|class
 name|BundleRepoTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|File
@@ -296,6 +306,8 @@ argument_list|(
 literal|"test/test-repo/ivyrepo"
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFS
@@ -372,6 +384,8 @@ name|repo2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileRepo
@@ -455,6 +469,8 @@ name|repo2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolver
@@ -578,6 +594,8 @@ name|repo2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testXMLSerialisation

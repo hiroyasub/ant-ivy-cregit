@@ -592,7 +592,7 @@ literal|" ::"
 argument_list|)
 expr_stmt|;
 name|DependencyResolver
-name|oldDicator
+name|oldDictator
 init|=
 name|resolveEngine
 operator|.
@@ -1376,7 +1376,7 @@ name|resolveEngine
 operator|.
 name|setDictatorResolver
 argument_list|(
-name|oldDicator
+name|oldDictator
 argument_list|)
 expr_stmt|;
 name|settings

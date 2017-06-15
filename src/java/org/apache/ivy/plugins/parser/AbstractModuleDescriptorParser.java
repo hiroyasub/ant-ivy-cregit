@@ -445,13 +445,13 @@ name|String
 name|defaultConf
 decl_stmt|;
 comment|// used only as defaultconf, not used for
-comment|// guesssing right side part of a mapping
+comment|// guessing right side part of a mapping
 specifier|private
 name|String
 name|defaultConfMapping
 decl_stmt|;
 comment|// same as default conf but is used
-comment|// for guesssing right side part of a mapping
+comment|// for guessing right side part of a mapping
 specifier|private
 name|DefaultDependencyDescriptor
 name|defaultConfMappingDescriptor
@@ -646,7 +646,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|)
 block|{
 name|parseDepsConfs
@@ -655,7 +655,7 @@ name|confs
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|,
 literal|true
 argument_list|)
@@ -672,7 +672,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|,
 name|boolean
 name|evaluateConditions
@@ -704,7 +704,7 @@ name|conf
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|,
 name|evaluateConditions
 argument_list|)
@@ -722,7 +722,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|)
 block|{
 name|parseDepsConfs
@@ -731,7 +731,7 @@ name|conf
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|,
 literal|true
 argument_list|)
@@ -749,7 +749,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|,
 name|boolean
 name|evaluateConditions
@@ -817,7 +817,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 condition|)
 block|{
 for|for
@@ -1155,12 +1155,12 @@ name|conf
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX". If          * the condition evaluates to true, the configuration is returned, if the condition          * evaluatate to false, null is returned. If there are no conditions, the configuration          * itself is returned.          *           * @param conf          *            the configuration to evaluate          * @param dd          *            the dependencydescriptor to which the configuration will be added          * @return the evaluated condition          */
+comment|/**          * Evaluate the optional condition in the given configuration, like "[org=MYORG]confX". If          * the condition evaluates to true, the configuration is returned, if the condition          * evaluates to false, null is returned. If there are no conditions, the configuration          * itself is returned.          *          * @param conf          *            the configuration to evaluate          * @param dd          *            the dependency descriptor to which the configuration will be added          * @return the evaluated condition          */
 specifier|private
 name|String
 name|evaluateCondition
@@ -1469,7 +1469,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|)
 block|{
 for|for
@@ -1498,7 +1498,7 @@ index|]
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|)
 expr_stmt|;
 block|}
@@ -1514,7 +1514,7 @@ name|DefaultDependencyDescriptor
 name|dd
 parameter_list|,
 name|boolean
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 parameter_list|)
 block|{
 name|Set
@@ -1622,7 +1622,7 @@ name|configName
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|)
 expr_stmt|;
 block|}
@@ -1652,7 +1652,7 @@ name|confs
 argument_list|,
 name|dd
 argument_list|,
-name|useDefaultMappingToGuessRightOperande
+name|useDefaultMappingToGuessRightOperand
 argument_list|)
 expr_stmt|;
 block|}

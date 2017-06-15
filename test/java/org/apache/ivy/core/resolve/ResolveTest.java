@@ -719,6 +719,58 @@ begin_import
 import|import
 name|org
 operator|.
+name|junit
+operator|.
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Rule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|rules
+operator|.
+name|ExpectedException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -742,12 +794,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|*
 import|;
 end_import
 
@@ -759,8 +813,6 @@ begin_class
 specifier|public
 class|class
 name|ResolveTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Ivy
@@ -778,14 +830,20 @@ specifier|private
 name|File
 name|workDir
 decl_stmt|;
-specifier|public
-name|ResolveTest
-parameter_list|()
-block|{
-block|}
 annotation|@
-name|Override
-specifier|protected
+name|Rule
+specifier|public
+name|ExpectedException
+name|expExc
+init|=
+name|ExpectedException
+operator|.
+name|none
+argument_list|()
+decl_stmt|;
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -872,13 +930,11 @@ argument_list|()
 expr_stmt|;
 block|}
 annotation|@
-name|Override
-specifier|protected
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CacheCleaner
 operator|.
@@ -902,6 +958,8 @@ name|workDir
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithRetainingArtifactName
@@ -1116,6 +1174,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithRetainingArtifactNameAndExtraAttributes
@@ -1190,11 +1250,7 @@ name|extra
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|extra
@@ -1363,6 +1419,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testArtifactOrigin
@@ -1673,6 +1731,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUseOrigin
@@ -1863,6 +1923,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveSimple
@@ -1991,6 +2053,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveBadStatus
@@ -2037,6 +2101,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithXmlEntities
@@ -2124,6 +2190,8 @@ name|th
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveNoRevisionInPattern
@@ -2189,6 +2257,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveLatestWithNoRevisionInPattern
@@ -2252,6 +2322,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveNoRevisionInDep
@@ -2298,6 +2370,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveNoRevisionNowhere
@@ -2410,6 +2484,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithConflictManagerPerModule
@@ -2524,6 +2600,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithConflictManagerDefinedInModule
@@ -2629,6 +2707,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveRequiresDescriptor
@@ -2715,6 +2795,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveOtherConfiguration
@@ -2780,6 +2862,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithSlashes
@@ -2953,6 +3037,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFromCache
@@ -3145,6 +3231,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFromCache2
@@ -3360,6 +3448,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDynamicFromCache
@@ -3456,13 +3546,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -3536,13 +3624,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -3569,6 +3655,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDynamicFromCacheWithMD
@@ -3688,13 +3776,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -3768,13 +3854,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -3801,6 +3885,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDynamicFromCacheWithMDAfterOneTTLExpiration
@@ -3921,13 +4007,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -3997,13 +4081,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4077,13 +4159,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4110,6 +4190,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDynamicFromCacheWithTTL0
@@ -4206,13 +4288,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4294,13 +4374,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4327,6 +4405,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDynamicFromCacheWithTTL
@@ -4511,13 +4591,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4587,13 +4665,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4620,6 +4696,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRefreshDynamicFromCache
@@ -4768,13 +4846,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4841,13 +4917,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -4885,7 +4959,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Configures an Ivy instance using a resolver locating modules on file system, in a      * build/testCache2 location which is created for the test and removed after, and can thus      * easily simulate a repository availability problem      *       * @return the configured ivy instance      */
+comment|/**      * Configures an Ivy instance using a resolver locating modules on file system, in a      * build/testCache2 location which is created for the test and removed after, and can thus      * easily simulate a repository availability problem      *      * @return the configured ivy instance      */
 specifier|private
 name|Ivy
 name|ivyTestCache
@@ -5014,6 +5088,8 @@ return|return
 name|ivy
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFromCacheOnly
@@ -5163,6 +5239,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeCacheLayout
@@ -5376,6 +5454,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeCacheLayout2
@@ -5579,13 +5659,10 @@ operator|.
 name|toString
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"workspace"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -5694,6 +5771,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleCache
@@ -5924,6 +6003,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testForceLocal
@@ -6129,6 +6210,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testForceLocal2
@@ -6395,6 +6478,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testForceLocal3
@@ -6622,6 +6707,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExtends
@@ -6750,6 +6837,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExtended
@@ -6878,6 +6967,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExtendedAndExtends
@@ -7056,6 +7147,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleExtends
@@ -7288,6 +7381,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleExtendsAndConfs
@@ -7534,6 +7629,8 @@ name|crr
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleConfsWithLatest
@@ -7678,6 +7775,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleConfsWithConflicts
@@ -7976,6 +8075,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleExtends2
@@ -8345,6 +8446,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveSeveralDefaultWithArtifacts
@@ -8432,6 +8535,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflictsWithArtifacts
@@ -8521,6 +8626,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveSeveralDefaultWithArtifactsAndConfs
@@ -8688,6 +8795,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveSeveralDefaultWithArtifactsAndConfs2
@@ -8993,6 +9102,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithStartPublicConf
@@ -9164,6 +9275,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithPrivateConf
@@ -9335,6 +9448,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDefaultWithArtifactsConf1
@@ -9506,6 +9621,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDefaultWithArtifactsConf2
@@ -9677,6 +9794,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDefaultWithArtifactsAndConfMapping
@@ -9855,6 +9974,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithIncludeArtifactsConf1
@@ -10026,6 +10147,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithIncludeArtifactsConf2
@@ -10196,6 +10319,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithIncludeArtifactsWithoutConf
@@ -10367,6 +10492,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithIncludeArtifactsTransitive
@@ -10472,6 +10599,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithExcludesArtifacts
@@ -10643,6 +10772,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithExcludesArtifacts2
@@ -10813,6 +10944,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithExcludesArtifacts3
@@ -10984,6 +11117,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithExcludesArtifacts4
@@ -11155,6 +11290,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithExcludesArtifacts5
@@ -11326,6 +11463,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveDependencies
@@ -11495,6 +11634,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveDependenciesWithOverride
@@ -11665,6 +11806,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Testcase for IVY-1131.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveDependenciesWithOverrideAndDynamicResolveMode
@@ -11841,6 +11984,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveDisabled
@@ -12015,6 +12160,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesOrder
@@ -12057,9 +12204,7 @@ name|revisions
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|report
 operator|.
@@ -12171,6 +12316,8 @@ name|mod51Index
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransitivityPerConfiguration
@@ -12415,6 +12562,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransitivityPerConfiguration2
@@ -12660,6 +12809,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransitivityPerConfiguration3
@@ -12905,6 +13056,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransitivityPerConfiguration4
@@ -12954,9 +13107,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -13013,9 +13164,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -13061,13 +13210,11 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|ModuleRevisionId
 operator|.
@@ -13094,6 +13241,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisableTransitivityPerConfiguration5
@@ -13149,9 +13298,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -13208,9 +13355,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -13256,9 +13401,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -13300,6 +13443,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDiamond
@@ -13512,6 +13657,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflict
@@ -13932,6 +14079,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflict2
@@ -14317,6 +14466,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflict3
@@ -14487,6 +14638,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMergeTransitiveAfterConflict
@@ -14605,6 +14758,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test IVY-618.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflictFromPoms
@@ -14650,6 +14805,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveEviction
@@ -14863,6 +15020,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveEviction2
@@ -14968,6 +15127,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveEvictionWithExtendingConf
@@ -15083,36 +15244,22 @@ name|evictedModules
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|IvyNode
+name|anEvicted
+range|:
 name|evicted
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|evictedModules
 operator|.
 name|add
 argument_list|(
-name|evicted
-index|[
-name|i
-index|]
+name|anEvicted
 operator|.
 name|getId
 argument_list|()
@@ -15139,6 +15286,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveConflictInConf
@@ -15351,6 +15500,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictWithConf
@@ -15650,6 +15801,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictWithConf2
@@ -15931,6 +16084,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictWithConf3
@@ -16104,6 +16259,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailWithMissingConf
@@ -16165,16 +16322,15 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"'unknown'"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictWithConfInMultiConf
@@ -16531,6 +16687,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEvictWithConfInMultiConf2
@@ -16910,6 +17068,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleEviction
@@ -16953,6 +17113,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForce
@@ -17165,6 +17327,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceAfterConflictSolved
@@ -17318,6 +17482,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceAfterDependencyExist
@@ -17422,6 +17588,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceInDepOnly
@@ -17550,6 +17718,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceInDepOnly2
@@ -17658,6 +17828,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithDynamicRevisionsAndArtifactLockStrategy
@@ -17715,9 +17887,7 @@ name|lockFiles
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|findLockFiles
@@ -17765,27 +17935,15 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|File
+name|file
+range|:
 name|files
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 if|if
 condition|(
-name|files
-index|[
-name|i
-index|]
+name|file
 operator|.
 name|isDirectory
 argument_list|()
@@ -17793,10 +17951,7 @@ condition|)
 block|{
 name|findLockFiles
 argument_list|(
-name|files
-index|[
-name|i
-index|]
+name|file
 argument_list|,
 name|result
 argument_list|)
@@ -17804,10 +17959,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|files
-index|[
-name|i
-index|]
+name|file
 operator|.
 name|getName
 argument_list|()
@@ -17822,15 +17974,14 @@ name|result
 operator|.
 name|add
 argument_list|(
-name|files
-index|[
-name|i
-index|]
+name|file
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceWithDynamicRevisions
@@ -18043,6 +18194,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceWithDynamicRevisionsAndSeveralConfs
@@ -18255,6 +18408,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceWithDynamicRevisionsAndSeveralConfs2
@@ -18469,6 +18624,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveForceWithDynamicRevisionsAndCyclicDependencies
@@ -18679,6 +18836,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveContradictoryConflictResolution
@@ -18853,6 +19012,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveContradictoryConflictResolution2
@@ -18972,6 +19133,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveContradictoryConflictResolution3
@@ -19057,6 +19220,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtends
@@ -19209,6 +19374,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultiConfs
@@ -19527,6 +19694,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testThisConfiguration
@@ -19945,6 +20114,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatest
@@ -20235,6 +20406,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestMultiple
@@ -20340,6 +20513,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestWhenReleased
@@ -20406,6 +20581,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestWithMultiplePatterns
@@ -20495,6 +20672,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveModeDynamic1
@@ -20610,6 +20789,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveModeDynamic2
@@ -20628,11 +20809,7 @@ name|attributes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|attributes
@@ -20777,6 +20954,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveModeDynamicWithBranch1
@@ -20862,6 +21041,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveModeDynamicWithBranch2
@@ -20947,6 +21128,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveModeDefaultOverrideSettings
@@ -20954,7 +21137,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// same as ResolveModeDynamic2, but resolve mode is set in settings, and overriden when
+comment|// same as ResolveModeDynamic2, but resolve mode is set in settings, and overridden when
 comment|// calling resolve
 name|Map
 argument_list|<
@@ -20966,11 +21149,7 @@ name|attributes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|attributes
@@ -21122,6 +21301,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVersionRange1
@@ -21218,6 +21399,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVersionRange2
@@ -21277,6 +21460,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestMilestone
@@ -21373,6 +21558,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLatestMilestone2
@@ -21443,6 +21630,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY56
@@ -21520,6 +21709,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY214
@@ -21585,6 +21776,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY218
@@ -21650,6 +21843,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY729
@@ -21708,6 +21903,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3;      * circular dependency strategy set to error.      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircular
@@ -21715,7 +21913,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org6#mod6.3;1.0->org6#mod6.2;1.0->org6#mod6.3;latest.integration"
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -21849,8 +22062,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -21872,30 +22083,10 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-name|assertEquals
-argument_list|(
-literal|"org6#mod6.3;1.0->org6#mod6.2;1.0->org6#mod6.3;latest.integration"
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Circular dependency: mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+;      * circular dependency strategy set to error.      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircular2
@@ -21903,7 +22094,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org8#mod8.5;NONE->org8#mod8.6;2.+->org8#mod8.5;2.+"
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -21949,8 +22155,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -21972,31 +22176,10 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-comment|// ok
-name|assertEquals
-argument_list|(
-literal|"org8#mod8.5;NONE->org8#mod8.6;2.+->org8#mod8.5;2.+"
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Test case for IVY-400.      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3,      * in both configuration default and test; circular dependency strategy set to error.      *      * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCircular3
@@ -22004,9 +22187,22 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-400
-comment|// mod6.3 depends on mod6.2, which itself depends on mod6.3,
-comment|// in both configuration default and test
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|CircularDependencyException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->..."
+argument_list|)
+expr_stmt|;
 name|ResolveReport
 name|report
 init|=
@@ -22237,8 +22433,6 @@ name|getInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -22262,30 +22456,9 @@ block|}
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"no exception with circular dependency strategy set to error"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CircularDependencyException
-name|ex
-parameter_list|)
-block|{
-name|assertEquals
-argument_list|(
-literal|"org6#mod6.3;1.2->org6#mod6.2;1.1->..."
-argument_list|,
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRegularCircular
@@ -22428,6 +22601,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveDualChain
@@ -22646,6 +22821,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBug148
@@ -22754,6 +22931,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBug148b
@@ -22862,6 +23041,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1178
@@ -23068,6 +23249,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1236
@@ -23208,6 +23391,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1233
@@ -23356,6 +23541,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1333
@@ -23494,11 +23681,7 @@ name|extra
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|extra
@@ -23532,6 +23715,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1347
@@ -23655,6 +23840,8 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY999
@@ -23777,6 +23964,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1366
@@ -23905,6 +24094,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBadFiles
@@ -23981,13 +24172,10 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"'badorg'"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|report
@@ -24040,13 +24228,10 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"'badmodule'"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|report
@@ -24099,13 +24284,10 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"'badbranch'"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|report
@@ -24158,13 +24340,10 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"'badrevision'"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|report
@@ -24217,16 +24396,15 @@ argument_list|,
 literal|"\n"
 argument_list|)
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"badatt"
 argument_list|)
-operator|!=
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveSetting
@@ -24399,6 +24577,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveSetting2
@@ -24526,6 +24706,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolverDirectlyUsingCache
@@ -24704,6 +24886,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVisibility1
@@ -24754,6 +24938,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVisibility2
@@ -24825,6 +25011,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVisibility3
@@ -24896,6 +25084,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVisibility4
@@ -24971,6 +25161,8 @@ comment|// /////////////////////////////////////////////////////////
 comment|// here comes a series of test provided by Chris Rudd
 comment|// about configuration mapping and eviction
 comment|// /////////////////////////////////////////////////////////
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping1
@@ -25133,6 +25325,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping2
@@ -25295,6 +25489,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping3
@@ -25457,6 +25653,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping4
@@ -25619,6 +25817,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping5
@@ -25781,6 +25981,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping6
@@ -25945,6 +26147,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationMapping7
@@ -26109,6 +26313,8 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY97
@@ -26279,6 +26485,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMultipleSameDependency
@@ -26484,6 +26692,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveExcludesSimple
@@ -26674,6 +26884,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveExcludesDiamond1
@@ -26748,6 +26960,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveExcludesDiamond2
@@ -26822,6 +27036,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveExcludesDiamond3
@@ -26896,6 +27112,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitiveExcludes2
@@ -26999,6 +27217,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExcludesModule
@@ -27142,6 +27362,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExcludesModuleWide
@@ -27285,6 +27507,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExcludesConf
@@ -27367,6 +27591,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExcludesConf2
@@ -27447,6 +27673,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExcludesConf3
@@ -27526,6 +27754,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveExceptConfiguration
@@ -27598,6 +27828,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveIntersectConfiguration1
@@ -27715,6 +27947,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveIntersectConfiguration2
@@ -27958,6 +28192,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveIntersectConfiguration3
@@ -28201,6 +28437,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveIntersectConfiguration4
@@ -28529,6 +28767,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConfigurationGroups
@@ -28857,6 +29097,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFallbackConfiguration
@@ -28908,6 +29150,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFallbackConfiguration2
@@ -28980,6 +29224,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFallbackConfiguration3
@@ -29052,6 +29298,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFallbackConfiguration4
@@ -29135,6 +29383,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2
@@ -29326,6 +29576,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2WithConflict
@@ -29520,6 +29772,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2WithConflict2
@@ -29656,6 +29910,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2RelocationOfGroupId
@@ -29815,6 +30071,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2FullRelocation
@@ -29974,9 +30232,11 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
-name|testResolveVesionRelocationChainedWithGroupRelocation
+name|testResolveVersionRelocationChainedWithGroupRelocation
 parameter_list|()
 throws|throws
 name|Exception
@@ -30131,6 +30391,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitivelyToRelocatedPom
@@ -30298,6 +30560,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveTransitivelyToPomRelocatedToNewVersion
@@ -30465,6 +30729,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2Classifiers
@@ -30600,11 +30866,7 @@ name|cmap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|cmap
@@ -30645,6 +30907,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ClassifiersWithoutPOM
@@ -30780,11 +31044,7 @@ name|cmap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|cmap
@@ -30825,6 +31085,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2GetSources
@@ -30991,6 +31253,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2GetSourcesWithSrcClassifier
@@ -31158,6 +31422,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2GetSourcesAndJavadocAuto
@@ -31376,6 +31642,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2WithVersionProperty
@@ -31523,6 +31791,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ParentPomChainResolver
@@ -31839,6 +32109,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ParentPomWithNamespace
@@ -32185,6 +32457,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ParentPomDualResolver
@@ -32192,13 +32466,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test has a dependency on test2 but there is no version listed. test has a parent of
-comment|// parent(2.0)
-comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list
-comment|// the version as
-comment|// ${pom.version}. The parent version should take precidence over parent2,
-comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and
-comment|// it's version is listed
+comment|// test has a dependency on test2 but there is no version listed. test
+comment|// has a parent of parent(2.0) then parent2. Both parents have a
+comment|// dependencyManagement element for test2, and each list the version as
+comment|// ${pom.version}. The parent version should take precedence over
+comment|// parent2, so the version should be test2 version 2.0. Test3 is also a
+comment|// dependency of parent, and it's version is listed
 comment|// as 1.0 in parent2. (dependencies inherited from parent comes after)
 comment|// now run tests with dual resolver
 name|Ivy
@@ -32502,6 +32775,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ParentPomDependencyManagementOverrideTransitiveVersion
@@ -32511,14 +32786,13 @@ name|Exception
 block|{
 comment|// test;2.0 has a dependency on test2;3.0.
 comment|// test has a parent of parent(2.0) then parent2.
-comment|// Both parents have a dependencyManagement element for test2, and each list the version as
-comment|// ${pom.version}. The version for test2 in test should take precedance,
-comment|// so the version should be test2 version 3.0.
-comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement section specifying
-comment|// test4;1.0.
-comment|// since maven 2.0.6, the information in parent should override transitive dependency
-comment|// version,
-comment|// and thus we should get test4;1.0
+comment|// Both parents have a dependencyManagement element for test2, and each
+comment|// list the version as ${pom.version}. The version for test2 in test
+comment|// should take precedence, so the version should be test2 version 3.0.
+comment|// test2;3.0 -> test4;2.0, but parent has a dependencyManagement
+comment|// section specifying test4;1.0.
+comment|// since maven 2.0.6, the information in parent should override
+comment|// transitive dependency version, and thus we should get test4;1.0
 name|Ivy
 name|ivy
 init|=
@@ -32763,6 +33037,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2ParentPomDependencyManagementWithImport
@@ -32943,6 +33219,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2Snapshot1
@@ -33053,6 +33331,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2Snapshot1AsLatestIntegration
@@ -33171,6 +33451,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2Snapshot2
@@ -33281,6 +33563,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveMaven2Snapshot2AsLatestIntegration
@@ -33399,6 +33683,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceMapping
@@ -33608,6 +33894,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceMapping2
@@ -33803,6 +34091,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceMapping3
@@ -33997,6 +34287,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceMapping4
@@ -34102,6 +34394,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceMapping5
@@ -34186,6 +34480,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY151
@@ -34265,6 +34561,8 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCheckRevision
@@ -34389,6 +34687,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTrustRevision
@@ -34533,6 +34833,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitiveConfMapping
@@ -34610,6 +34912,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributes
@@ -34846,6 +35150,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributes2
@@ -35034,6 +35340,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributes3
@@ -35149,6 +35457,8 @@ literal|"expected='task2' found='null'"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributes4
@@ -35316,6 +35626,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamespaceExtraAttributes
@@ -35439,6 +35751,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches1
@@ -35521,6 +35835,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches2
@@ -35603,6 +35919,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches3
@@ -35685,6 +36003,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches4
@@ -35786,6 +36106,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches5
@@ -35887,6 +36209,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBranches6
@@ -36080,6 +36404,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExternalArtifacts
@@ -36243,6 +36569,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveWithMultipleIvyPatterns
@@ -36392,6 +36720,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrivateConfigurationTransferWhenConflict
@@ -36498,21 +36828,7 @@ name|Artifact
 name|art
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|containsArtifact
-argument_list|(
-name|art
-argument_list|,
-name|conf
-operator|.
-name|getDownloadedArtifactsReports
-argument_list|()
-argument_list|)
-condition|)
-block|{
-name|fail
+name|assertTrue
 argument_list|(
 literal|"artifact "
 operator|+
@@ -36534,9 +36850,18 @@ argument_list|()
 operator|.
 name|getModuleRevisionId
 argument_list|()
+argument_list|,
+name|containsArtifact
+argument_list|(
+name|art
+argument_list|,
+name|conf
+operator|.
+name|getDownloadedArtifactsReports
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|void
@@ -36582,20 +36907,7 @@ argument_list|,
 name|ext
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|containsArtifact
-argument_list|(
-name|art
-argument_list|,
-name|conf
-operator|.
-name|getDownloadedArtifactsReports
-argument_list|()
-argument_list|)
-condition|)
-block|{
-name|fail
+name|assertFalse
 argument_list|(
 literal|"artifact "
 operator|+
@@ -36617,9 +36929,18 @@ argument_list|()
 operator|.
 name|getModuleRevisionId
 argument_list|()
+argument_list|,
+name|containsArtifact
+argument_list|(
+name|art
+argument_list|,
+name|conf
+operator|.
+name|getDownloadedArtifactsReports
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|Artifact
@@ -36680,33 +37001,21 @@ name|art
 parameter_list|,
 name|ArtifactDownloadReport
 index|[]
-name|adr
+name|adrs
 parameter_list|)
 block|{
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|ArtifactDownloadReport
 name|adr
-operator|.
-name|length
-condition|;
-name|i
-operator|++
+range|:
+name|adrs
 control|)
 block|{
 name|Artifact
 name|artifact
 init|=
 name|adr
-index|[
-name|i
-index|]
 operator|.
 name|getArtifact
 argument_list|()
@@ -37294,6 +37603,8 @@ name|confs
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributesForcedDependencies
@@ -37500,6 +37811,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoAttributesForcedDependencies
@@ -37706,6 +38019,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributesMultipleDependenciesHang
@@ -37787,6 +38102,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributesMultipleDependenciesNoHang
@@ -37868,6 +38185,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributesMultipleDependenciesHang2
@@ -37949,6 +38268,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtraAttributesMultipleDependenciesNoHang2
@@ -38030,6 +38351,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testIVY956
@@ -38055,8 +38385,6 @@ literal|"latest-compatible"
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ivy
 operator|.
 name|resolve
@@ -38091,21 +38419,9 @@ literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"No StrictConflictException has been thrown"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
-block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1159_orderIsModAModB
@@ -38226,6 +38542,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1159_orderIsModAModBReplaceForced
@@ -38346,6 +38664,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1159_orderIsModBModA
@@ -38466,6 +38786,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1159_orderIsModBModAReplaceForced
@@ -38687,9 +39009,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -38808,6 +39128,8 @@ name|dopts
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIVY1300
@@ -38922,15 +39244,14 @@ argument_list|,
 literal|"1"
 argument_list|)
 decl_stmt|;
-comment|// check that the resolve report has the expected results, namely that trunk/5 is considered
-comment|// later than branch/1
-comment|// purely because 5>1. Of course it is more likely that we would want to consider this a
-comment|// 'bad comparison', but
-comment|// this Unit Test is not about that. It is about inconsistency of results between the
-comment|// resolve report and the
-comment|// delivered descriptor. In fact the delivered descriptor is out of step, because retrieve
-comment|// and the report both
-comment|// agree that trunk/5 is selected. Deliver begs to differ.
+comment|// check that the resolve report has the expected results, namely that
+comment|// trunk/5 is considered later than branch/1 purely because 5>1. Of
+comment|// course it is more likely that we would want to consider this a
+comment|// 'bad comparison', but this Unit Test is not about that. It is about
+comment|// inconsistency of results between the resolve report and the
+comment|// delivered descriptor. In fact the delivered descriptor is out of
+comment|// step, because retrieve and the report both agree that trunk/5 is
+comment|// selected. Deliver begs to differ.
 name|Set
 argument_list|<
 name|ModuleRevisionId
@@ -38951,9 +39272,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -39149,6 +39468,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUseCacheOnly
@@ -39467,6 +39788,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUseCacheOnlyWithRange
@@ -39578,6 +39901,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUseCacheOnlyWithChanging
@@ -39679,6 +40004,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnpack

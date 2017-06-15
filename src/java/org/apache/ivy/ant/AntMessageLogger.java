@@ -144,7 +144,7 @@ name|PROGRESS_LOG_PERIOD
 init|=
 literal|1500
 decl_stmt|;
-comment|/**      * Creates and register an {@link AntMessageLogger} for the given {@link Task}, with the given      * {@link Ivy} instance.      *<p>      * The created instance will automatically be unregistered from the Ivy instance when the task      * finishes.      *</p>      *       * @param task      *            the task the logger should use for logging      * @param ivy      *            the ivy instance on which the logger should be registered      */
+comment|/**      * Creates and register an {@link AntMessageLogger} for the given {@link Task}, with the given      * {@link Ivy} instance.      *<p>      * The created instance will automatically be unregistered from the Ivy instance when the task      * finishes.      *</p>      *      * @param task      *            the task the logger should use for logging      * @param ivy      *            the ivy instance on which the logger should be registered      */
 specifier|public
 specifier|static
 name|void
@@ -333,10 +333,10 @@ name|BuildEvent
 name|event
 parameter_list|)
 block|{
-comment|// NB: There is somtimes task created by an other task
+comment|// NB: There is sometimes task created by an other task
 comment|// in that case, we should not uninit Message. The log should stay associated
 comment|// with the initial task, except if it was an antcall, ant or subant target
-comment|// NB2 : Testing the identity of the task is not enought, event.getTask() return
+comment|// NB2 : Testing the identity of the task is not enough, event.getTask() return
 comment|// an instance of UnknownElement is wrapping the concrete instance
 name|stackDepth
 operator|--
@@ -400,7 +400,7 @@ operator|new
 name|StringBuffer
 argument_list|()
 decl_stmt|;
-comment|/**      * Constructs a new AntMEssageImpl instance.      *       * @param antProjectComponent      *            the ant project component this message implementation should use for logging. Must      *            not be<code>null</code>.      */
+comment|/**      * Constructs a new AntMessageImpl instance.      *      * @param task      *            the ant project component this message implementation should use for logging. Must      *            not be<code>null</code>.      */
 specifier|protected
 name|AntMessageLogger
 parameter_list|(

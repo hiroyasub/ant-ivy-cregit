@@ -411,7 +411,7 @@ name|void
 name|doProgress
 parameter_list|()
 function_decl|;
-comment|/**      * Indicates the end of a long running task      *       * @param msg      *            the message associated with long running task end.      */
+comment|/**      * Indicates the end of a long running task      *      * @param msg      *            the message associated with long running task end.      */
 specifier|protected
 specifier|abstract
 name|void

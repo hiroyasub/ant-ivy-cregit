@@ -50,7 +50,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Specifies the prefix used to indicate a variable is an environment variable. If the prefix      * doesn't end with a '.', it will be added automatically.      *       * @param prefix      *            the prefix to use for the environment variables      */
+comment|/**      * Specifies the prefix used to indicate a variable is an environment variable. If the prefix      * doesn't end with a '.', it will be added automatically.      *      * @param prefix      *            the prefix to use for the environment variables      */
 specifier|public
 name|void
 name|setEnvironmentPrefix

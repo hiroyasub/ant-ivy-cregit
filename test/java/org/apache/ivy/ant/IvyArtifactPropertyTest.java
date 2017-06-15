@@ -16,6 +16,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -67,11 +91,31 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -79,8 +123,6 @@ begin_class
 specifier|public
 class|class
 name|IvyArtifactPropertyTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|IvyArtifactProperty
@@ -90,12 +132,12 @@ specifier|private
 name|Project
 name|project
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|TestHelper
 operator|.
@@ -146,12 +188,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|TestHelper
 operator|.
@@ -159,6 +201,8 @@ name|cleanCache
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimple
@@ -231,6 +275,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveId
@@ -368,14 +414,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test must fail because no resolve was performed      *      * @throws Exception      */
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|BuildException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testWithResolveIdWithoutResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|prop
 operator|.
@@ -403,20 +457,6 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Task should have failed because no resolve was performed!"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected!
-block|}
 block|}
 block|}
 end_class

@@ -313,7 +313,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Add a configuration for this rule      *       * @param conf      */
+comment|/**      * Add a configuration for this rule      *      * @param conf String      */
 specifier|public
 name|void
 name|addConfiguration

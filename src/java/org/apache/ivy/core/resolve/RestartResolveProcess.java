@@ -22,6 +22,11 @@ comment|/**  * This RuntimeException is used during the resolve process to ask t
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"serial"
+argument_list|)
 specifier|public
 class|class
 name|RestartResolveProcess

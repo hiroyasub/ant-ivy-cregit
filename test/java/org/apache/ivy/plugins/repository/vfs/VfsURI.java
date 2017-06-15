@@ -128,7 +128,7 @@ comment|// add other schemes here if other can be tested on your machine
 name|SCHEME_FILE
 block|}
 decl_stmt|;
-comment|/**      * Create a set of valid VFS URIs for the file access protocol      *       * @param resourcePath      *            relative path (from the base repo) to the resource to be accessed      * @return      */
+comment|/**      * Create a set of valid VFS URIs for the file access protocol      *      * @param scheme String      * @param resource      *            relative path (from the base repo) to the resource to be accessed      * @param ivy Ivy      * @return VfsURI      */
 specifier|public
 specifier|static
 name|VfsURI
@@ -149,16 +149,14 @@ name|vfsURI
 init|=
 literal|null
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|scheme
-operator|.
-name|equals
-argument_list|(
-name|SCHEME_CIFS
-argument_list|)
 condition|)
 block|{
+case|case
+name|SCHEME_CIFS
+case|:
 name|vfsURI
 operator|=
 operator|new
@@ -207,17 +205,10 @@ operator|+
 name|resource
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|scheme
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 name|SCHEME_FILE
-argument_list|)
-condition|)
-block|{
+case|:
 name|vfsURI
 operator|=
 operator|new
@@ -246,17 +237,10 @@ operator|+
 name|resource
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|scheme
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 name|SCHEME_FTP
-argument_list|)
-condition|)
-block|{
+case|:
 name|vfsURI
 operator|=
 operator|new
@@ -306,17 +290,10 @@ operator|+
 name|resource
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|scheme
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 name|SCHEME_SFTP
-argument_list|)
-condition|)
-block|{
+case|:
 name|vfsURI
 operator|=
 operator|new
@@ -366,12 +343,13 @@ operator|+
 name|resource
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 return|return
 name|vfsURI
 return|;
 block|}
-comment|/**      * Create a wellformed VFS resource identifier      *       * @param scheme      *            the name of the scheme used to acces the resource      * @param user      *            a user name. May be<code>null</code>      * @param passwd      *            a passwd. May be<code>null</code>      * @param host      *            a host identifier. May be<code>null</code>      * @param path      *            a scheme spacific path to a resource      */
+comment|/**      * Create a wellformed VFS resource identifier      *      * @param scheme      *            the name of the scheme used to access the resource      * @param user      *            a user name. May be<code>null</code>      * @param passwd      *            a passwd. May be<code>null</code>      * @param host      *            a host identifier. May be<code>null</code>      * @param path      *            a scheme specific path to a resource      */
 specifier|public
 name|VfsURI
 parameter_list|(
@@ -488,17 +466,17 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return a well-formed VFS Resource identifier      *       * @return<code>String<code> representing a well formed VFS resource identifier      */
+comment|/**      * Return a well-formed VFS Resource identifier      *      * @return<code>String<code> representing a well formed VFS resource identifier      */
 specifier|public
 name|String
 name|getVfsURI
 parameter_list|()
 block|{
-name|StringBuffer
+name|StringBuilder
 name|uri
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|uri
@@ -508,7 +486,10 @@ argument_list|(
 name|this
 operator|.
 name|scheme
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"://"
 argument_list|)
 expr_stmt|;
@@ -537,7 +518,10 @@ argument_list|(
 name|this
 operator|.
 name|user
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|":"
 argument_list|)
 expr_stmt|;
@@ -584,7 +568,10 @@ argument_list|(
 name|this
 operator|.
 name|passwd
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"@"
 argument_list|)
 expr_stmt|;
@@ -642,7 +629,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Convert a resource path to the format required for a VFS resource identifier      *       * @param path      *<code>String</code> path to the resource      * @return<code>String</code> representing a normalized resource path      */
+comment|/**      * Convert a resource path to the format required for a VFS resource identifier      *      * @param path      *<code>String</code> path to the resource      * @return<code>String</code> representing a normalized resource path      */
 specifier|private
 name|String
 name|normalizePath

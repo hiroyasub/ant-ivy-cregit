@@ -584,7 +584,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy cache task in inline mode: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' "
+literal|"It can either be set explicitly via the attribute 'organisation' "
 operator|+
 literal|"or via 'ivy.organisation' property"
 argument_list|)
@@ -603,7 +603,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy cache task in inline mode: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' "
+literal|"It can either be set explicitly via the attribute 'module' "
 operator|+
 literal|"or via 'ivy.module' property"
 argument_list|)
@@ -969,7 +969,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy cache task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' "
+literal|"It can either be set explicitly via the attribute 'organisation' "
 operator|+
 literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
@@ -988,7 +988,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy cache task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' "
+literal|"It can either be set explicitly via the attribute 'module' "
 operator|+
 literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)
@@ -1007,7 +1007,7 @@ name|BuildException
 argument_list|(
 literal|"no conf provided for ivy cache task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'conf' or "
+literal|"It can either be set explicitly via the attribute 'conf' or "
 operator|+
 literal|"via 'ivy.resolved.configurations' property or a prior call to<resolve/>"
 argument_list|)
@@ -2075,12 +2075,7 @@ name|this
 operator|.
 name|keep
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|keep
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -2102,9 +2097,6 @@ else|:
 name|this
 operator|.
 name|keep
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public

@@ -44,8 +44,8 @@ operator|=
 name|subFilter
 expr_stmt|;
 block|}
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|char
 name|operator
 parameter_list|()

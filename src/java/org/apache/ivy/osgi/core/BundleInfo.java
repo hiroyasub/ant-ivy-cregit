@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Bundle info extracted from the bundle manifest.  *   */
+comment|/**  * Bundle info extracted from the bundle manifest.  *  */
 end_comment
 
 begin_class

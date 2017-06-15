@@ -773,7 +773,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Get every report on the download requests.      *       * @return the list of reports, never<code>null</code>      */
+comment|/**      * Get every report on the download requests.      *      * @return the list of reports, never<code>null</code>      */
 specifier|public
 name|ArtifactDownloadReport
 index|[]
@@ -796,7 +796,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Get every report on the download requests.      *       * @return the list of reports, never<code>null</code>      */
+comment|/**      * Get every report on the download requests.      *      * @return the list of reports, never<code>null</code>      */
 specifier|public
 name|ArtifactDownloadReport
 index|[]
@@ -812,7 +812,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *       * @param downloadStatus      *            the status of download to retreive. Set it to<code>null</code> for no restriction      *            on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved,<code>false</code> to exclude reports from modules evicted in all      *            configurations.      * @return the list of reports, never<code>null</code>      * @see ConfigurationResolveReport#getArtifactsReports(DownloadStatus, boolean)      */
+comment|/**      * Get the report on the download requests. The list of download report can be restricted to a      * specific download status, and also remove the download report for the evicted modules.      *      * @param downloadStatus      *            the status of download to retrieve. Set it to<code>null</code> for no restriction      *            on the download status      * @param withEvicted      *            set it to<code>true</code> if the report for the evicted modules have to be      *            retrieved,<code>false</code> to exclude reports from modules evicted in all      *            configurations.      * @return the list of reports, never<code>null</code>      * @see ConfigurationResolveReport#getArtifactsReports(DownloadStatus, boolean)      */
 specifier|public
 name|ArtifactDownloadReport
 index|[]
@@ -981,7 +981,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** Can only be called if checkIfChanged has been called */
+comment|/**      * Can only be called if checkIfChanged has been called      *      * @return boolean      */
 specifier|public
 name|boolean
 name|hasChanged
@@ -1341,7 +1341,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns the list of all dependencies concerned by this report as a List of IvyNode ordered      * from the more dependent to the least one      *       * @return The list of all dependencies.      */
+comment|/**      * Returns the list of all dependencies concerned by this report as a List of IvyNode ordered      * from the more dependent to the least one      *      * @return The list of all dependencies.      */
 specifier|public
 name|List
 argument_list|<
@@ -1354,7 +1354,7 @@ return|return
 name|dependencies
 return|;
 block|}
-comment|/**      * Returns the list of all artifacts which should be downloaded per this resolve To know if the      * artifact have actually been downloaded use information found in ConfigurationResolveReport.      *       * @return The list of all artifacts.      */
+comment|/**      * Returns the list of all artifacts which should be downloaded per this resolve To know if the      * artifact have actually been downloaded use information found in ConfigurationResolveReport.      *      * @return The list of all artifacts.      */
 specifier|public
 name|List
 argument_list|<
@@ -1367,7 +1367,7 @@ return|return
 name|artifacts
 return|;
 block|}
-comment|/**      * gives all the modules ids concerned by this report, from the most dependent to the least one      *       * @return a list of ModuleId      */
+comment|/**      * gives all the modules ids concerned by this report, from the most dependent to the least one      *      * @return a list of ModuleId      */
 specifier|public
 name|List
 argument_list|<
@@ -1506,7 +1506,7 @@ operator|=
 name|size
 expr_stmt|;
 block|}
-comment|/**      * The total size of downloaded artifacts, in bytes.      *<p>      * This only includes artifacts actually downloaded to cache (DownloadStatus.SUCCESSFUL), and      * not artifacts already in cache or used at their original location.      *</p>      *       * @return The total size of downloaded artifacts, in bytes.      */
+comment|/**      * The total size of downloaded artifacts, in bytes.      *<p>      * This only includes artifacts actually downloaded to cache (DownloadStatus.SUCCESSFUL), and      * not artifacts already in cache or used at their original location.      *</p>      *      * @return The total size of downloaded artifacts, in bytes.      */
 specifier|public
 name|long
 name|getDownloadSize
@@ -1525,7 +1525,12 @@ return|return
 name|resolveId
 return|;
 block|}
-comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *       * @param extended      * @return      */
+comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *      * @param extended String      * @return String[]      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|String
 index|[]

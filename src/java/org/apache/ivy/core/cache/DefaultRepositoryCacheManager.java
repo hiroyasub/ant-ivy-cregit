@@ -103,6 +103,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Date
 import|;
 end_import
@@ -113,7 +133,47 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
 import|;
 end_import
 
@@ -948,6 +1008,21 @@ operator|new
 name|PackagingManager
 argument_list|()
 decl_stmt|;
+specifier|private
+specifier|final
+name|List
+argument_list|<
+name|ConfiguredTTL
+argument_list|>
+name|configuredTTLs
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|ConfiguredTTL
+argument_list|>
+argument_list|()
+decl_stmt|;
 specifier|public
 name|DefaultRepositoryCacheManager
 parameter_list|()
@@ -995,6 +1070,7 @@ specifier|public
 name|void
 name|setSettings
 parameter_list|(
+specifier|final
 name|IvySettings
 name|settings
 parameter_list|)
@@ -1011,6 +1087,57 @@ name|setSettings
 argument_list|(
 name|settings
 argument_list|)
+expr_stmt|;
+comment|// process and setup the configured TTLs (which weren't yet processed since they needed a settings instance to be present)
+for|for
+control|(
+specifier|final
+name|ConfiguredTTL
+name|configuredTTL
+range|:
+name|configuredTTLs
+control|)
+block|{
+name|this
+operator|.
+name|addTTL
+argument_list|(
+name|configuredTTL
+operator|.
+name|attributes
+argument_list|,
+name|configuredTTL
+operator|.
+name|matcher
+operator|==
+literal|null
+condition|?
+name|ExactPatternMatcher
+operator|.
+name|INSTANCE
+else|:
+name|settings
+operator|.
+name|getMatcher
+argument_list|(
+name|configuredTTL
+operator|.
+name|matcher
+argument_list|)
+argument_list|,
+name|configuredTTL
+operator|.
+name|duration
+argument_list|)
+expr_stmt|;
+block|}
+comment|// clear off the configured TTLs since we have now processed them and created TTL rules out of them
+name|this
+operator|.
+name|configuredTTLs
+operator|.
+name|clear
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public
@@ -1449,6 +1576,7 @@ specifier|public
 name|void
 name|addConfiguredTtl
 parameter_list|(
+specifier|final
 name|Map
 argument_list|<
 name|String
@@ -1458,19 +1586,20 @@ argument_list|>
 name|attributes
 parameter_list|)
 block|{
+specifier|final
 name|String
-name|duration
+name|durationValue
 init|=
 name|attributes
 operator|.
-name|remove
+name|get
 argument_list|(
 literal|"duration"
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|duration
+name|durationValue
 operator|==
 literal|null
 condition|)
@@ -1483,39 +1612,43 @@ literal|"'duration' attribute is mandatory for ttl"
 argument_list|)
 throw|;
 block|}
-name|String
-name|matcher
+specifier|final
+name|long
+name|duration
 init|=
+name|parseDuration
+argument_list|(
+name|durationValue
+argument_list|)
+decl_stmt|;
+specifier|final
+name|ConfiguredTTL
+name|configuredTTL
+init|=
+operator|new
+name|ConfiguredTTL
+argument_list|(
+name|duration
+argument_list|,
 name|attributes
 operator|.
-name|remove
+name|get
 argument_list|(
 literal|"matcher"
 argument_list|)
-decl_stmt|;
-name|addTTL
-argument_list|(
+argument_list|,
 name|attributes
-argument_list|,
-name|matcher
-operator|==
-literal|null
-condition|?
-name|ExactPatternMatcher
-operator|.
-name|INSTANCE
-else|:
-name|settings
-operator|.
-name|getMatcher
-argument_list|(
-name|matcher
 argument_list|)
-argument_list|,
-name|parseDuration
+decl_stmt|;
+comment|// Processing TTLs requires access to an initialized/usable IvySettings instance.
+comment|// we keep track of these configured TTLs and process them when the IvySettings instance becomes usable
+name|this
+operator|.
+name|configuredTTLs
+operator|.
+name|add
 argument_list|(
-name|duration
-argument_list|)
+name|configuredTTL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1811,7 +1944,7 @@ name|g
 argument_list|)
 return|;
 block|}
-comment|/**      * True if this cache should check lastmodified date to know if ivy files are up to date.      *       * @return boolean      */
+comment|/**      * True if this cache should check lastmodified date to know if ivy files are up to date.      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isCheckmodified
@@ -1861,15 +1994,10 @@ parameter_list|)
 block|{
 name|checkmodified
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|check
-argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      */
+comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isUseOrigin
@@ -1897,9 +2025,6 @@ return|;
 block|}
 return|return
 name|useOrigin
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -1912,15 +2037,10 @@ parameter_list|)
 block|{
 name|useOrigin
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|b
-argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      *      * @param artifact Artifact      * @return File      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -1946,7 +2066,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system.      * This is usually in the cache, but it can be directly in the repository if it is local and if      * the resolve has been done with useOrigin = true      *      * @param artifact Artifact      * @param origin ArtifactOrigin      * @return File      */
 specifier|public
 name|File
 name|getArchiveFileInCache
@@ -2031,7 +2151,7 @@ return|return
 name|archive
 return|;
 block|}
-comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information      * provided as parameter and the setting of useOrigin. If useOrigin is false, this method will      * always return the file in the cache.      */
+comment|/**      * Returns a File object pointing to where the artifact can be found on the local file system,      * using or not the original location depending on the availability of origin information      * provided as parameter and the setting of useOrigin. If useOrigin is false, this method will      * always return the file in the cache.      *      * @param artifact Artifact      * @param origin ArtifactOrigin      * @param useOrigin boolean      * @return File      */
 specifier|private
 name|File
 name|getArchiveFileInCache
@@ -2165,7 +2285,7 @@ name|origin
 argument_list|)
 return|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param name      *            resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedResolverName(ModuleDescriptor md)      *      * @param md      *            the module descriptor resolved      * @param name      *            resolver name      */
 specifier|private
 name|void
 name|saveResolver
@@ -2201,7 +2321,7 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *       * @param md      *            the module descriptor resolved      * @param artifactResolverName      *            artifact resolver name      */
+comment|/**      * Saves the information of which resolver was used to resolve a md, so that this info can be      * retrieve later (even after a jvm restart) by getSavedArtResolverName(ModuleDescriptor md)      *      * @param md      *            the module descriptor resolved      * @param metadataResolverName      *            metadata resolver name      * @param artifactResolverName      *            artifact resolver name      */
 specifier|public
 name|void
 name|saveResolvers
@@ -2585,7 +2705,7 @@ expr_stmt|;
 return|return
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|artifact
 argument_list|)
@@ -2678,9 +2798,6 @@ name|valueOf
 argument_list|(
 name|local
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -2693,7 +2810,7 @@ comment|// origin has not been specified, return null
 return|return
 name|ArtifactOrigin
 operator|.
-name|unkwnown
+name|unknown
 argument_list|(
 name|artifact
 argument_list|)
@@ -3123,7 +3240,7 @@ name|setExist
 argument_list|(
 name|Boolean
 operator|.
-name|parseBoolean
+name|valueOf
 argument_list|(
 name|exists
 argument_list|)
@@ -3143,7 +3260,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      *       * @param artifact      *            the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
+comment|/**      * Creates the unique prefix key that will reference the artifact within the properties.      *      * @param artifact      *            the artifact to create the unique key from. Cannot be null.      * @return the unique prefix key as a string.      */
 specifier|private
 name|String
 name|getPrefixKey
@@ -3192,7 +3309,7 @@ operator|+
 name|hashCode
 return|;
 block|}
-comment|/**      * Returns the key used to identify the location of the artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
+comment|/**      * Returns the key used to identify the location of the artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact location.      */
 specifier|private
 name|String
 name|getLocationKey
@@ -3215,7 +3332,7 @@ operator|+
 literal|".location"
 return|;
 block|}
-comment|/**      * Returns the key used to identify if the artifact is local.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact locality.      */
+comment|/**      * Returns the key used to identify if the artifact is local.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact locality.      */
 specifier|private
 name|String
 name|getIsLocalKey
@@ -3238,7 +3355,7 @@ operator|+
 literal|".is-local"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the last time the artifact was checked to be up to date.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact's last check date.      */
+comment|/**      * Returns the key used to identify the last time the artifact was checked to be up to date.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the artifact's last check date.      */
 specifier|private
 name|String
 name|getLastCheckedKey
@@ -3261,7 +3378,7 @@ operator|+
 literal|".lastchecked"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the existence of the remote artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the existence of the artifact.      */
+comment|/**      * Returns the key used to identify the existence of the remote artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the existence of the artifact.      */
 specifier|private
 name|String
 name|getExistsKey
@@ -3284,7 +3401,7 @@ operator|+
 literal|".exists"
 return|;
 block|}
-comment|/**      * Returns the key used to identify the original artifact.      *       * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the original artifact.      */
+comment|/**      * Returns the key used to identify the original artifact.      *      * @param artifact      *            the artifact to generate the key from. Cannot be null.      * @return the key to be used to reference the original artifact.      */
 specifier|private
 name|String
 name|getOriginalKey
@@ -3421,11 +3538,6 @@ name|String
 name|expectedResolver
 parameter_list|)
 block|{
-name|ModuleRevisionId
-name|mrid
-init|=
-name|requestedRevisionId
-decl_stmt|;
 if|if
 condition|(
 name|isCheckmodified
@@ -3444,7 +3556,7 @@ name|verbose
 argument_list|(
 literal|"don't use cache for "
 operator|+
-name|mrid
+name|requestedRevisionId
 operator|+
 literal|": checkModified=true"
 argument_list|)
@@ -3477,7 +3589,7 @@ name|verbose
 argument_list|(
 literal|"don't use cache for "
 operator|+
-name|mrid
+name|requestedRevisionId
 operator|+
 literal|": changing=true"
 argument_list|)
@@ -3489,7 +3601,7 @@ block|}
 return|return
 name|doFindModuleInCache
 argument_list|(
-name|mrid
+name|requestedRevisionId
 argument_list|,
 name|options
 argument_list|,
@@ -4086,7 +4198,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return      */
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *      * @param moduleDescriptorFile      *            a given module descriptor      * @return ModuleDescriptorParser      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
@@ -6116,7 +6228,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Compute a SHA1 of the resource name, encoded in base64, so we can use it as a file name.      *       * @param resource      *            the resource which name will be hashed      * @return the hash      */
+comment|/**      * Compute a SHA1 of the resource name, encoded in base64, so we can use it as a file name.      *      * @param resource      *            the resource which name will be hashed      * @return the hash      */
 specifier|private
 name|String
 name|computeResourceNameHash
@@ -6172,7 +6284,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Check that a cached file can be considered up to date and thus not downloaded      *       * @param archiveFile      *            the file in the cache      * @param resource      *            the remote resource to check      * @param savedOrigin      *            the saved origin which contains that last checked date      * @param origin      *            the origin in which to store the new last checked date      * @param ttl      *            the time to live to consider the cache up to date      * @return<code>true</code> if the cache is considered up to date      */
+comment|/**      * Check that a cached file can be considered up to date and thus not downloaded      *      * @param archiveFile      *            the file in the cache      * @param resource      *            the remote resource to check      * @param savedOrigin      *            the saved origin which contains that last checked date      * @param origin      *            the origin in which to store the new last checked date      * @param ttl      *            the time to live to consider the cache up to date      * @return<code>true</code> if the cache is considered up to date      */
 specifier|private
 name|boolean
 name|checkCacheUptodate
@@ -6286,7 +6398,7 @@ name|DependencyResolver
 name|resolver
 parameter_list|,
 name|ResolvedResource
-name|orginalMetadataRef
+name|originalMetadataRef
 parameter_list|,
 name|Artifact
 name|requestedMetadataArtifact
@@ -6367,7 +6479,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-name|orginalMetadataRef
+name|originalMetadataRef
 argument_list|,
 name|md
 argument_list|,
@@ -6461,7 +6573,7 @@ name|metadataRef
 decl_stmt|;
 if|if
 condition|(
-name|orginalMetadataRef
+name|originalMetadataRef
 operator|==
 literal|null
 condition|)
@@ -6487,7 +6599,7 @@ name|String
 operator|.
 name|valueOf
 argument_list|(
-name|orginalMetadataRef
+name|originalMetadataRef
 argument_list|)
 expr_stmt|;
 block|}
@@ -7903,9 +8015,6 @@ name|options
 operator|.
 name|isCheckmodified
 argument_list|()
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 return|return
@@ -7996,7 +8105,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resource downloader which makes a copy of the previously existing file before overriding it.      *<p>      * The backup file can be restored or cleanuped later      */
+comment|/**      * Resource downloader which makes a copy of the previously existing file before overriding it.      *<p>      * The backup file can be restored or cleaned up later      */
 specifier|private
 specifier|final
 class|class
@@ -8174,6 +8283,169 @@ name|backup
 operator|.
 name|delete
 argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|private
+specifier|static
+specifier|final
+class|class
+name|ConfiguredTTL
+block|{
+comment|// attributes on the TTL, that don't contribute to module matching
+specifier|private
+specifier|static
+specifier|final
+name|Set
+argument_list|<
+name|String
+argument_list|>
+name|attributesNotContributingToMatching
+init|=
+operator|new
+name|HashSet
+argument_list|<
+name|String
+argument_list|>
+argument_list|()
+decl_stmt|;
+static|static
+block|{
+name|attributesNotContributingToMatching
+operator|.
+name|add
+argument_list|(
+literal|"duration"
+argument_list|)
+expr_stmt|;
+name|attributesNotContributingToMatching
+operator|.
+name|add
+argument_list|(
+literal|"matcher"
+argument_list|)
+expr_stmt|;
+block|}
+specifier|private
+specifier|final
+name|String
+name|matcher
+decl_stmt|;
+specifier|private
+specifier|final
+name|long
+name|duration
+decl_stmt|;
+specifier|private
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|attributes
+decl_stmt|;
+specifier|private
+name|ConfiguredTTL
+parameter_list|(
+specifier|final
+name|long
+name|duration
+parameter_list|,
+specifier|final
+name|String
+name|matcher
+parameter_list|,
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|attributes
+parameter_list|)
+block|{
+name|this
+operator|.
+name|matcher
+operator|=
+name|matcher
+expr_stmt|;
+name|this
+operator|.
+name|duration
+operator|=
+name|duration
+expr_stmt|;
+if|if
+condition|(
+name|attributes
+operator|==
+literal|null
+condition|)
+block|{
+name|this
+operator|.
+name|attributes
+operator|=
+name|Collections
+operator|.
+name|emptyMap
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|attrs
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|(
+name|attributes
+argument_list|)
+decl_stmt|;
+for|for
+control|(
+specifier|final
+name|String
+name|removable
+range|:
+name|attributesNotContributingToMatching
+control|)
+block|{
+name|attrs
+operator|.
+name|remove
+argument_list|(
+name|removable
+argument_list|)
+expr_stmt|;
+block|}
+name|this
+operator|.
+name|attributes
+operator|=
+name|Collections
+operator|.
+name|unmodifiableMap
+argument_list|(
+name|attrs
+argument_list|)
 expr_stmt|;
 block|}
 block|}

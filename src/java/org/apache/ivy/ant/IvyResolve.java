@@ -820,7 +820,7 @@ operator|=
 name|log
 expr_stmt|;
 block|}
-comment|/**      * @deprecated Use {@link #setFailureProperty(String)} instead      */
+comment|/**      * @param failureProperty String      * @deprecated Use {@link #setFailureProperty(String)} instead      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1916,15 +1916,10 @@ condition|)
 block|{
 name|hasChanged
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|report
 operator|.
 name|hasChanged
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|getProject
 argument_list|()
@@ -2523,18 +2518,17 @@ name|isKeep
 parameter_list|()
 block|{
 return|return
+operator|(
 name|keep
 operator|==
 literal|null
+operator|)
 condition|?
 name|organisation
 operator|==
 literal|null
 else|:
 name|keep
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -2549,12 +2543,7 @@ name|this
 operator|.
 name|keep
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|keep
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public

@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Resolver which decorate normal resolver so that the workspace resolver can hijack the resolve  * process<br />  * NB : it is for internal usage of Ivy only!  */
+comment|/**  * Resolver which decorate normal resolver so that the workspace resolver can  * hijack the resolveprocess  *<p>NB : it is for internal usage of Ivy only!</p>  */
 end_comment
 
 begin_class

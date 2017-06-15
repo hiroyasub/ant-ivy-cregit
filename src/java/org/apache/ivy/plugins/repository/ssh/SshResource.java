@@ -206,7 +206,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Resource#exists()      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Resource#exists()      */
 specifier|public
 name|boolean
 name|exists
@@ -226,7 +226,7 @@ return|return
 name|bExists
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Resource#getContentLength()      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Resource#getContentLength()      */
 specifier|public
 name|long
 name|getContentLength
@@ -246,7 +246,7 @@ return|return
 name|len
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Resource#getLastModified()      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Resource#getLastModified()      */
 specifier|public
 name|long
 name|getLastModified
@@ -325,7 +325,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Resource#getName()      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Resource#getName()      */
 specifier|public
 name|String
 name|getName
@@ -340,53 +340,16 @@ name|String
 name|toString
 parameter_list|()
 block|{
-name|StringBuffer
-name|buffer
-init|=
-operator|new
-name|StringBuffer
-argument_list|()
-decl_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|"SshResource:"
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|" ("
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-name|len
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|")]"
-argument_list|)
-expr_stmt|;
 return|return
-name|buffer
-operator|.
-name|toString
-argument_list|()
+literal|"SshResource:"
+operator|+
+name|uri
+operator|+
+literal|" ("
+operator|+
+name|len
+operator|+
+literal|")]"
 return|;
 block|}
 specifier|public

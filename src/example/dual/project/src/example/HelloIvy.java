@@ -54,14 +54,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple hello world example to show how easy it is to retrieve libs with ivy,   * including transitive dependencies   */
+comment|/**  * Simple hello world example to show how easy it is to retrieve libs with ivy,  * including transitive dependencies  */
 end_comment
 
 begin_class
 specifier|public
 specifier|final
 class|class
-name|Hello
+name|HelloIvy
 block|{
 specifier|public
 specifier|static
@@ -78,7 +78,7 @@ block|{
 name|String
 name|message
 init|=
-literal|"hello ivy !"
+literal|"Hello Ivy!"
 decl_stmt|;
 name|System
 operator|.
@@ -173,6 +173,9 @@ literal|"now check if httpclient dependency on commons-logging has been realized
 argument_list|)
 expr_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|clss
 init|=
 name|Class
@@ -195,7 +198,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|Hello
+name|HelloIvy
 parameter_list|()
 block|{
 block|}

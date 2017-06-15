@@ -945,7 +945,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *       * @param moduleDescriptorFile      *            a given module descriptor      * @return      */
+comment|/**      * Choose write module descriptor parser for a given moduleDescriptor      *      * @param moduleDescriptorFile      *            a given module descriptor      * @return ModuleDescriptorParser      */
 specifier|protected
 name|ModuleDescriptorParser
 name|getModuleDescriptorParser
@@ -1487,6 +1487,7 @@ block|}
 block|}
 specifier|private
 specifier|static
+specifier|final
 class|class
 name|MapURLResolver
 extends|extends

@@ -827,11 +827,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|BundleArtifact
-name|best
-init|=
-name|artifact
-decl_stmt|;
 if|if
 condition|(
 name|same
@@ -872,7 +867,7 @@ name|bundle
 operator|.
 name|addArtifact
 argument_list|(
-name|best
+name|artifact
 argument_list|)
 expr_stmt|;
 block|}

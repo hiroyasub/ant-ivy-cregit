@@ -262,7 +262,7 @@ name|publishPermissions
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * create a new resource with lazy initializing      */
+comment|/**      * create a new resource with lazy initializing      *      * @param source String      * @return Resource      */
 specifier|public
 name|Resource
 name|getResource
@@ -290,7 +290,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * Fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *       * @param source      *            ssh uri for the file to get info for      * @return SshResource filled with the needed informations      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
+comment|/**      * Fetch the needed file information for a given file (size, last modification time) and report      * it back in a SshResource      *      * @param source      *            ssh uri for the file to get info for      * @return SshResource filled with the needed information      * @see org.apache.ivy.plugins.repository.Repository#getResource(java.lang.String)      */
 specifier|public
 name|SshResource
 name|resolveResource
@@ -458,7 +458,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Reads out the output of a ssh session exec      *       * @param channel      *            Channel to read from      * @param strStdout      *            StringBuffer that receives Session Stdout output      * @param strStderr      *            StringBuffer that receives Session Stderr output      * @throws IOException      *             in case of trouble with the network      */
+comment|/**      * Reads out the output of a ssh session exec      *      * @param channel      *            Channel to read from      * @param strStdout      *            StringBuffer that receives Session Stdout output      * @param strStderr      *            StringBuffer that receives Session Stderr output      * @throws IOException      *             in case of trouble with the network      */
 specifier|private
 name|void
 name|readSessionOutput
@@ -792,7 +792,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Repository#list(java.lang.String)      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Repository#list(java.lang.String)      */
 specifier|public
 name|List
 name|list
@@ -1013,7 +1013,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * @param session      * @return      * @throws JSchException      */
+comment|/**      * @param session Session      * @return ChannelExec      */
 specifier|private
 name|ChannelExec
 name|getExecChannel
@@ -1058,7 +1058,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * Replace the argument placeholder with argument or append the argument if no placeholder is      * present      *       * @param command      *            with argument placeholder or not      * @param argument      * @return replaced full command      */
+comment|/**      * Replace the argument placeholder with argument or append the argument if no placeholder is      * present      *      * @param command      *            with argument placeholder or not      * @param argument ditto      * @return replaced full command      */
 specifier|private
 name|String
 name|replaceArgument
@@ -1113,7 +1113,7 @@ return|return
 name|fullCmd
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Repository#put(java.io.File, java.lang.String, boolean)      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Repository#put(java.io.File, java.lang.String, boolean)      */
 specifier|public
 name|void
 name|put
@@ -1370,7 +1370,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Tries to create a directory path on the target system      *       * @param path      *            to create      * @param connnection      *            to use      */
+comment|/**      * Tries to create a directory path on the target system      *      * @param path      *            to create      * @param session      *            to use      */
 specifier|private
 name|void
 name|makePath
@@ -1567,7 +1567,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * check for existence of file or dir on target system      *       * @param filePath      *            to the object to check      * @param session      *            to use      * @return true: object exists, false otherwise      */
+comment|/**      * check for existence of file or dir on target system      *      * @param filePath      *            to the object to check      * @param session      *            to use      * @return true: object exists, false otherwise      */
 specifier|private
 name|boolean
 name|checkExistence
@@ -1651,7 +1651,7 @@ operator|==
 literal|0
 return|;
 block|}
-comment|/*      * (non-Javadoc)      *       * @see org.apache.ivy.repository.Repository#get(java.lang.String, java.io.File)      */
+comment|/*      * (non-Javadoc)      *      * @see org.apache.ivy.repository.Repository#get(java.lang.String, java.io.File)      */
 specifier|public
 name|void
 name|get
@@ -1824,7 +1824,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * sets the list command to use for a directory listing listing must be only the filename and      * each filename on a separate line      *       * @param cmd      *            to use. default is "ls -1"      */
+comment|/**      * sets the list command to use for a directory listing listing must be only the filename and      * each filename on a separate line      *      * @param cmd      *            to use. default is "ls -1"      */
 specifier|public
 name|void
 name|setListCommand
@@ -1905,7 +1905,7 @@ operator|=
 name|existCommand
 expr_stmt|;
 block|}
-comment|/**      * The file separator is the separator to use on the target system On a unix system it is '/',      * but I don't know, how this is solved on different ssh implementations. Using the default      * might be fine      *       * @param fileSeparator      *            The fileSeparator to use. default '/'      */
+comment|/**      * The file separator is the separator to use on the target system On a unix system it is '/',      * but I don't know, how this is solved on different ssh implementations. Using the default      * might be fine      *      * @param fileSeparator      *            The fileSeparator to use. default '/'      */
 specifier|public
 name|void
 name|setFileSeparator
@@ -1921,7 +1921,7 @@ operator|=
 name|fileSeparator
 expr_stmt|;
 block|}
-comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions of      * the published files.      */
+comment|/**      * A four digit string (e.g., 0644, see "man chmod", "man open") specifying the permissions of      * the published files.      *      * @param permissions String      */
 specifier|public
 name|void
 name|setPublishPermissions
@@ -1937,7 +1937,7 @@ operator|=
 name|permissions
 expr_stmt|;
 block|}
-comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName()      */
+comment|/**      * return ssh as scheme use the Resolver type name here? would be nice if it would be static, so      * we could use SshResolver.getTypeName()      *      * @return String      */
 specifier|protected
 name|String
 name|getRepositoryScheme
@@ -1947,7 +1947,7 @@ return|return
 literal|"ssh"
 return|;
 block|}
-comment|/**      * Not really streaming...need to implement a proper streaming approach?      *       * @param resource      *            to stream      * @return InputStream of the resource data      */
+comment|/**      * Not really streaming...need to implement a proper streaming approach?      *      * @param resource      *            to stream      * @return InputStream of the resource data      * @throws IOException if something goes wrong      */
 specifier|public
 name|InputStream
 name|openStream

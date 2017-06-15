@@ -382,8 +382,9 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|!
+operator|(
 name|obj
 operator|==
 literal|null
@@ -394,13 +395,8 @@ name|obj
 operator|instanceof
 name|ModuleDescriptorWrapper
 operator|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|)
+operator|&&
 name|bundleInfo
 operator|.
 name|equals

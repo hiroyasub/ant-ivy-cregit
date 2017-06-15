@@ -61,6 +61,7 @@ name|versions
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|register
@@ -72,6 +73,11 @@ block|}
 specifier|private
 specifier|static
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|versions
 decl_stmt|;
 specifier|public

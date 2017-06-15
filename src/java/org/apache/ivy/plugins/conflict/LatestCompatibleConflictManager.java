@@ -310,7 +310,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This conflict manager can be used to allow only compatible dependencies to be used together (like  * the strict conflict manager), but it has the advantage of using a best effort algorithm to find a  * set of compatible dependencies, even if it requires stepping back to older revisions (as long as  * they are in the set of compatibility).  *<p>  * Here is an example of what this conflict manager is able to do:<br/>  *<b>Available Modules</b>:  *   *<pre>  * #A;2-&gt;{ #B;[1.0,1.5] #C;[2.0,2.5] }  * #B;1.4-&gt;#D;1.5  * #B;1.5-&gt;#D;2.0  * #C;2.5-&gt;#D;[1.0,1.6]  *</pre>  *   *<b>Result</b>: #B;1.4, #C;2.5, #D;1.5<br/>  *<b>Details</b>The conflict manager finds that the latest matching version of #B (1.5) depends on  * a version of #D incompatible with what is expected by the latest matching version of #C. Hence  * the conflict manager blacklists #B;1.5, and the version range [1.0,1.5] is resolved again to end  * up with #B;1.4 which depends on #D;1.5, which is fine to work with #C;2.5.  *</p>  */
+comment|/**  * This conflict manager can be used to allow only compatible dependencies to be used together (like  * the strict conflict manager), but it has the advantage of using a best effort algorithm to find a  * set of compatible dependencies, even if it requires stepping back to older revisions (as long as  * they are in the set of compatibility).  *<p>  * Here is an example of what this conflict manager is able to do:  *</p>  *<b>Available Modules</b>:  *<pre>  * #A;2-&gt;{ #B;[1.0,1.5] #C;[2.0,2.5] }  * #B;1.4-&gt;#D;1.5  * #B;1.5-&gt;#D;2.0  * #C;2.5-&gt;#D;[1.0,1.6]  *</pre>  *<b>Result</b>: #B;1.4, #C;2.5, #D;1.5  *<p>  *<b>Details</b>The conflict manager finds that the latest matching version of #B (1.5) depends on  * a version of #D incompatible with what is expected by the latest matching version of #C. Hence  * the conflict manager blacklists #B;1.5, and the version range [1.0,1.5] is resolved again to end  * up with #B;1.4 which depends on #D;1.5, which is fine to work with #C;2.5.  *</p>  */
 end_comment
 
 begin_class
@@ -636,7 +636,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Handles an incompatible conflict      *<p>      * An incompatible conflicts is handled with this pseudo algorithm:      *       *<pre>      * take latest among two nodes in conflict      *   for all callers      *      if dependency is a version constraint (dynamic)      *         blacklist the mapped version      *      else      *         recurse for all callers      *   if a version constraint has been found      *     restart resolve      *   else      *     throw strict conflict exception      *</pre>      *       *</p>      *       * @param parent      *            the parent node of nodes in conflict      * @param conflicts      *            all the nodes in conflict      * @param node      *            one of the two incompatible nodes      * @param other      *            the other incompatible node      * @return true if the incompatible conflict has been handled, false otherwise (in which case      *         resolveConflicts should return null)      */
+comment|/**      * Handles an incompatible conflict      *<p>      * An incompatible conflicts is handled with this pseudo algorithm:      *      *<pre>      * take latest among two nodes in conflict      *   for all callers      *      if dependency is a version constraint (dynamic)      *         blacklist the mapped version      *      else      *         recurse for all callers      *   if a version constraint has been found      *     restart resolve      *   else      *     throw strict conflict exception      *</pre>      *      *</p>      *      * @param parent      *            the parent node of nodes in conflict      * @param conflicts      *            all the nodes in conflict      * @param node      *            one of the two incompatible nodes      * @param other      *            the other incompatible node      * @return true if the incompatible conflict has been handled, false otherwise (in which case      *         resolveConflicts should return null)      */
 specifier|private
 name|boolean
 name|handleIncompatibleConflict
@@ -774,7 +774,7 @@ name|NoConflictResolvedYetException
 name|ex
 parameter_list|)
 block|{
-comment|// we have not enough informations in the nodes to resolve conflict
+comment|// we have not enough information in the nodes to resolve conflict
 comment|// according to the resolveConflicts contract, resolveConflicts must return null
 return|return
 literal|false
@@ -1126,7 +1126,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/**      * Tries to blacklist exactly one version for all callers paths.      *       * @param versionMatcher      *            the version matcher to use to interpret versions      * @param conflictParent      *            the node in which the conflict is occurring      * @param selectedNode      *            the node in favor of which the conflict is resolved      * @param evictedNode      *            the node which will be evicted if we are able to blacklist all paths      * @param node      *            the node for which callers should be considered      * @return the collection of blacklisting to do, null if a blacklist is not possible in at least      *         one caller path      */
+comment|/**      * Tries to blacklist exactly one version for all callers paths.      *      * @param versionMatcher      *            the version matcher to use to interpret versions      * @param conflictParent      *            the node in which the conflict is occurring      * @param selectedNode      *            the node in favor of which the conflict is resolved      * @param evictedNode      *            the node which will be evicted if we are able to blacklist all paths      * @param callerStack      *            ditto      * @return the collection of blacklisting to do, null if a blacklist is not possible in at least      *         one caller path      */
 specifier|private
 name|Collection
 argument_list|<

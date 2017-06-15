@@ -66,12 +66,14 @@ name|String
 name|input
 decl_stmt|;
 specifier|private
+specifier|volatile
 name|boolean
-name|splitted
+name|split
 init|=
 literal|false
 decl_stmt|;
 specifier|private
+specifier|volatile
 name|boolean
 name|toString
 init|=
@@ -86,8 +88,6 @@ parameter_list|,
 name|String
 name|qualifier
 parameter_list|)
-throws|throws
-name|ParseException
 block|{
 name|this
 argument_list|(
@@ -113,8 +113,6 @@ parameter_list|(
 name|String
 name|versionStr
 parameter_list|)
-throws|throws
-name|ParseException
 block|{
 name|this
 operator|.
@@ -122,7 +120,7 @@ name|input
 operator|=
 name|versionStr
 expr_stmt|;
-name|splitted
+name|split
 operator|=
 literal|false
 expr_stmt|;
@@ -171,7 +169,7 @@ name|qualifier
 operator|=
 name|qualifier
 expr_stmt|;
-name|splitted
+name|split
 operator|=
 literal|true
 expr_stmt|;
@@ -180,7 +178,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Build a version from another one while appending an extra qualifier      *       * @param baseVersion      * @param qualifier      */
+comment|/**      * Build a version from another one while appending an extra qualifier      *      * @param baseVersion      *            Version      * @param extraQualifier      *            String      */
 specifier|public
 name|Version
 parameter_list|(
@@ -235,7 +233,7 @@ operator|+
 name|extraQualifier
 operator|)
 expr_stmt|;
-name|splitted
+name|split
 operator|=
 literal|true
 expr_stmt|;
@@ -246,13 +244,13 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|ensureSplitted
+name|ensureSplit
 parameter_list|()
 block|{
 if|if
 condition|(
 operator|!
-name|splitted
+name|split
 condition|)
 block|{
 synchronized|synchronized
@@ -262,7 +260,7 @@ init|)
 block|{
 if|if
 condition|(
-name|splitted
+name|split
 condition|)
 block|{
 return|return;
@@ -304,7 +302,7 @@ argument_list|(
 operator|new
 name|ParseException
 argument_list|(
-literal|"Ill formed OSGi version"
+literal|"Ill-formed OSGi version"
 argument_list|,
 literal|0
 argument_list|)
@@ -447,7 +445,7 @@ index|]
 else|:
 literal|null
 expr_stmt|;
-name|splitted
+name|split
 operator|=
 literal|true
 expr_stmt|;
@@ -477,7 +475,7 @@ condition|)
 block|{
 return|return;
 block|}
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|version
@@ -528,7 +526,7 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 specifier|final
@@ -643,12 +641,12 @@ name|Version
 operator|)
 name|obj
 decl_stmt|;
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|other
 operator|.
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 if|if
@@ -737,7 +735,7 @@ name|Version
 name|withNudgedPatch
 parameter_list|()
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 return|return
@@ -761,7 +759,7 @@ name|Version
 name|withoutQualifier
 parameter_list|()
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 return|return
@@ -783,7 +781,7 @@ name|String
 name|qualifier
 parameter_list|()
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 return|return
@@ -804,12 +802,12 @@ name|Version
 name|other
 parameter_list|)
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|other
 operator|.
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|int
@@ -882,12 +880,12 @@ name|Version
 name|other
 parameter_list|)
 block|{
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|other
 operator|.
-name|ensureSplitted
+name|ensureSplit
 argument_list|()
 expr_stmt|;
 name|int

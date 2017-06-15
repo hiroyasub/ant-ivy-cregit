@@ -348,9 +348,7 @@ argument_list|(
 name|ext
 argument_list|)
 expr_stmt|;
-name|DefaultArtifact
-name|unpacked
-init|=
+return|return
 operator|new
 name|DefaultArtifact
 argument_list|(
@@ -378,9 +376,6 @@ literal|"_unpacked"
 argument_list|,
 name|ext
 argument_list|)
-decl_stmt|;
-return|return
-name|unpacked
 return|;
 block|}
 specifier|public

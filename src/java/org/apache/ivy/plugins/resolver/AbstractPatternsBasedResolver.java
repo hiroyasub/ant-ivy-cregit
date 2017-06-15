@@ -1857,7 +1857,7 @@ parameter_list|)
 block|{
 comment|// to be overridden by subclasses wanting to have listing features
 block|}
-comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      *       * @param pattern      */
+comment|/**      * example of pattern : ~/Workspace/[module]/[module].ivy.xml      *      * @param pattern String      */
 specifier|public
 name|void
 name|addIvyPattern

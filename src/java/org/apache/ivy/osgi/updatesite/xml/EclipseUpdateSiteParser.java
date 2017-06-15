@@ -71,16 +71,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -290,7 +280,7 @@ name|SITE
 argument_list|)
 expr_stmt|;
 comment|// addChild(new DescriptionHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// updateSite.setDescription(child.getBufferedChars().trim());
 comment|// }
 comment|// });
@@ -311,7 +301,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|FeatureHandler
 name|child
@@ -331,12 +321,12 @@ block|}
 argument_list|)
 expr_stmt|;
 comment|// addChild(new ArchiveHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// updateSite.addArchive(((ArchiveHandler) child).archive);
 comment|// }
 comment|// });
 comment|// addChild(new CategoryDefHandler(), new ChildElementHandler() {
-comment|// public void childHanlded(DelegetingHandler child) {
+comment|// public void childHandled(DelegatingHandler child) {
 comment|// updateSite.addCategoryDef(((CategoryDefHandler) child).categoryDef);
 comment|// }
 comment|// });
@@ -495,14 +485,12 @@ name|pack200
 operator|!=
 literal|null
 operator|&&
-operator|new
 name|Boolean
+operator|.
+name|parseBoolean
 argument_list|(
 name|pack200
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 condition|)
 block|{
 name|updatesite
@@ -588,7 +576,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// private static class DescriptionHandler extends DelegetingHandler {
+comment|// private static class DescriptionHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String DESCRIPTION = "description";
 comment|//
@@ -728,7 +716,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|CategoryHandler
 name|child
@@ -780,8 +768,6 @@ argument_list|(
 name|VERSION
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|feature
 operator|=
 operator|new
@@ -796,36 +782,6 @@ name|version
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on the feature '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
 name|String
 name|url
 init|=
@@ -996,7 +952,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// private static class ArchiveHandler extends DelegetingHandler {
+comment|// private static class ArchiveHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String ARCHIVE = "archive";
 comment|//
@@ -1021,7 +977,7 @@ comment|// archive.setURL(url);
 comment|//
 comment|// }
 comment|// }
-comment|// private static class CategoryDefHandler extends DelegetingHandler {
+comment|// private static class CategoryDefHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String CATEGORY_DEF = "category-def";
 comment|//
@@ -1034,7 +990,7 @@ comment|//
 comment|// public CategoryDefHandler() {
 comment|// super(CATEGORY_DEF);
 comment|// addChild(new DescriptionHandler(), new ChildElementHandler<DescriptionHandler>() {
-comment|// public void childHanlded(DescriptionHandler child) {
+comment|// public void childHandled(DescriptionHandler child) {
 comment|// categoryDef.setDescription(child.getBufferedChars().trim());
 comment|// }
 comment|// });

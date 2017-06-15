@@ -381,9 +381,6 @@ operator|.
 name|setForce
 argument_list|(
 name|forceMetadataUpdate
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -744,7 +741,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Illformed updatesite ("
+literal|"Ill-formed updatesite ("
 operator|+
 name|e
 operator|.
@@ -767,7 +764,7 @@ throw|throw
 operator|new
 name|RuntimeException
 argument_list|(
-literal|"Illformed url ("
+literal|"Ill-formed url ("
 operator|+
 name|e
 operator|.

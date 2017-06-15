@@ -43,16 +43,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -367,7 +357,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|DescriptionHandler
 name|child
@@ -407,7 +397,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|LicenseHandler
 name|child
@@ -447,7 +437,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|CopyrightHandler
 name|child
@@ -487,7 +477,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|PluginHandler
 name|child
@@ -523,7 +513,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RequiresHandler
 name|child
@@ -552,7 +542,7 @@ block|}
 argument_list|)
 expr_stmt|;
 comment|// addChild(new UrlHandler(), new ChildElementHandler<UrlHandler>() {
-comment|// public void childHanlded(UrlHandler child) {
+comment|// public void childHandled(UrlHandler child) {
 comment|// }
 comment|// });
 block|}
@@ -588,8 +578,6 @@ argument_list|(
 name|VERSION
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|feature
 operator|=
 operator|new
@@ -604,36 +592,6 @@ name|version
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on feature '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
 name|feature
 operator|.
 name|setOS
@@ -721,9 +679,6 @@ argument_list|(
 name|EXCLUSIVE
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|feature
@@ -741,9 +696,6 @@ argument_list|(
 name|PRIMARY
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|feature
@@ -910,8 +862,6 @@ argument_list|(
 name|id
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|plugin
 operator|.
 name|setVersion
@@ -923,36 +873,6 @@ name|version
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on feature's plugin '"
-operator|+
-name|id
-operator|+
-literal|"': "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
 name|plugin
 operator|.
 name|setUnpack
@@ -968,9 +888,6 @@ argument_list|(
 name|UNPACK
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|plugin
@@ -1190,7 +1107,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ImportHandler
 name|child
@@ -1331,8 +1248,6 @@ name|PLUGIN
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|require
 operator|.
 name|setVersion
@@ -1344,32 +1259,6 @@ name|version
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|SAXException
-argument_list|(
-literal|"Incorrect version on feature's import: "
-operator|+
-name|version
-operator|+
-literal|" ("
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|+
-literal|")"
-argument_list|)
-throw|;
-block|}
 name|require
 operator|.
 name|setMatch
@@ -1396,7 +1285,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// private static class IncludesHandler extends DelegetingHandler {
+comment|// private static class IncludesHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String INCLUDES = "includes";
 comment|//
@@ -1420,7 +1309,7 @@ comment|// String filter = atts.getValue(FILTER);
 comment|// }
 comment|//
 comment|// }
-comment|// private static class InstallHandlerHandler extends DelegetingHandler {
+comment|// private static class InstallHandlerHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String INSTALL_HANDLER = "install-handler";
 comment|//
@@ -1441,24 +1330,24 @@ comment|// String url = atts.getValue(URL);
 comment|// }
 comment|//
 comment|// }
-comment|// private static class UrlHandler extends DelegetingHandler {
+comment|// private static class UrlHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String URL = "url";
 comment|//
 comment|// public UrlHandler() {
 comment|// super(URL);
 comment|// addChild(new UpdateHandler(), new ChildElementHandler<UpdateHandler>() {
-comment|// public void childHanlded(UpdateHandler child) {
+comment|// public void childHandled(UpdateHandler child) {
 comment|// }
 comment|// });
 comment|// addChild(new DiscoveryHandler(), new ChildElementHandler<DiscoveryHandler>() {
-comment|// public void childHanlded(DiscoveryHandler child) {
+comment|// public void childHandled(DiscoveryHandler child) {
 comment|// }
 comment|// });
 comment|// }
 comment|//
 comment|// }
-comment|// private static class UpdateHandler extends DelegetingHandler {
+comment|// private static class UpdateHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String UPDATE = "update";
 comment|//
@@ -1476,7 +1365,7 @@ comment|// String url = atts.getValue(URL);
 comment|// }
 comment|//
 comment|// }
-comment|// private static class DiscoveryHandler extends DelegetingHandler {
+comment|// private static class DiscoveryHandler extends DelegatingHandler {
 comment|//
 comment|// private static final String DISCOVERY = "discovery";
 comment|//

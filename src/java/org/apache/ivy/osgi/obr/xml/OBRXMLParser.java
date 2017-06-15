@@ -409,7 +409,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceHandler
 name|child
@@ -570,7 +570,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceSourceHandler
 name|child
@@ -683,7 +683,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceDescriptionHandler
 name|child
@@ -723,7 +723,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceDocumentationHandler
 name|child
@@ -763,7 +763,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceLicenseHandler
 name|child
@@ -803,7 +803,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ResourceSizeHandler
 name|child
@@ -883,7 +883,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|CapabilityHandler
 name|child
@@ -950,7 +950,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|RequireHandler
 name|child
@@ -1045,7 +1045,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|ExtendHandler
 name|child
@@ -1094,7 +1094,7 @@ name|Message
 operator|.
 name|MSG_ERR
 argument_list|,
-literal|"Resource with no symobilc name, skipping it."
+literal|"Resource with no symbolic name, skipping it."
 argument_list|)
 expr_stmt|;
 name|skip
@@ -1116,46 +1116,13 @@ argument_list|)
 decl_stmt|;
 name|Version
 name|version
-decl_stmt|;
-try|try
-block|{
-name|version
-operator|=
+init|=
 operator|new
 name|Version
 argument_list|(
 name|v
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ParseException
-name|e
-parameter_list|)
-block|{
-name|log
-argument_list|(
-name|Message
-operator|.
-name|MSG_ERR
-argument_list|,
-literal|"Incorrect resource version: "
-operator|+
-name|v
-operator|+
-literal|". The resource "
-operator|+
-name|symbolicname
-operator|+
-literal|" is then ignored."
-argument_list|)
-expr_stmt|;
-name|skip
-argument_list|()
-expr_stmt|;
-return|return;
-block|}
+decl_stmt|;
 name|bundleInfo
 operator|=
 operator|new
@@ -1475,7 +1442,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|childHanlded
+name|childHandled
 parameter_list|(
 name|CapabilityPropertyHandler
 name|child
@@ -1762,7 +1729,7 @@ throw|throw
 operator|new
 name|SAXParseException
 argument_list|(
-literal|"Requirement with illformed filter: "
+literal|"Requirement with ill-formed filter: "
 operator|+
 name|filterText
 argument_list|,
@@ -1818,9 +1785,6 @@ operator|.
 name|setOptional
 argument_list|(
 name|optional
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1836,9 +1800,6 @@ operator|.
 name|setMultiple
 argument_list|(
 name|multiple
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

@@ -1712,7 +1712,7 @@ name|BuildException
 argument_list|(
 literal|"no organisation provided for ivy deliver task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'organisation' "
+literal|"It can either be set explicitly via the attribute 'organisation' "
 operator|+
 literal|"or via 'ivy.organisation' property or a prior call to<resolve/>"
 argument_list|)
@@ -1731,7 +1731,7 @@ name|BuildException
 argument_list|(
 literal|"no module name provided for ivy deliver task: "
 operator|+
-literal|"It can either be set explicitely via the attribute 'module' "
+literal|"It can either be set explicitly via the attribute 'module' "
 operator|+
 literal|"or via 'ivy.module' property or a prior call to<resolve/>"
 argument_list|)

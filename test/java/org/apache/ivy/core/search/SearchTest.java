@@ -181,11 +181,35 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -193,9 +217,9 @@ begin_class
 specifier|public
 class|class
 name|SearchTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListInMavenRepo
@@ -229,10 +253,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|otherTokenValues
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|otherTokenValues
@@ -276,6 +306,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -294,6 +325,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -305,6 +337,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListInMavenRepo2
@@ -358,10 +392,16 @@ literal|false
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|otherTokenValues
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|otherTokenValues
@@ -405,6 +445,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -425,6 +466,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -436,6 +478,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListModulesWithExtraAttributes
@@ -473,10 +517,16 @@ name|getSettings
 argument_list|()
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extendedAttributes
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|extendedAttributes
@@ -563,6 +613,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extraAttributes
 init|=
 name|mrid
@@ -617,6 +672,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|qualifiedExtraAttributes
 init|=
 name|mrid

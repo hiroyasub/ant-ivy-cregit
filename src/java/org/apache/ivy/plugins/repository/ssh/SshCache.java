@@ -336,7 +336,6 @@ name|SshCache
 parameter_list|()
 block|{
 block|}
-empty_stmt|;
 specifier|private
 specifier|static
 name|SshCache
@@ -498,7 +497,7 @@ name|NAME
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * attach an sftp channel to this cache entry          *           * @param newChannel          *            to attach          */
+comment|/**          * attach an sftp channel to this cache entry          *          * @param newChannel          *            to attach          */
 specifier|public
 name|void
 name|setChannelSftp
@@ -607,7 +606,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * key is username / host / port      *       * @see SshCache.createCacheKey() for details      */
+comment|/**      * key is username / host / port      *      * @see #createCacheKey(String, String, int) for details      */
 specifier|private
 name|Map
 name|uriCacheMap
@@ -625,7 +624,7 @@ operator|new
 name|HashMap
 argument_list|()
 decl_stmt|;
-comment|/**      * retrieves a session entry for a given hostname from the cache      *       * @param hostname      *            to retrieve session for      * @return null or the existing entry      */
+comment|/**      * retrieves a session entry for a given hostname from the cache      *      * @param user      *            to retrieve session for      * @param host      *            ditto      * @param port      *            ditto      * @return null or the existing entry      */
 specifier|private
 name|Entry
 name|getCacheEntry
@@ -659,7 +658,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a cobined cache key from the given key parts      *       * @param user      *            name of the user      * @param host      *            of the connection      * @param port      *            of the connection      * @return key for the cache      */
+comment|/**      * Creates a combined cache key from the given key parts      *      * @param user      *            name of the user      * @param host      *            of the connection      * @param port      *            of the connection      * @return key for the cache      */
 specifier|private
 specifier|static
 name|String
@@ -734,7 +733,7 @@ operator|+
 name|portToUse
 return|;
 block|}
-comment|/**      * retrieves a session entry for a given session from the cache      *       * @param session      *            to retrieve cache entry for      * @return null or the existing entry      */
+comment|/**      * retrieves a session entry for a given session from the cache      *      * @param session      *            to retrieve cache entry for      * @return null or the existing entry      */
 specifier|private
 name|Entry
 name|getCacheEntry
@@ -755,7 +754,7 @@ name|session
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets a session to a given combined key into the cache If an old session object already      * exists, close and remove it      *       * @param user      *            of the session      * @param host      *            of the session      * @param port      *            of the session      * @param newSession      *            Session to save      */
+comment|/**      * Sets a session to a given combined key into the cache If an old session object already      * exists, close and remove it      *      * @param user      *            of the session      * @param host      *            of the session      * @param port      *            of the session      * @param newSession      *            Session to save      */
 specifier|private
 name|void
 name|setSession
@@ -967,7 +966,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * discardes session entries from the cache      *       * @param session      *            to clear      */
+comment|/**      * discards session entries from the cache      *      * @param session      *            to clear      */
 specifier|public
 name|void
 name|clearSession
@@ -1018,7 +1017,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * retrieves an sftp channel from the cache      *       * @param session      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
+comment|/**      * retrieves an sftp channel from the cache      *      * @param session      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      * @throws IOException if something goes wrong      */
 specifier|public
 name|ChannelSftp
 name|getChannelSftp
@@ -1084,7 +1083,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * attaches a channelSftp to an existing session cache entry      *       * @param session      *            to attach the channel to      * @param channel      *            channel to attach      */
+comment|/**      * attaches a channelSftp to an existing session cache entry      *      * @param session      *            to attach the channel to      * @param channel      *            channel to attach      */
 specifier|public
 name|void
 name|attachChannelSftp
@@ -1131,7 +1130,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Attempts to connect to a local SSH agent (using either UNIX sockets or PuTTY's Pageant)      *       * @param jsch      *            Connection to be attached to an available local agent      * @return true if connected to agent, false otherwise      */
+comment|/**      * Attempts to connect to a local SSH agent (using either UNIX sockets or PuTTY's Pageant)      *      * @param jsch      *            Connection to be attached to an available local agent      * @return true if connected to agent, false otherwise      */
 specifier|private
 name|boolean
 name|attemptAgentUse
@@ -1191,7 +1190,7 @@ literal|false
 return|;
 block|}
 block|}
-comment|/**      * Gets a session from the cache or establishes a new session if necessary      *       * @param host      *            to connect to      * @param port      *            to use for session (-1 == use standard port)      * @param username      *            for the session to use      * @param userPassword      *            to use for authentication (optional)      * @param pemFile      *            File to use for public key authentication      * @param pemPassword      *            to use for accessing the pemFile (optional)      * @param passFile      *            to store credentials      * @param allowedAgentUse      *            Whether to communicate with an agent for authentication      * @return session or null if not successful      */
+comment|/**      * Gets a session from the cache or establishes a new session if necessary      *      * @param host      *            to connect to      * @param port      *            to use for session (-1 == use standard port)      * @param username      *            for the session to use      * @param userPassword      *            to use for authentication (optional)      * @param pemFile      *            File to use for public key authentication      * @param pemPassword      *            to use for accessing the pemFile (optional)      * @param passFile      *            to store credentials      * @param allowedAgentUse      *            Whether to communicate with an agent for authentication      * @return session or null if not successful      * @throws IOException if something goes wrong      */
 specifier|public
 name|Session
 name|getSession

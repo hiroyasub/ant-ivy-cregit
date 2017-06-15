@@ -333,9 +333,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+return|return
 name|matchers
 index|[
 literal|3
@@ -343,14 +341,6 @@ index|]
 operator|.
 name|matches
 argument_list|()
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-literal|true
 return|;
 comment|// CheckStyle:MagicNumber| ON
 block|}

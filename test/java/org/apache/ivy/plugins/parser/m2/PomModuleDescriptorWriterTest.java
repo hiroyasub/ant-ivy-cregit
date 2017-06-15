@@ -135,11 +135,55 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -147,8 +191,6 @@ begin_class
 specifier|public
 class|class
 name|PomModuleDescriptorWriterTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 specifier|static
@@ -207,6 +249,8 @@ argument_list|(
 literal|"build/test/test-write.xml"
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimple
@@ -321,6 +365,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimpleDependencies
@@ -435,6 +481,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithScope
@@ -549,6 +597,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithType
@@ -663,6 +713,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDependenciesWithClassifier
@@ -777,6 +829,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOptional
@@ -891,6 +945,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTransitive
@@ -1014,6 +1070,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPackaging
@@ -1128,6 +1186,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWriteCompileConfigurationOnly
@@ -1252,6 +1312,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWriteRuntimeConfigurationOnly
@@ -1376,6 +1438,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWriteAllConfiguration
@@ -1500,6 +1564,8 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWriteAllExceptRuntimeConfiguration
@@ -1686,6 +1752,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Before
 specifier|public
 name|void
 name|setUp
@@ -1727,12 +1795,12 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 if|if
 condition|(

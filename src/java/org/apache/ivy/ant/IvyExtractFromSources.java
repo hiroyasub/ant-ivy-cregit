@@ -924,7 +924,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @param pack      * @return      */
+comment|/**      * @param pack String      * @return ModuleRevisionId      */
 specifier|private
 name|ModuleRevisionId
 name|getMapping

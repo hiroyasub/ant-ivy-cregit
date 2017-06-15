@@ -318,7 +318,7 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * Should only be used by configurator      *       * @param name      *            the new name of the resolver      */
+comment|/**      * Should only be used by configurator      *      * @param name      *            the new name of the resolver      */
 name|void
 name|setName
 parameter_list|(
@@ -326,7 +326,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Resolve a module by id, getting its module descriptor and resolving the revision if it's a      * latest one (i.e. a revision uniquely identifying the revision of a module in the current      * environment - If this revision is not able to identify uniquely the revision of the module      * outside of the current environment, then the resolved revision must begin by ##)      *       * @throws ParseException      */
+comment|/**      * Resolve a module by id, getting its module descriptor and resolving the revision if it's a      * latest one (i.e. a revision uniquely identifying the revision of a module in the current      * environment - If this revision is not able to identify uniquely the revision of the module      * outside of the current environment, then the resolved revision must begin by ##)      *      * @param dd DependencyDescriptor      * @param data ResolveData      * @return ResolvedModuleRevision      * @throws ParseException if something goes wrong      */
 name|ResolvedModuleRevision
 name|getDependency
 parameter_list|(
@@ -339,7 +339,7 @@ parameter_list|)
 throws|throws
 name|ParseException
 function_decl|;
-comment|/**      * Finds the module descriptor for the specified<tt>DependencyDescriptor</tt>. If this resolver      * can't find the module descriptor,<tt>null</tt> is returned.      *       * @param dd      *            the dependency descriptor      * @param data      *            the resolve data      * @return the module descriptor, or<tt>null</tt>      */
+comment|/**      * Finds the module descriptor for the specified<tt>DependencyDescriptor</tt>. If this resolver      * can't find the module descriptor,<tt>null</tt> is returned.      *      * @param dd      *            the dependency descriptor      * @param data      *            the resolve data      * @return the module descriptor, or<tt>null</tt>      */
 name|ResolvedResource
 name|findIvyFileRef
 parameter_list|(
@@ -350,7 +350,7 @@ name|ResolveData
 name|data
 parameter_list|)
 function_decl|;
-comment|/**      * Download artifacts with specified DownloadOptions.      *<p>      * The resolver will always make a best effort, and do not stop when an artifact is not      * available. It rather continue to attempt to download other requested artifacts, and report      * what has been done in the returned DownloadReport.      *</p>      *<p>      * The returned DownloadReport is never<code>null</code>, and always contain an      * {@link ArtifactDownloadReport} for each requested Artifact.      *</p>      *       * @param artifacts      *            an array of artifacts to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a DownloadReport with details about each Artifact download.      */
+comment|/**      * Download artifacts with specified DownloadOptions.      *<p>      * The resolver will always make a best effort, and do not stop when an artifact is not      * available. It rather continue to attempt to download other requested artifacts, and report      * what has been done in the returned DownloadReport.      *</p>      *<p>      * The returned DownloadReport is never<code>null</code>, and always contain an      * {@link ArtifactDownloadReport} for each requested Artifact.      *</p>      *      * @param artifacts      *            an array of artifacts to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a DownloadReport with details about each Artifact download.      */
 name|DownloadReport
 name|download
 parameter_list|(
@@ -362,7 +362,7 @@ name|DownloadOptions
 name|options
 parameter_list|)
 function_decl|;
-comment|/**      * Download an artifact according to the given DownloadOptions.      *<p>      * This methods is an alternative to {@link #download(Artifact[], DownloadOptions)}, which      * locates and downloads a set of artifacts. This method uses an {@link ArtifactOrigin}, and as      * such is only used to materialize an already located Artifact.      *</p>      *       * @param artifact      *            the location of the artifact to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a report detailing how the download has gone, is never<code>null</code>.      */
+comment|/**      * Download an artifact according to the given DownloadOptions.      *<p>      * This methods is an alternative to {@link #download(Artifact[], DownloadOptions)}, which      * locates and downloads a set of artifacts. This method uses an {@link ArtifactOrigin}, and as      * such is only used to materialize an already located Artifact.      *</p>      *      * @param artifact      *            the location of the artifact to download. Must not be<code>null</code>.      * @param options      *            options to apply for this download. Must not be<code>null</code>.      * @return a report detailing how the download has gone, is never<code>null</code>.      */
 name|ArtifactDownloadReport
 name|download
 parameter_list|(
@@ -373,7 +373,7 @@ name|DownloadOptions
 name|options
 parameter_list|)
 function_decl|;
-comment|/**      * Returns<code>true</code> if the given artifact can be located by this resolver and actually      * exist.      *       * @param artifact      *            the artifact which should be tested.      * @return<code>true</code> if the given artifact can be located by this resolver and actually      *         exist.      */
+comment|/**      * Returns<code>true</code> if the given artifact can be located by this resolver and actually      * exist.      *      * @param artifact      *            the artifact which should be tested.      * @return<code>true</code> if the given artifact can be located by this resolver and actually      *         exist.      */
 name|boolean
 name|exists
 parameter_list|(
@@ -381,7 +381,7 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-comment|/**      * Locates the given artifact and returns its location if it can be located by this resolver and      * if it actually exists, or<code>null</code> in other cases.      *       * @param artifact      *            the artifact which should be located      * @return the artifact location, or<code>null</code> if it can't be located by this resolver      *         or doesn't exist.      */
+comment|/**      * Locates the given artifact and returns its location if it can be located by this resolver and      * if it actually exists, or<code>null</code> in other cases.      *      * @param artifact      *            the artifact which should be located      * @return the artifact location, or<code>null</code> if it can't be located by this resolver      *         or doesn't exist.      */
 name|ArtifactOrigin
 name|locate
 parameter_list|(
@@ -433,7 +433,7 @@ name|void
 name|reportFailure
 parameter_list|()
 function_decl|;
-comment|/**      * Reports last artifact download failure as Messages      *       * @param art      */
+comment|/**      * Reports last artifact download failure as Messages      *      * @param art Artifact      */
 name|void
 name|reportFailure
 parameter_list|(
@@ -445,7 +445,7 @@ comment|// listing methods, enable to know what is available from this resolver
 comment|// the listing methods must only list entries directly
 comment|// available from them, no recursion is needed as long as sub resolvers
 comment|// are registered in ivy too.
-comment|/**      * List all the values the given token can take if other tokens are set as described in the      * otherTokenValues map. For instance, if token = "revision" and the map contains      * "organisation"->"foo" "module"->"bar" The results will be the list of revisions of the module      * bar from the org foo.      *<p>      * Note that listing does not take into account namespaces, and return raw information without      * any namespace transformation. The caller is responsible for calling namespace transformation      * with the Namespace returned by {@link #getNamespace()}.      *</p>      */
+comment|/**      * List all the values the given token can take if other tokens are set as      * described in the otherTokenValues map. For instance, if      * token = "revision" and the map contains "organisation"-&gt;"foo" "module"-&gt;"bar"      * The results will be the list of revisions of the module bar from the org foo.      *<p>      * Note that listing does not take into account namespaces, and return raw      * information without any namespace transformation. The caller is      * responsible for calling namespace transformation with the Namespace      * returned by {@link #getNamespace()}.      *</p>      *      * @param token String      * @param otherTokenValues Map      * @return String[]      */
 name|String
 index|[]
 name|listTokenValues
@@ -462,7 +462,7 @@ argument_list|>
 name|otherTokenValues
 parameter_list|)
 function_decl|;
-comment|/**      * Same as {@link #listTokenValues(String, Map)} but more generic.      *       * @param tokens      *            the tokens of the query      * @param criteria      *            the token which have values      * @return the list of token values, must not be<code>null</code>      */
+comment|/**      * Same as {@link #listTokenValues(String, Map)} but more generic.      *      * @param tokens      *            the tokens of the query      * @param criteria      *            the token which have values      * @return the list of token values, must not be<code>null</code>      */
 name|Map
 argument_list|<
 name|String
@@ -506,7 +506,7 @@ name|ModuleEntry
 name|module
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the namespace associated with this resolver.      *       * @return the namespace associated with this resolver.      */
+comment|/**      * Returns the namespace associated with this resolver.      *      * @return the namespace associated with this resolver.      */
 name|Namespace
 name|getNamespace
 parameter_list|()
@@ -522,7 +522,7 @@ name|ResolverSettings
 name|settings
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the {@link RepositoryCacheManager} used to manage the repository cache associated      * with this dependency resolver.      *       * @return the {@link RepositoryCacheManager} used to manage the repository cache associated      *         with this dependency resolver.      */
+comment|/**      * Returns the {@link RepositoryCacheManager} used to manage the repository cache associated      * with this dependency resolver.      *      * @return the {@link RepositoryCacheManager} used to manage the repository cache associated      *         with this dependency resolver.      */
 name|RepositoryCacheManager
 name|getRepositoryCacheManager
 parameter_list|()

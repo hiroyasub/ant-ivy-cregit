@@ -807,7 +807,7 @@ operator|=
 name|sync
 expr_stmt|;
 block|}
-comment|/**      * Option to create symlinks instead of copying.      */
+comment|/**      * Option to create symlinks instead of copying.      *      * @param symlink boolean      */
 specifier|public
 name|void
 name|setSymlink
@@ -823,7 +823,7 @@ operator|=
 name|symlink
 expr_stmt|;
 block|}
-comment|/**      * Option to create symlinks in one mass action, instead of separately.      */
+comment|/**      * Option to create symlinks in one mass action, instead of separately.      *      * @param symlinkmass boolean      */
 specifier|public
 name|void
 name|setSymlinkmass
@@ -890,7 +890,7 @@ return|return
 name|overwriteMode
 return|;
 block|}
-comment|/**      * Add a mapper to convert the file names.      *       * @param mapper      *            a<code>Mapper</code> value.      */
+comment|/**      * Add a mapper to convert the file names.      *      * @param mapper      *            a Mapper value.      */
 specifier|public
 name|void
 name|addMapper
@@ -923,7 +923,7 @@ operator|=
 name|mapper
 expr_stmt|;
 block|}
-comment|/**      * Add a nested filenamemapper.      *       * @param fileNameMapper      *            the mapper to add.      */
+comment|/**      * Add a nested filenamemapper.      *      * @param fileNameMapper      *            the mapper to add.      */
 specifier|public
 name|void
 name|add
@@ -955,7 +955,7 @@ name|m
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the path of the file relative to the given base directory.      *       * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
+comment|/**      * Returns the path of the file relative to the given base directory.      *      * @param base      *            the parent directory to which the file must be evaluated.      * @param file      *            the file for which the path should be returned      * @return the path of the file relative to the given base directory.      */
 specifier|private
 name|String
 name|getPath
@@ -1001,7 +1001,7 @@ block|{
 name|beginIndex
 operator|++
 expr_stmt|;
-comment|// skip the seperator char as well
+comment|// skip the separator char as well
 block|}
 return|return
 name|file

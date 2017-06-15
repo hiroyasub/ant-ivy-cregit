@@ -208,7 +208,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Extract from the XML attribute the extra Ivy ones      *       * @param settings      * @param attributes      * @param ignoredAttNames      *            the XML attributes names which are not extra but Ivy core ones      * @return      */
+comment|/**      * Extract from the XML attribute the extra Ivy ones      *      * @param settings ParserSettings      * @param attributes Attributes      * @param ignoredAttNames      *            the XML attributes names which are not extra but Ivy core ones      * @return Map&lt;String,String&gt;      */
 specifier|public
 specifier|static
 name|Map

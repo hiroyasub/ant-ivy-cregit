@@ -1014,7 +1014,7 @@ name|XmlModuleDescriptorParser
 parameter_list|()
 block|{
 block|}
-comment|/**      * @param settings      * @param xmlURL      *            the url pointing to the file to parse      * @param res      *            the real resource to parse, used for log only      * @param validate      * @return      * @throws ParseException      * @throws IOException      */
+comment|/**      * @param ivySettings ParserSettings      * @param xmlURL      *            the url pointing to the file to parse      * @param res      *            the real resource to parse, used for log only      * @param validate boolean      * @return ModuleDescriptor      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 specifier|public
 name|ModuleDescriptor
 name|parseDescriptor
@@ -1137,7 +1137,7 @@ name|getModuleDescriptor
 argument_list|()
 return|;
 block|}
-comment|/**      * Instantiates a Parser instance responsible for actual parsing of Ivy files.      *<p>      * Override this method if you want to use a custom Parser.      *</p>      *       * @param ivySettings      *            the settings to use during parsing      * @return the Parser instance used for parsing Ivy files      */
+comment|/**      * Instantiates a Parser instance responsible for actual parsing of Ivy files.      *<p>      * Override this method if you want to use a custom Parser.      *</p>      *      * @param ivySettings      *            the settings to use during parsing      * @return the Parser instance used for parsing Ivy files      */
 specifier|protected
 name|Parser
 name|newParser
@@ -1990,7 +1990,6 @@ argument_list|(
 literal|">"
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 if|else if
 condition|(
@@ -2700,7 +2699,7 @@ name|sax
 throw|;
 block|}
 block|}
-comment|/**          * Default parent location to check (for dev ONLY)          *           * @return a relative path to a parent module descriptor          */
+comment|/**          * Default parent location to check (for dev ONLY)          *          * @return a relative path to a parent module descriptor          */
 specifier|protected
 name|String
 name|getDefaultParentLocation
@@ -2710,7 +2709,7 @@ return|return
 literal|"../ivy.xml"
 return|;
 block|}
-comment|/**          * Handle extends elements. It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the          * default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          *           * @param attributes          * @throws ParseException          */
+comment|/**          * Handle extends elements. It checks :          *<ul>          *<li>filesystem based on location attribute, if no one is specified it will check the          * default parent location</li>          *<li>cache to find a resolved parent descriptor</li>          *<li>ask repositories to retrieve the parent module descriptor</li>          *</ul>          *          * @param attributes Attributes          * @throws ParseException if something goes wrong          */
 specifier|protected
 name|void
 name|extendsStarted
@@ -3087,7 +3086,7 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Merge current module with a given module descriptor and specify what should be inherited          * through extendTypes argument          *           * @param extendTypes          *            specify what should be inherited          * @param parent          *            a given parent module descriptor          */
+comment|/**          * Merge current module with a given module descriptor and specify what should be inherited          * through extendTypes argument          *          * @param extendTypes          *            specify what should be inherited          * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeWithOtherModuleDescriptor
@@ -3230,7 +3229,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**          * Merge everything from a given parent          *           * @param parent          *            a given parent module desciptor          */
+comment|/**          * Merge everything from a given parent          *          * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeAll
@@ -3282,7 +3281,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Explain how to inherit metadatas related to info element          *           * @param parent          *            a given parent module decriptor          */
+comment|/**          * Explain how to inherit metadata related to info element          *          * @param parent          *            a given parent module descriptor          */
 specifier|protected
 name|void
 name|mergeInfo
@@ -3593,7 +3592,7 @@ return|return
 name|dup
 return|;
 block|}
-comment|/**          * Describes how to merge configurations elements          *           * @param sourceMrid          *            the source module revision id          * @param configurations          *            array of configurations to be inherited          */
+comment|/**          * Describes how to merge configurations elements          *          * @param parent          *            the module descriptor          */
 specifier|protected
 name|void
 name|mergeConfigurations
@@ -3723,7 +3722,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how dependencies should be inherited          *           * @param dependencies          *            array of dependencies to inherit          */
+comment|/**          * Describes how dependencies should be inherited          *          * @param dependencies          *            array of dependencies to inherit          */
 specifier|protected
 name|void
 name|mergeDependencies
@@ -3788,7 +3787,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge description          *           * @param description          *            description going to be inherited          */
+comment|/**          * Describes how to merge description          *          * @param description          *            description going to be inherited          */
 specifier|protected
 name|void
 name|mergeDescription
@@ -3833,7 +3832,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge licenses          *           * @param licenses          *            licenses going to be inherited          */
+comment|/**          * Describes how to merge licenses          *          * @param licenses          *            licenses going to be inherited          */
 specifier|public
 name|void
 name|mergeLicenses
@@ -3873,7 +3872,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Describes how to merge exclude rules          *           * @param excludeRules          *            exclude rules going to be inherited          */
+comment|/**          * Describes how to merge exclude rules          *          * @param excludeRules          *            exclude rules going to be inherited          */
 specifier|public
 name|void
 name|mergeExcludes
@@ -3913,7 +3912,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Returns the parent module using the location attribute (for dev purpose).          *           * @param location          *            a given location          * @throws IOException          * @throws ParseException          */
+comment|/**          * Returns the parent module using the location attribute (for dev purpose).          *          * @param location          *            a given location          * @throws IOException if something goes wrong          * @throws ParseException if something goes wrong          */
 specifier|private
 name|ModuleDescriptor
 name|parseParentModuleOnFilesystem
@@ -4098,7 +4097,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**          * Describe how to parse a {@link ModuleDescriptor} by asking repositories          *           * @param parentMrid          *            a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor}          *         was found          * @throws ParseException          */
+comment|/**          * Describe how to parse a {@link ModuleDescriptor} by asking repositories          *          * @param parentMrid          *            a given {@link ModuleRevisionId} to find          * @return a {@link ModuleDescriptor} if found. Return null if no {@link ModuleDescriptor}          *         was found          * @throws ParseException if something goes wrong          */
 specifier|protected
 name|ModuleDescriptor
 name|parseOtherIvyFile
@@ -5113,9 +5112,7 @@ name|transitiveValue
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf
@@ -5127,9 +5124,6 @@ argument_list|(
 literal|"transitive"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|deprecated
@@ -5155,9 +5149,11 @@ name|Visibility
 operator|.
 name|getVisibility
 argument_list|(
+operator|(
 name|visibility
 operator|==
 literal|null
+operator|)
 condition|?
 literal|"public"
 else|:
@@ -5176,9 +5172,11 @@ literal|"description"
 argument_list|)
 argument_list|)
 argument_list|,
+operator|(
 name|ext
 operator|==
 literal|null
+operator|)
 condition|?
 literal|null
 else|:
@@ -5503,9 +5501,6 @@ literal|"force"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|boolean
 name|changing
@@ -5526,9 +5521,6 @@ literal|"changing"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|transitiveValue
@@ -5553,9 +5545,7 @@ name|transitiveValue
 operator|==
 literal|null
 operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|Boolean
 operator|.
 name|valueOf
@@ -5567,9 +5557,6 @@ argument_list|(
 literal|"transitive"
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 decl_stmt|;
 name|String
 name|name
@@ -5616,11 +5603,7 @@ literal|"branchConstraint"
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|// if (branchConstraint == null) {
-comment|// // there was no branch constraint before, so we should
-comment|// // set the branchConstraint to the current default branch
-comment|// branchConstraint = settings.getDefaultBranch(ModuleId.newInstance(org, name));
-comment|// }
+comment|/* if (branchConstraint == null) {              * // there was no branch constraint before, so we should              * // set the branchConstraint to the current default branch              * branchConstraint = settings.getDefaultBranch(ModuleId.newInstance(org, name));              * }              */
 name|String
 name|rev
 init|=
@@ -6266,9 +6249,6 @@ name|valueOf
 argument_list|(
 name|confMappingOverride
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6341,9 +6321,6 @@ literal|"confmappingoverride"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6597,9 +6574,6 @@ literal|"default"
 argument_list|)
 argument_list|)
 argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|String
@@ -7581,17 +7555,14 @@ operator|.
 name|EXCLUDE
 condition|)
 block|{
-comment|// we are adding a configuration to a module wide exclude rule
-comment|// we have nothing special to do here, the rule has already been added to the module
-comment|// descriptor
+comment|// we are adding a configuration to a module wide exclude rule we have nothing
+comment|// special to do here, the rule has already been added to the module descriptor
 block|}
 else|else
 block|{
 comment|// we are currently adding a configuration to either an include, exclude or artifact
-comment|// element
-comment|// of a dependency. This means that we have to add this element to the corresponding
-comment|// conf
-comment|// of the current dependency descriptor
+comment|// element of a dependency. This means that we have to add this element to the
+comment|// corresponding conf of the current dependency descriptor
 if|if
 condition|(
 name|confAware
@@ -8330,9 +8301,15 @@ operator|.
 name|append
 argument_list|(
 literal|"</"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|qName
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|">"
 argument_list|)
 expr_stmt|;

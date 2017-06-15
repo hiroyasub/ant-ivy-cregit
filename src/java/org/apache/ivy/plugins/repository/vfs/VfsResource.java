@@ -351,9 +351,12 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Get a list of direct descendents of the given resource. Note that attempts to get a list of      * children does<emphasize>not</emphasize> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *       * @return A<code>ArrayList</code> of VFSResources      */
+comment|/**      * Get a list of direct descendants of the given resource. Note that attempts to get a list of      * children does<em>not</em> result in an error. Instead an error message is      * logged and an empty ArrayList returned.      *      * @return A<code>ArrayList</code> of VFSResources      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getChildren
 parameter_list|()
 block|{
@@ -361,10 +364,14 @@ name|init
 argument_list|()
 expr_stmt|;
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try
@@ -394,40 +401,17 @@ name|FOLDER
 operator|)
 condition|)
 block|{
+for|for
+control|(
 name|FileObject
-index|[]
-name|children
-init|=
+name|child
+range|:
 name|resourceImpl
 operator|.
 name|getChildren
 argument_list|()
-decl_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|children
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
-name|FileObject
-name|child
-init|=
-name|children
-index|[
-name|i
-index|]
-decl_stmt|;
 name|list
 operator|.
 name|add
@@ -487,7 +471,7 @@ return|return
 name|content
 return|;
 block|}
-comment|/**      * Get the name of the resource.      *       * @return a<code>String</code> representing the Resource URL.      */
+comment|/**      * Get the name of the resource.      *      * @return a<code>String</code> representing the Resource URL.      */
 specifier|public
 name|String
 name|getName
@@ -518,7 +502,7 @@ name|fsManager
 argument_list|)
 return|;
 block|}
-comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *       * @param vfsURI      * @return a normalized<class>String</class> representing the VFS URI      */
+comment|/**      * The VFS FileName getURI method seems to have a bug in it where file: URIs will have 4 forward      * slashes instead of 3.      *      * @param vfsURI ditto      * @return a normalized String representing the VFS URI      */
 specifier|public
 specifier|static
 name|String
@@ -565,7 +549,7 @@ return|return
 name|vfsURI
 return|;
 block|}
-comment|/**      * Get the last modification time of the resource.      *       * @return a<code>long</code> indicating last modified time.      */
+comment|/**      * Get the last modification time of the resource.      *      * @return a<code>long</code> indicating last modified time.      */
 specifier|public
 name|long
 name|getLastModified
@@ -578,7 +562,7 @@ return|return
 name|lastModified
 return|;
 block|}
-comment|/**      * Get the size of the resource      *       * @return a<code>long</code> representing the size of the resource (in bytes).      */
+comment|/**      * Get the size of the resource      *      * @return a<code>long</code> representing the size of the resource (in bytes).      */
 specifier|public
 name|long
 name|getContentLength
@@ -591,7 +575,7 @@ return|return
 name|contentLength
 return|;
 block|}
-comment|/**      * Flag indicating whether a resource is available for querying      *       * @return<code>true</code> if the resource is available for querying,<code>false</code>      *         otherwise.      */
+comment|/**      * Flag indicating whether a resource is available for querying      *      * @return<code>true</code> if the resource is available for querying,<code>false</code>      *         otherwise.      */
 specifier|public
 name|boolean
 name|exists
@@ -604,7 +588,7 @@ return|return
 name|exists
 return|;
 block|}
-comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *       * @return<code>true</code> if the resource physically exists,<code>false</code> otherwise.      */
+comment|/**      * Return a flag indicating whether a provided VFS resource physically exists      *      * @return<code>true</code> if the resource physically exists,<code>false</code> otherwise.      */
 specifier|public
 name|boolean
 name|physicallyExists
@@ -624,7 +608,7 @@ argument_list|()
 return|;
 comment|// originally I only checked for a FileSystemException. I expanded it to
 comment|// include all exceptions when I found it would throw a NPE exception when the query was
-comment|// run on non-wellformed VFS URI.
+comment|// run on ill-formed VFS URI.
 block|}
 catch|catch
 parameter_list|(
@@ -636,7 +620,7 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"Fail to check the existance of the resource "
+literal|"Fail to check the existence of the resource "
 operator|+
 name|getName
 argument_list|()

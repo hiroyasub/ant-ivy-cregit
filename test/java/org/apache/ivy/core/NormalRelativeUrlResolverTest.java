@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -46,12 +56,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
@@ -59,8 +71,6 @@ begin_class
 specifier|public
 class|class
 name|NormalRelativeUrlResolverTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|NormalRelativeUrlResolver
@@ -70,6 +80,8 @@ operator|new
 name|NormalRelativeUrlResolver
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativeHttpURL
@@ -105,6 +117,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativeFileURL
@@ -140,6 +154,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelativeMixedURL
@@ -175,6 +191,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileAndUrlWithAbsoluteFile
@@ -279,6 +297,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileAndUrlWithRelativeFile
@@ -356,6 +376,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileAndUrlWithAbsoluteUrl
@@ -427,6 +449,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFileAndUrlWithRelativeUrl

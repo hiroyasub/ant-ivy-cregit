@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visit node is an object used to represent one visit from one parent on an {@link IvyNode} of  * the dependency graph. During dependency resolution, the {@link ResolveEngine} visits nodes of the  * depency graph following the dependencies, thus the same node can be visited several times, if it  * is requested from several module. In this case you will have one VisitNode per parent and per  * root module configuration. Thus VisitNode stores data specific to the visit:  *<ul>  *<li>parent</li>  * the node from which the visit is occuring  *<li>parentConf</li>  * the configuration of the parent in which this node is visited  *<li>rootModuleConf</li>  * the configuration of the root module which is currently resolved  *</ul>  */
+comment|/**  * A visit node is an object used to represent one visit from one parent on an {@link IvyNode} of  * the dependency graph. During dependency resolution, the {@link ResolveEngine} visits nodes of the  * dependency graph following the dependencies, thus the same node can be visited several times, if  * it is requested from several module. In this case you will have one VisitNode per parent and per  * root module configuration. Thus VisitNode stores data specific to the visit:  *<dl>  *<dd>parent</dd><dt>the node from which the visit is occurring</dt>  *<dd>parentConf</dd><dt>the configuration of the parent in which this node is visited</dt>  *<dd>rootModuleConf</dd><dt>the configuration of the root module which is currently resolved</dt>  *</dl>  */
 end_comment
 
 begin_class
@@ -257,7 +257,7 @@ name|root
 init|=
 literal|null
 decl_stmt|;
-comment|/**      * Direct path from root to this node. Note that the colleciton is ordered but is not a list      * implementation This collection is null until it is required, see getPath      */
+comment|/**      * Direct path from root to this node. Note that the collection is ordered but is not a list      * implementation This collection is null until it is required, see getPath      */
 specifier|private
 name|Collection
 argument_list|<
@@ -494,7 +494,7 @@ return|return
 name|root
 return|;
 block|}
-comment|/**      * Get an ordered collection with the nodes from the root to this node      *       * @return      */
+comment|/**      * Get an ordered collection with the nodes from the root to this node      *      * @return Collection&lt;VisitNode&gt;      */
 specifier|public
 name|Collection
 argument_list|<
@@ -736,7 +736,7 @@ return|return
 name|root
 return|;
 block|}
-comment|/**      * Returns true if the current dependency descriptor is transitive and the parent configuration      * is transitive. Otherwise returns false.      *       * @return true if current node is transitive and the parent configuration is transitive.      */
+comment|/**      * Returns true if the current dependency descriptor is transitive and the parent configuration      * is transitive. Otherwise returns false.      *      * @return true if current node is transitive and the parent configuration is transitive.      */
 specifier|public
 name|boolean
 name|isTransitive
@@ -790,8 +790,7 @@ name|getParentNode
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 operator|(
 name|dd
 operator|!=
@@ -802,13 +801,7 @@ name|dd
 operator|.
 name|isTransitive
 argument_list|()
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-return|return
+operator|||
 name|node
 operator|.
 name|hasAnyMergedUsageWithTransitiveDependency
@@ -817,7 +810,7 @@ name|rootModuleConf
 argument_list|)
 return|;
 block|}
-comment|/**      * Checks if the current node's parent configuration is transitive.      *       * @param node      *            current node      * @return true if the node's parent configuration is transitive      */
+comment|/**      * Checks if the current node's parent configuration is transitive.      *      * @return true if the node's parent configuration is transitive      */
 specifier|protected
 name|boolean
 name|isParentConfTransitive
@@ -861,7 +854,7 @@ name|isTransitive
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the 'real' node currently visited. 'Real' means that if we are visiting a node      * created originally with only a version constraint, and if this version constraint has been      * resolved to an existing node in the graph, we will return the existing node, and not the one      * originally used which is about to be discarded, since it's not possible to have in the graph      * two nodes for the same ModuleRevisionId      *       * @return the 'real' node currently visited.      */
+comment|/**      * Returns the 'real' node currently visited. 'Real' means that if we are visiting a node      * created originally with only a version constraint, and if this version constraint has been      * resolved to an existing node in the graph, we will return the existing node, and not the one      * originally used which is about to be discarded, since it's not possible to have in the graph      * two nodes for the same ModuleRevisionId      *      * @return the 'real' node currently visited.      */
 specifier|public
 name|IvyNode
 name|getRealNode
@@ -1121,7 +1114,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node.      *       * @param node      *            the node to visit      * @return a VisitNode for the given node      */
+comment|/**      * Returns a VisitNode for the given node. The given node must be a representation of the same      * module (usually in another revision) as the one visited by this node.      *      * @param node      *            the node to visit      * @return a VisitNode for the given node      */
 name|VisitNode
 name|gotoNode
 parameter_list|(
@@ -1619,7 +1612,7 @@ name|getNode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if this node can already be found in the path      *       * @return      */
+comment|/**      * Returns true if this node can already be found in the path      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isCircular
@@ -1645,7 +1638,7 @@ name|Boolean
 operator|.
 name|FALSE
 expr_stmt|;
-comment|// asumme it's false, and see if it isn't by checking
+comment|// assume it's false, and see if it isn't by checking
 comment|// the parent path
 for|for
 control|(
@@ -1700,9 +1693,6 @@ block|}
 block|}
 return|return
 name|isCircular
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -1807,7 +1797,7 @@ name|getRequiredConfigurations
 argument_list|()
 return|;
 block|}
-comment|/**      * Marks the current node as evicted by the the given selected IvyNodes, in the given parent and      * root module configuration, with the given {@link ConflictManager}      *       * @param parent      *            the VisitNode in which eviction has been made      * @param conflictMgr      *            the conflict manager responsible for the eviction      * @param selected      *            a Collection of {@link IvyNode} which have been selected      */
+comment|/**      * Marks the current node as evicted by the the given selected IvyNodes, in the given parent and      * root module configuration, with the given {@link ConflictManager}      *      * @param parent      *            the VisitNode in which eviction has been made      * @param conflictMgr      *            the conflict manager responsible for the eviction      * @param selected      *            a Collection of {@link IvyNode} which have been selected      */
 specifier|public
 name|void
 name|markEvicted

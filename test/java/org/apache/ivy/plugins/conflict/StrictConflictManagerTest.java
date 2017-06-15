@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -71,11 +83,31 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -83,8 +115,6 @@ begin_class
 specifier|public
 class|class
 name|StrictConflictManagerTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Ivy
@@ -94,7 +124,9 @@ specifier|private
 name|File
 name|cache
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -135,12 +167,12 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.
@@ -150,6 +182,8 @@ name|cache
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInitFromConf
@@ -176,6 +210,8 @@ name|StrictConflictManager
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoConflictResolve
@@ -201,6 +237,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoConflictWithDynamicRevisionResolve
@@ -226,14 +264,22 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|StrictConflictException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testConflictResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|ivy
 operator|.
@@ -252,29 +298,23 @@ name|getResolveOptions
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|fail
+block|}
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+annotation|@
+name|Test
 argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+name|expected
+operator|=
 name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected
-block|}
-block|}
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testConflictWithDynamicRevisionResolve
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|ivy
 operator|.
@@ -293,20 +333,6 @@ name|getResolveOptions
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Resolve should have failed with a conflict"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|StrictConflictException
-name|e
-parameter_list|)
-block|{
-comment|// this is expected
-block|}
 block|}
 specifier|private
 name|ResolveOptions

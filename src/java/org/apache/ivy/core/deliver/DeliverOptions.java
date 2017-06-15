@@ -113,7 +113,7 @@ name|merge
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Returns an instance of DeliverOptions with options corresponding to default values taken from      * the given settings.      *       * @param settings      *            The settings to use to get default option values      * @return a DeliverOptions instance ready to be used or customized      */
+comment|/**      * Returns an instance of DeliverOptions with options corresponding to default values taken from      * the given settings.      *      * @param settings      *            The settings to use to get default option values      * @return a DeliverOptions instance ready to be used or customized      */
 specifier|public
 specifier|static
 name|DeliverOptions
@@ -154,7 +154,7 @@ name|DeliverOptions
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates an instance of DeliverOptions with all options explicitly set.      */
+comment|/**      * Creates an instance of DeliverOptions with all options explicitly set.      * @param status String      * @param pubDate Date      * @param pdrResolver PublishingDependencyRevisionResolver      * @param validate boolean      * @param resolveDynamicRevisions boolean      * @param confs String[]      */
 specifier|public
 name|DeliverOptions
 parameter_list|(
@@ -215,7 +215,7 @@ operator|=
 name|confs
 expr_stmt|;
 block|}
-comment|/**      * Return the pdrResolver that will be used during deliver for each dependency to get its      * published information. This can particularly useful when the deliver is made for a release,      * and when we wish to deliver each dependency which is still in integration. The      * PublishingDependencyRevisionResolver can then do the delivering work for the dependency and      * return the new (delivered) dependency info (with the delivered revision). Note that      * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *       * @return the pdrResolver that will be used during deliver      */
+comment|/**      * Return the pdrResolver that will be used during deliver for each dependency to get its      * published information. This can particularly useful when the deliver is made for a release,      * and when we wish to deliver each dependency which is still in integration. The      * PublishingDependencyRevisionResolver can then do the delivering work for the dependency and      * return the new (delivered) dependency info (with the delivered revision). Note that      * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *      * @return the pdrResolver that will be used during deliver      */
 specifier|public
 name|PublishingDependencyRevisionResolver
 name|getPdrResolver
@@ -225,7 +225,7 @@ return|return
 name|pdrResolver
 return|;
 block|}
-comment|/**      * Sets the pdrResolver that will be used during deliver for each dependency to get its      * published information. This can particularly useful when the deliver is made for a release,      * and when we wish to deliver each dependency which is still in integration. The      * PublishingDependencyRevisionResolver can then do the delivering work for the dependency and      * return the new (delivered) dependency info (with the delivered revision). Note that      * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *       * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+comment|/**      * Sets the pdrResolver that will be used during deliver for each dependency to get its      * published information. This can particularly useful when the deliver is made for a release,      * and when we wish to deliver each dependency which is still in integration. The      * PublishingDependencyRevisionResolver can then do the delivering work for the dependency and      * return the new (delivered) dependency info (with the delivered revision). Note that      * PublishingDependencyRevisionResolver is only called for each<b>direct</b> dependency.      *      * @param pdrResolver PublishingDependencyRevisionResolver      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
 specifier|public
 name|DeliverOptions
 name|setPdrResolver
@@ -352,7 +352,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns the status to which the module should be delivered, or null if the current status      * should be kept.      *       * @return the status to which the module should be delivered      */
+comment|/**      * Returns the status to which the module should be delivered, or null if the current status      * should be kept.      *      * @return the status to which the module should be delivered      */
 specifier|public
 name|String
 name|getStatus
@@ -362,7 +362,7 @@ return|return
 name|status
 return|;
 block|}
-comment|/**      * Sets the status to which the module should be delivered, use null if the current status      * should be kept.      *       * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+comment|/**      * Sets the status to which the module should be delivered, use null if the current status      * should be kept.      *      * @param status String      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
 specifier|public
 name|DeliverOptions
 name|setStatus
@@ -381,7 +381,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns the id of a previous resolve to use for delivering.      *       * @return the id of a previous resolve      */
+comment|/**      * Returns the id of a previous resolve to use for delivering.      *      * @return the id of a previous resolve      */
 specifier|public
 name|String
 name|getResolveId
@@ -391,7 +391,7 @@ return|return
 name|resolveId
 return|;
 block|}
-comment|/**      * Sets the id of a previous resolve to use for delivering.      *       * @param resolveId      *            the id of a previous resolve      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+comment|/**      * Sets the id of a previous resolve to use for delivering.      *      * @param resolveId      *            the id of a previous resolve      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
 specifier|public
 name|DeliverOptions
 name|setResolveId
@@ -410,7 +410,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Return the configurations which must be deliverd. Returns<tt>null</tt> if all configurations      * has to be deliverd. Attention: the returned array can contain wildcards!      *       * @return the configurations to deliver      */
+comment|/**      * Return the configurations which must be delivered. Returns<tt>null</tt> if all configurations      * has to be delivered. Attention: the returned array can contain wildcards!      *      * @return the configurations to deliver      */
 specifier|public
 name|String
 index|[]
@@ -421,7 +421,7 @@ return|return
 name|confs
 return|;
 block|}
-comment|/**      * Sets the configurations to deliver.      *       * @param confs      *            the configurations to deliver      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+comment|/**      * Sets the configurations to deliver.      *      * @param confs      *            the configurations to deliver      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
 specifier|public
 name|DeliverOptions
 name|setConfs
@@ -441,7 +441,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns the branch with which the Ivy file should be delivered, or<code>null</code> if      * branch info shouldn't be changed.      *       * @return the branch with which the Ivy file should be delivered      */
+comment|/**      * Returns the branch with which the Ivy file should be delivered, or<code>null</code> if      * branch info shouldn't be changed.      *      * @return the branch with which the Ivy file should be delivered      */
 specifier|public
 name|String
 name|getPubBranch
@@ -451,7 +451,7 @@ return|return
 name|pubBranch
 return|;
 block|}
-comment|/**      * Sets the branch with which the Ivy file should be delivered.      *       * @param pubBranch      *            the branch with which the Ivy file should be delivered      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
+comment|/**      * Sets the branch with which the Ivy file should be delivered.      *      * @param pubBranch      *            the branch with which the Ivy file should be delivered      * @return the instance of DeliverOptions on which the method has been called, for easy method      *         chaining      */
 specifier|public
 name|DeliverOptions
 name|setPubBranch

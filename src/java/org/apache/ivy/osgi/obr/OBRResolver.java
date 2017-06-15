@@ -489,9 +489,6 @@ operator|.
 name|setForce
 argument_list|(
 name|forceMetadataUpdate
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

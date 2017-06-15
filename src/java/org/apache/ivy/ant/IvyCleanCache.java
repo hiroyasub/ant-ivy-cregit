@@ -109,7 +109,7 @@ return|return
 name|cache
 return|;
 block|}
-comment|/**      * Sets the name of the repository cache to clean, '*' for all caches, 'NONE' for no repository      * cache cleaning at all.      *       * @param cache      *            the name of the cache to clean. Must not be<code>null</code>.      */
+comment|/**      * Sets the name of the repository cache to clean, '*' for all caches, 'NONE' for no repository      * cache cleaning at all.      *      * @param cache      *            the name of the cache to clean. Must not be<code>null</code>.      */
 specifier|public
 name|void
 name|setCache
@@ -134,7 +134,7 @@ return|return
 name|resolution
 return|;
 block|}
-comment|/**      * Sets weither the resolution cache should be cleaned or not.      *       * @param resolution      *<code>true</code> if the resolution cache should be cleaned,<code>false</code>      *            otherwise.      */
+comment|/**      * Sets whether the resolution cache should be cleaned or not.      *      * @param resolution      *<code>true</code> if the resolution cache should be cleaned,<code>false</code>      *            otherwise.      */
 specifier|public
 name|void
 name|setResolution

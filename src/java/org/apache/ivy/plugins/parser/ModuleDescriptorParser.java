@@ -181,7 +181,7 @@ name|ParseException
 throws|,
 name|IOException
 function_decl|;
-comment|/**      * Convert a module descriptor to an ivy file. This method MUST close the given input stream      * when job is finished      *       * @param is      *            input stream with opened on original module descriptor resource      */
+comment|/**      * Convert a module descriptor to an ivy file. This method MUST close the given input stream      * when job is finished      *      * @param is input stream with opened on original module descriptor resource      * @param res Resource      * @param destFile File      * @param md ModuleDescriptor      * @throws ParseException if something goes wrong      * @throws IOException if something goes wrong      */
 specifier|public
 name|void
 name|toIvyFile
@@ -211,13 +211,13 @@ name|Resource
 name|res
 parameter_list|)
 function_decl|;
-comment|/**      * Return the 'type' of module artifacts this parser is parsing      *       * @return the 'type' of module artifacts this parser is parsing      */
+comment|/**      * Return the 'type' of module artifacts this parser is parsing      *      * @return the 'type' of module artifacts this parser is parsing      */
 specifier|public
 name|String
 name|getType
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the module metadata artifact corresponding to the given module revision id that this      * parser parses      *       * @param res      *            the resource for which the module artifact should be returned      * @param mrid      *            the module revision id for which the module artifact should be returned      * @return the module artifact corresponding to the given mrid and resource      */
+comment|/**      * Returns the module metadata artifact corresponding to the given module revision id that this      * parser parses      *      * @param res      *            the resource for which the module artifact should be returned      * @param mrid      *            the module revision id for which the module artifact should be returned      * @return the module artifact corresponding to the given mrid and resource      */
 specifier|public
 name|Artifact
 name|getMetadataArtifact

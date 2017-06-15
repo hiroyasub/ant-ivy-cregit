@@ -1405,8 +1405,8 @@ return|return
 name|newMd
 return|;
 block|}
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|List
 argument_list|<
 name|Artifact

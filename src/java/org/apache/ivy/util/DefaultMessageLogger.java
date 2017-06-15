@@ -30,7 +30,7 @@ name|Message
 operator|.
 name|MSG_INFO
 decl_stmt|;
-comment|/**      * @param level      */
+comment|/**      * @param level ditto      */
 specifier|public
 name|DefaultMessageLogger
 parameter_list|(

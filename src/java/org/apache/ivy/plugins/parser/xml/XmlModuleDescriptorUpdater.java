@@ -663,7 +663,7 @@ name|XmlModuleDescriptorUpdater
 parameter_list|()
 block|{
 block|}
-comment|/**      * used to copy a module descriptor xml file (also known as ivy file) and update the revisions      * of its dependencies, its status and revision      *       * @param srcURL      *            the url of the source module descriptor file      * @param destFile      *            The file to which the updated module descriptor should be output      */
+comment|/**      * used to copy a module descriptor xml file (also known as ivy file) and update the revisions      * of its dependencies, its status and revision      *      * @param srcURL      *            the url of the source module descriptor file      * @param destFile      *            The file to which the updated module descriptor should be output      * @param options      *            UpdateOptions      * @throws IOException if something goes wrong      * @throws SAXException if something goes wrong      */
 specifier|public
 specifier|static
 name|void
@@ -1366,7 +1366,8 @@ name|confs
 operator|=
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -6009,7 +6010,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** get the whitespace that should precede new elements at the current depth in the document */
+comment|/**          * get the whitespace that should precede new elements at the current depth in the document          */
 specifier|private
 name|String
 name|getIndent
@@ -6042,7 +6043,7 @@ name|level
 argument_list|)
 return|;
 block|}
-comment|/**          * Write XML elements that do not appear in the source descriptor, but have been copied in          * from a parent module descriptor via&lt;extends&gt; declaration.          *           * @param merged          *            child descriptor containing the merged data          * @param items          *            the list of inherited items to print          * @param printer          *            a printer that knows how to write the given type of item          * @param itemName          *            the name of the container element, e.g. "configurations"          * @param includeContainer          *            if true, include an enclosing element named<code>itemName</code>. Otherwise          *            just write the inherited items inline, with a comment indicating where they          *            came from.          */
+comment|/**          * Write XML elements that do not appear in the source descriptor, but have been copied in          * from a parent module descriptor via&lt;extends&gt; declaration.          *          * @param merged          *            child descriptor containing the merged data          * @param items          *            the list of inherited items to print          * @param printer          *            a printer that knows how to write the given type of item          * @param itemName          *            the name of the container element, e.g. "configurations"          * @param includeContainer          *            if true, include an enclosing element named<code>itemName</code>. Otherwise          *            just write the inherited items inline, with a comment indicating where they          *            came from.          */
 specifier|private
 name|void
 name|writeInheritedItems
@@ -6362,7 +6363,7 @@ literal|" -->"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Collect the given list of inherited descriptor items into lists keyed by parent Id. Thus          * all of the items inherited from parent A can be written together, then all of the items          * from parent B, and so on.          *           * @param merged          *            the merged child descriptor          * @param items          *            the inherited items to collate          * @return maps parent ModuleRevisionId to a List of InheritedItems imported from that          *         parent          */
+comment|/**          * Collect the given list of inherited descriptor items into lists keyed by parent Id. Thus          * all of the items inherited from parent A can be written together, then all of the items          * from parent B, and so on.          *          * @param merged          *            the merged child descriptor          * @param items          *            the inherited items to collate          * @return maps parent ModuleRevisionId to a List of InheritedItems imported from that          *         parent          */
 specifier|private
 name|Map
 comment|/*<ModuleRevisionId,List> */
@@ -6672,7 +6673,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**          *<p>          * If publishing in merge mode, guarantee that any merged elements appearing before          *<code>moduleElement</code> have been written. This method should be called<i>before</i>          * we write the start tag of<code>moduleElement</code>. This covers cases where merged          * elements like "configurations" and "dependencies" appear in the parent descriptor, but          * are completely missing in the child descriptor.          *</p>          *           *<p>          * For example, if "moduleElement" is "dependencies", guarantees that "configurations" has          * been written. If<code>moduleElement</code> is<code>null</code>, then all missing merged          * elements will be flushed.          *</p>          *           * @param moduleElement          *            a descriptor element name, for example "configurations" or "info"          */
+comment|/**          *<p>          * If publishing in merge mode, guarantee that any merged elements appearing before          *<code>moduleElement</code> have been written. This method should be called<i>before</i>          * we write the start tag of<code>moduleElement</code>. This covers cases where merged          * elements like "configurations" and "dependencies" appear in the parent descriptor, but          * are completely missing in the child descriptor.          *</p>          *          *<p>          * For example, if "moduleElement" is "dependencies", guarantees that "configurations" has          * been written. If<code>moduleElement</code> is<code>null</code>, then all missing merged          * elements will be flushed.          *</p>          *          * @param moduleElement          *            a descriptor element name, for example "configurations" or "info"          */
 specifier|private
 name|void
 name|flushMergedElementsBefore
@@ -7572,9 +7573,6 @@ return|;
 block|}
 return|return
 name|print
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 name|void
@@ -7588,12 +7586,7 @@ name|this
 operator|.
 name|print
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|print
-argument_list|)
 expr_stmt|;
 block|}
 name|void
@@ -7650,7 +7643,7 @@ specifier|static
 interface|interface
 name|ItemPrinter
 block|{
-comment|/**          * Print an XML representation of<code>item</code> to<code>out</code>.          *           * @param parent          *            the module descriptor containing<code>item</code>          * @param item          *            subcomponent of the descriptor, for example a {@link DependencyDescriptor} or          *            {@link Configuration}          */
+comment|/**          * Print an XML representation of<code>item</code> to<code>out</code>.          *          * @param parent          *            the module descriptor containing<code>item</code>          * @param item          *            subcomponent of the descriptor, for example a {@link DependencyDescriptor} or          *            {@link Configuration}          * @param out PrintWriter          */
 specifier|public
 name|void
 name|print

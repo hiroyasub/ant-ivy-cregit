@@ -196,8 +196,8 @@ name|FSManifestIterator
 argument_list|()
 return|;
 block|}
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|List
 argument_list|<
 name|T
@@ -210,8 +210,8 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|List
 argument_list|<
 name|T
@@ -224,8 +224,8 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|InputStream
 name|getInputStream
 parameter_list|(
@@ -235,8 +235,8 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-specifier|abstract
 specifier|protected
+specifier|abstract
 name|URI
 name|buildBundleURI
 parameter_list|(
@@ -306,9 +306,6 @@ name|add
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|T
-operator|>
 name|singleton
 argument_list|(
 name|root

@@ -1152,7 +1152,7 @@ name|source
 argument_list|)
 return|;
 block|}
-comment|/**      * List all revisions as resolved resources for the given artifact in the given repository using      * the given pattern, and using the given mrid except its revision.      *       * @param repository      *            the repository in which revisions should be located      * @param mrid      *            the module revision id to look for (except revision)      * @param pattern      *            the pattern to use to locate the revisions      * @param artifact      *            the artifact to find      * @return an array of ResolvedResource, all pointing to a different revision of the given      *         Artifact.      */
+comment|/**      * List all revisions as resolved resources for the given artifact in the given repository using      * the given pattern, and using the given mrid except its revision.      *      * @param repository      *            the repository in which revisions should be located      * @param mrid      *            the module revision id to look for (except revision)      * @param pattern      *            the pattern to use to locate the revisions      * @param artifact      *            the artifact to find      * @return an array of ResolvedResource, all pointing to a different revision of the given      *         Artifact.      */
 specifier|protected
 name|ResolvedResource
 index|[]
@@ -2153,13 +2153,8 @@ return|return
 name|alwaysCheckExactRevision
 operator|==
 literal|null
-condition|?
-literal|true
-else|:
+operator|||
 name|alwaysCheckExactRevision
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -2174,12 +2169,7 @@ name|this
 operator|.
 name|alwaysCheckExactRevision
 operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|alwaysCheckExactRevision
-argument_list|)
 expr_stmt|;
 block|}
 block|}

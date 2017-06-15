@@ -343,7 +343,7 @@ parameter_list|()
 block|{
 comment|// Utility class
 block|}
-comment|// according to tests by users, 64kB seems to be a good value for the buffer used during copy
+comment|// according to tests by users, 64kB seems to be a good value for the buffer used during copy;
 comment|// further improvements could be obtained using NIO API
 specifier|private
 specifier|static
@@ -400,12 +400,12 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-comment|// This pattern could be more forgiving if somebody wanted it to be...
-comment|// ...but this should satisfy 99+% of all needs, without letting unsafe operations be done.
+comment|// This pattern could be more forgiving if somebody wanted it to be... but this should
+comment|// satisfy 99+% of all needs, without letting unsafe operations be done.
 comment|// If you paths is not supported, you then skip this mass option.
 comment|// NOTE: A space inside the path is allowed (I can't control other programmers who like them
-comment|// in their working directory names)...
-comment|// but trailing spaces on file names will be checked otherwise and refused.
+comment|// in their working directory names)... but trailing spaces on file names will be checked
+comment|// otherwise and refused.
 try|try
 block|{
 name|StringBuffer
@@ -541,19 +541,31 @@ operator|.
 name|append
 argument_list|(
 literal|"ln -s -f \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|srcFile
 operator|.
 name|getAbsolutePath
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\"  \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|destFile
 operator|.
 name|getAbsolutePath
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\";"
 argument_list|)
 expr_stmt|;
@@ -2029,7 +2041,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Reads the whole BufferedReader line by line, using \n as line separator for each line.      *<p>      * Note that this method will add a final \n to the last line even though there is no new line      * character at the end of last line in the original reader.      *</p>      *<p>      * The BufferedReader is closed when this method returns.      *</p>      *       * @param in      *            the {@link BufferedReader} to read from      * @return a String with the whole content read from the {@link BufferedReader}      * @throws IOException      *             if an IO problems occur during reading      */
+comment|/**      * Reads the whole BufferedReader line by line, using \n as line separator for each line.      *<p>      * Note that this method will add a final \n to the last line even though there is no new line      * character at the end of last line in the original reader.      *</p>      *<p>      * The BufferedReader is closed when this method returns.      *</p>      *      * @param in      *            the {@link BufferedReader} to read from      * @return a String with the whole content read from the {@link BufferedReader}      * @throws IOException      *             if an IO problems occur during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2070,7 +2082,10 @@ operator|.
 name|append
 argument_list|(
 name|line
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -2098,7 +2113,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Reads the entire content of the file and returns it as a String.      *       * @param f      *            the file to read from      * @return a String with the file content      * @throws IOException      *             if an IO problems occurs during reading      */
+comment|/**      * Reads the entire content of the file and returns it as a String.      *      * @param f      *            the file to read from      * @return a String with the file content      * @throws IOException      *             if an IO problems occurs during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2121,7 +2136,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads the entire content of the {@link InputStream} and returns it as a String.      *<p>      * The input stream is closed when this method returns.      *</p>      *       * @param is      *            the {@link InputStream} to read from      * @return a String with the input stream content      * @throws IOException      *             if an IO problems occurs during reading      */
+comment|/**      * Reads the entire content of the {@link InputStream} and returns it as a String.      *<p>      * The input stream is closed when this method returns.      *</p>      *      * @param is      *            the {@link InputStream} to read from      * @return a String with the input stream content      * @throws IOException      *             if an IO problems occurs during reading      */
 specifier|public
 specifier|static
 name|String
@@ -2224,7 +2239,7 @@ operator|+
 name|file
 return|;
 block|}
-comment|/**      * Recursively delete file      *       * @param file      *            the file to delete      * @return true if the deletion completed successfully (ie if the file does not exist on the      *         filesystem after this call), false if a deletion was not performed successfully.      */
+comment|/**      * Recursively delete file      *      * @param file      *            the file to delete      * @return true if the deletion completed successfully (ie if the file does not exist on the      *         filesystem after this call), false if a deletion was not performed successfully.      */
 specifier|public
 specifier|static
 name|boolean
@@ -2314,7 +2329,7 @@ name|delete
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a list of Files composed of all directories being parent of file and child of root +      * file and root themselves. Example: getPathFiles(new File("test"), new      * File("test/dir1/dir2/file.txt")) => {new File("test/dir1"), new File("test/dir1/dir2"), new      * File("test/dir1/dir2/file.txt") } Note that if root is not an ancester of file, or if root is      * null, all directories from the file system root will be returned.      */
+comment|/**      * Returns a list of Files composed of all directories being parent of file and child of root +      * file and root themselves. Example:<code>getPathFiles(new File("test"), new      * File("test/dir1/dir2/file.txt")) =&gt; {new File("test/dir1"), new File("test/dir1/dir2"),      * new File("test/dir1/dir2/file.txt") }</code> Note that if root is not an ancestor of file, or      * if root is null, all directories from the file system root will be returned.      *      * @param root File      * @param file File      * @return List&lt;File&gt;      */
 specifier|public
 specifier|static
 name|List
@@ -2405,7 +2420,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/**      * Returns a collection of all Files being contained in the given directory, recursively,      * including directories.      *       * @param dir      *            The directory from which all files, including files in subdirectory) are      *            extracted.      * @param ignore      *            a Collection of filenames which must be excluded from listing      * @return A collectoin containing all the files of the given directory and it's subdirectories.      */
+comment|/**      * @param dir      *            The directory from which all files, including files in subdirectory) are      *            extracted.      * @param ignore      *            a Collection of filenames which must be excluded from listing      * @return a collection containing all the files of the given directory and it's subdirectories,      *         recursively.      */
 specifier|public
 specifier|static
 name|Collection
@@ -2603,7 +2618,7 @@ block|}
 comment|// ////////////////////////////////////////////
 comment|// The following code comes from Ant FileUtils
 comment|// ////////////////////////////////////////////
-comment|/**      *&quot;Normalize&quot; the given absolute path.      *       *<p>      * This includes:      *<ul>      *<li>Uppercase the drive letter if there is one.</li>      *<li>Remove redundant slashes after the drive spec.</li>      *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>      *<li>DOS style paths that start with a drive letter will have \ as the separator.</li>      *</ul>      * Unlike {@link File#getCanonicalPath()} this method specifically does not resolve symbolic      * links.      *       * @param path      *            the path to be normalized.      * @return the normalized version of the path.      *       * @throws java.lang.NullPointerException      *             if path is null.      */
+comment|/**      *&quot;Normalize&quot; the given absolute path.      *      *<p>      * This includes:      *<ul>      *<li>Uppercase the drive letter if there is one.</li>      *<li>Remove redundant slashes after the drive spec.</li>      *<li>Resolve all ./, .\, ../ and ..\ sequences.</li>      *<li>DOS style paths that start with a drive letter will have \ as the separator.</li>      *</ul>      * Unlike {@link File#getCanonicalPath()} this method specifically does not resolve symbolic      * links.      *      * @param path the path to be normalized.      * @return the normalized version of the path.      * @throws NullPointerException if path is null.      */
 specifier|public
 specifier|static
 name|File
@@ -2614,6 +2629,7 @@ name|String
 name|path
 parameter_list|)
 block|{
+specifier|final
 name|Stack
 argument_list|<
 name|String
@@ -2627,9 +2643,9 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|String
-index|[]
-name|dissect
+specifier|final
+name|DissectedPath
+name|dissectedPath
 init|=
 name|dissect
 argument_list|(
@@ -2640,22 +2656,21 @@ name|s
 operator|.
 name|push
 argument_list|(
-name|dissect
-index|[
-literal|0
-index|]
+name|dissectedPath
+operator|.
+name|root
 argument_list|)
 expr_stmt|;
+specifier|final
 name|StringTokenizer
 name|tok
 init|=
 operator|new
 name|StringTokenizer
 argument_list|(
-name|dissect
-index|[
-literal|1
-index|]
+name|dissectedPath
+operator|.
+name|remainingPath
 argument_list|,
 name|File
 operator|.
@@ -2737,6 +2752,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|final
 name|StringBuffer
 name|sb
 init|=
@@ -2805,17 +2821,18 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Dissect the specified absolute path.      *       * @param path      *            the path to dissect.      * @return String[] {root, remaining path}.      * @throws java.lang.NullPointerException      *             if path is null.      * @since Ant 1.7      */
+comment|/**      * Dissect the specified absolute path.      *      * @param path      *            the path to dissect.      * @return {@link DissectedPath}      * @throws java.lang.NullPointerException      *             if path is null.      * @since Ant 1.7      */
 specifier|private
 specifier|static
-name|String
-index|[]
+name|DissectedPath
 name|dissect
 parameter_list|(
+specifier|final
 name|String
 name|path
 parameter_list|)
 block|{
+specifier|final
 name|char
 name|sep
 init|=
@@ -2823,8 +2840,10 @@ name|File
 operator|.
 name|separatorChar
 decl_stmt|;
-name|path
-operator|=
+specifier|final
+name|String
+name|pathToDissect
+init|=
 name|path
 operator|.
 name|replace
@@ -2840,83 +2859,75 @@ literal|'\\'
 argument_list|,
 name|sep
 argument_list|)
-expr_stmt|;
-comment|// // make sure we are dealing with an absolute path
-comment|// if (!isAbsolutePath(path)) {
-comment|// throw new BuildException(path + " is not an absolute path");
-comment|// }
-name|String
-name|root
-init|=
-literal|null
-decl_stmt|;
-name|int
-name|colon
-init|=
-name|path
 operator|.
-name|indexOf
-argument_list|(
-literal|':'
-argument_list|)
+name|trim
+argument_list|()
+decl_stmt|;
+comment|// check if the path starts with a filesystem root
+specifier|final
+name|File
+index|[]
+name|filesystemRoots
+init|=
+name|File
+operator|.
+name|listRoots
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|colon
-operator|>
-literal|0
+name|filesystemRoots
+operator|!=
+literal|null
 condition|)
 block|{
-comment|//&& (ON_DOS || ON_NETWARE)) {
-name|int
-name|next
-init|=
-name|colon
-operator|+
-literal|1
-decl_stmt|;
+for|for
+control|(
+specifier|final
+name|File
+name|filesystemRoot
+range|:
+name|filesystemRoots
+control|)
+block|{
+if|if
+condition|(
+name|pathToDissect
+operator|.
+name|startsWith
+argument_list|(
+name|filesystemRoot
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
+condition|)
+block|{
+comment|// filesystem root is the root and the rest of the path is the "remaining path"
+specifier|final
+name|String
 name|root
-operator|=
-name|path
+init|=
+name|filesystemRoot
+operator|.
+name|getPath
+argument_list|()
+decl_stmt|;
+specifier|final
+name|String
+name|rest
+init|=
+name|pathToDissect
 operator|.
 name|substring
 argument_list|(
-literal|0
-argument_list|,
-name|next
-argument_list|)
-expr_stmt|;
-name|char
-index|[]
-name|ca
-init|=
-name|path
-operator|.
-name|toCharArray
-argument_list|()
-decl_stmt|;
 name|root
-operator|+=
-name|sep
-expr_stmt|;
-comment|// remove the initial separator; the root has it.
-name|next
-operator|=
-operator|(
-name|ca
-index|[
-name|next
-index|]
-operator|==
-name|sep
-operator|)
-condition|?
-name|next
-operator|+
-literal|1
-else|:
-name|next
-expr_stmt|;
+operator|.
+name|length
+argument_list|()
+argument_list|)
+decl_stmt|;
+specifier|final
 name|StringBuffer
 name|sbPath
 init|=
@@ -2930,33 +2941,66 @@ control|(
 name|int
 name|i
 init|=
-name|next
+literal|0
 init|;
 name|i
 operator|<
-name|ca
+name|rest
 operator|.
 name|length
+argument_list|()
 condition|;
 name|i
 operator|++
 control|)
 block|{
+specifier|final
+name|char
+name|currentChar
+init|=
+name|rest
+operator|.
+name|charAt
+argument_list|(
+name|i
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|ca
-index|[
 name|i
-index|]
-operator|!=
-name|sep
-operator|||
-name|ca
-index|[
+operator|==
+literal|0
+condition|)
+block|{
+name|sbPath
+operator|.
+name|append
+argument_list|(
+name|currentChar
+argument_list|)
+expr_stmt|;
+continue|continue;
+block|}
+specifier|final
+name|char
+name|previousChar
+init|=
+name|rest
+operator|.
+name|charAt
+argument_list|(
 name|i
 operator|-
 literal|1
-index|]
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|currentChar
+operator|!=
+name|sep
+operator|||
+name|previousChar
 operator|!=
 name|sep
 condition|)
@@ -2965,32 +3009,37 @@ name|sbPath
 operator|.
 name|append
 argument_list|(
-name|ca
-index|[
-name|i
-index|]
+name|currentChar
 argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|path
-operator|=
+return|return
+operator|new
+name|DissectedPath
+argument_list|(
+name|root
+argument_list|,
 name|sbPath
 operator|.
 name|toString
 argument_list|()
-expr_stmt|;
+argument_list|)
+return|;
 block|}
-if|else if
+block|}
+block|}
+comment|// UNC drive
+if|if
 condition|(
-name|path
+name|pathToDissect
 operator|.
 name|length
 argument_list|()
 operator|>
 literal|1
 operator|&&
-name|path
+name|pathToDissect
 operator|.
 name|charAt
 argument_list|(
@@ -3000,11 +3049,10 @@ operator|==
 name|sep
 condition|)
 block|{
-comment|// UNC drive
 name|int
 name|nextsep
 init|=
-name|path
+name|pathToDissect
 operator|.
 name|indexOf
 argument_list|(
@@ -3015,7 +3063,7 @@ argument_list|)
 decl_stmt|;
 name|nextsep
 operator|=
-name|path
+name|pathToDissect
 operator|.
 name|indexOf
 argument_list|(
@@ -3026,15 +3074,17 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+specifier|final
+name|String
 name|root
-operator|=
+init|=
 operator|(
 name|nextsep
 operator|>
 literal|2
 operator|)
 condition|?
-name|path
+name|pathToDissect
 operator|.
 name|substring
 argument_list|(
@@ -3045,11 +3095,13 @@ operator|+
 literal|1
 argument_list|)
 else|:
-name|path
-expr_stmt|;
-name|path
-operator|=
-name|path
+name|pathToDissect
+decl_stmt|;
+specifier|final
+name|String
+name|rest
+init|=
+name|pathToDissect
 operator|.
 name|substring
 argument_list|(
@@ -3058,38 +3110,35 @@ operator|.
 name|length
 argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
+decl_stmt|;
+return|return
+operator|new
+name|DissectedPath
+argument_list|(
 name|root
-operator|=
+argument_list|,
+name|rest
+argument_list|)
+return|;
+block|}
+return|return
+operator|new
+name|DissectedPath
+argument_list|(
 name|File
 operator|.
 name|separator
-expr_stmt|;
-name|path
-operator|=
-name|path
+argument_list|,
+name|pathToDissect
 operator|.
 name|substring
 argument_list|(
 literal|1
 argument_list|)
-expr_stmt|;
-block|}
-return|return
-operator|new
-name|String
-index|[]
-block|{
-name|root
-block|,
-name|path
-block|}
+argument_list|)
 return|;
 block|}
-comment|/**      * Get the length of the file, or the sum of the children lengths if it is a directory      *       * @param file      * @return      */
+comment|/**      * Get the length of the file, or the sum of the children lengths if it is a directory      *      * @param file File      * @return long      */
 specifier|public
 specifier|static
 name|long
@@ -3562,6 +3611,86 @@ return|return
 name|wrapped
 operator|.
 name|markSupported
+argument_list|()
+return|;
+block|}
+block|}
+specifier|private
+specifier|static
+specifier|final
+class|class
+name|DissectedPath
+block|{
+specifier|private
+specifier|final
+name|String
+name|root
+decl_stmt|;
+specifier|private
+specifier|final
+name|String
+name|remainingPath
+decl_stmt|;
+specifier|private
+name|DissectedPath
+parameter_list|(
+specifier|final
+name|String
+name|root
+parameter_list|,
+specifier|final
+name|String
+name|remainingPath
+parameter_list|)
+block|{
+name|this
+operator|.
+name|root
+operator|=
+name|root
+expr_stmt|;
+name|this
+operator|.
+name|remainingPath
+operator|=
+name|remainingPath
+expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|new
+name|StringBuilder
+argument_list|(
+literal|"Dissected Path [root="
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|root
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|", remainingPath="
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|remainingPath
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"]"
+argument_list|)
+operator|.
+name|toString
 argument_list|()
 return|;
 block|}

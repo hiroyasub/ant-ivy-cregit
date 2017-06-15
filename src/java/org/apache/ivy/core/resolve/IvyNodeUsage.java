@@ -255,21 +255,11 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-operator|(
+return|return
 name|obj
 operator|instanceof
 name|NodeConf
-operator|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 name|getNode
 argument_list|()
 operator|.
@@ -676,7 +666,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf      * @return      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf ditto      * @return Set&lt;String&gt;      */
 specifier|protected
 name|Set
 argument_list|<
@@ -1352,7 +1342,7 @@ name|bdata
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(String)      */
+comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|protected
 name|boolean
 name|isBlacklisted

@@ -272,11 +272,11 @@ specifier|private
 specifier|static
 specifier|final
 name|int
-name|MAX_CREDENTILAS_CACHE_SIZE
+name|MAX_CREDENTIALS_CACHE_SIZE
 init|=
 literal|100
 decl_stmt|;
-comment|/**      * get a new session using the default attributes if the given String is a full uri, use the      * data from the uri instead      *       * @param pathOrUri      *            might be just a path or a full ssh or sftp uri      * @return matching Session      */
+comment|/**      * get a new session using the default attributes if the given String is a full uri, use the      * data from the uri instead      *      * @param pathOrUri      *            might be just a path or a full ssh or sftp uri      * @return matching Session      * @throws IOException if something goes wrong      */
 specifier|protected
 name|Session
 name|getSession
@@ -631,7 +631,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Just check the uri for sanity      *       * @param source      *            String of the uri      * @return URI object of the String or null      */
+comment|/**      * Just check the uri for sanity      *      * @param source      *            String of the uri      * @return URI object of the String or null      */
 specifier|private
 name|URI
 name|parseURI
@@ -798,7 +798,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Called, when user was not found in URL. Maintain static hashe of credentials and retrieve or      * ask credentials for host.      *       * @param host      *            host for which we want to get credentials.      * @return credentials for given host      **/
+comment|/**      * Called, when user was not found in URL. Maintain static hash of credentials and retrieve or      * ask credentials for host.      *      * @param host      *            host for which we want to get credentials.      * @return credentials for given host      **/
 specifier|private
 name|Credentials
 name|requestCredentials
@@ -861,7 +861,7 @@ operator|.
 name|size
 argument_list|()
 operator|>
-name|MAX_CREDENTILAS_CACHE_SIZE
+name|MAX_CREDENTIALS_CACHE_SIZE
 condition|)
 block|{
 name|credentialsCache
@@ -894,7 +894,7 @@ name|o
 return|;
 block|}
 block|}
-comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *       * @param session      *            key for the cache      * @param pathOrUri      *            to release      */
+comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *      * @param session      *            key for the cache      * @param pathOrUri      *            to release      */
 specifier|protected
 name|void
 name|releaseSession
@@ -922,7 +922,7 @@ name|session
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * set the default user to use for the connection if no user is given or a PEM file is used      *       * @param user      *            to use      */
+comment|/**      * set the default user to use for the connection if no user is given or a PEM file is used      *      * @param user      *            to use      */
 specifier|public
 name|void
 name|setUser
@@ -948,7 +948,7 @@ return|return
 name|user
 return|;
 block|}
-comment|/**      * Sets the full file path to use for accessing a PEM key file      *       * @param filePath      *            fully qualified name      */
+comment|/**      * Sets the full file path to use for accessing a PEM key file      *      * @param filePath      *            fully qualified name      */
 specifier|public
 name|void
 name|setKeyFile

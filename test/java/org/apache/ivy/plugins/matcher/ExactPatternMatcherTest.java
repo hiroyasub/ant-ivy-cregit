@@ -17,6 +17,50 @@ name|matcher
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
 begin_comment
 comment|/**  * @see ExactPatternMatcher  */
 end_comment
@@ -28,12 +72,12 @@ name|ExactPatternMatcherTest
 extends|extends
 name|AbstractPatternMatcherTest
 block|{
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|setUp
 argument_list|(
@@ -79,6 +123,8 @@ index|]
 return|;
 comment|// there are no inexact expressions possible
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testImplementation

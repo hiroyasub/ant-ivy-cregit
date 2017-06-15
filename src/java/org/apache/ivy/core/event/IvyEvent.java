@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The root of all ivy events Any ivy event knows which ivy instance triggered the event (the  * source) and also has a name and a map of attributes. The name of the event represents the event  * type, usually there is a one - one mapping between event names and IvyEvent subclass, even if  * this is not mandatory. Example: pre-resolve pre-resolve-dependency post-download The map of  * attributes is a Map from String keys to String values. It is especially useful to filter events,  * and to get some of their essential data in some context where access to Java types is not easy  * (in an ant build file, for example), Example: pre-resolve (organisation=foo, module=bar,  * revision=1.0, conf=default) post-download (organisation=foo, module=bar, revision=1.0,  * artifact=foo-test, type=jar, ext=jar)  */
+comment|/**  *<p>  * The root of all ivy events Any ivy event knows which ivy instance triggered the event (the  * source) and also has a name and a map of attributes. The name of the event represents the event  * type, usually there is a one - one mapping between event names and IvyEvent subclass, even if  * this is not mandatory. Example:<code>pre-resolve pre-resolve-dependency post-download</code>  *</p>  *<p>  * The map of attributes is a Map from String keys to String values. It is especially useful to  * filter events, and to get some of their essential data in some context where access to Java types  * is not easy (in an Ant build file, for example), Example:<code>pre-resolve (organisation=foo,  * module=bar, revision=1.0, conf=default) post-download (organisation=foo, module=bar,  * revision=1.0, artifact=foo-test, type=jar, ext=jar)</code>  *</p>  */
 end_comment
 
 begin_class
@@ -170,7 +170,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Should only be called during event object construction, since events should be immutable      *       * @param key      * @param value      */
+comment|/**      * Should only be called during event object construction, since events should be immutable      *      * @param key ditto      * @param value ditto      */
 specifier|protected
 name|void
 name|addAttribute
@@ -351,7 +351,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns the attributes of this event, as a Map(String->String)      *       * @return the attributes of this event, as a Map(String->String)      */
+comment|/**      * Returns the attributes of this event, as a Map(String,String)      *      * @return the attributes of this event, as a Map(String,String)      */
 specifier|public
 name|Map
 name|getAttributes

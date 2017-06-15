@@ -510,7 +510,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class can be used for easy migration from Ivy 1.4 API.  *<p>  * Indeed, Ivy 2.0 API has changed substantially, so it can take time to migrate existing code using  * Ivy 1.4 API to the new API. Using this class it's really easy: replace your instance of Ivy by an  * instance of this class.  *<p>  * For instance, where you were doing:  *   *<pre>  * Ivy ivy = new Ivy();  *</pre>  *   * do instead:  *   *<pre>  * Ivy14 ivy = new Ivy14();  *</pre>  *   * And that should be enough in most cases!  */
+comment|/**  * This class can be used for easy migration from Ivy 1.4 API.  *<p>  * Indeed, Ivy 2.0 API has changed substantially, so it can take time to migrate existing code using  * Ivy 1.4 API to the new API. Using this class it's really easy: replace your instance of Ivy by an  * instance of this class.  *<p>  * For instance, where you were doing:  *  *<pre>  * Ivy ivy = new Ivy();  *</pre>  *  * do instead:  *  *<pre>  * Ivy14 ivy = new Ivy14();  *</pre>  *  * And that should be enough in most cases!  */
 end_comment
 
 begin_class

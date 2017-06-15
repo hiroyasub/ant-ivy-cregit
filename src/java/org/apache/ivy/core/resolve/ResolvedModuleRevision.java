@@ -217,7 +217,7 @@ operator|=
 name|force
 expr_stmt|;
 block|}
-comment|/**      * Returns the identifier of the resolved module.      *       * @return the identifier of the resolved module.      */
+comment|/**      * Returns the identifier of the resolved module.      *      * @return the identifier of the resolved module.      */
 specifier|public
 name|ModuleRevisionId
 name|getId
@@ -230,7 +230,7 @@ name|getResolvedModuleRevisionId
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the date of publication of the resolved module.      *       * @return the date of publication of the resolved module.      */
+comment|/**      * Returns the date of publication of the resolved module.      *      * @return the date of publication of the resolved module.      */
 specifier|public
 name|Date
 name|getPublicationDate
@@ -243,7 +243,7 @@ name|getResolvedPublicationDate
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the descriptor of the resolved module.      *       * @return the descriptor of the resolved module.      */
+comment|/**      * Returns the descriptor of the resolved module.      *      * @return the descriptor of the resolved module.      */
 specifier|public
 name|ModuleDescriptor
 name|getDescriptor
@@ -253,7 +253,7 @@ return|return
 name|descriptor
 return|;
 block|}
-comment|/**      * The resolver which resolved this ResolvedModuleRevision      *       * @return The resolver which resolved this ResolvedModuleRevision      */
+comment|/**      * The resolver which resolved this ResolvedModuleRevision      *      * @return The resolver which resolved this ResolvedModuleRevision      */
 specifier|public
 name|DependencyResolver
 name|getResolver
@@ -263,7 +263,7 @@ return|return
 name|resolver
 return|;
 block|}
-comment|/**      * The resolver to use to download artifacts      *       * @return The resolver to use to download artifacts      */
+comment|/**      * The resolver to use to download artifacts      *      * @return The resolver to use to download artifacts      */
 specifier|public
 name|DependencyResolver
 name|getArtifactResolver
@@ -273,7 +273,7 @@ return|return
 name|artifactResolver
 return|;
 block|}
-comment|/**      * Returns a report of the resolved module metadata artifact provisioning.      *       * @return a report of the resolved module metadata artifact provisioning.      */
+comment|/**      * Returns a report of the resolved module metadata artifact provisioning.      *      * @return a report of the resolved module metadata artifact provisioning.      */
 specifier|public
 name|MetadataArtifactDownloadReport
 name|getReport
@@ -283,7 +283,7 @@ return|return
 name|report
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if this resolved module revision should be forced as the one being      * returned.      *<p>      * This is used as an indication for CompositeResolver, to know if they should continue to look      * for a better ResolvedModuleRevision if possible, or stop with this instance.      *</p>      *       * @return<code>true</code> if this resolved module revision should be forced as the one being      *         returned.      */
+comment|/**      * Returns<code>true</code> if this resolved module revision should be forced as the one being      * returned.      *<p>      * This is used as an indication for CompositeResolver, to know if they should continue to look      * for a better ResolvedModuleRevision if possible, or stop with this instance.      *</p>      *      * @return<code>true</code> if this resolved module revision should be forced as the one being      *         returned.      */
 specifier|public
 name|boolean
 name|isForce
@@ -301,21 +301,11 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-operator|(
+return|return
 name|obj
 operator|instanceof
 name|ResolvedModuleRevision
-operator|)
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 operator|(
 operator|(
 name|ResolvedModuleRevision

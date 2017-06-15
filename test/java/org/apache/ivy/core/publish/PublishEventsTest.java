@@ -79,16 +79,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -245,6 +235,24 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ArtifactRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|parser
@@ -289,11 +297,43 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -301,12 +341,15 @@ begin_class
 specifier|public
 class|class
 name|PublishEventsTest
-extends|extends
-name|TestCase
 block|{
 comment|// maps ArtifactRevisionId to PublishTestCase instance.
 specifier|private
 name|HashMap
+argument_list|<
+name|ArtifactRevisionId
+argument_list|,
+name|PublishTestCase
+argument_list|>
 name|expectedPublications
 decl_stmt|;
 comment|// expected values for the current artifact being published.
@@ -356,6 +399,9 @@ name|publishModule
 decl_stmt|;
 specifier|private
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|publishSources
 decl_stmt|;
 specifier|private
@@ -376,18 +422,15 @@ specifier|private
 name|PublishEngine
 name|publishEngine
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
 comment|// reset test case state.
 name|resetCounters
 argument_list|()
@@ -560,6 +603,7 @@ name|expectedPublications
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|expectedPublications
@@ -634,18 +678,13 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|super
-operator|.
-name|tearDown
-argument_list|()
-expr_stmt|;
 comment|// reset test state.
 name|resetCounters
 argument_list|()
@@ -753,6 +792,8 @@ literal|null
 expr_stmt|;
 block|}
 comment|/**      * Test a simple artifact publish, without errors or overwrite settings.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishNoOverwrite
@@ -764,6 +805,9 @@ comment|// no modifications to input required for this case -- call out to the r
 comment|// that
 comment|// all of our test counters have been incremented.
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -836,6 +880,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test a simple artifact publish, with overwrite set to true.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishWithOverwrite
@@ -861,6 +907,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -933,6 +982,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test an attempted publish with an invalid data file path.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishMissingFile
@@ -955,9 +1006,6 @@ expr_stmt|;
 name|PublishTestCase
 name|dataPublish
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|expectedPublications
 operator|.
 name|get
@@ -975,6 +1023,9 @@ operator|=
 literal|false
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Artifact
+argument_list|>
 name|missing
 init|=
 name|publishEngine
@@ -1065,6 +1116,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test an attempted publish in which the target resolver throws an IOException.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPublishWithException
@@ -1084,33 +1137,16 @@ expr_stmt|;
 comment|// we don't care which artifact is attempted; either will fail with an IOException.
 for|for
 control|(
-name|Iterator
-name|it
-init|=
+name|PublishTestCase
+name|publishTestCase
+range|:
 name|expectedPublications
 operator|.
 name|values
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-init|;
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|;
 control|)
 block|{
-operator|(
-operator|(
-name|PublishTestCase
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-operator|)
+name|publishTestCase
 operator|.
 name|expectedSuccess
 operator|=
@@ -1710,9 +1746,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we test file separately, since it is hard to guaranteean exact path match, but we
-comment|// want
-comment|// to make sure that both paths point to the same canonical location on the
+comment|// we test file separately, since it is hard to guarantee an exact path match, but we
+comment|// want to make sure that both paths point to the same canonical location on the
 comment|// filesystem
 name|String
 name|filePath
@@ -1841,9 +1876,6 @@ expr_stmt|;
 name|PublishTestCase
 name|currentTestCase
 init|=
-operator|(
-name|PublishTestCase
-operator|)
 name|test
 operator|.
 name|expectedPublications

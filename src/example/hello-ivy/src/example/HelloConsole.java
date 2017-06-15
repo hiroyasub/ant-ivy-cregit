@@ -47,7 +47,7 @@ name|commons
 operator|.
 name|cli
 operator|.
-name|GnuParser
+name|DefaultParser
 import|;
 end_import
 
@@ -62,20 +62,6 @@ operator|.
 name|cli
 operator|.
 name|Option
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|cli
-operator|.
-name|OptionBuilder
 import|;
 end_import
 
@@ -108,14 +94,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple example to show how easy it is to retrieve transitive libs with ivy !!!   */
+comment|/**  * Simple example to show how easy it is to retrieve transitive libs with ivy !!!  */
 end_comment
 
 begin_class
 specifier|public
 specifier|final
 class|class
-name|Hello
+name|HelloConsole
 block|{
 specifier|public
 specifier|static
@@ -132,25 +118,28 @@ block|{
 name|Option
 name|msg
 init|=
-name|OptionBuilder
+name|Option
 operator|.
-name|withArgName
+name|builder
 argument_list|(
-literal|"msg"
+literal|"m"
+argument_list|)
+operator|.
+name|longOpt
+argument_list|(
+literal|"message"
 argument_list|)
 operator|.
 name|hasArg
 argument_list|()
 operator|.
-name|withDescription
+name|desc
 argument_list|(
 literal|"the message to capitalize"
 argument_list|)
 operator|.
-name|create
-argument_list|(
-literal|"message"
-argument_list|)
+name|build
+argument_list|()
 decl_stmt|;
 name|Options
 name|options
@@ -170,7 +159,7 @@ name|CommandLineParser
 name|parser
 init|=
 operator|new
-name|GnuParser
+name|DefaultParser
 argument_list|()
 decl_stmt|;
 name|CommandLine
@@ -192,9 +181,9 @@ name|line
 operator|.
 name|getOptionValue
 argument_list|(
-literal|"message"
+literal|"m"
 argument_list|,
-literal|"hello ivy !"
+literal|"Hello Ivy!"
 argument_list|)
 decl_stmt|;
 name|System
@@ -235,7 +224,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|Hello
+name|HelloConsole
 parameter_list|()
 block|{
 block|}

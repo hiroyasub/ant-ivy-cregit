@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface for elements that can be inherited from a parent descriptor by a child descriptor.  *   * @see Configuration  * @see DependencyDescriptor  */
+comment|/**  * Interface for elements that can be inherited from a parent descriptor by a child descriptor.  *  * @see Configuration  * @see DependencyDescriptor  */
 end_comment
 
 begin_interface

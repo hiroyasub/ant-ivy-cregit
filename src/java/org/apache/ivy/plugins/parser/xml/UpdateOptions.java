@@ -125,7 +125,8 @@ name|resolvedRevisions
 init|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 decl_stmt|;
 comment|/**      * Map from ModuleId of dependencies to new branch (as String)      */
 specifier|private
@@ -134,7 +135,8 @@ name|resolvedBranches
 init|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 decl_stmt|;
 comment|/**      * the new status,<code>null</code> to keep the old one      */
 specifier|private

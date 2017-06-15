@@ -1430,7 +1430,7 @@ specifier|private
 specifier|static
 specifier|final
 name|long
-name|INTERUPT_TIMEOUT
+name|INTERRUPT_TIMEOUT
 init|=
 literal|2000
 decl_stmt|;
@@ -2447,7 +2447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      */
+comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      *      * @param remote boolean      */
 specifier|public
 specifier|synchronized
 name|void
@@ -3038,7 +3038,7 @@ name|dumpSettings
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Default initialization of settings, useful when you don't want to load your settings from a      * settings file or URL, but prefer to set them manually. By calling this method you will still      * have the basic initialization done when loading settings.      *       * @throws IOException      */
+comment|/**      * Default initialization of settings, useful when you don't want to load your settings from a      * settings file or URL, but prefer to set them manually. By calling this method you will still      * have the basic initialization done when loading settings.      *      * @throws IOException if something goes wrong      */
 specifier|public
 specifier|synchronized
 name|void
@@ -3377,7 +3377,7 @@ name|iae
 throw|;
 block|}
 block|}
-comment|/**      * Sets a deprecated variable with the value of the new variable      *       * @param deprecatedKey      *            the deprecated variable name      * @param newKey      *            the new variable name      */
+comment|/**      * Sets a deprecated variable with the value of the new variable      *      * @param deprecatedKey      *            the deprecated variable name      * @param newKey      *            the new variable name      */
 specifier|private
 name|void
 name|setDeprecatedVariable
@@ -4073,7 +4073,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *       * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value If      *         the input str doesn't use any variable, the same object is returned      */
+comment|/**      * Substitute variables in the given string by their value found in the current set of variables      *      * @param str      *            the string in which substitution should be made      * @return the string where all current ivy variables have been substituted by their value If      *         the input str doesn't use any variable, the same object is returned      */
 specifier|public
 specifier|synchronized
 name|String
@@ -4094,7 +4094,7 @@ name|variableContainer
 argument_list|)
 return|;
 block|}
-comment|/**      * Substitute variables in the given map values by their value found in the current set of      * variables      *       * @param strings      *            the map of strings in which substitution should be made      * @return a new map of strings in which all current ivy variables in values have been      *         substituted by their value      */
+comment|/**      * Substitute variables in the given map values by their value found in the current set of      * variables      *      * @param strings      *            the map of strings in which substitution should be made      * @return a new map of strings in which all current ivy variables in values have been      *         substituted by their value      */
 specifier|public
 specifier|synchronized
 name|Map
@@ -4170,7 +4170,7 @@ return|return
 name|substituted
 return|;
 block|}
-comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *       * @return      */
+comment|/**      * Returns the variables loaded in configuration file. Those variables may better be seen as ant      * properties      *      * @return IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|IvyVariableContainer
@@ -4835,7 +4835,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * regular expressions as explained in Pattern class may be used in attributes      */
+comment|/**      * regular expressions as explained in Pattern class may be used in attributes      *      * @param attributes Map      * @param matcher PatternMatcher      * @param resolverName String      * @param branch String      * @param conflictManager String      * @param resolveMode String      */
 specifier|public
 specifier|synchronized
 name|void
@@ -4896,7 +4896,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved with respect to the settings's base      * directory.      *       * @param fileName      *            The name of the file to resolve. Must not be<code>null</code>.      *       * @return the resolved File.      *       */
+comment|/**      * Return the canonical form of a filename.      *<p>      * If the specified file name is relative it is resolved with respect to the settings's base      * directory.      *      * @param fileName      *            The name of the file to resolve. Must not be<code>null</code>.      *      * @return the resolved File.      *      */
 specifier|public
 specifier|synchronized
 name|File
@@ -6912,7 +6912,7 @@ operator|=
 name|statusManager
 expr_stmt|;
 block|}
-comment|/**      * Returns the file names of the files that should be ignored when creating a file listing.      */
+comment|/**      * Returns the file names of the files that should be ignored when creating a file listing.      *      * @return String[]      */
 specifier|public
 specifier|synchronized
 name|String
@@ -6936,7 +6936,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *       * @param names      */
+comment|/**      * Filters the names list by removing all names that should be ignored as defined by the listing      * ignore list      *      * @param names ditto      */
 specifier|public
 specifier|synchronized
 name|void
@@ -7024,6 +7024,42 @@ operator|.
 name|getVariable
 argument_list|(
 name|name
+argument_list|)
+return|;
+block|}
+comment|/**      * Returns a variable as boolean value.      * @param name name of the variable      * @param valueIfUnset value if the variable is unset      * @return<tt>true</tt> if the variable is<tt>'true'</tt> (ignoring case)      *     or the value of<i>valueIfUnset</i> if the variable is<tt>null</tt>      */
+specifier|public
+specifier|synchronized
+name|boolean
+name|getVariableAsBoolean
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|boolean
+name|valueIfUnset
+parameter_list|)
+block|{
+name|String
+name|var
+init|=
+name|getVariable
+argument_list|(
+name|name
+argument_list|)
+decl_stmt|;
+return|return
+name|var
+operator|==
+literal|null
+condition|?
+name|valueIfUnset
+else|:
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|var
 argument_list|)
 return|;
 block|}
@@ -7367,28 +7403,13 @@ name|boolean
 name|logModulesInUse
 parameter_list|()
 block|{
-name|String
-name|var
-init|=
-name|getVariable
+return|return
+name|getVariableAsBoolean
 argument_list|(
 literal|"ivy.log.modules.in.use"
+argument_list|,
+literal|true
 argument_list|)
-decl_stmt|;
-return|return
-name|var
-operator|==
-literal|null
-operator|||
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7397,28 +7418,13 @@ name|boolean
 name|logModuleWhenFound
 parameter_list|()
 block|{
-name|String
-name|var
-init|=
-name|getVariable
+return|return
+name|getVariableAsBoolean
 argument_list|(
 literal|"ivy.log.module.when.found"
+argument_list|,
+literal|true
 argument_list|)
-decl_stmt|;
-return|return
-name|var
-operator|==
-literal|null
-operator|||
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7427,28 +7433,13 @@ name|boolean
 name|logResolvedRevision
 parameter_list|()
 block|{
-name|String
-name|var
-init|=
-name|getVariable
+return|return
+name|getVariableAsBoolean
 argument_list|(
 literal|"ivy.log.resolved.revision"
+argument_list|,
+literal|true
 argument_list|)
-decl_stmt|;
-return|return
-name|var
-operator|==
-literal|null
-operator|||
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7464,41 +7455,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|String
-name|var
-init|=
-name|getVariable
+name|debugConflictResolution
+operator|=
+name|getVariableAsBoolean
 argument_list|(
 literal|"ivy.log.conflict.resolution"
-argument_list|)
-decl_stmt|;
-name|debugConflictResolution
-operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-operator|!=
-literal|null
-operator|&&
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|debugConflictResolution
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7514,41 +7482,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|String
-name|var
-init|=
-name|getVariable
+name|debugLocking
+operator|=
+name|getVariableAsBoolean
 argument_list|(
 literal|"ivy.log.locking"
-argument_list|)
-decl_stmt|;
-name|debugLocking
-operator|=
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-operator|!=
-literal|null
-operator|&&
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|debugLocking
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7564,41 +7509,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|String
-name|var
-init|=
-name|getVariable
-argument_list|(
-literal|"ivy.log.memory"
-argument_list|)
-decl_stmt|;
 name|dumpMemoryUsage
 operator|=
-name|Boolean
-operator|.
-name|valueOf
+name|getVariableAsBoolean
 argument_list|(
-name|var
-operator|!=
-literal|null
-operator|&&
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
-name|var
-argument_list|)
-operator|.
-name|booleanValue
-argument_list|()
+literal|"ivy.log.memory"
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
 return|return
 name|dumpMemoryUsage
-operator|.
-name|booleanValue
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -7839,7 +7761,7 @@ name|getInterruptTimeout
 parameter_list|()
 block|{
 return|return
-name|INTERUPT_TIMEOUT
+name|INTERRUPT_TIMEOUT
 return|;
 block|}
 specifier|public
@@ -7900,7 +7822,7 @@ return|return
 name|variableContainer
 return|;
 block|}
-comment|/**      * Use a different variable container.      *       * @param variables      */
+comment|/**      * Use a different variable container.      *      * @param variables IvyVariableContainer      */
 specifier|public
 specifier|synchronized
 name|void
@@ -8038,7 +7960,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validates the settings, throwing an {@link IllegalStateException} if the current state is not      * valid.      *       * @throws IllegalStateException      *             if the settings is not valid.      */
+comment|/**      * Validates the settings, throwing an {@link IllegalStateException} if the current state is not      * valid.      *      * @throws IllegalStateException      *             if the settings is not valid.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -8118,7 +8040,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validates all {@link Validatable} objects in the collection.      *       * @param objects      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
+comment|/**      * Validates all {@link Validatable} objects in the collection.      *      * @param values      *            the collection of objects to validate.      * @throws IllegalStateException      *             if any of the objects is not valid.      */
 specifier|private
 name|void
 name|validateAll

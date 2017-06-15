@@ -18,12 +18,48 @@ package|;
 end_package
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -36,21 +72,12 @@ specifier|public
 specifier|abstract
 class|class
 name|AbstractPatternMatcherTest
-extends|extends
-name|TestCase
 block|{
 specifier|protected
 name|PatternMatcher
 name|patternMatcher
 decl_stmt|;
-specifier|protected
-specifier|abstract
-name|void
-name|setUp
-parameter_list|()
-throws|throws
-name|Exception
-function_decl|;
+comment|// used by setUp() in subclasses
 specifier|protected
 name|void
 name|setUp
@@ -66,6 +93,8 @@ operator|=
 name|matcher
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAnyExpression
@@ -112,6 +141,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIsExact
@@ -165,19 +196,10 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|expression
+range|:
 name|expressions
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|matcher
@@ -186,20 +208,14 @@ name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be exact"
 argument_list|,
@@ -220,10 +236,7 @@ name|assertTrue
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be exact"
 argument_list|,
@@ -242,19 +255,10 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|expression
+range|:
 name|expressions
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|matcher
@@ -263,20 +267,14 @@ name|patternMatcher
 operator|.
 name|getMatcher
 argument_list|(
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be inexact"
 argument_list|,
@@ -297,10 +295,7 @@ name|assertFalse
 argument_list|(
 literal|"Expression '"
 operator|+
-name|expressions
-index|[
-name|i
-index|]
+name|expression
 operator|+
 literal|"' should be inexact"
 argument_list|,
@@ -326,6 +321,15 @@ index|[]
 name|getInexactExpressions
 parameter_list|()
 function_decl|;
+annotation|@
+name|Test
+argument_list|(
+name|expected
+operator|=
+name|NullPointerException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testNullInput
@@ -341,8 +345,6 @@ argument_list|(
 literal|"some expression"
 argument_list|)
 decl_stmt|;
-try|try
-block|{
 name|matcher
 operator|.
 name|matches
@@ -350,26 +352,20 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|fail
+block|}
+annotation|@
+name|Test
 argument_list|(
-literal|"Should fail for null input"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|NullPointerException
 name|expected
-parameter_list|)
-block|{
-block|}
-block|}
+operator|=
+name|NullPointerException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testNullExpression
 parameter_list|()
-block|{
-try|try
 block|{
 name|patternMatcher
 operator|.
@@ -378,19 +374,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Should fail for null expression"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|NullPointerException
-name|expected
-parameter_list|)
-block|{
-block|}
 block|}
 specifier|public
 specifier|abstract
@@ -398,6 +381,8 @@ name|void
 name|testImplementation
 parameter_list|()
 function_decl|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLoadTestMatches
@@ -465,6 +450,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLoadTestGetMatcher

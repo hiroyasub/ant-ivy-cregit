@@ -491,7 +491,7 @@ operator|=
 name|eventManager
 expr_stmt|;
 block|}
-comment|/**      * Publishes a module to the repository. The publish can update the ivy file to publish if      * update is set to true. In this case it will use the given pubrevision, pubdate and status. If      * pubdate is null it will default to the current date. If status is null it will default to the      * current ivy file status (which itself defaults to integration if none is found). If update is      * false, then if the revision is not the same in the ivy file than the one expected (given as      * parameter), this method will fail with an IllegalArgumentException. pubdate and status are      * not used if update is false. extra artifacts can be used to publish more artifacts than      * actually declared in the ivy file. This can be useful to publish additional metadata or      * reports. The extra artifacts array can be null (= no extra artifacts), and if non null only      * the name, type, ext url and extra attributes of the artifacts are really used. Other methods      * can return null safely.      */
+comment|/**      * Publishes a module to the repository. The publish can update the ivy file to publish if      * update is set to true. In this case it will use the given pubrevision, pubdate and status. If      * pubdate is null it will default to the current date. If status is null it will default to the      * current ivy file status (which itself defaults to integration if none is found). If update is      * false, then if the revision is not the same in the ivy file than the one expected (given as      * parameter), this method will fail with an IllegalArgumentException. pubdate and status are      * not used if update is false. extra artifacts can be used to publish more artifacts than      * actually declared in the ivy file. This can be useful to publish additional metadata or      * reports. The extra artifacts array can be null (= no extra artifacts), and if non null only      * the name, type, ext url and extra attributes of the artifacts are really used. Other methods      * can return null safely.      *      * @param mrid ModuleRevisionId      * @param srcArtifactPattern a Collection of String      * @param resolverName String      * @param options PublishOptions      * @return Collection&lt;Artifact&gt;      * @throws IOException if something goes wrong      */
 specifier|public
 name|Collection
 argument_list|<
@@ -1259,34 +1259,18 @@ name|i
 index|]
 argument_list|)
 decl_stmt|;
-for|for
-control|(
-name|int
-name|j
-init|=
-literal|0
-init|;
-name|j
-operator|<
-name|artifacts
-operator|.
-name|length
-condition|;
-name|j
-operator|++
-control|)
-block|{
 name|artifactsSet
 operator|.
-name|add
+name|addAll
+argument_list|(
+name|Arrays
+operator|.
+name|asList
 argument_list|(
 name|artifacts
-index|[
-name|j
-index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|Artifact
 index|[]
@@ -1473,9 +1457,15 @@ operator|.
 name|append
 argument_list|(
 literal|"missing artifact "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|artifact
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|":\n"
 argument_list|)
 expr_stmt|;
@@ -1492,7 +1482,10 @@ operator|.
 name|append
 argument_list|(
 literal|"\t"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|settings
 operator|.
 name|resolveFile
@@ -1506,7 +1499,10 @@ argument_list|,
 name|artifact
 argument_list|)
 argument_list|)
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" file does not exist\n"
 argument_list|)
 expr_stmt|;

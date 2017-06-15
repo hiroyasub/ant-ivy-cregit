@@ -776,7 +776,7 @@ return|return
 name|ivyroot
 return|;
 block|}
-comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *       * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
+comment|/**      * Sets the root of the maven like repository. The maven like repository is necessarily an http      * repository.      *      * @param root      *            the root of the maven like repository      * @throws IllegalArgumentException      *             if root does not start with "http://"      */
 specifier|public
 name|void
 name|setIvyroot

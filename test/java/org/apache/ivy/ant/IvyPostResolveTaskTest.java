@@ -97,11 +97,43 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|After
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -109,8 +141,6 @@ begin_class
 specifier|public
 class|class
 name|IvyPostResolveTaskTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|File
@@ -124,12 +154,12 @@ specifier|private
 name|Project
 name|project
 decl_stmt|;
-specifier|protected
+annotation|@
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|createCache
 argument_list|()
@@ -208,12 +238,12 @@ name|mkdirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+annotation|@
+name|After
+specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CacheCleaner
 operator|.
@@ -223,6 +253,8 @@ name|cache
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndLessConfs
@@ -270,9 +302,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -295,9 +324,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -315,6 +341,8 @@ name|reportAfter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndSameConfs
@@ -362,9 +390,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -387,9 +412,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -407,6 +429,8 @@ name|reportAfter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndWildcard
@@ -454,9 +478,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -479,9 +500,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -499,6 +517,8 @@ name|reportAfter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndBothWildcard
@@ -546,9 +566,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -571,9 +588,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -591,6 +605,8 @@ name|reportAfter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndMoreConfs
@@ -638,9 +654,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -705,9 +718,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -746,6 +756,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithoutKeep
@@ -793,9 +805,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -869,9 +878,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -910,6 +916,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInlineWithoutKeep
@@ -961,9 +969,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1000,6 +1005,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInlineWithKeep
@@ -1058,9 +1065,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1097,6 +1101,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndLessConfs
@@ -1151,9 +1157,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1201,9 +1204,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1233,9 +1233,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1246,9 +1243,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1275,6 +1269,8 @@ name|report2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndSameConfs
@@ -1329,9 +1325,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1379,9 +1372,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1411,9 +1401,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1424,9 +1411,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1453,6 +1437,8 @@ name|report2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndWildcard
@@ -1507,9 +1493,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1557,9 +1540,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1589,9 +1569,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1602,9 +1579,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1631,6 +1605,8 @@ name|report2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndBothWildcard
@@ -1685,9 +1661,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1735,9 +1708,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1767,9 +1737,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1780,9 +1747,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1809,6 +1773,8 @@ name|report2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndMoreConfs
@@ -1863,9 +1829,6 @@ expr_stmt|;
 name|ResolveReport
 name|report1
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1955,9 +1918,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportBefore
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -1987,9 +1947,6 @@ expr_stmt|;
 name|ResolveReport
 name|reportAfter
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference
@@ -2000,9 +1957,6 @@ decl_stmt|;
 name|ResolveReport
 name|report2
 init|=
-operator|(
-name|ResolveReport
-operator|)
 name|project
 operator|.
 name|getReference

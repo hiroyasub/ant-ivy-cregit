@@ -135,21 +135,35 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
-name|Assert
+name|Test
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -157,8 +171,6 @@ begin_class
 specifier|public
 class|class
 name|ModuleDescriptorMemoryCacheTest
-extends|extends
-name|TestCase
 block|{
 name|ModuleDescriptorMemoryCache
 name|cache
@@ -192,7 +204,6 @@ argument_list|(
 literal|"file://cached/file.txt"
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|File
 name|url2
 init|=
@@ -202,7 +213,6 @@ argument_list|(
 literal|"file://cached/file2.txt"
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|File
 name|url3
 init|=
@@ -212,7 +222,6 @@ argument_list|(
 literal|"file://cached/file3.txt"
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|ModuleRevisionId
 name|mrid1
 init|=
@@ -285,6 +294,8 @@ argument_list|(
 name|mrid3
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUseModuleDescriptorProviderWhenModuleNotCached
@@ -327,6 +338,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCacheResultOfModuleDescriptorProvider
@@ -387,6 +400,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidationClearInvalidatedCache
@@ -414,7 +429,6 @@ argument_list|(
 name|md1
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|assertEquals
 argument_list|(
 name|md1
@@ -457,6 +471,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidationDontClearvalidatedCache
@@ -517,9 +533,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
-name|testSizeIsLimitied
+name|testSizeIsLimited
 parameter_list|()
 throws|throws
 name|ParseException
@@ -622,6 +640,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLastRecentlyUsedIsFlushedWhenSizeExceed
@@ -752,6 +772,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVariableChangeInvalidateEntry
@@ -835,6 +857,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetStaleDontReadFromCache
@@ -904,6 +928,8 @@ name|assertCalled
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetStaleStoreResultInCache
@@ -964,6 +990,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testASizeOf0MeansNoCache
@@ -1115,8 +1143,6 @@ name|void
 name|assertCalled
 parameter_list|()
 block|{
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|called
