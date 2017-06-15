@@ -138,10 +138,16 @@ name|name
 decl_stmt|;
 specifier|private
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|attributes
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|protected
@@ -354,12 +360,18 @@ block|}
 comment|/**      * Returns the attributes of this event, as a Map(String,String)      *      * @return the attributes of this event, as a Map(String,String)      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getAttributes
 parameter_list|()
 block|{
 return|return
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|(
 name|attributes
 argument_list|)

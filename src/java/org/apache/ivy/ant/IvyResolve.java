@@ -496,9 +496,7 @@ name|dependencies
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyDependency
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -510,9 +508,7 @@ name|excludes
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyExclude
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -524,9 +520,7 @@ name|conflicts
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyConflict
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

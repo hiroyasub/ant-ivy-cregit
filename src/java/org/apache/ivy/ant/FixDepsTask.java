@@ -159,9 +159,7 @@ name|keeps
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Keep
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -315,9 +313,7 @@ name|midToKeep
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ModuleId
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

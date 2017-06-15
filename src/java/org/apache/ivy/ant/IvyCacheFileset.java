@@ -157,6 +157,22 @@ name|NameEntry
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|types
+operator|.
+name|Resource
+import|;
+end_import
+
 begin_comment
 comment|/**  * Creates an ant fileset consisting in all artifacts found during a resolve. Note that this task is  * not compatible with the useOrigin mode.  */
 end_comment
@@ -406,7 +422,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a common base directory, determined from the {@link ArtifactDownloadReport#getLocalFile() local files} of the      * passed<code>artifactDownloadReports</code>. If no common base directory can be determined, this method throws a      * {@link BuildException}      *      * @param artifactDownloadReports The artifact download reports for which the common base directory of the artifacts      *                                has to be determined      * @return      */
+comment|/**      * Returns a common base directory, determined from the {@link ArtifactDownloadReport#getLocalFile() local files} of the      * passed<code>artifactDownloadReports</code>. If no common base directory can be determined, this method throws a      * {@link BuildException}      *      * @param artifactDownloadReports The artifact download reports for which the common base directory of the artifacts      *                                has to be determined      * @return File      */
 name|File
 name|requireCommonBaseDir
 parameter_list|(
@@ -761,12 +777,16 @@ argument_list|()
 decl_stmt|;
 specifier|public
 name|Iterator
+argument_list|<
+name|Resource
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
 return|return
 operator|new
 name|EmptyIterator
+argument_list|<>
 argument_list|()
 return|;
 block|}
@@ -807,8 +827,14 @@ specifier|private
 specifier|static
 class|class
 name|EmptyIterator
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|Iterator
+argument_list|<
+name|T
+argument_list|>
 block|{
 specifier|public
 name|boolean
@@ -820,7 +846,7 @@ literal|false
 return|;
 block|}
 specifier|public
-name|Object
+name|T
 name|next
 parameter_list|()
 block|{

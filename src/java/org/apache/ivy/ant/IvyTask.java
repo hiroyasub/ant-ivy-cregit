@@ -696,7 +696,10 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|getResolvedDescriptor
 parameter_list|(
 name|String
@@ -713,7 +716,10 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|getResolvedDescriptor
 parameter_list|(
 name|String
@@ -723,7 +729,7 @@ name|boolean
 name|strict
 parameter_list|)
 block|{
-name|Object
+name|T
 name|result
 init|=
 name|getProject
@@ -764,7 +770,10 @@ name|result
 return|;
 block|}
 specifier|protected
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|getResolvedDescriptor
 parameter_list|(
 name|String
@@ -786,7 +795,10 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|getResolvedDescriptor
 parameter_list|(
 name|String
@@ -813,7 +825,10 @@ argument_list|)
 return|;
 block|}
 specifier|private
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|getReference
 parameter_list|(
 name|String
@@ -829,7 +844,7 @@ name|boolean
 name|strict
 parameter_list|)
 block|{
-name|Object
+name|T
 name|reference
 init|=
 literal|null
@@ -917,9 +932,6 @@ condition|)
 block|{
 name|result
 operator|=
-operator|(
-name|ResolveReport
-operator|)
 name|getReference
 argument_list|(
 literal|"ivy.resolved.report"
@@ -936,9 +948,6 @@ else|else
 block|{
 name|result
 operator|=
-operator|(
-name|ResolveReport
-operator|)
 name|getReference
 argument_list|(
 literal|"ivy.resolved.report."

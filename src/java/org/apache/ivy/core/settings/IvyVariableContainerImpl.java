@@ -74,6 +74,11 @@ name|IvyVariableContainer
 block|{
 specifier|private
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|variables
 decl_stmt|;
 specifier|private
@@ -90,6 +95,7 @@ name|variables
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -97,6 +103,11 @@ specifier|public
 name|IvyVariableContainerImpl
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|variables
 parameter_list|)
 block|{
@@ -247,6 +258,11 @@ return|;
 block|}
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getVariables
 parameter_list|()
 block|{
@@ -315,9 +331,6 @@ else|else
 block|{
 name|val
 operator|=
-operator|(
-name|String
-operator|)
 name|variables
 operator|.
 name|get
@@ -376,6 +389,7 @@ name|variables
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|(
 name|this
 operator|.

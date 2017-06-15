@@ -187,9 +187,7 @@ name|confs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyDependencyConf
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -201,9 +199,7 @@ name|artifacts
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyDependencyArtifact
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -215,9 +211,7 @@ name|excludes
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyDependencyExclude
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -229,9 +223,7 @@ name|includes
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyDependencyInclude
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
