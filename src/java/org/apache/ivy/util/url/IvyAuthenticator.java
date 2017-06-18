@@ -455,6 +455,12 @@ argument_list|()
 argument_list|,
 name|getRequestingScheme
 argument_list|()
+argument_list|,
+name|getRequestingURL
+argument_list|()
+argument_list|,
+name|getRequestorType
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
