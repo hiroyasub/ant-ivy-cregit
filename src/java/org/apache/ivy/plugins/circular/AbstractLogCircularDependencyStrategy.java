@@ -117,12 +117,16 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
+specifier|final
 name|Collection
-comment|/*<String> */
+argument_list|<
+name|String
+argument_list|>
 name|circularDependencies
 init|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

@@ -608,20 +608,34 @@ block|}
 block|}
 comment|/**      * key is username / host / port      *      * @see #createCacheKey(String, String, int) for details      */
 specifier|private
+specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Entry
+argument_list|>
 name|uriCacheMap
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * key is the session itself      */
 specifier|private
+specifier|final
 name|Map
+argument_list|<
+name|Session
+argument_list|,
+name|Entry
+argument_list|>
 name|sessionCacheMap
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * retrieves a session entry for a given hostname from the cache      *      * @param user      *            to retrieve session for      * @param host      *            ditto      * @param port      *            ditto      * @return null or the existing entry      */
@@ -640,9 +654,6 @@ name|port
 parameter_list|)
 block|{
 return|return
-operator|(
-name|Entry
-operator|)
 name|uriCacheMap
 operator|.
 name|get
@@ -743,9 +754,6 @@ name|session
 parameter_list|)
 block|{
 return|return
-operator|(
-name|Entry
-operator|)
 name|sessionCacheMap
 operator|.
 name|get
@@ -775,9 +783,6 @@ block|{
 name|Entry
 name|entry
 init|=
-operator|(
-name|Entry
-operator|)
 name|uriCacheMap
 operator|.
 name|get
@@ -978,9 +983,6 @@ block|{
 name|Entry
 name|entry
 init|=
-operator|(
-name|Entry
-operator|)
 name|sessionCacheMap
 operator|.
 name|get
@@ -1475,9 +1477,7 @@ name|delete
 argument_list|()
 expr_stmt|;
 block|}
-name|IOException
-name|ex
-init|=
+throw|throw
 operator|new
 name|IOException
 argument_list|(
@@ -1485,17 +1485,9 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-decl_stmt|;
-name|ex
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
-expr_stmt|;
-throw|throw
-name|ex
 throw|;
 block|}
 block|}

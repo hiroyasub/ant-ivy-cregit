@@ -139,6 +139,9 @@ name|ModuleRevisionId
 name|foundMrid
 parameter_list|,
 name|Comparator
+argument_list|<
+name|ModuleRevisionId
+argument_list|>
 name|staticComparator
 parameter_list|)
 block|{

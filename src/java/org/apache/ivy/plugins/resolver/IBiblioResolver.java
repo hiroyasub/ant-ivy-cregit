@@ -1238,21 +1238,7 @@ block|}
 catch|catch
 parameter_list|(
 name|SAXException
-name|e
-parameter_list|)
-block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"impossible to parse maven metadata file, ignored"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|ParserConfigurationException
 name|e
 parameter_list|)
@@ -1918,7 +1904,7 @@ literal|"maven-metadata.xml"
 decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|String
 argument_list|>
 name|revs
 init|=
@@ -2130,9 +2116,7 @@ name|rres
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ResolvedResource
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -2431,9 +2415,7 @@ name|metadataRevs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|metadataStream
@@ -2550,21 +2532,7 @@ block|}
 catch|catch
 parameter_list|(
 name|SAXException
-name|e
-parameter_list|)
-block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"impossible to parse maven metadata file, ignored"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|ParserConfigurationException
 name|e
 parameter_list|)

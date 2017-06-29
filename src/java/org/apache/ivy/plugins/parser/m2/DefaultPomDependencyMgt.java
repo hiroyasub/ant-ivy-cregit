@@ -21,6 +21,24 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleId
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -54,7 +72,9 @@ name|scope
 decl_stmt|;
 specifier|private
 name|List
-comment|/*<ModuleId> */
+argument_list|<
+name|ModuleId
+argument_list|>
 name|excludedModules
 decl_stmt|;
 specifier|public
@@ -73,7 +93,9 @@ name|String
 name|scope
 parameter_list|,
 name|List
-comment|/*<ModuleId> */
+argument_list|<
+name|ModuleId
+argument_list|>
 name|excludedModules
 parameter_list|)
 block|{
@@ -146,7 +168,9 @@ return|;
 block|}
 specifier|public
 name|List
-comment|/*<ModuleId> */
+argument_list|<
+name|ModuleId
+argument_list|>
 name|getExcludedModules
 parameter_list|()
 block|{

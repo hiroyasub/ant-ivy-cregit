@@ -1067,6 +1067,9 @@ block|}
 block|}
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|list
 parameter_list|(
 name|String
@@ -1138,10 +1141,14 @@ literal|"\n"
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|ret
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|lines
 operator|.

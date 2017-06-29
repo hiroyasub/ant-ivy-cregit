@@ -472,9 +472,7 @@ name|ret
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|all
 operator|.
@@ -757,9 +755,7 @@ name|names
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|all
 operator|.
@@ -1009,9 +1005,7 @@ name|ret
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ResolvedResource
-argument_list|>
+argument_list|<>
 argument_list|(
 name|revs
 operator|.
@@ -1020,19 +1014,10 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|rev
+range|:
 name|revs
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|String
@@ -1048,10 +1033,7 @@ name|IvyPatternHelper
 operator|.
 name|REVISION_KEY
 argument_list|,
-name|revs
-index|[
-name|i
-index|]
+name|rev
 argument_list|)
 decl_stmt|;
 try|try
@@ -1085,10 +1067,7 @@ name|ResolvedResource
 argument_list|(
 name|res
 argument_list|,
-name|revs
-index|[
-name|i
-index|]
+name|rev
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1153,9 +1132,10 @@ return|;
 block|}
 if|else if
 condition|(
+operator|!
 name|partiallyResolvedPattern
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"["
 operator|+
@@ -1165,9 +1145,6 @@ name|REVISION_KEY
 operator|+
 literal|"]"
 argument_list|)
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 comment|// the partially resolved pattern is completely resolved, check the resource
@@ -1618,9 +1595,7 @@ name|ret
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|all
 operator|.
@@ -1920,9 +1895,7 @@ name|names
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|all
 operator|.

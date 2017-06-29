@@ -261,11 +261,18 @@ block|}
 comment|/**      * hashmap of user/hosts with credentials. key is hostname, value is Credentials      **/
 specifier|private
 specifier|static
+specifier|final
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Credentials
+argument_list|>
 name|credentialsCache
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -402,15 +409,13 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|userInfo
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|":"
 argument_list|)
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|user

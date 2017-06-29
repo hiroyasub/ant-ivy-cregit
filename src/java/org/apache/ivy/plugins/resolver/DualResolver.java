@@ -1015,14 +1015,9 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 name|DESCRIPTOR_REQUIRED
-block|,
+argument_list|,
 name|DESCRIPTOR_OPTIONAL
-block|}
 argument_list|)
 argument_list|)
 throw|;

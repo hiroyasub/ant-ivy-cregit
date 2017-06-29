@@ -75,6 +75,24 @@ name|apache
 operator|.
 name|ivy
 operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|id
+operator|.
+name|ModuleRevisionId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
 name|plugins
 operator|.
 name|namespace
@@ -121,6 +139,11 @@ decl_stmt|;
 comment|/**      * Map from ModuleId of dependencies to new revision (as String)      */
 specifier|private
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|resolvedRevisions
 init|=
 name|Collections
@@ -131,6 +154,11 @@ decl_stmt|;
 comment|/**      * Map from ModuleId of dependencies to new branch (as String)      */
 specifier|private
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|resolvedBranches
 init|=
 name|Collections
@@ -261,6 +289,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|getResolvedRevisions
 parameter_list|()
 block|{
@@ -273,6 +306,11 @@ name|UpdateOptions
 name|setResolvedRevisions
 parameter_list|(
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|resolvedRevisions
 parameter_list|)
 block|{
@@ -578,6 +616,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|getResolvedBranches
 parameter_list|()
 block|{
@@ -590,6 +633,11 @@ name|UpdateOptions
 name|setResolvedBranches
 parameter_list|(
 name|Map
+argument_list|<
+name|ModuleRevisionId
+argument_list|,
+name|String
+argument_list|>
 name|resolvedBranches
 parameter_list|)
 block|{

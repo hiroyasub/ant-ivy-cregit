@@ -482,11 +482,11 @@ name|IOException
 throws|,
 name|RemoteScpException
 block|{
-name|StringBuffer
+name|StringBuilder
 name|sb
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|DEFAULT_LINE_BUFFER_LENGTH
 argument_list|)
@@ -1167,22 +1167,16 @@ block|}
 catch|catch
 parameter_list|(
 name|JSchException
-name|e1
+name|jsche
 parameter_list|)
 block|{
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
 literal|"Channel connection problems"
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
-name|e1
+argument_list|,
+name|jsche
 argument_list|)
 throw|;
 block|}
@@ -1492,22 +1486,16 @@ block|}
 catch|catch
 parameter_list|(
 name|JSchException
-name|e1
+name|jsche
 parameter_list|)
 block|{
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
 literal|"Channel connection problems"
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
-name|e1
+argument_list|,
+name|jsche
 argument_list|)
 throw|;
 block|}
@@ -1815,7 +1803,7 @@ return|return
 name|fileInfo
 return|;
 block|}
-comment|/**      * @return ChannelExec      * @throws JSchException      */
+comment|/**      * @return ChannelExec      * @throws JSchException if something goes wrong      */
 specifier|private
 name|ChannelExec
 name|getExecChannel
@@ -2059,9 +2047,6 @@ argument_list|()
 expr_stmt|;
 block|}
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
@@ -2071,10 +2056,7 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
 throw|;
@@ -2227,22 +2209,16 @@ argument_list|()
 expr_stmt|;
 block|}
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error during SCP transfer."
+literal|"Error during SCP transfer. "
 operator|+
 name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
 throw|;
@@ -2333,22 +2309,16 @@ name|e
 parameter_list|)
 block|{
 throw|throw
-operator|(
-name|IOException
-operator|)
 operator|new
 name|IOException
 argument_list|(
-literal|"Error during SCP transfer."
+literal|"Error during SCP transfer. "
 operator|+
 name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|)
-operator|.
-name|initCause
-argument_list|(
+argument_list|,
 name|e
 argument_list|)
 throw|;
