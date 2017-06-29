@@ -363,9 +363,6 @@ operator|.
 name|setTtl
 argument_list|(
 name|metadataTtl
-operator|.
-name|longValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

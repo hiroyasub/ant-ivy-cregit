@@ -35,7 +35,6 @@ extends|extends
 name|OSGiFilter
 block|{
 specifier|public
-specifier|static
 enum|enum
 name|Operator
 block|{
@@ -78,7 +77,6 @@ specifier|private
 name|String
 name|op
 decl_stmt|;
-specifier|private
 name|Operator
 parameter_list|(
 name|String

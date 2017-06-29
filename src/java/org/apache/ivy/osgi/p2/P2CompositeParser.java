@@ -179,9 +179,7 @@ name|childLocations
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -441,9 +439,7 @@ name|childLocations
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)

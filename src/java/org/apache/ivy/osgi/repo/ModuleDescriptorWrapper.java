@@ -177,6 +177,7 @@ name|BundleInfo
 name|bundleInfo
 decl_stmt|;
 specifier|private
+specifier|volatile
 name|DefaultModuleDescriptor
 name|md
 decl_stmt|;
@@ -330,9 +331,7 @@ name|unwrapped
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ModuleDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

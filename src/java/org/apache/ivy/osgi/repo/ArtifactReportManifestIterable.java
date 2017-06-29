@@ -224,14 +224,7 @@ name|artifactReports
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|ModuleRevisionId
-argument_list|,
-name|List
-argument_list|<
-name|ArtifactDownloadReport
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -306,9 +299,7 @@ name|moduleReports
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ArtifactDownloadReport
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|artifactReports

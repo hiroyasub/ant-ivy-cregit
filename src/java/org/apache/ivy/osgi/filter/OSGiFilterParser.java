@@ -345,11 +345,11 @@ name|String
 name|parseCompareValue
 parameter_list|()
 block|{
-name|StringBuffer
+name|StringBuilder
 name|builder
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 do|do

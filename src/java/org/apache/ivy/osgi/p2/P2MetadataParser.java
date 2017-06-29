@@ -644,9 +644,7 @@ name|repositoryUris
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|URI
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)
@@ -965,9 +963,7 @@ name|bundles
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|BundleInfo
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)
@@ -2066,9 +2062,7 @@ name|capabilities
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|BundleCapability
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)
@@ -2359,9 +2353,7 @@ name|requirements
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|BundleRequirement
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)
@@ -2699,9 +2691,7 @@ name|artifacts
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|P2Artifact
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)

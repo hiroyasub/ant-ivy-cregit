@@ -53,9 +53,7 @@ name|resolvers
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|AbstractOSGiResolver
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -89,9 +87,7 @@ name|repos
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|RepoDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

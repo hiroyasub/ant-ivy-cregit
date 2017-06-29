@@ -64,7 +64,6 @@ specifier|public
 interface|interface
 name|XMLInputParser
 block|{
-specifier|public
 name|void
 name|parse
 parameter_list|(

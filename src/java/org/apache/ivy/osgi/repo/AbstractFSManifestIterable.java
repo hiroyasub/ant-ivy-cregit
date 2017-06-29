@@ -273,12 +273,7 @@ name|dirs
 init|=
 operator|new
 name|Stack
-argument_list|<
-name|Iterator
-argument_list|<
-name|T
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**          * The bundles files being lookup.          */
