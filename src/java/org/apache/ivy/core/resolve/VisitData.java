@@ -86,14 +86,7 @@ name|visitNodes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|List
-argument_list|<
-name|VisitNode
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -172,9 +165,7 @@ name|visits
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|VisitNode
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|visitNodes

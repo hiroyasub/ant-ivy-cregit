@@ -1358,8 +1358,6 @@ parameter_list|)
 throws|throws
 name|IOException
 throws|,
-name|ParseException
-throws|,
 name|SAXException
 block|{
 name|URI
@@ -1608,8 +1606,6 @@ parameter_list|)
 throws|throws
 name|IOException
 throws|,
-name|ParseException
-throws|,
 name|SAXException
 block|{
 name|URI
@@ -1781,8 +1777,6 @@ name|site
 parameter_list|)
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 throws|,
 name|SAXException
 block|{

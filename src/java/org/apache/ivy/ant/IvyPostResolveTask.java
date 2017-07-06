@@ -47,6 +47,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -70,6 +80,24 @@ operator|.
 name|cache
 operator|.
 name|ResolutionCacheManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Artifact
 import|;
 end_import
 
@@ -317,6 +345,9 @@ name|file
 decl_stmt|;
 specifier|private
 name|Filter
+argument_list|<
+name|Artifact
+argument_list|>
 name|artifactFilter
 init|=
 literal|null
@@ -1371,7 +1402,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
-name|HashSet
+name|Set
 argument_list|<
 name|String
 argument_list|>
@@ -1453,7 +1484,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|HashSet
+name|Set
 argument_list|<
 name|String
 argument_list|>
@@ -1907,6 +1938,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Filter
+argument_list|<
+name|Artifact
+argument_list|>
 name|getArtifactFilter
 parameter_list|()
 block|{

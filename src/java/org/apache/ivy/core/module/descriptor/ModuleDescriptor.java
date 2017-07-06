@@ -463,7 +463,9 @@ function_decl|;
 comment|/**      * @return all the {@link DependencyDescriptorMediator}s used by this      * {@link ModuleDescriptor}, as an instance of {@link ModuleRules}.      */
 specifier|public
 name|ModuleRules
-comment|/*<DependencyDescriptorMediator> */
+argument_list|<
+name|DependencyDescriptorMediator
+argument_list|>
 name|getAllDependencyDescriptorMediators
 parameter_list|()
 function_decl|;

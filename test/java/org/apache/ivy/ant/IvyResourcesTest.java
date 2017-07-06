@@ -401,6 +401,9 @@ literal|"2.0"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList
@@ -511,6 +514,9 @@ literal|"0.7"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList
@@ -718,6 +724,9 @@ literal|"A"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList
@@ -879,6 +888,9 @@ literal|"B"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList
@@ -1085,6 +1097,9 @@ literal|"mod1.1"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList
@@ -1433,6 +1448,9 @@ literal|"art22-1"
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|files
 init|=
 name|asList

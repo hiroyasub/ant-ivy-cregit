@@ -82,6 +82,11 @@ name|PatternMatcher
 name|matcher
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extraAttributes
 parameter_list|)
 block|{

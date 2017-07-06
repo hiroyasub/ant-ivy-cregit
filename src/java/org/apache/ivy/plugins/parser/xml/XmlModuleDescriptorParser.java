@@ -1291,7 +1291,7 @@ name|e
 parameter_list|)
 block|{
 name|ParseException
-name|ex
+name|pe
 init|=
 operator|new
 name|ParseException
@@ -1303,7 +1303,7 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
-name|ex
+name|pe
 operator|.
 name|initCause
 argument_list|(
@@ -1311,7 +1311,7 @@ name|e
 argument_list|)
 expr_stmt|;
 throw|throw
-name|ex
+name|pe
 throw|;
 block|}
 finally|finally
@@ -2636,9 +2636,7 @@ operator|)
 name|ex
 throw|;
 block|}
-name|SAXException
-name|sax
-init|=
+throw|throw
 operator|new
 name|SAXException
 argument_list|(
@@ -2651,16 +2649,6 @@ argument_list|()
 argument_list|,
 name|ex
 argument_list|)
-decl_stmt|;
-name|sax
-operator|.
-name|initCause
-argument_list|(
-name|ex
-argument_list|)
-expr_stmt|;
-throw|throw
-name|sax
 throw|;
 block|}
 block|}
@@ -3512,7 +3500,7 @@ argument_list|>
 name|overrides
 parameter_list|)
 block|{
-name|LinkedHashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

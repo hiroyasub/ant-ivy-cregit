@@ -109,14 +109,12 @@ name|objB
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|reverse
 condition|?
 operator|-
 name|val
 else|:
 name|val
-operator|)
 return|;
 block|}
 block|}

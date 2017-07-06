@@ -107,9 +107,7 @@ name|upToDateFiles
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -121,9 +119,7 @@ name|copiedFiles
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -137,11 +133,7 @@ name|downloadReport
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|File
-argument_list|,
-name|ArtifactDownloadReport
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -265,9 +257,7 @@ block|{
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|(
 name|copiedFiles
 argument_list|)
@@ -285,9 +275,7 @@ block|{
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|(
 name|upToDateFiles
 argument_list|)
@@ -310,9 +298,7 @@ name|result
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|(
 name|upToDateFiles
 operator|.

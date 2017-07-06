@@ -30,7 +30,7 @@ specifier|public
 class|class
 name|CacheCleaner
 block|{
-comment|/**      * Delete the directory and all it contains. Previously, we used the ant delete task, but it      * occasionally failed (access denied) on my machine for unknown reason.      **/
+comment|/**      * Delete the directory and all it contains. Previously, we used the ant delete task, but it      * occasionally failed (access denied) on my machine for unknown reason.      *      * @param toDelete      *            File      */
 specifier|public
 specifier|static
 name|void

@@ -783,7 +783,7 @@ operator|+
 name|parent
 argument_list|)
 expr_stmt|;
-name|ArrayList
+name|List
 argument_list|<
 name|String
 argument_list|>

@@ -81,6 +81,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -146,8 +156,6 @@ operator|.
 name|jsch
 operator|.
 name|ConfigRepository
-operator|.
-name|Config
 import|;
 end_import
 
@@ -159,7 +167,9 @@ name|jcraft
 operator|.
 name|jsch
 operator|.
-name|Session
+name|ConfigRepository
+operator|.
+name|Config
 import|;
 end_import
 
@@ -183,7 +193,7 @@ name|jcraft
 operator|.
 name|jsch
 operator|.
-name|ConfigRepository
+name|Session
 import|;
 end_import
 
@@ -262,7 +272,7 @@ comment|/**      * hashmap of user/hosts with credentials. key is hostname, valu
 specifier|private
 specifier|static
 specifier|final
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

@@ -926,26 +926,7 @@ block|}
 catch|catch
 parameter_list|(
 name|ParseException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|BuildException
-argument_list|(
-literal|"Impossible to parse the artifact reports: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|IOException
 name|e
 parameter_list|)
@@ -954,7 +935,7 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"Impossible to read the artifact reports: "
+literal|"Impossible to parse the artifact reports: "
 operator|+
 name|e
 operator|.

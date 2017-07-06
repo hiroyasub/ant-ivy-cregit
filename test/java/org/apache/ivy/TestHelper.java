@@ -14,6 +14,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -447,18 +459,6 @@ name|Delete
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -760,7 +760,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns an array of {@link ModuleRevisionId} corresponding to the given comma separated list      * of their text representation.      *       * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return an array of {@link ModuleRevisionId}      */
+comment|/**      * Returns an array of {@link ModuleRevisionId} corresponding to the given comma separated list      * of their text representation.      *      * @param mrids      *            the text representation of the {@link ModuleRevisionId}      * @return an array of {@link ModuleRevisionId}      */
 specifier|public
 specifier|static
 name|ModuleRevisionId
@@ -798,7 +798,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses a string representation of a module descriptor in micro ivy format.      *<p>      * Examples:      *       *<pre>      * #A;1      *</pre>      *       *<hr/>      *       *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *       *<hr/>      *       *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *       *</p>      *       * @param microIvy      *            the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
+comment|/**      * Parses a string representation of a module descriptor in micro ivy format.      *<p>      * Examples:      *      *<pre>      * #A;1      *</pre>      *      *<hr/>      *      *<pre>      * #A;2-> #B;[1.0,1.5]      *</pre>      *      *<hr/>      *      *<pre>      * #A;3-> { #B;[1.0,1.5] #C;[2.0,2.5] }      *</pre>      *      *</p>      *      * @param microIvy      *            the micro ivy description of the module descriptor      * @return the parsed module descriptor      */
 specifier|public
 specifier|static
 name|ModuleDescriptor
@@ -1077,7 +1077,7 @@ name|microIvy
 argument_list|)
 throw|;
 block|}
-comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double semi      * columns.      *       * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
+comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double semi      * columns.      *      * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
 specifier|public
 specifier|static
 name|Collection
@@ -1129,7 +1129,7 @@ return|return
 name|r
 return|;
 block|}
-comment|/**      * Fills a repository with a set of module, using empty files for published artifacts.      *       * @param resolver      *            the resolver to use to publish the modules      * @param mds      *            the descriptors of the modules to put in the repository      * @throws IOException      *             if an IO problem occurs while filling the repository      */
+comment|/**      * Fills a repository with a set of module, using empty files for published artifacts.      *      * @param resolver      *            the resolver to use to publish the modules      * @param mds      *            the descriptors of the modules to put in the repository      * @throws IOException      *             if an IO problem occurs while filling the repository      */
 specifier|public
 specifier|static
 name|void
@@ -1285,7 +1285,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * A file system resolver which can be used with the      * {@link #fillRepository(DependencyResolver, Collection)} method to create a test case of      * module descriptor.      *<p>      * When finished you should call {@link #cleanTestRepository()}      *</p>      */
+comment|/**      * A file system resolver which can be used with the      * {@link #fillRepository(DependencyResolver, Collection)} method to create a test case of      * module descriptor.      *<p>      * When finished you should call {@link #cleanTestRepository()}      *</p>      *      * @return FileSystemResolver      */
 specifier|public
 specifier|static
 name|FileSystemResolver
@@ -1340,7 +1340,7 @@ return|return
 name|testRepository
 return|;
 block|}
-comment|/**      * Cleans up the test repository.      *       * @see #newTestRepository()      */
+comment|/**      * Cleans up the test repository.      *      * @see #newTestRepository()      */
 specifier|public
 specifier|static
 name|void
@@ -1359,7 +1359,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Cleans up the test repository and cache.      *       * @see #newTestRepository()      */
+comment|/**      * Cleans up the test repository and cache.      *      * @see #newTestRepository()      */
 specifier|public
 specifier|static
 name|void
@@ -1381,7 +1381,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Init a test resolver as default, useful combined with      * {@link #fillRepository(DependencyResolver, Collection)}.      *       * @param settings      *            the settings to initialize      * @return test settings      */
+comment|/**      * Init a test resolver as default, useful combined with      * {@link #fillRepository(DependencyResolver, Collection)}.      *      * @param settings      *            the settings to initialize      * @return test settings      */
 specifier|public
 specifier|static
 name|IvySettings
@@ -1421,7 +1421,7 @@ return|return
 name|settings
 return|;
 block|}
-comment|/**      * Create basic resolve data using the given settings      *       * @param settings      *            the settings to use to create the resolve data      * @return basic resolve data useful for testing      */
+comment|/**      * Create basic resolve data using the given settings      *      * @param settings      *            the settings to use to create the resolve data      * @return basic resolve data useful for testing      */
 specifier|public
 specifier|static
 name|ResolveData
@@ -1458,7 +1458,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Create basic resolve options using the given settings      *       * @param settings      *            the settings to use to create the resolve options      * @return the basic resolve options, useful for testing      */
+comment|/**      * Create basic resolve options using the given settings      *      * @param settings      *            the settings to use to create the resolve options      * @return the basic resolve options, useful for testing      */
 specifier|public
 specifier|static
 name|ResolveOptions

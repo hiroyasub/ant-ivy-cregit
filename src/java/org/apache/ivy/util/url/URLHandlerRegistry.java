@@ -105,6 +105,9 @@ literal|"org.apache.commons.httpclient.params.HttpClientParams"
 argument_list|)
 expr_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|handler
 init|=
 name|Class

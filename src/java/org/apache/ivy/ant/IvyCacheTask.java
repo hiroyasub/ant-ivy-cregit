@@ -337,8 +337,6 @@ name|getAllArtifactReports
 parameter_list|()
 throws|throws
 name|ParseException
-throws|,
-name|IOException
 block|{
 name|String
 index|[]

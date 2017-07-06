@@ -1387,8 +1387,6 @@ parameter_list|(
 name|String
 name|v
 parameter_list|)
-throws|throws
-name|ParseException
 block|{
 if|if
 condition|(

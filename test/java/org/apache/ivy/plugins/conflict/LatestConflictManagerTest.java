@@ -18,6 +18,30 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -185,30 +209,6 @@ name|Test
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -311,6 +311,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|IvyNode
+argument_list|>
 name|deps
 init|=
 name|report
@@ -319,6 +322,9 @@ name|getDependencies
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|IvyNode
+argument_list|>
 name|dependencies
 init|=
 name|deps
@@ -346,9 +352,6 @@ block|{
 name|IvyNode
 name|node
 init|=
-operator|(
-name|IvyNode
-operator|)
 name|dependencies
 operator|.
 name|next

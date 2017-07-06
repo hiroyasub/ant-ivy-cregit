@@ -149,6 +149,9 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|OVERRIDE_VALUES
 init|=
 name|Arrays

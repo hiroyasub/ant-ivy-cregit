@@ -1154,8 +1154,6 @@ parameter_list|,
 name|HttpMethodBase
 name|method
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|int
 name|status

@@ -1912,20 +1912,13 @@ throw|;
 block|}
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|char
+name|c
+range|:
 name|mode
 operator|.
-name|length
+name|toCharArray
 argument_list|()
-condition|;
-name|i
-operator|++
 control|)
 block|{
 if|if
@@ -1935,12 +1928,7 @@ name|Character
 operator|.
 name|isDigit
 argument_list|(
-name|mode
-operator|.
-name|charAt
-argument_list|(
-name|i
-argument_list|)
+name|c
 argument_list|)
 condition|)
 block|{
@@ -1967,9 +1955,7 @@ literal|null
 condition|)
 block|{
 name|cmd
-operator|=
-name|cmd
-operator|+
+operator|+=
 literal|"-p "
 expr_stmt|;
 block|}
@@ -1988,9 +1974,7 @@ literal|0
 condition|)
 block|{
 name|cmd
-operator|=
-name|cmd
-operator|+
+operator|+=
 literal|"-d "
 operator|+
 name|remoteTargetDir
@@ -2105,6 +2089,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Download a file from the remote server into an OutputStream      *      * @param remoteFile      *            Path and name of the remote file.      * @param localTarget      *            OutputStream to store the data.      * @throws IOException      *             in case of network problems      * @throws RemoteScpException      *             in case of problems on the target system (connection ok)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|void
 name|get
@@ -2120,11 +2109,6 @@ name|IOException
 throws|,
 name|RemoteScpException
 block|{
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unused"
-argument_list|)
 name|ChannelExec
 name|channel
 init|=

@@ -83,7 +83,11 @@ name|String
 name|location
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|extendsTypes
 decl_stmt|;
 specifier|private
@@ -157,6 +161,7 @@ name|extendsTypes
 operator|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|types
 operator|.
@@ -225,10 +230,6 @@ name|getExtendsTypes
 parameter_list|()
 block|{
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|extendsTypes
 operator|.
 name|toArray

@@ -506,14 +506,7 @@ name|rootModuleConfs
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Set
-argument_list|<
-name|String
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -530,14 +523,7 @@ name|requiredConfs
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|NodeConf
-argument_list|,
-name|Set
-argument_list|<
-name|String
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -554,14 +540,7 @@ name|dependers
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Set
-argument_list|<
-name|Depender
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// rootModuleConf -> black list
@@ -576,11 +555,7 @@ name|blacklisted
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|IvyNodeBlacklist
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -657,16 +632,14 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|confs
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *       * @param rootModuleConf ditto      * @return Set&lt;String&gt;      */
+comment|/**      * Returns the configurations of the dependency required in a given root module configuration.      *      * @param rootModuleConf ditto      * @return Set&lt;String&gt;      */
 specifier|protected
 name|Set
 argument_list|<
@@ -722,9 +695,7 @@ name|depConfs
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|rootModuleConfs
@@ -980,9 +951,7 @@ name|key
 argument_list|,
 operator|new
 name|HashSet
-argument_list|<
-name|V
-argument_list|>
+argument_list|<>
 argument_list|(
 name|set
 argument_list|)
@@ -1042,9 +1011,7 @@ name|set
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|V
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|map
@@ -1153,9 +1120,7 @@ name|dependencyArtifacts
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|DependencyArtifactDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1241,9 +1206,7 @@ name|dependencyIncludes
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|IncludeRule
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1342,7 +1305,7 @@ name|bdata
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *       * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *       * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
+comment|/**      * Indicates if this node has been blacklisted in the given root module conf.      *<p>      * A blacklisted node should be considered as if it doesn't even exist on the repository.      *</p>      *      * @param rootModuleConf      *            the root module conf for which we'd like to know if the node is blacklisted      *      * @return true if this node is blacklisted int he given root module conf, false otherwise      * @see #blacklist(IvyNodeBlacklist)      */
 specifier|protected
 name|boolean
 name|isBlacklisted
@@ -1360,7 +1323,7 @@ name|rootModuleConf
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the blacklist data of this node in the given root module conf, or<code>null</code>      * if this node is not blacklisted in this root module conf.      *       * @param rootModuleConf      *            the root module configuration to consider      * @return the blacklist data if any      */
+comment|/**      * Returns the blacklist data of this node in the given root module conf, or<code>null</code>      * if this node is not blacklisted in this root module conf.      *      * @param rootModuleConf      *            the root module configuration to consider      * @return the blacklist data if any      */
 specifier|protected
 name|IvyNodeBlacklist
 name|getBlacklistData
@@ -1387,7 +1350,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Indicates if at least one depender has a transitive dependency descriptor for the given root      * module conf.      *       * @param rootModuleConf      *            the root module conf to consider      * @return<code>true</code> if at least one depender has a transitive dependency descriptor for      *         the given root module conf,<code>false</code> otherwise.      */
+comment|/**      * Indicates if at least one depender has a transitive dependency descriptor for the given root      * module conf.      *      * @param rootModuleConf      *            the root module conf to consider      * @return<code>true</code> if at least one depender has a transitive dependency descriptor for      *         the given root module conf,<code>false</code> otherwise.      */
 specifier|public
 name|boolean
 name|hasTransitiveDepender

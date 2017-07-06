@@ -161,14 +161,7 @@ name|lookup
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|List
-argument_list|<
-name|MapMatcher
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -176,13 +169,11 @@ name|List
 argument_list|<
 name|MapMatcher
 argument_list|>
-name|non_exact_matchers
+name|nonExactMatchers
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|MapMatcher
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Add matcher.      *      * If matcher is exact pattern matcher, it will be associated with a key and placed in keyed      * collection.      *      * If matcher is not exact pattern matcher, it will be placed into non-keyed collection      *      * @param matcher MapMatcher      */
@@ -207,7 +198,7 @@ name|ExactPatternMatcher
 operator|)
 condition|)
 block|{
-name|non_exact_matchers
+name|nonExactMatchers
 operator|.
 name|add
 argument_list|(
@@ -231,7 +222,7 @@ name|List
 argument_list|<
 name|MapMatcher
 argument_list|>
-name|exact_matchers
+name|exactMatchers
 init|=
 name|lookup
 operator|.
@@ -242,18 +233,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|exact_matchers
+name|exactMatchers
 operator|==
 literal|null
 condition|)
 block|{
-name|exact_matchers
+name|exactMatchers
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|MapMatcher
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|lookup
@@ -262,11 +251,11 @@ name|put
 argument_list|(
 name|key
 argument_list|,
-name|exact_matchers
+name|exactMatchers
 argument_list|)
 expr_stmt|;
 block|}
-name|exact_matchers
+name|exactMatchers
 operator|.
 name|add
 argument_list|(
@@ -299,16 +288,14 @@ name|matchers
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|MapMatcher
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// Step 1: find matchers from non_exact_matchers list
+comment|// Step 1: find matchers from nonExactMatchers list
 if|if
 condition|(
 operator|!
-name|non_exact_matchers
+name|nonExactMatchers
 operator|.
 name|isEmpty
 argument_list|()
@@ -319,7 +306,7 @@ control|(
 name|MapMatcher
 name|matcher
 range|:
-name|non_exact_matchers
+name|nonExactMatchers
 control|)
 block|{
 if|if
@@ -342,7 +329,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// Step 2: find matchers from exact_matchers list of key
+comment|// Step 2: find matchers from exactMatchers list of key
 name|String
 name|key
 init|=
@@ -355,7 +342,7 @@ name|List
 argument_list|<
 name|MapMatcher
 argument_list|>
-name|exact_matchers
+name|exactMatchers
 init|=
 name|lookup
 operator|.
@@ -366,7 +353,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|exact_matchers
+name|exactMatchers
 operator|!=
 literal|null
 condition|)
@@ -376,7 +363,7 @@ control|(
 name|MapMatcher
 name|matcher
 range|:
-name|exact_matchers
+name|exactMatchers
 control|)
 block|{
 if|if
@@ -399,7 +386,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// Step 3: (iff key != DEFAULT) find matchers from exact_matchers of DEFAULT
+comment|// Step 3: (iff key != DEFAULT) find matchers from exactMatchers of DEFAULT
 if|if
 condition|(
 operator|!
@@ -415,7 +402,7 @@ name|List
 argument_list|<
 name|MapMatcher
 argument_list|>
-name|default_exact_matchers
+name|defaultExactMatchers
 init|=
 name|lookup
 operator|.
@@ -426,7 +413,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|default_exact_matchers
+name|defaultExactMatchers
 operator|!=
 literal|null
 condition|)
@@ -436,7 +423,7 @@ control|(
 name|MapMatcher
 name|matcher
 range|:
-name|default_exact_matchers
+name|defaultExactMatchers
 control|)
 block|{
 if|if

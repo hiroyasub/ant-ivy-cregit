@@ -290,6 +290,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getAttributes
 parameter_list|()
 block|{
@@ -321,6 +326,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getExtraAttributes
 parameter_list|()
 block|{
@@ -334,6 +344,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getQualifiedExtraAttributes
 parameter_list|()
 block|{

@@ -429,7 +429,7 @@ literal|null
 return|;
 block|}
 block|}
-name|ArrayList
+name|List
 argument_list|<
 name|IvyNode
 argument_list|>

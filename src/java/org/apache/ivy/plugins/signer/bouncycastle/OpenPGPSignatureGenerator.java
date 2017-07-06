@@ -790,8 +790,6 @@ name|key
 init|=
 literal|null
 decl_stmt|;
-for|for
-control|(
 name|Iterator
 argument_list|<
 name|PGPSecretKeyRing
@@ -802,7 +800,9 @@ name|pgpSec
 operator|.
 name|getKeyRings
 argument_list|()
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|key
 operator|==
 literal|null
@@ -811,8 +811,7 @@ name|it
 operator|.
 name|hasNext
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
 name|PGPSecretKeyRing
 name|kRing
@@ -822,8 +821,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-for|for
-control|(
 name|Iterator
 argument_list|<
 name|PGPSecretKey
@@ -834,7 +831,9 @@ name|kRing
 operator|.
 name|getSecretKeys
 argument_list|()
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|key
 operator|==
 literal|null
@@ -843,8 +842,7 @@ name|it2
 operator|.
 name|hasNext
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
 name|PGPSecretKey
 name|k

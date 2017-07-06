@@ -121,6 +121,11 @@ name|String
 name|ext
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extraAttributes
 parameter_list|)
 block|{
@@ -187,6 +192,11 @@ name|ModuleRevisionId
 name|mdlRevId
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extraAttributes
 parameter_list|)
 block|{

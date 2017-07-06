@@ -934,11 +934,6 @@ init|=
 literal|"required"
 decl_stmt|;
 comment|/**      * Exception thrown internally in getDependency to indicate a dependency is unresolved.      *<p>      * Due to the contract of getDependency, this exception is never thrown publicly, but rather      * converted in a message (either error or verbose) and returning null      *</p>      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"serial"
-argument_list|)
 specifier|private
 specifier|static
 class|class
@@ -4404,8 +4399,6 @@ operator|.
 name|getContext
 argument_list|()
 decl_stmt|;
-for|for
-control|(
 name|ListIterator
 argument_list|<
 name|ArtifactInfo
@@ -4421,13 +4414,14 @@ operator|.
 name|size
 argument_list|()
 argument_list|)
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|iter
 operator|.
 name|hasPrevious
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
 name|ResolvedResource
 name|rres
@@ -5122,9 +5116,6 @@ block|{
 name|Artifact
 name|currentArtifact
 init|=
-operator|(
-name|Artifact
-operator|)
 name|IvyContext
 operator|.
 name|getContext
@@ -5220,14 +5211,6 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|Artifact
-name|art
-init|=
-name|entry
-operator|.
-name|getKey
-argument_list|()
-decl_stmt|;
 name|List
 argument_list|<
 name|String
@@ -5252,7 +5235,10 @@ name|warn
 argument_list|(
 literal|"  -- artifact "
 operator|+
-name|art
+name|entry
+operator|.
+name|getKey
+argument_list|()
 operator|+
 literal|":"
 argument_list|)

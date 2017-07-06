@@ -849,8 +849,6 @@ parameter_list|,
 name|String
 name|module
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 comment|// first process the report with xslt
 name|XSLTProcess
@@ -1195,8 +1193,6 @@ parameter_list|,
 name|String
 name|ext
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|XSLTProcess
 name|xslt

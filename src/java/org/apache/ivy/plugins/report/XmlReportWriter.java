@@ -785,7 +785,7 @@ name|mid
 argument_list|)
 control|)
 block|{
-name|ouputRevision
+name|outputRevision
 argument_list|(
 name|report
 argument_list|,
@@ -827,7 +827,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|ouputRevision
+name|outputRevision
 parameter_list|(
 name|ConfigurationResolveReport
 name|report

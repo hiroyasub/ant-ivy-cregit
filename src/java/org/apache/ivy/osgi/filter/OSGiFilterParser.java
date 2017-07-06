@@ -122,7 +122,7 @@ name|length
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**          * Do the parsing          *          * @return OSGiFilter          *          * @throws ParseException          */
+comment|/**          * Do the parsing          *          * @return OSGiFilter          *          * @throws ParseException if something goes wrong          */
 name|OSGiFilter
 name|parse
 parameter_list|()

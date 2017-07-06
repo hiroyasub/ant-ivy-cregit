@@ -119,8 +119,6 @@ argument_list|)
 decl_stmt|;
 comment|// the latest revision comes last, use a ListIterator to iterate the
 comment|// sorted list in the reverse direction.
-for|for
-control|(
 name|ListIterator
 argument_list|<
 name|ArtifactInfo
@@ -136,13 +134,14 @@ operator|.
 name|size
 argument_list|()
 argument_list|)
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|iter
 operator|.
 name|hasPrevious
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
 name|ArtifactInfo
 name|info

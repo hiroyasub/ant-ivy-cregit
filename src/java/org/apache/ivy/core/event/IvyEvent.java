@@ -326,6 +326,11 @@ name|void
 name|addAttributes
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|attributes
 parameter_list|)
 block|{

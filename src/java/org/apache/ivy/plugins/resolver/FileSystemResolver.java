@@ -607,8 +607,8 @@ name|IOException
 name|ex
 parameter_list|)
 block|{
-name|IOException
-name|commitEx
+name|String
+name|message
 decl_stmt|;
 try|try
 block|{
@@ -620,17 +620,13 @@ argument_list|(
 name|transactionTempDir
 argument_list|)
 expr_stmt|;
-name|commitEx
+name|message
 operator|=
-operator|new
-name|IOException
-argument_list|(
 literal|"publish transaction commit error for "
 operator|+
 name|transactionDestDir
 operator|+
 literal|": rolled back"
-argument_list|)
 expr_stmt|;
 block|}
 catch|catch
@@ -639,11 +635,8 @@ name|IOException
 name|deleteEx
 parameter_list|)
 block|{
-name|commitEx
+name|message
 operator|=
-operator|new
-name|IOException
-argument_list|(
 literal|"publish transaction commit error for "
 operator|+
 name|transactionDestDir
@@ -655,18 +648,16 @@ operator|+
 name|transactionTempDir
 operator|+
 literal|" manually"
-argument_list|)
 expr_stmt|;
 block|}
-name|commitEx
-operator|.
-name|initCause
+throw|throw
+operator|new
+name|IOException
 argument_list|(
+name|message
+argument_list|,
 name|ex
 argument_list|)
-expr_stmt|;
-throw|throw
-name|commitEx
 throw|;
 block|}
 finally|finally
@@ -801,8 +792,6 @@ argument_list|(
 name|values
 argument_list|)
 expr_stmt|;
-for|for
-control|(
 name|Iterator
 argument_list|<
 name|String
@@ -813,25 +802,21 @@ name|values
 operator|.
 name|iterator
 argument_list|()
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|iterator
 operator|.
 name|hasNext
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
-name|String
-name|v
-init|=
+if|if
+condition|(
 name|iterator
 operator|.
 name|next
 argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|v
 operator|.
 name|endsWith
 argument_list|(

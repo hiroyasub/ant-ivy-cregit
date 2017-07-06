@@ -286,12 +286,7 @@ throw|;
 block|}
 name|ext
 operator|=
-operator|(
-operator|(
-name|StreamPacking
-operator|)
 name|packing
-operator|)
 operator|.
 name|getUnpackedExtension
 argument_list|(
@@ -646,10 +641,7 @@ comment|// ignore
 block|}
 block|}
 block|}
-specifier|final
-name|DefaultArtifact
-name|unpacked
-init|=
+return|return
 operator|new
 name|DefaultArtifact
 argument_list|(
@@ -677,9 +669,6 @@ literal|"_unpacked"
 argument_list|,
 name|ext
 argument_list|)
-decl_stmt|;
-return|return
-name|unpacked
 return|;
 block|}
 block|}

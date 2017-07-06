@@ -124,6 +124,9 @@ name|from
 parameter_list|)
 function_decl|;
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getResolverNames
 parameter_list|()
 function_decl|;
@@ -155,6 +158,9 @@ name|matcherName
 parameter_list|)
 function_decl|;
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getMatcherNames
 parameter_list|()
 function_decl|;

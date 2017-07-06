@@ -373,11 +373,6 @@ argument_list|)
 expr_stmt|;
 block|}
 annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"deprecation"
-argument_list|)
-annotation|@
 name|Test
 specifier|public
 name|void
@@ -469,6 +464,11 @@ argument_list|(
 operator|new
 name|Reference
 argument_list|(
+name|task
+operator|.
+name|getProject
+argument_list|()
+argument_list|,
 literal|"mySettings"
 argument_list|)
 argument_list|)

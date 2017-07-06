@@ -543,9 +543,7 @@ name|p
 init|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|VisitNode
-argument_list|>
+argument_list|<>
 argument_list|(
 name|parent
 operator|.
@@ -669,9 +667,7 @@ name|path
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|VisitNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|path
@@ -1079,9 +1075,7 @@ name|ret
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|VisitNode
-argument_list|>
+argument_list|<>
 argument_list|(
 name|deps
 operator|.

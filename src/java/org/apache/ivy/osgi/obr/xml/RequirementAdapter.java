@@ -271,8 +271,6 @@ name|filter
 parameter_list|)
 throws|throws
 name|UnsupportedFilterException
-throws|,
-name|ParseException
 block|{
 if|if
 condition|(
@@ -540,8 +538,6 @@ name|not
 parameter_list|)
 throws|throws
 name|UnsupportedFilterException
-throws|,
-name|ParseException
 block|{
 name|String
 name|att

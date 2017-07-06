@@ -1985,6 +1985,9 @@ name|Method
 name|getAddMethod
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|)
 block|{
@@ -2002,6 +2005,9 @@ name|Method
 name|getAddConfiguredMethod
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|)
 block|{
@@ -2178,6 +2184,9 @@ specifier|private
 specifier|static
 specifier|final
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|TRUE_VALUES
 init|=
 name|Arrays
@@ -2225,6 +2234,9 @@ name|String
 name|name
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|clazz
 parameter_list|)
 block|{
@@ -2308,6 +2320,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|Object
 name|startCreateChild
@@ -2509,6 +2526,9 @@ name|macro
 return|;
 block|}
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childClass
 init|=
 name|typedefs
@@ -2675,6 +2695,7 @@ name|child
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -2884,6 +2905,11 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|private
 name|Object
 name|addChild
@@ -2892,6 +2918,9 @@ name|ObjectDescriptor
 name|parentOD
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childClass
 parameter_list|,
 name|String
@@ -3041,6 +3070,7 @@ name|child
 operator|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -3119,6 +3149,11 @@ name|MacroDef
 operator|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|void
 name|setAttribute
@@ -4110,6 +4145,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getTypeDef
 parameter_list|(
 name|String

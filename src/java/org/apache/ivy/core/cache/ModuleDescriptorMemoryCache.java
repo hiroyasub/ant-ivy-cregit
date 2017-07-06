@@ -131,7 +131,11 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|LinkedHashMap
-comment|/*<File,CacheEntry> */
+argument_list|<
+name|File
+argument_list|,
+name|CacheEntry
+argument_list|>
 name|valueMap
 decl_stmt|;
 comment|/**      * Create a cache of the given size      *      * @param size int      */
@@ -154,6 +158,7 @@ name|valueMap
 operator|=
 operator|new
 name|LinkedHashMap
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)
@@ -308,9 +313,6 @@ block|}
 name|CacheEntry
 name|entry
 init|=
-operator|(
-name|CacheEntry
-operator|)
 name|valueMap
 operator|.
 name|get
@@ -454,6 +456,9 @@ literal|"ModuleDescriptorCache is full, remove one entry"
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|CacheEntry
+argument_list|>
 name|it
 init|=
 name|valueMap

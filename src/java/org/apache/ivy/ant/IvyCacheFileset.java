@@ -630,6 +630,9 @@ return|;
 block|}
 specifier|final
 name|Iterator
+argument_list|<
+name|File
+argument_list|>
 name|file1Parents
 init|=
 name|getParents
@@ -642,6 +645,9 @@ argument_list|()
 decl_stmt|;
 specifier|final
 name|Iterator
+argument_list|<
+name|File
+argument_list|>
 name|file2Parents
 init|=
 name|getParents
@@ -676,9 +682,6 @@ block|{
 name|File
 name|next
 init|=
-operator|(
-name|File
-operator|)
 name|file1Parents
 operator|.
 name|next

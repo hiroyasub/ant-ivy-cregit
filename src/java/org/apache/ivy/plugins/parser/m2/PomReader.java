@@ -2132,7 +2132,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-name|LinkedList
+name|List
 argument_list|<
 name|ModuleId
 argument_list|>

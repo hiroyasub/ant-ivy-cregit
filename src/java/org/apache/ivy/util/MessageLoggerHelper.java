@@ -41,6 +41,9 @@ name|logger
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|myProblems
 init|=
 name|logger

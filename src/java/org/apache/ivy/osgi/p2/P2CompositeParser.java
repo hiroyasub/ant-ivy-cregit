@@ -202,9 +202,9 @@ name|InputStream
 name|in
 parameter_list|)
 throws|throws
-name|ParseException
-throws|,
 name|IOException
+throws|,
+name|ParseException
 throws|,
 name|SAXException
 block|{

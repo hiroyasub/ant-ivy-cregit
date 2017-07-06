@@ -356,7 +356,7 @@ name|length
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**          * Do the parsing          *          * @throws ParseException          */
+comment|/**          * Do the parsing          *          * @throws ParseException if something goes wrong          */
 name|void
 name|parse
 parameter_list|()

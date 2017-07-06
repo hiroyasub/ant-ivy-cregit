@@ -46,6 +46,9 @@ name|listener
 decl_stmt|;
 specifier|private
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|filter
 decl_stmt|;
 specifier|public
@@ -55,6 +58,9 @@ name|IvyListener
 name|listener
 parameter_list|,
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|filter
 parameter_list|)
 block|{
@@ -82,6 +88,9 @@ return|;
 block|}
 specifier|public
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|getFilter
 parameter_list|()
 block|{

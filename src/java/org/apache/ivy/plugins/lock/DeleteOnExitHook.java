@@ -47,6 +47,16 @@ name|LinkedHashSet
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
 begin_class
 specifier|final
 class|class
@@ -81,7 +91,7 @@ block|}
 specifier|private
 specifier|static
 specifier|final
-name|LinkedHashSet
+name|Set
 argument_list|<
 name|File
 argument_list|>

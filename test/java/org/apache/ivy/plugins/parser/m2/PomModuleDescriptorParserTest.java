@@ -2302,6 +2302,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|extraAtt
 init|=
 name|Collections
@@ -3546,6 +3551,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3562,6 +3568,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3608,6 +3615,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3626,6 +3634,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3646,6 +3655,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3664,6 +3674,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3686,6 +3697,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3702,6 +3714,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3746,6 +3759,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3764,6 +3778,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3784,6 +3799,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3802,6 +3818,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3824,6 +3841,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3840,6 +3858,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3964,6 +3983,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -3980,6 +4000,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4000,6 +4021,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4020,6 +4042,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4064,6 +4087,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4082,6 +4106,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4102,6 +4127,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4120,6 +4146,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4142,6 +4169,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4158,6 +4186,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4202,6 +4231,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4220,6 +4250,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4240,6 +4271,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4258,6 +4290,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4280,6 +4313,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4296,6 +4330,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4420,6 +4455,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4438,6 +4474,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4458,6 +4495,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4476,6 +4514,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4498,6 +4537,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4514,6 +4554,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4573,6 +4614,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4591,6 +4633,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4611,6 +4654,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4629,6 +4673,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4651,6 +4696,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4667,6 +4713,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4759,6 +4806,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4777,6 +4825,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4797,6 +4846,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4815,6 +4865,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4837,6 +4888,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4853,6 +4905,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4919,6 +4972,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4937,6 +4991,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4954,6 +5009,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4972,6 +5028,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -4991,6 +5048,7 @@ name|assertEquals
 argument_list|(
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -5007,6 +5065,7 @@ argument_list|)
 argument_list|,
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.
@@ -6642,8 +6701,7 @@ name|getDependencyRevisionId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// present in the pom using a property defined in the
-comment|// parent
+comment|// present in the pom using a property defined in the parent
 block|}
 annotation|@
 name|Test

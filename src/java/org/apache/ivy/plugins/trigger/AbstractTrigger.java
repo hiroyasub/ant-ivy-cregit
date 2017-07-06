@@ -125,6 +125,9 @@ name|Trigger
 block|{
 specifier|private
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|filter
 decl_stmt|;
 specifier|private
@@ -145,6 +148,9 @@ name|EXACT
 decl_stmt|;
 specifier|public
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|getEventFilter
 parameter_list|()
 block|{
@@ -167,6 +173,9 @@ return|;
 block|}
 specifier|private
 name|Filter
+argument_list|<
+name|IvyEvent
+argument_list|>
 name|createFilter
 parameter_list|()
 block|{

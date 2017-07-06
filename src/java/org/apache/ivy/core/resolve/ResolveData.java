@@ -460,9 +460,7 @@ name|nodes
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|IvyNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -771,44 +769,19 @@ name|Object
 name|obj2
 parameter_list|)
 block|{
-if|if
-condition|(
-name|obj1
-operator|==
-name|obj2
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-if|if
-condition|(
-name|obj1
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-name|obj2
-operator|==
-literal|null
-return|;
-block|}
-if|if
-condition|(
-name|obj2
-operator|==
-literal|null
-condition|)
-block|{
 return|return
 name|obj1
 operator|==
+name|obj2
+operator|||
+name|obj1
+operator|!=
 literal|null
-return|;
-block|}
-return|return
+operator|&&
+name|obj2
+operator|!=
+literal|null
+operator|&&
 name|obj1
 operator|.
 name|equals
@@ -1153,8 +1126,6 @@ name|IvyNode
 name|node
 parameter_list|)
 block|{
-for|for
-control|(
 name|Iterator
 argument_list|<
 name|Entry
@@ -1173,13 +1144,14 @@ argument_list|()
 operator|.
 name|iterator
 argument_list|()
-init|;
+decl_stmt|;
+while|while
+condition|(
 name|iter
 operator|.
 name|hasNext
 argument_list|()
-condition|;
-control|)
+condition|)
 block|{
 name|Entry
 argument_list|<
@@ -1194,17 +1166,12 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|VisitData
-name|vdata
-init|=
+if|if
+condition|(
 name|entry
 operator|.
 name|getValue
 argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|vdata
 operator|.
 name|getNode
 argument_list|()
@@ -1255,22 +1222,7 @@ argument_list|(
 name|mrid
 argument_list|)
 decl_stmt|;
-comment|// if (node == null) {
-comment|// // search again, now ignore the extra attributes
-comment|// // TODO: maybe we should search the node that has at least the
-comment|// // same attributes as mrid
-comment|// for (Iterator it = visitData.entrySet().iterator(); it.hasNext();) {
-comment|// Map.Entry entry = (Entry) it.next();
-comment|// ModuleRevisionId current = (ModuleRevisionId) entry.getKey();
-comment|// if (current.getModuleId().equals(mrid.getModuleId())
-comment|//&& current.getRevision().equals(mrid.getRevision())) {
-comment|// VisitData data = (VisitData) entry.getValue();
-comment|// node = data.getNode();
-comment|// break;
-comment|// }
-comment|// }
-comment|// }
-comment|//
+comment|/*         if (node == null) {             // search again, now ignore the extra attributes             // TODO: maybe we should search the node that has at least the same attributes as mrid             for (Entry<ModuleRevisionId, VisitData> entry : visitData.entrySet()) {                 ModuleRevisionId current = entry.getKey();                 if (current.getModuleId().equals(mrid.getModuleId())&& current.getRevision().equals(mrid.getRevision())) {                     VisitData data = entry.getValue();                     node = data.getNode();                     break;                 }             }         }         */
 return|return
 name|node
 operator|!=
@@ -1332,9 +1284,7 @@ name|dependers
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|VisitNode
-argument_list|>
+argument_list|<>
 argument_list|(
 name|current
 operator|.

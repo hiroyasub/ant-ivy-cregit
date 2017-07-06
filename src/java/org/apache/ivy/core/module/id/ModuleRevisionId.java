@@ -221,14 +221,7 @@ name|CACHE
 init|=
 operator|new
 name|WeakHashMap
-argument_list|<
-name|ModuleRevisionId
-argument_list|,
-name|WeakReference
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Pattern to use to matched mrid text representation.      *      * @see #parse(String)      */
@@ -757,9 +750,7 @@ name|r
 argument_list|,
 operator|new
 name|WeakReference
-argument_list|<
-name|ModuleRevisionId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|r
 argument_list|)
@@ -1331,11 +1322,11 @@ name|String
 name|encodeToString
 parameter_list|()
 block|{
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|Map
@@ -1348,11 +1339,7 @@ name|attributes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|getAttributes
 argument_list|()
@@ -1515,11 +1502,7 @@ name|attributes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

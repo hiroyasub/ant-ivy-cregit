@@ -136,14 +136,7 @@ name|CACHE
 init|=
 operator|new
 name|WeakHashMap
-argument_list|<
-name|ModuleId
-argument_list|,
-name|WeakReference
-argument_list|<
-name|ModuleId
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Returns a ModuleId for the given organization and module name.      *      * @param org      *            the module's organization, can be<code>null</code>      * @param name      *            the module's name, must not be<code>null</code>      * @return a ModuleId instance      */
@@ -239,9 +232,7 @@ name|r
 argument_list|,
 operator|new
 name|WeakReference
-argument_list|<
-name|ModuleId
-argument_list|>
+argument_list|<>
 argument_list|(
 name|r
 argument_list|)
@@ -276,11 +267,7 @@ name|attributes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/**      * Constructor.      *      * @param organisation      *            The organisation which creates the module.      * @param name      *            The name of the module.      */
@@ -396,16 +383,15 @@ name|ModuleId
 operator|)
 name|obj
 decl_stmt|;
-if|if
-condition|(
+return|return
+operator|(
 name|other
 operator|.
 name|organisation
 operator|==
 literal|null
-condition|)
-block|{
-return|return
+operator|)
+condition|?
 name|organisation
 operator|==
 literal|null
@@ -418,11 +404,7 @@ name|equals
 argument_list|(
 name|name
 argument_list|)
-return|;
-block|}
-else|else
-block|{
-return|return
+else|:
 name|other
 operator|.
 name|organisation
@@ -441,7 +423,6 @@ argument_list|(
 name|name
 argument_list|)
 return|;
-block|}
 block|}
 annotation|@
 name|Override
