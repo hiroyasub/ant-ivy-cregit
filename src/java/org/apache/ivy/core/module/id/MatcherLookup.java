@@ -402,9 +402,13 @@ block|}
 comment|// Step 3: (iff key != DEFAULT) find matchers from exact_matchers of DEFAULT
 if|if
 condition|(
-name|key
-operator|!=
+operator|!
 name|DEFAULT
+operator|.
+name|equals
+argument_list|(
+name|key
+argument_list|)
 condition|)
 block|{
 name|List

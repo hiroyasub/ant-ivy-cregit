@@ -1979,11 +1979,14 @@ name|capability
 decl_stmt|;
 if|if
 condition|(
-name|type
-operator|==
 name|BundleInfo
 operator|.
 name|PACKAGE_TYPE
+operator|.
+name|equals
+argument_list|(
+name|type
+argument_list|)
 condition|)
 block|{
 name|capability

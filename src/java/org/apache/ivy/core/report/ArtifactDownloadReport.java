@@ -330,9 +330,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|downloadDetails
-operator|==
 name|MISSING_ARTIFACT
+operator|.
+name|equals
+argument_list|(
+name|downloadDetails
+argument_list|)
 condition|)
 block|{
 return|return

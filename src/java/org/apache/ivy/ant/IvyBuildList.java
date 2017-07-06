@@ -2515,11 +2515,14 @@ name|isSkipbuildwithoutivy
 parameter_list|()
 block|{
 return|return
-name|onMissingDescriptor
-operator|==
 name|OnMissingDescriptor
 operator|.
 name|SKIP
+operator|.
+name|equals
+argument_list|(
+name|onMissingDescriptor
+argument_list|)
 return|;
 block|}
 comment|/**      * @param skipBuildFilesWithoutIvy boolean      * @deprecated use {@link #setOnMissingDescriptor(String)} instead.      */

@@ -667,9 +667,13 @@ name|value
 operator|!=
 literal|null
 operator|&&
+operator|!
 name|value
-operator|!=
+operator|.
+name|equals
+argument_list|(
 name|r
+argument_list|)
 condition|)
 block|{
 name|substitutes
