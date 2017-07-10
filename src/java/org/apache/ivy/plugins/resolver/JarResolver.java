@@ -222,7 +222,13 @@ name|setRepository
 argument_list|(
 operator|new
 name|JarRepository
-argument_list|()
+argument_list|(
+operator|new
+name|LazyTimeoutConstraint
+argument_list|(
+name|this
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -438,6 +444,11 @@ operator|new
 name|URLResource
 argument_list|(
 name|url
+argument_list|,
+name|this
+operator|.
+name|getTimeoutConstraint
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|CacheResourceOptions

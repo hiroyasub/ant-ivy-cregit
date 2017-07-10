@@ -2036,6 +2036,7 @@ name|toExternalForm
 argument_list|()
 argument_list|)
 expr_stmt|;
+specifier|final
 name|Resource
 name|resource
 init|=
@@ -2043,6 +2044,11 @@ operator|new
 name|URLResource
 argument_list|(
 name|url
+argument_list|,
+name|this
+operator|.
+name|getTimeoutConstraint
+argument_list|()
 argument_list|)
 decl_stmt|;
 return|return

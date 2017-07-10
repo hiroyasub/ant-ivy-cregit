@@ -643,6 +643,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+specifier|final
 name|UpdateSiteLoader
 name|loader
 init|=
@@ -656,6 +657,11 @@ name|getEventManager
 argument_list|()
 argument_list|,
 name|options
+argument_list|,
+name|this
+operator|.
+name|getTimeoutConstraint
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|loader

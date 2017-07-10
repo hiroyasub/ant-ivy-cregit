@@ -99,7 +99,13 @@ name|setRepository
 argument_list|(
 operator|new
 name|VfsRepository
-argument_list|()
+argument_list|(
+operator|new
+name|LazyTimeoutConstraint
+argument_list|(
+name|this
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

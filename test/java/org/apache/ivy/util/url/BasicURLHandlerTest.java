@@ -271,7 +271,7 @@ argument_list|(
 literal|"ftp://ftp.mozilla.org/unknown.file"
 argument_list|)
 argument_list|,
-name|connectionTimeoutInMillis
+literal|5000
 argument_list|)
 argument_list|)
 expr_stmt|;
