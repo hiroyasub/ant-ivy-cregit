@@ -2208,8 +2208,6 @@ operator|.
 name|getModuleRevisionId
 argument_list|()
 argument_list|,
-name|retrievePattern
-argument_list|,
 operator|new
 name|RetrieveOptions
 argument_list|()
@@ -2237,6 +2235,11 @@ name|hasOption
 argument_list|(
 literal|"useOrigin"
 argument_list|)
+argument_list|)
+operator|.
+name|setDestArtifactPattern
+argument_list|(
+name|retrievePattern
 argument_list|)
 operator|.
 name|setDestIvyPattern

@@ -1991,10 +1991,7 @@ comment|// /////////////////////////////////////////////////////////////////////
 comment|// RETRIEVE
 comment|// ///////////////////////////////////////////////////////////////////////
 annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"deprecation"
-argument_list|)
+name|Deprecated
 specifier|public
 name|int
 name|retrieve

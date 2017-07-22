@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates an ant fileset consisting in all artifacts found during a resolve. Note that this task is  * not compatible with the useOrigin mode.  */
+comment|/**  * Creates an ant fileset consisting in all artifacts found during a resolve. Note that this task  * is not compatible with the useOrigin mode.  */
 end_comment
 
 begin_class
@@ -229,9 +229,9 @@ name|UnsupportedOperationException
 argument_list|(
 literal|"the cachefileset task does not support the useOrigin mode, since filesets "
 operator|+
-literal|"require to have only one root directory. Please use the the cachepath "
+literal|"require to have only one root directory. Please use the the "
 operator|+
-literal|"task instead"
+literal|"cachepath task instead"
 argument_list|)
 throw|;
 block|}
@@ -422,7 +422,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a common base directory, determined from the {@link ArtifactDownloadReport#getLocalFile() local files} of the      * passed<code>artifactDownloadReports</code>. If no common base directory can be determined, this method throws a      * {@link BuildException}      *      * @param artifactDownloadReports The artifact download reports for which the common base directory of the artifacts      *                                has to be determined      * @return File      */
+comment|/**      * Returns a common base directory, determined from the      * {@link ArtifactDownloadReport#getLocalFile() local files} of the passed      *<code>artifactDownloadReports</code>. If no common base directory can be determined, this      * method throws a {@link BuildException}      *      * @param artifactDownloadReports The artifact download reports for which the common base      *                                directory of the artifacts has to be determined      * @return File      */
 name|File
 name|requireCommonBaseDir
 parameter_list|(
@@ -510,9 +510,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"Cannot find a common base directory, from resolved artifacts, "
+literal|"Cannot find a common base directory, from resolved "
 operator|+
-literal|"for generating a cache fileset"
+literal|"artifacts, for generating a cache fileset"
 argument_list|)
 throw|;
 block|}
@@ -530,9 +530,9 @@ throw|throw
 operator|new
 name|BuildException
 argument_list|(
-literal|"Cannot find a common base directory, from resolved artifacts, for generating "
+literal|"Cannot find a common base directory, from resolved "
 operator|+
-literal|"a cache fileset"
+literal|"artifacts, for generating a cache fileset"
 argument_list|)
 throw|;
 block|}
@@ -600,7 +600,7 @@ name|beginIndex
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the common base directory between the passed<code>file1</code> and<code>file2</code>.      *<p>      * The returned base directory will be a parent of both the<code>file1</code> and<code>file2</code> or      * it will be<code>null</code>.      *</p>      *      * @param file1      *            One of the files, for which the common base directory is being sought, may be null.      * @param file2      *            The other file for which the common base directory should be returned, may be null.      * @return the common base directory between a<code>file1</code> and<code>file2</code>. Returns null      *          if no common base directory could be determined or if either<code>file1</code> or<code>file2</code>      *          is null      */
+comment|/**      * Returns the common base directory between the passed<code>file1</code> and      *<code>file2</code>.      *<p>      * The returned base directory will be a parent of both the<code>file1</code> and      *<code>file2</code> or it will be<code>null</code>.      *</p>      *      * @param file1      *            One of the files, for which the common base directory is being sought, may be null.      * @param file2      *            The other file for which the common base directory should be returned, may be null.      * @return the common base directory between a<code>file1</code> and<code>file2</code>. Returns      *         null if no common base directory could be determined or if either<code>file1</code>      *         or<code>file2</code> is null      */
 name|File
 name|getBaseDir
 parameter_list|(
