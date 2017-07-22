@@ -2287,14 +2287,6 @@ name|getDependencies
 argument_list|()
 control|)
 block|{
-name|ModuleId
-name|id
-init|=
-name|dep
-operator|.
-name|getDependencyId
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|node
@@ -2307,7 +2299,10 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|id
+name|dep
+operator|.
+name|getDependencyId
+argument_list|()
 argument_list|)
 operator|&&
 operator|!

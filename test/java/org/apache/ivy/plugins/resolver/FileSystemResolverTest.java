@@ -549,12 +549,9 @@ specifier|final
 name|String
 name|FS
 init|=
-name|System
+name|File
 operator|.
-name|getProperty
-argument_list|(
-literal|"file.separator"
-argument_list|)
+name|separator
 decl_stmt|;
 specifier|private
 specifier|static

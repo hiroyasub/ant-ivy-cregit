@@ -483,6 +483,26 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Configuration
+operator|.
+name|findConfigurationExtending
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -2871,22 +2891,6 @@ name|String
 name|conf
 parameter_list|)
 block|{
-name|Collection
-argument_list|<
-name|Configuration
-argument_list|>
-name|extendingConfs
-init|=
-name|Configuration
-operator|.
-name|findConfigurationExtending
-argument_list|(
-name|conf
-argument_list|,
-name|getConfigurations
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|Set
 argument_list|<
 name|Artifact
@@ -2931,7 +2935,13 @@ control|(
 name|Configuration
 name|extendingConf
 range|:
-name|extendingConfs
+name|findConfigurationExtending
+argument_list|(
+name|conf
+argument_list|,
+name|getConfigurations
+argument_list|()
+argument_list|)
 control|)
 block|{
 name|arts

@@ -405,10 +405,8 @@ name|LINE_SEPARATOR
 operator|=
 name|System
 operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+name|lineSeparator
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@

@@ -642,10 +642,8 @@ name|LINE_SEPARATOR
 init|=
 name|System
 operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+name|lineSeparator
+argument_list|()
 decl_stmt|;
 comment|// CheckStyle:StaticVariableName| ON
 specifier|private

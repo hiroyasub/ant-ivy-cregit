@@ -1096,15 +1096,6 @@ argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// use ivy patterns
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|ivyPatterns
-init|=
-name|getIvyPatterns
-argument_list|()
-decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -1160,7 +1151,8 @@ control|(
 name|String
 name|ivyPattern
 range|:
-name|ivyPatterns
+name|getIvyPatterns
+argument_list|()
 control|)
 block|{
 name|result
@@ -1186,15 +1178,6 @@ name|isAllownomd
 argument_list|()
 condition|)
 block|{
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|artifactPatterns
-init|=
-name|getArtifactPatterns
-argument_list|()
-decl_stmt|;
 name|subcriteria
 operator|=
 operator|new
@@ -1243,7 +1226,8 @@ control|(
 name|String
 name|artifactPattern
 range|:
-name|artifactPatterns
+name|getArtifactPatterns
+argument_list|()
 control|)
 block|{
 name|result
@@ -1551,7 +1535,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|vals
+name|valueList
 init|=
 operator|new
 name|ArrayList
@@ -1567,7 +1551,7 @@ argument_list|)
 decl_stmt|;
 name|filterNames
 argument_list|(
-name|vals
+name|valueList
 argument_list|)
 expr_stmt|;
 for|for
@@ -1575,7 +1559,7 @@ control|(
 name|String
 name|value
 range|:
-name|vals
+name|valueList
 control|)
 block|{
 if|if

@@ -449,15 +449,7 @@ operator|.
 name|getResolvedId
 argument_list|()
 argument_list|)
-condition|)
-block|{
-comment|// two dynamic versions in conflict, not enough information yet
-return|return
-literal|null
-return|;
-block|}
-if|else if
-condition|(
+operator|||
 operator|!
 name|versionMatcher
 operator|.
@@ -470,11 +462,7 @@ operator|.
 name|getResolvedId
 argument_list|()
 argument_list|)
-condition|)
-block|{
-comment|// incompatibility found
-if|if
-condition|(
+operator|&&
 operator|!
 name|handleIncompatibleConflict
 argument_list|(
@@ -488,10 +476,11 @@ name|other
 argument_list|)
 condition|)
 block|{
+comment|// two dynamic versions in conflict, not enough information yet
+comment|// or incompatibility found
 return|return
 literal|null
 return|;
-block|}
 block|}
 block|}
 comment|// no incompatibility nor dynamic version found, let's return the latest static version
@@ -599,11 +588,7 @@ argument_list|()
 argument_list|,
 name|mrid
 argument_list|)
-condition|)
-block|{
-comment|// incompatibility found
-if|if
-condition|(
+operator|&&
 operator|!
 name|handleIncompatibleConflict
 argument_list|(
@@ -617,10 +602,10 @@ name|other
 argument_list|)
 condition|)
 block|{
+comment|// incompatibility found
 return|return
 literal|null
 return|;
-block|}
 block|}
 block|}
 comment|// no incompatibility found, let's return this static version
@@ -1161,23 +1146,17 @@ operator|.
 name|getConfiguration
 argument_list|()
 decl_stmt|;
+for|for
+control|(
 name|Caller
-index|[]
-name|callers
-init|=
+name|caller
+range|:
 name|node
 operator|.
 name|getCallers
 argument_list|(
 name|rootModuleConf
 argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|Caller
-name|caller
-range|:
-name|callers
 control|)
 block|{
 name|IvyNode

@@ -2687,9 +2687,8 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|String
-name|name
-init|=
+name|typeDef
+argument_list|(
 name|entry
 operator|.
 name|getKey
@@ -2697,10 +2696,6 @@ argument_list|()
 operator|.
 name|toString
 argument_list|()
-decl_stmt|;
-name|typeDef
-argument_list|(
-name|name
 argument_list|,
 name|entry
 operator|.
