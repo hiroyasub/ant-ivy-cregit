@@ -2456,8 +2456,6 @@ return|return
 literal|null
 return|;
 block|}
-comment|// TODO: check if the credentials are requested for a proxy, in which case, we use the
-comment|// system configured proxy (system) properties to return the creds
 specifier|final
 name|String
 name|realm
