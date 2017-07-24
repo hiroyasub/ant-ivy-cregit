@@ -31,6 +31,18 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|lang
+operator|.
+name|reflect
+operator|.
+name|Field
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -70,6 +82,7 @@ specifier|static
 name|void
 name|setDefault
 parameter_list|(
+specifier|final
 name|URLHandler
 name|def
 parameter_list|)
@@ -88,22 +101,16 @@ parameter_list|()
 block|{
 try|try
 block|{
+comment|// check for the presence of HttpComponents HttpClient
 name|Class
 operator|.
 name|forName
 argument_list|(
-literal|"org.apache.commons.httpclient.HttpClient"
+literal|"org.apache.http.client.HttpClient"
 argument_list|)
 expr_stmt|;
-comment|// temporary fix for IVY-880: only use HttpClientHandler when
-comment|// http-client-3.x is available
-name|Class
-operator|.
-name|forName
-argument_list|(
-literal|"org.apache.commons.httpclient.params.HttpClientParams"
-argument_list|)
-expr_stmt|;
+comment|// load our (wrapper) http handler
+specifier|final
 name|Class
 argument_list|<
 name|?
@@ -117,76 +124,36 @@ argument_list|(
 literal|"org.apache.ivy.util.url.HttpClientHandler"
 argument_list|)
 decl_stmt|;
-name|Message
+comment|// we always use just one instance which is internally registered to be closed
+comment|// when the JVM exits
+specifier|final
+name|Field
+name|instance
+init|=
+name|handler
 operator|.
-name|verbose
+name|getDeclaredField
 argument_list|(
-literal|"jakarta commons httpclient detected: using it for http downloading"
+literal|"DELETE_ON_EXIT_INSTANCE"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 operator|(
 name|URLHandler
 operator|)
-name|handler
+name|instance
 operator|.
-name|newInstance
-argument_list|()
+name|get
+argument_list|(
+literal|null
+argument_list|)
 return|;
 block|}
 catch|catch
 parameter_list|(
 name|ClassNotFoundException
-name|e
-parameter_list|)
-block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"jakarta commons httpclient not found: using jdk url handling"
-argument_list|)
-expr_stmt|;
-return|return
-operator|new
-name|BasicURLHandler
-argument_list|()
-return|;
-block|}
-catch|catch
-parameter_list|(
-name|NoClassDefFoundError
-name|e
-parameter_list|)
-block|{
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"error occurred while loading jakarta commons httpclient: "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|Message
-operator|.
-name|verbose
-argument_list|(
-literal|"Using jdk url handling instead."
-argument_list|)
-expr_stmt|;
-return|return
-operator|new
-name|BasicURLHandler
-argument_list|()
-return|;
-block|}
-catch|catch
-parameter_list|(
-name|InstantiationException
+decl||
+name|NoSuchFieldException
 decl||
 name|IllegalAccessException
 name|e
@@ -196,7 +163,14 @@ name|Message
 operator|.
 name|verbose
 argument_list|(
-literal|"couldn't instantiate HttpClientHandler: using jdk url handling"
+literal|"Using JDK backed URL handler for HTTP interaction since the "
+operator|+
+literal|"Apache HttpComponents HttpClient backed handler couldn't be created due to: "
+operator|+
+name|e
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
