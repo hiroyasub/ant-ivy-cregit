@@ -4526,6 +4526,8 @@ argument_list|)
 expr_stmt|;
 name|saveResolvedRevision
 argument_list|(
+name|expectedResolver
+argument_list|,
 name|mrid
 argument_list|,
 name|resolvedRevision
@@ -4604,6 +4606,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|saveResolvedRevision
