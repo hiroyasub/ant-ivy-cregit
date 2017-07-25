@@ -866,7 +866,7 @@ argument_list|)
 operator|.
 name|description
 argument_list|(
-literal|"comma separated list of accepted artifact types"
+literal|"accepted artifact types"
 argument_list|)
 operator|.
 name|create
