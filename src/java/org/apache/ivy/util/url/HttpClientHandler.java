@@ -2025,7 +2025,7 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"Response to request '"
+literal|"Failed response to request '"
 operator|+
 name|httpMethod
 operator|+
@@ -2033,7 +2033,25 @@ literal|" "
 operator|+
 name|sourceURL
 operator|+
-literal|"' did not indicate a success (see debug log for details)"
+literal|"' "
+operator|+
+name|response
+operator|.
+name|getStatusLine
+argument_list|()
+operator|.
+name|getStatusCode
+argument_list|()
+operator|+
+literal|" - '"
+operator|+
+name|response
+operator|.
+name|getStatusLine
+argument_list|()
+operator|.
+name|getReasonPhrase
+argument_list|()
 argument_list|)
 throw|;
 block|}
