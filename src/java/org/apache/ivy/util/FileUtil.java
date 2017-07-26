@@ -17,6 +17,38 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|settings
+operator|.
+name|TimeoutConstraint
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|url
+operator|.
+name|URLHandlerRegistry
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -132,6 +164,18 @@ operator|.
 name|net
 operator|.
 name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|Files
 import|;
 end_import
 
@@ -298,38 +342,6 @@ operator|.
 name|zip
 operator|.
 name|ZipInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|TimeoutConstraint
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|util
-operator|.
-name|url
-operator|.
-name|URLHandlerRegistry
 import|;
 end_import
 
@@ -1058,12 +1070,15 @@ specifier|static
 name|boolean
 name|prepareCopy
 parameter_list|(
+specifier|final
 name|File
 name|src
 parameter_list|,
+specifier|final
 name|File
 name|dest
 parameter_list|,
+specifier|final
 name|boolean
 name|overwrite
 parameter_list|)
@@ -1127,6 +1142,20 @@ name|exists
 argument_list|()
 condition|)
 block|{
+comment|// If overwrite is specified as "true" and the dest file happens to be a
+comment|// symlink, we delete the "link" (a.k.a unlink it). This is for cases
+comment|// like https://issues.apache.org/jira/browse/IVY-1498 where not unlinking
+comment|// the existing symlink can lead to potentially overwriting the wrong "target" file
+comment|// TODO: This behaviour is intentionally hardcoded here for now, since I don't
+comment|// see a reason (yet) to expose it as a param of this method. If any use case arises
+comment|// we can have this behaviour decided by the callers of this method, by passing a value for this
+comment|// param
+specifier|final
+name|boolean
+name|unlinkSymlinkIfOverwrite
+init|=
+literal|true
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1153,6 +1182,28 @@ condition|)
 block|{
 if|if
 condition|(
+name|Files
+operator|.
+name|isSymbolicLink
+argument_list|(
+name|dest
+operator|.
+name|toPath
+argument_list|()
+argument_list|)
+operator|&&
+name|unlinkSymlinkIfOverwrite
+condition|)
+block|{
+comment|// unlink (a.k.a delete the symlink path)
+name|dest
+operator|.
+name|delete
+argument_list|()
+expr_stmt|;
+block|}
+if|else if
+condition|(
 operator|!
 name|dest
 operator|.
@@ -1160,6 +1211,8 @@ name|canWrite
 argument_list|()
 condition|)
 block|{
+comment|// if the file *isn't* "writable" (see javadoc of File.canWrite() on what that means)
+comment|// we delete it.
 name|dest
 operator|.
 name|delete
