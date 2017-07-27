@@ -441,6 +441,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+specifier|final
 name|Filter
 argument_list|<
 name|Artifact
@@ -450,18 +451,10 @@ init|=
 name|getArtifactFilter
 argument_list|()
 decl_stmt|;
-name|RetrieveReport
-name|report
+specifier|final
+name|RetrieveOptions
+name|retrieveOptions
 init|=
-name|getIvyInstance
-argument_list|()
-operator|.
-name|retrieve
-argument_list|(
-name|getResolvedMrid
-argument_list|()
-argument_list|,
-operator|(
 operator|(
 name|RetrieveOptions
 operator|)
@@ -474,7 +467,8 @@ argument_list|(
 name|getLog
 argument_list|()
 argument_list|)
-operator|)
+decl_stmt|;
+name|retrieveOptions
 operator|.
 name|setConfs
 argument_list|(
@@ -522,11 +516,6 @@ argument_list|(
 name|symlink
 argument_list|)
 operator|.
-name|setMakeSymlinksInMass
-argument_list|(
-name|symlinkmass
-argument_list|)
-operator|.
 name|setResolveId
 argument_list|(
 name|getResolveId
@@ -547,6 +536,34 @@ argument_list|(
 name|mapper
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|// only set this if the user has explicitly enabled this deprecated option
+if|if
+condition|(
+name|symlinkmass
+condition|)
+block|{
+name|retrieveOptions
+operator|.
+name|setMakeSymlinksInMass
+argument_list|(
+name|symlinkmass
+argument_list|)
+expr_stmt|;
+block|}
+specifier|final
+name|RetrieveReport
+name|report
+init|=
+name|getIvyInstance
+argument_list|()
+operator|.
+name|retrieve
+argument_list|(
+name|getResolvedMrid
+argument_list|()
+argument_list|,
+name|retrieveOptions
 argument_list|)
 decl_stmt|;
 name|int
@@ -839,7 +856,9 @@ operator|=
 name|symlink
 expr_stmt|;
 block|}
-comment|/**      * Option to create symlinks in one mass action, instead of separately.      *      * @param symlinkmass boolean      */
+comment|/**      * Option to create symlinks in one mass action, instead of separately.      *      * @param symlinkmass boolean      * @deprecated Starting 2.5, symlinking in mass isn't supported      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setSymlinkmass

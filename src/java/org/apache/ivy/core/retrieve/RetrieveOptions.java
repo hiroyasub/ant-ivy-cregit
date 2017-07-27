@@ -59,6 +59,20 @@ name|ivy
 operator|.
 name|util
 operator|.
+name|Message
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
 name|filter
 operator|.
 name|Filter
@@ -190,7 +204,8 @@ name|makeSymlinks
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * True if symbolic links should be created all at once, instead of one at a time. Works only on      * OS supporting with both "sh" (a shell) and "ln" (the link command).      */
+annotation|@
+name|Deprecated
 specifier|private
 name|boolean
 name|makeSymlinksInMass
@@ -466,17 +481,24 @@ name|boolean
 name|isMakeSymlinks
 parameter_list|()
 block|{
+comment|// we also do a check on makeSymlinkInMass just to allow backward compatibility for a version
+comment|// or so, to allow users time to move away from symlinkinmass option
 return|return
 name|makeSymlinks
+operator|||
+name|makeSymlinksInMass
 return|;
 block|}
+annotation|@
+name|Deprecated
+comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method will always return false      */
 specifier|public
 name|boolean
 name|isMakeSymlinksInMass
 parameter_list|()
 block|{
 return|return
-name|makeSymlinksInMass
+literal|false
 return|;
 block|}
 specifier|public
@@ -497,6 +519,9 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Deprecated
+comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method plays no role in creation of symlinks. Use {@link #setMakeSymlinks(boolean)} instead      */
 specifier|public
 name|RetrieveOptions
 name|setMakeSymlinksInMass
@@ -510,6 +535,13 @@ operator|.
 name|makeSymlinksInMass
 operator|=
 name|makeSymlinksInMass
+expr_stmt|;
+name|Message
+operator|.
+name|warn
+argument_list|(
+literal|"symlinkmass option has been deprecated and will no longer be supported"
+argument_list|)
 expr_stmt|;
 return|return
 name|this
