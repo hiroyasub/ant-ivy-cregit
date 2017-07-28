@@ -687,7 +687,7 @@ argument_list|)
 operator|.
 name|description
 argument_list|(
-literal|"use maven2 compatibility"
+literal|"use Maven 2 compatibility"
 argument_list|)
 operator|.
 name|create
@@ -989,6 +989,28 @@ operator|.
 name|description
 argument_list|(
 literal|"create symbolic links"
+argument_list|)
+operator|.
+name|create
+argument_list|()
+argument_list|)
+operator|.
+name|addOption
+argument_list|(
+operator|new
+name|OptionBuilder
+argument_list|(
+literal|"overwriteMode"
+argument_list|)
+operator|.
+name|arg
+argument_list|(
+literal|"overwriteMode"
+argument_list|)
+operator|.
+name|description
+argument_list|(
+literal|"use given overwrite mode for retrieve"
 argument_list|)
 operator|.
 name|create
@@ -2245,6 +2267,16 @@ operator|.
 name|setDestIvyPattern
 argument_list|(
 name|ivyPattern
+argument_list|)
+operator|.
+name|setOverwriteMode
+argument_list|(
+name|line
+operator|.
+name|getOptionValue
+argument_list|(
+literal|"overwriteMode"
+argument_list|)
 argument_list|)
 operator|.
 name|setArtifactFilter
