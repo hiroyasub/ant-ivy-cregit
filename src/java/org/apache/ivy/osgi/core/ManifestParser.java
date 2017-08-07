@@ -323,11 +323,6 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"resource"
-argument_list|)
 name|JarInputStream
 name|jis
 init|=
@@ -345,6 +340,11 @@ operator|.
 name|getManifest
 argument_list|()
 decl_stmt|;
+name|jis
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|manifest
