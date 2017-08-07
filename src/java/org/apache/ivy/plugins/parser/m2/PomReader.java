@@ -665,6 +665,8 @@ operator|.
 name|openStream
 argument_list|(
 name|descriptorURL
+argument_list|,
+literal|null
 argument_list|)
 argument_list|)
 decl_stmt|;

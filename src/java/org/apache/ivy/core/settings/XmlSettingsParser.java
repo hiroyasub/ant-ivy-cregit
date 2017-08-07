@@ -890,6 +890,8 @@ operator|.
 name|openStream
 argument_list|(
 name|settingsUrl
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|InputSource
