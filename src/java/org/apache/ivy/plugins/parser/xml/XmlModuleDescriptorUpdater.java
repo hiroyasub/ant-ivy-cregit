@@ -1412,7 +1412,7 @@ name|StringBuffer
 argument_list|()
 decl_stmt|;
 specifier|private
-name|ArrayList
+name|List
 argument_list|<
 name|String
 argument_list|>

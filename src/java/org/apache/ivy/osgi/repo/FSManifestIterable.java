@@ -73,6 +73,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|InputStream
 import|;
 end_import
@@ -437,6 +447,8 @@ parameter_list|(
 name|File
 name|dir
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 return|return
 name|Arrays
@@ -496,6 +508,8 @@ parameter_list|(
 name|File
 name|dir
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 return|return
 name|Arrays

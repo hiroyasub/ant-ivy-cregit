@@ -1077,8 +1077,6 @@ throws|throws
 name|TransformerFactoryConfigurationError
 throws|,
 name|TransformerConfigurationException
-throws|,
-name|SAXException
 block|{
 name|SAXTransformerFactory
 name|transformerFact
@@ -1370,8 +1368,6 @@ name|ArtifactDownloadReport
 name|artifact
 parameter_list|)
 throws|throws
-name|IOException
-throws|,
 name|SAXException
 block|{
 name|ArtifactOrigin

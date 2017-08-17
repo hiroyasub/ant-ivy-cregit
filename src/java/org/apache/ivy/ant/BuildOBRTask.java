@@ -611,8 +611,6 @@ name|append
 argument_list|(
 literal|","
 argument_list|)
-expr_stmt|;
-name|buffer
 operator|.
 name|append
 argument_list|(
@@ -926,8 +924,6 @@ block|}
 catch|catch
 parameter_list|(
 name|ParseException
-decl||
-name|IOException
 name|e
 parameter_list|)
 block|{

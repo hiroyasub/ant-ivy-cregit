@@ -29,16 +29,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|text
 operator|.
 name|ParseException
@@ -260,8 +250,6 @@ throws|throws
 name|BuildException
 throws|,
 name|ParseException
-throws|,
-name|IOException
 block|{
 name|List
 argument_list|<

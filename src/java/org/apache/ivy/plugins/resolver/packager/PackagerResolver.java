@@ -85,6 +85,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -242,7 +252,7 @@ literal|"xml"
 decl_stmt|;
 specifier|private
 specifier|final
-name|HashMap
+name|Map
 argument_list|<
 name|ModuleRevisionId
 argument_list|,
@@ -468,7 +478,7 @@ name|String
 name|pattern
 parameter_list|)
 block|{
-name|ArrayList
+name|List
 argument_list|<
 name|String
 argument_list|>

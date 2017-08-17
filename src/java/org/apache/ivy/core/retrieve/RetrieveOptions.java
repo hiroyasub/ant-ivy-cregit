@@ -482,7 +482,7 @@ name|isMakeSymlinks
 parameter_list|()
 block|{
 comment|// we also do a check on makeSymlinkInMass just to allow backward compatibility for a version
-comment|// or so, to allow users time to move away from symlinkinmass option
+comment|// or so, to allow users time to move away from symlinkmass option
 return|return
 name|makeSymlinks
 operator|||
@@ -519,9 +519,9 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method plays no role in creation of symlinks. Use {@link #setMakeSymlinks(boolean)} instead      */
 annotation|@
 name|Deprecated
-comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method plays no role in creation of symlinks. Use {@link #setMakeSymlinks(boolean)} instead      */
 specifier|public
 name|RetrieveOptions
 name|setMakeSymlinksInMass

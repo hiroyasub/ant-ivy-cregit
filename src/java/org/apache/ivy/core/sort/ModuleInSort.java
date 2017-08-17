@@ -347,7 +347,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|LinkedList
+name|List
 argument_list|<
 name|ModuleRevisionId
 argument_list|>

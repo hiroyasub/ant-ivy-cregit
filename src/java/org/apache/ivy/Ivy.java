@@ -808,12 +808,10 @@ name|Ivy
 block|{
 comment|/**      * Callback used to execute a set of Ivy related methods within an {@link IvyContext}.      *      * @see Ivy#execute(org.apache.ivy.Ivy.IvyCallback)      */
 specifier|public
-specifier|static
 interface|interface
 name|IvyCallback
 block|{
 comment|/**          * Executes Ivy related job within an {@link IvyContext}          *          * @param ivy          *            the {@link Ivy} instance to which this callback is related          * @param context          *            the {@link IvyContext} in which this callback is executed          * @return the result of this job,<code>null</code> if there is no result          */
-specifier|public
 name|Object
 name|doInIvyContext
 parameter_list|(

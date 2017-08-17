@@ -1186,9 +1186,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|rev
-operator|=
-name|rev
-operator|+
+operator|+=
 name|timestamp
 operator|.
 name|toString

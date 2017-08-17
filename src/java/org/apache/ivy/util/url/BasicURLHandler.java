@@ -1738,7 +1738,6 @@ name|FileInputStream
 argument_list|(
 name|src
 argument_list|)
-init|;
 init|)
 block|{
 specifier|final

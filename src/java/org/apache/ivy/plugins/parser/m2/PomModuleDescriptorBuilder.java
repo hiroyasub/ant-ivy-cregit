@@ -2510,8 +2510,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|index
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 block|}
 block|}
@@ -2643,9 +2642,7 @@ block|}
 else|else
 block|{
 name|pluginExtraInfo
-operator|=
-name|pluginExtraInfo
-operator|+
+operator|+=
 literal|"|"
 operator|+
 name|pluginValue
@@ -4102,12 +4099,10 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|extraInfoHolder
 operator|.
 name|getName
 argument_list|()
-operator|)
 operator|.
 name|startsWith
 argument_list|(
@@ -4118,12 +4113,10 @@ block|{
 name|String
 name|prop
 init|=
-operator|(
 name|extraInfoHolder
 operator|.
 name|getName
 argument_list|()
-operator|)
 operator|.
 name|substring
 argument_list|(

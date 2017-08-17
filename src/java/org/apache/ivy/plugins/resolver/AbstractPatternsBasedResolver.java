@@ -1367,14 +1367,6 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|String
-name|key
-init|=
-name|entry
-operator|.
-name|getKey
-argument_list|()
-decl_stmt|;
 name|Object
 name|value
 init|=
@@ -1394,7 +1386,10 @@ name|tokenValues
 operator|.
 name|put
 argument_list|(
-name|key
+name|entry
+operator|.
+name|getKey
+argument_list|()
 argument_list|,
 operator|(
 name|String

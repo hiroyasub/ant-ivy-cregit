@@ -1818,6 +1818,11 @@ expr_stmt|;
 block|}
 comment|/**      * This test is here to just test the deprecated {@code symlinkmass} option for retrieve task.      * A version or two down the line, after 2.5 release, we can remove this test and the option altogether      *      * @throws Exception      */
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
+annotation|@
 name|Test
 specifier|public
 name|void
