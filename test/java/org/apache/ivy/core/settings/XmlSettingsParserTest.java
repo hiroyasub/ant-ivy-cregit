@@ -5326,7 +5326,7 @@ parameter_list|(
 name|String
 name|expected
 parameter_list|,
-name|Object
+name|String
 name|pattern
 parameter_list|)
 throws|throws
@@ -5346,9 +5346,6 @@ argument_list|,
 operator|new
 name|File
 argument_list|(
-operator|(
-name|String
-operator|)
 name|pattern
 argument_list|)
 operator|.

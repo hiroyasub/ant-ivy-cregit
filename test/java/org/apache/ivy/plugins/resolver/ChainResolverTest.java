@@ -905,16 +905,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 argument_list|,
 name|resolvers
@@ -927,16 +925,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 argument_list|,
 name|resolvers
@@ -1226,16 +1222,14 @@ name|DependencyDescriptor
 argument_list|>
 name|ddAsList
 init|=
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 decl_stmt|;
 for|for
@@ -1435,9 +1429,7 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest ->
-comment|// should the
-comment|// one kept
+comment|// latest -> should the one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -1568,16 +1560,14 @@ name|DependencyDescriptor
 argument_list|>
 name|ddAsList
 init|=
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 decl_stmt|;
 for|for
@@ -1867,16 +1857,14 @@ name|DependencyDescriptor
 argument_list|>
 name|ddAsList
 init|=
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 decl_stmt|;
 for|for
@@ -2058,10 +2046,7 @@ argument_list|,
 literal|true
 argument_list|)
 block|,
-comment|// latest
-comment|// ->
-comment|// but
-comment|// default
+comment|// latest -> but default
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2145,9 +2130,7 @@ name|getTime
 argument_list|()
 argument_list|)
 block|,
-comment|// latest ->
-comment|// should the
-comment|// one kept
+comment|// latest -> should the one kept
 name|MockResolver
 operator|.
 name|buildMockResolver
@@ -2278,16 +2261,14 @@ name|DependencyDescriptor
 argument_list|>
 name|ddAsList
 init|=
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 decl_stmt|;
 for|for
@@ -2551,16 +2532,14 @@ name|DependencyDescriptor
 argument_list|>
 name|ddAsList
 init|=
-name|Arrays
+name|Collections
 operator|.
-name|asList
-argument_list|(
-operator|new
+expr|<
 name|DependencyDescriptor
-index|[]
-block|{
+operator|>
+name|singletonList
+argument_list|(
 name|dd
-block|}
 argument_list|)
 decl_stmt|;
 for|for
@@ -2933,7 +2912,8 @@ name|assertEquals
 argument_list|(
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 argument_list|,
 name|resolvers
 index|[
