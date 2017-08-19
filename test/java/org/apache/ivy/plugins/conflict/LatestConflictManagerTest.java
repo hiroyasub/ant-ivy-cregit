@@ -280,7 +280,7 @@ name|_cache
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Test case for issue IVY-388
+comment|/**      * Test case for IVY-388.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-388">IVY-388</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -436,7 +436,7 @@ block|}
 block|}
 block|}
 block|}
-comment|// Test case for issue IVY-383
+comment|/**      * Test case for IVY-383.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-383">IVY-383</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -537,7 +537,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// Test case for issue IVY-407
+comment|/**      * Test case for IVY-407.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-407">IVY-407</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -878,7 +878,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*      * Test case for issue IVY-407 (with transitivity) There are 5 modules A, B, C, D and E. 1)      * publish C-1.0.0, C-1.0.1 and C-1.0.2 2) B needs C-1.0.0 : retrieve ok and publish B-1.0.0 3)      * A needs B-1.0.0 and C-1.0.2 : retrieve ok and publish A-1.0.0 4) D needs C-1.0.1 : retrieve      * ok and publish D-1.0.0 5) E needs D-1.0.0 and A-1.0.0 (D before A in ivy file) retrieve      * failed to get C-1.0.2 from A (get apparently C-1.0.1 from D)      */
+comment|/**      * Test case for IVY-407 (with transitivity). There are 5 modules A, B, C, D and E.      *<ol>      *<li>publish C-1.0.0, C-1.0.1 and C-1.0.2</li>      *<li>B needs C-1.0.0 : retrieve ok and publish B-1.0.0</li>      *<li>A needs B-1.0.0 and C-1.0.2 : retrieve ok and publish A-1.0.0</li>      *<li>D needs C-1.0.1 : retrieve ok and publish D-1.0.0</li>      *<li>E needs D-1.0.0 and A-1.0.0 (D before A in ivy file) :      * retrieve failed to get C-1.0.2 from A (get apparently C-1.0.1 from D)</li>      *</ol>      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-407">IVY-407</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1119,7 +1119,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*      * Test case for issue IVY-1399:      * Dependency tree:      * Mycompany#target;1      *     MyCompany#A;1      *         conflicting-dependency#dep;1      *         OtherCompany#prefers-later;1      *             conflicting-dependency#dep;2      *     MyCompany#B;1      *         MyCompany#A;1      *             ...      *         OtherCompany#prefers-later;1      *             ...      *         MyCompany#C;1      *             conflicting-dependency#dep;1      */
+comment|/**      * Test case for IVY-1399.      * Dependency tree:      *<pre>      * Mycompany#target;1      *     MyCompany#A;1      *         conflicting-dependency#dep;1      *         OtherCompany#prefers-later;1      *             conflicting-dependency#dep;2      *     MyCompany#B;1      *         MyCompany#A;1      *             ...      *         OtherCompany#prefers-later;1      *             ...      *         MyCompany#C;1      *             conflicting-dependency#dep;1      *</pre>      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1399">IVY-1399</a>      */
 annotation|@
 name|Test
 specifier|public

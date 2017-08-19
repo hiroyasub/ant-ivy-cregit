@@ -2664,7 +2664,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the timeout constraint set on the URL resolver is used correctly by the resolver      *      * @throws Exception      */
+comment|/**      * Tests that the timeout constraint set on the URL resolver is used correctly by the resolver      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

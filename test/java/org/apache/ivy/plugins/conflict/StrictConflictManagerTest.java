@@ -264,7 +264,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -299,7 +299,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

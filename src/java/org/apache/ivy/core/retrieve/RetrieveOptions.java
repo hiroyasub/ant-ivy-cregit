@@ -489,9 +489,9 @@ operator|||
 name|makeSymlinksInMass
 return|;
 block|}
+comment|/**      * @return false      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method will always return false      */
 annotation|@
 name|Deprecated
-comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method will always return false      */
 specifier|public
 name|boolean
 name|isMakeSymlinksInMass
@@ -519,7 +519,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method plays no role in creation of symlinks. Use {@link #setMakeSymlinks(boolean)} instead      */
+comment|/**      * @param makeSymlinksInMass ditto      * @return RetrieveOptions      * @deprecated Starting 2.5, creating symlinks in mass is no longer supported and this      * method plays no role in creation of symlinks. Use {@link #setMakeSymlinks(boolean)} instead      */
 annotation|@
 name|Deprecated
 specifier|public

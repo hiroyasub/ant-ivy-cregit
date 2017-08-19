@@ -271,7 +271,7 @@ name|newProject
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Tests that a Ivy file containing a<code>classifier</code> extra-attribute in its dependency, when converted to a      * POM file through {@link IvyMakePom}, retains the<code>classifier</code> in the generated POM      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1528">IVY-1528</a> for more details      */
+comment|/**      * Test case for IVY-1528.      * An Ivy file containing a<code>classifier</code> extra attribute in its dependency,      * must retain the<code>classifier</code> in the generated POM when converted to      * a POM file through {@link IvyMakePom}.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1528">IVY-1528</a>      */
 annotation|@
 name|Test
 specifier|public

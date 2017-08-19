@@ -1019,7 +1019,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * retrieves an sftp channel from the cache      *      * @param session      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      */
+comment|/**      * retrieves an sftp channel from the cache      *      * @param session      *            to connect to      * @return channelSftp or null if not successful (channel not existent or dead)      * @throws IOException should never happen      */
 specifier|public
 name|ChannelSftp
 name|getChannelSftp

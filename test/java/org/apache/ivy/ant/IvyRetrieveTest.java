@@ -463,6 +463,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-992.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-992">IVY-992</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -472,7 +473,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// cfr IVY-992
 name|project
 operator|.
 name|setProperty
@@ -1369,6 +1369,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-304.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-304">IVY-304</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1378,7 +1379,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-304
 comment|// first we do a resolve with useOrigin=true in another project
 name|Project
 name|project
@@ -1662,6 +1662,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-631.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-631">IVY-631</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1721,7 +1722,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Retrieve without previous resolve must fail.      *      * @throws Exception      */
+comment|/**      * Retrieve without previous resolve must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -1765,7 +1766,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -2447,6 +2448,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-315.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-315">IVY-315</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2454,7 +2456,6 @@ name|void
 name|testDoubleRetrieveWithDifferentConfigurations
 parameter_list|()
 block|{
-comment|// IVY-315
 name|project
 operator|.
 name|setProperty

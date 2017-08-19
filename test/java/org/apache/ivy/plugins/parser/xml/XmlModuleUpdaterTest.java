@@ -2345,7 +2345,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// IVY-1356
+comment|/**      * Test case for IVY-1356.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1356">IVY-1356</a>      */
 annotation|@
 name|Test
 specifier|public

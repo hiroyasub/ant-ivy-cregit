@@ -1254,6 +1254,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-601.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-601">IVY-601</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1263,7 +1264,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-601
 name|configure
 operator|.
 name|setFile
@@ -1456,7 +1456,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Calling settings twice with the same id with override=notallowed must fail      *      * @throws Exception      */
+comment|/**      * Calling settings twice with the same id with override=notallowed must fail      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -1553,7 +1553,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Settings override with invalid value must fail.      *      * @throws Exception      */
+comment|/**      * Settings override with invalid value must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -1589,7 +1589,7 @@ literal|"unknown"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if the Ivy settings file<code>include</code>s another file as<code>optional</code>,      * then the absence of that file doesn't lead to failures      *      * @throws Exception      */
+comment|/**      * Tests that if the Ivy settings file<code>include</code>s another file as<code>optional</code>,      * then the absence of that file doesn't lead to failures      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

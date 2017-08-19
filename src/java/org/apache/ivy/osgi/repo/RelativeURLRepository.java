@@ -169,7 +169,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      *      * @param baseUrl      * @deprecated Since 2.5. Use {@link #RelativeURLRepository(URL, TimeoutConstraint)} instead      */
+comment|/**      *      * @param baseUrl ditto      * @deprecated Since 2.5. Use {@link #RelativeURLRepository(URL, TimeoutConstraint)} instead      */
 annotation|@
 name|Deprecated
 specifier|public

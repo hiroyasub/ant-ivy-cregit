@@ -558,7 +558,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Normal case; no confs set (should use the default->* configuration).      */
+comment|/**      * Normal case; no confs set (should use the default-&gt;* configuration).      */
 annotation|@
 name|Test
 specifier|public
@@ -659,7 +659,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test retrieving artifacts under only the master and runtime configuration.      */
+comment|/**      * Test case for IVY-1313.      * Retrieve artifacts only for the master and runtime configuration.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1313">IVY-1313</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -767,6 +767,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1324.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1324">IVY-1324</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -776,7 +777,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-1324
 name|project
 operator|.
 name|setProperty
@@ -1112,6 +1112,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-843.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-843">IVY-843</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1367,7 +1368,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Installing a module with namespace coordinates instead of system one should fail.      *      * @throws Exception      */
+comment|/**      * Installing a module with namespace coordinates instead of system one must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -1529,7 +1530,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fail on unknown dependency when haltonfailure=true.      *      * @throws Exception      */
+comment|/**      * Fail on unknown dependency when haltonfailure=true.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

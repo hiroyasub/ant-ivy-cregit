@@ -414,7 +414,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail because no resolve was performed      *      * @throws Exception      */
+comment|/**      * Test must fail because no resolve was performed      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

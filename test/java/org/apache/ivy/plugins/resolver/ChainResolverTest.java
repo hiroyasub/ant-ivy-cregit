@@ -2637,6 +2637,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Test case for IVY-206.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-206">IVY-206</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2646,7 +2647,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-206
 name|ChainResolver
 name|chain
 init|=
@@ -3231,6 +3231,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Test case for IVY-389.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-389">IVY-389</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3240,7 +3241,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-389
 name|DefaultDependencyDescriptor
 name|dd
 init|=
@@ -3314,6 +3314,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-207.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-207">IVY-207</a>      */
 specifier|public
 name|void
 name|testReturnFirstWithCheckModifiedAndDefaultAndCacheAndRealResolver
@@ -3321,7 +3322,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-207
 name|DefaultDependencyDescriptor
 name|dd
 init|=

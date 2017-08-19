@@ -1546,7 +1546,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail because of bad version.      *      * @throws IOException      * @throws ParseException      */
+comment|/**      * Test must fail because of bad version.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -9406,7 +9406,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * IVY-442: test for parser failure.      *      * @throws Exception      */
+comment|/**      * Test case for IVY-442: expect parser failure.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-442">IVY-442</a>      */
 annotation|@
 name|Test
 argument_list|(
@@ -9444,7 +9444,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test for parser failure.      *      * @throws Exception      */
+comment|/**      * Test for parser failure.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -9482,7 +9482,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * IVY-441: test for parser failure.      *      * @throws Exception      */
+comment|/**      * Test case for IVY-441: expect parser failure.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-441">IVY-441</a>      */
 annotation|@
 name|Test
 argument_list|(
@@ -12024,7 +12024,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that when the<code>location</code> attribute of the<code>extends</code> element of a module descriptor      * file, includes an {@link File#isAbsolute() absolute path} with characters that {@link java.net.URI} considers      * as encoded characters (for example<code>%2F</code>) then the module descriptor and the location of      * the parent descriptor, are resolved and parsed correctly.      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1562">IVY-1562</a> for more details      */
+comment|/**      * Tests that when the<code>location</code> attribute of the<code>extends</code> element of a module descriptor      * file, includes an {@link File#isAbsolute() absolute path} with characters that {@link java.net.URI} considers      * as encoded characters (for example<code>%2F</code>) then the module descriptor and the location of      * the parent descriptor, are resolved and parsed correctly.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1562">IVY-1562</a>      */
 annotation|@
 name|Test
 specifier|public

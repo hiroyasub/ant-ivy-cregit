@@ -2109,7 +2109,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test of resolver referencing a non existent cache.      *      * @throws Exception      */
+comment|/**      * Test of resolver referencing a non existent cache.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -3010,6 +3010,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-319.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-319">IVY-319</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3019,7 +3020,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-319
 name|IvySettings
 name|settings
 init|=
@@ -3155,6 +3155,7 @@ name|FileSystemResolver
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-860.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-860">IVY-860</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3164,7 +3165,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-860
 name|IvySettings
 name|settings
 init|=
@@ -4519,7 +4519,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that a<code>&lt;ttl&gt;</code> containing the<code>matcher</code> attribute, in a ivy settings file,      * works as expected.      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1495">IVY-1495</a>      */
+comment|/**      * Test case for IVY-1495.      *<code>&lt;ttl&gt;</code> containing the<code>matcher</code> attribute,      * in an ivy settings file, must work as expected.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1495">IVY-1495</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -4691,7 +4691,7 @@ name|module2SpecificTTL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the<code>timeout-constraint</code> elements in a Ivy settings file are parsed correctly      *      * @throws Exception      */
+comment|/**      * Tests that the<code>timeout-constraint</code> elements in a Ivy settings file are parsed correctly      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -4973,7 +4973,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that timeout constraints referenced by resolvers, in an ivy settings file, are processed correctly and the      * corresponding resolvers use the right timeout constraints      *      * @throws Exception      */
+comment|/**      * Tests that timeout constraints referenced by resolvers, in an ivy settings file, are      * processed correctly and the corresponding resolvers use the right timeout constraints      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

@@ -851,7 +851,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Test a simple artifact publish, without errors or overwrite settings.      */
+comment|/**      * Test a simple artifact publish, without errors or overwrite settings.      *      * @throws IOException if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -939,7 +939,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test a simple artifact publish, with overwrite set to true.      */
+comment|/**      * Test a simple artifact publish, with overwrite set to true.      *      * @throws IOException if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -1041,7 +1041,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test an attempted publish with an invalid data file path.      */
+comment|/**      * Test an attempted publish with an invalid data file path.      *      * @throws IOException if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

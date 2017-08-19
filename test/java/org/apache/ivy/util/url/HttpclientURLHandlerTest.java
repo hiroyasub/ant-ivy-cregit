@@ -402,6 +402,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-390.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-390">IVY-390</a>      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -416,7 +417,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-390
 name|URLHandler
 name|handler
 init|=
@@ -579,7 +579,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@link HttpClientHandler}, backed by {@link CredentialsStore Ivy credentials store}      * works as expected when it interacts with a HTTP server which requires authentication for accessing resources.      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1336">IVY-1336</a>      */
+comment|/**      * Tests that the {@link HttpClientHandler}, backed by {@link CredentialsStore Ivy credentials store}      * works as expected when it interacts with a HTTP server which requires authentication for accessing resources.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1336">IVY-1336</a>      */
 annotation|@
 name|Test
 specifier|public

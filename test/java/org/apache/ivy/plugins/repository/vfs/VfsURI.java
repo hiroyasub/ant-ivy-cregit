@@ -466,7 +466,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return a well-formed VFS Resource identifier      *      * @return<code>String<code> representing a well formed VFS resource identifier      */
+comment|/**      * Return a well-formed VFS Resource identifier      *      * @return<code>String</code> representing a well formed VFS resource identifier      */
 specifier|public
 name|String
 name|getVfsURI

@@ -94,7 +94,7 @@ specifier|public
 class|class
 name|FileUtilTest
 block|{
-comment|/**      * Tests that {@link FileUtil#normalize(String)} works as expected for some basic file paths      *      * @throws Exception      */
+comment|/**      * Tests that {@link FileUtil#normalize(String)} works as expected for some basic file paths      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -164,7 +164,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that {@link FileUtil#normalize(String)} works as expected when passed a path that starts with      * {@link File#listRoots() filesystem roots}      *      * @throws Exception      */
+comment|/**      * Tests that {@link FileUtil#normalize(String)} works as expected when passed a path that starts with      * {@link File#listRoots() filesystem roots}      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

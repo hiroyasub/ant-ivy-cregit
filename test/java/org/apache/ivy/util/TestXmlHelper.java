@@ -106,7 +106,7 @@ specifier|public
 class|class
 name|TestXmlHelper
 block|{
-comment|/**      * Evaluates the passed {@link XPathExpression} against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      *      * @param xmlFile         The XML file to parse      * @param xPathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception      */
+comment|/**      * Evaluates the passed {@link XPathExpression} against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      *      * @param xmlFile         The XML file to parse      * @param xPathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
 specifier|public
 specifier|static
 name|Object
@@ -210,7 +210,7 @@ name|returnType
 argument_list|)
 return|;
 block|}
-comment|/**      * Evaluates the passed<code>xpathExpression</code> against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      * This is the same as calling {@link #evaluateXPathExpr(File, XPathExpression, QName)}, with<code>XPathFactory.newInstance().newXPath().compile(xpathExpression)</code> as the {@link XPathExpression} parameter      *      * @param xmlFile         The XML file to parse      * @param xpathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception      */
+comment|/**      * Evaluates the passed<code>xpathExpression</code> against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      * This is the same as calling {@link #evaluateXPathExpr(File, XPathExpression, QName)}, with<code>XPathFactory.newInstance().newXPath().compile(xpathExpression)</code> as the {@link XPathExpression} parameter      *      * @param xmlFile         The XML file to parse      * @param xpathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
 specifier|public
 specifier|static
 name|Object

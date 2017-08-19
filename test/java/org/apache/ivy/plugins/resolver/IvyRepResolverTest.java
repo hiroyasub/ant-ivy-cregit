@@ -592,7 +592,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * IVY-625: should fail if no ivyroot specified.      *      * @throws Exception      */
+comment|/**      * Test case for IVY-625. Must fail if no ivyroot specified.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-625">IVY-625</a>      */
 annotation|@
 name|Test
 specifier|public

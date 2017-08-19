@@ -767,7 +767,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@code types} argument to the command line is parsed correctly when it's passed      * more than one value for the argument      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1355">IVY-1355</a>      */
+comment|/**      * Test case for IVY-1355.      * {@code types} argument to the command line must be parsed correctly when it's passed      * more than one value for the argument.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1355">IVY-1355</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -894,7 +894,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@code overwriteMode} passed for the retrieve command works as expected      *      * @throws Exception      */
+comment|/**      * Tests that the {@code overwriteMode} passed for the retrieve command works as expected      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

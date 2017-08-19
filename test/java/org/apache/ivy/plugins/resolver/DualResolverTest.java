@@ -516,7 +516,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test fails due to bad resolver configuration.      *      * @throws IOException      * @throws ParseException      */
+comment|/**      * Test fails due to bad resolver configuration.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -554,7 +554,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test fails due to bad resolver configuration      *      * @throws ParseException      */
+comment|/**      * Test fails due to bad resolver configuration      *      * @throws ParseException if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

@@ -2743,7 +2743,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// IVY-392
+comment|/**      * Test case for IVY-392.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-392">IVY-392</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3209,6 +3209,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-425.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-425">IVY-425</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3218,7 +3219,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-425
 name|ModuleDescriptor
 name|md
 init|=
@@ -3312,6 +3312,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-423.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-423">IVY-423</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3321,7 +3322,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-423
 name|ModuleDescriptor
 name|md
 init|=
@@ -3370,6 +3370,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-424.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-424">IVY-424</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3379,7 +3380,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-424
 name|ModuleDescriptor
 name|md
 init|=
@@ -5112,6 +5112,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-417.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-417">IVY-417</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -5121,7 +5122,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-417
 name|ModuleDescriptor
 name|md
 init|=
@@ -5372,7 +5372,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if a module doesn't have a license specified, then parent pom's license (if any)      * is used for the child module      *      * @throws Exception      */
+comment|/**      * Tests that if a module doesn't have a license specified, then parent pom's license (if any)      * is used for the child module      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -5499,7 +5499,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if a project explicitly specifies the licenses, then the licenses (if any) from      * its parent pom aren't applied to the child project      *      * @throws Exception      */
+comment|/**      * Tests that if a project explicitly specifies the licenses, then the licenses (if any) from      * its parent pom aren't applied to the child project      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -7885,7 +7885,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that a pom.xml which has references to properties that are either set via environment variables or system      * properties, has its properties evaluated correctly.      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1561">IVY-1561</a>      */
+comment|/**      * Test case for IVY-1561.      * A pom.xml which has references to properties that are either set via environment variables      * or system properties, must have its properties evaluated correctly.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1561">IVY-1561</a>      */
 annotation|@
 name|Test
 specifier|public

@@ -457,7 +457,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@link OSGiManifestParser#parseDescriptor(ParserSettings, URL, Resource, boolean)} works fine for descriptors      * that are backed by {@link FileResource}      *      * @throws Exception      */
+comment|/**      * Tests that the {@link OSGiManifestParser#parseDescriptor(ParserSettings, URL, Resource, boolean)}      * works fine for descriptors that are backed by {@link FileResource}      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

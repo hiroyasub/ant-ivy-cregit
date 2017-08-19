@@ -114,7 +114,7 @@ specifier|public
 class|class
 name|AbstractURLHandlerTest
 block|{
-comment|/**      * JUnit test for IVY-923.      */
+comment|/**      * Test case for IVY-923.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-923">IVY-923</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -153,7 +153,7 @@ name|normalizedUrl
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * JUnit test for IVY-923.      */
+comment|/**      * Test case for IVY-923.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-923">IVY-923</a>      */
 annotation|@
 name|Test
 specifier|public

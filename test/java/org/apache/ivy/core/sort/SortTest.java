@@ -502,7 +502,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (if A depends      * transitively of B, but B doesn't depends transitively on A then B always comes before A).      */
+comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (If A depends      * transitively of B, but B doesn't depends transitively on A, then B always comes before A.)      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -767,7 +767,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// Test IVY-624
+comment|/**      * Test case for IVY-624      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-624">IVY-624</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1252,7 +1252,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * When the version asked by a dependency is not compatible with the version declared in the      * module to order, the two modules should be considered as independent NB: I'm sure of what      * 'compatible' means !      */
+comment|/**      * When the version asked by a dependency is not compatible with the version declared in the      * module to order, the two modules should be considered as independent.      * NB: I'm sure of what 'compatible' means !      */
 annotation|@
 name|Test
 specifier|public
@@ -1929,7 +1929,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Returns a collection of lists that contains the elements a,b,c and d */
+comment|/**      * Returns a collection of lists that contains the elements a, b, c and d      */
 specifier|private
 name|Collection
 argument_list|<

@@ -809,7 +809,7 @@ literal|"#B;2, #C;2"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -874,7 +874,7 @@ literal|"#A;conflict"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception      */
+comment|/**      * Resolve must fail with a conflict.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

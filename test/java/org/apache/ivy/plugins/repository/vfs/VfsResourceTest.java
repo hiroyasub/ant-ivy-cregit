@@ -198,7 +198,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Validate VFSResource creation for a valid VFS URI pointing to an physically existing file      */
+comment|/**      * Validate VFSResource creation for a valid VFS URI pointing to an physically existing file      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -424,7 +424,7 @@ literal|"%3F"
 argument_list|)
 return|;
 block|}
-comment|/**      * Validating that resource can be created for files which don't physically exists - e.g.      * resources that are going to created.      */
+comment|/**      * Validating that resource can be created for files which don't physically exists - e.g.      * resources that are going to created.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -572,7 +572,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      */
+comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -690,7 +690,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validate getChildren when given a VFS URI for a directory      */
+comment|/**      * Validate getChildren when given a VFS URI for a directory      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -877,7 +877,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      */
+comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -943,7 +943,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      */
+comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

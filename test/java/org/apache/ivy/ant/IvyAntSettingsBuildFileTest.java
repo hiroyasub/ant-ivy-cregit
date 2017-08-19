@@ -256,6 +256,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-925.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-925">IVY-925</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -263,7 +264,6 @@ name|void
 name|testSettingsWithIdIvyInstance
 parameter_list|()
 block|{
-comment|// IVY-925
 name|buildRule
 operator|.
 name|executeTarget
@@ -311,6 +311,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-924.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-924">IVY-924</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -318,7 +319,6 @@ name|void
 name|testStackOverflow
 parameter_list|()
 block|{
-comment|// IVY-924
 name|buildRule
 operator|.
 name|configureProject

@@ -357,7 +357,7 @@ literal|"\\- org1#mod1.2;latest.integration"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Task must fail because no resolve was performed.      *      * @throws Exception      */
+comment|/**      * Task must fail because no resolve was performed.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -489,7 +489,7 @@ literal|"\\- org1#mod1.2;2.2"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that dependency tree task doesn't run into an infinite loop due to circular dependencies      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1540">IVY-1540</a> for more details      */
+comment|/**      * Test case for IVY-1540.      * Dependency tree task must not run into an infinite loop due to circular dependencies.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1540">IVY-1540</a>      */
 annotation|@
 name|Test
 specifier|public

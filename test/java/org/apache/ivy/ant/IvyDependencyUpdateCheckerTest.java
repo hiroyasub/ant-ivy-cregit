@@ -509,7 +509,7 @@ literal|"org1#mod1.2\t2.0 -> 2.2"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -567,7 +567,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -601,7 +601,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail because of missing configurations.      *      * @throws Exception      */
+comment|/**      * Test must fail because of missing configurations.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -651,7 +651,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -685,7 +685,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -843,6 +843,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-396.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-396">IVY-396</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -850,7 +851,6 @@ name|void
 name|testResolveWithAbsoluteFile
 parameter_list|()
 block|{
-comment|// IVY-396
 name|File
 name|ivyFile
 init|=
@@ -883,6 +883,7 @@ expr_stmt|;
 comment|// assertTrue(getResolvedIvyFileInCache(
 comment|// ModuleRevisionId.newInstance("apache", "resolve-simple", "1.0")).exists());
 block|}
+comment|/**      * Test case for IVY-396.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-396">IVY-396</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -890,7 +891,6 @@ name|void
 name|testResolveWithRelativeFile
 parameter_list|()
 block|{
-comment|// IVY-396
 name|dependencyUpdateChecker
 operator|.
 name|getProject

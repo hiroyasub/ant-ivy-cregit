@@ -1773,6 +1773,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-404.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-404">IVY-404</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1782,7 +1783,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-404
 name|project
 operator|.
 name|setProperty
@@ -2161,6 +2161,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-415.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-415">IVY-415</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2170,7 +2171,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-415
 name|project
 operator|.
 name|setProperty
@@ -2670,6 +2670,7 @@ name|actualFileSet
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-707.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-707">IVY-707</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2680,7 +2681,6 @@ throws|throws
 name|Exception
 block|{
 comment|// same as previous but dynamic dependency is placed after the one causing the conflict
-comment|// test case for IVY-707
 name|project
 operator|.
 name|setProperty

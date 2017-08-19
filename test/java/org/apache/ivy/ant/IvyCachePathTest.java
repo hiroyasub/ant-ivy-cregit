@@ -748,7 +748,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(

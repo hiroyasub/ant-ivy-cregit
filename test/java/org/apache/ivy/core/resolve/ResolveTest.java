@@ -2418,6 +2418,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-258.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-258">IVY-258</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2427,7 +2428,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-258
 comment|// module1 depends on latest version of module2, which contains no revision in its ivy file,
 comment|// nor in the pattern
 name|Ivy
@@ -2532,6 +2532,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-448.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-448">IVY-448</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2541,7 +2542,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-448
 comment|// all modules from myorg
 comment|// module1
 comment|// -> module2-1.0
@@ -2648,6 +2648,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-465.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-465">IVY-465</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -2657,7 +2658,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-465
 comment|// #M1;1.0 -> #M2;1.0
 comment|// #M2;1.0 -> {org1#mod1.2;1.1 org1#mod1.2;2.0} with
 comment|//<conflict org="org1" module="mod1.2" rev="1.1,2.0" />
@@ -2755,6 +2755,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1404.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1404">IVY-1404</a>      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -2764,7 +2765,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-1404
 comment|// #M1;1.0 -> #M2;1.0
 comment|// #M1;2.0 -> {#M2;1.0 #M3;1.0}
 comment|// #M2;1.0 -> org1#mod1.2;1.1
@@ -3019,6 +3019,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-198.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-198">IVY-198</a>      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -3028,7 +3029,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-198
 comment|// module depends on mod1.2
 name|ResolveReport
 name|report
@@ -7540,6 +7540,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-240.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-240">IVY-240</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -7549,8 +7550,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Test case for IVY-240
-comment|//
 comment|// mod6.3 1.1 has four confs libraries, run (extends libraries), compile (extends run) and
 comment|// test (extends libraries)
 comment|// mod6.3 depends on mod6.2 2.0 in conf (run->default)
@@ -7788,6 +7787,7 @@ name|crr
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-188.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-188">IVY-188</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -7797,8 +7797,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Test case for IVY-188
-comment|//
 comment|// mod6.2 has two confs compile and run
 comment|// depends on mod6.1 in conf (compile->default)
 comment|// depends on mod1.2 latest (which is 2.2) in conf (run->default)
@@ -7934,6 +7932,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-173.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-173">IVY-173</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -7943,8 +7942,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Test case for IVY-173
-comment|//
 comment|// mod6.2 has two confs compile and run
 comment|// depends on mod1.2 2.1 in conf (compile->default)
 comment|// depends on mod1.1 1.0 in conf (*->default)
@@ -8605,6 +8602,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-261.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-261">IVY-261</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -8614,7 +8612,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-261
 comment|// mod1.6 depends on
 comment|// mod1.4, which depends on mod1.3 and selects one of its artifacts
 comment|// mod1.3 and selects two of its artifacts
@@ -8694,6 +8691,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-537.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-537">IVY-537</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -8703,7 +8701,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-537
 comment|// #mod2.6;0.12 -> {#mod1.6;1.0.4 #mod2.5;0.6.2 }
 comment|// #mod1.6;1.0.4 -> #mod1.3;3.0 artifacts A and B
 comment|// #mod2.5;0.6.2 -> #mod1.3;3.1 artifact C
@@ -8785,6 +8782,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-283.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-283">IVY-283</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -8794,7 +8792,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-283
 name|Ivy
 name|ivy
 init|=
@@ -8954,6 +8951,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Second test case for IVY-283.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-283">IVY-283</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -8963,7 +8961,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// second test case for IVY-283
 name|Ivy
 name|ivy
 init|=
@@ -10639,6 +10636,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-541.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-541">IVY-541</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -10648,7 +10646,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-541
 comment|// mod2.6 depends on mod2.3 and mod2.1
 comment|// mod2.3 depends on mod2.1 and selects its artifacts
 name|ResolveReport
@@ -11943,7 +11940,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Testcase for IVY-1131.      */
+comment|/**      * Test case for IVY-1131.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1131">IVY-1131</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -14604,6 +14601,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-264.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-264">IVY-264</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -14613,7 +14611,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-264
 comment|// a depends on x latest, y latest, z latest
 comment|// x and z depends on commons-lang 1.0.1
 comment|// y depends on commons-lang 2.0
@@ -14895,7 +14892,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test IVY-618.      */
+comment|/**      * Test case for IVY-618.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-618">IVY-618</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -15158,6 +15155,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-199.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-199">IVY-199</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -15167,7 +15165,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-199
 comment|// mod4.1 v 4.13 depends on
 comment|// - mod3.2 v 1.2.1 which depends on
 comment|// - mod3.1 v 1.0 which depends on mod1.2 v 2.0
@@ -15265,6 +15262,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-590.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-590">IVY-590</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -15274,7 +15272,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-590
 name|ResolveReport
 name|report
 init|=
@@ -16222,6 +16219,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-681.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-681">IVY-681</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -16233,7 +16231,6 @@ name|Exception
 block|{
 comment|// same as first one but the conf requested in evicted module is no longer present in
 comment|// selected revision
-comment|// test case for IVY-681
 comment|// mod6.1 r1.4 depends on
 comment|// mod5.1 r4.3 conf A
 comment|// mod5.2 r1.0 which depends on mod5.1 r4.0 conf B
@@ -16397,6 +16394,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-861.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-861">IVY-861</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -16406,7 +16404,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-861
 comment|// mod6.1 r1.5 depends on
 comment|// mod5.1 [1.0,4.3] conf unknown which doesn't exist in mod5.1;4.3
 name|ResolveReport
@@ -17206,6 +17203,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-644.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-644">IVY-644</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -17465,6 +17463,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-193.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-193">IVY-193</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -17474,7 +17473,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-193
 comment|// mod4.1 v 4.9 depends on
 comment|// - mod3.2 v 1.1 which depends on mod1.2 v 2.0
 comment|// - mod3.1 v 1.1 which depends on mod1.2 v 2.1
@@ -17620,6 +17618,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-193.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-193">IVY-193</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -17629,7 +17628,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-193
 comment|// mod4.1 v 4.10 depends on
 comment|// - mod3.1 v 1.0.1 which depends on mod1.2 v 2.0 and forces it
 comment|// - mod3.2 v 1.2 which depends on mod1.2 v 2.1 and on mod3.1 v1.0.1
@@ -17726,6 +17724,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-193.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-193">IVY-193</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -17735,7 +17734,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-193
 comment|// mod4.1 v 4.11 depends on
 comment|// - mod1.2 v 2.0
 comment|// - mod3.2 v 1.3 which depends on
@@ -17856,6 +17854,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-193.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-193">IVY-193</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -17865,7 +17864,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-193
 comment|// mod4.1 v 4.12 depends on
 comment|// - mod3.1 v1.0 which depends on
 comment|// - mod1.2 v 2.0
@@ -18762,6 +18760,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-182.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-182">IVY-182</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -18771,7 +18770,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-182
 comment|// * has no revision
 comment|// * declares conf compile, test extends compile,
 comment|// * depends on
@@ -19150,6 +19148,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-130.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-130">IVY-130</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -19159,7 +19158,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// BUG IVY-130 : only mod1.2 v2.0 should be resolved and not v2.1 (because of force)
+comment|// Only mod1.2 v2.0 should be resolved and not v2.1 (because of force)
 comment|// mod10.1 v 1.1 depends on
 comment|// - mod1.2 v 2.0 and forces it
 comment|// - mod4.1 v 4.3
@@ -20717,6 +20716,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-602.      * Verify that latest.integration dependencies can be resolved when using a resolver with      * multiple patterns, when only the first pattern finds something      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-602">IVY-602</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -20726,9 +20726,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// The test verify that latest.integration dependencies can be resolved
-comment|// when using a resolver with multiple patterns, when only the first pattern
-comment|// finds something - test case for IVY-602
 comment|// mod9.2 depends on latest.integration of mod6.2
 name|Ivy
 name|ivy
@@ -21694,6 +21691,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-318.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-318">IVY-318</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -21704,7 +21702,6 @@ throws|throws
 name|Exception
 block|{
 comment|// mod9.2 depends on latest.milestone of mod6.2, but there is no milestone
-comment|// test case for IVY-318
 name|ResolveReport
 name|report
 init|=
@@ -21766,6 +21763,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-56.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-56">IVY-56</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -21845,6 +21843,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Test case for IVY-214.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-214">IVY-214</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -21912,6 +21911,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-218.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-218">IVY-218</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -21979,6 +21979,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-729.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-729">IVY-729</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -22039,7 +22040,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3;      * circular dependency strategy set to error.      *      * @throws Exception      */
+comment|/**      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3;      * circular dependency strategy set to error.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -22220,7 +22221,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Circular dependency: mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+;      * circular dependency strategy set to error.      *      * @throws Exception      */
+comment|/**      * Circular dependency: mod 9.1 (no revision) depends on mod9.2, which depends on mod9.1 2.+;      * circular dependency strategy set to error.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -22313,7 +22314,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-400.      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3,      * in both configuration default and test; circular dependency strategy set to error.      *      * @throws Exception      */
+comment|/**      * Test case for IVY-400.      * Circular dependency: mod6.3 depends on mod6.2, which itself depends on mod6.3,      * in both configuration default and test; circular dependency strategy set to error.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-400">IVY-400</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23177,6 +23178,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1178.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1178">IVY-1178</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23385,6 +23387,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1236.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1236">IVY-1236</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23527,6 +23530,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1233.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1233">IVY-1233</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23677,6 +23681,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1333.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1333">IVY-1333</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23851,6 +23856,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1347.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1347">IVY-1347</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -23976,6 +23982,7 @@ name|parent
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-999.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-999">IVY-999</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -24100,6 +24107,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1366.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1366">IVY-1366</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -24711,6 +24719,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-105.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-105">IVY-105</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -24720,7 +24729,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-105
 comment|// mod2.7 depends on mod1.1 and mod2.4
 comment|// mod2.4 depends on mod1.1 with transitive set to false
 comment|// mod1.1 depends on mod1.2
@@ -25294,6 +25302,7 @@ comment|// /////////////////////////////////////////////////////////
 comment|// here comes a series of test provided by Chris Rudd
 comment|// about configuration mapping and eviction
 comment|// /////////////////////////////////////////////////////////
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -25458,6 +25467,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -25622,6 +25632,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -25786,6 +25797,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -25950,6 +25962,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -26114,6 +26127,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -26280,6 +26294,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-84.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-84">IVY-84</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -26446,6 +26461,7 @@ name|conf
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-97.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-97">IVY-97</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -30862,6 +30878,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Test case for IVY-418.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-418">IVY-418</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -30871,7 +30888,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-418
 comment|// test-classifier depends on test-classified with classifier asl
 name|Ivy
 name|ivy
@@ -31040,6 +31056,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1041.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1041">IVY-1041</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -31049,7 +31066,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-1041
 comment|// test-classifier depends on test-classified with classifier asl
 name|Ivy
 name|ivy
@@ -31386,6 +31402,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1138.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1138">IVY-1138</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -31395,7 +31412,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-1138
 name|Ivy
 name|ivy
 init|=
@@ -32242,6 +32258,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1186.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1186">IVY-1186</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -32251,7 +32268,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Cfr IVY-1186
 name|Ivy
 name|ivy
 init|=
@@ -33170,6 +33186,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1376.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1376">IVY-1376</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -33179,7 +33196,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-1376
 name|Ivy
 name|ivy
 init|=
@@ -33352,6 +33368,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-501.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-501">IVY-501</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -33361,7 +33378,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-501
 comment|// here we test maven SNAPSHOT versions handling,
 comment|// with m2 snapshotRepository/uniqueVersion set to true
 name|Ivy
@@ -33464,6 +33480,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1036.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1036">IVY-1036</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -33473,7 +33490,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-1036
 comment|// here we test maven SNAPSHOT versions handling,
 comment|// with m2 snapshotRepository/uniqueVersion set to true
 comment|// but retrieving by latest.integration
@@ -33584,6 +33600,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-501.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-501">IVY-501</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -33593,7 +33610,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-501
 comment|// here we test maven SNAPSHOT versions handling,
 comment|// without m2 snapshotRepository/uniqueVersion set to true
 name|Ivy
@@ -33696,6 +33712,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1036.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1036">IVY-1036</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -33705,7 +33722,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-1036
 comment|// here we test maven SNAPSHOT versions handling,
 comment|// with m2 snapshotRepository/uniqueVersion set to true
 comment|// but retrieving by latest.integration
@@ -34613,6 +34629,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1151.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1151">IVY-1151</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -34966,6 +34983,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-168.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-168">IVY-168</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -34975,7 +34993,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// IVY-168
 comment|// mod13.3 depends on mod13.2 which depends on mod13.1
 comment|// each module has two confs: j2ee and compile
 comment|// each module only publishes one artifact in conf compile
@@ -35283,6 +35300,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-773.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-773">IVY-773</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -35292,7 +35310,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-773
 name|Ivy
 name|ivy
 init|=
@@ -35473,6 +35490,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-745.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-745">IVY-745</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -35482,7 +35500,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-745
 name|MockMessageLogger
 name|mockLogger
 init|=
@@ -35590,6 +35607,7 @@ literal|"expected='task2' found='null'"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Second test case for IVY-745.Â¨      * Now we disable consistency checking, everything must work fine.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-745">IVY-745</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -35599,8 +35617,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// second test case for IVY-745: now we disable consistency checking, everything should work
-comment|// fine
 name|Ivy
 name|ivy
 init|=
@@ -36342,6 +36358,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-717.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-717">IVY-717</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -36351,7 +36368,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// test case for IVY-717
 comment|// bar1;4 -> foo#foo1#${ivy.branch};5
 comment|// foo#foo1#branch1;5 -> foo#foo2#${ivy.branch};1
 comment|// foo#foo1#trunk;5 -> {}
@@ -38484,6 +38500,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-956.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-956">IVY-956</a>      */
 annotation|@
 name|Test
 argument_list|(
@@ -38553,6 +38570,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1159.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1159">IVY-1159</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -38675,6 +38693,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1159.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1159">IVY-1159</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -38797,6 +38816,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1159.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1159">IVY-1159</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -38919,6 +38939,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1159.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1159">IVY-1159</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -39261,6 +39282,7 @@ name|dopts
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1300.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1300">IVY-1300</a>      */
 annotation|@
 name|Test
 specifier|public

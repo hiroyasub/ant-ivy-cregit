@@ -1140,6 +1140,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-676.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-676">IVY-676</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1149,7 +1150,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// cfr IVY-676
 name|FileSystemResolver
 name|resolver
 init|=
@@ -1849,7 +1849,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that<code>SHA-256</code> algorithm can be used for checksums on resolvers      * @throws Exception      */
+comment|/**      * Tests that<code>SHA-256</code> algorithm can be used for checksums on resolvers      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -2074,7 +2074,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that<code>SHA-512</code> algorithm can be used for checksums on resolvers      *      * @throws Exception      */
+comment|/**      * Tests that<code>SHA-512</code> algorithm can be used for checksums on resolvers      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -6043,7 +6043,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Publishing with transaction=true and an unsupported pattern must fail.      *      * @throws Exception      */
+comment|/**      * Publishing with transaction=true and an unsupported pattern must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -6173,7 +6173,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Publishing with transaction=true and an unsupported combination of patterns must fail.      *      * @throws Exception      */
+comment|/**      * Publishing with transaction=true and an unsupported combination of patterns must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -6345,7 +6345,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Publishing with transaction=true and overwrite mode must fail.      *      * @throws Exception      */
+comment|/**      * Publishing with transaction=true and overwrite mode must fail.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

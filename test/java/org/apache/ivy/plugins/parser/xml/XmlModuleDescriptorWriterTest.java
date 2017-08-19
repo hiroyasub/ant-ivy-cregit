@@ -1433,7 +1433,7 @@ name|wrote
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test that the transitive attribute is written for non-transitive configurations.      *      *<code><conf ... transitive="false" ... /></code>      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1207">IVY-1207</a>      * @throws Exception      */
+comment|/**      * Test that the transitive attribute is written for non-transitive configurations.      *      *<code>&lt;conf ... transitive="false" ... /&gt;</code>      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1207">IVY-1207</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1564,7 +1564,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test that the transitive attribute is not written when the configuration IS transitive.      *      * This is the default and writing it will only add noise and cause a deviation from the known      * behavior (before fixing IVY-1207).      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1207">IVY-1207</a>      * @throws Exception      */
+comment|/**      * Test that the transitive attribute is not written when the configuration IS transitive.      *      * This is the default and writing it will only add noise and cause a deviation from the known      * behavior (before fixing IVY-1207).      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1207">IVY-1207</a>      */
 annotation|@
 name|Test
 specifier|public

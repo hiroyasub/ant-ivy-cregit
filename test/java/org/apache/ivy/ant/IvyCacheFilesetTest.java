@@ -668,7 +668,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -707,7 +707,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception      */
+comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
@@ -1171,7 +1171,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@link IvyCacheFileset} fails with an exception if it can't determine a common base directory      * while dealing with cached artifacts      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1475">IVY-1475</a> for more details      */
+comment|/**      * Test case for IVY-1475.      * {@link IvyCacheFileset} must fail with an exception if it cannot determine      * a common base directory while dealing with cached artifacts.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1475">IVY-1475</a>      */
 annotation|@
 name|Test
 specifier|public

@@ -863,6 +863,7 @@ block|}
 block|}
 block|}
 block|}
+comment|/**      * Test case for IVY-1248.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -876,7 +877,6 @@ name|ParseException
 block|{
 comment|// here we directly publish a module extending ivy-multiconf.xml,
 comment|// the module parent is not published not yet in cache
-comment|// See : IVY-1248
 comment|// update=true implies merge=true
 comment|// project.setProperty("ivy.dep.file",
 comment|// "test/java/org/apache/ivy/ant/ivy-extends-multiconf.xml");
@@ -967,6 +967,7 @@ literal|"ivy-extends-merged.xml"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Test case for IVY-1248.      * Here we directly publish a module extending ivy-multiconf.xml,      * the module parent is not published not yet in cache.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -978,9 +979,6 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|// here we directly publish a module extending ivy-multiconf.xml,
-comment|// the module parent is not published not yet in cache
-comment|// See : IVY-1248
 name|IvyResolve
 name|resolve
 init|=
@@ -1124,7 +1122,6 @@ name|IOException
 throws|,
 name|ParseException
 block|{
-comment|// See : IVY-XXX
 name|IvyResolve
 name|resolve
 init|=
@@ -3873,7 +3870,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must not publish ivy file with bad revision.      *      * @throws Exception      */
+comment|/**      * Test must not publish ivy file with bad revision.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 argument_list|(
