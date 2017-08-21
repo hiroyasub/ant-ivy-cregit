@@ -539,12 +539,8 @@ name|specialMeaning
 operator|.
 name|setValue
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 operator|-
 literal|2
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|latestRevisionStrategy
@@ -573,11 +569,7 @@ name|specialMeaning
 operator|.
 name|setValue
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|4
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|latestRevisionStrategy

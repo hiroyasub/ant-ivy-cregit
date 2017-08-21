@@ -53,7 +53,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collections
 import|;
 end_import
 
@@ -648,9 +648,9 @@ name|publish
 argument_list|(
 name|md
 argument_list|,
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 literal|"build/test/publish/module/[artifact].[ext]"
 argument_list|)

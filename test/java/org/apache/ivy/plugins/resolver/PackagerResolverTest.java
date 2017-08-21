@@ -585,8 +585,6 @@ specifier|protected
 name|void
 name|cleanupTempDirs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileUtil
 operator|.

@@ -1984,7 +1984,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the system {@link #systemHasSymlinkAbility has symlink ability} then asserts that the passed {@code filePath}      * is a {@link Files#isSymbolicLink(Path) symbolic link}. Else asserts that the {@code filePath}      * {@link Files#exists(Path, LinkOption...) exists}      *      * @param filePath      * @throws IOException if something goes wrong      */
+comment|/**      * If the system {@link #systemHasSymlinkAbility has symlink ability} then asserts that the passed {@code filePath}      * is a {@link Files#isSymbolicLink(Path) symbolic link}. Else asserts that the {@code filePath}      * {@link Files#exists(Path, LinkOption...) exists}      *      * @param filePath      */
 specifier|private
 name|void
 name|assertLinkOrExists
@@ -1993,8 +1993,6 @@ specifier|final
 name|String
 name|filePath
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(
@@ -3155,7 +3153,11 @@ name|assertTrue
 argument_list|(
 literal|"Artifact content was empty at "
 operator|+
+operator|new
+name|String
+argument_list|(
 name|fooBar123ArtifactContentsInCache
+argument_list|)
 argument_list|,
 name|fooBar123ArtifactContentsInCache
 operator|.
@@ -3433,7 +3435,11 @@ name|assertTrue
 argument_list|(
 literal|"Artifact content was empty at "
 operator|+
+operator|new
+name|String
+argument_list|(
 name|foobar234CacheFileContents
+argument_list|)
 argument_list|,
 name|foobar234CacheFileContents
 operator|.

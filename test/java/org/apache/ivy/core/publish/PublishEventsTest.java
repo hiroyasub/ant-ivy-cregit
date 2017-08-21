@@ -1818,9 +1818,6 @@ name|get
 argument_list|(
 literal|"file"
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
