@@ -1427,15 +1427,17 @@ return|return
 name|resolveId
 return|;
 block|}
-comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *      * @param extended String      * @return String[]      */
+comment|/**      * Get every configuration which extends the specified one. The returned list also includes the      * specified one.      *      * @param extended String      * @return Set of String      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"unused"
 argument_list|)
 specifier|private
+name|Set
+argument_list|<
 name|String
-index|[]
+argument_list|>
 name|getExtendingConfs
 parameter_list|(
 name|String
@@ -1483,18 +1485,6 @@ expr_stmt|;
 block|}
 return|return
 name|extendingConfs
-operator|.
-name|toArray
-argument_list|(
-operator|new
-name|String
-index|[
-name|extendingConfs
-operator|.
-name|size
-argument_list|()
-index|]
-argument_list|)
 return|;
 block|}
 specifier|private
