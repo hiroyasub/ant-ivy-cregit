@@ -947,6 +947,28 @@ name|SAXException
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Configuration
+operator|.
+name|Visibility
+operator|.
+name|getVisibility
+import|;
+end_import
+
 begin_comment
 comment|/**  * Parses an xml ivy file and output a ModuleDescriptor. For dependency and performance reasons, it  * uses only the SAX API, which makes the parsing code harder to understand.  */
 end_comment
@@ -5010,10 +5032,6 @@ name|Configuration
 argument_list|(
 name|conf
 argument_list|,
-name|Configuration
-operator|.
-name|Visibility
-operator|.
 name|getVisibility
 argument_list|(
 operator|(

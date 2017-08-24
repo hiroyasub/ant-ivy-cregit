@@ -213,26 +213,6 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|Configuration
-operator|.
-name|Visibility
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
 name|DefaultArtifact
 import|;
 end_import
@@ -443,6 +423,28 @@ name|ModuleDescriptorParser
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Configuration
+operator|.
+name|Visibility
+operator|.
+name|PUBLIC
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -487,8 +489,6 @@ name|Configuration
 argument_list|(
 name|CONF_NAME_OPTIONAL
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"Optional dependencies"
@@ -524,8 +524,6 @@ name|Configuration
 argument_list|(
 name|CONF_NAME_TRANSITIVE_OPTIONAL
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"Optional dependencies"
@@ -830,8 +828,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"Exported package "
@@ -2169,8 +2165,6 @@ name|CONF_USE_PREFIX
 operator|+
 name|name
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"Exported package "

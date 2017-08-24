@@ -197,26 +197,6 @@ name|module
 operator|.
 name|descriptor
 operator|.
-name|Configuration
-operator|.
-name|Visibility
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
-name|core
-operator|.
-name|module
-operator|.
-name|descriptor
-operator|.
 name|DefaultArtifact
 import|;
 end_import
@@ -585,6 +565,28 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|core
+operator|.
+name|module
+operator|.
+name|descriptor
+operator|.
+name|Configuration
+operator|.
+name|Visibility
+operator|.
+name|PUBLIC
+import|;
+end_import
+
 begin_comment
 comment|/**  * Build a module descriptor. This class handle the complexity of the structure of an ivy  * ModuleDescriptor and isolate the PomModuleDescriptorParser from it.  */
 end_comment
@@ -618,8 +620,6 @@ name|Configuration
 argument_list|(
 literal|"default"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"runtime dependencies and master artifact can be used with this conf"
@@ -643,8 +643,6 @@ name|Configuration
 argument_list|(
 literal|"master"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"contains only the artifact published by this module itself, "
@@ -667,8 +665,6 @@ name|Configuration
 argument_list|(
 literal|"compile"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this is the default scope, used if none is specified. "
@@ -691,8 +687,6 @@ name|Configuration
 argument_list|(
 literal|"provided"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this is much like compile, but indicates you expect the JDK or a container "
@@ -717,8 +711,6 @@ name|Configuration
 argument_list|(
 literal|"runtime"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this scope indicates that the dependency is not required for compilation, "
@@ -744,8 +736,6 @@ name|Configuration
 argument_list|(
 literal|"test"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this scope indicates that the dependency is not required for normal use of "
@@ -771,8 +761,6 @@ name|Configuration
 argument_list|(
 literal|"system"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this scope is similar to provided except that you have to provide the JAR "
@@ -797,8 +785,6 @@ name|Configuration
 argument_list|(
 literal|"sources"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this configuration contains the source artifact of this module, if any."
@@ -819,8 +805,6 @@ name|Configuration
 argument_list|(
 literal|"javadoc"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"this configuration contains the javadoc artifact of this module, if any."
@@ -841,8 +825,6 @@ name|Configuration
 argument_list|(
 literal|"optional"
 argument_list|,
-name|Visibility
-operator|.
 name|PUBLIC
 argument_list|,
 literal|"contains all optional dependencies"

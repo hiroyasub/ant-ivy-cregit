@@ -257,32 +257,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|jar
-operator|.
-name|Pack200
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|jar
-operator|.
-name|Pack200
-operator|.
-name|Unpacker
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|zip
 operator|.
 name|GZIPInputStream
@@ -298,6 +272,20 @@ operator|.
 name|zip
 operator|.
 name|ZipInputStream
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|util
+operator|.
+name|jar
+operator|.
+name|Pack200
+operator|.
+name|newUnpacker
 import|;
 end_import
 
@@ -2651,14 +2639,6 @@ name|in
 argument_list|)
 expr_stmt|;
 block|}
-name|Unpacker
-name|unpacker
-init|=
-name|Pack200
-operator|.
-name|newUnpacker
-argument_list|()
-decl_stmt|;
 name|ByteArrayOutputStream
 name|baos
 init|=
@@ -2675,7 +2655,8 @@ argument_list|(
 name|baos
 argument_list|)
 decl_stmt|;
-name|unpacker
+name|newUnpacker
+argument_list|()
 operator|.
 name|unpack
 argument_list|(
@@ -2704,7 +2685,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Wrap an input stream and do not close the stream on call to close(). Used to avoid closing a      * {@link ZipInputStream} used with {@link Unpacker#unpack(File, JarOutputStream)}      */
+comment|/**      * Wrap an input stream and do not close the stream on call to close(). Used to avoid closing a      * {@link ZipInputStream} used with {@link Pack200.Unpacker#unpack(File, JarOutputStream)}      */
 specifier|private
 specifier|static
 specifier|final
