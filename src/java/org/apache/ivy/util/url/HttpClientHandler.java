@@ -630,6 +630,7 @@ comment|/**  *  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|HttpClientHandler
 extends|extends
@@ -736,6 +737,7 @@ specifier|final
 name|CloseableHttpClient
 name|httpClient
 decl_stmt|;
+specifier|public
 name|HttpClientHandler
 parameter_list|()
 block|{
