@@ -57,7 +57,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileSystemException
 import|;
@@ -71,7 +71,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|impl
 operator|.

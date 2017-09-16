@@ -67,7 +67,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileContent
 import|;
@@ -81,7 +81,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileObject
 import|;
@@ -95,7 +95,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileSystemException
 import|;
@@ -109,7 +109,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileSystemManager
 import|;
@@ -123,7 +123,7 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|vfs
+name|vfs2
 operator|.
 name|FileType
 import|;
