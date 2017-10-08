@@ -2045,20 +2045,16 @@ operator|==
 literal|null
 operator|&&
 operator|(
-operator|(
 name|newDefaultConf
 operator|==
 literal|null
-operator|)
 operator|||
-operator|(
 name|newDefaultConf
 operator|.
 name|length
 argument_list|()
 operator|>
 literal|0
-operator|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -2139,12 +2135,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -2171,12 +2162,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -2330,12 +2316,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -2362,12 +2343,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -3021,6 +2997,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+literal|"defaultconf"
+operator|.
+name|equals
+argument_list|(
+name|attName
+argument_list|)
+operator|||
 literal|"defaultconfmapping"
 operator|.
 name|equals
@@ -3042,7 +3025,7 @@ name|attributes
 operator|.
 name|getValue
 argument_list|(
-literal|"defaultconfmapping"
+name|attName
 argument_list|)
 argument_list|)
 argument_list|,
@@ -3063,12 +3046,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -3085,12 +3063,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -3126,25 +3099,38 @@ literal|"defaultconf"
 argument_list|)
 operator|==
 literal|null
-operator|&&
-operator|!
-name|confs
-operator|.
-name|contains
+condition|)
+block|{
+name|String
+name|newConf
+init|=
+name|removeConfigurationsFromMapping
 argument_list|(
 name|defaultConf
+argument_list|,
+name|confs
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|newConf
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|write
 argument_list|(
 literal|" defaultconf=\""
 operator|+
-name|defaultConf
+name|newConf
 operator|+
 literal|"\""
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// add default conf mapping if needed
 if|if
@@ -3309,12 +3295,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -3331,12 +3312,7 @@ name|write
 argument_list|(
 literal|" "
 operator|+
-name|attributes
-operator|.
-name|getQName
-argument_list|(
-name|i
-argument_list|)
+name|attName
 operator|+
 literal|"=\""
 operator|+
@@ -6167,6 +6143,24 @@ argument_list|)
 expr_stmt|;
 block|}
 name|String
+name|newConf
+init|=
+operator|(
+name|defaultConf
+operator|==
+literal|null
+operator|)
+condition|?
+literal|""
+else|:
+name|removeConfigurationsFromMapping
+argument_list|(
+name|defaultConf
+argument_list|,
+name|confs
+argument_list|)
+decl_stmt|;
+name|String
 name|newMapping
 init|=
 operator|(
@@ -6197,22 +6191,17 @@ argument_list|,
 name|itemName
 argument_list|,
 operator|(
-name|defaultConf
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|confs
+name|newConf
 operator|.
-name|contains
-argument_list|(
-name|defaultConf
-argument_list|)
+name|length
+argument_list|()
+operator|>
+literal|0
 operator|)
 condition|?
 literal|" defaultconf=\""
 operator|+
-name|defaultConf
+name|newConf
 operator|+
 literal|"\""
 else|:
