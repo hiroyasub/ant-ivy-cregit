@@ -84,7 +84,6 @@ specifier|public
 interface|interface
 name|DownloadListener
 block|{
-specifier|public
 name|void
 name|needArtifact
 parameter_list|(
@@ -95,7 +94,6 @@ name|Artifact
 name|artifact
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|startArtifactDownload
 parameter_list|(
@@ -112,7 +110,6 @@ name|ArtifactOrigin
 name|origin
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|endArtifactDownload
 parameter_list|(

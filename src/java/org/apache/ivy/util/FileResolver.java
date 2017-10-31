@@ -30,9 +30,6 @@ specifier|public
 interface|interface
 name|FileResolver
 block|{
-specifier|public
-specifier|static
-specifier|final
 name|FileResolver
 name|DEFAULT
 init|=

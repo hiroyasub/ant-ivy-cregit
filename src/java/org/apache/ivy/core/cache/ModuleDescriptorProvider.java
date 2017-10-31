@@ -85,7 +85,6 @@ begin_interface
 interface|interface
 name|ModuleDescriptorProvider
 block|{
-specifier|public
 name|ModuleDescriptor
 name|provideModule
 parameter_list|(

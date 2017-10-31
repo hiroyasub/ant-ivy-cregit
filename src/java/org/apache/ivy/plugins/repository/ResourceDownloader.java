@@ -64,7 +64,6 @@ specifier|public
 interface|interface
 name|ResourceDownloader
 block|{
-specifier|public
 name|void
 name|download
 parameter_list|(

@@ -88,7 +88,6 @@ specifier|public
 interface|interface
 name|ModuleDescriptorWriter
 block|{
-specifier|public
 name|void
 name|write
 parameter_list|(

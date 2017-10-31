@@ -262,17 +262,11 @@ name|ArtifactInfo
 extends|,
 name|DependencyDescriptorMediator
 block|{
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|DEFAULT_CONFIGURATION
 init|=
 literal|"default"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|CALLER_ALL_CONFIGURATION
 init|=
@@ -454,14 +448,12 @@ name|artifactId
 parameter_list|)
 function_decl|;
 comment|/**      * Module Descriptor exclude rules are used to exclude (usually transitive) dependencies for the      * whole module.      *      * @return an array of all {@link ExcludeRule} this module descriptor currently holds.      */
-specifier|public
 name|ExcludeRule
 index|[]
 name|getAllExcludeRules
 parameter_list|()
 function_decl|;
 comment|/**      * @return all the {@link DependencyDescriptorMediator}s used by this      * {@link ModuleDescriptor}, as an instance of {@link ModuleRules}.      */
-specifier|public
 name|ModuleRules
 argument_list|<
 name|DependencyDescriptorMediator

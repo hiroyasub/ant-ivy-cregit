@@ -1278,7 +1278,6 @@ name|metadata
 operator|.
 name|openStream
 argument_list|()
-init|;
 init|)
 block|{
 specifier|final

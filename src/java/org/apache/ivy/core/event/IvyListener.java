@@ -34,7 +34,6 @@ name|IvyListener
 extends|extends
 name|EventListener
 block|{
-specifier|public
 name|void
 name|progress
 parameter_list|(

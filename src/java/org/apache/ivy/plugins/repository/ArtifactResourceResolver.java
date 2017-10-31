@@ -62,7 +62,6 @@ specifier|public
 interface|interface
 name|ArtifactResourceResolver
 block|{
-specifier|public
 name|ResolvedResource
 name|resolve
 parameter_list|(

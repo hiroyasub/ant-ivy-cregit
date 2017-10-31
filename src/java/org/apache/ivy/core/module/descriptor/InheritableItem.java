@@ -47,7 +47,6 @@ interface|interface
 name|InheritableItem
 block|{
 comment|/**      * @return the module in which this item was actually defined, if different from the module in      *         which the item appears. May be null.      */
-specifier|public
 name|ModuleRevisionId
 name|getSourceModule
 parameter_list|()

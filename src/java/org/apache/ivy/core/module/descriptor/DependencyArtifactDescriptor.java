@@ -57,37 +57,31 @@ extends|extends
 name|ExtendableItem
 block|{
 comment|/**      * @return the dependency descriptor in which this dependency artifact descriptor is declared.      */
-specifier|public
 name|DependencyDescriptor
 name|getDependencyDescriptor
 parameter_list|()
 function_decl|;
 comment|/**      * @return the name of the artifact asked      */
-specifier|public
 name|String
 name|getName
 parameter_list|()
 function_decl|;
 comment|/**      * @return the type of the artifact asked      */
-specifier|public
 name|String
 name|getType
 parameter_list|()
 function_decl|;
 comment|/**      * @return the ext of the artifact asked      */
-specifier|public
 name|String
 name|getExt
 parameter_list|()
 function_decl|;
 comment|/**      * @return the url to look this artifact up at      */
-specifier|public
 name|URL
 name|getUrl
 parameter_list|()
 function_decl|;
 comment|/**      * @return an array of configuration names of the module in which the artifact is asked      */
-specifier|public
 name|String
 index|[]
 name|getConfigurations

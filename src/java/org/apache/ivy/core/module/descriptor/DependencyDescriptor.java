@@ -266,7 +266,6 @@ name|artifactId
 parameter_list|)
 function_decl|;
 comment|/**      * @return true if this descriptor contains any exclusion rule      */
-specifier|public
 name|boolean
 name|canExclude
 parameter_list|()

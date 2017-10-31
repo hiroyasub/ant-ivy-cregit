@@ -28,7 +28,6 @@ name|IvyVariableContainer
 extends|extends
 name|Cloneable
 block|{
-specifier|public
 name|void
 name|setVariable
 parameter_list|(
@@ -42,7 +41,6 @@ name|boolean
 name|overwrite
 parameter_list|)
 function_decl|;
-specifier|public
 name|String
 name|getVariable
 parameter_list|(
@@ -51,7 +49,6 @@ name|name
 parameter_list|)
 function_decl|;
 comment|/**      * Specifies the prefix used to indicate a variable is an environment variable. If the prefix      * doesn't end with a '.', it will be added automatically.      *      * @param prefix      *            the prefix to use for the environment variables      */
-specifier|public
 name|void
 name|setEnvironmentPrefix
 parameter_list|(
@@ -59,7 +56,6 @@ name|String
 name|prefix
 parameter_list|)
 function_decl|;
-specifier|public
 name|Object
 name|clone
 parameter_list|()

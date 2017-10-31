@@ -40,7 +40,6 @@ specifier|public
 interface|interface
 name|DependencyAnalyser
 block|{
-specifier|public
 name|ModuleDescriptor
 index|[]
 name|analyze

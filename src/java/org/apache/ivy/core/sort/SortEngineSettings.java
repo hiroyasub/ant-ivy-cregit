@@ -58,12 +58,10 @@ specifier|public
 interface|interface
 name|SortEngineSettings
 block|{
-specifier|public
 name|CircularDependencyStrategy
 name|getCircularDependencyStrategy
 parameter_list|()
 function_decl|;
-specifier|public
 name|VersionMatcher
 name|getVersionMatcher
 parameter_list|()

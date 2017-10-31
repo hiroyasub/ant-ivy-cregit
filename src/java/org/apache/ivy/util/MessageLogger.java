@@ -35,8 +35,6 @@ interface|interface
 name|MessageLogger
 block|{
 comment|/**      * Logs a message at the given level.      *<p>      *<code>level</code> constants are defined in the {@link Message} class.      *</p>      *      * @param msg      *            the message to log      * @param level      *            the level at which the message should be logged.      * @see Message#MSG_DEBUG      * @see Message#MSG_VERBOSE      * @see Message#MSG_INFO      * @see Message#MSG_WARN      * @see Message#MSG_ERR      */
-specifier|public
-specifier|abstract
 name|void
 name|log
 parameter_list|(
@@ -48,8 +46,6 @@ name|level
 parameter_list|)
 function_decl|;
 comment|/**      * Same as {@link #log(String, int)}, but without adding any contextual information to the      * message.      *      * @param msg      *            the message to log      * @param level      *            the level at which the message should be logged.      */
-specifier|public
-specifier|abstract
 name|void
 name|rawlog
 parameter_list|(
@@ -60,8 +56,6 @@ name|int
 name|level
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|debug
 parameter_list|(
@@ -69,8 +63,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|verbose
 parameter_list|(
@@ -78,8 +70,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|deprecated
 parameter_list|(
@@ -87,8 +77,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|info
 parameter_list|(
@@ -96,8 +84,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|rawinfo
 parameter_list|(
@@ -105,8 +91,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|warn
 parameter_list|(
@@ -114,8 +98,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|error
 parameter_list|(
@@ -123,8 +105,6 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|List
 argument_list|<
 name|String
@@ -132,8 +112,6 @@ argument_list|>
 name|getProblems
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|List
 argument_list|<
 name|String
@@ -141,8 +119,6 @@ argument_list|>
 name|getWarns
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|List
 argument_list|<
 name|String
@@ -151,33 +127,23 @@ name|getErrors
 parameter_list|()
 function_decl|;
 comment|/**      * Clears the list of problems, warns and errors.      */
-specifier|public
-specifier|abstract
 name|void
 name|clearProblems
 parameter_list|()
 function_decl|;
 comment|/**      * Sumup all problems encountered so far, and clear them.      */
-specifier|public
-specifier|abstract
 name|void
 name|sumupProblems
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|progress
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|endProgress
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|endProgress
 parameter_list|(
@@ -185,14 +151,10 @@ name|String
 name|msg
 parameter_list|)
 function_decl|;
-specifier|public
-specifier|abstract
 name|boolean
 name|isShowProgress
 parameter_list|()
 function_decl|;
-specifier|public
-specifier|abstract
 name|void
 name|setShowProgress
 parameter_list|(

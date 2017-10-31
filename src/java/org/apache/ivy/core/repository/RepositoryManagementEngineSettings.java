@@ -40,7 +40,6 @@ name|RepositoryManagementEngineSettings
 extends|extends
 name|ResolveEngineSettings
 block|{
-specifier|public
 name|boolean
 name|dumpMemoryUsage
 parameter_list|()

@@ -39,7 +39,6 @@ extends|extends
 name|Resource
 block|{
 comment|/**      * @return the local file of this resource.      * @throws IllegalStateException      *             when {@link #isLocal()} returns<code>false</code>      */
-specifier|public
 name|File
 name|getFile
 parameter_list|()

@@ -40,7 +40,6 @@ specifier|public
 interface|interface
 name|NamespaceTransformer
 block|{
-specifier|public
 name|ModuleRevisionId
 name|transform
 parameter_list|(
@@ -48,7 +47,6 @@ name|ModuleRevisionId
 name|mrid
 parameter_list|)
 function_decl|;
-specifier|public
 name|boolean
 name|isIdentity
 parameter_list|()

@@ -40,12 +40,10 @@ specifier|public
 interface|interface
 name|HasLatestStrategy
 block|{
-specifier|public
 name|LatestStrategy
 name|getLatestStrategy
 parameter_list|()
 function_decl|;
-specifier|public
 name|void
 name|setLatestStrategy
 parameter_list|(
@@ -53,7 +51,6 @@ name|LatestStrategy
 name|latestStrategy
 parameter_list|)
 function_decl|;
-specifier|public
 name|String
 name|getLatest
 parameter_list|()
