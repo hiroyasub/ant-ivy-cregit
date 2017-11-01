@@ -1290,7 +1290,7 @@ argument_list|()
 decl_stmt|;
 specifier|final
 name|StringBuffer
-name|buildNumer
+name|buildNumber
 init|=
 operator|new
 name|StringBuffer
@@ -1357,7 +1357,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|buildNumer
+name|buildNumber
 operator|.
 name|append
 argument_list|(
@@ -1430,7 +1430,7 @@ argument_list|()
 operator|+
 literal|"-"
 operator|+
-name|buildNumer
+name|buildNumber
 operator|.
 name|toString
 argument_list|()
