@@ -256,23 +256,6 @@ argument_list|()
 decl_stmt|;
 do|do
 block|{
-synchronized|synchronized
-init|(
-name|currentLockHolders
-init|)
-block|{
-if|if
-condition|(
-name|isDebugLocking
-argument_list|()
-condition|)
-block|{
-name|debugLocking
-argument_list|(
-literal|"entered synchronized area (locking)"
-argument_list|)
-expr_stmt|;
-block|}
 name|int
 name|lockCount
 init|=
@@ -438,7 +421,6 @@ literal|true
 return|;
 block|}
 block|}
-block|}
 if|if
 condition|(
 name|isDebugLocking
@@ -505,23 +487,6 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-synchronized|synchronized
-init|(
-name|currentLockHolders
-init|)
-block|{
-if|if
-condition|(
-name|isDebugLocking
-argument_list|()
-condition|)
-block|{
-name|debugLocking
-argument_list|(
-literal|"entered synchronized area (unlocking)"
-argument_list|)
-expr_stmt|;
-block|}
 name|int
 name|holdLocks
 init|=
@@ -580,7 +545,6 @@ operator|+
 name|holdLocks
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
