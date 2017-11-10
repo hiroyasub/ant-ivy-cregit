@@ -71,18 +71,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -680,11 +668,12 @@ operator|+
 literal|"NONE"
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
-else|else
-block|{
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|MapMatcher
@@ -728,7 +717,6 @@ operator|+
 name|rule
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Returns an unmodifiable view of all the rules defined on this ModuleRules.      *<p>      * The rules are returned in a Map where they keys are the MapMatchers matching the rules      * object, and the values are the rules object themselves.      *</p>      *      * @return an unmodifiable view of all the rules defined on this ModuleRules.      */

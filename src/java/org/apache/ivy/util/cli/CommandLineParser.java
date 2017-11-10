@@ -99,18 +99,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -535,6 +523,8 @@ block|}
 comment|// print options help
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|String

@@ -99,18 +99,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -532,6 +520,8 @@ block|{
 comment|// search again, now ignore the missing extra attributes
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|ModuleRevisionId
@@ -679,6 +669,8 @@ name|map1
 decl_stmt|;
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|K
@@ -1128,6 +1120,8 @@ parameter_list|)
 block|{
 name|Iterator
 argument_list|<
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|ModuleRevisionId
@@ -1153,6 +1147,8 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|ModuleRevisionId
@@ -1222,7 +1218,7 @@ argument_list|(
 name|mrid
 argument_list|)
 decl_stmt|;
-comment|/*         if (node == null) {             // search again, now ignore the extra attributes             // TODO: maybe we should search the node that has at least the same attributes as mrid             for (Entry<ModuleRevisionId, VisitData> entry : visitData.entrySet()) {                 ModuleRevisionId current = entry.getKey();                 if (current.getModuleId().equals(mrid.getModuleId())&& current.getRevision().equals(mrid.getRevision())) {                     VisitData data = entry.getValue();                     node = data.getNode();                     break;                 }             }         }         */
+comment|/*         if (node == null) {             // search again, now ignore the extra attributes             // TODO: maybe we should search the node that has at least the same attributes as mrid             for (Map.Entry<ModuleRevisionId, VisitData> entry : visitData.entrySet()) {                 ModuleRevisionId current = entry.getKey();                 if (current.getModuleId().equals(mrid.getModuleId())&& current.getRevision().equals(mrid.getRevision())) {                     VisitData data = entry.getValue();                     node = data.getNode();                     break;                 }             }         }         */
 return|return
 name|node
 operator|!=

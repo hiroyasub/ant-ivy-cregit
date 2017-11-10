@@ -57,18 +57,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|WeakHashMap
 import|;
 end_import
@@ -1369,6 +1357,8 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|String

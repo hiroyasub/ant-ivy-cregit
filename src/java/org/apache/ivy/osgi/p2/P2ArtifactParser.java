@@ -119,18 +119,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -448,6 +436,8 @@ parameter_list|)
 block|{
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|String
@@ -1015,6 +1005,8 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|OSGiFilter

@@ -143,18 +143,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Set
 import|;
 end_import
@@ -1672,6 +1660,8 @@ expr_stmt|;
 comment|// for each declared published artifact in this descriptor, do:
 for|for
 control|(
+name|Map
+operator|.
 name|Entry
 argument_list|<
 name|Artifact
