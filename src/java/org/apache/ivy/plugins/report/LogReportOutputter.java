@@ -708,11 +708,11 @@ name|sep
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|line
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"\t"
 argument_list|)
@@ -771,7 +771,7 @@ expr_stmt|;
 name|line
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"\t"
 argument_list|)
@@ -1089,11 +1089,11 @@ name|ConfigurationResolveReport
 name|report
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|line
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"\t"
 argument_list|)
@@ -1251,7 +1251,7 @@ specifier|private
 name|void
 name|append
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|line
 parameter_list|,
 name|Object

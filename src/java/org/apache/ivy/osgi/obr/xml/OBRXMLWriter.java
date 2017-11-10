@@ -1683,11 +1683,11 @@ name|BundleRequirement
 name|requirement
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|filter
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|VersionRange
@@ -1781,7 +1781,7 @@ specifier|static
 name|void
 name|appendVersion
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|filter
 parameter_list|,
 name|VersionRange

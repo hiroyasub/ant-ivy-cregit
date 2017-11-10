@@ -1769,9 +1769,11 @@ name|getDefaultConf
 parameter_list|()
 block|{
 return|return
+operator|(
 name|defaultConf
 operator|!=
 literal|null
+operator|)
 condition|?
 name|defaultConf
 else|:
@@ -1779,11 +1781,11 @@ operator|(
 name|defaultConfMapping
 operator|!=
 literal|null
+operator|)
 condition|?
 name|defaultConfMapping
 else|:
 name|DEFAULT_CONF_MAPPING
-operator|)
 return|;
 block|}
 specifier|protected

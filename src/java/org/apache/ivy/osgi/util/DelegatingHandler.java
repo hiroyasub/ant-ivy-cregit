@@ -238,11 +238,11 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|charBuffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 specifier|private

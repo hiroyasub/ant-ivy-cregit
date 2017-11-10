@@ -1599,7 +1599,7 @@ init|=
 literal|false
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|buffer
 decl_stmt|;
 specifier|private
@@ -2160,7 +2160,7 @@ expr_stmt|;
 name|buffer
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 block|}
@@ -2223,7 +2223,7 @@ block|{
 name|buffer
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 name|state
@@ -8274,7 +8274,7 @@ name|artifactsDeclared
 expr_stmt|;
 block|}
 specifier|protected
-name|StringBuffer
+name|StringBuilder
 name|getBuffer
 parameter_list|()
 block|{
@@ -8286,7 +8286,7 @@ specifier|protected
 name|void
 name|setBuffer
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|buffer
 parameter_list|)
 block|{

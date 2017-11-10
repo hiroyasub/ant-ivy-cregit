@@ -393,11 +393,11 @@ init|=
 literal|0
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 comment|/**      * Constructs a new AntMessageImpl instance.      *      * @param task      *            the ant project component this message implementation should use for logging. Must      *            not be<code>null</code>.      */

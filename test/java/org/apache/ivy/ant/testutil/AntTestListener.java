@@ -61,11 +61,11 @@ name|int
 name|logLevel
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|buildLog
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 comment|/**      * Constructs a test listener which will ignore log events above the given level.      *      * @param logLevel      *            ditto      */
