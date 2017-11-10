@@ -1256,14 +1256,7 @@ condition|(
 name|obj
 operator|==
 literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|obj

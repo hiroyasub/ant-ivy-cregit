@@ -219,6 +219,22 @@ name|FileNameMapper
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * This task allow to retrieve dependencies from the cache to a local directory like a lib dir.  */
 end_comment
@@ -477,7 +493,7 @@ name|retrieveOptions
 operator|.
 name|setConfs
 argument_list|(
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|getConf
 argument_list|()

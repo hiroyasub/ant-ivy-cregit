@@ -364,11 +364,9 @@ if|if
 condition|(
 name|canUseSchemaValidation
 operator|&&
-operator|(
 name|schema
 operator|!=
 literal|null
-operator|)
 condition|)
 block|{
 try|try

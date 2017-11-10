@@ -247,14 +247,7 @@ condition|(
 name|obj
 operator|==
 literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|obj
@@ -303,14 +296,7 @@ operator|.
 name|subFilters
 operator|==
 literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|else if
-condition|(
+operator|||
 name|subFilters
 operator|.
 name|size
@@ -322,14 +308,7 @@ name|subFilters
 operator|.
 name|size
 argument_list|()
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|else if
-condition|(
+operator|||
 operator|!
 name|subFilters
 operator|.

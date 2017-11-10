@@ -155,6 +155,22 @@ name|VersionRange
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * Provides an OSGi manifest parser.  *  */
 end_comment
@@ -868,11 +884,9 @@ control|(
 name|String
 name|use
 range|:
-name|uses
-operator|.
-name|split
+name|splitToArray
 argument_list|(
-literal|","
+name|uses
 argument_list|)
 control|)
 block|{
@@ -881,9 +895,6 @@ operator|.
 name|addUse
 argument_list|(
 name|use
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

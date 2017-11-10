@@ -15,6 +15,22 @@ name|util
 package|;
 end_package
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_comment
 comment|/**  *  */
 end_comment
@@ -131,18 +147,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|realm
-operator|==
-literal|null
-operator|||
-literal|""
-operator|.
-name|equals
+name|isNullOrEmpty
 argument_list|(
 name|realm
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -150,8 +157,6 @@ return|return
 name|host
 return|;
 block|}
-else|else
-block|{
 return|return
 name|realm
 operator|+
@@ -159,7 +164,6 @@ literal|"@"
 operator|+
 name|host
 return|;
-block|}
 block|}
 comment|/**      * Return a string that can be used for debug purpose. It contains only stars for each password      * character.      *      * @return String      */
 specifier|public

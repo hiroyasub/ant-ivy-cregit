@@ -271,6 +271,38 @@ name|Property
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * Trigger the delivery of a module, which may consist in a recursive delivery of dependencies and  * on the replacement in the ivy file of dynamic revisions (like latest.integration) by static ones.  */
 end_comment
@@ -824,24 +856,17 @@ name|String
 name|depStatus
 parameter_list|)
 block|{
-comment|// call deliver target if any
 if|if
 condition|(
+name|isNullOrEmpty
+argument_list|(
 name|deliverTarget
-operator|!=
-literal|null
-operator|&&
-name|deliverTarget
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
+argument_list|)
 condition|)
 block|{
+return|return;
+block|}
+comment|// call deliver target if any
 name|CallTarget
 name|ct
 init|=
@@ -1078,7 +1103,6 @@ operator|+
 literal|" = true"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private
@@ -1891,25 +1915,16 @@ name|drResolver
 decl_stmt|;
 if|if
 condition|(
+name|isNullOrEmpty
+argument_list|(
 name|deliverTarget
-operator|!=
-literal|null
-operator|&&
-name|deliverTarget
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
+argument_list|)
 condition|)
 block|{
 name|drResolver
 operator|=
 operator|new
-name|DeliverDRResolver
+name|DefaultPublishingDRResolver
 argument_list|()
 expr_stmt|;
 block|}
@@ -1918,7 +1933,7 @@ block|{
 name|drResolver
 operator|=
 operator|new
-name|DefaultPublishingDRResolver
+name|DeliverDRResolver
 argument_list|()
 expr_stmt|;
 block|}
@@ -1941,7 +1956,7 @@ argument_list|)
 argument_list|,
 name|replacedynamicrev
 argument_list|,
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|conf
 argument_list|)
@@ -2021,6 +2036,7 @@ name|BuildException
 argument_list|(
 literal|"impossible to deliver "
 operator|+
+operator|(
 name|mrid
 operator|==
 literal|null
@@ -2028,6 +2044,7 @@ condition|?
 name|resolveId
 else|:
 name|mrid
+operator|)
 operator|+
 literal|": "
 operator|+

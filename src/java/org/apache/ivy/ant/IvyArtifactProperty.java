@@ -119,6 +119,22 @@ name|BuildException
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * Set a set of ant properties according to the last artifact resolved  */
 end_comment
@@ -268,7 +284,7 @@ control|(
 name|String
 name|conf
 range|:
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|getConf
 argument_list|()

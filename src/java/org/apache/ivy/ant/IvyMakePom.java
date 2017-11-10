@@ -229,6 +229,22 @@ name|Project
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * Convert an ivy file to a pom  */
 end_comment
@@ -1029,7 +1045,7 @@ name|options
 operator|.
 name|setConfs
 argument_list|(
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|conf
 argument_list|)
@@ -1156,7 +1172,7 @@ control|(
 name|String
 name|mappingConf
 range|:
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|mapping
 operator|.

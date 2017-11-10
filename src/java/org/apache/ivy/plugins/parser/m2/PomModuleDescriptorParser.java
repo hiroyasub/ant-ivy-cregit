@@ -2549,8 +2549,6 @@ return|return
 literal|null
 return|;
 block|}
-else|else
-block|{
 name|dd
 operator|=
 name|toSystem
@@ -2573,7 +2571,6 @@ argument_list|,
 name|data
 argument_list|)
 return|;
-block|}
 block|}
 specifier|private
 name|ParseException

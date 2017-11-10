@@ -657,10 +657,7 @@ name|size
 argument_list|()
 operator|==
 literal|0
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|project
 operator|.
 name|getDefaultTarget
@@ -679,7 +676,6 @@ name|getDefaultTarget
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|project
 operator|.

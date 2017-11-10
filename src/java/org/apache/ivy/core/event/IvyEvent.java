@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
 name|apache
@@ -116,6 +116,8 @@ operator|.
 name|util
 operator|.
 name|StringUtils
+operator|.
+name|joinArray
 import|;
 end_import
 
@@ -310,9 +312,7 @@ name|addAttribute
 argument_list|(
 literal|"conf"
 argument_list|,
-name|StringUtils
-operator|.
-name|join
+name|joinArray
 argument_list|(
 name|confs
 argument_list|,

@@ -537,11 +537,9 @@ throw|;
 block|}
 if|if
 condition|(
-operator|(
 name|otherRef
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|OVERRIDE_FALSE
 operator|.

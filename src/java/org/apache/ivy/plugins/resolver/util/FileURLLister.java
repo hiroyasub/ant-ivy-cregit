@@ -206,9 +206,11 @@ block|}
 name|File
 name|file
 init|=
+operator|(
 name|basedir
 operator|==
 literal|null
+operator|)
 condition|?
 operator|new
 name|File

@@ -249,6 +249,22 @@ name|DynamicAttribute
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * This task allow to publish a module revision to an Ivy repository.  */
 end_comment
@@ -1426,7 +1442,7 @@ argument_list|)
 operator|.
 name|setConfs
 argument_list|(
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|conf
 argument_list|)

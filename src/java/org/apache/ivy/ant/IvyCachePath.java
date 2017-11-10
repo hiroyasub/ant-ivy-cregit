@@ -227,10 +227,18 @@ block|{
 if|if
 condition|(
 name|id
-operator|!=
+operator|==
 literal|null
 condition|)
 block|{
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"pathid is required in ivy classpath"
+argument_list|)
+throw|;
+block|}
 name|pathid
 operator|=
 name|id
@@ -244,17 +252,6 @@ operator|.
 name|MSG_WARN
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|BuildException
-argument_list|(
-literal|"pathid is required in ivy classpath"
-argument_list|)
-throw|;
-block|}
 block|}
 try|try
 block|{

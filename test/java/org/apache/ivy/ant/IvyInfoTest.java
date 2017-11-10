@@ -462,7 +462,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|assertTrue
+name|assertNull
 argument_list|(
 name|info
 operator|.
@@ -473,8 +473,6 @@ name|getProperty
 argument_list|(
 literal|"ivy.extra.branch"
 argument_list|)
-operator|==
-literal|null
 argument_list|)
 expr_stmt|;
 block|}

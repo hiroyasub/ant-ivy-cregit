@@ -341,6 +341,22 @@ name|Project
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * This task allow to call the Ivy dependency resolution from ant.  */
 end_comment
@@ -1006,7 +1022,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|conf
 argument_list|)

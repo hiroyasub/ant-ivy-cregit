@@ -75,7 +75,7 @@ parameter_list|)
 block|{
 name|StringUtils
 operator|.
-name|assertNotNullNotEmpty
+name|assertNotNullNorEmpty
 argument_list|(
 name|name
 argument_list|,
@@ -100,7 +100,7 @@ parameter_list|)
 block|{
 name|StringUtils
 operator|.
-name|assertNotNullNotEmpty
+name|assertNotNullNorEmpty
 argument_list|(
 name|name
 argument_list|,

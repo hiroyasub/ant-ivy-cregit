@@ -378,18 +378,15 @@ try|try
 block|{
 if|if
 condition|(
-operator|(
 name|resourceImpl
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|resourceImpl
 operator|.
 name|exists
 argument_list|()
 operator|&&
-operator|(
 name|resourceImpl
 operator|.
 name|getType
@@ -398,7 +395,6 @@ operator|==
 name|FileType
 operator|.
 name|FOLDER
-operator|)
 condition|)
 block|{
 for|for

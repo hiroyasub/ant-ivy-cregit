@@ -393,6 +393,22 @@ name|AttributesImpl
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_comment
 comment|/**  * Generates a report of all artifacts involved during the last resolve.  */
 end_comment
@@ -499,7 +515,7 @@ name|String
 index|[]
 name|confs
 init|=
-name|splitConfs
+name|splitToArray
 argument_list|(
 name|getConf
 argument_list|()
@@ -514,20 +530,9 @@ if|if
 condition|(
 name|getResolveId
 argument_list|()
-operator|!=
+operator|==
 literal|null
 condition|)
-block|{
-name|md
-operator|=
-name|getResolvedDescriptor
-argument_list|(
-name|getResolveId
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|md
 operator|=
@@ -540,6 +545,17 @@ name|getModule
 argument_list|()
 argument_list|,
 literal|false
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|md
+operator|=
+name|getResolvedDescriptor
+argument_list|(
+name|getResolveId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

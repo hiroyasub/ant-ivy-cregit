@@ -1415,6 +1415,22 @@ name|Properties
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|splitToArray
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -1923,11 +1939,9 @@ control|(
 name|String
 name|file
 range|:
-name|ivyTypeDefs
-operator|.
-name|split
+name|splitToArray
 argument_list|(
-literal|"\\,"
+name|ivyTypeDefs
 argument_list|)
 control|)
 block|{
@@ -1943,9 +1957,6 @@ operator|.
 name|checkAbsolute
 argument_list|(
 name|file
-operator|.
-name|trim
-argument_list|()
 argument_list|,
 literal|"ivy.typedef.files"
 argument_list|)
@@ -1968,9 +1979,6 @@ argument_list|(
 literal|"typedefs file not found: "
 operator|+
 name|file
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1987,9 +1995,6 @@ argument_list|(
 literal|"problem with typedef file: "
 operator|+
 name|file
-operator|.
-name|trim
-argument_list|()
 argument_list|,
 name|e
 argument_list|)
@@ -6266,7 +6271,7 @@ argument_list|()
 decl_stmt|;
 name|StringUtils
 operator|.
-name|assertNotNullNotEmpty
+name|assertNotNullNorEmpty
 argument_list|(
 name|name
 argument_list|,

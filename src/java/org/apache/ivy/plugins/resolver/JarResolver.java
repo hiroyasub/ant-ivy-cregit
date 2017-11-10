@@ -402,14 +402,16 @@ argument_list|(
 name|settings
 argument_list|)
 expr_stmt|;
-comment|// let's resolve the url
 if|if
 condition|(
 name|url
-operator|!=
+operator|==
 literal|null
 condition|)
 block|{
+return|return;
+block|}
+comment|// let's resolve the url
 name|ArtifactDownloadReport
 name|report
 decl_stmt|;
@@ -542,7 +544,6 @@ name|getLocalFile
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_class
