@@ -1066,7 +1066,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// propagate the fact that a path with unblacklistable caller has been found
+comment|// propagate the fact that a path with nonblacklistable caller has been found
 return|return
 literal|false
 return|;

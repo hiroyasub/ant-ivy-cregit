@@ -721,7 +721,7 @@ argument_list|)
 condition|)
 block|{
 comment|// we can't determine the revision from the pattern, get it
-comment|// from the moduledescriptor itself
+comment|// from the module descriptor itself
 name|File
 name|temp
 init|=
