@@ -3707,27 +3707,25 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"\t"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"\t%s: bad organisation found in %s: expected='%s' found='%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|": bad organisation found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": expected='"
-operator|+
+argument_list|,
 name|mrid
 operator|.
 name|getOrganisation
 argument_list|()
-operator|+
-literal|"' found='"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3735,8 +3733,7 @@ argument_list|()
 operator|.
 name|getOrganisation
 argument_list|()
-operator|+
-literal|"'"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -3804,27 +3801,25 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"\t"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"\t%s: bad module name found in %s: expected='%s found='%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|": bad module name found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": expected='"
-operator|+
+argument_list|,
 name|mrid
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" found='"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3832,8 +3827,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -3908,27 +3902,25 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"\t"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"\t%s: bad branch name found in %s: expected='%s found='%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|": bad branch name found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": expected='"
-operator|+
+argument_list|,
 name|mrid
 operator|.
 name|getBranch
 argument_list|()
-operator|+
-literal|" found='"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getModuleRevisionId
@@ -3936,8 +3928,7 @@ argument_list|()
 operator|.
 name|getBranch
 argument_list|()
-operator|+
-literal|"'"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -4055,27 +4046,25 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"\t"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"\t%s: bad revision found in %s: expected='%s found='%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|": bad revision found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": expected='"
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getRevision
 argument_list|()
-operator|+
-literal|" found='"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getModuleRevisionId
@@ -4083,8 +4072,7 @@ argument_list|()
 operator|.
 name|getRevision
 argument_list|()
-operator|+
-literal|"'"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -4151,26 +4139,25 @@ name|Message
 operator|.
 name|error
 argument_list|(
-literal|"\t"
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"\t%s: bad status found in %s: '%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|": bad status found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": '"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getStatus
 argument_list|()
-operator|+
-literal|"'"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|errors
@@ -4251,29 +4238,27 @@ block|{
 name|String
 name|errorMsg
 init|=
-literal|"bad "
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"bad %s found in %s: expected='%s' found='%s'"
+argument_list|,
 name|extra
 operator|.
 name|getKey
 argument_list|()
-operator|+
-literal|" found in "
-operator|+
+argument_list|,
 name|ivyRef
 operator|.
 name|getResource
 argument_list|()
-operator|+
-literal|": expected='"
-operator|+
+argument_list|,
 name|extra
 operator|.
 name|getValue
 argument_list|()
-operator|+
-literal|"' found='"
-operator|+
+argument_list|,
 name|md
 operator|.
 name|getExtraAttribute
@@ -4283,8 +4268,7 @@ operator|.
 name|getKey
 argument_list|()
 argument_list|)
-operator|+
-literal|"'"
+argument_list|)
 decl_stmt|;
 name|Message
 operator|.

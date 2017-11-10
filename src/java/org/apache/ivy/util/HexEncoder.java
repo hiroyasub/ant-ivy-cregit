@@ -119,8 +119,6 @@ index|[
 name|highBits
 index|]
 argument_list|)
-expr_stmt|;
-name|chars
 operator|.
 name|append
 argument_list|(
