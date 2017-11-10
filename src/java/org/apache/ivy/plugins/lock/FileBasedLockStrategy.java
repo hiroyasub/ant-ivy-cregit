@@ -139,6 +139,7 @@ decl_stmt|;
 comment|/**      * Lock counter list must be static: locks are implicitly shared to the entire process, so the      * list too much be.      */
 specifier|private
 specifier|static
+specifier|final
 name|ConcurrentMap
 argument_list|<
 name|File
