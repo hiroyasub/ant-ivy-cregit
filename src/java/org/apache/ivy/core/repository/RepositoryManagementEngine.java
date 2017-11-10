@@ -643,7 +643,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"\nrepository loaded: %d modules; %d revisions; %s%ss"
+literal|"%nrepository loaded: %d modules; %d revisions; %s%ss"
 argument_list|,
 name|modules
 operator|.
