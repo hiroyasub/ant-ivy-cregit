@@ -147,6 +147,22 @@ name|Message
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_comment
 comment|/**  * A trigger performing logging.  *<p>  * The implementation is widely inspired by Ant Echo task.  *</p>  */
 end_comment
@@ -191,8 +207,6 @@ comment|/** encoding; set to null or empty means 'default' */
 specifier|private
 name|String
 name|encoding
-init|=
-literal|""
 decl_stmt|;
 specifier|public
 name|void
@@ -268,16 +282,10 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|isNullOrEmpty
+argument_list|(
 name|encoding
-operator|==
-literal|null
-operator|||
-name|encoding
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
+argument_list|)
 condition|)
 block|{
 name|out

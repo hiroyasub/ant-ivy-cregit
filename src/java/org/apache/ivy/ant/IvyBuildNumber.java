@@ -295,6 +295,22 @@ name|BuildException
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_comment
 comment|/**  * Look for the latest module in the repository matching the given criteria, and sets a set of  * properties according to what was found.  */
 end_comment
@@ -657,16 +673,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|isNullOrEmpty
+argument_list|(
 name|revision
-operator|==
-literal|null
-operator|||
-name|revision
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
+argument_list|)
 condition|)
 block|{
 name|revision
@@ -700,12 +710,11 @@ argument_list|(
 literal|"."
 argument_list|)
 operator|&&
+operator|!
 name|prefix
 operator|.
-name|length
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|prefix
@@ -1748,10 +1757,12 @@ block|}
 name|int
 name|startNumberIndex
 init|=
+operator|(
 name|endNumberIndex
 operator|==
 operator|-
 literal|1
+operator|)
 condition|?
 operator|-
 literal|1

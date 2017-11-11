@@ -861,12 +861,11 @@ name|ret
 operator|==
 literal|null
 operator|&&
+operator|!
 name|pack
 operator|.
-name|length
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 if|if

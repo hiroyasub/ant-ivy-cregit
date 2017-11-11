@@ -845,6 +845,22 @@ name|PropertiesFile
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -1897,16 +1913,10 @@ name|groupNumber
 argument_list|)
 decl_stmt|;
 return|return
+name|isNullOrEmpty
+argument_list|(
 name|g
-operator|==
-literal|null
-operator|||
-name|g
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
+argument_list|)
 condition|?
 literal|0
 else|:

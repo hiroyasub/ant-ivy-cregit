@@ -27,6 +27,22 @@ name|ParseException
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_comment
 comment|/**  * Provides version range support.  */
 end_comment
@@ -63,16 +79,10 @@ name|ParseException
 block|{
 if|if
 condition|(
+name|isNullOrEmpty
+argument_list|(
 name|versionStr
-operator|==
-literal|null
-operator|||
-name|versionStr
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
+argument_list|)
 condition|)
 block|{
 name|startExclusive

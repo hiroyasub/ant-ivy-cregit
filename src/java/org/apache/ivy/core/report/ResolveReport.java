@@ -1056,10 +1056,8 @@ if|if
 condition|(
 name|errMsg
 operator|.
-name|length
+name|isEmpty
 argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|ret
@@ -1072,10 +1070,6 @@ name|unresolved
 operator|.
 name|getId
 argument_list|()
-operator|+
-literal|": "
-operator|+
-name|errMsg
 argument_list|)
 expr_stmt|;
 block|}
@@ -1091,6 +1085,10 @@ name|unresolved
 operator|.
 name|getId
 argument_list|()
+operator|+
+literal|": "
+operator|+
+name|errMsg
 argument_list|)
 expr_stmt|;
 block|}

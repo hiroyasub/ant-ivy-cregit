@@ -383,6 +383,22 @@ name|ConfigurationUtils
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|util
+operator|.
+name|StringUtils
+operator|.
+name|isNullOrEmpty
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|final
@@ -1165,22 +1181,14 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+operator|!
+name|isNullOrEmpty
+argument_list|(
 name|md
 operator|.
 name|getDescription
 argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|md
-operator|.
-name|getDescription
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
+argument_list|)
 condition|)
 block|{
 name|variables
