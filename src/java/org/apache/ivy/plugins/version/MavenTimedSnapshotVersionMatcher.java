@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * Licensed to the Apache Software Foundation (ASF) under one or more  * contributor license agreements.  See the NOTICE file distributed with  * this work for additional information regarding copyright ownership.  * The ASF licenses this file to You under the Apache License, Version 2.0  * (the "License"); you may not use this file except in compliance with  * the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
+comment|/*  *  Licensed to the Apache Software Foundation (ASF) under one or more  *  contributor license agreements.  See the NOTICE file distributed with  *  this work for additional information regarding copyright ownership.  *  The ASF licenses this file to You under the Apache License, Version 2.0  *  (the "License"); you may not use this file except in compliance with  *  the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an "AS IS" BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *  */
 end_comment
 
 begin_package
@@ -141,7 +141,8 @@ literal|false
 return|;
 block|}
 comment|// we consider only timestamped snapshots as dynamic, since unlike regular snapshots,
-comment|// a timestamped snapshot version of the form x.y.z-<timestamped-part> represents the real x.y.z-SNAPSHOT version
+comment|// a timestamped snapshot version of the form x.y.z-<timestamped-part> represents the real
+comment|// x.y.z-SNAPSHOT version
 specifier|final
 name|Matcher
 name|snapshotPatternMatcher
@@ -217,8 +218,9 @@ return|return
 literal|false
 return|;
 block|}
-comment|// this version matcher only comes into picture if we have been asked to deal with a timestamped snapshot.
-comment|// In other words, if the asked version isn't a timestamped snapshot, then we don't accept it
+comment|// this version matcher only comes into picture if we have been asked to deal with a
+comment|// timestamped snapshot. In other words, if the asked version isn't a timestamped snapshot,
+comment|// then we don't accept it
 if|if
 condition|(
 operator|!
@@ -271,7 +273,7 @@ name|baseRevision
 argument_list|)
 return|;
 block|}
-comment|/**      * Parses the passed {@code revision} and returns a {@link MavenSnapshotRevision}, representing that {@code revision},      * if it is either a regular snapshot (for example: 1.0.2-SNAPSHOT) or a timestamped snapshot (for example: 1.0.2-20100925.223013-19).      * If the passed {@code revision} isn't a snapshot revision, then this method returns null      *      * @param revision The revision to parse      * @return      */
+comment|/**      * Parses the passed {@code revision} and returns a {@link MavenSnapshotRevision}, representing      * that {@code revision}, if it is either a regular snapshot (for example: 1.0.2-SNAPSHOT) or a      * timestamped snapshot (for example: 1.0.2-20100925.223013-19).      * If the passed {@code revision} isn't a snapshot revision, then this method returns null      *      * @param revision The revision to parse      * @return MavenSnapshotRevision      */
 specifier|public
 specifier|static
 name|MavenSnapshotRevision
@@ -381,7 +383,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Represents a Maven 2 snapshot version, which is either a regular snapshot (for example: 1.0.2-SNAPSHOT)      * or a timestamped snapshot (for example: 1.0.2-20100925.223013-19)      */
+comment|/**      * Represents a Maven 2 snapshot version, which is either a regular snapshot      * (for example: 1.0.2-SNAPSHOT) or a timestamped snapshot (for example:      * 1.0.2-20100925.223013-19)      */
 specifier|public
 specifier|static
 specifier|final
@@ -468,7 +470,7 @@ operator|=
 name|baseRevision
 expr_stmt|;
 block|}
-comment|/**          * Returns true if this {@link MavenSnapshotRevision} represents a timestamped snapshot version. Else returns false.          *          * @return          */
+comment|/**          * Returns true if this {@link MavenSnapshotRevision} represents a timestamped snapshot          * version. Else returns false.          *          * @return boolean          */
 specifier|public
 name|boolean
 name|isTimestampedSnapshot
@@ -480,7 +482,7 @@ operator|.
 name|timedsnapshot
 return|;
 block|}
-comment|/**          * Returns the "base" revision that this {@link MavenSnapshotRevision} represents. For example, for the regular snapshot revision          * {@link 1.2.3-SNAPSHOT}, the base revision is {@code 1.2.3}. Similarly for timestamped snapshot version          * {@code 1.0.2-20100925.223013-19}, the base revision is {@link 1.0.2}          *          * @return          */
+comment|/**          * Returns the "base" revision that this {@link MavenSnapshotRevision} represents. For          * example, for the regular snapshot revision {@link 1.2.3-SNAPSHOT}, the base revision          * is {@code 1.2.3}. Similarly for timestamped snapshot version          * {@code 1.0.2-20100925.223013-19}, the base revision is {@link 1.0.2}          *          * @return String          */
 specifier|public
 name|String
 name|getBaseRevision
@@ -492,7 +494,7 @@ operator|.
 name|baseRevision
 return|;
 block|}
-comment|/**          * Returns the complete/whole revision this {@link MavenSnapshotRevision} represents. For example, if this {@link MavenSnapshotRevision}          * represents a regular snapshot {@code 1.3.4-SNAPSHOT} revision then this method returns {@code 1.3.4-SNAPSHOT}. Similarly, if this          * {@link MavenSnapshotRevision} represents a timestamped snapshot {@code 1.0.2-20100925.223013-19} revision, then this method returns          * {@code 1.0.2-20100925.223013-19}          *          * @return          */
+comment|/**          * Returns the complete/whole revision this {@link MavenSnapshotRevision} represents. For          * example, if this {@link MavenSnapshotRevision} represents a regular snapshot          * {@code 1.3.4-SNAPSHOT} revision then this method returns {@code 1.3.4-SNAPSHOT}.          * Similarly, if this {@link MavenSnapshotRevision} represents a timestamped snapshot          * {@code 1.0.2-20100925.223013-19} revision, then this method returns          * {@code 1.0.2-20100925.223013-19}          *          * @return String          */
 specifier|public
 name|String
 name|getRevision

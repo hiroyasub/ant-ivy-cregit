@@ -1350,7 +1350,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|/*              * according to IVY-831, it seems that this actually happen sometime, while the contract              * of DependencyResolver says that it should never return null              */
+comment|/*              * according to IVY-831, it seems that this actually happen sometime, while the              * contract of DependencyResolver says that it should never return null              */
 throw|throw
 operator|new
 name|IllegalStateException
