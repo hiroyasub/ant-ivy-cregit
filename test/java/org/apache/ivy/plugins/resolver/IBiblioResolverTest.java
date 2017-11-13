@@ -795,7 +795,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"https://repo1.maven.org/maven2/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
+literal|"https://repo.maven.apache.org/maven2/[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"
 argument_list|,
 name|l
 operator|.
