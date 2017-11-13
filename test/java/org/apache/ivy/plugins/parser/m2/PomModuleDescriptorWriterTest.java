@@ -241,7 +241,7 @@ block|}
 block|}
 specifier|private
 name|File
-name|_dest
+name|dest
 init|=
 operator|new
 name|File
@@ -289,7 +289,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -297,7 +297,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -316,7 +316,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -405,7 +405,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -413,7 +413,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -432,7 +432,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -521,7 +521,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -529,7 +529,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -548,7 +548,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -637,7 +637,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -645,7 +645,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -664,7 +664,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -753,7 +753,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -761,7 +761,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -780,7 +780,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -869,7 +869,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -877,7 +877,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -896,7 +896,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -985,7 +985,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -993,7 +993,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1012,7 +1012,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1110,7 +1110,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -1118,7 +1118,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1137,7 +1137,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1226,7 +1226,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -1244,7 +1244,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1263,7 +1263,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1352,7 +1352,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -1370,7 +1370,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1389,7 +1389,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1478,7 +1478,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -1496,7 +1496,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1515,7 +1515,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1604,7 +1604,7 @@ name|write
 argument_list|(
 name|md
 argument_list|,
-name|_dest
+name|dest
 argument_list|,
 name|getWriterOptions
 argument_list|()
@@ -1624,7 +1624,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
@@ -1643,7 +1643,7 @@ argument_list|(
 operator|new
 name|FileReader
 argument_list|(
-name|_dest
+name|dest
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1761,13 +1761,13 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
 condition|)
 block|{
-name|_dest
+name|dest
 operator|.
 name|delete
 argument_list|()
@@ -1776,7 +1776,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|_dest
+name|dest
 operator|.
 name|getParentFile
 argument_list|()
@@ -1785,7 +1785,7 @@ name|exists
 argument_list|()
 condition|)
 block|{
-name|_dest
+name|dest
 operator|.
 name|getParentFile
 argument_list|()
@@ -1804,13 +1804,13 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|_dest
+name|dest
 operator|.
 name|exists
 argument_list|()
 condition|)
 block|{
-name|_dest
+name|dest
 operator|.
 name|delete
 argument_list|()

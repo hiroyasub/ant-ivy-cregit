@@ -421,15 +421,15 @@ block|{
 comment|// remote.test
 specifier|private
 name|IvySettings
-name|_settings
+name|settings
 decl_stmt|;
 specifier|private
 name|ResolveEngine
-name|_engine
+name|engine
 decl_stmt|;
 specifier|private
 name|ResolveData
-name|_data
+name|data
 decl_stmt|;
 annotation|@
 name|Before
@@ -438,18 +438,18 @@ name|void
 name|setUp
 parameter_list|()
 block|{
-name|_settings
+name|settings
 operator|=
 operator|new
 name|IvySettings
 argument_list|()
 expr_stmt|;
-name|_engine
+name|engine
 operator|=
 operator|new
 name|ResolveEngine
 argument_list|(
-name|_settings
+name|settings
 argument_list|,
 operator|new
 name|EventManager
@@ -458,16 +458,16 @@ argument_list|,
 operator|new
 name|SortEngine
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_data
+name|data
 operator|=
 operator|new
 name|ResolveData
 argument_list|(
-name|_engine
+name|engine
 argument_list|,
 operator|new
 name|ResolveOptions
@@ -479,7 +479,7 @@ operator|.
 name|createCache
 argument_list|()
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setDefaultCache
 argument_list|(
@@ -516,7 +516,7 @@ operator|new
 name|IBiblioResolver
 argument_list|()
 decl_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -525,7 +525,7 @@ argument_list|,
 literal|"http://www.ibiblio.org/mymaven/"
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -538,7 +538,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|List
@@ -589,7 +589,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -598,7 +598,7 @@ argument_list|,
 literal|"http://www.ibiblio.org/maven/"
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -607,7 +607,7 @@ argument_list|,
 literal|"[module]/jars/[artifact]-[revision].jar"
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -616,7 +616,7 @@ argument_list|,
 literal|"http://www.ibiblio.org/mymaven/"
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|setVariable
 argument_list|(
@@ -625,7 +625,7 @@ argument_list|,
 literal|"[module]/[artifact]-[revision].jar"
 argument_list|)
 expr_stmt|;
-name|_settings
+name|settings
 operator|.
 name|load
 argument_list|(
@@ -645,7 +645,7 @@ init|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -700,7 +700,7 @@ operator|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -751,7 +751,7 @@ operator|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -810,7 +810,7 @@ operator|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -869,7 +869,7 @@ operator|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -928,7 +928,7 @@ operator|=
 operator|(
 name|IBiblioResolver
 operator|)
-name|_settings
+name|settings
 operator|.
 name|getResolver
 argument_list|(
@@ -1019,7 +1019,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|resolver
@@ -1294,7 +1294,7 @@ name|resolver
 operator|.
 name|setSettings
 argument_list|(
-name|_settings
+name|settings
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1359,7 +1359,7 @@ argument_list|,
 literal|false
 argument_list|)
 argument_list|,
-name|_data
+name|data
 argument_list|)
 decl_stmt|;
 name|assertNull

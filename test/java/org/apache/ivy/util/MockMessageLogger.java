@@ -48,7 +48,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|_endProgress
+name|endProgress
 init|=
 operator|new
 name|ArrayList
@@ -61,7 +61,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|_logs
+name|logs
 init|=
 operator|new
 name|ArrayList
@@ -74,7 +74,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|_rawLogs
+name|rawLogs
 init|=
 operator|new
 name|ArrayList
@@ -83,7 +83,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|int
-name|_progressCalls
+name|progressCalls
 decl_stmt|;
 specifier|public
 name|void
@@ -93,7 +93,7 @@ name|String
 name|msg
 parameter_list|)
 block|{
-name|_endProgress
+name|endProgress
 operator|.
 name|add
 argument_list|(
@@ -112,7 +112,7 @@ name|int
 name|level
 parameter_list|)
 block|{
-name|_logs
+name|logs
 operator|.
 name|add
 argument_list|(
@@ -129,7 +129,7 @@ name|void
 name|doProgress
 parameter_list|()
 block|{
-name|_progressCalls
+name|progressCalls
 operator|++
 expr_stmt|;
 block|}
@@ -144,7 +144,7 @@ name|int
 name|level
 parameter_list|)
 block|{
-name|_rawLogs
+name|rawLogs
 operator|.
 name|add
 argument_list|(
@@ -165,7 +165,7 @@ name|getEndProgress
 parameter_list|()
 block|{
 return|return
-name|_endProgress
+name|endProgress
 return|;
 block|}
 specifier|public
@@ -177,7 +177,7 @@ name|getLogs
 parameter_list|()
 block|{
 return|return
-name|_logs
+name|logs
 return|;
 block|}
 specifier|public
@@ -186,7 +186,7 @@ name|getProgressCalls
 parameter_list|()
 block|{
 return|return
-name|_progressCalls
+name|progressCalls
 return|;
 block|}
 specifier|public
@@ -198,7 +198,7 @@ name|getRawLogs
 parameter_list|()
 block|{
 return|return
-name|_rawLogs
+name|rawLogs
 return|;
 block|}
 specifier|public
@@ -211,22 +211,22 @@ operator|.
 name|clearProblems
 argument_list|()
 expr_stmt|;
-name|_logs
+name|logs
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|_rawLogs
+name|rawLogs
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|_endProgress
+name|endProgress
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|_progressCalls
+name|progressCalls
 operator|=
 literal|0
 expr_stmt|;
@@ -244,7 +244,7 @@ control|(
 name|String
 name|log
 range|:
-name|_logs
+name|logs
 control|)
 block|{
 if|if
@@ -272,7 +272,7 @@ literal|"' logs='\n"
 operator|+
 name|join
 argument_list|(
-name|_logs
+name|logs
 argument_list|)
 operator|+
 literal|"'"
@@ -292,7 +292,7 @@ control|(
 name|String
 name|log
 range|:
-name|_logs
+name|logs
 control|)
 block|{
 if|if
@@ -317,7 +317,7 @@ literal|"' logs='\n"
 operator|+
 name|join
 argument_list|(
-name|_logs
+name|logs
 argument_list|)
 operator|+
 literal|"'"

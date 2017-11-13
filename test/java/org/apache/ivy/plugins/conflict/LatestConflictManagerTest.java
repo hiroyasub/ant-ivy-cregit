@@ -220,7 +220,7 @@ name|ivy
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 annotation|@
 name|Before
@@ -251,7 +251,7 @@ literal|"ivysettings-latest.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -259,7 +259,7 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
@@ -276,7 +276,7 @@ name|FileUtil
 operator|.
 name|forceDelete
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 block|}

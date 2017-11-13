@@ -194,11 +194,11 @@ name|XmlReportWriterTest
 block|{
 specifier|private
 name|Ivy
-name|_ivy
+name|ivy
 decl_stmt|;
 specifier|private
 name|File
-name|_cache
+name|cache
 decl_stmt|;
 annotation|@
 name|Before
@@ -209,13 +209,13 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|=
 operator|new
 name|Ivy
 argument_list|()
 expr_stmt|;
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -235,7 +235,7 @@ name|void
 name|createCache
 parameter_list|()
 block|{
-name|_cache
+name|cache
 operator|=
 operator|new
 name|File
@@ -243,7 +243,7 @@ argument_list|(
 literal|"build/cache"
 argument_list|)
 expr_stmt|;
-name|_cache
+name|cache
 operator|.
 name|mkdirs
 argument_list|()
@@ -269,7 +269,7 @@ name|CacheCleaner
 operator|.
 name|deleteDir
 argument_list|(
-name|_cache
+name|cache
 argument_list|)
 expr_stmt|;
 block|}
@@ -285,7 +285,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -451,7 +451,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|_ivy
+name|ivy
 operator|.
 name|configure
 argument_list|(
@@ -465,7 +465,7 @@ expr_stmt|;
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
@@ -562,7 +562,7 @@ block|{
 name|ResolveReport
 name|report
 init|=
-name|_ivy
+name|ivy
 operator|.
 name|resolve
 argument_list|(
