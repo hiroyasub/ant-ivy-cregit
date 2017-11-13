@@ -2440,7 +2440,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@code maven-tsnap-vm} version matcher, configured in the settings file,      * is parsed correctly      *      * @throws Exception      */
+comment|/**      * Tests that the {@code maven-tsnap-vm} version matcher, configured in the settings file,      * is parsed correctly      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

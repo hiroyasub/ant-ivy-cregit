@@ -663,7 +663,55 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|*
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -11440,7 +11488,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that when the<code>location</code> attribute of the<code>extends</code> element of a module descriptor      * file, includes an {@link File#isAbsolute() absolute path} with characters that {@link java.net.URI} considers      * as encoded characters (for example<code>%2F</code>) then the module descriptor and the location of      * the parent descriptor, are resolved and parsed correctly.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1562">IVY-1562</a>      */
+comment|/**      * Tests that when the<code>location</code> attribute of the<code>extends</code> element of      * a module descriptor file, includes an {@link File#isAbsolute() absolute path} with      * characters that {@link java.net.URI} considers as encoded characters (for example,      *<code>%2F</code>) then the module descriptor and the location of the parent descriptor      * are resolved and parsed correctly.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1562">IVY-1562</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -11492,8 +11540,9 @@ argument_list|,
 name|parentIvyXML
 argument_list|)
 expr_stmt|;
-comment|// the ivy xml references a parent ivy xml via extends "location" and expects the parent ivy to be present
-comment|// at a location under java.io.tmpdir, so we copy over the parent ivy file over there
+comment|// the ivy xml references a parent ivy xml via extends "location" and expects the parent
+comment|// ivy to be present at a location under java.io.tmpdir, so we copy over the parent ivy
+comment|// file over there
 specifier|final
 name|Path
 name|targetDir

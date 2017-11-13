@@ -177,7 +177,7 @@ name|FilterHelper
 operator|.
 name|NO_FILTER
 decl_stmt|;
-comment|/**      * True if a synchronisation of the destination directory should be done, false if a simple copy      * is enough. Synchronisation means that after the retrieve only files which have been retrieved      * will be present in the destination directory, which means that some files may be deleted.      */
+comment|/**      * True if a synchronisation of the destination directory should be done, false if a simple      * copy is enough. Synchronisation means that after the retrieve only files which have been      * retrieved will be present in the destination directory, which means that some files may be      * deleted.      */
 specifier|private
 name|boolean
 name|sync
@@ -481,8 +481,8 @@ name|boolean
 name|isMakeSymlinks
 parameter_list|()
 block|{
-comment|// we also do a check on makeSymlinkInMass just to allow backward compatibility for a version
-comment|// or so, to allow users time to move away from symlinkmass option
+comment|// we also do a check on makeSymlinkInMass just to allow backward compatibility for
+comment|// a version or so, to allow users time to move away from symlinkmass option
 return|return
 name|makeSymlinks
 operator|||

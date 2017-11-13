@@ -4818,7 +4818,8 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
-comment|// test for IVY-1531 (where the pom.xml can have a exclusion for groupid=* and artifactid=*, implying transitive=false, in ivy land)
+comment|// test for IVY-1531 (where the pom.xml can have a exclusion for groupid=* and artifactid=*,
+comment|// implying transitive=false, in Ivy land)
 specifier|final
 name|DependencyDescriptor
 name|excludeAllTransitiveDepsDescriptor
@@ -7759,10 +7760,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// the pom we are testing contains reference to a string called "env.THIS_WILL_BE_REPLACED_IN_TEST_BY_A_ENV_VAR".
-comment|// this piece of code replaces it to "env.someenvname" where someenvname is a environment variable we
-comment|// choose in this test case (after randomly picking it from the ones that are set).
-comment|// finally we created the updated pom content in a separate file and test against that file
+comment|// The pom we are testing contains a reference to a string called
+comment|// "env.THIS_WILL_BE_REPLACED_IN_TEST_BY_A_ENV_VAR". This piece of code replaces it with
+comment|// "env.someenvname" where someenvname is a environment variable we choose in this test case
+comment|// (after randomly picking it from the ones that are set).
+comment|// Finally we save the updated pom content in a separate file and test against that file
 specifier|final
 name|String
 name|envName
@@ -7895,8 +7897,8 @@ literal|"UTF-8"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// now start testing
-comment|// we do 2 rounds of testing - one with a system property (referenced in the pom) set and once unset
+comment|// now start testing - we do 2 rounds -
+comment|// once with a system property (referenced in the pom) set and once unset
 name|boolean
 name|withSystemPropertiesSet
 init|=

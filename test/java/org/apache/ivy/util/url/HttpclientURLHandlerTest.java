@@ -579,7 +579,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that the {@link HttpClientHandler}, backed by {@link CredentialsStore Ivy credentials store}      * works as expected when it interacts with a HTTP server which requires authentication for accessing resources.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1336">IVY-1336</a>      */
+comment|/**      * Tests that the {@link HttpClientHandler}, backed by      * {@link CredentialsStore Ivy credentials store} works as expected when it interacts      * with a HTTP server which requires authentication for accessing resources.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1336">IVY-1336</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -805,9 +805,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// now create a server backed by BASIC auth with a set of credentials that do *not* match with what the
-comment|// Ivy credentials store will return for a given realm+host combination. i.e. Ivy credentials store
-comment|// will return back invalid credentials and the server will reject them
+comment|// now create a server backed by BASIC auth with a set of credentials that do *not* match
+comment|// with what the Ivy credentials store will return for a given realm+host combination, i.e.
+comment|// Ivy credential store will return back invalid credentials and the server will reject them
 try|try
 init|(
 specifier|final
@@ -923,9 +923,9 @@ name|ioe
 parameter_list|)
 block|{
 comment|// we catch it and check for presence of 401 in the exception message.
-comment|// It's not exactly an contract that the IOException will have the 401 message but for now
-comment|// that's how it's implemented and it's fine to check for the presence of that message at the
-comment|// moment
+comment|// It's not exactly an contract that the IOException will have the 401 message
+comment|// but for now that's how it's implemented and it's fine to check for the presence
+comment|// of that message at the moment
 name|assertTrue
 argument_list|(
 literal|"Expected to find 401 error message in exception"

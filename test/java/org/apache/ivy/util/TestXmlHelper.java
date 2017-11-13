@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*  * Licensed to the Apache Software Foundation (ASF) under one or more  * contributor license agreements.  See the NOTICE file distributed with  * this work for additional information regarding copyright ownership.  * The ASF licenses this file to You under the Apache License, Version 2.0  * (the "License"); you may not use this file except in compliance with  * the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  * Unless required by applicable law or agreed to in writing, software  * distributed under the License is distributed on an "AS IS" BASIS,  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  * See the License for the specific language governing permissions and  * limitations under the License.  */
+comment|/*  *  Licensed to the Apache Software Foundation (ASF) under one or more  *  contributor license agreements.  See the NOTICE file distributed with  *  this work for additional information regarding copyright ownership.  *  The ASF licenses this file to You under the Apache License, Version 2.0  *  (the "License"); you may not use this file except in compliance with  *  the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing, software  *  distributed under the License is distributed on an "AS IS" BASIS,  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  *  See the License for the specific language governing permissions and  *  limitations under the License.  *  */
 end_comment
 
 begin_package
@@ -106,7 +106,7 @@ specifier|public
 class|class
 name|TestXmlHelper
 block|{
-comment|/**      * Evaluates the passed {@link XPathExpression} against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      *      * @param xmlFile         The XML file to parse      * @param xPathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
+comment|/**      * Evaluates the passed {@link XPathExpression} against the {@link Document} created out of the      * passed<code>xmlFile</code> and returns the result of the evaluation.      *      * @param xmlFile         The XML file to parse      * @param xPathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
 specifier|public
 specifier|static
 name|Object
@@ -210,7 +210,7 @@ name|returnType
 argument_list|)
 return|;
 block|}
-comment|/**      * Evaluates the passed<code>xpathExpression</code> against the {@link Document} created out of the passed<code>xmlFile</code>      * and returns the result of the evaluation.      * This is the same as calling {@link #evaluateXPathExpr(File, XPathExpression, QName)}, with<code>XPathFactory.newInstance().newXPath().compile(xpathExpression)</code> as the {@link XPathExpression} parameter      *      * @param xmlFile         The XML file to parse      * @param xpathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
+comment|/**      * Evaluates the passed<code>xpathExpression</code> against the {@link Document} created out of      * the passed<code>xmlFile</code> and returns the result of the evaluation. This is the same as      * calling {@link #evaluateXPathExpr(File, XPathExpression, QName)}, with      *<code>XPathFactory.newInstance().newXPath().compile(xpathExpression)</code> as the      * {@link XPathExpression} parameter      *      * @param xmlFile         The XML file to parse      * @param xpathExpression The XPath expression to evaluate      * @param returnType      The expected return type of the {@link XPathExpression#evaluate(Object, QName) evaluation}      * @return                The result      * @throws Exception if something goes wrong      */
 specifier|public
 specifier|static
 name|Object

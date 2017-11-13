@@ -1803,8 +1803,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we test file separately, since it is hard to guarantee an exact path match, but we
-comment|// want to make sure that both paths point to the same canonical location on the
+comment|// we test file separately, since it is hard to guarantee an exact path match, but
+comment|// we want to make sure that both paths point to the same canonical location on the
 comment|// filesystem
 name|String
 name|filePath

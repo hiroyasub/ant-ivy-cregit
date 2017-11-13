@@ -175,7 +175,8 @@ argument_list|,
 literal|"SHA-1"
 argument_list|)
 expr_stmt|;
-comment|// higher versions of JRE support these algorithms https://docs.oracle.com/javase/6/docs/technotes/guides/security/StandardNames.html#MessageDigest
+comment|// higher versions of JRE support these algorithms
+comment|// https://docs.oracle.com/javase/6/docs/technotes/guides/security/StandardNames.html#MessageDigest
 comment|// conditionally add them
 if|if
 condition|(

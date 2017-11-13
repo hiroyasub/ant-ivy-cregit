@@ -1589,7 +1589,7 @@ literal|"unknown"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if the Ivy settings file<code>include</code>s another file as<code>optional</code>,      * then the absence of that file doesn't lead to failures      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests that if the Ivy settings file<code>include</code>s another file as      *<code>optional</code>, then the absence of that file doesn't lead to failures      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public

@@ -600,7 +600,7 @@ name|beginIndex
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the common base directory between the passed<code>file1</code> and      *<code>file2</code>.      *<p>      * The returned base directory will be a parent of both the<code>file1</code> and      *<code>file2</code> or it will be<code>null</code>.      *</p>      *      * @param file1      *            One of the files, for which the common base directory is being sought, may be null.      * @param file2      *            The other file for which the common base directory should be returned, may be null.      * @return the common base directory between a<code>file1</code> and<code>file2</code>. Returns      *         null if no common base directory could be determined or if either<code>file1</code>      *         or<code>file2</code> is null      */
+comment|/**      * Returns the common base directory between the passed<code>file1</code> and      *<code>file2</code>.      *<p>      * The returned base directory will be a parent of both the<code>file1</code> and      *<code>file2</code> or it will be<code>null</code>.      *</p>      *      * @param file1      *         One of the files, for which the common base directory is being sought, may be null.      * @param file2      *         The other file for which the common base directory should be returned, may be null.      * @return the common base directory between a<code>file1</code> and<code>file2</code>.      *         Returns null if no common base directory could be determined or if either      *<code>file1</code> or<code>file2</code> is null      */
 name|File
 name|getBaseDir
 parameter_list|(

@@ -1742,7 +1742,8 @@ argument_list|()
 operator|+
 literal|"/testTimeouts/[organisation]/[module]/[type]s/[artifact]-[revision].[type]"
 decl_stmt|;
-comment|// first use a resolver with a high timeout to make sure it can actually fetch the resources
+comment|// first use a resolver with a high timeout to make sure
+comment|// it can actually fetch the resources
 specifier|final
 name|URLResolver
 name|highTimeoutResolver
@@ -1901,8 +1902,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// now test this whole fetch using a resolver with a very low connection timeout and by starting the repo server
-comment|// with a delay so that the connection request can timeout
+comment|// now test this whole fetch using a resolver with a very low connection timeout and
+comment|// by starting the repo server with a delay so that the connection request can timeout
 comment|// clean the cache before testing to ensure the resource isn't fetched from cache
 name|settings
 operator|.

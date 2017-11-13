@@ -827,8 +827,8 @@ name|ModuleRevisionId
 name|id
 parameter_list|)
 block|{
-comment|// WARN: this doesn't work if the resolver registered is a compound resolver (chain or dual)
-comment|// and a sub resolver doesn't use the same cache manager as the parent
+comment|// WARN: this doesn't work if the resolver registered is a compound resolver (chain
+comment|// or dual) and a sub resolver doesn't use the same cache manager as the parent
 return|return
 operator|(
 name|DefaultRepositoryCacheManager
@@ -847,7 +847,7 @@ name|getRepositoryCacheManager
 argument_list|()
 return|;
 block|}
-comment|/**      * Assertion utility methods to test if a collection of {@link ModuleRevisionId} matches a given      * expected set of mrids.      *<p>      * Expected mrids is given as a String of comma separated string representations of      * {@link ModuleRevisionId}.      *      * @param expectedMrids      *            the expected set of mrids      * @param mrids      *            the3 mrids to test      */
+comment|/**      * Assertion utility methods to test if a collection of {@link ModuleRevisionId} matches a      * given expected set of mrids.      *<p>      * Expected mrids is given as a String of comma separated string representations of      * {@link ModuleRevisionId}.      *      * @param expectedMrids      *            the expected set of mrids      * @param mrids      *            the3 mrids to test      */
 specifier|public
 specifier|static
 name|void
@@ -1253,7 +1253,7 @@ name|microIvy
 argument_list|)
 throw|;
 block|}
-comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double semi      * columns.      *      * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
+comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double      * semicolumns.      *      * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
 specifier|public
 specifier|static
 name|Collection
@@ -1766,7 +1766,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * The {@link Authenticator} doesn't have API to get hold of the current system level {@link Authenticator}.      * This method does a best-effort attempt to try and get hold of the current {@link Authenticator} in a way that's      * specific to the implementation of this method. There's no guarantee that this method will return the current      * authenticator.      *      * @return Returns the currently setup system level {@link Authenticator}. In cases where this method isn't able to get      * the current authenticator, this method returns null      */
+comment|/**      * The {@link Authenticator} doesn't have API to get hold of the current system level      * {@link Authenticator}. This method does a best-effort attempt to try and get hold of the      * current {@link Authenticator} in a way that's specific to the implementation of this method.      * There's no guarantee that this method will return the current authenticator.      *      * @return Returns the currently setup system level {@link Authenticator}. In cases where this      * method isn't able to get the current authenticator, this method returns null      */
 specifier|public
 specifier|static
 name|Authenticator
@@ -1820,7 +1820,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Creates a HTTP server, backed by a local file system, which can be used as a repository to serve Ivy module descriptors      * and artifacts.      * NOTE: This is supposed to be used only in test cases and only a limited functionality is added in the handler(s) backing the      * server      *      * @param serverAddress           The address to which the server will be bound      * @param webAppContext           The context root of the application which will be handling the requests to the server      * @param localFilesystemRepoRoot The path to the root directory containing the module descriptors and artifacts      * @return AutoCloseable      * @throws IOException if something goes wrong      */
+comment|/**      * Creates a HTTP server, backed by a local file system, which can be used as a repository to      * serve Ivy module descriptors and artifacts.      * NOTE: This is supposed to be used only in test cases and only a limited functionality is      * added in the handler(s) backing the server      *      * @param serverAddress           The address to which the server will be bound      * @param webAppContext           The context root of the application which will be handling      *                                the requests to the server      * @param localFilesystemRepoRoot The path to the root directory containing the module      *                                descriptors and artifacts      * @return AutoCloseable      * @throws IOException if something goes wrong      */
 specifier|public
 specifier|static
 name|AutoCloseable
@@ -1914,7 +1914,7 @@ block|}
 block|}
 return|;
 block|}
-comment|/**      * Creates a HTTP server, backed by a local file system, which can be used as a repository to serve Ivy module descriptors      * and artifacts. The context within the server will be backed by {@code BASIC} authentication mechanism with {@code realm}      * as the realm and {@code validCredentials} as the credentials that the server will recognize. The server will allow      * access to resources, only if the credentials that are provided by the request, belong to these credentials.      *<p>      * NOTE: This is supposed to be used only in test cases and only a limited functionality is added in the handler(s) backing the      * server      *      * @param serverAddress           The address to which the server will be bound      * @param webAppContext           The context root of the application which will be handling the requests to the server      * @param localFilesystemRepoRoot The path to the root directory containing the module descriptors and artifacts      * @param realm                   The realm to use for the {@code BASIC} auth mechanism      * @param validCredentials        A {@link Map} of valid credentials, the key being the user name and the value being the password,      *                                that the server will use during the authentication process of the incoming requests      * @return AutoCloseable      * @throws IOException if something goes wrong      */
+comment|/**      * Creates a HTTP server, backed by a local file system, which can be used as a repository to      * serve Ivy module descriptors and artifacts. The context within the server will be backed by      * {@code BASIC} authentication mechanism with {@code realm} as the realm and      * {@code validCredentials} as the credentials that the server will recognize. The server will      * allow access to resources, only if the credentials that are provided by the request, belong      * to these credentials.      *<p>      * NOTE: This is supposed to be used only in test cases and only a limited functionality is      * added in the handler(s) backing the server      *      * @param serverAddress           The address to which the server will be bound      * @param webAppContext           The context root of the application which will be handling      *                                the requests to the server      * @param localFilesystemRepoRoot The path to the root directory containing the module      *                                descriptors and artifacts      * @param realm                   The realm to use for the {@code BASIC} auth mechanism      * @param validCredentials        A {@link Map} of valid credentials, the key being the user      *                                name and the value being the password, that the server will      *                                use during the authentication process of the incoming requests      * @return AutoCloseable      * @throws IOException if something goes wrong      */
 specifier|public
 specifier|static
 name|AutoCloseable

@@ -909,9 +909,10 @@ argument_list|()
 operator|+
 literal|"-SNAPSHOT"
 decl_stmt|;
-comment|// we replace the "/[revision]" in the descriptor pattern with the "inferred" snapshot revision
-comment|// which is like "1.0.0-SNAPSHOT".
-comment|// Ultimately, this will translate to something like org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
+comment|// we replace the "/[revision]" in the descriptor pattern with the "inferred" snapshot
+comment|// revision which is like "1.0.0-SNAPSHOT". Ultimately, this will translate to
+comment|// something like
+comment|// org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
 name|snapshotArtifactPattern
 operator|=
 name|getWholePattern
@@ -929,8 +930,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// it's not a timestamped revision, but a regular snapshot. Try and find
-comment|// any potential timestamped revisions of this regular snapshot, by looking into the maven metadata
+comment|// it's not a timestamped revision, but a regular snapshot. Try and find any potential
+comment|// timestamped revisions of this regular snapshot, by looking into the Maven metadata
 specifier|final
 name|String
 name|timestampedRev
@@ -948,8 +949,8 @@ literal|null
 condition|)
 block|{
 comment|// no timestamped snapshots found and instead this is just a regular snapshot
-comment|// version. So let's just fallback to our logic of finding resources using configured
-comment|// artifact pattern(s)
+comment|// version. So let's just fallback to our logic of finding resources using
+comment|// configured artifact pattern(s)
 return|return
 literal|null
 return|;
@@ -965,9 +966,10 @@ operator|+
 name|timestampedRev
 argument_list|)
 expr_stmt|;
-comment|// we have found a timestamped revision for a snapshot. So we replace the "-[revision]" in the artifact file name to use the
-comment|// timestamped revision.
-comment|// Ultimately, this will translate to something like org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
+comment|// we have found a timestamped revision for a snapshot. So we replace the "-[revision]"
+comment|// in the artifact file name to use the timestamped revision.
+comment|// Ultimately, this will translate to something like
+comment|// org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
 name|snapshotArtifactPattern
 operator|=
 name|getWholePattern
@@ -1075,9 +1077,10 @@ argument_list|()
 operator|+
 literal|"-SNAPSHOT"
 decl_stmt|;
-comment|// we replace the "/[revision]" in the descriptor pattern with the "inferred" snapshot revision
-comment|// which is like "1.0.0-SNAPSHOT".
-comment|// Ultimately, this will translate to something like org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
+comment|// we replace the "/[revision]" in the descriptor pattern with the "inferred" snapshot
+comment|// revision which is like "1.0.0-SNAPSHOT".
+comment|// Ultimately, this will translate to something like
+comment|// org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
 name|snapshotDescriptorPattern
 operator|=
 name|getWholePattern
@@ -1095,8 +1098,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// it's not a timestamped revision, but a regular snapshot. Try and find
-comment|// any potential timestamped revisions of this regular snapshot, by looking into the maven metadata
+comment|// it's not a timestamped revision, but a regular snapshot. Try and find any potential
+comment|// timestamped revisions of this regular snapshot, by looking into the Maven metadata
 specifier|final
 name|String
 name|timestampedRev
@@ -1114,8 +1117,8 @@ literal|null
 condition|)
 block|{
 comment|// no timestamped snapshots found and instead this is just a regular snapshot
-comment|// version. So let's just fallback to our logic of finding resources using configured
-comment|// Ivy pattern(s)
+comment|// version. So let's just fallback to our logic of finding resources using
+comment|// configured Ivy pattern(s)
 return|return
 literal|null
 return|;
@@ -1131,9 +1134,10 @@ operator|+
 name|timestampedRev
 argument_list|)
 expr_stmt|;
-comment|// we have found a timestamped revision for a snapshot. So we replace the "-[revision]" in the artifact file name to use the
-comment|// timestamped revision.
-comment|// Ultimately, this will translate to something like org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
+comment|// we have found a timestamped revision for a snapshot. So we replace the "-[revision]"
+comment|// in the artifact file name to use the timestamped revision.
+comment|// Ultimately, this will translate to something like
+comment|// org/module/1.0.0-SNAPSHOT/artifact-1.0.0-<timestampedRev>(-[classifier]).ext
 name|snapshotDescriptorPattern
 operator|=
 name|getWholePattern

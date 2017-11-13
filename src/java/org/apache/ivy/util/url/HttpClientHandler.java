@@ -1959,7 +1959,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Checks the status code of the response and if it's considered as successful response, then this method just returns back.      * Else it {@link CloseableHttpResponse#close() closes the response} and throws an {@link IOException} for the unsuccessful response.      *      * @param httpMethod The HTTP method that was used for the source request      * @param sourceURL  The URL of the source request      * @param response   The response to the source request      * @throws IOException Thrown if the response was considered unsuccessful      */
+comment|/**      * Checks the status code of the response and if it's considered as successful response, then      * this method just returns back. Else it {@link CloseableHttpResponse#close() closes the      * response} and throws an {@link IOException} for the unsuccessful response.      *      * @param httpMethod The HTTP method that was used for the source request      * @param sourceURL  The URL of the source request      * @param response   The response to the source request      * @throws IOException Thrown if the response was considered unsuccessful      */
 specifier|private
 name|void
 name|requireSuccessStatus

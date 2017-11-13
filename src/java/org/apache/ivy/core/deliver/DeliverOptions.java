@@ -410,7 +410,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Return the configurations which must be delivered. Returns<tt>null</tt> if all configurations      * has to be delivered. Attention: the returned array can contain wildcards!      *      * @return the configurations to deliver      */
+comment|/**      * Return the configurations which must be delivered. Returns<tt>null</tt> if all      * configurations has to be delivered. Attention: the returned array can contain wildcards!      *      * @return the configurations to deliver      */
 specifier|public
 name|String
 index|[]

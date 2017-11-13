@@ -1100,7 +1100,8 @@ argument_list|(
 name|settings
 argument_list|)
 expr_stmt|;
-comment|// process and setup the configured TTLs (which weren't yet processed since they needed a settings instance to be present)
+comment|// process and setup the configured TTLs (which weren't yet processed since they needed
+comment|// a settings instance to be present)
 for|for
 control|(
 specifier|final
@@ -1143,7 +1144,8 @@ name|duration
 argument_list|)
 expr_stmt|;
 block|}
-comment|// clear off the configured TTLs since we have now processed them and created TTL rules out of them
+comment|// clear off the configured TTLs since we have now processed them and created TTL rules
+comment|// out of them
 name|this
 operator|.
 name|configuredTTLs
@@ -1631,7 +1633,8 @@ name|attributes
 argument_list|)
 decl_stmt|;
 comment|// Processing TTLs requires access to an initialized/usable IvySettings instance.
-comment|// we keep track of these configured TTLs and process them when the IvySettings instance becomes usable
+comment|// We keep track of these configured TTLs and process them when the IvySettings instance
+comment|// becomes usable
 name|this
 operator|.
 name|configuredTTLs
@@ -1978,7 +1981,7 @@ operator|=
 name|check
 expr_stmt|;
 block|}
-comment|/**      * True if this cache should use artifacts original location when possible, false if they should      * be copied to cache.      *      * @return boolean      */
+comment|/**      * True if this cache should use artifacts original location when possible, false if they      * should be copied to cache.      *      * @return boolean      */
 specifier|public
 name|boolean
 name|isUseOrigin
@@ -7583,9 +7586,9 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-comment|// we need to provide an artifact origin to be sure we do not end up in a stack overflow
-comment|// if the cache pattern is using original name, and the substitution thus trying to get
-comment|// the saved artifact origin value which in turns calls this method
+comment|// we need to provide an artifact origin to be sure we do not end up in a stack
+comment|// overflow if the cache pattern is using original name, and the substitution thus
+comment|// trying to get the saved artifact origin value which in turns calls this method
 return|return
 name|getLockStrategy
 argument_list|()
