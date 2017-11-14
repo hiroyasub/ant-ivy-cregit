@@ -534,7 +534,7 @@ specifier|final
 name|String
 name|DEFAULT_M2_ROOT
 init|=
-literal|"https://repo.maven.apache.org/maven2/"
+literal|"https://repo1.maven.org/maven2/"
 decl_stmt|;
 specifier|private
 name|String

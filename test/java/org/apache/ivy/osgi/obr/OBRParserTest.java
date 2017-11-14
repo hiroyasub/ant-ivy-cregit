@@ -447,7 +447,7 @@ decl_stmt|;
 name|String
 name|jarUrl
 init|=
-literal|"https://repo.maven.apache.org/maven2/org/apache/felix/"
+literal|"https://repo1.maven.org/maven2/org/apache/felix/"
 operator|+
 literal|"org.apache.felix.bundlerepository/1.0.3/org.apache.felix.bundlerepository-1.0.3.jar"
 decl_stmt|;
