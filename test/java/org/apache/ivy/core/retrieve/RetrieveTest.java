@@ -531,18 +531,6 @@ name|assertTrue
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -1096,6 +1084,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|RuntimeException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testRetrieveDifferentArtifactsOfSameModuleToSameFile
@@ -1190,20 +1185,9 @@ name|pattern
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Exception should have been thrown!"
-argument_list|)
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|RuntimeException
-name|e
-parameter_list|)
+finally|finally
 block|{
-comment|// expected!
-block|}
 name|mockLogger
 operator|.
 name|assertLogDoesntContain
@@ -1211,6 +1195,7 @@ argument_list|(
 literal|"multiple artifacts"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Test
