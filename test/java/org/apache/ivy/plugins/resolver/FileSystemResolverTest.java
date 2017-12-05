@@ -6839,6 +6839,13 @@ argument_list|,
 literal|"org1"
 argument_list|)
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"organisation not found: org1"
+argument_list|,
+name|org
+argument_list|)
+expr_stmt|;
 name|ModuleEntry
 index|[]
 name|mods
@@ -6890,6 +6897,13 @@ argument_list|,
 literal|"mod1.1"
 argument_list|)
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"module not found: mod1.1"
+argument_list|,
+name|mod
+argument_list|)
+expr_stmt|;
 name|RevisionEntry
 index|[]
 name|revs
@@ -6934,6 +6948,13 @@ argument_list|(
 name|mods
 argument_list|,
 literal|"mod1.2"
+argument_list|)
+expr_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"module not found: mod1.2"
+argument_list|,
+name|mod
 argument_list|)
 expr_stmt|;
 name|revs

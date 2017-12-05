@@ -111,18 +111,6 @@ name|assertTrue
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_comment
 comment|/**  *  */
 end_comment
@@ -634,13 +622,6 @@ name|org
 return|;
 block|}
 block|}
-name|fail
-argument_list|(
-literal|"organisation not found: "
-operator|+
-name|name
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
@@ -684,13 +665,6 @@ name|mod
 return|;
 block|}
 block|}
-name|fail
-argument_list|(
-literal|"module not found: "
-operator|+
-name|name
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
