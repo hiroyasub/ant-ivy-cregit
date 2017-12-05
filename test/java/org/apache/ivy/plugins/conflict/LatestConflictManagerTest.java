@@ -1000,19 +1000,17 @@ name|getModuleRevisionIds
 argument_list|()
 control|)
 block|{
-if|if
+switch|switch
 condition|(
 name|mrid
 operator|.
 name|getName
 argument_list|()
-operator|.
-name|equals
-argument_list|(
-literal|"A"
-argument_list|)
 condition|)
 block|{
+case|case
+literal|"A"
+case|:
 name|assertEquals
 argument_list|(
 literal|"A revision should be 1.0.0"
@@ -1025,20 +1023,10 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|mrid
-operator|.
-name|getName
-argument_list|()
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 literal|"D"
-argument_list|)
-condition|)
-block|{
+case|:
 name|assertEquals
 argument_list|(
 literal|"D revision should be 1.0.0"
@@ -1051,20 +1039,10 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|mrid
-operator|.
-name|getName
-argument_list|()
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 literal|"B"
-argument_list|)
-condition|)
-block|{
+case|:
 comment|// by transitivity
 name|assertEquals
 argument_list|(
@@ -1078,20 +1056,10 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|mrid
-operator|.
-name|getName
-argument_list|()
-operator|.
-name|equals
-argument_list|(
+break|break;
+case|case
 literal|"C"
-argument_list|)
-condition|)
-block|{
+case|:
 name|assertEquals
 argument_list|(
 literal|"C revision should be 1.0.2"
@@ -1104,6 +1072,7 @@ name|getRevision
 argument_list|()
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 block|}

@@ -1513,18 +1513,36 @@ argument_list|>
 name|noDescriptor
 parameter_list|)
 block|{
-if|if
+switch|switch
 condition|(
+name|onMissingDescriptor
+condition|)
+block|{
+case|case
+name|OnMissingDescriptor
+operator|.
+name|FAIL
+case|:
+throw|throw
+operator|new
+name|BuildException
+argument_list|(
+literal|"a module has no module descriptor and"
+operator|+
+literal|" onMissingDescriptor=fail. Build file: "
+operator|+
+name|buildFile
+operator|+
+literal|". Expected descriptor: "
+operator|+
+name|ivyFile
+argument_list|)
+throw|;
+case|case
 name|OnMissingDescriptor
 operator|.
 name|SKIP
-operator|.
-name|equals
-argument_list|(
-name|onMissingDescriptor
-argument_list|)
-condition|)
-block|{
+case|:
 name|Message
 operator|.
 name|debug
@@ -1540,49 +1558,12 @@ operator|+
 literal|" doesn't exist"
 argument_list|)
 expr_stmt|;
-block|}
-if|else if
-condition|(
-name|OnMissingDescriptor
-operator|.
-name|FAIL
-operator|.
-name|equals
-argument_list|(
-name|onMissingDescriptor
-argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|BuildException
-argument_list|(
-literal|"a module has no module descriptor and onMissingDescriptor=fail. "
-operator|+
-literal|"Build file: "
-operator|+
-name|buildFile
-operator|+
-literal|". Expected descriptor: "
-operator|+
-name|ivyFile
-argument_list|)
-throw|;
-block|}
-else|else
-block|{
-if|if
-condition|(
+break|break;
+case|case
 name|OnMissingDescriptor
 operator|.
 name|WARN
-operator|.
-name|equals
-argument_list|(
-name|onMissingDescriptor
-argument_list|)
-condition|)
-block|{
+case|:
 name|Message
 operator|.
 name|warn
@@ -1598,7 +1579,8 @@ operator|+
 name|ivyFile
 argument_list|)
 expr_stmt|;
-block|}
+comment|// fall through
+default|default:
 name|Message
 operator|.
 name|verbose
@@ -1644,6 +1626,7 @@ argument_list|(
 name|buildFile
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 specifier|private
