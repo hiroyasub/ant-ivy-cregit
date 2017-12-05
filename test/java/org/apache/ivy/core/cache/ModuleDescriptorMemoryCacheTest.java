@@ -172,6 +172,7 @@ specifier|public
 class|class
 name|ModuleDescriptorMemoryCacheTest
 block|{
+specifier|private
 name|ModuleDescriptorMemoryCache
 name|cache
 init|=
@@ -181,6 +182,7 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ParserSettings
 name|ivySettings
 init|=
@@ -188,6 +190,7 @@ operator|new
 name|IvySettings
 argument_list|()
 decl_stmt|;
+specifier|private
 name|IvySettings
 name|ivySettings2
 init|=
@@ -195,6 +198,7 @@ operator|new
 name|IvySettings
 argument_list|()
 decl_stmt|;
+specifier|private
 name|File
 name|url1
 init|=
@@ -204,6 +208,7 @@ argument_list|(
 literal|"file://cached/file.txt"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|File
 name|url2
 init|=
@@ -213,6 +218,7 @@ argument_list|(
 literal|"file://cached/file2.txt"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|File
 name|url3
 init|=
@@ -222,6 +228,7 @@ argument_list|(
 literal|"file://cached/file3.txt"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleRevisionId
 name|mrid1
 init|=
@@ -236,6 +243,7 @@ argument_list|,
 literal|"rev"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleDescriptor
 name|md1
 init|=
@@ -246,6 +254,7 @@ argument_list|(
 name|mrid1
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleRevisionId
 name|mrid2
 init|=
@@ -260,6 +269,7 @@ argument_list|,
 literal|"rev2"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleDescriptor
 name|md2
 init|=
@@ -270,6 +280,7 @@ argument_list|(
 name|mrid2
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleRevisionId
 name|mrid3
 init|=
@@ -284,6 +295,7 @@ argument_list|,
 literal|"rev3"
 argument_list|)
 decl_stmt|;
+specifier|private
 name|ModuleDescriptor
 name|md3
 init|=

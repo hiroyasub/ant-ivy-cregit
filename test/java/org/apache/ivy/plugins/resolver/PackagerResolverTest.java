@@ -615,7 +615,7 @@ name|cleanupTempDirs
 argument_list|()
 expr_stmt|;
 block|}
-specifier|protected
+specifier|private
 name|void
 name|cleanupTempDirs
 parameter_list|()

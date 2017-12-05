@@ -339,6 +339,7 @@ name|mods
 argument_list|)
 expr_stmt|;
 block|}
+specifier|private
 specifier|static
 name|void
 name|assertModuleEntriesContains
@@ -499,6 +500,7 @@ name|revs
 argument_list|)
 expr_stmt|;
 block|}
+specifier|private
 specifier|static
 name|void
 name|assertRevisionEntriesContains

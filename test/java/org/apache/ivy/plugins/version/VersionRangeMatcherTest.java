@@ -78,6 +78,7 @@ specifier|public
 class|class
 name|VersionRangeMatcherTest
 block|{
+specifier|private
 specifier|final
 name|VersionMatcher
 name|vm

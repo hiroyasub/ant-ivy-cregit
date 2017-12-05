@@ -85,16 +85,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Date
@@ -1213,8 +1203,6 @@ name|dest
 parameter_list|)
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 name|XmlModuleDescriptorWriter
 operator|.
@@ -1374,7 +1362,7 @@ name|rmrFromCache
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+specifier|private
 specifier|static
 name|DefaultArtifact
 name|createArtifact

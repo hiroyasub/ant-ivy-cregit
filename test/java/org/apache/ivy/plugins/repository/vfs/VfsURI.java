@@ -73,7 +73,7 @@ name|String
 name|user
 decl_stmt|;
 comment|// VFS Schemes
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -81,7 +81,7 @@ name|SCHEME_CIFS
 init|=
 literal|"smb"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -89,7 +89,7 @@ name|SCHEME_FILE
 init|=
 literal|"file"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -97,7 +97,7 @@ name|SCHEME_FTP
 init|=
 literal|"ftp"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -105,7 +105,7 @@ name|SCHEME_HTTP
 init|=
 literal|"http"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -113,7 +113,7 @@ name|SCHEME_HTTPS
 init|=
 literal|"https"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -121,7 +121,7 @@ name|SCHEME_SFTP
 init|=
 literal|"sftp"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String

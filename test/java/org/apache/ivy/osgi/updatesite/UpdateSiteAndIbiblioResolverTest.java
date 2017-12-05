@@ -276,6 +276,7 @@ specifier|private
 name|UpdateSiteResolver
 name|resolver
 decl_stmt|;
+specifier|private
 name|IBiblioResolver
 name|resolver2
 decl_stmt|;
@@ -291,6 +292,7 @@ specifier|private
 name|ResolveData
 name|data
 decl_stmt|;
+specifier|private
 name|ChainResolver
 name|chain
 decl_stmt|;

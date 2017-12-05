@@ -66,6 +66,7 @@ name|VfsResolverTest
 extends|extends
 name|AbstractDependencyResolverTest
 block|{
+specifier|private
 name|VfsResolver
 name|resolver
 init|=

@@ -809,7 +809,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-specifier|protected
+specifier|private
 name|void
 name|resetCounters
 parameter_list|()

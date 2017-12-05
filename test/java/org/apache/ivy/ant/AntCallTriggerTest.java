@@ -753,7 +753,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Adds the listeners specified in the command line arguments, along with the default listener,      * to the specified project.      *      * @param project      *            The project to add listeners to. Must not be<code>null</code>.      * @param level      *            log level      */
-specifier|protected
+specifier|private
 name|void
 name|addBuildListeners
 parameter_list|(
