@@ -221,6 +221,24 @@ begin_import
 import|import static
 name|org
 operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|resolver
+operator|.
+name|IBiblioResolver
+operator|.
+name|DEFAULT_M2_ROOT
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
 name|Assert
@@ -434,7 +452,9 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"https://repo1.maven.org/maven2/commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
+name|DEFAULT_M2_ROOT
+operator|+
+literal|"/commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
 argument_list|)
 argument_list|,
 name|defaultTimeoutConstraint

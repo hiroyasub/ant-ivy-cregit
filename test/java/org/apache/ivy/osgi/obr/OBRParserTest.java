@@ -21,6 +21,24 @@ begin_import
 import|import static
 name|org
 operator|.
+name|apache
+operator|.
+name|ivy
+operator|.
+name|plugins
+operator|.
+name|resolver
+operator|.
+name|IBiblioResolver
+operator|.
+name|DEFAULT_M2_ROOT
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
 name|Assert
@@ -38,6 +56,18 @@ operator|.
 name|Assert
 operator|.
 name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -444,19 +474,33 @@ operator|.
 name|toExternalForm
 argument_list|()
 decl_stmt|;
+name|assertTrue
+argument_list|(
+literal|"Default Maven URL must end with '/'"
+argument_list|,
+name|DEFAULT_M2_ROOT
+operator|.
+name|endsWith
+argument_list|(
+literal|"/"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|String
 name|jarUrl
 init|=
-literal|"https://repo1.maven.org/maven2/org/apache/felix/"
+name|DEFAULT_M2_ROOT
 operator|+
-literal|"org.apache.felix.bundlerepository/1.0.3/org.apache.felix.bundlerepository-1.0.3.jar"
+literal|"org/apache/felix/org.apache.felix."
+operator|+
+literal|"bundlerepository/1.0.3/org.apache.felix.bundlerepository-1.0.3.jar"
 decl_stmt|;
 name|String
 name|srcUrl
 init|=
-literal|"http://oscar-osgi.sf.net/obr2/org.apache.felix.bundlerepository/"
+literal|"http://oscar-osgi.sf.net/obr2/org.apache.felix."
 operator|+
-literal|"org.apache.felix.bundlerepository-1.0.3-src.jar"
+literal|"bundlerepository/org.apache.felix.bundlerepository-1.0.3-src.jar"
 decl_stmt|;
 if|if
 condition|(
