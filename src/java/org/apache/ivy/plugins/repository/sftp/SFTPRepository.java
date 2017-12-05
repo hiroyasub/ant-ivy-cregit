@@ -899,10 +899,7 @@ condition|(
 name|att
 operator|!=
 literal|null
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|att
 operator|.
 name|isDir
@@ -910,7 +907,6 @@ argument_list|()
 condition|)
 block|{
 return|return;
-block|}
 block|}
 block|}
 catch|catch
