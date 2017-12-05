@@ -77,18 +77,6 @@ name|assertTrue
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -143,6 +131,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*      * null is allowed as an organisation name      */
 annotation|@
 name|Test
 specifier|public
@@ -155,8 +144,6 @@ name|name
 init|=
 literal|"some-new-module"
 decl_stmt|;
-try|try
-block|{
 operator|new
 name|ModuleId
 argument_list|(
@@ -166,19 +153,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|IllegalArgumentException
-name|iae
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"A null should be allowed for argument 'org'."
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|/*      * null is not allowed as a module name      */
 annotation|@
 name|Test
 argument_list|(

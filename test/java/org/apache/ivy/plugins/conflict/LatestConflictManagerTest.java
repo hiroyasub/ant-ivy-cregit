@@ -197,18 +197,6 @@ name|assertEquals
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -1157,8 +1145,6 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|ResolveReport
 name|report
 init|=
@@ -1183,19 +1169,6 @@ argument_list|(
 literal|"all"
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IllegalStateException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Resolving target should not throw an exception"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 specifier|private
 name|ResolveOptions

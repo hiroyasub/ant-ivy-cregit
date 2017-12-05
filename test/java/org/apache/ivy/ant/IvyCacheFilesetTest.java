@@ -64,18 +64,6 @@ import|;
 end_import
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -765,6 +753,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * Test must pass with haltonfailure set to false.      *      * @throws Exception if something goes wrong      */
 annotation|@
 name|Test
 specifier|public
@@ -773,8 +762,6 @@ name|testHaltOnFailure
 parameter_list|()
 throws|throws
 name|Exception
-block|{
-try|try
 block|{
 name|project
 operator|.
@@ -804,19 +791,6 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|ex
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"failure raised an exception with haltonfailure set to false"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Test
@@ -1351,11 +1325,6 @@ argument_list|(
 name|reports
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"A BuildException was expected when trying to find a common base dir."
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Test
@@ -1441,11 +1410,6 @@ operator|.
 name|requireCommonBaseDir
 argument_list|(
 name|reports
-argument_list|)
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"A BuildException was expected when trying to find a common base dir."
 argument_list|)
 expr_stmt|;
 block|}

@@ -157,18 +157,6 @@ name|assertTrue
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -1807,8 +1795,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-try|try
-block|{
 name|project
 operator|.
 name|setProperty
@@ -1830,19 +1816,6 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|ex
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"failure raised an exception with haltonfailure set to false"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Test

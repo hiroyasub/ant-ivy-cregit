@@ -119,18 +119,6 @@ name|assertNotNull
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_comment
 comment|/**  * Testing was the single biggest hurdle I faced. I have tried to provide a complete test  * suite that covers all protocols and which can be easily extended. It does differ - somewhat - in  * structure from the resolver/repository test suites. Setting up smb, ftp, sftp will undoubtedly be  * your biggest headache (it was mine). Here are a few notes about the setup:  *<ul>  *<li>the VFS test suite uses the build/test/repositories area;  * when setting samba, sftp, etc. the corresponding user needs both read and write privileges.</li>  *<li>the tests assume that the user and password is the same for all services.</li>  *<li>a limited amount of configuration is available by setting the following properties in the  *<code>ivy.properties</code> file:</li>  *</ul>  *<pre>  *   vfs.host  *   vfs.username  *   vfs.password  *   vfs.samba_share  *</pre>  * Running the test requires that commons-io and ant jars are on the classpath. Also, I would  * recommend that at some time the tests be converted from straight junit to something which better  * supports functional testing. Although somewhat crude, I am using jsystem  * (http://jsystemtest.sourceforge.net/) in other projects and am finding it a much better solution  * than straight junit.  *<p>Stephen Nesbitt</p>  */
 end_comment
@@ -317,8 +305,6 @@ name|scratchDir
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 name|repo
 operator|.
 name|put
@@ -360,31 +346,6 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Caught unexpected IOException on Vfs URI: "
-operator|+
-name|vfsURI
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"\n"
-operator|+
-name|e
-operator|.
-name|getLocalizedMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate that we can overwrite an existing file      *      * @throws Exception if something goes wrong      */
@@ -492,8 +453,6 @@ operator|.
 name|createNewFile
 argument_list|()
 expr_stmt|;
-try|try
-block|{
 name|repo
 operator|.
 name|put
@@ -547,31 +506,6 @@ name|length
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Caught unexpected IOException on Vfs URI: "
-operator|+
-name|vfsURI
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"\n"
-operator|+
-name|e
-operator|.
-name|getLocalizedMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate that we put will respect a request not to overwrite an existing file      *      * @throws Exception if something goes wrong      */
@@ -748,8 +682,6 @@ name|scratchDir
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 name|repo
 operator|.
 name|get
@@ -789,31 +721,6 @@ name|exists
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Caught unexpected IOException on Vfs URI: "
-operator|+
-name|vfsURI
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"\n"
-operator|+
-name|e
-operator|.
-name|getLocalizedMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Test the retrieval of an artifact from the repository overwriting an existing artifact      *      * @throws Exception if something goes wrong      */
@@ -895,8 +802,6 @@ operator|.
 name|createNewFile
 argument_list|()
 expr_stmt|;
-try|try
-block|{
 name|repo
 operator|.
 name|get
@@ -941,31 +846,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Caught unexpected IOException on Vfs URI: "
-operator|+
-name|vfsURI
-operator|.
-name|toString
-argument_list|()
-operator|+
-literal|"\n"
-operator|+
-name|e
-operator|.
-name|getLocalizedMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 block|}
 comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to an existing file      *      * @throws Exception if something goes wrong      */
 annotation|@
@@ -997,8 +877,6 @@ name|testResource
 argument_list|)
 control|)
 block|{
-try|try
-block|{
 name|assertNotNull
 argument_list|(
 name|repo
@@ -1012,24 +890,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"Unexpected IOError on fetch of valid resource"
-argument_list|)
-expr_stmt|;
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Validate that we get a non null Resource instance when passed a well-formed VfsURI pointing      * to a non-existent file.      *      * @throws Exception if something goes wrong      */
@@ -1081,8 +941,6 @@ name|scratchDir
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 name|assertNotNull
 argument_list|(
 name|repo
@@ -1096,20 +954,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// this should not happen
-name|fail
-argument_list|(
-literal|"Unexpected IOException"
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 block|}

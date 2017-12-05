@@ -133,18 +133,6 @@ name|assertTrue
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -1029,28 +1017,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|install
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|be
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"unknown dependency, failure unexpected (haltonfailure=false). Failure: "
-operator|+
-name|be
-argument_list|)
-expr_stmt|;
-block|}
 name|assertFalse
 argument_list|(
 operator|new
@@ -1070,8 +1041,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|install
 operator|.
 name|setOverwrite
@@ -1084,21 +1053,6 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|be
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"unknown dependency, failure unexpected (haltonfailure=false). Failure: "
-operator|+
-name|be
-argument_list|)
-expr_stmt|;
-block|}
 name|assertTrue
 argument_list|(
 operator|new
@@ -1655,28 +1609,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|install
 operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|BuildException
-name|be
-parameter_list|)
-block|{
-name|fail
-argument_list|(
-literal|"unknown dependency, failure unexpected (haltonfailure=false). Failure: "
-operator|+
-name|be
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_class
