@@ -154,8 +154,6 @@ specifier|public
 name|void
 name|testProperty
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|findRevision
 operator|.
@@ -212,8 +210,6 @@ specifier|public
 name|void
 name|testLatest
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|findRevision
 operator|.
@@ -263,8 +259,6 @@ specifier|public
 name|void
 name|testLatestSubversion
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|findRevision
 operator|.

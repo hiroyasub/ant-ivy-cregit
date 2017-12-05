@@ -139,8 +139,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|info
 operator|.
@@ -240,8 +238,6 @@ specifier|public
 name|void
 name|testAll
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|info
 operator|.
@@ -431,8 +427,6 @@ specifier|public
 name|void
 name|testIVY726
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|info
 operator|.
@@ -471,8 +465,6 @@ specifier|public
 name|void
 name|testIVY395
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|info
 operator|.

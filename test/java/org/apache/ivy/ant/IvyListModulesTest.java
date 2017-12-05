@@ -154,8 +154,6 @@ specifier|public
 name|void
 name|testExact
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|findModules
 operator|.

@@ -552,8 +552,6 @@ specifier|public
 name|void
 name|testListOrganization
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|OrganisationEntry
 index|[]
@@ -647,8 +645,6 @@ specifier|public
 name|void
 name|testListModules
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ModuleEntry
 index|[]

@@ -268,8 +268,6 @@ specifier|public
 name|void
 name|test
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertFalse
 argument_list|(

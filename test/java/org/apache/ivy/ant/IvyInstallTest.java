@@ -1336,8 +1336,6 @@ specifier|public
 name|void
 name|testInstallWithNamespace2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1498,8 +1496,6 @@ specifier|public
 name|void
 name|testDependencyNotFoundFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.

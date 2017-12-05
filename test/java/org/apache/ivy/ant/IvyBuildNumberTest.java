@@ -154,8 +154,6 @@ specifier|public
 name|void
 name|testDefault
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -243,8 +241,6 @@ specifier|public
 name|void
 name|testDefault2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -339,8 +335,6 @@ specifier|public
 name|void
 name|testDefault3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -435,8 +429,6 @@ specifier|public
 name|void
 name|testLatest
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -524,8 +516,6 @@ specifier|public
 name|void
 name|testLatest2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -613,8 +603,6 @@ specifier|public
 name|void
 name|testPrefix
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -709,8 +697,6 @@ specifier|public
 name|void
 name|testBuildNumber
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -805,8 +791,6 @@ specifier|public
 name|void
 name|testBuildNumber2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -901,8 +885,6 @@ specifier|public
 name|void
 name|testBuildNumber3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -997,8 +979,6 @@ specifier|public
 name|void
 name|testBuildNumber4
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|buildNumber
 operator|.
@@ -1093,8 +1073,6 @@ specifier|public
 name|void
 name|testWithBadChecksum
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Project
 name|project
@@ -1220,8 +1198,6 @@ specifier|public
 name|void
 name|testChainResolver
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Project
 name|project

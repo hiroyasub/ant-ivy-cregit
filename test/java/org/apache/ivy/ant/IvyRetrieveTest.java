@@ -311,8 +311,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -364,8 +362,6 @@ specifier|public
 name|void
 name|testRetrievePrivateWithWildcard
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -458,8 +454,6 @@ specifier|public
 name|void
 name|testValidateInIvySettings
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -523,8 +517,6 @@ specifier|public
 name|void
 name|testInline
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// we first resolve another ivy file
 name|IvyResolve
@@ -648,8 +640,6 @@ specifier|public
 name|void
 name|testWithConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1125,8 +1115,6 @@ specifier|public
 name|void
 name|testWithAPreviousResolve
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// first we do a resolve in another project
 name|Project
@@ -1237,8 +1225,6 @@ specifier|public
 name|void
 name|testWithAPreviousResolveAndResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// first we do a resolve in another project
 name|Project
@@ -1364,8 +1350,6 @@ specifier|public
 name|void
 name|testUseOrigin
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// first we do a resolve with useOrigin=true in another project
 name|Project
@@ -1495,8 +1479,6 @@ specifier|public
 name|void
 name|testUseOriginWithIvyPattern
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// mod2.5 depends on virtual mod2.3 which depends on mod2.1 which depends on mod1.1 which
 comment|// depends on mod1.2
@@ -1657,8 +1639,6 @@ specifier|public
 name|void
 name|testRetrieveWithOriginalNamePattern
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|retrieve
 operator|.
@@ -1724,8 +1704,6 @@ specifier|public
 name|void
 name|testFailureWithoutAPreviousResolve
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|retrieve
 operator|.
@@ -1768,8 +1746,6 @@ specifier|public
 name|void
 name|testFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1792,8 +1768,6 @@ specifier|public
 name|void
 name|testHaltOnFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1823,8 +1797,6 @@ specifier|public
 name|void
 name|testCustomIvyPattern
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// mod2.5 depends on virtual mod2.3 which depends on mod2.1 which depends on mod1.1 which
 comment|// depends on mod1.2
@@ -1977,8 +1949,6 @@ specifier|public
 name|void
 name|testCustomIvyPatternWithConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.

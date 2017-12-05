@@ -191,8 +191,6 @@ specifier|public
 name|void
 name|testNeedModuleDescriptorStandardStatus
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertNeed
 argument_list|(
@@ -222,8 +220,6 @@ specifier|public
 name|void
 name|testNeedModuleDescriptorCustomStatus
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|StatusManager
 operator|.
@@ -278,8 +274,6 @@ specifier|public
 name|void
 name|testAcceptForStandardStatus
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertAccept
 argument_list|(
@@ -315,8 +309,6 @@ specifier|public
 name|void
 name|testAcceptForSameBranches
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertAccept
 argument_list|(
@@ -364,8 +356,6 @@ specifier|public
 name|void
 name|testAcceptForDifferentBranches
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertAccept
 argument_list|(

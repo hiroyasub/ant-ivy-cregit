@@ -426,8 +426,6 @@ specifier|public
 name|void
 name|testLocateThenDownload
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ResolveEngine
 name|engine

@@ -406,8 +406,6 @@ specifier|public
 name|void
 name|testSort
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|addDependency
 argument_list|(
@@ -498,8 +496,6 @@ specifier|public
 name|void
 name|testCircularDependency
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|addDependency
 argument_list|(
@@ -628,8 +624,6 @@ specifier|public
 name|void
 name|testCircularDependency2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|addDependency
 argument_list|(
@@ -741,8 +735,6 @@ specifier|public
 name|void
 name|testCircularDependencyInfiniteLoop
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|addDependency
 argument_list|(

@@ -98,8 +98,6 @@ specifier|public
 name|void
 name|testMavenExcludeParenthesis
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertAccept
 argument_list|(

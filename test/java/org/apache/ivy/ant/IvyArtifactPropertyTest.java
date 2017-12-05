@@ -414,7 +414,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail because no resolve was performed      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail because no resolve was performed      */
 annotation|@
 name|Test
 argument_list|(
@@ -428,8 +428,6 @@ specifier|public
 name|void
 name|testWithResolveIdWithoutResolve
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|prop
 operator|.

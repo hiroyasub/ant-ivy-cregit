@@ -298,8 +298,6 @@ decl_stmt|;
 specifier|public
 name|TestPerformance
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ivy
 operator|=

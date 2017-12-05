@@ -62,8 +62,6 @@ specifier|public
 name|void
 name|testParsing
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Version
 name|v
@@ -187,8 +185,6 @@ specifier|public
 name|void
 name|testCompareTo
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertTrue
 argument_list|(

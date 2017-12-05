@@ -398,8 +398,6 @@ specifier|public
 name|void
 name|testNoProject
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1081,8 +1079,6 @@ specifier|public
 name|void
 name|testCachePath
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1218,8 +1214,6 @@ specifier|public
 name|void
 name|testCachePathFolder
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|wa
 operator|.

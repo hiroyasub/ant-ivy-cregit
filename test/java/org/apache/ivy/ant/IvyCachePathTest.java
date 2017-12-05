@@ -235,8 +235,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -342,8 +340,6 @@ specifier|public
 name|void
 name|testInline1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// we first resolve another ivy file
 name|IvyResolve
@@ -521,8 +517,6 @@ specifier|public
 name|void
 name|testInline2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// we first resolve a dependency directly
 name|path
@@ -700,8 +694,6 @@ specifier|public
 name|void
 name|testEmptyConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -786,8 +778,6 @@ specifier|public
 name|void
 name|testFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -817,8 +807,6 @@ specifier|public
 name|void
 name|testHaltOnFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -855,8 +843,6 @@ specifier|public
 name|void
 name|testWithResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1027,8 +1013,6 @@ specifier|public
 name|void
 name|testWithResolveIdWithoutResolve
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Project
 name|otherProject
@@ -1227,8 +1211,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndMissingConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Project
 name|otherProject
@@ -1374,8 +1356,6 @@ specifier|public
 name|void
 name|testUnpack
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1463,8 +1443,6 @@ specifier|public
 name|void
 name|testOSGi
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1655,8 +1633,6 @@ specifier|public
 name|void
 name|testOSGi2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -1772,8 +1748,6 @@ specifier|public
 name|void
 name|testPackedOSGi
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.

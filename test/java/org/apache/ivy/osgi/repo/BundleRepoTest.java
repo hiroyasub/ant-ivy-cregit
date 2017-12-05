@@ -69,16 +69,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -602,8 +592,6 @@ name|testXMLSerialisation
 parameter_list|()
 throws|throws
 name|SAXException
-throws|,
-name|ParseException
 throws|,
 name|IOException
 block|{

@@ -349,8 +349,6 @@ specifier|public
 name|void
 name|testIVY1455
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -473,8 +471,6 @@ specifier|public
 name|void
 name|testIVY779
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Project
 name|project
@@ -605,8 +601,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// depends on org="org1" name="mod1.2" rev="2.0"
 name|resolve
@@ -695,8 +689,6 @@ specifier|public
 name|void
 name|testResolveWithoutIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -879,8 +871,6 @@ specifier|public
 name|void
 name|testInline
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// same as before, but expressing dependency directly without ivy file
 name|resolve
@@ -965,8 +955,6 @@ specifier|public
 name|void
 name|testInlineWithResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// same as before, but expressing dependency directly without ivy file
 name|resolve
@@ -1065,8 +1053,6 @@ specifier|public
 name|void
 name|testInlineForNonExistingModule
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1148,8 +1134,6 @@ specifier|public
 name|void
 name|testWithSlashes
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1282,8 +1266,6 @@ specifier|public
 name|void
 name|testDepsChanged
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1339,8 +1321,6 @@ specifier|public
 name|void
 name|testDontCheckIfChanged
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1401,8 +1381,6 @@ specifier|public
 name|void
 name|testConflictingDepsChanged
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1458,8 +1436,6 @@ specifier|public
 name|void
 name|testDouble
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1559,8 +1535,6 @@ specifier|public
 name|void
 name|testFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1585,8 +1559,6 @@ specifier|public
 name|void
 name|testIvyLogModulesInUseWithFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1631,8 +1603,6 @@ specifier|public
 name|void
 name|testFailureWithMissingConfigurations
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|expExc
 operator|.
@@ -1687,8 +1657,6 @@ specifier|public
 name|void
 name|testFailureOnBadDependencyIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1720,8 +1688,6 @@ specifier|public
 name|void
 name|testFailureOnBadStatusInDependencyIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1746,8 +1712,6 @@ specifier|public
 name|void
 name|testHaltOnFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -1779,8 +1743,6 @@ specifier|public
 name|void
 name|testWithResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -2083,8 +2045,6 @@ specifier|public
 name|void
 name|testDoubleResolveWithResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -2339,8 +2299,6 @@ specifier|public
 name|void
 name|testDifferentResolveWithSameResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -2602,8 +2560,6 @@ specifier|public
 name|void
 name|testExcludedConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.
@@ -2815,8 +2771,6 @@ specifier|public
 name|void
 name|testChildsSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -2880,8 +2834,6 @@ specifier|public
 name|void
 name|testChildsMultiple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3057,8 +3009,6 @@ specifier|public
 name|void
 name|testChildsMultipleWithConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3199,8 +3149,6 @@ specifier|public
 name|void
 name|testChildsMultipleWithConf2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3362,8 +3310,6 @@ specifier|public
 name|void
 name|testChildsExclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3526,8 +3472,6 @@ specifier|public
 name|void
 name|testChildsDependencyExclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3683,8 +3627,6 @@ specifier|public
 name|void
 name|testChildsDependencyInclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3820,8 +3762,6 @@ specifier|public
 name|void
 name|testChildsFail
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -3864,8 +3804,6 @@ specifier|public
 name|void
 name|testSimpleExtends
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resolve
 operator|.

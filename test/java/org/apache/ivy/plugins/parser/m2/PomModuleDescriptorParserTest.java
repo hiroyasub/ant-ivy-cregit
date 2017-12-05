@@ -798,8 +798,6 @@ specifier|public
 name|void
 name|testAccept
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertTrue
 argument_list|(

@@ -998,8 +998,6 @@ specifier|public
 name|void
 name|testMaven2Listing
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IBiblioResolver
 name|resolver

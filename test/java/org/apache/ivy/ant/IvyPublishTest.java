@@ -542,8 +542,6 @@ name|testMergeParent
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// publish the parent descriptor first, so that it can be found while
 comment|// we are reading the child descriptor.
@@ -904,8 +902,6 @@ name|testMergeParentWithoutPublishingParent
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// here we directly publish a module extending ivy-multiconf.xml,
 comment|// the module parent is not published not yet in cache
@@ -1008,8 +1004,6 @@ name|testMergeParentWithoutPublishingParentForceDeliver
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 name|IvyResolve
 name|resolve
@@ -1151,8 +1145,6 @@ name|testMergeParentWithoutLocationAttribute
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 name|IvyResolve
 name|resolve
@@ -1261,8 +1253,6 @@ name|testMinimalMerge
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// publish the parent descriptor first, so that it can be found while
 comment|// we are reading the child descriptor.
@@ -1456,8 +1446,6 @@ name|testMergeExtraAttributes
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// publish the parent descriptor first, so that it can be found while
 comment|// we are reading the child descriptor.
@@ -1676,8 +1664,6 @@ name|testMergeExtraAttributesFromParent
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// publish the parent descriptor first, so that it can be found while
 comment|// we are reading the child descriptor.
@@ -1895,7 +1881,9 @@ name|void
 name|testSimple
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -2056,8 +2044,6 @@ specifier|public
 name|void
 name|testHaltOnMissing
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -2200,7 +2186,7 @@ name|void
 name|testHaltOnMissing2
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -2357,7 +2343,7 @@ name|void
 name|testHaltOnMissing3
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -2514,7 +2500,9 @@ name|void
 name|testPublishNotAllConfigs
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -2723,7 +2711,7 @@ name|void
 name|testMultiPatterns
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -2891,7 +2879,7 @@ name|void
 name|testPublishPublicConfigsByWildcard
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -3024,7 +3012,9 @@ name|void
 name|testCustom
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -3310,7 +3300,9 @@ name|void
 name|testNoDeliver
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -3505,7 +3497,9 @@ name|void
 name|testNoDeliverWithBranch
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -3727,7 +3721,9 @@ name|void
 name|testForceDeliver
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
+throws|,
+name|ParseException
 block|{
 name|project
 operator|.
@@ -3902,7 +3898,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must not publish ivy file with bad revision.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must not publish ivy file with bad revision.      *      * @throws IOException when copy fails      */
 annotation|@
 name|Test
 argument_list|(
@@ -3917,7 +3913,7 @@ name|void
 name|testBadNoDeliver
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -4250,7 +4246,7 @@ name|void
 name|testOverwrite
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.
@@ -4463,7 +4459,7 @@ name|void
 name|testOverwriteReadOnly
 parameter_list|()
 throws|throws
-name|Exception
+name|IOException
 block|{
 name|project
 operator|.

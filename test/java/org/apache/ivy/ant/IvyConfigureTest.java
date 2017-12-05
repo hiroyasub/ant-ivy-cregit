@@ -566,8 +566,6 @@ specifier|public
 name|void
 name|testDefault
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// by default settings look in the current directory for an ivysettings.xml file...
 comment|// but Ivy itself has one, and we don't want to use it
@@ -650,8 +648,6 @@ specifier|public
 name|void
 name|testDefault14
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// by default settings look in the current directory for an ivysettings.xml file...
 comment|// but Ivy itself has one, and we don't want to use it
@@ -1261,8 +1257,6 @@ specifier|public
 name|void
 name|testIncludeTwice
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|configure
 operator|.
@@ -1293,8 +1287,6 @@ specifier|public
 name|void
 name|testOverrideTrue
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|configure
 operator|.
@@ -1380,8 +1372,6 @@ specifier|public
 name|void
 name|testOverrideFalse
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|configure
 operator|.
@@ -1463,8 +1453,6 @@ specifier|public
 name|void
 name|testOverrideNotAllowed
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|expExc
 operator|.
@@ -1560,8 +1548,6 @@ specifier|public
 name|void
 name|testInvalidOverride
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|expExc
 operator|.

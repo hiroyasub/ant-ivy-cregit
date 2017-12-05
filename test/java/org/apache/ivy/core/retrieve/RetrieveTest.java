@@ -1984,7 +1984,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the system {@link #systemHasSymlinkAbility has symlink ability} then asserts that the      * passed {@code filePath} is a {@link Files#isSymbolicLink(Path) symbolic link}. Else asserts      * that the {@code filePath} {@link Files#exists(Path, LinkOption...) exists}.      *      * @param filePath      */
+comment|/**      * If the system {@link #systemHasSymlinkAbility has symlink ability} then asserts that the      * passed {@code filePath} is a {@link Files#isSymbolicLink(Path) symbolic link}. Else asserts      * that the {@code filePath} {@link Files#exists(Path, LinkOption...) exists}.      *      * @param filePath String      */
 specifier|private
 name|void
 name|assertLinkOrExists

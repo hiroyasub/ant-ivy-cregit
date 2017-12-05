@@ -69,16 +69,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|text
-operator|.
-name|ParseException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Arrays
@@ -549,8 +539,6 @@ name|testMergeParent
 parameter_list|()
 throws|throws
 name|IOException
-throws|,
-name|ParseException
 block|{
 comment|// publish the parent descriptor first, so that it can be found while
 comment|// we are reading the child descriptor.

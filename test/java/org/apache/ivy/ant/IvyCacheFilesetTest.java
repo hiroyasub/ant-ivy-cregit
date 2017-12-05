@@ -356,8 +356,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -577,8 +575,6 @@ specifier|public
 name|void
 name|testEmptyConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -680,8 +676,6 @@ specifier|public
 name|void
 name|testFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -719,8 +713,6 @@ specifier|public
 name|void
 name|testInvalidPattern
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -760,8 +752,6 @@ specifier|public
 name|void
 name|testHaltOnFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|project
 operator|.
@@ -798,8 +788,6 @@ specifier|public
 name|void
 name|testWithoutPreviousResolveAndNonDefaultCache
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|File
 name|cache2

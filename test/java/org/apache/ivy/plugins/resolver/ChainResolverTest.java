@@ -705,8 +705,6 @@ specifier|public
 name|void
 name|testName
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ChainResolver
 name|chain
@@ -3765,8 +3763,6 @@ specifier|public
 name|void
 name|testDownloadWithDual
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ChainResolver
 name|chain

@@ -285,8 +285,6 @@ specifier|public
 name|void
 name|testLog
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|strategy
 operator|.
@@ -314,8 +312,6 @@ specifier|public
 name|void
 name|testRemoveDuplicates
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|strategy
 operator|.
@@ -362,8 +358,6 @@ specifier|public
 name|void
 name|testRemoveDuplicates2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|setResolveContext
 argument_list|(

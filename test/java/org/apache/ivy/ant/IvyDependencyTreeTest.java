@@ -199,8 +199,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyTree
 operator|.
@@ -235,8 +233,6 @@ specifier|public
 name|void
 name|testEmpty
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyTree
 operator|.
@@ -271,8 +267,6 @@ specifier|public
 name|void
 name|testWithResolveId
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -371,8 +365,6 @@ specifier|public
 name|void
 name|testWithResolveIdWithoutResolve
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyTree
 operator|.
@@ -386,8 +378,6 @@ specifier|public
 name|void
 name|testWithEvictedModule
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyTree
 operator|.
@@ -437,8 +427,6 @@ specifier|public
 name|void
 name|testShowEvictedModule
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyTree
 operator|.
@@ -496,8 +484,6 @@ specifier|public
 name|void
 name|testCircularDep
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String

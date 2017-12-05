@@ -238,8 +238,6 @@ specifier|public
 name|void
 name|testGetRule
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// fixture
 name|rules
@@ -329,8 +327,6 @@ specifier|public
 name|void
 name|testGetRuleWithFilter
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// fixture
 name|rules

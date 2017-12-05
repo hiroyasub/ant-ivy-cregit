@@ -188,8 +188,6 @@ specifier|public
 name|void
 name|testInitFromConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ConflictManager
 name|cm

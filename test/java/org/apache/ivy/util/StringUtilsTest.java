@@ -72,8 +72,6 @@ specifier|public
 name|void
 name|testGetStackTrace
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|trace

@@ -105,8 +105,6 @@ specifier|public
 name|void
 name|testParse
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|testParse
 argument_list|(
@@ -177,8 +175,6 @@ specifier|public
 name|void
 name|testParseFailure1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|testParseFailure
 argument_list|(
@@ -192,8 +188,6 @@ specifier|public
 name|void
 name|testParseFailure2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|testParseFailure
 argument_list|(
@@ -207,8 +201,6 @@ specifier|public
 name|void
 name|testParseFailure3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|testParseFailure
 argument_list|(
@@ -222,8 +214,6 @@ specifier|public
 name|void
 name|testParseFailure4
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|testParseFailure
 argument_list|(

@@ -277,8 +277,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// depends on org="org1" name="mod1.1" rev="1.0"
 comment|// has transitive dependency on org="org1" name="mod1.2" rev="2.0"
@@ -346,8 +344,6 @@ specifier|public
 name|void
 name|testSimpleAndShowTransitiveDependencies
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// depends on org="org1" name="mod1.1" rev="1.0"
 comment|// has transitive dependency on org="org1" name="mod1.2" rev="2.0"
@@ -422,8 +418,6 @@ specifier|public
 name|void
 name|testResolveWithoutIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// depends on org="org1" name="mod1.2" rev="2.0"
 name|dependencyUpdateChecker
@@ -473,8 +467,6 @@ specifier|public
 name|void
 name|testInline
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// same as before, but expressing dependency directly without ivy file
 name|dependencyUpdateChecker
@@ -535,8 +527,6 @@ specifier|public
 name|void
 name|testInlineForNonExistingModule
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -593,8 +583,6 @@ specifier|public
 name|void
 name|testFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -620,8 +608,6 @@ specifier|public
 name|void
 name|testFailureWithMissingConfigurations
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|expExc
 operator|.
@@ -677,8 +663,6 @@ specifier|public
 name|void
 name|testFailureOnBadDependencyIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -711,8 +695,6 @@ specifier|public
 name|void
 name|testFailureOnBadStatusInDependencyIvyFile
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -737,8 +719,6 @@ specifier|public
 name|void
 name|testHaltOnFailure
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -770,8 +750,6 @@ specifier|public
 name|void
 name|testExcludedConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.
@@ -919,8 +897,6 @@ specifier|public
 name|void
 name|testSimpleExtends
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|dependencyUpdateChecker
 operator|.

@@ -64,15 +64,13 @@ specifier|public
 class|class
 name|MavenTimedSnapshotVersionMatcherTest
 block|{
-comment|/**      * Tests the {@link MavenTimedSnapshotVersionMatcher#isDynamic(ModuleRevisionId)} method      *      * @throws Exception      */
+comment|/**      * Tests the {@link MavenTimedSnapshotVersionMatcher#isDynamic(ModuleRevisionId)} method      */
 annotation|@
 name|Test
 specifier|public
 name|void
 name|testIsDynamic
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|MavenTimedSnapshotVersionMatcher
@@ -176,15 +174,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenTimedSnapshotVersionMatcher#computeIfSnapshot(String)} method      *      * @throws Exception      */
+comment|/**      * Tests the {@link MavenTimedSnapshotVersionMatcher#computeIfSnapshot(String)} method      */
 annotation|@
 name|Test
 specifier|public
 name|void
 name|testSnapshotParsing
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Assert
 operator|.

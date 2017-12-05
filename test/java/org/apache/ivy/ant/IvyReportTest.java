@@ -212,8 +212,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Locale
 name|oldLocale
@@ -645,8 +643,6 @@ specifier|public
 name|void
 name|testNoRevisionInOutputPattern
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Locale
 name|oldLocale
@@ -782,8 +778,6 @@ specifier|public
 name|void
 name|testMultipleConfigurations
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Locale
 name|oldLocale
@@ -937,8 +931,6 @@ specifier|public
 name|void
 name|testRegularCircular
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Locale
 name|oldLocale

@@ -368,8 +368,6 @@ specifier|public
 name|void
 name|testSimple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -453,8 +451,6 @@ specifier|public
 name|void
 name|testMultiple
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -656,8 +652,6 @@ specifier|public
 name|void
 name|testMultipleWithConf
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -820,8 +814,6 @@ specifier|public
 name|void
 name|testMultipleWithConf2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -1007,8 +999,6 @@ specifier|public
 name|void
 name|testExclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -1193,8 +1183,6 @@ specifier|public
 name|void
 name|testDependencyExclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -1372,8 +1360,6 @@ specifier|public
 name|void
 name|testDependencyInclude
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency
@@ -1528,8 +1514,6 @@ specifier|public
 name|void
 name|testFail
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyDependency
 name|dependency

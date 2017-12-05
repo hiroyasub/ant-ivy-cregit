@@ -319,8 +319,6 @@ specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndLessConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -407,8 +405,6 @@ specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndSameConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -495,8 +491,6 @@ specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndWildcard
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -583,8 +577,6 @@ specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndBothWildcard
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -671,8 +663,6 @@ specifier|public
 name|void
 name|testWithPreviousResolveInSameBuildAndMoreConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -822,8 +812,6 @@ specifier|public
 name|void
 name|testWithoutKeep
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -982,8 +970,6 @@ specifier|public
 name|void
 name|testInlineWithoutKeep
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|task
 operator|.
@@ -1071,8 +1057,6 @@ specifier|public
 name|void
 name|testInlineWithKeep
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|task
 operator|.
@@ -1167,8 +1151,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndLessConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1335,8 +1317,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndSameConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1503,8 +1483,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndWildcard
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1671,8 +1649,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndBothWildcard
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve
@@ -1839,8 +1815,6 @@ specifier|public
 name|void
 name|testWithResolveIdAndPreviousResolveInSameBuildAndMoreConfs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|IvyResolve
 name|resolve

@@ -305,8 +305,6 @@ specifier|public
 name|void
 name|testCleanAll
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 operator|.
@@ -344,8 +342,6 @@ specifier|public
 name|void
 name|testResolutionOnly
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 operator|.
@@ -392,8 +388,6 @@ specifier|public
 name|void
 name|testRepositoryOnly
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 operator|.
@@ -438,8 +432,6 @@ specifier|public
 name|void
 name|testOneRepositoryOnly
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|cleanCache
 operator|.
@@ -492,8 +484,6 @@ specifier|public
 name|void
 name|testUnknownCache
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|expExc
 operator|.

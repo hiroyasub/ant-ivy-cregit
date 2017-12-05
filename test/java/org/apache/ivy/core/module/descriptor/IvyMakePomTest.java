@@ -258,8 +258,6 @@ specifier|public
 name|void
 name|beforeTest
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|this
 operator|.

@@ -579,8 +579,6 @@ specifier|public
 name|void
 name|testBadURI
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|vfsURI
@@ -697,8 +695,6 @@ specifier|public
 name|void
 name|testListFolderChildren
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -884,8 +880,6 @@ specifier|public
 name|void
 name|testListFileChildren
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 for|for
 control|(
@@ -950,8 +944,6 @@ specifier|public
 name|void
 name|testListImaginary
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 for|for
 control|(

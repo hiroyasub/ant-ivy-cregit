@@ -6737,8 +6737,6 @@ specifier|public
 name|void
 name|testListing
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|FileSystemResolver
 name|resolver
