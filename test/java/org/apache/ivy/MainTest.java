@@ -855,11 +855,6 @@ init|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|uniqueParsedTypes
-operator|.
-name|addAll
 argument_list|(
 name|Arrays
 operator|.
@@ -868,7 +863,7 @@ argument_list|(
 name|parsedTypes
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|assertTrue
 argument_list|(
 literal|"jar type is missing from the parsed types argument"

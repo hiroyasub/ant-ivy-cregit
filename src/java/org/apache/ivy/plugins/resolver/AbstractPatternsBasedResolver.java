@@ -783,11 +783,6 @@ init|=
 operator|new
 name|HashSet
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|names
-operator|.
-name|addAll
 argument_list|(
 name|findIvyNames
 argument_list|(
@@ -796,7 +791,7 @@ argument_list|,
 name|token
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|isAllownomd

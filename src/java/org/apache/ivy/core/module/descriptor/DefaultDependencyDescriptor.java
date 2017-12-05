@@ -1927,11 +1927,6 @@ init|=
 operator|new
 name|LinkedHashSet
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|allDepConfs
-operator|.
-name|addAll
 argument_list|(
 name|Arrays
 operator|.
@@ -1945,7 +1940,7 @@ name|requestedConfiguration
 argument_list|)
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|Collection
 argument_list|<
 name|Configuration
