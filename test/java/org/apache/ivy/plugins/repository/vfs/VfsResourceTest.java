@@ -572,7 +572,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      *      * @throws Exception if something goes wrong      */
+comment|/**      * Validate VFSResource creation when given a poorly formed VFS identifier      */
 annotation|@
 name|Test
 specifier|public
@@ -688,7 +688,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Validate getChildren when given a VFS URI for a directory      *      * @throws Exception if something goes wrong      */
+comment|/**      * Validate getChildren when given a VFS URI for a directory      */
 annotation|@
 name|Test
 specifier|public
@@ -873,7 +873,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      *      * @throws Exception if something goes wrong      */
+comment|/**      * Validate that we don't get any results when we query a VFSResource file object for its      * children      */
 annotation|@
 name|Test
 specifier|public
@@ -937,7 +937,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      *      * @throws Exception if something goes wrong      */
+comment|/**      * Validate that we don't get any results if we ask an IMAGINARY VFSResource - a nonexistent      * file - for a list of its children      */
 annotation|@
 name|Test
 specifier|public

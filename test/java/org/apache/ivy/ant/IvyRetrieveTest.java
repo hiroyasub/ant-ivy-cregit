@@ -447,7 +447,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-992.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-992">IVY-992</a>      */
+comment|/**      * Test case for IVY-992.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-992">IVY-992</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1343,7 +1343,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-304.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-304">IVY-304</a>      */
+comment|/**      * Test case for IVY-304.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-304">IVY-304</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1632,7 +1632,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-631.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-631">IVY-631</a>      */
+comment|/**      * Test case for IVY-631.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-631">IVY-631</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1690,7 +1690,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Retrieve without previous resolve must fail.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Retrieve without previous resolve must fail.      */
 annotation|@
 name|Test
 argument_list|(
@@ -1732,7 +1732,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(

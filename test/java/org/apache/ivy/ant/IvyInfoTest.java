@@ -420,7 +420,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-726.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-726">IVY-726</a>      */
+comment|/**      * Test case for IVY-726.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-726">IVY-726</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -458,7 +458,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-395.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-395">IVY-395</a>      */
+comment|/**      * Test case for IVY-395.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-395">IVY-395</a>      */
 annotation|@
 name|Test
 specifier|public

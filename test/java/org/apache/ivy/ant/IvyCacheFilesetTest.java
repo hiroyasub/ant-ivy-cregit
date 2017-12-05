@@ -662,7 +662,7 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(
@@ -699,7 +699,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(
@@ -745,7 +745,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must pass with haltonfailure set to false.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must pass with haltonfailure set to false.      */
 annotation|@
 name|Test
 specifier|public
@@ -1066,7 +1066,7 @@ comment|// A common base only on the fs-root.
 specifier|final
 name|File
 index|[]
-name|filesytemRoots
+name|filesystemRoots
 init|=
 name|File
 operator|.
@@ -1077,7 +1077,7 @@ specifier|final
 name|File
 name|root1
 init|=
-name|filesytemRoots
+name|filesystemRoots
 index|[
 literal|0
 index|]

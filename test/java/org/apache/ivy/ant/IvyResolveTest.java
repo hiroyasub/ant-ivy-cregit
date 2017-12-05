@@ -342,7 +342,7 @@ name|cleanCache
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-1455.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1455">IVY-1455</a>      */
+comment|/**      * Test case for IVY-1455.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1455">IVY-1455</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -464,7 +464,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-779.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-779">IVY-779</a>      */
+comment|/**      * Test case for IVY-779.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-779">IVY-779</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -682,7 +682,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-630.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-630">IVY-630</a>      */
+comment|/**      * Test case for IVY-630.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-630">IVY-630</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -3748,7 +3748,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test a failing resolve.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test a failing resolve.      */
 annotation|@
 name|Test
 argument_list|(

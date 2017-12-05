@@ -217,8 +217,6 @@ specifier|public
 name|void
 name|testAllRevs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|findModules
 operator|.

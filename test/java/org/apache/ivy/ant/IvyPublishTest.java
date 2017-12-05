@@ -914,7 +914,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Test case for IVY-1248.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
+comment|/**      * Test case for IVY-1248.      *      * @throws IOException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1016,7 +1016,7 @@ literal|"ivy-extends-merged.xml"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-1248.      * Here we directly publish a module extending ivy-multiconf.xml,      * the module parent is not published not yet in cache.      *      * @throws IOException if something goes wrong      * @throws ParseException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
+comment|/**      * Test case for IVY-1248.      * Here we directly publish a module extending ivy-multiconf.xml,      * the module parent is not published not yet in cache.      *      * @throws IOException if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1248">IVY-1248</a>      */
 annotation|@
 name|Test
 specifier|public

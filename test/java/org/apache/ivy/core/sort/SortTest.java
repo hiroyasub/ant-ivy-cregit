@@ -489,7 +489,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (If A depends      * transitively of B, but B doesn't depends transitively on A, then B always comes before A.)      *      * @throws Exception if something goes wrong      */
+comment|/**      * Sorter does not throw circular dependency, circular dependencies are handled at resolve time      * only. However the sort respect the transitive order when it is unambiguous. (If A depends      * transitively of B, but B doesn't depends transitively on A, then B always comes before A.)      */
 annotation|@
 name|Test
 specifier|public
@@ -728,7 +728,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Test case for IVY-624      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-624">IVY-624</a>      */
+comment|/**      * Test case for IVY-624      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-624">IVY-624</a>      */
 annotation|@
 name|Test
 specifier|public

@@ -1322,7 +1322,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Installing a module with namespace coordinates instead of system one must fail.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Installing a module with namespace coordinates instead of system one must fail.      */
 annotation|@
 name|Test
 argument_list|(
@@ -1482,7 +1482,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fail on unknown dependency when haltonfailure=true.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Fail on unknown dependency when haltonfailure=true.      */
 annotation|@
 name|Test
 argument_list|(

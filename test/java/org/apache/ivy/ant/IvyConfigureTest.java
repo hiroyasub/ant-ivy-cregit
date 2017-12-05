@@ -1250,7 +1250,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-601.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-601">IVY-601</a>      */
+comment|/**      * Test case for IVY-601.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-601">IVY-601</a>      */
 annotation|@
 name|Test
 specifier|public
@@ -1446,7 +1446,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Calling settings twice with the same id with override=notallowed must fail      *      * @throws Exception if something goes wrong      */
+comment|/**      * Calling settings twice with the same id with override=notallowed must fail      */
 annotation|@
 name|Test
 specifier|public
@@ -1541,7 +1541,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Settings override with invalid value must fail.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Settings override with invalid value must fail.      */
 annotation|@
 name|Test
 specifier|public

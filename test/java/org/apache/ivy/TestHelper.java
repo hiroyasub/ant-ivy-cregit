@@ -1253,7 +1253,7 @@ name|microIvy
 argument_list|)
 throw|;
 block|}
-comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double      * semicolumns.      *      * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
+comment|/**      * Parses a collection of module descriptors in the micro ivy format, separated by double      * semicolons.      *      * @param microIvy      *            the text representation of the collection of module descriptors      * @return the collection of module descriptors parsed      */
 specifier|public
 specifier|static
 name|Collection

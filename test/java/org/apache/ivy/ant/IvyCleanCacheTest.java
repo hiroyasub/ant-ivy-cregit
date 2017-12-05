@@ -477,7 +477,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * clean cache must fail with unknown cache      *      * @throws Exception if something goes wrong      */
+comment|/**      * clean cache must fail with unknown cache      */
 annotation|@
 name|Test
 specifier|public

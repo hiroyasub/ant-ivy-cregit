@@ -1191,7 +1191,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case for IVY-1037.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1037">IVY-1037</a>      */
+comment|/**      * Test case for IVY-1037.      *      * @see<a href="https://issues.apache.org/jira/browse/IVY-1037">IVY-1037</a>      */
 annotation|@
 name|Test
 specifier|public

@@ -513,7 +513,7 @@ literal|"org1#mod1.2\t2.0 -> 2.2"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(
@@ -569,7 +569,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(
@@ -601,7 +601,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail because of missing configurations.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail because of missing configurations.      */
 annotation|@
 name|Test
 specifier|public
@@ -649,7 +649,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(
@@ -681,7 +681,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Test must fail with default haltonfailure setting.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Test must fail with default haltonfailure setting.      */
 annotation|@
 name|Test
 argument_list|(

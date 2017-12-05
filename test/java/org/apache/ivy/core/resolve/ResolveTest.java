@@ -31865,7 +31865,7 @@ comment|// test has a dependency on test2 but there is no version listed. test h
 comment|// parent(2.0)
 comment|// then parent2. Both parents have a dependencyManagement element for test2, and each list
 comment|// the version as
-comment|// ${pom.version}. The parent version should take precidence over parent2,
+comment|// ${pom.version}. The parent version should take precedence over parent2,
 comment|// so the version should be test2 version 2.0. Test3 is also a dependency of parent, and
 comment|// it's version is listed
 comment|// as 1.0 in parent2 (dependencies inherited from parent comes after).
