@@ -2912,6 +2912,8 @@ name|askedDeps
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReturnFirst
@@ -3283,6 +3285,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case for IVY-207.      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-207">IVY-207</a>      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReturnFirstWithCheckModifiedAndDefaultAndCacheAndRealResolver
