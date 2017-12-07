@@ -109,16 +109,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Before
 import|;
 end_import
@@ -129,7 +119,29 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Rule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|rules
+operator|.
+name|ExpectedException
 import|;
 end_import
 
@@ -239,6 +251,18 @@ begin_import
 import|import static
 name|org
 operator|.
+name|hamcrest
+operator|.
+name|Matchers
+operator|.
+name|endsWith
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
 name|Assert
@@ -268,6 +292,18 @@ operator|.
 name|Assert
 operator|.
 name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -316,6 +352,17 @@ literal|5000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Rule
+specifier|public
+name|ExpectedException
+name|expExc
+init|=
+name|ExpectedException
+operator|.
+name|none
+argument_list|()
+decl_stmt|;
 annotation|@
 name|Before
 specifier|public
@@ -442,6 +489,18 @@ operator|new
 name|HttpClientHandler
 argument_list|()
 decl_stmt|;
+name|assertTrue
+argument_list|(
+literal|"Default Maven URL must end with '/'"
+argument_list|,
+name|DEFAULT_M2_ROOT
+operator|.
+name|endsWith
+argument_list|(
+literal|"/"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|URLInfo
 name|info
 init|=
@@ -454,7 +513,7 @@ name|URL
 argument_list|(
 name|DEFAULT_M2_ROOT
 operator|+
-literal|"/commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
+literal|"commons-lang/commons-lang/[1.0,3.0[/commons-lang-[1.0,3.0[.pom"
 argument_list|)
 argument_list|,
 name|defaultTimeoutConstraint
@@ -609,6 +668,29 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// we catch it and check for presence of 401 in the exception message.
+comment|// It's not exactly an contract that the IOException will have the 401 message
+comment|// but for now that's how it's implemented and it's fine to check for the presence
+comment|// of that message at the moment
+name|expExc
+operator|.
+name|expect
+argument_list|(
+name|IOException
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|expExc
+operator|.
+name|expectMessage
+argument_list|(
+name|endsWith
+argument_list|(
+literal|"ivysettings.xml' 401 - 'Unauthorized"
+argument_list|)
+argument_list|)
+expr_stmt|;
 specifier|final
 name|CredentialsStore
 name|credentialsStore
@@ -909,8 +991,6 @@ literal|"/ivysettings.xml"
 argument_list|)
 decl_stmt|;
 comment|// download it (expected to fail)
-try|try
-block|{
 name|handler
 operator|.
 name|download
@@ -924,44 +1004,6 @@ argument_list|,
 name|defaultTimeoutConstraint
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
-name|fail
-argument_list|(
-literal|"Download from "
-operator|+
-name|src
-operator|+
-literal|" was expected to fail due to invalid credentials"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioe
-parameter_list|)
-block|{
-comment|// we catch it and check for presence of 401 in the exception message.
-comment|// It's not exactly an contract that the IOException will have the 401 message
-comment|// but for now that's how it's implemented and it's fine to check for the presence
-comment|// of that message at the moment
-name|assertTrue
-argument_list|(
-literal|"Expected to find 401 error message in exception"
-argument_list|,
-name|ioe
-operator|.
-name|getMessage
-argument_list|()
-operator|.
-name|contains
-argument_list|(
-literal|"401"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private

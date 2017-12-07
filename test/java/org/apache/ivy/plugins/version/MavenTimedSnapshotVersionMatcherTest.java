@@ -41,17 +41,55 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
+name|Test
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
 name|junit
 operator|.
-name|Test
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -95,8 +133,6 @@ argument_list|,
 literal|"1.0.2-SNAPSHOT"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|regularSnapshot
@@ -126,8 +162,6 @@ argument_list|,
 literal|"1.0.2-20100925.223013-19"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|timestampedSnapshot
@@ -157,8 +191,6 @@ argument_list|,
 literal|"2.4.0"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|exactRevision
@@ -182,8 +214,6 @@ name|void
 name|testSnapshotParsing
 parameter_list|()
 block|{
-name|Assert
-operator|.
 name|assertNull
 argument_list|(
 literal|"Revision wasn't expected to be a snapshot"
@@ -215,8 +245,6 @@ argument_list|(
 name|regularSnapshot
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertNotNull
 argument_list|(
 name|regularSnapshot
@@ -226,8 +254,6 @@ argument_list|,
 name|snapshotRevision
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|regularSnapshot
@@ -259,8 +285,6 @@ argument_list|(
 name|timestampedRev
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertNotNull
 argument_list|(
 name|timestampedRev
@@ -270,8 +294,6 @@ argument_list|,
 name|timestampedSnapshot
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|timestampedRev
@@ -290,8 +312,6 @@ name|exactRevision
 init|=
 literal|"21.2.2-a20140204.232421-2"
 decl_stmt|;
-name|Assert
-operator|.
 name|assertNull
 argument_list|(
 name|exactRevision

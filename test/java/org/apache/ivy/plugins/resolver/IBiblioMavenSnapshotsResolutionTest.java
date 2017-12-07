@@ -205,16 +205,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Before
 import|;
 end_import
@@ -373,8 +363,6 @@ operator|.
 name|getSettings
 argument_list|()
 decl_stmt|;
-name|Assert
-operator|.
 name|assertNotNull
 argument_list|(
 literal|"Maven timestamped snapshot revision version matcher is absent"
