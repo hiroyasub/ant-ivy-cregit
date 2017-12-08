@@ -158,11 +158,13 @@ block|}
 name|String
 name|version
 init|=
+operator|(
 name|this
 operator|.
 name|version
 operator|==
 literal|null
+operator|)
 condition|?
 name|mrid
 operator|.
@@ -176,11 +178,13 @@ decl_stmt|;
 name|String
 name|branch
 init|=
+operator|(
 name|this
 operator|.
 name|branch
 operator|==
 literal|null
+operator|)
 condition|?
 name|mrid
 operator|.

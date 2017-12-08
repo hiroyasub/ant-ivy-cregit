@@ -2844,11 +2844,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|(
 name|md
 operator|!=
 literal|null
-operator|)
 operator|&&
 operator|!
 literal|"*"

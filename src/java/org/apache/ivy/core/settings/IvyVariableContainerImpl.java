@@ -203,11 +203,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|(
 name|prefix
 operator|!=
 literal|null
-operator|)
 operator|&&
 operator|!
 name|prefix
@@ -295,11 +293,9 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|envPrefix
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|name
 operator|.

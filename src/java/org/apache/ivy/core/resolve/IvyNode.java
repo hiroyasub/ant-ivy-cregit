@@ -3907,7 +3907,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|md
 operator|.
 name|getConfiguration
@@ -3916,7 +3915,6 @@ name|conf
 argument_list|)
 operator|==
 literal|null
-operator|)
 operator|||
 name|PRIVATE
 operator|.
@@ -4668,12 +4666,10 @@ name|isEmpty
 argument_list|()
 operator|)
 operator|&&
-operator|(
 name|includes
 operator|.
 name|isEmpty
 argument_list|()
-operator|)
 condition|)
 block|{
 comment|// no artifacts / includes: we get all artifacts as defined by the descriptor

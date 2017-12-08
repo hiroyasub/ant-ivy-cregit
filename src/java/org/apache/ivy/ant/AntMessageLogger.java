@@ -208,14 +208,12 @@ name|task
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|currentTask
 operator|.
 name|getTaskName
 argument_list|()
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|currentTask
 operator|.

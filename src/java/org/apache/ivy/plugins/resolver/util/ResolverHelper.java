@@ -294,7 +294,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
 name|pattern
 operator|.
 name|length
@@ -306,7 +305,6 @@ name|tokenString
 operator|.
 name|length
 argument_list|()
-operator|)
 operator|||
 name|fileSep
 operator|.
@@ -1377,7 +1375,6 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
 name|pattern
 operator|.
 name|length
@@ -1389,7 +1386,6 @@ name|tokenString
 operator|.
 name|length
 argument_list|()
-operator|)
 operator|||
 literal|"/"
 operator|.

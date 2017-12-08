@@ -1025,22 +1025,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|"D"
-case|:
-name|assertEquals
-argument_list|(
-literal|"D revision should be 1.0.0"
-argument_list|,
-literal|"1.0.0"
-argument_list|,
-name|mrid
-operator|.
-name|getRevision
-argument_list|()
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 literal|"B"
 case|:
 comment|// by transitivity
@@ -1065,6 +1049,22 @@ argument_list|(
 literal|"C revision should be 1.0.2"
 argument_list|,
 literal|"1.0.2"
+argument_list|,
+name|mrid
+operator|.
+name|getRevision
+argument_list|()
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|"D"
+case|:
+name|assertEquals
+argument_list|(
+literal|"D revision should be 1.0.0"
+argument_list|,
+literal|"1.0.0"
 argument_list|,
 name|mrid
 operator|.

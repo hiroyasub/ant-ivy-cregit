@@ -618,11 +618,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|rres
 operator|!=
 literal|null
-operator|)
 operator|&&
 operator|!
 name|foundRevisions
@@ -1428,11 +1426,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|token
 operator|==
 literal|null
-operator|)
 operator|&&
 name|exist
 argument_list|(
@@ -1544,11 +1540,9 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|matcher
 operator|!=
 literal|null
-operator|)
 operator|&&
 operator|!
 name|matcher

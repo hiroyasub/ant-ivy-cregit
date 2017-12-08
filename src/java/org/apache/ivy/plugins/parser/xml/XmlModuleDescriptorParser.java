@@ -2557,7 +2557,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-operator|(
 literal|"conflict"
 operator|.
 name|equals
@@ -2570,7 +2569,6 @@ operator|==
 name|State
 operator|.
 name|DEPS
-operator|)
 operator|||
 literal|"manager"
 operator|.
@@ -5520,17 +5518,13 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|revConstraint
 operator|==
 literal|null
-operator|)
 operator|&&
-operator|(
 name|branchConstraint
 operator|==
 literal|null
-operator|)
 condition|)
 block|{
 comment|// no dynamic constraints defined, so dynamicId equals revId
@@ -7622,7 +7616,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-operator|(
 name|state
 operator|==
 name|State
@@ -7635,9 +7628,7 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
-operator|)
 operator|||
-operator|(
 name|state
 operator|==
 name|State
@@ -7650,9 +7641,7 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
-operator|)
 operator|||
-operator|(
 name|state
 operator|==
 name|State
@@ -7665,7 +7654,6 @@ name|equals
 argument_list|(
 name|qName
 argument_list|)
-operator|)
 condition|)
 block|{
 name|state

@@ -494,17 +494,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|href
 operator|==
 literal|null
-operator|)
 operator|||
-operator|(
 name|text
 operator|==
 literal|null
-operator|)
 condition|)
 block|{
 comment|// the groups were not found (shouldn't happen, really)

@@ -554,7 +554,7 @@ name|Parameters
 argument_list|(
 name|name
 operator|=
-literal|"illegal token at {1} in {0}"
+literal|"Illegal token at {1} in {0}"
 argument_list|)
 specifier|public
 specifier|static

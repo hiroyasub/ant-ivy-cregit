@@ -505,11 +505,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|otherRef
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|OVERRIDE_NOT_ALLOWED
 operator|.

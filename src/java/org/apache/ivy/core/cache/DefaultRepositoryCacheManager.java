@@ -8190,11 +8190,9 @@ name|IOException
 block|{
 if|if
 condition|(
-operator|(
 name|backup
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|backup
 operator|.
@@ -8238,11 +8236,9 @@ parameter_list|()
 block|{
 if|if
 condition|(
-operator|(
 name|backup
 operator|!=
 literal|null
-operator|)
 operator|&&
 name|backup
 operator|.

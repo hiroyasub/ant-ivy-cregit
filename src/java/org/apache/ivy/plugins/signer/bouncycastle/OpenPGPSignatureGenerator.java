@@ -854,11 +854,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|keyId
 operator|==
 literal|null
-operator|)
 operator|&&
 name|k
 operator|.
@@ -873,13 +871,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
 name|keyId
 operator|!=
 literal|null
-operator|)
 operator|&&
-operator|(
 name|Long
 operator|.
 name|valueOf
@@ -896,7 +891,6 @@ name|getKeyID
 argument_list|()
 operator|&
 name|MASK
-operator|)
 operator|)
 condition|)
 block|{
