@@ -2007,12 +2007,7 @@ argument_list|(
 name|caller
 operator|.
 name|getAskedDependencyId
-argument_list|(
-name|dep
-operator|.
-name|getData
 argument_list|()
-argument_list|)
 operator|.
 name|getRevision
 argument_list|()
