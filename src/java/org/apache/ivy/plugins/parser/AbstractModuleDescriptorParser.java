@@ -707,9 +707,12 @@ name|conf
 init|=
 name|confs
 operator|.
+name|trim
+argument_list|()
+operator|.
 name|split
 argument_list|(
-literal|";"
+literal|"\\s*;\\s*"
 argument_list|)
 decl_stmt|;
 name|parseDepsConfs
