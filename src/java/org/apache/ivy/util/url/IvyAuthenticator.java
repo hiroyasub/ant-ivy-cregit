@@ -610,7 +610,7 @@ name|System
 operator|.
 name|getProperty
 argument_list|(
-literal|"java.version"
+literal|"java.specification.version"
 argument_list|)
 operator|.
 name|split
