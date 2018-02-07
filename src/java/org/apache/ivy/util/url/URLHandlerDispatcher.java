@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is used to dispatch downloading requests  */
+comment|/**  * An implementation of {@link URLHandler} which uses an underlying {@link URLHandler} per protocol  * and a fallback default {@link URLHandler} for dealing with downloads, uploads and  * general reachability checks  */
 end_comment
 
 begin_class
