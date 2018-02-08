@@ -2453,8 +2453,6 @@ operator|.
 name|openStream
 argument_list|(
 name|url
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

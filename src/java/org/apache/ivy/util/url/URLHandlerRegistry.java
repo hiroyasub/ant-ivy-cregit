@@ -95,7 +95,7 @@ block|}
 comment|/**      * This method is used to get appropriate http downloader depending on Jakarta Commons      * HttpClient availability in classpath, or simply use jdk url handling in other cases.      *      * @return most accurate http downloader      */
 specifier|public
 specifier|static
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 name|getHttp
 parameter_list|()
 block|{
@@ -139,7 +139,7 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|(
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 operator|)
 name|instance
 operator|.

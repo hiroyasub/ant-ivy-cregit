@@ -604,8 +604,6 @@ operator|.
 name|openStream
 argument_list|(
 name|xmlURL
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 try|try
@@ -790,8 +788,6 @@ operator|.
 name|openStream
 argument_list|(
 name|schema
-argument_list|,
-literal|null
 argument_list|)
 expr_stmt|;
 block|}

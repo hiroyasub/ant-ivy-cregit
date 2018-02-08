@@ -25,22 +25,6 @@ name|apache
 operator|.
 name|ivy
 operator|.
-name|core
-operator|.
-name|settings
-operator|.
-name|TimeoutConstraint
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|ivy
-operator|.
 name|util
 operator|.
 name|CopyProgressListener
@@ -88,10 +72,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This interface is responsible for handling some URL manipulation (stream opening, downloading,  * check reachability, ...).  */
+comment|/**  * This interface is responsible for handling some URL manipulation (stream opening, downloading,  * check reachability, ...).  *<p>  *  * @deprecated Starting 2.5.0, the {@link TimeoutConstrainedURLHandler} is preferred in favour of this interface  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|URLHandler
@@ -243,9 +229,7 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return true if the target is reachable      * @deprecated Use {@link #isReachable(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return true if the target is reachable      */
 name|boolean
 name|isReachable
 parameter_list|(
@@ -253,9 +237,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url     the url to check      * @param timeout the timeout in milliseconds      * @return true if the target is reachable      * @deprecated Use {@link #isReachable(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url     the url to check      * @param timeout the timeout in milliseconds      * @return true if the target is reachable      */
 name|boolean
 name|isReachable
 parameter_list|(
@@ -266,20 +248,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if the passed<code>URL</code> is reachable. Else returns false. Uses the      * passed<code>timeoutConstraint</code> for determining the connectivity to the URL.      *<p>      * Please use {@link #getURLInfo(URL, TimeoutConstraint)} if more one information about the      *<code>url</code> is needed      *</p>      *      * @param url               The URL to access      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @return boolean      * @since 2.5      */
-name|boolean
-name|isReachable
-parameter_list|(
-name|URL
-name|url
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return the length of the target if the given url is reachable, 0 otherwise. No error code      * in case of http urls.      * @deprecated Use {@link #getContentLength(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return the length of the target if the given url is reachable, 0 otherwise. No error code      * in case of http urls.      */
 name|long
 name|getContentLength
 parameter_list|(
@@ -287,9 +256,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * @param url     the url to check      * @param timeout the maximum time before considering an url is not reachable a      *                timeout of zero indicates no timeout      * @return the length of the target if the given url is reachable, 0 otherwise. No error code      * in case of http urls.      * @deprecated Use {@link #getContentLength(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param url     the url to check      * @param timeout the maximum time before considering an url is not reachable a      *                timeout of zero indicates no timeout      * @return the length of the target if the given url is reachable, 0 otherwise. No error code      * in case of http urls.      */
 name|long
 name|getContentLength
 parameter_list|(
@@ -300,20 +267,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the number of bytes of data that's available for the resource at the passed      *<code>url</code>. Returns 0 if the passed<code>url</code> isn't reachable      *      * @param url               The URL to access      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @return long      * @since 2.5      */
-name|long
-name|getContentLength
-parameter_list|(
-name|URL
-name|url
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return last modified timestamp of the given url      * @deprecated Use {@link #getLastModified(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url the url to check      * @return last modified timestamp of the given url      */
 name|long
 name|getLastModified
 parameter_list|(
@@ -321,9 +275,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url     the url to check      * @param timeout the timeout in milliseconds      * @return last modified timestamp of the given url      * @deprecated Use {@link #getLastModified(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * Please prefer getURLInfo when several infos are needed.      *      * @param url     the url to check      * @param timeout the timeout in milliseconds      * @return last modified timestamp of the given url      */
 name|long
 name|getLastModified
 parameter_list|(
@@ -334,20 +286,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the last modified timestamp of the resource accessible at the passed      *<code>url</code>.      *<p>      * Please use {@link #getURLInfo(URL, TimeoutConstraint)} if more one information about the      *<code>url</code> is needed      *</p>      *      * @param url               The URL to access      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @return long      * @since 2.5      */
-name|long
-name|getLastModified
-parameter_list|(
-name|URL
-name|url
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-function_decl|;
-comment|/**      * @param url The url from which information is retrieved.      * @return The URLInfo extracted from the given url, or {@link #UNAVAILABLE} instance when the      * url is not reachable.      * @deprecated Use {@link #getURLInfo(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param url The url from which information is retrieved.      * @return The URLInfo extracted from the given url, or {@link #UNAVAILABLE} instance when the      * url is not reachable.      */
 name|URLInfo
 name|getURLInfo
 parameter_list|(
@@ -355,9 +294,7 @@ name|URL
 name|url
 parameter_list|)
 function_decl|;
-comment|/**      * @param url     The url from which information is retrieved.      * @param timeout The timeout in milliseconds.      * @return The URLInfo extracted from the given url, or {@link #UNAVAILABLE} when the url is      * not reachable, never null.      * @deprecated Use {@link #getURLInfo(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param url     The url from which information is retrieved.      * @param timeout The timeout in milliseconds.      * @return The URLInfo extracted from the given url, or {@link #UNAVAILABLE} when the url is      * not reachable, never null.      */
 name|URLInfo
 name|getURLInfo
 parameter_list|(
@@ -368,20 +305,7 @@ name|int
 name|timeout
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the {@link URLInfo} extracted from the given url, or {@link #UNAVAILABLE} when the      * url is not reachable. Never returns null.      *      * @param url               The URL for which the information is to be retrieved      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @return URLInfo      * @since 2.5      */
-name|URLInfo
-name|getURLInfo
-parameter_list|(
-name|URL
-name|url
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-function_decl|;
-comment|/**      * @param url ditto      * @return InputStream      * @throws IOException if something goes wrong      * @deprecated Use {@link #openStream(URL, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param url ditto      * @return InputStream      * @throws IOException if something goes wrong      */
 name|InputStream
 name|openStream
 parameter_list|(
@@ -391,22 +315,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Opens and returns an {@link InputStream} to the passed<code>url</code>.      *      * @param url               The URL to which an {@link InputStream} has to be opened      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @return InputStream      * @throws IOException if something goes wrong      * @since 2.5      */
-name|InputStream
-name|openStream
-parameter_list|(
-name|URL
-name|url
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-throws|throws
-name|IOException
-function_decl|;
-comment|/**      * @param src URL      * @param dest File      * @param l CopyProgressListener      * @throws IOException if something goes wrong      * @deprecated Use {@link #download(URL, File, CopyProgressListener, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param src  URL      * @param dest File      * @param l    CopyProgressListener      * @throws IOException if something goes wrong      */
 name|void
 name|download
 parameter_list|(
@@ -422,28 +331,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Downloads the resource available at<code>src</code> to the target<code>dest</code>      *      * @param src               The source URL to download the resource from      * @param dest              The destination {@link File} to download the resource to      * @param listener          The listener that will be notified of the download progress      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @throws IOException if something goes wrong      * @since 2.5      */
-name|void
-name|download
-parameter_list|(
-name|URL
-name|src
-parameter_list|,
-name|File
-name|dest
-parameter_list|,
-name|CopyProgressListener
-name|listener
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
-parameter_list|)
-throws|throws
-name|IOException
-function_decl|;
-comment|/**      * @param src File      * @param dest URL      * @param l CopyProgressListener      * @throws IOException if something goes wrong      * @deprecated Use {@link #upload(File, URL, CopyProgressListener, TimeoutConstraint)} instead      */
-annotation|@
-name|Deprecated
+comment|/**      * @param src  File      * @param dest URL      * @param l    CopyProgressListener      * @throws IOException if something goes wrong      */
 name|void
 name|upload
 parameter_list|(
@@ -455,25 +343,6 @@ name|dest
 parameter_list|,
 name|CopyProgressListener
 name|l
-parameter_list|)
-throws|throws
-name|IOException
-function_decl|;
-comment|/**      * Uploads the<code>src</code> {@link File} to the target<code>dest</code> {@link URL}      *      * @param src               The source {@link File} to upload      * @param dest              The target URL where the {@link File} has to be uploaded      * @param listener          The listener that will be notified of the upload progress      * @param timeoutConstraint The connectivity timeout constraints. Can be null, in which case      *                          the timeouts are implementation specific      * @throws IOException if something goes wrong      * @since 2.5      */
-name|void
-name|upload
-parameter_list|(
-name|File
-name|src
-parameter_list|,
-name|URL
-name|dest
-parameter_list|,
-name|CopyProgressListener
-name|listener
-parameter_list|,
-name|TimeoutConstraint
-name|timeoutConstraint
 parameter_list|)
 throws|throws
 name|IOException

@@ -470,7 +470,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|URLHandler
+specifier|final
+name|TimeoutConstrainedURLHandler
 name|handler
 init|=
 operator|new

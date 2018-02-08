@@ -191,7 +191,7 @@ specifier|abstract
 class|class
 name|AbstractURLHandler
 implements|implements
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 block|{
 specifier|private
 specifier|static
