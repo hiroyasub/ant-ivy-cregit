@@ -883,6 +883,15 @@ name|md
 return|;
 block|}
 specifier|public
+name|ResolveOptions
+name|getResolveOptions
+parameter_list|()
+block|{
+return|return
+name|options
+return|;
+block|}
+specifier|public
 name|IvyNode
 index|[]
 name|getUnresolvedDependencies
