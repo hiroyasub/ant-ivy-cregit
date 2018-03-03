@@ -56,7 +56,7 @@ name|CircularDependencyException
 extends|extends
 name|RuntimeException
 block|{
-comment|/**      *       */
+comment|/**      *      */
 specifier|private
 specifier|static
 specifier|final
