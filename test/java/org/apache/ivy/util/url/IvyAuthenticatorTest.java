@@ -171,7 +171,7 @@ parameter_list|()
 block|{
 name|previousAuthenticator
 operator|=
-name|TestHelper
+name|IvyAuthenticator
 operator|.
 name|getCurrentAuthenticator
 argument_list|()

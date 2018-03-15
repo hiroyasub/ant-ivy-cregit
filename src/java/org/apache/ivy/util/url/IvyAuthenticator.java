@@ -156,17 +156,7 @@ comment|// obtain it. If that doesn't work, assume there is no original authenti
 name|Authenticator
 name|original
 init|=
-operator|(
-name|getJavaVersion
-argument_list|()
-operator|<
-literal|9
-operator|)
-condition|?
-name|getTheAuthenticator
-argument_list|()
-else|:
-name|getDefaultAuthenticator
+name|getCurrentAuthenticator
 argument_list|()
 decl_stmt|;
 if|if
@@ -445,6 +435,27 @@ block|}
 block|}
 return|return
 name|result
+return|;
+block|}
+comment|/**      * The {@link Authenticator} doesn't have API before Java 9 to get hold of the current system      * level {@link Authenticator}. This method does a best-effort attempt to try and get hold of      * the current {@link Authenticator} in a way that's specific to the implementation of this      * method.  There's no guarantee that this method will return the current authenticator.      *<strong>Note: this method is intended to be used exclusively by tests.</strong>      *      * @return Returns the currently setup system level {@link Authenticator}. In cases where this      * method isn't able to get the current authenticator, this method returns null      */
+specifier|static
+name|Authenticator
+name|getCurrentAuthenticator
+parameter_list|()
+block|{
+return|return
+operator|(
+name|getJavaVersion
+argument_list|()
+operator|<
+literal|9
+operator|)
+condition|?
+name|getTheAuthenticator
+argument_list|()
+else|:
+name|getDefaultAuthenticator
+argument_list|()
 return|;
 block|}
 comment|/**      * Checks if the current authentication request is for the proxy server.      */

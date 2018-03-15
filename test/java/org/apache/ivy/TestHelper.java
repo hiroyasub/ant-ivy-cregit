@@ -1766,60 +1766,6 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * The {@link Authenticator} doesn't have API to get hold of the current system level      * {@link Authenticator}. This method does a best-effort attempt to try and get hold of the      * current {@link Authenticator} in a way that's specific to the implementation of this method.      * There's no guarantee that this method will return the current authenticator.      *      * @return Returns the currently setup system level {@link Authenticator}. In cases where this      * method isn't able to get the current authenticator, this method returns null      */
-specifier|public
-specifier|static
-name|Authenticator
-name|getCurrentAuthenticator
-parameter_list|()
-block|{
-comment|// we use reflection to try and get hold of the "current" authenticator
-comment|// since there's no getter available on the Authenticator.
-try|try
-block|{
-name|Field
-name|f
-init|=
-name|Authenticator
-operator|.
-name|class
-operator|.
-name|getDeclaredField
-argument_list|(
-literal|"theAuthenticator"
-argument_list|)
-decl_stmt|;
-name|f
-operator|.
-name|setAccessible
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|Authenticator
-operator|)
-name|f
-operator|.
-name|get
-argument_list|(
-literal|null
-argument_list|)
-return|;
-block|}
-catch|catch
-parameter_list|(
-name|Throwable
-name|t
-parameter_list|)
-block|{
-comment|// ignore and return null
-return|return
-literal|null
-return|;
-block|}
-block|}
 comment|/**      * Creates a HTTP server, backed by a local file system, which can be used as a repository to      * serve Ivy module descriptors and artifacts.      * NOTE: This is supposed to be used only in test cases and only a limited functionality is      * added in the handler(s) backing the server      *      * @param serverAddress           The address to which the server will be bound      * @param webAppContext           The context root of the application which will be handling      *                                the requests to the server      * @param localFilesystemRepoRoot The path to the root directory containing the module      *                                descriptors and artifacts      * @return AutoCloseable      * @throws IOException if something goes wrong      */
 specifier|public
 specifier|static
