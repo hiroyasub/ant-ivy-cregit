@@ -8193,7 +8193,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Tests that the {@code properties} setup in the Maven {@code profiles} that are conditionally activated,      * become available to the module being parsed and such properties can be used as references within the pom      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1577">IVY-1577</a> for more details      */
+comment|/**      * Tests that the {@code properties} setup in the Maven {@code profiles} that are conditionally activated,      * become available to the module being parsed and such properties can be used as references within the pom      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1577">IVY-1577</a> for more details      */
 annotation|@
 name|Test
 specifier|public

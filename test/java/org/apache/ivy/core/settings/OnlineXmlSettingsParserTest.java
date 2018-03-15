@@ -87,7 +87,7 @@ name|util
 operator|.
 name|url
 operator|.
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 import|;
 end_import
 
@@ -432,7 +432,7 @@ operator|new
 name|URLHandlerDispatcher
 argument_list|()
 decl_stmt|;
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 name|httpHandler
 init|=
 name|URLHandlerRegistry

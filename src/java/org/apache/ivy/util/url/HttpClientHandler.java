@@ -1713,7 +1713,7 @@ condition|(
 name|getRequestMethod
 argument_list|()
 operator|==
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 operator|.
 name|REQUEST_METHOD_HEAD
 condition|)

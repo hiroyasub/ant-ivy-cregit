@@ -510,7 +510,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 operator|.
 name|UNAVAILABLE
 argument_list|,

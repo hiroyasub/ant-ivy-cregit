@@ -381,7 +381,7 @@ name|util
 operator|.
 name|url
 operator|.
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 import|;
 end_import
 
@@ -2432,7 +2432,7 @@ argument_list|()
 operator|.
 name|setRequestMethod
 argument_list|(
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 operator|.
 name|REQUEST_METHOD_HEAD
 argument_list|)
@@ -2455,7 +2455,7 @@ argument_list|()
 operator|.
 name|setRequestMethod
 argument_list|(
-name|URLHandler
+name|TimeoutConstrainedURLHandler
 operator|.
 name|REQUEST_METHOD_GET
 argument_list|)

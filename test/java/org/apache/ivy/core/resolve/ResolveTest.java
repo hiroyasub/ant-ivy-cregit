@@ -40500,7 +40500,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that if a pom.xml has multiple dependencies for the same module, but for different Maven classifiers,      * then the resolution of such dependencies, preserves those multiple (Ivy) artifacts against the dependency      *      * @throws Exception      * @see<a href="https://issues.apache.org/jira/browse/IVY-1576">IVY-1576</a> for more details      */
+comment|/**      * Tests that if a pom.xml has multiple dependencies for the same module, but for different Maven classifiers,      * then the resolution of such dependencies, preserves those multiple (Ivy) artifacts against the dependency      *      * @throws Exception if something goes wrong      * @see<a href="https://issues.apache.org/jira/browse/IVY-1576">IVY-1576</a> for more details      */
 annotation|@
 name|Test
 specifier|public
