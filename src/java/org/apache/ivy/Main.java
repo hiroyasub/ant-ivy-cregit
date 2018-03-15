@@ -3767,6 +3767,9 @@ name|class
 operator|.
 name|getClassLoader
 argument_list|()
+operator|.
+name|getParent
+argument_list|()
 argument_list|)
 decl_stmt|;
 try|try
