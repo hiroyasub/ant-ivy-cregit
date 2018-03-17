@@ -58,6 +58,11 @@ name|URLHandlerRegistry
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|private
 specifier|static
 name|URLHandler
@@ -67,6 +72,11 @@ operator|new
 name|BasicURLHandler
 argument_list|()
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 specifier|static
 name|URLHandler
@@ -77,6 +87,11 @@ return|return
 name|defaultHandler
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 specifier|static
 name|void

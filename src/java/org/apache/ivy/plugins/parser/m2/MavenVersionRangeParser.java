@@ -1000,6 +1000,11 @@ index|[]
 name|components
 decl_stmt|;
 comment|/**          * Construct a DeweyDecimal from an array of integer components.          *          * @param components an array of integer components.          */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|DeweyDecimal
 parameter_list|(
@@ -1145,7 +1150,7 @@ argument_list|(
 name|component
 argument_list|)
 expr_stmt|;
-comment|//Strip '.' token
+comment|// Strip '.' token
 if|if
 condition|(
 name|tokenizer
@@ -1159,7 +1164,7 @@ operator|.
 name|nextToken
 argument_list|()
 expr_stmt|;
-comment|//If it ended in a dot, throw an exception
+comment|// If it ended in a dot, throw an exception
 if|if
 condition|(
 operator|!
@@ -1181,6 +1186,11 @@ block|}
 block|}
 block|}
 comment|/**          * Return number of components in<code>DeweyDecimal</code>.          *          * @return the number of components in dewey decimal          */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|int
 name|getSize
@@ -1193,6 +1203,11 @@ name|length
 return|;
 block|}
 comment|/**          * Return the component at specified index.          *          * @param index the index of components          * @return the value of component at index          */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|int
 name|get
@@ -1643,6 +1658,11 @@ argument_list|()
 return|;
 block|}
 comment|/**          * Compares this DeweyDecimal with another one.          *          * @param other another DeweyDecimal to compare with          * @return result          * @see java.lang.Comparable#compareTo(Object)          */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|int
 name|compareTo

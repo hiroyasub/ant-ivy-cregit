@@ -645,6 +645,11 @@ specifier|final
 name|Element
 name|parentElement
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|PomReader
 parameter_list|(
@@ -2022,7 +2027,7 @@ operator|=
 name|depElement
 expr_stmt|;
 block|}
-comment|/*          * (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getGroupId()          */
+comment|/*          * (non-Javadoc)          *          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getGroupId()          */
 specifier|public
 name|String
 name|getGroupId
@@ -2045,7 +2050,7 @@ name|val
 argument_list|)
 return|;
 block|}
-comment|/*          * (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
+comment|/*          * (non-Javadoc)          *          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getArtifaceId()          */
 specifier|public
 name|String
 name|getArtifactId
@@ -2068,7 +2073,7 @@ name|val
 argument_list|)
 return|;
 block|}
-comment|/*          * (non-Javadoc)          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getVersion()          */
+comment|/*          * (non-Javadoc)          *          * @see org.apache.ivy.plugins.parser.m2.PomDependencyMgt#getVersion()          */
 specifier|public
 name|String
 name|getVersion

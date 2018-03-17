@@ -281,6 +281,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Retrieves a {@link List} of {@link URL}s corresponding to the files and/or directories found      * at the supplied base URL.      *      * @param url      *            The base URL from which to retrieve the listing.      * @param includeFiles      *            If true include files in the returned list.      * @param includeDirectories      *            If true include directories in the returned list.      * @return A {@link List} of {@link URL}s.      * @throws IOException      *             If an error occurs retrieving the HTML.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|List
 argument_list|<

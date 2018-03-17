@@ -573,19 +573,24 @@ specifier|public
 specifier|static
 name|void
 name|parse
-parameter_list|(
+argument_list|(
 name|URL
 name|xmlURL
-parameter_list|,
+argument_list|,
 name|URL
 name|schema
-parameter_list|,
+argument_list|,
 name|DefaultHandler
 name|handler
-parameter_list|,
+argument_list|,
 name|LexicalHandler
 name|lHandler
-parameter_list|)
+argument_list|)
+decl|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 throws|throws
 name|SAXException
 throws|,
@@ -595,7 +600,7 @@ name|ParserConfigurationException
 block|{
 name|InputStream
 name|xmlStream
-init|=
+operator|=
 name|URLHandlerRegistry
 operator|.
 name|getDefault
@@ -659,6 +664,9 @@ comment|// ignored
 block|}
 block|}
 block|}
+end_class
+
+begin_function
 specifier|public
 specifier|static
 name|void
@@ -699,6 +707,9 @@ name|lHandler
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|void
@@ -737,6 +748,14 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 specifier|static
 name|void
@@ -880,6 +899,9 @@ block|}
 block|}
 block|}
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|boolean
@@ -890,7 +912,13 @@ return|return
 name|canUseSchemaValidation
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/**      * Escapes invalid XML characters in the given character data using XML entities. For the      * moment, only the following characters are being escaped: (&lt;), (&amp;), (') and (&quot;).      *      * Remark: we don't escape the (&gt;) character to keep the readability of the configuration      * mapping! The XML spec only requires that the (&amp;) and (&lt;) characters are being escaped      * inside character data.      *      * @param text      *            the character data to escape      * @return the escaped character data      */
+end_comment
+
+begin_function
 specifier|public
 specifier|static
 name|String
@@ -1000,6 +1028,9 @@ name|toString
 argument_list|()
 return|;
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|Document
@@ -1033,6 +1064,9 @@ name|source
 argument_list|)
 return|;
 block|}
+end_function
+
+begin_function
 specifier|public
 specifier|static
 name|DocumentBuilder
@@ -1101,13 +1135,16 @@ argument_list|)
 throw|;
 block|}
 block|}
+end_function
+
+begin_constructor
 specifier|private
 name|XMLHelper
 parameter_list|()
 block|{
 block|}
-block|}
-end_class
+end_constructor
 
+unit|}
 end_unit
 

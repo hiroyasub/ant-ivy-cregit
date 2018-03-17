@@ -2387,6 +2387,11 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Call this method to ask ivy to configure some variables using either a remote or a local      * properties file      *      * @param remote boolean      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 specifier|synchronized
 name|void

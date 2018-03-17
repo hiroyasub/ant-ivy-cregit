@@ -97,6 +97,11 @@ name|SCHEME_FTP
 init|=
 literal|"ftp"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final
@@ -105,6 +110,11 @@ name|SCHEME_HTTP
 init|=
 literal|"http"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final
@@ -121,6 +131,11 @@ name|SCHEME_SFTP
 init|=
 literal|"sftp"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 specifier|static
 specifier|final

@@ -459,7 +459,11 @@ comment|/**      * Test case for IVY-390.      *      * @throws Exception if som
 annotation|@
 name|SuppressWarnings
 argument_list|(
+block|{
 literal|"resource"
+block|,
+literal|"deprecation"
+block|}
 argument_list|)
 annotation|@
 name|Test

@@ -92,6 +92,11 @@ comment|/**  * A enhanced version of {@link URLHandler} which respects {@link Ti
 end_comment
 
 begin_interface
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 interface|interface
 name|TimeoutConstrainedURLHandler

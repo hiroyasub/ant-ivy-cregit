@@ -339,6 +339,11 @@ return|return
 name|lastModified
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|private
 name|void
 name|init
@@ -499,6 +504,11 @@ literal|"file"
 argument_list|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|InputStream
 name|openStream
