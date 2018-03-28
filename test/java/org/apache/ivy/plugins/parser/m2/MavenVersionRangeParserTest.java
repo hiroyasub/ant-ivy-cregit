@@ -69,8 +69,6 @@ specifier|public
 name|void
 name|testExactValue
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|assertTrue
 argument_list|(
@@ -122,8 +120,6 @@ specifier|public
 name|void
 name|testLessThanEqualBoundRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -251,8 +247,6 @@ specifier|public
 name|void
 name|testLessThanBoundRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -380,8 +374,6 @@ specifier|public
 name|void
 name|testEqualsBoundRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -425,8 +417,6 @@ specifier|public
 name|void
 name|testGreaterThanEqualBoundRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -568,8 +558,6 @@ specifier|public
 name|void
 name|testGreaterThanBoundRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -683,8 +671,6 @@ specifier|public
 name|void
 name|testMultiRange
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
@@ -827,8 +813,6 @@ specifier|public
 name|void
 name|testMultiRangeSpecificValue
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|String
