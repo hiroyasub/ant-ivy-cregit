@@ -988,10 +988,6 @@ name|scope
 argument_list|,
 name|classifier
 argument_list|,
-name|optional
-operator|!=
-literal|null
-operator|&&
 name|Boolean
 operator|.
 name|parseBoolean
