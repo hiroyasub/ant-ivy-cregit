@@ -159,10 +159,8 @@ argument_list|(
 literal|"*"
 argument_list|)
 decl_stmt|;
-name|assertEquals
+name|assertFalse
 argument_list|(
-literal|false
-argument_list|,
 name|matcher
 operator|.
 name|isExact
@@ -176,10 +174,8 @@ argument_list|(
 literal|"The words aren't what they were."
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertFalse
 argument_list|(
-literal|false
-argument_list|,
 name|matcher
 operator|.
 name|isExact

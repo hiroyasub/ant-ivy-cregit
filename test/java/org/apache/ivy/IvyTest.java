@@ -167,6 +167,18 @@ name|assertNotNull
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotSame
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -281,7 +293,7 @@ literal|"test/repositories/ivysettings.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotSame
 argument_list|(
 literal|"IvyContext should be cleared and return a default Ivy instance"
 argument_list|,
@@ -292,7 +304,7 @@ argument_list|()
 operator|.
 name|getIvy
 argument_list|()
-operator|==
+argument_list|,
 name|ivy
 argument_list|)
 expr_stmt|;
@@ -342,7 +354,7 @@ argument_list|(
 literal|"mod1.1"
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotSame
 argument_list|(
 literal|"IvyContext should be cleared and return a default Ivy instance"
 argument_list|,
@@ -353,7 +365,7 @@ argument_list|()
 operator|.
 name|getIvy
 argument_list|()
-operator|==
+argument_list|,
 name|ivy
 argument_list|)
 expr_stmt|;
@@ -444,7 +456,7 @@ argument_list|(
 literal|"norev/ivysettings.xml"
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotSame
 argument_list|(
 literal|"IvyContext should be cleared and return a default Ivy instance"
 argument_list|,
@@ -455,7 +467,7 @@ argument_list|()
 operator|.
 name|getIvy
 argument_list|()
-operator|==
+argument_list|,
 name|ivy2
 argument_list|)
 expr_stmt|;
@@ -505,7 +517,7 @@ argument_list|(
 literal|"mod6.1"
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotSame
 argument_list|(
 literal|"IvyContext should be cleared and return a default Ivy instance"
 argument_list|,
@@ -516,7 +528,7 @@ argument_list|()
 operator|.
 name|getIvy
 argument_list|()
-operator|==
+argument_list|,
 name|ivy
 argument_list|)
 expr_stmt|;

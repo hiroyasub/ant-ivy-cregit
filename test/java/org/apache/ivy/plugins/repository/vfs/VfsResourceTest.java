@@ -847,7 +847,7 @@ argument_list|(
 name|expected
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertEquals
 argument_list|(
 literal|"\nExpected: "
 operator|+
@@ -864,11 +864,8 @@ name|toString
 argument_list|()
 argument_list|,
 name|actual
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 name|expected
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

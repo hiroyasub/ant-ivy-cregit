@@ -113,6 +113,30 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertTrue
 import|;
 end_import
@@ -472,10 +496,10 @@ argument_list|(
 literal|"<revision name=\"2.2\""
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertNotEquals
 argument_list|(
 name|index
-operator|!=
+argument_list|,
 operator|-
 literal|1
 argument_list|)
@@ -493,10 +517,10 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertEquals
 argument_list|(
 name|index
-operator|==
+argument_list|,
 operator|-
 literal|1
 argument_list|)

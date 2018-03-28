@@ -1647,11 +1647,9 @@ argument_list|(
 name|reportOrigin
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
 literal|"isLocal for artifact not correct"
-argument_list|,
-literal|true
 argument_list|,
 name|reportOrigin
 operator|.
@@ -1685,11 +1683,9 @@ argument_list|(
 name|ivyOrigin
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
 literal|"isLocal for artifact not correct"
-argument_list|,
-literal|true
 argument_list|,
 name|ivyOrigin
 operator|.
@@ -1810,11 +1806,9 @@ argument_list|(
 name|reportOrigin
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertTrue
 argument_list|(
 literal|"isLocal for artifact not correct"
-argument_list|,
-literal|true
 argument_list|,
 name|reportOrigin
 operator|.

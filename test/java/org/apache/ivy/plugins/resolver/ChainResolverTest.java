@@ -37,6 +37,18 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertNotNull
 import|;
 end_import
@@ -3270,10 +3282,8 @@ argument_list|)
 expr_stmt|;
 comment|// the module returned should be the default one found in cache since check modified is
 comment|// false
-name|assertEquals
+name|assertTrue
 argument_list|(
-literal|true
-argument_list|,
 name|rmr
 operator|.
 name|getDescriptor
@@ -3357,10 +3367,8 @@ argument_list|(
 name|rmr
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertFalse
 argument_list|(
-literal|false
-argument_list|,
 name|rmr
 operator|.
 name|getDescriptor

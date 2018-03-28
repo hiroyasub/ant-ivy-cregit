@@ -3881,10 +3881,8 @@ literal|"ivy.parent[0].revision"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|resolve
 operator|.
 name|getProject

@@ -186,8 +186,10 @@ name|void
 name|testCompareTo
 parameter_list|()
 block|{
-name|assertTrue
+name|assertEquals
 argument_list|(
+literal|0
+argument_list|,
 operator|new
 name|Version
 argument_list|(
@@ -202,8 +204,6 @@ argument_list|(
 literal|"1.2.3"
 argument_list|)
 argument_list|)
-operator|==
-literal|0
 argument_list|)
 expr_stmt|;
 name|assertTrue

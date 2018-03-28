@@ -47,6 +47,30 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertNotSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertTrue
 import|;
 end_import
@@ -1357,10 +1381,10 @@ name|getIvyInstance
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertNotSame
 argument_list|(
 name|ivy
-operator|!=
+argument_list|,
 name|getIvyInstance
 argument_list|()
 argument_list|)
@@ -1437,10 +1461,10 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|assertTrue
+name|assertSame
 argument_list|(
 name|ivy
-operator|==
+argument_list|,
 name|getIvyInstance
 argument_list|()
 argument_list|)
