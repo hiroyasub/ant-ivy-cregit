@@ -1327,11 +1327,6 @@ operator|-=
 name|trans
 expr_stmt|;
 block|}
-name|fis
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 name|os
 operator|.
