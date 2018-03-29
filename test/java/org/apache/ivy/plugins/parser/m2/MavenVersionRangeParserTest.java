@@ -62,7 +62,7 @@ specifier|public
 class|class
 name|MavenVersionRangeParserTest
 block|{
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when the range      * and the value being compared are the same exact values      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when the range      * and the value being compared are the same exact values      */
 annotation|@
 name|Test
 specifier|public
@@ -113,7 +113,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0]} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0]} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -240,7 +240,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0)} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0)} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -367,7 +367,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code [1.0]} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code [1.0]} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -410,7 +410,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code [1.0,)} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code [1.0,)} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -551,7 +551,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (1.0,)} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (1.0,)} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -664,7 +664,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0],[1.2,)} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.0],[1.2,)} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
@@ -806,7 +806,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.1),(1.1,)} is used to compare against some value.      *      * @throws Exception if something goes wrong      */
+comment|/**      * Tests the {@link MavenVersionRangeParser#rangeAccepts(String, String)} works correctly when a range of the form      * {@code (,1.1),(1.1,)} is used to compare against some value.      */
 annotation|@
 name|Test
 specifier|public
