@@ -1293,7 +1293,7 @@ argument_list|)
 operator|.
 name|description
 argument_list|(
-literal|"Creates a pom file for the module"
+literal|"create a POM file for the module"
 argument_list|)
 operator|.
 name|create
