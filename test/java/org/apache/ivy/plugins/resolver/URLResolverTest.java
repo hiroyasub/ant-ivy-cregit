@@ -1616,8 +1616,6 @@ name|extremelyLowTimeout
 argument_list|)
 expr_stmt|;
 comment|// setup a HTTP backed repo
-comment|// TODO: Right now the port is hard coded, but we need to find a "available" port to which can be bind to.
-comment|// Else this can lead to occasional bind failures
 specifier|final
 name|InetSocketAddress
 name|fastServerBindAddr
@@ -1627,7 +1625,10 @@ name|InetSocketAddress
 argument_list|(
 literal|"localhost"
 argument_list|,
-literal|12345
+name|TestHelper
+operator|.
+name|getMaybeAvailablePort
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1930,7 +1931,10 @@ name|InetSocketAddress
 argument_list|(
 literal|"localhost"
 argument_list|,
-literal|23456
+name|TestHelper
+operator|.
+name|getMaybeAvailablePort
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final

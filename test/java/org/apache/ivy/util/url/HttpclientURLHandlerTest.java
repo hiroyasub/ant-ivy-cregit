@@ -756,7 +756,10 @@ name|InetSocketAddress
 argument_list|(
 literal|"localhost"
 argument_list|,
-literal|12345
+name|TestHelper
+operator|.
+name|getMaybeAvailablePort
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
