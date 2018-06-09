@@ -1560,16 +1560,11 @@ name|getBaseDir
 argument_list|()
 expr_stmt|;
 block|}
+try|try
+init|(
 name|InputStream
 name|xsltStream
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-comment|// create stream to stylesheet
-name|xsltStream
-operator|=
 operator|new
 name|BufferedInputStream
 argument_list|(
@@ -1579,7 +1574,9 @@ argument_list|(
 name|style
 argument_list|)
 argument_list|)
-expr_stmt|;
+init|)
+block|{
+comment|// create stream to stylesheet
 name|Source
 name|xsltSource
 init|=
@@ -1901,33 +1898,6 @@ argument_list|(
 name|e
 argument_list|)
 throw|;
-block|}
-finally|finally
-block|{
-if|if
-condition|(
-name|xsltStream
-operator|!=
-literal|null
-condition|)
-block|{
-try|try
-block|{
-name|xsltStream
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
-block|}
 block|}
 block|}
 specifier|private

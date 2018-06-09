@@ -392,6 +392,8 @@ name|IOException
 throws|,
 name|ParseException
 block|{
+try|try
+init|(
 name|FileInputStream
 name|fis
 init|=
@@ -400,8 +402,7 @@ name|FileInputStream
 argument_list|(
 name|manifestFile
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 return|return
 name|parseManifest
@@ -409,25 +410,6 @@ argument_list|(
 name|fis
 argument_list|)
 return|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|fis
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
 block|}
 block|}
 specifier|public

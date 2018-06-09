@@ -598,6 +598,8 @@ name|IOException
 throws|,
 name|ParserConfigurationException
 block|{
+try|try
+init|(
 name|InputStream
 name|xmlStream
 init|=
@@ -610,8 +612,7 @@ name|openStream
 argument_list|(
 name|xmlURL
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|InputSource
 name|inSrc
@@ -643,25 +644,6 @@ argument_list|,
 name|lHandler
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|xmlStream
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// ignored
-block|}
 block|}
 block|}
 specifier|public

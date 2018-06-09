@@ -375,6 +375,8 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+try|try
+init|(
 name|FileOutputStream
 name|out
 init|=
@@ -383,8 +385,7 @@ name|FileOutputStream
 argument_list|(
 name|f
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|FileUtil
 operator|.
@@ -399,25 +400,6 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|e
-parameter_list|)
-block|{
-comment|// ignore
-block|}
 block|}
 block|}
 block|}
