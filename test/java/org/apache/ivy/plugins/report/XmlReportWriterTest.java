@@ -652,12 +652,12 @@ decl_stmt|;
 name|String
 name|extra1Attribute
 init|=
-literal|"extra-blabla=\"abc\""
+literal|"extra-0.blabla=\"abc\""
 decl_stmt|;
 name|String
 name|extra2Attribute
 init|=
-literal|"extra-blabla2=\"123\""
+literal|"extra-0.blabla2=\"123\""
 decl_stmt|;
 name|assertTrue
 argument_list|(
