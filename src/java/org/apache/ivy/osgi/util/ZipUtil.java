@@ -233,11 +233,6 @@ name|length
 argument_list|()
 operator|+
 literal|1
-argument_list|,
-name|strAbsPath
-operator|.
-name|length
-argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
