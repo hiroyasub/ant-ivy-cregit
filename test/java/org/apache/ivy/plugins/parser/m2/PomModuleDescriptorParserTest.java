@@ -117,7 +117,7 @@ name|nio
 operator|.
 name|charset
 operator|.
-name|Charset
+name|StandardCharsets
 import|;
 end_import
 
@@ -7824,12 +7824,9 @@ name|toURI
 argument_list|()
 argument_list|)
 argument_list|,
-name|Charset
+name|StandardCharsets
 operator|.
-name|forName
-argument_list|(
-literal|"UTF-8"
-argument_list|)
+name|UTF_8
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -7899,12 +7896,9 @@ name|updatedPomFile
 argument_list|,
 name|replacedContent
 argument_list|,
-name|Charset
+name|StandardCharsets
 operator|.
-name|forName
-argument_list|(
-literal|"UTF-8"
-argument_list|)
+name|UTF_8
 argument_list|)
 expr_stmt|;
 comment|// now start testing - we do 2 rounds -
