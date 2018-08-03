@@ -852,8 +852,8 @@ name|String
 name|host
 parameter_list|)
 block|{
-name|Object
-name|o
+name|Credentials
+name|c
 init|=
 name|credentialsCache
 operator|.
@@ -864,14 +864,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|o
+name|c
 operator|==
 literal|null
 condition|)
 block|{
-name|Credentials
 name|c
-init|=
+operator|=
 name|CredentialsUtil
 operator|.
 name|promptCredentials
@@ -891,7 +890,7 @@ argument_list|,
 name|getPassFile
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|c
@@ -925,19 +924,10 @@ name|c
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 return|return
 name|c
 return|;
-block|}
-else|else
-block|{
-return|return
-operator|(
-name|Credentials
-operator|)
-name|o
-return|;
-block|}
 block|}
 comment|/**      * closes the session and remove it from the cache (eg. on case of errors)      *      * @param session      *            key for the cache      * @param pathOrUri      *            to release      */
 specifier|protected

@@ -4728,7 +4728,7 @@ name|foundMrid
 argument_list|)
 condition|)
 block|{
-name|ResolvedResource
+name|MDResolvedResource
 name|r
 init|=
 name|rmdparser
@@ -4783,12 +4783,7 @@ block|}
 name|ModuleDescriptor
 name|md
 init|=
-operator|(
-operator|(
-name|MDResolvedResource
-operator|)
 name|r
-operator|)
 operator|.
 name|getResolvedModuleRevision
 argument_list|()
