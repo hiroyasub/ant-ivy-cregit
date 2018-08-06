@@ -1758,6 +1758,36 @@ argument_list|(
 name|defConfs
 argument_list|)
 expr_stmt|;
+comment|// Fixes bugs IVY-1547, IVY-982 which have to do with
+comment|// negation (e.g. `*, !foo`) not working on the left side of the maps-to operator.
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|excludedConfs
+init|=
+name|confs
+operator|.
+name|get
+argument_list|(
+literal|"!"
+operator|+
+name|moduleConfiguration
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|excludedConfs
+operator|!=
+literal|null
+condition|)
+name|ret
+operator|.
+name|removeAll
+argument_list|(
+name|excludedConfs
+argument_list|)
+expr_stmt|;
 block|}
 name|Collection
 argument_list|<
