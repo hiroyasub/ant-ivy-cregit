@@ -884,11 +884,16 @@ condition|)
 block|{
 name|existingChild
 operator|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|(
 name|Arrays
 operator|.
 name|asList
 argument_list|(
 name|children
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -953,6 +958,15 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// if file existing, 'mark' it as taken care of
+if|if
+condition|(
+operator|!
+name|existingChild
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
 name|existingChild
 operator|.
 name|remove
@@ -960,6 +974,7 @@ argument_list|(
 name|childDest
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|cf
