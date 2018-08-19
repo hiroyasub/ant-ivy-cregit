@@ -49,6 +49,26 @@ name|Checks
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|MalformedURLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
 begin_comment
 comment|/**  * This class contains information about the origin of an artifact.  *  * @see org.apache.ivy.plugins.resolver.BasicResolver  * @see org.apache.ivy.plugins.resolver.util.ResolvedResource  */
 end_comment
@@ -273,6 +293,57 @@ name|location
 operator|=
 name|location
 expr_stmt|;
+block|}
+comment|// the "location" of an ArtifactOrigin is expected to be URL. However,
+comment|// in certain versions of Ivy we used to save just the path as the location
+comment|// instead of the URL form. Here we try and read it as a URL. If it can be
+comment|// read as a URL, we return the URL#getPath. However, if it can't be read
+comment|// as a URL, then considering backward compatibility, we treat the "location"
+comment|// as a path and return it back.
+name|String
+name|getLocationPath
+parameter_list|()
+block|{
+if|if
+condition|(
+name|this
+operator|.
+name|location
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+try|try
+block|{
+return|return
+operator|new
+name|URL
+argument_list|(
+name|this
+operator|.
+name|location
+argument_list|)
+operator|.
+name|getPath
+argument_list|()
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|MalformedURLException
+name|e
+parameter_list|)
+block|{
+return|return
+name|this
+operator|.
+name|location
+return|;
+block|}
 block|}
 comment|/**      * Return the artifact that this location is pointing at.      *      * @return the artifact that this location is pointing at.      */
 specifier|public
