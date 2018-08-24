@@ -338,6 +338,8 @@ name|entry
 operator|.
 name|isStale
 argument_list|(
+name|ivyFile
+argument_list|,
 name|validated
 argument_list|,
 name|ivySettings
@@ -564,6 +566,9 @@ block|}
 name|boolean
 name|isStale
 parameter_list|(
+name|File
+name|ivyFile
+parameter_list|,
 name|boolean
 name|validated
 parameter_list|,
@@ -580,6 +585,16 @@ name|this
 operator|.
 name|validated
 operator|)
+operator|||
+name|md
+operator|.
+name|getLastModified
+argument_list|()
+operator|!=
+name|ivyFile
+operator|.
+name|lastModified
+argument_list|()
 operator|||
 name|parserSettingsMonitor
 operator|.
