@@ -91,7 +91,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|String
 name|process
 parameter_list|(
