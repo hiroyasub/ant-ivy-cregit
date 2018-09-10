@@ -2112,7 +2112,7 @@ name|checkAbsolute
 argument_list|(
 name|origin
 operator|.
-name|getLocationPath
+name|getLocation
 argument_list|()
 argument_list|,
 name|artifact
@@ -2177,7 +2177,7 @@ name|checkAbsolute
 argument_list|(
 name|origin
 operator|.
-name|getLocationPath
+name|getLocation
 argument_list|()
 argument_list|,
 name|artifact
