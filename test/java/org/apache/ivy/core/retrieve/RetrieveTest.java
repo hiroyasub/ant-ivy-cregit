@@ -1846,7 +1846,7 @@ name|ModuleId
 argument_list|(
 literal|"org1"
 argument_list|,
-literal|"mod1.1"
+literal|"mod1.7"
 argument_list|)
 argument_list|,
 literal|"3.0"
@@ -1929,7 +1929,7 @@ name|retrievePattern
 argument_list|,
 literal|"org1"
 argument_list|,
-literal|"mod1.1"
+literal|"mod1.7"
 argument_list|,
 literal|"3.0"
 argument_list|,
