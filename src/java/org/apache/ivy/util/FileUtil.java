@@ -383,6 +383,17 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// prepare for symlink
+if|if
+condition|(
+name|target
+operator|.
+name|isFile
+argument_list|()
+condition|)
+block|{
+comment|// it's a file that is being symlinked, so do the necessary preparation
+comment|// for the linking, similar to what we do with preparation for copying
 if|if
 condition|(
 operator|!
@@ -399,6 +410,32 @@ block|{
 return|return
 literal|false
 return|;
+block|}
+block|}
+else|else
+block|{
+comment|// it's a directory being symlinked, make sure the "link" that is being
+comment|// created has the necessary parent directories in place before triggering
+comment|// symlink creation
+if|if
+condition|(
+name|link
+operator|.
+name|getParentFile
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|link
+operator|.
+name|getParentFile
+argument_list|()
+operator|.
+name|mkdirs
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 name|Files
 operator|.
