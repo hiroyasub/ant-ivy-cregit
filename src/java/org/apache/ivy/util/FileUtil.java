@@ -414,9 +414,49 @@ block|}
 block|}
 else|else
 block|{
-comment|// it's a directory being symlinked, make sure the "link" that is being
-comment|// created has the necessary parent directories in place before triggering
-comment|// symlink creation
+comment|// it's a directory being symlinked
+comment|// see if the directory represented by the "link" exists and is already a symbolic
+comment|// link. If it is and if we are asked to overwrite then we *only* break the link
+comment|// in preparation of symlink creation, later in this method
+if|if
+condition|(
+name|Files
+operator|.
+name|isSymbolicLink
+argument_list|(
+name|link
+operator|.
+name|toPath
+argument_list|()
+argument_list|)
+operator|&&
+name|overwrite
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Un-linking existing symbolic link "
+operator|+
+name|link
+operator|+
+literal|" during symlink creation, since overwrite=true"
+argument_list|)
+expr_stmt|;
+name|Files
+operator|.
+name|delete
+argument_list|(
+name|link
+operator|.
+name|toPath
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|// make sure the "link" that is being created has the necessary parent directories
+comment|// in place before triggering symlink creation
 if|if
 condition|(
 name|link
