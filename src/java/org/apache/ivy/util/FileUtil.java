@@ -205,6 +205,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|nio
+operator|.
+name|file
+operator|.
+name|NoSuchFileException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -499,6 +511,7 @@ return|return
 literal|true
 return|;
 block|}
+comment|/**      * This is the same as calling {@link #copy(File, File, CopyProgressListener, boolean)} with      * {@code overwrite} param as {@code true}      *      * @param src  The source to copy      * @param dest The destination      * @param l    A {@link CopyProgressListener}. Can be null      * @return Returns true if the file was copied. Else returns false      * @throws IOException If any exception occurs during the copy operation      */
 specifier|public
 specifier|static
 name|boolean
@@ -783,6 +796,81 @@ argument_list|)
 return|;
 block|}
 comment|// else it is a file copy
+comment|// check if it's the same file (the src and the dest). if they are the same, skip the copy
+try|try
+block|{
+if|if
+condition|(
+name|Files
+operator|.
+name|isSameFile
+argument_list|(
+name|src
+operator|.
+name|toPath
+argument_list|()
+argument_list|,
+name|dest
+operator|.
+name|toPath
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Skipping copy of file "
+operator|+
+name|src
+operator|+
+literal|" to "
+operator|+
+name|dest
+operator|+
+literal|" since they are the same file"
+argument_list|)
+expr_stmt|;
+comment|// we consider the file as copied if overwrite is true
+return|return
+name|overwrite
+return|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|NoSuchFileException
+name|nsfe
+parameter_list|)
+block|{
+comment|// ignore and move on and attempt the copy
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioe
+parameter_list|)
+block|{
+comment|// log and move on and attempt the copy
+name|Message
+operator|.
+name|verbose
+argument_list|(
+literal|"Could not determine if "
+operator|+
+name|src
+operator|+
+literal|" and dest "
+operator|+
+name|dest
+operator|+
+literal|" are the same file"
+argument_list|,
+name|ioe
+argument_list|)
+expr_stmt|;
+block|}
 name|copy
 argument_list|(
 operator|new
