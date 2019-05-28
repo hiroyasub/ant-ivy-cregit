@@ -1558,12 +1558,22 @@ operator|==
 literal|null
 condition|)
 block|{
+specifier|final
 name|int
 name|contentLength
 init|=
 name|srcConn
 operator|.
 name|getContentLength
+argument_list|()
+decl_stmt|;
+specifier|final
+name|long
+name|destFileSize
+init|=
+name|dest
+operator|.
+name|length
 argument_list|()
 decl_stmt|;
 if|if
@@ -1573,10 +1583,7 @@ operator|!=
 operator|-
 literal|1
 operator|&&
-name|dest
-operator|.
-name|length
-argument_list|()
+name|destFileSize
 operator|!=
 name|contentLength
 condition|)
@@ -1590,7 +1597,17 @@ throw|throw
 operator|new
 name|IOException
 argument_list|(
-literal|"Downloaded file size doesn't match expected Content Length for "
+literal|"Downloaded file size ("
+operator|+
+name|destFileSize
+operator|+
+literal|") doesn't match expected "
+operator|+
+literal|"Content Length ("
+operator|+
+name|contentLength
+operator|+
+literal|") for "
 operator|+
 name|normalizedURL
 operator|+
