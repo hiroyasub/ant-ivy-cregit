@@ -730,7 +730,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A parser for Maven 2 POM.  *<p>  * The configurations used in the generated module descriptor mimics the behavior defined by Maven 2  * scopes, as documented<a href=  * "http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">here</a>.  * The PomModuleDescriptorParser use a PomDomReader to read the pom, and the  * PomModuleDescriptorBuilder to write the ivy module descriptor using the info read by the  * PomDomReader.  *</p>  */
+comment|/**  * A parser for Maven 2 POM.  *<p>  * The configurations used in the generated module descriptor mimics the behavior defined by Maven 2  * scopes, as documented<a href=  * "https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">here</a>.  * The PomModuleDescriptorParser use a PomDomReader to read the pom, and the  * PomModuleDescriptorBuilder to write the ivy module descriptor using the info read by the  * PomDomReader.  *</p>  */
 end_comment
 
 begin_class

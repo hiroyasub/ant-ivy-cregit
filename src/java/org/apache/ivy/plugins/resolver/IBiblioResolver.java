@@ -520,13 +520,14 @@ literal|"[module]/[type]s/[artifact]-[revision].[ext]"
 decl_stmt|;
 annotation|@
 name|Deprecated
+comment|/**      * @deprecated This root URL is no longer valid. Use {@link #DEFAULT_M2_ROOT} instead      */
 specifier|public
 specifier|static
 specifier|final
 name|String
 name|DEFAULT_ROOT
 init|=
-literal|"http://www.ibiblio.org/maven/"
+literal|"https://www.ibiblio.org/maven/"
 decl_stmt|;
 specifier|public
 specifier|static

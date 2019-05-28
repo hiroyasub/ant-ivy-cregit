@@ -798,7 +798,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<a href="http://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *</p>  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.  *</p>  *<p>  * To do so, it is recommended to use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method  * like this:  *</p>  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback  *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  */
+comment|/**  *<a href="https://ant.apache.org/ivy/">Ivy</a> is a free java based dependency manager.  *<p>  * This class is the main class of Ivy, which acts as a Facade to all services offered by Ivy:  *</p>  *<ul>  *<li>resolve dependencies</li>  *<li>retrieve artifacts to a local location</li>  *<li>deliver and publish modules</li>  *<li>repository search and listing</li>  *</ul>  * Here is one typical usage:  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.configure(new URL(&quot;ivysettings.xml&quot;));  * ivy.resolve(new URL(&quot;ivy.xml&quot;));  *</pre>  *<h2>Using Ivy engines directly</h2>  *<p>  * If the methods offered by the {@link Ivy} class are not flexible enough and you want to use Ivy  * engines directly, you need to call the methods within a single {@link IvyContext} associated to  * the {@link Ivy} instance you use.  *</p>  *<p>  * To do so, it is recommended to use the {@link #execute(org.apache.ivy.Ivy.IvyCallback)} method  * like this:  *</p>  *<pre>  * Ivy ivy = Ivy.newInstance();  * ivy.execute(new IvyCallback() {  *     public Object doInIvyContext(Ivy ivy, IvyContext context) {  *         // obviously we can use regular Ivy methods in the callback  *         ivy.configure(new URL(&quot;ivysettings.xml&quot;));  *         // and we can safely use Ivy engines too  *         ivy.getResolveEngine().resolve(new URL(&quot;ivy.xml&quot;));  *         return null;  *     }  * });  *</pre>  */
 end_comment
 
 begin_class
@@ -976,7 +976,7 @@ name|getIvyHomeURL
 parameter_list|()
 block|{
 return|return
-literal|"http://ant.apache.org/ivy/"
+literal|"https://ant.apache.org/ivy/"
 return|;
 block|}
 specifier|public

@@ -408,14 +408,6 @@ name|DEFAULT_IVYPATTERN
 init|=
 literal|"[organisation]/[module]/ivy-[revision].xml"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DEFAULT_IVYROOT
-init|=
-literal|"http://ivyrep.jayasoft.org/"
-decl_stmt|;
 specifier|private
 name|String
 name|ivyroot

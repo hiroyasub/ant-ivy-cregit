@@ -2434,7 +2434,7 @@ init|=
 operator|new
 name|URL
 argument_list|(
-literal|"http://ant.apache.org/ivy/repository.properties"
+literal|"https://ant.apache.org/ivy/repository.properties"
 argument_list|)
 decl_stmt|;
 name|Message
