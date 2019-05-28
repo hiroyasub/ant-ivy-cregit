@@ -1563,6 +1563,10 @@ argument_list|)
 decl_stmt|;
 name|assertNotNull
 argument_list|(
+literal|"Resolver could not get dependency "
+operator|+
+name|mrid
+argument_list|,
 name|rmr
 argument_list|)
 expr_stmt|;
@@ -1762,6 +1766,10 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
+literal|"Could not get dependency "
+operator|+
+name|mrid
+argument_list|,
 name|rmr
 argument_list|)
 expr_stmt|;
