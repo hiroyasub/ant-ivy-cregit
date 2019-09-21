@@ -2165,6 +2165,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+specifier|final
 name|String
 index|[]
 name|dadConfs
@@ -2174,6 +2175,19 @@ operator|.
 name|getConfigurations
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|dadConfs
+operator|!=
+literal|null
+operator|&&
+name|dadConfs
+operator|.
+name|length
+operator|>
+literal|0
+condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -2210,6 +2224,7 @@ literal|" conf=\""
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|printExtraAttributes
 argument_list|(

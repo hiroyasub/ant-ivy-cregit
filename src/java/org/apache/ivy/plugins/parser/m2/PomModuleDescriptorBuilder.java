@@ -2084,6 +2084,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|final
 name|DefaultDependencyArtifactDescriptor
 name|depArtifact
 init|=
@@ -2111,6 +2112,7 @@ argument_list|)
 decl_stmt|;
 comment|// here we have to assume a type and ext for the artifact, so this is a limitation
 comment|// compared to how m2 behave with classifiers
+specifier|final
 name|String
 name|optionalizedScope
 init|=
@@ -2123,6 +2125,13 @@ literal|"optional"
 else|:
 name|scope
 decl_stmt|;
+name|depArtifact
+operator|.
+name|addConfiguration
+argument_list|(
+name|optionalizedScope
+argument_list|)
+expr_stmt|;
 name|dd
 operator|.
 name|addDependencyArtifact
