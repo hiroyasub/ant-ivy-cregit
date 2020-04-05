@@ -2759,7 +2759,7 @@ literal|"Multiple artifacts of the module "
 operator|+
 name|winnerMD
 operator|+
-literal|" are retrieved to the same file! Update the retrieve pattern "
+literal|" are retrieved to the same file! Update the retrieve pattern"
 operator|+
 literal|" to fix this error."
 argument_list|)
