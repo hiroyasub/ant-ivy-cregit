@@ -106,7 +106,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://repo.jfrog.org/artifactory/libs-releases-local/org/apache/wicket/wicket/"
+literal|"https://repo.jfrog.org/artifactory/libs-releases-local/org/apache/wicket/wicket/"
 argument_list|)
 argument_list|)
 decl_stmt|;
