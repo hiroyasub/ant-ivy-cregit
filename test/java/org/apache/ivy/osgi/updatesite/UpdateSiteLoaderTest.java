@@ -375,7 +375,7 @@ argument_list|(
 operator|new
 name|URI
 argument_list|(
-literal|"http://www.apache.org/dist/ant/ivyde/updatesite/"
+literal|"https://www.apache.org/dist/ant/ivyde/updatesite/"
 argument_list|)
 argument_list|)
 decl_stmt|;
