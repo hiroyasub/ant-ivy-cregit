@@ -202,7 +202,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://ant.apache.org/ivy/test/ivysettings-include-http-url.xml"
+literal|"https://ant.apache.org/ivy/test/ivysettings-include-http-url.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -265,7 +265,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://ant.apache.org/ivy/test/ivysettings-include-http-relative-url.xml"
+literal|"https://ant.apache.org/ivy/test/ivysettings-include-http-relative-url.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -328,7 +328,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://ant.apache.org/ivy/test/ivysettings-include-http-relative-file.xml"
+literal|"https://ant.apache.org/ivy/test/ivysettings-include-http-relative-file.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -393,7 +393,7 @@ argument_list|(
 operator|new
 name|URL
 argument_list|(
-literal|"http://ant.apache.org/ivy/test/ivysettings-include-http-absolute-file.xml"
+literal|"https://ant.apache.org/ivy/test/ivysettings-include-http-absolute-file.xml"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -465,7 +465,7 @@ argument_list|(
 operator|new
 name|URI
 argument_list|(
-literal|"http://download.eclipse.org/technology/m2e/releases/"
+literal|"https://download.eclipse.org/technology/m2e/releases/"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -515,7 +515,7 @@ argument_list|(
 operator|new
 name|URI
 argument_list|(
-literal|"http://download.eclipse.org/releases/helios/"
+literal|"https://download.eclipse.org/releases/helios/"
 argument_list|)
 argument_list|)
 decl_stmt|;
