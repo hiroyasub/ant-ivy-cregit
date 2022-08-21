@@ -3435,10 +3435,9 @@ name|ModuleRevisionId
 name|mRevId
 parameter_list|)
 block|{
-return|return
-operator|new
-name|PropertiesFile
-argument_list|(
+name|File
+name|file
+init|=
 operator|new
 name|File
 argument_list|(
@@ -3455,6 +3454,17 @@ argument_list|,
 name|mRevId
 argument_list|)
 argument_list|)
+decl_stmt|;
+name|assertInsideCache
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+operator|new
+name|PropertiesFile
+argument_list|(
+name|file
 argument_list|,
 literal|"ivy cached data file for "
 operator|+
@@ -3475,10 +3485,9 @@ name|mRevId
 parameter_list|)
 block|{
 comment|// we append ".${resolverName} onto the end of the regular ivydata location
-return|return
-operator|new
-name|PropertiesFile
-argument_list|(
+name|File
+name|file
+init|=
 operator|new
 name|File
 argument_list|(
@@ -3499,6 +3508,17 @@ literal|"."
 operator|+
 name|resolverName
 argument_list|)
+decl_stmt|;
+name|assertInsideCache
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+operator|new
+name|PropertiesFile
+argument_list|(
+name|file
 argument_list|,
 literal|"ivy cached data file for "
 operator|+
@@ -5243,6 +5263,11 @@ literal|"': pointing repository to ivy cache is forbidden !"
 argument_list|)
 throw|;
 block|}
+name|assertInsideCache
+argument_list|(
+name|archiveFile
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|listener
@@ -5996,6 +6021,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// actual download
+name|assertInsideCache
+argument_list|(
+name|archiveFile
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|archiveFile
@@ -8084,6 +8114,50 @@ name|getChangingMatcherName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @throws IllegalArgumentException if the given path points outside of the cache.      */
+specifier|public
+specifier|final
+name|void
+name|assertInsideCache
+parameter_list|(
+name|File
+name|fileInCache
+parameter_list|)
+block|{
+name|File
+name|root
+init|=
+name|getRepositoryCacheRoot
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|root
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|FileUtil
+operator|.
+name|isLeadingPath
+argument_list|(
+name|root
+argument_list|,
+name|fileInCache
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+name|fileInCache
+operator|+
+literal|" is outside of the cache"
+argument_list|)
+throw|;
+block|}
 block|}
 comment|/**      * If the {@link ArtifactOrigin#getLocation() location of the artifact origin} is a      * {@code file:} scheme URI, then this method parses that URI and returns back the      * path of the file it represents. Else returns back {@link ArtifactOrigin#getLocation()}      * @param origin The artifact origin      * @return      */
 specifier|private
